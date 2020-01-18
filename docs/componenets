@@ -1,0 +1,84 @@
+Code Block :
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p>
+<script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+print("Hello World")
+
+for i in range(5):
+    print(i)
+
+print("Welcome To Asha Tutorials")
+{% endhighlight %}
+</div>
+
+
+
+Output:
+
+
+<div class="result">
+<p class="result-header"><b>Output</b></p>
+<pre class="result-content">Hello World
+0
+1
+2
+3
+4
+</pre>
+</div>
+
+
+
+Data from _site :
+
+
+{{ site.data.strings.search_placeholder_text }}
+
+
+Nav Tabs:
+
+
+<ul id="profileTabs" class="nav-tab-profile ">
+    <li class="active"><a href="#profile" data-toggle="tab">Profile</a></li>
+    <li><a href="#about" data-toggle="tab">About</a></li>
+    <li><a href="#match" data-toggle="tab">Match</a></li>
+</ul>
+  <div class="tab-content">
+<div role="tabpanel" class="tab-pane active" id="profile">
+    <h2>Profile</h2>
+<p>Praesent sit amet fermentum leo....</p>
+</div>
+
+<div role="tabpanel" class="tab-pane" id="about">
+    <h2>About</h2>
+    <p>Lorem ipsum ...</p></div>
+
+<div role="tabpanel" class="tab-pane" id="match">
+    <h2>Match</h2>
+    <p>Vel vehicula ....</p>
+</div>
+</div>
+
+
+Data Tables :
+
+
+Include : datatable: true to page frontmatter
+
+
+<div class="datatable-begin"></div>
+
+Food    | Description                           | Category | Sample type
+------- | ------------------------------------- | -------- | -----------
+Apples  | A small, somewhat round ...           | Fruit    | Fuji
+Bananas | A long and curved, often-yellow ...   | Fruit    | Snow
+Kiwis   | A small, hairy-skinned sweet ...      | Fruit    | Golden
+Oranges | A spherical, orange-colored sweet ... | Fruit    | Navel
+
+<div class="datatable-end"></div>

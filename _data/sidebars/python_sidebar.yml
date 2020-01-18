@@ -1,0 +1,55 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: sidebar
+  product: Python
+  version: 
+  folders:
+
+  - title: Getting Started
+    output: web, pdf
+    folderitems:
+      - title: Getting started
+        url: /python_getting_started.html
+        output: web, pdf
+        type: homepage
+
+      - title: Introduction
+        url: /python_introduction.html
+        output: web, pdf
+
+      - title: Python Variables
+        url: /python_variables.html
+        output: web, pdf
+
+        # subfolders:
+        # - title: Tag archive pages
+        #   output: web
+        #   subfolderitems:
+
+        #   - title: Formatting pages
+        #     url: /tag_formatting.html
+        #     output: web
+
+        #   - title: Archive Pages
+        #     url: /tag_formatting.html
+        #     output: web
+
+  - title: Control Flow
+    output: web, pdf
+    folderitems:
+      - title: Control Flow
+        url: /python_control_flow.html
+        output: web, pdf
+        
+  - title: Looping
+    output: web, pdf
+    folderitems:
+      - title: While Loop
+        url: /python_while_loop.html
+        output: web, pdf
+        
+      - title: For Loop
+        url: /python_for_loop.html
+        output: web, pdf
+         
