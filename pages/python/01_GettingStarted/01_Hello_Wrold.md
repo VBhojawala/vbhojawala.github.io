@@ -1,8 +1,8 @@
 ---
-title: Introduction
+title: Hello World!
 layout: tutorial
 sidebar: python_sidebar
-permalink: python_introduction.html
+permalink: python_hello_world.html
 folder: python
 prev: python_getting_started.html
 prev_title: Getting Started

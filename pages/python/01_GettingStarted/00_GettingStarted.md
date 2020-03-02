@@ -8,8 +8,8 @@ prev_section:
 prev_section_title:
 prev:
 prev_title:
-next: python_introduction.html
-next_title: Introduction
+next: python_hello_world.html
+next_title: Hello World!
 next_section:
 next_section_title:
 datatable: true
