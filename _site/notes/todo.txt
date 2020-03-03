@@ -1,4 +1,12 @@
 1. Home Page :
 
+Script :
+
+1. In Depth Learning
+2. Quality Video Tutorials
+3. Hands on Coding
+4. Structured learning material
+5. Responsive website
+
 
 2. word-spacing: 30px;

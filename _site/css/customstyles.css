@@ -234,6 +234,13 @@ ul#results-container a:hover {
     color: black;
 }
 
+ul#results-container li{
+    line-height: 0px;
+}
+
+ul#results-container li::before{
+    content: none;
+}
 
 #search-demo-container a:hover {
     color: black;
