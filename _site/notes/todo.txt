@@ -2,11 +2,10 @@
 
 Script :
 
-1. In Depth Learning
-2. Quality Video Tutorials
-3. Hands on Coding
-4. Structured learning material
-5. Responsive website
+1. In Depth Learning Experience
+2. Hands-On Video Tutorials
+3. Structured Learning Material
+4. Responsive Website
 
 
 2. word-spacing: 30px;

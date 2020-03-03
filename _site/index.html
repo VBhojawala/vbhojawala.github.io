@@ -8,7 +8,7 @@
 <meta name="keywords" content=" homepage">
 <meta name="theme-color" content="#36362C">
 <link rel="icon" sizes="192x192" href="images/favicon.ico">
-<title>Home | Asha Tutorials</title>
+<title>Welcome to Asha Tutorials | Asha Tutorials</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -283,7 +283,7 @@
 
 
 
-  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:?subject=Asha Tutorials feedback&body=I have some feedback about the Home page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:?subject=Asha Tutorials feedback&body=I have some feedback about the Welcome to Asha Tutorials page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
 
 </li>
 
@@ -335,7 +335,7 @@
                             searchInput: document.getElementById('search-input'),
                             resultsContainer: document.getElementById('results-container'),
                             dataSource: 'search.json',
-                            searchResultTemplate: '<li style="margin: 0px 0px;"><a href="{url}" title="Home       " folder="site page">{title} <sub>in {folder}</sub></a></li>',
+                            searchResultTemplate: '<li style="margin: 0px 0px;"><a href="{url}" title="Welcome to Asha Tutorials       " folder="site page">{title} <sub>in {folder}</sub></a></li>',
                 noResultsText: '<li style="margin: 0px 0px;"><a href="#">No results found.</a></li>',
                         limit: 10,
                         fuzzy: true,
@@ -359,7 +359,7 @@
         <!-- Content Column -->
         <div class="col-md-12" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">Home</h1>
+   <h1 class="post-title-main">Welcome to Asha Tutorials</h1>
 </div>
 
 
@@ -367,29 +367,6 @@
 <div class="post-content">
 
    
-
-    
-    
-<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
-<script>
-$( document ).ready(function() {
-  // Handler for .ready() called.
-
-$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
-
-/* this offset helps account for the space taken up by the floating toolbar. */
-$('#toc').on('click', 'a', function() {
-  var target = $(this.getAttribute('href'))
-    , scroll_target = target.offset().top
-
-  $(window).scrollTop(scroll_target - 10);
-  return false
-})
-  
-});
-</script>
-
-<div id="toc"></div>
 
     
 
@@ -400,7 +377,81 @@ $('#toc').on('click', 'a', function() {
 
      -->
 
-   
+   <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header">Key Features</h2>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="panel panel-default text-center">
+                <div class="panel-heading">
+                    <span class="fa-stack fa-5x">
+                          <i class="fa fa-circle fa-stack-2x homepage"></i>
+                          <i class="fa fa-arrow-down fa-stack-1x fa-inverse"></i>
+                    </span>
+                </div>
+                <div class="panel-body">
+                    <h4>In Depth Learning Experience</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="panel panel-default text-center">
+                <div class="panel-heading">
+                    <span class="fa-stack fa-5x">
+                          <i class="fa fa-circle fa-stack-2x homepage"></i>
+                          <i class="fa fa-video-camera fa-stack-1x fa-inverse"></i>
+                    </span>
+                </div>
+                <div class="panel-body">
+                    <h4>Hands-On Video Tutorials</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="panel panel-default text-center">
+                <div class="panel-heading">
+                    <span class="fa-stack fa-5x">
+                          <i class="fa fa-circle fa-stack-2x homepage"></i>
+                          <i class="fa fa-book fa-stack-1x fa-inverse"></i>
+                    </span>
+                </div>
+                <div class="panel-body">
+                    <h4>Structured Learning Material</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="panel panel-default text-center">
+                <div class="panel-heading">
+                    <span class="fa-stack fa-5x">
+                          <i class="fa fa-circle fa-stack-2x homepage"></i>
+                          <i class="fa fa-tablet fa-stack-1x fa-inverse"></i>
+                    </span>
+                </div>
+                <div class="panel-body">
+                    <h4>Responsive Website</h4>
+                </div>
+            </div>
+        </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+                <h2 class="page-header">Tutorials</h2>
+    </div>
+
+    <div class="col-md-3 col-sm-6">
+        <a href="python_getting_started.html"> <div class="panel panel-default text-center">
+            <div class="panel-heading">
+                <figure><img class="docimage" src="images//tutorials/python/Python-logo-color.png" alt="Python" /></figure>
+
+            </div>
+            <div class="panel-body">
+                <h4>Python</h4>
+            </div>
+        </div> </a>
+    </div>
+</div>
 
 
     <div class="tags">
