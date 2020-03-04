@@ -275,7 +275,7 @@ div#toc ul li::before{
     font-family: FontAwesome;
     display: inline-block;
     margin-left: -1em; 
-    margin-right: 5px;
+    margin-right: -3px;
     width: 1.3em;
     color: #36362C;
 }
@@ -283,7 +283,7 @@ div#toc ul {
     background-color: whitesmoke;
     padding: 5px;
     border-radius: 5px;
-    max-width: 300px;
+    /* max-width: 300px; */
     color: gray;
 }
 
@@ -311,6 +311,11 @@ div#toc >ul::before {
 
 li.dropdownActive a {
     font-weight: bold;
+}
+
+div#toc{
+    margin-top: 25px;
+    margin-bottom: 15px;
 }
 
 

@@ -10,5 +10,8 @@ next: python_variables.html
 next_title: Python Variables
 ---
 
+## print() function : Prints given string to standard output.
+
+
 
 {% include links.html %}
