@@ -4,10 +4,11 @@ body {
 ul li::before {
     content: "\f111"; 
     font-family: FontAwesome;
+    font-size: 22px;
     display: inline-block;
-    margin-left: -1.3em; 
-    margin-right: 5px;
-    width: 1.3em;
+    margin-left: -1em; 
+    margin-right: -7px;
+    width: 0.95em;
     color: #5D917D;
 }
 
@@ -1477,4 +1478,11 @@ ul.mobile-toggle > a{
 .code-header:hover{
     cursor: pointer;
     background: #5D917D;
+}
+#tut-content ul {
+    padding-left: 25px;
+}
+.panel-body h4{
+    font-style: normal;
+    color: #36362C;
 }

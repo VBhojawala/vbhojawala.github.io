@@ -12,7 +12,6 @@
 
 
 
-word-spacing: 30px;
 
 
  ***************************  DONE  ************************************
@@ -30,6 +29,12 @@ Secure domain name:
 ashatutorials.com
 
 
+Table of content Icon fix
+Table of Line wrapping fix
 
+
+word-spacing: 4px;
+
+UL alignment fix , text wrapping fix
 
 
