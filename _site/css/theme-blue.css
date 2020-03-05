@@ -272,7 +272,7 @@ pre.result-content{
 }
 
 /* ol  styling*/
-ol {
+/* ol {
     margin: 0;
     padding: 0;
     list-style-type: none;
@@ -294,7 +294,7 @@ ol li:before {
     font-weight: bold;
     padding: 3px 7px;
     border-radius: 35px;
-}
+} */
 
 .homepage{
     color: #5D917D;
@@ -339,6 +339,9 @@ p, li{
     #tut-content ul {
         padding-left: 16px;
     }
+    #tut-content ol{
+        padding-left: 16px;
+    }
     h1{
         font-size: 32px;
     }
@@ -367,6 +370,9 @@ p, li{
         font-size: 18px;
     }
     #tut-content ul {
+        padding-left: 18px;
+    }
+    #tut-content ol{
         padding-left: 18px;
     }
     h1{
@@ -399,6 +405,9 @@ p, li{
     #tut-content ul {
         padding-left: 20px;
     }
+    #tut-content ol{
+        padding-left: 20px;
+    }
     h1{
         font-size: 36px;
     }
@@ -427,6 +436,9 @@ p, li{
         font-size: 22px;
     }
     #tut-content ul {
+        padding-left: 25px;
+    }
+    #tut-content ol{
         padding-left: 25px;
     }
     h1{
