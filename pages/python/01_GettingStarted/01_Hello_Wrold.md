@@ -14,7 +14,7 @@ next_title: Python Variables
 
 <div id="tut-content"> 
     <ul>
-        <li> <p>Write string in single inverted comma [‘Hello World!’]  or double inverted comma [“Hello World!”] inside the print() function. </p> </li>
+        <li> Write string in single inverted comma [‘Hello World!’]  or double inverted comma [“Hello World!”] inside the print() function.  </li>
     </ul> 
 </div>
 

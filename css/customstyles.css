@@ -5,10 +5,8 @@ ul li::before {
     content: "\f111"; 
     font-family: FontAwesome;
     font-size: 22px;
-    display: inline-block;
     margin-left: -1em; 
-    margin-right: -7px;
-    width: 0.95em;
+    margin-right: 2px;
     color: #5D917D;
 }
 
@@ -1484,10 +1482,11 @@ ul.mobile-toggle > a{
     margin-top: 15px;
     margin-bottom: 15px;
 }
-#tut-content ul li p{
-    display: inline;
-    margin-left: 5px;
-    position: relative;
+
+#tut-content ul li{
+    list-style-position: outside;
+    text-indent: -7px;
+    padding-left: 7px;
 }
 
 .panel-body h4{
