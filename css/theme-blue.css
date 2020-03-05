@@ -341,6 +341,9 @@ p, li{
     #tut-content ol{
         padding-left: 16px;
     }
+    #tut-content ol li::before{
+        font-size: 12px;
+    }
     h1{
         font-size: 32px;
     }
@@ -373,6 +376,9 @@ p, li{
     }
     #tut-content ol{
         padding-left: 18px;
+    }
+    #tut-content ol li::before{
+        font-size: 14px;
     }
     h1{
         font-size: 34px;
@@ -407,6 +413,9 @@ p, li{
     #tut-content ol{
         padding-left: 20px;
     }
+    #tut-content ol li::before{
+        font-size: 15px;
+    }
     h1{
         font-size: 36px;
     }
@@ -439,6 +448,9 @@ p, li{
     }
     #tut-content ol{
         padding-left: 25px;
+    }
+    #tut-content ol li::before{
+        font-size: 16px;
     }
     h1{
         font-size: 38px;
