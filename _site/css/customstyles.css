@@ -1488,6 +1488,11 @@ ul.mobile-toggle > a{
     text-indent: -7px;
     padding-left: 7px;
 }
+#tut-content ol li{
+    list-style-position: outside;
+    padding-left: -10px;
+    display: inline-block;
+}
 
 .panel-body h4{
     font-style: normal;
