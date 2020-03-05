@@ -336,6 +336,9 @@ p, li{
     ul li::before {
         font-size: 16px;
     }
+    #tut-content ul {
+        padding-left: 16px;
+    }
     h1{
         font-size: 32px;
     }
@@ -362,6 +365,9 @@ p, li{
     }
     ul li::before {
         font-size: 18px;
+    }
+    #tut-content ul {
+        padding-left: 18px;
     }
     h1{
         font-size: 34px;
@@ -390,6 +396,9 @@ p, li{
     ul li::before {
         font-size: 20px;
     }
+    #tut-content ul {
+        padding-left: 20px;
+    }
     h1{
         font-size: 36px;
     }
@@ -416,6 +425,9 @@ p, li{
     }
     ul li::before {
         font-size: 22px;
+    }
+    #tut-content ul {
+        padding-left: 25px;
     }
     h1{
         font-size: 38px;

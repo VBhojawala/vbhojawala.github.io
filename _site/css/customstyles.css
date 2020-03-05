@@ -1479,9 +1479,17 @@ ul.mobile-toggle > a{
     cursor: pointer;
     background: #5D917D;
 }
-#tut-content ul {
-    padding-left: 25px;
+
+#tut-content{
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
+#tut-content ul li p{
+    display: inline;
+    margin-left: 5px;
+    position: relative;
+}
+
 .panel-body h4{
     font-style: normal;
     color: #36362C;
