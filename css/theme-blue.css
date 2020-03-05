@@ -287,7 +287,6 @@ ol li p{
 }
 ol li:before {
     content: counter(step-counter);
-    /* margin-right: 10px; */
     font-size: 70%;
     background-color: #5D917D;
     color: white;
