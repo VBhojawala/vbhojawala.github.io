@@ -12,10 +12,10 @@ next_title: Python Variables
 
 ## print() function : Prints given string to standard output.
 
+
 <div id="tut-content"> 
     <ul>
         <li> Write string in single inverted comma [‘Hello World!’]  or double inverted comma [“Hello World!”] inside the print() function.</li>
-        
     </ul> 
 </div>
 
@@ -28,6 +28,13 @@ next_title: Python Variables
     </ol>
 </div>
 
+<div id="tut-img">
+    <img src="/images/tutorials/python/Python-logo-color.png" class="tut-img" alt="python logo">
+</div>
 
-
+<div id="tut-content"> 
+    <ul>
+        <li> Write string in single inverted comma [‘Hello World!’]  or double inverted comma [“Hello World!”] inside the print() function.</li>
+    </ul>
+</div>
 {% include links.html %}

@@ -1,5 +1,18 @@
 
 
+Daily Tasks
+
+1. Responsive image
+2. ppt brand image and logo work.
+3. write first page and start recording!
+
+
+
+
+
+
+
+
 1. Course Outline
     1.Mostly cover python 3
 
@@ -37,4 +50,4 @@ word-spacing: 4px;
 
 UL alignment fix , text wrapping fix
 
-
+OL alignment fix, text wrapping fix

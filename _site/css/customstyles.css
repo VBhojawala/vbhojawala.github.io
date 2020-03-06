@@ -1518,6 +1518,10 @@ ul.mobile-toggle > a{
     
 }
 
+#tut-img img{
+    width: 100%;
+}
+
 .panel-body h4{
     font-style: normal;
     color: #36362C;
