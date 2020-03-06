@@ -1493,6 +1493,13 @@ ul.mobile-toggle > a{
     padding-left: 7px;
 }
 
+#tut-content ul li::before{
+    content: "\f0a4";
+    font-size: 23px;
+    margin-left: -1.15em;
+    font-weight: 900;
+}
+
 #tut-content ol{
     padding-left: 25px;
     list-style-type: none;

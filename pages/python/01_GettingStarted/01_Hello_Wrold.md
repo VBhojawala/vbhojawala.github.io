@@ -303,7 +303,7 @@ print('4417', '2323', '1224', '1123', sep='-')
 <!-- Section 2.1 -->
 <div id="tut-content"> 
     <ul>
-        <li> <strong>Single line comment </strong>: starts with ' # '. </li>
+        <li> <strong>Single-line comment </strong>: starts with ' # '. </li>
     </ul> 
 </div>
 
@@ -324,19 +324,16 @@ print('4417', '2323', '1224', '1123', sep='-')
 {% endhighlight %}
 </div>
 
-
+<hr/>
 
 
 
 <!-- Section 2.2 -->
 <div id="tut-content"> 
     <ul>
-        <li> <strong>In line comment </strong>: starts with ' # ' within line after python code. </li>
+        <li> <strong>In-line comment </strong>: starts with ' # ' within line after python code. </li>
     </ul> 
 </div>
-
-
-{% include callout.html content="**Tip** : In PyCharm use shortcut : ' Ctrl + / '  to comment or uncomment line(s). " type="primary" %} 
 
 
 {% assign code_block = code_block | plus: 1 %}
@@ -395,7 +392,7 @@ Hello World!
 {% endhighlight %}
 </div>
 
-
+<hr/>
 
 
 <!-- Section3 -->
@@ -403,7 +400,7 @@ Hello World!
 
 <div id="tut-content"> 
     <ul>
-        <li> Write Following lines inside python console and execute it one at a time.</li>
+        <li> Execute Following lines (One line at a time) inside python console. </li>
     </ul> 
 </div>
 
@@ -424,8 +421,8 @@ Hello World!
 # Multiplication
 12 * 8
 
-# Division
-174 / 12  # returns Float
+# Division (returns Float)
+174 / 12
 
 # floor division for Integer
 174 // 12
