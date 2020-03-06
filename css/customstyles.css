@@ -1479,13 +1479,16 @@ ul.mobile-toggle > a{
     background: #5D917D;
 }
 
-#tut-content{
-    margin-top: 15px;
-    margin-bottom: 15px;
+
+#tut-content ul{
+    margin-top: 35px;
+    margin-bottom: 5px;
+    font-weight: 500;
 }
 
 #tut-content ul li{
     list-style-position: outside;
+    list-style-type: none;
     text-indent: -7px;
     padding-left: 7px;
 }

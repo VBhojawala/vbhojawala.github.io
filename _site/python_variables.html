@@ -96,7 +96,7 @@
 
             $('#'+copyId).click(function(){
                 lines =document.getElementById(codeId).textContent.split('\n');
-                result= lines.slice(4, lines.length-1).join("\n");
+                result= lines.slice(3, lines.length-1).join("\n");
                 var $temp = $("<textarea>");
                 $("body").append($temp);
                 $temp.val(result).select();

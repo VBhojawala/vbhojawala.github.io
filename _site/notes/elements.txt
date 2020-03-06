@@ -1,5 +1,43 @@
 *******************************************************************************
 *******************************************************************************
+                                Section
+*******************************************************************************
+*******************************************************************************
+
+<!-- Section 1.2 -->
+<div id="tut-content"> 
+    <ul>
+        <li> Title </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+print('It\'s sunny outside.')
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+It's sunny outside.
+Quoting inside "Double quotes".
+</pre></div>
+
+<hr/>
+
+
+
+
+
+*******************************************************************************
+*******************************************************************************
                                 Code
 *******************************************************************************
 *******************************************************************************
@@ -10,10 +48,9 @@
 <div id="{{ code_block_id }}" class="code-block">
 <p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
 {% highlight python %}
+
 print("Hello World")
 
-for i in range(5):
-    print(i)
 {% endhighlight %}
 </div>
 
@@ -25,7 +62,7 @@ for i in range(5):
 *******************************************************************************
 
 <div class="result"><p class="result-header"><b>Output</b></p>
-<pre class="result-content">Hello World
+<pre class="result-content">
 0
 1
 2
