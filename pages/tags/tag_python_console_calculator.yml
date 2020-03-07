@@ -1,0 +1,8 @@
+---
+title: "Python console as Calculator"
+tagName: python_console_calculator
+search: exclude
+permalink: tag_python_console_calculator.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

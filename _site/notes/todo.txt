@@ -1,13 +1,9 @@
-
-
 Daily Tasks
 
-1. Responsive image
-2. ppt brand image and logo work.
-3. write first page 
-$ start recording!
-$ alternate Design for block
 $ tagging guide Line 
+$ start recording!
+$ ppt brand image and logo work.
+
 
 
 
@@ -54,3 +50,9 @@ word-spacing: 4px;
 UL alignment fix , text wrapping fix
 
 OL alignment fix, text wrapping fix
+
+Responsive image
+
+write first page 
+
+alternate Design for block

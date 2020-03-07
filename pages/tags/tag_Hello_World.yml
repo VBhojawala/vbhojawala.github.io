@@ -1,0 +1,8 @@
+---
+title: "Hello World"
+tagName: Hello_World
+search: exclude
+permalink: tag_Hello_World.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

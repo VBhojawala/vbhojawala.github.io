@@ -27,10 +27,10 @@
 
 {
 "title": "Hello World!",
-"tags": "",
+"tags": "Hello_Worldcommentspython_console_calculator",
 "keywords": "",
 "url": "python_hello_world.html",
-"summary": "",
+"summary": "print() function and use cases, types of comments, python console as calculator.",
 "folder": "python"
 }
 ,
@@ -70,10 +70,6 @@
 "folder": "python"
 }
 ,
-
-
-
-
 
 
 

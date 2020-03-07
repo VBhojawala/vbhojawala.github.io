@@ -1105,6 +1105,9 @@ p.post-meta time {
 span.label.label-default {
     background-color: gray;
 }
+span.label.label-folder {
+    background-color: #5D917D;
+}
 
 span.label.label-primary {
     background-color: #f0ad4e;

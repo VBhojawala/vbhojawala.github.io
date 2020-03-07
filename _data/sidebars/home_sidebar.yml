@@ -2,6 +2,7 @@
 
 entries:
 - title: Sidebar
+  product: Home
   levels: one
   folders:
 
@@ -12,5 +13,5 @@ entries:
       url: /news.html
       output: web
     - title: Python
-      url: /getting_started.html
+      url: /python_getting_started.html
       output: web

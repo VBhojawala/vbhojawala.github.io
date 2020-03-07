@@ -1,6 +1,7 @@
 ---
 title: Hello World!
 layout: tutorial
+tags: [Hello_World, comments, python_console_calculator]
 sidebar: python_sidebar
 permalink: python_hello_world.html
 folder: python
@@ -8,6 +9,7 @@ prev: python_getting_started.html
 prev_title: Getting Started
 next: python_variables.html
 next_title: Python Variables
+summary: print() function and use cases, types of comments, python console as calculator. 
 ---
 
 ## print() function : Prints given string to standard output.
