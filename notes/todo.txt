@@ -1,9 +1,10 @@
 Daily Tasks
 
-$ tagging guide Line 
-$ start recording!
-$ ppt brand image and logo work.
 
+
+$ start recording!
+$ learn kdenlive video editing
+$ dynamic tag feasibility
 
 
 
@@ -56,3 +57,8 @@ Responsive image
 write first page 
 
 alternate Design for block
+
+$ tagging guide Line 
+$ tagging customization
+
+$ ppt brand image and logo work.

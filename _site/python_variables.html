@@ -8,7 +8,7 @@
 <meta name="keywords" content=" ">
 <meta name="theme-color" content="#36362C">
 <link rel="icon" sizes="192x192" href="images/favicon.ico">
-<title>Python Variables | Asha Tutorials</title>
+<title>Variables | Asha Tutorials</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -283,7 +283,7 @@
 
 
 
-  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:?subject=Asha Tutorials feedback&body=I have some feedback about the Python Variables page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:?subject=Asha Tutorials feedback&body=I have some feedback about the Variables page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
 
 </li>
 
@@ -335,7 +335,7 @@
                             searchInput: document.getElementById('search-input'),
                             resultsContainer: document.getElementById('results-container'),
                             dataSource: 'search.json',
-                            searchResultTemplate: '<li style="margin: 0px 0px;"><a href="{url}" title="Python Variables       " folder="python">{title} <sub>in {folder}</sub></a></li>',
+                            searchResultTemplate: '<li style="margin: 0px 0px;"><a href="{url}" title="Variables       " folder="python">{title} <sub>in {folder}</sub></a></li>',
                 noResultsText: '<li style="margin: 0px 0px;"><a href="#">No results found.</a></li>',
                         limit: 10,
                         fuzzy: true,
@@ -384,7 +384,7 @@
           
           
           
-          <li class="active"><a title="Python Variables" href="python_variables.html">Python Variables</a></li>
+          <li class="active"><a title="Variables" href="python_variables.html">Variables</a></li>
           
           
           
@@ -450,7 +450,7 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">Python Variables</h1>
+   <h1 class="post-title-main">Variables</h1>
 </div>
 
 
@@ -491,7 +491,208 @@ $('#toc').on('click', 'a', function() {
 
      -->
 
-   
+   <h2 id="variables">Variables</h2>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Definition : </strong> Variable is a label that holds memory location of the object which can change over the time.</li>
+    </ul> 
+</div>
+
+<!-- Section 1.1 -->
+
+<h3 id="types">Types</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Type</th>
+      <th style="text-align: left">class</th>
+      <th style="text-align: left">Values</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Integer</td>
+      <td style="text-align: left">int</td>
+      <td style="text-align: left">phone number, Social Security Number,quantity of product etc.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Float</td>
+      <td style="text-align: left">float</td>
+      <td style="text-align: left">interest rates, profit percentage, amount in bank account etc.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">String</td>
+      <td style="text-align: left">str</td>
+      <td style="text-align: left">name, address, poetry, book etc.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Boolean</td>
+      <td style="text-align: left">bool</td>
+      <td style="text-align: left">Exam result(Pass or Fail), switch (On or Off)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="declaration">Declaration</h3>
+
+<div id="code-block-1" class="code-block">
+<p id="code-header-1" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-1", "code-header-1")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># Integer 
+</span><span class="n">a</span> <span class="o">=</span> <span class="mi">1212</span>
+
+<span class="c1"># Float 
+</span><span class="n">b</span> <span class="o">=</span> <span class="mf">12.99</span>  
+
+<span class="c1"># String 
+</span><span class="n">c</span> <span class="o">=</span> <span class="s">'Have a nice Day'</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="s">"Have a nice Day"</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="s">'''A multi-line String.
+Have a nice Day.'''</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="s">"""A multi-line String.
+Have a nice Day."""</span>
+
+<span class="c1"># Boolean 
+</span><span class="n">d</span> <span class="o">=</span> <span class="bp">True</span>  </code></pre></figure>
+
+</div>
+
+<div class="bs-callout bs-callout-primary"><strong>Note</strong> : Size of Integer variable in python 3 vary depending of value it is assigned to. It can be even greater than 64-bit. </div>
+
+<h3 id="variable-names">Variable Names</h3>
+
+<div id="tut-content"> 
+    <ul>
+        <li> Variable name must begin with a letter (a-z, A-z) or ' _ '( underscore).</li>
+        <li> Variable name can contain numeric value (0-9) in addition to (a-z, A-Z and _ ). </li>
+        <li> Variable names are case sensitive. </li>
+    </ul> 
+</div>
+
+<div id="code-block-2" class="code-block">
+<p id="code-header-2" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-2", "code-header-2")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># Valid variable names
+</span><span class="n">v1</span> <span class="o">=</span> <span class="mi">122</span>
+<span class="n">Interest_Rate</span> <span class="o">=</span> <span class="mf">3.6</span>
+<span class="n">_balance</span> <span class="o">=</span> <span class="mi">12000</span>
+
+<span class="c1"># Invalid variable names
+</span><span class="mi">2</span><span class="n">d</span> <span class="o">=</span> <span class="mi">1215</span>
+<span class="err">$</span><span class="n">amount</span> <span class="o">=</span> <span class="mf">120.59</span>
+<span class="mi">1</span><span class="n">st</span> <span class="o">=</span> <span class="mi">100</span></code></pre></figure>
+
+</div>
+
+<h3 id="constants">Constants</h3>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Constants : </strong> There are no constant variables in Python. For developer's reference only variable names are given in upper case. </li>
+    </ul> 
+</div>
+
+<div id="code-block-3" class="code-block">
+<p id="code-header-3" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-3", "code-header-3")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">PI</span> <span class="o">=</span> <span class="mf">2.17</span>
+<span class="n">INTEREST_RATE</span> <span class="o">=</span> <span class="mf">7.6</span></code></pre></figure>
+
+</div>
+
+<h3 id="checking-type-of-variable">Checking type of variable</h3>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>type() : </strong> function is used for checking type of variable. It returns class of variable. </li>
+    </ul> 
+</div>
+
+<div id="code-block-4" class="code-block">
+<p id="code-header-4" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-4", "code-header-4")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">a</span> <span class="o">=</span> <span class="mi">1212</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">12.99</span>
+<span class="n">c</span> <span class="o">=</span> <span class="s">'Have a nice Day'</span>
+<span class="n">d</span> <span class="o">=</span> <span class="bp">True</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"Type of Variable a is "</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Type of Variable b is "</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Type of Variable c is "</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">c</span><span class="p">)))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Type of Variable d is "</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">d</span><span class="p">)))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Type of Variable a is &lt;class 'int'&gt;
+Type of Variable b is &lt;class 'float'&gt;
+Type of Variable c is &lt;class 'str'&gt;
+Type of Variable d is &lt;class 'bool'&gt;
+</pre></div>
+
+<hr />
+
+<h3 id="re-assigning-variable-values">Re-assigning variable values</h3>
+
+<div id="tut-content"> 
+    <ul>
+        <li> Re-Assigning variable values just changes the reference to a memory address. </li>
+    </ul> 
+</div>
+
+<div id="code-block-5" class="code-block">
+<p id="code-header-5" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-5", "code-header-5")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">a</span> <span class="o">=</span> <span class="n">c</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">d</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">b</span>
+<span class="n">d</span> <span class="o">=</span> <span class="mi">134</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">After Replacing the values of the variable:</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"Type of Variable a is "</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Type of Variable b is "</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Type of Variable c is "</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">c</span><span class="p">)))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Type of Variable d is "</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">d</span><span class="p">)))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+After Replacing the values of the variable:
+Type of Variable a is &lt;class 'str'&gt;
+Type of Variable b is &lt;class 'bool'&gt;
+Type of Variable c is &lt;class 'float'&gt;
+Type of Variable d is &lt;class 'int'&gt;
+</pre></div>
+
+<hr />
+
+<h3 id="none--absence-of-any-value-null">None : Absence of any value (Null).</h3>
+
+<div id="code-block-6" class="code-block">
+<p id="code-header-6" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-6", "code-header-6")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">a</span> <span class="o">=</span> <span class="bp">None</span>
+
+<span class="c1"># type of None
+</span><span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+&lt;class 'NoneType'&gt;
+</pre></div>
+
+<hr />
+
 
 
     <div class="tags">
@@ -549,7 +750,7 @@ $('#toc').on('click', 'a', function() {
                &copy; 2020 Asha Tutorials. All rights reserved. <br />
  
 
-<!--Site last Updated: Mar 7, 2020 <br /> -->
+<!--Site last Updated: Mar 8, 2020 <br /> -->
 <br/><br/><br/>
 
                 </div>

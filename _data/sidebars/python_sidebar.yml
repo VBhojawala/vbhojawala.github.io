@@ -18,7 +18,7 @@ entries:
         url: /python_hello_world.html
         output: web, pdf
 
-      - title: Python Variables
+      - title: Variables
         url: /python_variables.html
         output: web, pdf
 
