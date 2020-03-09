@@ -2,9 +2,8 @@ Daily Tasks
 
 
 
-$ start recording!
+$ start recording! (8.03)
 $ learn kdenlive video editing
-$ dynamic tag feasibility
 
 
 
@@ -62,3 +61,7 @@ $ tagging guide Line
 $ tagging customization
 
 $ ppt brand image and logo work.
+
+$ dynamic tag feasibility
+
+$ embedding pdf into page
