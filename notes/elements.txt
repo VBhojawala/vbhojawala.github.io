@@ -132,6 +132,8 @@ NameError: name 'a' is not defined</pre>
 {% include callout.html content="**Note** : This is my callout. It has a border on the left whose color you define by passing a type parameter. " type="primary" %} 
 
 
+
+
 *******************************************************************************
 *******************************************************************************
                                 Table
@@ -143,6 +145,28 @@ Table Header-1 | Table Header-2 | Table Header-3
 Table Data-1 | Table Data-2 | Table Data-3 
 TD-4 | Td-5 | TD-6 
 Table Data-7 | Table Data-8 | Table Data-9 
+
+
+
+
+*******************************************************************************
+*******************************************************************************
+                                PDF slides
+*******************************************************************************
+*******************************************************************************
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Slides</strong> </li>
+    </ul> 
+</div>
+
+<div id='tut-ppt'>
+    <div class="embed-responsive embed-responsive-4by3">
+        <iframe class="embed-responsive-item" src="/docs/01Variables.pdf" allowfullscreen></iframe>
+    </div>
+</div>
 
 
 *******************************************************************************

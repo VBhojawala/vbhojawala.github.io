@@ -1,0 +1,8 @@
+---
+title: "immutable vs mutable"
+tagName: immutable_vs_mutable
+search: exclude
+permalink: tag_immutable_vs_mutable.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

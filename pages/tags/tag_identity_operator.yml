@@ -1,0 +1,8 @@
+---
+title: "identity operator"
+tagName: identity_operator
+search: exclude
+permalink: tag_identity_operator.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

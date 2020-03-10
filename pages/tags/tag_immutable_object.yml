@@ -1,0 +1,8 @@
+---
+title: "immutable object"
+tagName: immutable_object
+search: exclude
+permalink: tag_immutable_object.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

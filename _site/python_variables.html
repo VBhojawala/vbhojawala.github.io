@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content=" ">
+<meta name="keywords" content="VariablesConstanttype()id()del==isidentity_operatorid_vs_==string_interningcachingimmutable_objectimmutable_vs_mutablememory_managementintstrfloatbinocthex,  ">
 <meta name="theme-color" content="#36362C">
 <link rel="icon" sizes="192x192" href="images/favicon.ico">
 <title>Variables | Asha Tutorials</title>
@@ -854,9 +854,10 @@ NameError: name 'a' is not defined</pre>
 
 <div id="tut-content"> 
     <ul>
-        <li> Int, Float, Boolean and String are immutable data types.Means once an object is created can not be changed. </li>
-        <li> While changing the value of variable holding immutable data type , a new object is created and reference of new object is assigned to the variable.</li>
-        <li> List, Set, Dictionary are mutable data structure whose value can be changed without creating new object.</li>
+        <li> Int, Boolean and String etc. are immutable data types.Means once an object is created can not be changed. </li>
+        <li> While changing the value of variable holding immutable data type , a new object is created if it does not exists in memory and reference of object is assigned to the variable.</li>
+        <li> List, Set, Dictionary are mutable data structure whose value can be changed without creating new object or changing memory address.</li>
+        <li> Key benefit of immutable object is memory saving, creating 1000 variable with same value will point the same object in memory.</li>
     </ul> 
 </div>
 
@@ -878,6 +879,18 @@ NameError: name 'a' is not defined</pre>
 </pre></div>
 
 <hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Slides</strong> </li>
+    </ul> 
+</div>
+
+<div id="tut-ppt">
+    <div class="embed-responsive embed-responsive-4by3">
+        <iframe class="embed-responsive-item" src="/docs/01Variables.pdf" allowfullscreen=""></iframe>
+    </div>
+</div>
 
 <h3 id="shared-reference">Shared reference</h3>
 
@@ -907,28 +920,6 @@ NameError: name 'a' is not defined</pre>
 
 <hr />
 
-<div id="tut-content"> 
-    <ul>
-        <li> <strong>Slides</strong> </li>
-    </ul> 
-</div>
-
-<div id="tut-ppt">
-    <div class="embed-responsive embed-responsive-4by3">
-        <iframe class="embed-responsive-item" src="/docs/01Variables.pdf" allowfullscreen=""></iframe>
-    </div>
-</div>
-
-<h3 id="memory-management-in-python">Memory Management in Python</h3>
-<p>  How long does an object stays in memory? </p>
-
-<div id="tut-content"> 
-    <ul>
-        <li> When creating an object Python creates a counter and initializes it to 1, which counts how many variable referencing the object. When Object is reference by new variable counter is increased and, when variable points to other object or deleted from memory counter decreased. </li>
-        <li> When counter reaches to zero garbage collector of Python removes an object from the memory.</li>
-    </ul> 
-</div>
-
 <h3 id="is--an-identity-operator">‘is’ : an identity operator</h3>
 
 <div id="tut-content"> 
@@ -957,7 +948,7 @@ True
 
 <hr />
 
-<h3 id="id-vs-">id vs ‘==’</h3>
+<h3 id="id-vs-">id() vs ‘==’</h3>
 
 <div id="tut-content"> 
     <ul>
@@ -1003,6 +994,69 @@ a is b False
 
 <hr />
 
+<h3 id="interning-caching-immutable-object">Interning (Caching immutable object)</h3>
+
+<div id="tut-content"> 
+    <ul>
+        <li> Before crating new immutable object python first checks if an object already exist in memory, and if it finds in memory returns the reference to Object. </li>
+    </ul> 
+</div>
+
+<div id="code-block-17" class="code-block">
+<p id="code-header-17" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-17", "code-header-17")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">a</span> <span class="o">=</span> <span class="s">'Hello'</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s">'Hello'</span></code></pre></figure>
+
+</div>
+
+<div id="tut-content"> 
+    <ul>
+        <li> When variable b is created , Python first internally checks , if 'Hello' already exists in memory it will not create new object and returns the memory location of 'Hello' string which is already present in memory. </li>
+        <li> which means now variable a and b should be pointing at same memory location. We can check it by comparing id() of both variables. </li>
+    </ul> 
+</div>
+
+<div id="code-block-18" class="code-block">
+<p id="code-header-18" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-18", "code-header-18")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">a</span> <span class="o">=</span> <span class="s">'Hello'</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s">'Hello'</span>
+
+<span class="k">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+140266408081648
+140266408081648
+</pre></div>
+
+<hr />
+
+<h3 id="which-immutable-objects-are-cached-in-python">which immutable objects are cached in python?</h3>
+<div class="bs-callout bs-callout-primary"><strong>Note</strong> : Interning (Caching) immutable object is implementation specific which may very. </div>
+
+<div id="tut-content"> 
+    <ol>    
+        <li> <strong>strings </strong> </li>
+        <li> <strong>Integer </strong></li>
+        <li> <strong>Tuple with immutable items only </strong> (yet to be cover)</li>
+    </ol>
+</div>
+
+<h3 id="memory-management-in-python">Memory Management in Python</h3>
+<p>  How long does an object stays in memory? </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> When creating an object Python creates a counter and initializes it to 1, which counts how many variable referencing the object. When Object is reference by new variable counter is increased and, when variable points to other object or deleted from memory counter decreased. </li>
+        <li> When counter reaches to zero garbage collector of Python removes an object from the memory.</li>
+    </ul> 
+</div>
+
 <h2 id="int-class-methods">int class methods</h2>
 
 <h3 id="intbit_length">int.bit_length()</h3>
@@ -1012,8 +1066,8 @@ a is b False
     </ul> 
 </div>
 
-<div id="code-block-17" class="code-block">
-<p id="code-header-17" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-17", "code-header-17")</script>
+<div id="code-block-19" class="code-block">
+<p id="code-header-19" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-19", "code-header-19")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">a</span> <span class="o">=</span> <span class="mi">30</span>
 <span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">bit_length</span><span class="p">())</span>
@@ -1046,8 +1100,8 @@ a is b False
     </ul> 
 </div>
 
-<div id="code-block-18" class="code-block">
-<p id="code-header-18" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-18", "code-header-18")</script>
+<div id="code-block-20" class="code-block">
+<p id="code-header-20" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-20", "code-header-20")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">a</span> <span class="o">=</span> <span class="mi">25</span>
 <span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">to_bytes</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="s">'big'</span><span class="p">))</span>
@@ -1066,8 +1120,8 @@ b'\x19\x00\x00\x00\x00\x00'
 <h3 id="intto_byteslength-byteorder--signedfalse">int.to_bytes(length, byteorder, *, signed=False)</h3>
 <p> Returns integer from array of bytes bytes. </p>
 
-<div id="code-block-19" class="code-block">
-<p id="code-header-19" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-19", "code-header-19")</script>
+<div id="code-block-21" class="code-block">
+<p id="code-header-21" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-21", "code-header-21")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">aBytes</span> <span class="o">=</span> <span class="n">b</span><span class="s">'</span><span class="se">\x00\x00\x00\x00\x00\x19</span><span class="s">'</span>
 <span class="k">print</span><span class="p">(</span><span class="nb">int</span><span class="o">.</span><span class="n">from_bytes</span><span class="p">(</span><span class="n">aBytes</span><span class="p">,</span> <span class="s">'big'</span><span class="p">))</span></code></pre></figure>
@@ -1087,8 +1141,8 @@ b'\x19\x00\x00\x00\x00\x00'
 
 <p> Returns True if value can exactly represented as integer. </p>
 
-<div id="code-block-20" class="code-block">
-<p id="code-header-20" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-20", "code-header-20")</script>
+<div id="code-block-22" class="code-block">
+<p id="code-header-22" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-22", "code-header-22")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">f1</span> <span class="o">=</span> <span class="mf">9.0</span>
 <span class="k">print</span><span class="p">(</span><span class="n">f1</span><span class="o">.</span><span class="n">is_integer</span><span class="p">())</span>
@@ -1110,8 +1164,8 @@ False
 
 <p> Returns hexadecimal string for given float value. </p>
 
-<div id="code-block-21" class="code-block">
-<p id="code-header-21" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-21", "code-header-21")</script>
+<div id="code-block-23" class="code-block">
+<p id="code-header-23" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-23", "code-header-23")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">f1</span> <span class="o">=</span> <span class="mf">6.396</span>
 <span class="k">print</span><span class="p">(</span><span class="n">f1</span><span class="o">.</span><span class="nb">hex</span><span class="p">())</span></code></pre></figure>
@@ -1129,8 +1183,8 @@ False
 
 <p> Returns float from string with hexadecimal number. </p>
 
-<div id="code-block-22" class="code-block">
-<p id="code-header-22" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-22", "code-header-22")</script>
+<div id="code-block-24" class="code-block">
+<p id="code-header-24" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-24", "code-header-24")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">fs1</span> <span class="o">=</span> <span class="s">'0x1.995810624dd2fp+2'</span>
 <span class="k">print</span><span class="p">(</span><span class="nb">float</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="n">fs1</span><span class="p">))</span></code></pre></figure>
@@ -1148,8 +1202,8 @@ False
 
 <p> Returns float represented as ratio of integer. </p>
 
-<div id="code-block-23" class="code-block">
-<p id="code-header-23" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-23", "code-header-23")</script>
+<div id="code-block-25" class="code-block">
+<p id="code-header-25" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-25", "code-header-25")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">f1</span> <span class="o">=</span> <span class="mf">7.5</span>
 <span class="n">f1</span><span class="o">.</span><span class="n">as_integer_ratio</span><span class="p">()</span></code></pre></figure>
@@ -1162,59 +1216,6 @@ False
 </pre></div>
 
 <hr />
-
-<h2 id="interning-caching-immutable-object">Interning (Caching immutable object)</h2>
-
-<div id="tut-content"> 
-    <ul>
-        <li> Before crating new immutable object python first checks if an object already exist in memory, and if it finds in memory returns the reference to Object. </li>
-    </ul> 
-</div>
-
-<div id="code-block-24" class="code-block">
-<p id="code-header-24" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-24", "code-header-24")</script>
-
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">a</span> <span class="o">=</span> <span class="s">'Hello'</span>
-<span class="n">b</span> <span class="o">=</span> <span class="s">'Hello'</span></code></pre></figure>
-
-</div>
-
-<div id="tut-content"> 
-    <ul>
-        <li> When variable b is created , Python first internally checks , if 'Hello' already exists in memory it will not create new object and returns the memory location of 'Hello' string which is already present in memory. </li>
-        <li> which means now variable a and b should be pointing at same memory location. We can check it by comparing id() of both variables. </li>
-    </ul> 
-</div>
-
-<div id="code-block-25" class="code-block">
-<p id="code-header-25" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-25", "code-header-25")</script>
-
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">a</span> <span class="o">=</span> <span class="s">'Hello'</span>
-<span class="n">b</span> <span class="o">=</span> <span class="s">'Hello'</span>
-
-<span class="k">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">))</span></code></pre></figure>
-
-</div>
-
-<div class="result"><p class="result-header"><b>Output</b></p>
-<pre class="result-content">
-140266408081648
-140266408081648
-</pre></div>
-
-<hr />
-
-<h3 id="which-immutable-objects-are-cached-in-python">which immutable objects are cached in python?</h3>
-<div class="bs-callout bs-callout-primary"><strong>Note</strong> : Interning (Caching) immutable object is implementation specific which may very. </div>
-
-<div id="tut-content"> 
-    <ol>    
-        <li> <strong>strings </strong> </li>
-        <li> <strong>Integer </strong></li>
-        <li> <strong>Tuple with immutable items only </strong> (yet to be cover)</li>
-    </ol>
-</div>
 
 <h2 id="converting-variable-types">Converting variable types</h2>
 
@@ -1267,8 +1268,6 @@ Hexadecimal(1FA9A) to int : 129690
   File "&lt;&zwj;input&zwj;&gt;", line 2, in &lt;&zwj;module&zwj;&gt;
 ValueError: invalid literal for int() with base 10: '12a12'</pre>
 </div>
-
-<p>&lt;/div&gt;</p>
 
 <hr />
 
@@ -1366,7 +1365,7 @@ Boolean to String : True
     <ul>
         <li> <strong>Binary : </strong>Starts with ' 0b '. </li>
         <li> <strong>Octal : </strong>Starts with ' 0o '. </li>
-        <li> <strong>Hexadecimal : </strong>Starts with ' 0x ' or '0X'. </li>
+        <li> <strong>Hexadecimal : </strong>Starts with ' 0x ' or ' 0X '. </li>
     </ul> 
 </div>
 
@@ -1396,7 +1395,7 @@ Boolean to String : True
 
 <hr />
 
-<h3 id="integer-to-binary-octal-and-hexadecimal-conversion">Integer to binary, octal and hexadecimal conversion</h3>
+<h3 id="integer-to-binary-octal-and-hexadecimal-string-conversion">Integer to binary, octal and hexadecimal string conversion</h3>
 
 <div id="tut-content"> 
     <ul>
@@ -1432,6 +1431,90 @@ Hexadecimal of 45 : 0x2d
 
 
     <div class="tags">
+        
+        <b>Tags: </b>
+        
+        
+        
+        <a href="tag_Variables.html" class="btn btn-default navbar-btn cursorNorm" role="button">Variables</a>
+        
+        
+        
+        <a href="tag_Constant.html" class="btn btn-default navbar-btn cursorNorm" role="button">Constant</a>
+        
+        
+        
+        <a href="tag_type().html" class="btn btn-default navbar-btn cursorNorm" role="button">type()</a>
+        
+        
+        
+        <a href="tag_id().html" class="btn btn-default navbar-btn cursorNorm" role="button">id()</a>
+        
+        
+        
+        <a href="tag_del.html" class="btn btn-default navbar-btn cursorNorm" role="button">del</a>
+        
+        
+        
+        <a href="tag_==.html" class="btn btn-default navbar-btn cursorNorm" role="button">==</a>
+        
+        
+        
+        <a href="tag_is.html" class="btn btn-default navbar-btn cursorNorm" role="button">is</a>
+        
+        
+        
+        <a href="tag_identity_operator.html" class="btn btn-default navbar-btn cursorNorm" role="button">identity_operator</a>
+        
+        
+        
+        <a href="tag_id_vs_==.html" class="btn btn-default navbar-btn cursorNorm" role="button">id_vs_==</a>
+        
+        
+        
+        <a href="tag_string_interning.html" class="btn btn-default navbar-btn cursorNorm" role="button">string_interning</a>
+        
+        
+        
+        <a href="tag_caching.html" class="btn btn-default navbar-btn cursorNorm" role="button">caching</a>
+        
+        
+        
+        <a href="tag_immutable_object.html" class="btn btn-default navbar-btn cursorNorm" role="button">immutable_object</a>
+        
+        
+        
+        <a href="tag_immutable_vs_mutable.html" class="btn btn-default navbar-btn cursorNorm" role="button">immutable_vs_mutable</a>
+        
+        
+        
+        <a href="tag_memory_management.html" class="btn btn-default navbar-btn cursorNorm" role="button">memory_management</a>
+        
+        
+        
+        <a href="tag_int.html" class="btn btn-default navbar-btn cursorNorm" role="button">int</a>
+        
+        
+        
+        <a href="tag_str.html" class="btn btn-default navbar-btn cursorNorm" role="button">str</a>
+        
+        
+        
+        <a href="tag_float.html" class="btn btn-default navbar-btn cursorNorm" role="button">float</a>
+        
+        
+        
+        <a href="tag_bin.html" class="btn btn-default navbar-btn cursorNorm" role="button">bin</a>
+        
+        
+        
+        <a href="tag_oct.html" class="btn btn-default navbar-btn cursorNorm" role="button">oct</a>
+        
+        
+        
+        <a href="tag_hex.html" class="btn btn-default navbar-btn cursorNorm" role="button">hex</a>
+        
+        
         
     </div>
 
@@ -1486,7 +1569,7 @@ Hexadecimal of 45 : 0x2d
                &copy; 2020 Asha Tutorials. All rights reserved. <br />
  
 
-<!--Site last Updated: Mar 9, 2020 <br /> -->
+<!--Site last Updated: Mar 10, 2020 <br /> -->
 <br/><br/><br/>
 
                 </div>

@@ -1,0 +1,8 @@
+---
+title: "Variables"
+tagName: Variables
+search: exclude
+permalink: tag_Variables.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

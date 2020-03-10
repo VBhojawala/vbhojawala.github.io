@@ -1,0 +1,8 @@
+---
+title: "is"
+tagName: is
+search: exclude
+permalink: tag_is.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

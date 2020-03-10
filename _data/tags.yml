@@ -5,3 +5,23 @@ allowed-tags:
   - Hello_World
   - comments
   - python_console_calculator
+  - Variables
+  - Constant
+  - type()
+  - id()
+  - del
+  - ==
+  - is
+  - identity_operator
+  - id_vs_==
+  - string_interning
+  - caching 
+  - immutable_object
+  - immutable_vs_mutable
+  - memory_management
+  - int
+  - str
+  - float
+  - bin
+  - oct
+  - hex

@@ -1,6 +1,7 @@
 ---
 title: Variables
 layout: tutorial
+tags: [Variables, Constant, type(), id(), del, ==, is, identity_operator, id_vs_==, string_interning, caching, immutable_object, immutable_vs_mutable, memory_management, int, str, float, bin, oct, hex]
 sidebar: python_sidebar
 permalink: python_variables.html
 folder: python
@@ -447,9 +448,10 @@ NameError: name 'a' is not defined</pre>
 
 <div id="tut-content"> 
     <ul>
-        <li> Int, Float, Boolean and String are immutable data types.Means once an object is created can not be changed. </li>
-        <li> While changing the value of variable holding immutable data type , a new object is created and reference of new object is assigned to the variable.</li>
-        <li> List, Set, Dictionary are mutable data structure whose value can be changed without creating new object.</li>
+        <li> Int, Boolean and String etc. are immutable data types.Means once an object is created can not be changed. </li>
+        <li> While changing the value of variable holding immutable data type , a new object is created if it does not exists in memory and reference of object is assigned to the variable.</li>
+        <li> List, Set, Dictionary are mutable data structure whose value can be changed without creating new object or changing memory address.</li>
+        <li> Key benefit of immutable object is memory saving, creating 1000 variable with same value will point the same object in memory.</li>
     </ul> 
 </div>
 
@@ -480,6 +482,17 @@ print(id(a))
 <hr/>
 
 
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Slides</strong> </li>
+    </ul> 
+</div>
+
+<div id='tut-ppt'>
+    <div class="embed-responsive embed-responsive-4by3">
+        <iframe class="embed-responsive-item" src="/docs/01Variables.pdf" allowfullscreen></iframe>
+    </div>
+</div>
 
 
 ### Shared reference
@@ -516,27 +529,11 @@ print(id(b))
 
 <hr/>
 
-<div id="tut-content"> 
-    <ul>
-        <li> <strong>Slides</strong> </li>
-    </ul> 
-</div>
 
-<div id='tut-ppt'>
-    <div class="embed-responsive embed-responsive-4by3">
-        <iframe class="embed-responsive-item" src="/docs/01Variables.pdf" allowfullscreen></iframe>
-    </div>
-</div>
 
-###  Memory Management in Python
-<p>  How long does an object stays in memory? </p>
 
-<div id="tut-content"> 
-    <ul>
-        <li> When creating an object Python creates a counter and initializes it to 1, which counts how many variable referencing the object. When Object is reference by new variable counter is increased and, when variable points to other object or deleted from memory counter decreased. </li>
-        <li> When counter reaches to zero garbage collector of Python removes an object from the memory.</li>
-    </ul> 
-</div>
+
+
 
 ### 'is' : an identity operator
 
@@ -574,7 +571,7 @@ True
 
 
 
-### id vs '=='
+### id() vs '=='
 
 <div id="tut-content"> 
     <ul>
@@ -625,6 +622,90 @@ a is b False
 </pre></div>
 
 <hr/>
+
+
+
+
+
+### Interning (Caching immutable object)
+
+<div id="tut-content"> 
+    <ul>
+        <li> Before crating new immutable object python first checks if an object already exist in memory, and if it finds in memory returns the reference to Object. </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+a = 'Hello'
+b = 'Hello'
+
+
+{% endhighlight %}
+</div>
+
+<div id="tut-content"> 
+    <ul>
+        <li> When variable b is created , Python first internally checks , if 'Hello' already exists in memory it will not create new object and returns the memory location of 'Hello' string which is already present in memory. </li>
+        <li> which means now variable a and b should be pointing at same memory location. We can check it by comparing id() of both variables. </li>
+    </ul> 
+</div>
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+a = 'Hello'
+b = 'Hello'
+
+print(id(a))
+print(id(b))
+
+{% endhighlight %}
+</div>
+
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+140266408081648
+140266408081648
+</pre></div>
+
+<hr/>
+
+
+
+
+### which immutable objects are cached in python?
+{% include callout.html content="**Note** : Interning (Caching) immutable object is implementation specific which may very. " type="primary" %} 
+<div id="tut-content"> 
+    <ol>    
+        <li> <strong>strings </strong> </li>
+        <li> <strong>Integer </strong></li>
+        <li> <strong>Tuple with immutable items only </strong> (yet to be cover)</li>
+    </ol>
+</div>
+
+
+
+
+
+###  Memory Management in Python
+<p>  How long does an object stays in memory? </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> When creating an object Python creates a counter and initializes it to 1, which counts how many variable referencing the object. When Object is reference by new variable counter is increased and, when variable points to other object or deleted from memory counter decreased. </li>
+        <li> When counter reaches to zero garbage collector of Python removes an object from the memory.</li>
+    </ul> 
+</div>
 
 
 
@@ -858,73 +939,6 @@ f1.as_integer_ratio()
 
 
 
-## Interning (Caching immutable object)
-
-<div id="tut-content"> 
-    <ul>
-        <li> Before crating new immutable object python first checks if an object already exist in memory, and if it finds in memory returns the reference to Object. </li>
-    </ul> 
-</div>
-
-{% assign code_block = code_block | plus: 1 %}
-{% assign code_block_id = "code-block-" | append: code_block %}
-{% assign code_header_id = "code-header-" | append: code_block %}
-<div id="{{ code_block_id }}" class="code-block">
-<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
-{% highlight python %}
-
-a = 'Hello'
-b = 'Hello'
-
-
-{% endhighlight %}
-</div>
-
-<div id="tut-content"> 
-    <ul>
-        <li> When variable b is created , Python first internally checks , if 'Hello' already exists in memory it will not create new object and returns the memory location of 'Hello' string which is already present in memory. </li>
-        <li> which means now variable a and b should be pointing at same memory location. We can check it by comparing id() of both variables. </li>
-    </ul> 
-</div>
-{% assign code_block = code_block | plus: 1 %}
-{% assign code_block_id = "code-block-" | append: code_block %}
-{% assign code_header_id = "code-header-" | append: code_block %}
-<div id="{{ code_block_id }}" class="code-block">
-<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
-{% highlight python %}
-
-a = 'Hello'
-b = 'Hello'
-
-print(id(a))
-print(id(b))
-
-{% endhighlight %}
-</div>
-
-
-<div class="result"><p class="result-header"><b>Output</b></p>
-<pre class="result-content">
-140266408081648
-140266408081648
-</pre></div>
-
-<hr/>
-
-
-
-
-### which immutable objects are cached in python?
-{% include callout.html content="**Note** : Interning (Caching) immutable object is implementation specific which may very. " type="primary" %} 
-<div id="tut-content"> 
-    <ol>    
-        <li> <strong>strings </strong> </li>
-        <li> <strong>Integer </strong></li>
-        <li> <strong>Tuple with immutable items only </strong> (yet to be cover)</li>
-    </ol>
-</div>
-
-
 
 
 ## Converting variable types
@@ -986,9 +1000,10 @@ Hexadecimal(1FA9A) to int : 129690
 ValueError: invalid literal for int() with base 10: '12a12'</pre>
 </div>
 
-</div>
-
 <hr/>
+
+
+
 
 
 ### float(value) 
@@ -1113,7 +1128,7 @@ Boolean to String : True
     <ul>
         <li> <strong>Binary : </strong>Starts with ' 0b '. </li>
         <li> <strong>Octal : </strong>Starts with ' 0o '. </li>
-        <li> <strong>Hexadecimal : </strong>Starts with ' 0x ' or '0X'. </li>
+        <li> <strong>Hexadecimal : </strong>Starts with ' 0x ' or ' 0X '. </li>
     </ul> 
 </div>
 
@@ -1150,7 +1165,7 @@ print(hd1)
 <hr/>
 
 
-### Integer to binary, octal and hexadecimal conversion
+### Integer to binary, octal and hexadecimal string conversion
 
 <div id="tut-content"> 
     <ul>

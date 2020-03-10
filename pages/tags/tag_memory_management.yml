@@ -1,0 +1,8 @@
+---
+title: "memory management"
+tagName: memory_management
+search: exclude
+permalink: tag_memory_management.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

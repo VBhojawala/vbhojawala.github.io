@@ -1,0 +1,8 @@
+---
+title: "hex"
+tagName: hex
+search: exclude
+permalink: tag_hex.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}
