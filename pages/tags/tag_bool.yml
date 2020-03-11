@@ -1,0 +1,8 @@
+---
+title: "bool"
+tagName: bool
+search: exclude
+permalink: tag_bool.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

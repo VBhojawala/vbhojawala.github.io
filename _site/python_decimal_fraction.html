@@ -4,11 +4,11 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="keywords" content=" ">
+<meta name="description" content="Decimal and Fraction data type class and its methods.">
+<meta name="keywords" content="Decimalround()Fractionfloatinfinity,  ">
 <meta name="theme-color" content="#36362C">
 <link rel="icon" sizes="192x192" href="images/favicon.ico">
-<title>immutable object | Asha Tutorials</title>
+<title>Decimal and Fraction | Asha Tutorials</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -265,7 +265,7 @@
                 
                 
                 
-                <li><a href="python_getting_started.html">Python</a></li>
+                <li class="active"><a href="python_getting_started.html">Python</a></li>
                 
                 
                 
@@ -283,7 +283,7 @@
 
 
 
-  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:?subject=Asha Tutorials feedback&body=I have some feedback about the immutable object page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:?subject=Asha Tutorials feedback&body=I have some feedback about the Decimal and Fraction page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
 
 </li>
 
@@ -335,7 +335,7 @@
                             searchInput: document.getElementById('search-input'),
                             resultsContainer: document.getElementById('results-container'),
                             dataSource: 'search.json',
-                            searchResultTemplate: '<li style="margin: 0px 0px;"><a href="{url}" title="immutable object       " folder="">{title} <sub>in {folder}</sub></a></li>',
+                            searchResultTemplate: '<li style="margin: 0px 0px;"><a href="{url}" title="Decimal and Fraction       " folder="python">{title} <sub>in {folder}</sub></a></li>',
                 noResultsText: '<li style="margin: 0px 0px;"><a href="#">No results found.</a></li>',
                         limit: 10,
                         fuzzy: true,
@@ -360,24 +360,77 @@
                 
 
 <ul id="mysidebar" class="nav">
-  <li class="sidebarTitle">Home </li>
+  <li class="sidebarTitle">Python </li>
   
   
   
   <li>
-      <a title="Tutorials" href="#">Tutorials</a>
+      <a title="Getting Started" href="#">Getting Started</a>
       <ul class="nav1">
           
           
           
-          <li><a title="News" href="news.html">News</a></li>
+          <li><a title="Getting started" href="python_getting_started.html">Getting started</a></li>
           
           
           
           
           
           
-          <li><a title="Python" href="python_getting_started.html">Python</a></li>
+          <li><a title="Hello World!" href="python_hello_world.html">Hello World!</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Variables" href="python_variables.html">Variables</a></li>
+          
+          
+          
+          
+          
+          
+          <li class="active"><a title="Decimal and Fraction" href="python_decimal_fraction.html">Decimal and Fraction</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Control Flow" href="#">Control Flow</a>
+      <ul class="nav1">
+          
+          
+          
+          <li><a title="Control Flow" href="python_control_flow.html">Control Flow</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Looping" href="#">Looping</a>
+      <ul class="nav1">
+          
+          
+          
+          <li><a title="While Loop" href="python_while_loop.html">While Loop</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="For Loop" href="python_for_loop.html">For Loop</a></li>
           
           
           
@@ -404,14 +457,16 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">immutable object</h1>
+   <h1 class="post-title-main">Decimal and Fraction</h1>
 </div>
 
 
 
 <div class="post-content">
 
-   
+   <!-- 
+    <div class="summary">Decimal and Fraction data type class and its methods.</div>
+    -->
 
     
     
@@ -441,197 +496,287 @@ $('#toc').on('click', 'a', function() {
 
     <!-- 
 
-    <a target="_blank" rel="noopener" href="https://github.com/ashatutorials/pages/tags/tag_immutable_object.yml" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+    <a target="_blank" rel="noopener" href="https://github.com/ashatutorials/pages/python/01_GettingStarted/03_Decimal_Fraction.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
 
      -->
 
-   <p>The following pages and posts are tagged with <button type="button" style="cursor: default" class="btn btn-default navbar-btn">immutable_object</button></p>
-<table><thead><tr><th>Title</th><th>Folder</th><th>Type</th><th>Contents</th></tr></thead>
-    <tbody>
-    
-  
-    
-   
-    
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-   
-    
-   
-    
-        
-     
-        
-     
-        
-     
-        
-     
-        
-     
-        
-     
-        
-     
-        
-     
-        
-     
-        
-     
-        
-     
-        
+   <h2 id="decimal">Decimal</h2>
+<p> A floating point that provides precision in arithmetic operation as we (humans) calculate. It's useful in financial application where calculation requires precision.</p>
 
-        <tr><td><a href="python_variables.html">Variables</a></td>
-          <td><span class="label label-folder">python</span></td>
-            <td><span class="label label-default">Page</span></td>
-          <td> variables int, float, string, boolean. Variable declaration, assignment, comparision, caching, memory management. Int and Float class methods. Conversion between variable types. Binary, Octal and Hexadecimal assignment and conversion. </td>
-        </tr>
-        
-     
-        
-     
-        
-     
-        
-     
-        
-     
-        
-     
-        
-     
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-        
-     
-        
-     
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
+<h3 id="problem-with-float-arithmetic">Problem with float arithmetic</h3>
 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+<div id="tut-content"> 
+    <ul>
+        <li> When performing arithmetic operation on float value it approximates results, rather than producing exact result.  </li>
+    </ul> 
+</div>
 
-   </tbody>
-</table>
+<div id="code-block-1" class="code-block">
+<p id="code-header-1" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-1", "code-header-1")</script>
 
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.2</span> <span class="o">-</span> <span class="mf">0.3</span><span class="p">)</span>   </code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+5.551115123125783e-17
+</pre></div>
+
+<div id="tut-content"> 
+    <ul>
+        <li> As we can see in above example result should be 0.0 as we (human) calculates, but end result is close to zero but not exactly zero.  </li>
+    </ul> 
+</div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> When we use comparision with other float values approximate result of arithmetic operation creates problem. </li>
+    </ul> 
+</div>
+
+<div id="code-block-2" class="code-block">
+<p id="code-header-2" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-2", "code-header-2")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># comparision in floating point
+</span><span class="k">print</span><span class="p">((</span><span class="mf">0.2</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">-</span> <span class="mf">0.1</span><span class="p">)</span> <span class="o">==</span> <span class="mf">0.2</span><span class="p">)</span> 
+
+<span class="k">print</span><span class="p">((</span><span class="mf">0.2</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">-</span> <span class="mf">0.1</span><span class="p">))</span> </code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+False
+0.20000000000000004
+</pre></div>
+
+<hr />
+
+<h3 id="roundnumber-ndigit--solution-for-floats-arithmetic-approximation">round(number, ndigit) : Solution for float’s arithmetic approximation.</h3>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>round(number, ndigit) : </strong> rounds given floating point number up to given precision as 'ndigit'.</li>
+    </ul> 
+</div>
+
+<div id="code-block-3" class="code-block">
+<p id="code-header-3" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-3", "code-header-3")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">result</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.2</span> <span class="o">-</span> <span class="mf">0.3</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+
+<span class="k">print</span><span class="p">(</span><span class="nb">round</span><span class="p">((</span><span class="mf">0.2</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">-</span> <span class="mf">0.1</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mf">0.2</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+0.0
+True
+</pre></div>
+
+<hr />
+
+<h3 id="decimal--floating-point-with-fixed-precision">Decimal : floating point with fixed precision.</h3>
+
+<p> Constructor :  <strong>Decimal('value', context=None)  </strong> </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li><strong> value : </strong> Decimal uses string to initialize Decimal object because when converting numeric value to binary it looses it's accuracy. </li>
+        <li><strong> context : </strong> Custom context for customizing operation parameters.</li>
+    </ul> 
+</div>
+
+<div id="code-block-4" class="code-block">
+<p id="code-header-4" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-4", "code-header-4")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">decimal</span> <span class="kn">import</span> <span class="n">Decimal</span>
+
+<span class="n">d1</span> <span class="o">=</span> <span class="n">Decimal</span><span class="p">(</span><span class="s">'0.2'</span><span class="p">)</span>
+<span class="n">d2</span> <span class="o">=</span> <span class="n">Decimal</span><span class="p">(</span><span class="s">'0.1'</span><span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">d1</span> <span class="o">+</span> <span class="n">d2</span> <span class="o">-</span> <span class="n">d2</span>
+<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+0.2
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> If we pass numeric value to Decimal constructor it will result in accuracy loss. </li>
+    </ul> 
+</div>
+
+<div id="code-block-5" class="code-block">
+<p id="code-header-5" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-5", "code-header-5")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">d1</span> <span class="o">=</span> <span class="n">Decimal</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d1</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+0.200000000000000011102230246251565404236316680908203125
+</pre></div>
+
+<hr />
+
+<h3 id="precision-in-decimal">Precision in Decimal</h3>
+
+<div id="tut-content"> 
+    <ul>
+        <li> Default precision for Decimal is  28. </li>
+    </ul> 
+</div>
+
+<div id="code-block-6" class="code-block">
+<p id="code-header-6" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-6", "code-header-6")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">p1</span> <span class="o">=</span> <span class="n">Decimal</span><span class="p">(</span><span class="s">'12.45'</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">Decimal</span><span class="p">(</span><span class="s">'45.12'</span><span class="p">)</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="n">p1</span> <span class="o">/</span> <span class="n">p2</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+0.2759308510638297872340425532
+</pre></div>
+
+<hr />
+
+<h3 id="custom-precision-for-decimal">Custom precision for Decimal</h3>
+
+<div id="code-block-7" class="code-block">
+<p id="code-header-7" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-7", "code-header-7")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">decimal</span> <span class="kn">import</span> <span class="n">getcontext</span>
+<span class="n">getcontext</span><span class="p">()</span><span class="o">.</span><span class="n">prec</span> <span class="o">=</span> <span class="mi">6</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">Decimal</span><span class="p">(</span><span class="s">'12.45'</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">Decimal</span><span class="p">(</span><span class="s">'45.12'</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">p1</span> <span class="o">/</span> <span class="n">p2</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+0.275931
+</pre></div>
+
+<hr />
+
+<h3 id="infinite-value-for-decimal-and-float">Infinite value for Decimal and float</h3>
+<h4 id="decimal-infinity">Decimal Infinity</h4>
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>'+Infinity' : </strong> Positive Infinity </li>
+        <li> <strong>'-Infinity' :  </strong> Negative Infinity</li>
+    </ul> 
+</div>
+
+<div id="code-block-8" class="code-block">
+<p id="code-header-8" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-8", "code-header-8")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">d3</span> <span class="o">=</span> <span class="n">Decimal</span><span class="p">(</span><span class="s">'+Infinity'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d3</span><span class="p">)</span>
+<span class="n">d3</span> <span class="o">=</span> <span class="n">Decimal</span><span class="p">(</span><span class="s">'-Infinity'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d3</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Infinity
+-Infinity
+</pre></div>
+
+<hr />
+
+<h4 id="float-infinity">float Infinity</h4>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>'inf' : </strong> Positive Infinity </li>
+        <li> <strong>'-inf' :  </strong> Negative Infinity</li>
+        <li> <strong>'nan' :  </strong> Not a Number</li>
+    </ul> 
+</div>
+
+<div id="code-block-9" class="code-block">
+<p id="code-header-9" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-9", "code-header-9")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># infinity
+</span><span class="n">f1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s">'inf'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f1</span><span class="p">)</span>
+
+<span class="c1"># negative infinity
+</span><span class="n">f2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s">'-inf'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f2</span><span class="p">)</span>
+
+<span class="c1"># Not a Number
+</span><span class="n">f3</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s">'nan'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f3</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+inf
+-inf
+nan
+</pre></div>
+
+<hr />
 
 
 
     <div class="tags">
         
+        <p style="display: inline;"><b>Tags: </b></p>
+        
+        
+        
+        <a href="tag_Decimal.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">Decimal</a>
+        
+        
+        
+        <a href="tag_round().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">round()</a>
+        
+        
+        
+        <a href="tag_Fraction.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">Fraction</a>
+        
+        
+        
+        <a href="tag_float.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">float</a>
+        
+        
+        
+        <a href="tag_infinity.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">infinity</a>
+        
+        
+        
     </div>
+
+<a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button">
+    <span class="fa fa-arrow-up" tabindex="-1"></span>
+</a>
 
 <!-- 
 <div id="commento"></div>
@@ -643,6 +788,34 @@ $('#toc').on('click', 'a', function() {
 </div>
 
 <!-- <hr class="shaded"/> -->
+
+<div class="seriesContext" align="right">
+
+    
+
+    
+        <a href="python_variables.html" >
+            <button type="button" class="btn btn-primary  "> 
+                 <span class="fa fa-arrow-circle-left fa-lg"></span>  Previous  <br/>
+                 Variables 
+            </button>
+        </a>
+    
+
+    
+
+    
+        <a href="python_control_flow.html" >
+            <button type="button" class="btn btn-success "> 
+                Next Section <span class="fa fa-chevron-right fa-lg"></span> <br/>  
+                Control Flow 
+            </button>
+        </a>
+    
+
+</div>
+
+
 <hr />
 
 <footer>

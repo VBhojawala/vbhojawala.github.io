@@ -22,6 +22,12 @@ entries:
         url: /python_variables.html
         output: web, pdf
 
+
+      - title: Decimal and Fraction
+        url: /python_decimal_fraction.html
+        output: web, pdf
+        
+        
         # subfolders:
         # - title: Tag archive pages
         #   output: web

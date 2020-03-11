@@ -22,6 +22,11 @@ allowed-tags:
   - int
   - str
   - float
+  - bool
   - bin
   - oct
   - hex
+  - Decimal
+  - Fraction
+  - round()
+  - infinity

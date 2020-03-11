@@ -1,16 +1,15 @@
 ---
 title: Variables
 layout: tutorial
-tags: [Variables, Constant, type(), id(), del, ==, is, identity_operator, id_vs_==, string_interning, caching, immutable_object, immutable_vs_mutable, memory_management, int, str, float, bin, oct, hex]
+tags: [Variables, Constant, type(), id(), del, ==, is, identity_operator, id_vs_==, string_interning, caching, immutable_object, immutable_vs_mutable, int, str, float, bool, bin, oct, hex, memory_management]
 sidebar: python_sidebar
 permalink: python_variables.html
 folder: python
 prev: python_hello_world.html
 prev_title: Hello World!
-next: 
-next_title:
-next_section: python_control_flow.html
-next_section_title: Control Flow
+next: python_decimal_fraction.html
+next_title: Decimal and Fraction
+summary: variables int, float, string, boolean. Variable declaration, assignment, comparision, caching, memory management. Int and Float class methods. Conversion between variable types. Binary, Octal and Hexadecimal assignment and conversion.
 ---
 
 ## Variables

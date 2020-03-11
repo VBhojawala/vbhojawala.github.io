@@ -1,0 +1,8 @@
+---
+title: "Fraction"
+tagName: Fraction
+search: exclude
+permalink: tag_Fraction.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

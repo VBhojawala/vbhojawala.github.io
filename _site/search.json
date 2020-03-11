@@ -63,13 +63,35 @@
 
 {
 "title": "Variables",
-"tags": "VariablesConstanttype()id()del==isidentity_operatorid_vs_==string_interningcachingimmutable_objectimmutable_vs_mutablememory_managementintstrfloatbinocthex",
+"tags": "VariablesConstanttype()id()del==isidentity_operatorid_vs_==string_interningcachingimmutable_objectimmutable_vs_mutableintstrfloatboolbinocthexmemory_management",
 "keywords": "",
 "url": "python_variables.html",
-"summary": "",
+"summary": "variables int, float, string, boolean. Variable declaration, assignment, comparision, caching, memory management. Int and Float class methods. Conversion between variable types. Binary, Octal and Hexadecimal assignment and conversion.",
 "folder": "python"
 }
 ,
+
+
+
+{
+"title": "Decimal and Fraction",
+"tags": "Decimalround()Fractionfloatinfinity",
+"keywords": "",
+"url": "python_decimal_fraction.html",
+"summary": "Decimal and Fraction data type class and its methods.",
+"folder": "python"
+}
+,
+
+
+
+
+
+
+
+
+
+
 
 
 
