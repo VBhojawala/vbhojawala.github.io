@@ -30,3 +30,6 @@ allowed-tags:
   - Fraction
   - round()
   - infinity
+  - signals
+  - context
+  - context_manager

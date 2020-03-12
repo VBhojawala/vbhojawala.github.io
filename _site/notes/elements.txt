@@ -81,7 +81,6 @@ print("Hello World")
 <pre id='tut-output-error' class="result-content">Traceback (most recent call last):
   File "<&zwj;input&zwj;>", line 4, in <&zwj;module&zwj;>
 NameError: name 'a' is not defined</pre>
-</div>
 
 *******************************************************************************
 *******************************************************************************
@@ -102,10 +101,10 @@ NameError: name 'a' is not defined</pre>
 
 <div id="tut-content"> 
     <ol>    
-        <li> Write string in single inverted comma [‘Hello World!’]  or double inverted comma [“Hello World!”] inside the print() function.</li>
-        <li> Write string in single inverted comma [‘Hello World!’]  or double inverted comma [“Hello World!”] inside the print() function.</li>
-        <li> Write string in single inverted comma [‘Hello World!’]  or double inverted comma [“Hello World!”] inside the print() function.</li>
-        <li> Write string in single inverted comma [‘Hello World!’]  or double inverted comma [“Hello World!”] inside the print() function.</li>
+        <li> Title </li>
+        <li> Title </li>
+        <li> Title </li>
+        <li> Title </li>
     </ol>
 </div>
 

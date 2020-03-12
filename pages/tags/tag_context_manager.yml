@@ -1,0 +1,8 @@
+---
+title: "context manager"
+tagName: context_manager
+search: exclude
+permalink: tag_context_manager.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

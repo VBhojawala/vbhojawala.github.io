@@ -1506,6 +1506,7 @@ ul.mobile-toggle > a{
 
 #tut-content ol{
     padding-left: 25px;
+    padding-top: 10px;
     margin-bottom: 15px;
     list-style-type: none;
     list-style-position: outside;

@@ -75,13 +75,19 @@
 
 {
 "title": "Decimal and Fraction",
-"tags": "Decimalround()Fractionfloatinfinity",
+"tags": "Decimalround()Fractionfloatinfinitysignalscontextcontext_manager",
 "keywords": "",
 "url": "python_decimal_fraction.html",
 "summary": "Decimal and Fraction data type class and its methods.",
 "folder": "python"
 }
 ,
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,8 @@
+---
+title: "signals"
+tagName: signals
+search: exclude
+permalink: tag_signals.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}
