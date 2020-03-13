@@ -63,7 +63,7 @@
 
 {
 "title": "Variables",
-"tags": "VariablesConstanttype()id()del==isidentity_operatorid_vs_==string_interningcachingimmutable_objectimmutable_vs_mutableintstrfloatboolbinocthexmemory_management",
+"tags": "VariablesConstanttype()id()del==isidentity_operatorid_vs_==string_interningcachingimmutable_objectimmutable_vs_mutableintstrfloatboolbinocthexmemory_managementIntegerStringBoolean",
 "keywords": "",
 "url": "python_variables.html",
 "summary": "variables int, float, string, boolean. Variable declaration, assignment, comparision, caching, memory management. Int and Float class methods. Conversion between variable types. Binary, Octal and Hexadecimal assignment and conversion.",
@@ -82,6 +82,32 @@
 "folder": "python"
 }
 ,
+
+
+
+{
+"title": "String",
+"tags": "strStringslicingslice()substringindexing",
+"keywords": "",
+"url": "python_string.html",
+"summary": "String object, indexing, slicing, concat, string operators.",
+"folder": "python"
+}
+,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

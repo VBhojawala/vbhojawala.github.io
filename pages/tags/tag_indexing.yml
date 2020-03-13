@@ -1,0 +1,8 @@
+---
+title: "indexing"
+tagName: indexing
+search: exclude
+permalink: tag_indexing.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

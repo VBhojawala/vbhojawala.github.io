@@ -1,0 +1,8 @@
+---
+title: "slice()"
+tagName: slice()
+search: exclude
+permalink: tag_slice().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

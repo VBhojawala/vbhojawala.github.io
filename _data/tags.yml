@@ -33,3 +33,10 @@ allowed-tags:
   - signals
   - context
   - context_manager
+  - Integer
+  - String
+  - Boolean
+  - slicing
+  - slice()
+  - indexing
+  - substring

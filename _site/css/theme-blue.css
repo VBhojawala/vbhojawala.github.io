@@ -317,10 +317,10 @@ p{
 }
 
 /* Word Spacing */
-p, li{
+p, li {
     word-spacing: 4px;
 }
-h1, h2, h3, h4{
+h1, h2, h3, h4, .bs-callout{
     word-spacing: 3px;
 }
 

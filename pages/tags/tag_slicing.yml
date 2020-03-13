@@ -1,0 +1,8 @@
+---
+title: "slicing"
+tagName: slicing
+search: exclude
+permalink: tag_slicing.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

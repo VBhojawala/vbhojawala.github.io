@@ -7,10 +7,9 @@ permalink: python_decimal_fraction.html
 folder: python
 prev: python_variables.html
 prev_title: Variables
-next: 
-next_title:
-next_section: python_control_flow.html
-next_section_title: Control Flow
+next: python_string.html
+next_title: String
+
 summary: Decimal and Fraction data type class and its methods.
 ---
 
@@ -480,7 +479,7 @@ Context(prec=9, rounding=ROUND_HALF_EVEN, Emin=-999999, Emax=999999, capitals=1,
 <p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
 {% highlight python %}
 
-from decimal import getcontext, setcontext, BasicContext
+from decimal import getcontext, setcontext, ExtendedContext
 
 print(getcontext())
 
