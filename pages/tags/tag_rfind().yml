@@ -1,0 +1,8 @@
+---
+title: "rfind()"
+tagName: rfind()
+search: exclude
+permalink: tag_rfind().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

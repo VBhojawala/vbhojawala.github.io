@@ -1,0 +1,8 @@
+---
+title: "startswith()"
+tagName: startswith()
+search: exclude
+permalink: tag_startswith().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

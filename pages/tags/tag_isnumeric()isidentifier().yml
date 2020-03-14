@@ -1,8 +1,0 @@
----
-title: "isnumeric()isidentifier()"
-tagName: isnumeric()isidentifier()
-search: exclude
-permalink: tag_isnumeric()isidentifier().html
-sidebar: home_sidebar
----
-{% include taglogic.html %}

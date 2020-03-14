@@ -1,0 +1,8 @@
+---
+title: "isidentifier()"
+tagName: isidentifier()
+search: exclude
+permalink: tag_isidentifier().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}
