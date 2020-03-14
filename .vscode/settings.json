@@ -1,7 +1,9 @@
 {
     "cSpell.words": [
+        "isidentifier",
         "kdenlive",
         "localcontext",
+        "lstrip",
         "ndigit"
     ]
 }

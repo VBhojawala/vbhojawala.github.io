@@ -876,6 +876,822 @@ Hello Hello Hello
 
 <hr />
 
+<h3 id="functions">Functions</h3>
+
+<h4 id="lenstr">len(str)</h4>
+
+<p> Returns length of the string. </p>
+
+<div id="code-block-14" class="code-block">
+<p id="code-header-14" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-14", "code-header-14")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="s">'Hello Python'</span>
+<span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Length :"</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Length : 12
+</pre></div>
+
+<hr />
+
+<h4 id="capitalize">capitalize()</h4>
+
+<p> Capitalizes first character of first word of string and makes rest of words small case. </p>
+
+<div class="bs-callout bs-callout-primary"><strong>Note</strong> : String is an immutable object any operation on object can not change the object, in order to modify content of existing string any string function returns new string object. We need to store the memory address of newly generated string object into variable.</div>
+
+<div id="code-block-15" class="code-block">
+<p id="code-header-15" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-15", "code-header-15")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s2</span> <span class="o">=</span> <span class="s">'hELLO World. HeLLO PyThOn.'</span>
+<span class="n">s2</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>  
+
+<span class="c1"># storing memory address of result object in variable.
+</span><span class="n">s2</span> <span class="o">=</span> <span class="n">s2</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Length : 12
+</pre></div>
+
+<hr />
+
+<h4 id="findsubstr-start-end">find(subStr, start, end)</h4>
+
+<p> Returns lowest index of matching substring in given string , if substring does not exists it returns -1. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> 'start' and 'end' </strong> are optional param, if any of them is given, executes find() function within given range of indexes only. </li>
+    </ul> 
+</div>
+
+<div id="code-block-16" class="code-block">
+<p id="code-header-16" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-16", "code-header-16")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s3</span> <span class="o">=</span> <span class="s">'Today is Sunday. It is rainy outside. Do not forget to take your umbrella.'</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'First occurrence of </span><span class="se">\'</span><span class="s">is</span><span class="se">\'</span><span class="s"> in s3 at :'</span><span class="p">,</span> <span class="n">s3</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">'is'</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'First occurrence of </span><span class="se">\'</span><span class="s">was</span><span class="se">\'</span><span class="s"> in s3 at :'</span><span class="p">,</span> <span class="n">s3</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">'was'</span><span class="p">))</span>
+
+<span class="c1"># with start and end
+</span><span class="k">print</span><span class="p">(</span><span class="s">'Occurrence of </span><span class="se">\'</span><span class="s">is</span><span class="se">\'</span><span class="s"> in s3[:10] at'</span><span class="p">,</span> <span class="n">s3</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">'is'</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Occurrence of </span><span class="se">\'</span><span class="s">is</span><span class="se">\'</span><span class="s"> in s3[10:] at'</span><span class="p">,</span> <span class="n">s3</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">'is'</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+First occurrence of 'is' in s3 at : 6
+First occurrence of 'was' in s3 at : -1
+Occurrence of 'is' in s3[:10] at 6
+Occurrence of 'is' in s3[10:] at 20
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>in : </strong> Membership operator. For string it is used for checking a substring is part of the given string or not. Return True if substring is found in string.</li>
+    </ul> 
+</div>
+
+<div id="code-block-17" class="code-block">
+<p id="code-header-17" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-17", "code-header-17")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s3</span> <span class="o">=</span> <span class="s">'Today is Sunday. It is rainy outside. Do not forget to take your umbrella.'</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="s">'is'</span> <span class="ow">in</span> <span class="n">s3</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"'is' in s3 :"</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="s">'was'</span> <span class="ow">in</span> <span class="n">s3</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"'was' in s3 :"</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+'is' in s3 : True
+'was' in s3 : False
+</pre></div>
+
+<hr />
+
+<h4 id="index-substr-start-end">index (subStr, start, end)</h4>
+
+<p> Returns lowest index of matching substring in given string , if substring does not exists it raises ValueError. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> 'start' and 'end' </strong> are optional param, if any of them is given, executes index() function within given range of indexes only. </li>
+    </ul> 
+</div>
+
+<div id="code-block-18" class="code-block">
+<p id="code-header-18" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-18", "code-header-18")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s3</span> <span class="o">=</span> <span class="s">'Today is Sunday. It is rainy outside. Do not forget to take your umbrella.'</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'First occurrence of </span><span class="se">\'</span><span class="s">is</span><span class="se">\'</span><span class="s"> in s3 at :'</span><span class="p">,</span> <span class="n">s3</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s">'is'</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'First occurrence of </span><span class="se">\'</span><span class="s">was</span><span class="se">\'</span><span class="s"> in s3 at :'</span><span class="p">,</span> <span class="n">s3</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s">'was'</span><span class="p">))</span>
+
+<span class="c1"># with start and end
+</span><span class="k">print</span><span class="p">(</span><span class="s">'Occurrence of </span><span class="se">\'</span><span class="s">is</span><span class="se">\'</span><span class="s"> in s3[:10] at :'</span><span class="p">,</span> <span class="n">s3</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s">'is'</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Occurrence of </span><span class="se">\'</span><span class="s">is</span><span class="se">\'</span><span class="s"> in s3[10:] at :'</span><span class="p">,</span> <span class="n">s3</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s">'is'</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+First occurrence of 'is' in s3 at : 6
+</pre>
+<pre id="tut-output-error" class="result-content">Traceback (most recent call last):
+  File "&lt;&zwj;input&zwj;&gt;", line 3, in &lt;&zwj;module&zwj;&gt;
+ValueError: substring not found
+</pre>
+<pre class="result-content">
+
+Occurrence of 'is' in s3[:10] at : 6
+Occurrence of 'is' in s3[10:] at : 20
+</pre>
+</div>
+
+<hr />
+
+<h4 id="upper">upper()</h4>
+
+<p> Returns string in uppercase. </p>
+
+<div id="code-block-19" class="code-block">
+<p id="code-header-19" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-19", "code-header-19")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s4</span> <span class="o">=</span> <span class="s">'Hello World!'</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s4</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+HELLO WORLD!
+</pre>
+</div>
+
+<hr />
+
+<h4 id="lower">lower()</h4>
+
+<p> Returns string in lowercase. </p>
+
+<div id="code-block-20" class="code-block">
+<p id="code-header-20" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-20", "code-header-20")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s4</span> <span class="o">=</span> <span class="s">'Hello World!'</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s4</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+hello world!
+</pre>
+</div>
+
+<hr />
+
+<h4 id="countsubstr-start-end">count(subStr, start, end)</h4>
+
+<p> Counts number of occurrences of the 'subStr' substring in the given string. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> 'start' and 'end' </strong> are optional param, if any of them is given, executes count() function within given range of indexes only. </li>
+    </ul> 
+</div>
+
+<div id="code-block-21" class="code-block">
+<p id="code-header-21" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-21", "code-header-21")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s3</span> <span class="o">=</span> <span class="s">'Today is Sunday. It is rainy outside. Do not forget to take your umbrella.'</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">s3</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s">'is'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"No of occurrences of substring 'is' in s3 :"</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+
+<span class="c1"># with start and end
+</span><span class="k">print</span><span class="p">(</span><span class="s">"No of occurrences of substring 'is' in s3[:10] :"</span><span class="p">,</span> <span class="n">s3</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s">'is'</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"No of occurrences of substring 'is' in s3[10:] :"</span><span class="p">,</span> <span class="n">s3</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s">'is'</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+No of occurrences of substring 'is' in s3 : 2
+No of occurrences of substring 'is' in s3[:10] : 1
+No of occurrences of substring 'is' in s3[10:] : 1
+</pre></div>
+
+<hr />
+
+<h4 id="rfindsubstr-start-end">rfind(subStr, start, end)</h4>
+
+<p> Returns highest index of matching substring in given string ,if substring does not exists it returns -1. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> 'start' and 'end' </strong> are optional param, if any of them is given, executes rfind() function within given range of indexes only. </li>
+    </ul> 
+</div>
+
+<div id="code-block-22" class="code-block">
+<p id="code-header-22" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-22", "code-header-22")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s3</span> <span class="o">=</span> <span class="s">'Today is Sunday. It is rainy outside. Do not forget to take your umbrella.'</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Last occurrence of </span><span class="se">\'</span><span class="s">is</span><span class="se">\'</span><span class="s"> in s3 at :'</span><span class="p">,</span> <span class="n">s3</span><span class="o">.</span><span class="n">rfind</span><span class="p">(</span><span class="s">'is'</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Last occurrence of </span><span class="se">\'</span><span class="s">was</span><span class="se">\'</span><span class="s"> in s3 at :'</span><span class="p">,</span> <span class="n">s3</span><span class="o">.</span><span class="n">rfind</span><span class="p">(</span><span class="s">'was'</span><span class="p">))</span>
+
+<span class="c1"># with start and end
+</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Last occurrence of </span><span class="se">\'</span><span class="s">is</span><span class="se">\'</span><span class="s"> in s3[:10] at :'</span><span class="p">,</span> <span class="n">s3</span><span class="o">.</span><span class="n">rfind</span><span class="p">(</span><span class="s">'is'</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Last occurrence of </span><span class="se">\'</span><span class="s">is</span><span class="se">\'</span><span class="s"> in s3[10:] at :'</span><span class="p">,</span> <span class="n">s3</span><span class="o">.</span><span class="n">rfind</span><span class="p">(</span><span class="s">'is'</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Last occurrence of 'is' in s3 at : 20
+Last occurrence of 'was' in s3 at : -1
+Last occurrence of 'is' in s3[:10] at : 6
+Last occurrence of 'is' in s3[10:] at : 20
+</pre></div>
+
+<hr />
+
+<h4 id="startswithsubstr-start-end">startswith(subStr, start, end)</h4>
+
+<p> Checks given string starts with substring 'subStr' and return True if it does else returns False. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> 'start' and 'end' </strong> are optional param, if any of them is given, executes startswith() function within given range of indexes only. </li>
+    </ul> 
+</div>
+
+<div id="code-block-23" class="code-block">
+<p id="code-header-23" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-23", "code-header-23")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s3</span> <span class="o">=</span> <span class="s">'Today is Sunday. It is rainy outside. Do not forget to take your umbrella.'</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'s3 starts with "Today" ? :'</span><span class="p">,</span> <span class="n">s3</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">"Today"</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'s3 starts with "Tomorrow" ? :'</span><span class="p">,</span> <span class="n">s3</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">"Tomorrow"</span><span class="p">))</span>
+
+<span class="c1"># with start and end
+</span><span class="k">print</span><span class="p">(</span><span class="s">'s3[15:] starts with "Today" ? :'</span><span class="p">,</span> <span class="n">s3</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">"It"</span><span class="p">,</span> <span class="mi">17</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'s3[15:] starts with "It" ? :'</span><span class="p">,</span> <span class="n">s3</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">"It"</span><span class="p">,</span> <span class="mi">17</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+s3 starts with "Today" ? : True
+s3 starts with "Tomorrow" ? : False
+s3[15:] starts with "Today" ? : True
+s3[15:] starts with "It" ? : True
+</pre></div>
+
+<hr />
+
+<h4 id="endswithsubstr-start-end">endswith(subStr, start, end)</h4>
+
+<p> check given string ends with substring 'subStr', if it does it returns True else returns False. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> 'start' and 'end' </strong> are optional param, if any of them is given, executes endswith() function within given range of indexes only. </li>
+    </ul> 
+</div>
+
+<div id="code-block-24" class="code-block">
+<p id="code-header-24" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-24", "code-header-24")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s3</span> <span class="o">=</span> <span class="s">'Today is Sunday. It is rainy outside. Do not forget to take your umbrella.'</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Does s3 ends with "umbrella." ? :'</span><span class="p">,</span> <span class="n">s3</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s">"umbrella."</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Does s3 ends with "Sunday." ? :'</span><span class="p">,</span> <span class="n">s3</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s">"Sunday."</span><span class="p">))</span>
+
+<span class="c1"># with start and end
+</span><span class="k">print</span><span class="p">(</span><span class="s">'Does s3[:16] ends with "Sunday." ? :'</span><span class="p">,</span> <span class="n">s3</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s">"Sunday."</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">16</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Does s3 ends with "umbrella." ? : True
+Does s3 ends with "Sunday." ? : False
+Does s3[:16] ends with "Sunday." ? : True
+</pre></div>
+
+<hr />
+
+<h4 id="replaceold-new-count">replace(old, new, [count])</h4>
+
+<p> Replace all occurrences of given 'old' subString with 'new' subString. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>count : </strong>If optional argument count is given, it replaces only given count of 'old' subString with 'new' subString. </li>
+    </ul> 
+</div>
+
+<div id="code-block-25" class="code-block">
+<p id="code-header-25" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-25", "code-header-25")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">smt</span> <span class="o">=</span> <span class="s">"I am learning Java. Java is most powerful language. Java is object oriented."</span>
+<span class="k">print</span><span class="p">(</span><span class="n">smt</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">smt</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'Java'</span><span class="p">,</span> <span class="s">'Python'</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">smt</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'Java'</span><span class="p">,</span> <span class="s">'Python'</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+I am learning Java. Java is most powerful language. Java is object oriented.
+I am learning Python. Python is most powerful language. Python is object oriented.
+I am learning Python. Python is most powerful language. Java is object oriented.
+</pre></div>
+
+<hr />
+
+<h4 id="stripchar">strip([char])</h4>
+
+<p> Removes white spaces from right and left hand side of string. </p>
+
+<div id="code-block-26" class="code-block">
+<p id="code-header-26" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-26", "code-header-26")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">smt</span> <span class="o">=</span> <span class="s">'    I am learning Python. Python is most powerful language. Python is object oriented.        '</span>
+<span class="k">print</span><span class="p">(</span><span class="n">smt</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">smt</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+    I am learning Python. Python is most powerful language. Python is object oriented.        
+I am learning Python. Python is most powerful language. Python is object oriented.
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>char : </strong> If optional argument 'char' given, removes given characters from right and left of the string. </li>
+    </ul> 
+</div>
+
+<div id="code-block-27" class="code-block">
+<p id="code-header-27" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-27", "code-header-27")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">smt</span> <span class="o">=</span> <span class="s">'#-&gt;Please wait, we are processing your order ........................'</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">smt</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">smt</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s">'.&gt;-# '</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+#-&gt;Please wait, we are processing your order ........................
+Please wait, we are processing your order
+</pre></div>
+
+<hr />
+
+<h4 id="rstripchar">rstrip([char])</h4>
+
+<p> Removes white spaces from right hand side only. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>char : </strong> If optional argument 'char' given, removes given characters from right of the string. </li>
+    </ul> 
+</div>
+
+<div id="code-block-28" class="code-block">
+<p id="code-header-28" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-28", "code-header-28")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">smt</span> <span class="o">=</span> <span class="s">'    I am learning Python. Python is most powerful language. Python is object oriented.        '</span>
+<span class="k">print</span><span class="p">(</span><span class="n">smt</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">smt</span><span class="o">.</span><span class="n">rstrip</span><span class="p">())</span>
+
+<span class="n">smt</span> <span class="o">=</span> <span class="s">'#-&gt;Please wait, we are processing your order ........................'</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="o">+</span><span class="n">smt</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">smt</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s">'.&gt;-# '</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+    I am learning Python. Python is most powerful language. Python is object oriented.        
+I am learning Python. Python is most powerful language. Python is object oriented.        
+#-&gt;Please wait, we are processing your order ........................
+Please wait, we are processing your order ........................
+</pre></div>
+
+<hr />
+
+<h4 id="lstripchar">lstrip([char])</h4>
+
+<p> Removes white spaces from left hand side only. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>char : </strong> If optional argument 'char' given, removes given characters from left of the string. </li>
+    </ul> 
+</div>
+
+<div id="code-block-29" class="code-block">
+<p id="code-header-29" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-29", "code-header-29")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">smt</span> <span class="o">=</span> <span class="s">'    I am learning Python. Python is most powerful language. Python is object oriented.        '</span>
+<span class="k">print</span><span class="p">(</span><span class="n">smt</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">smt</span><span class="o">.</span><span class="n">lstrip</span><span class="p">())</span>
+
+<span class="n">smt</span> <span class="o">=</span> <span class="s">'#-&gt;Please wait, we are processing your order ........................'</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="o">+</span><span class="n">smt</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">smt</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s">'.&gt;-#, '</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+    I am learning Python. Python is most powerful language. Python is object oriented.        
+I am learning Python. Python is most powerful language. Python is object oriented.        
+#-&gt;Please wait, we are processing your order ........................
+Please wait, we are processing your order ........................
+</pre></div>
+
+<hr />
+
+<h4 id="expandtabs">expandtabs()</h4>
+
+<p> Expands \t in to a tab space. </p>
+
+<div id="code-block-30" class="code-block">
+<p id="code-header-30" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-30", "code-header-30")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">tabS</span> <span class="o">=</span> <span class="s">'My name :</span><span class="se">\t</span><span class="s"> Mr.ABC'</span>
+<span class="k">print</span><span class="p">(</span><span class="n">tabS</span><span class="o">.</span><span class="n">expandtabs</span><span class="p">())</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+My name :        Mr.ABC
+</pre></div>
+
+<hr />
+
+<h4 id="splitsepnone-maxsplit-1">split(sep=None, maxsplit=-1)</h4>
+
+<p> Splits the string in to collection (list) of strings using given separator. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>maxsplit : </strong> If optional argument 'maxsplit' given, limits the no of splits to be made using given separator. </li>
+    </ul> 
+</div>
+
+<div id="code-block-31" class="code-block">
+<p id="code-header-31" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-31", "code-header-31")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">animals</span> <span class="o">=</span> <span class="s">'cow,cat,dog,hen,goat'</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">animals</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">','</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+<span class="n">animals</span> <span class="o">=</span> <span class="s">'cow,cat,dog,hen,goat'</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">animals</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">','</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+['cow', 'cat', 'dog', 'hen', 'goat']
+['cow', 'cat', 'dog', 'hen,goat']
+</pre></div>
+
+<hr />
+
+<h4 id="join">join()</h4>
+
+<p> Joins collection of string into single string with provided separator. </p>
+
+<div id="code-block-32" class="code-block">
+<p id="code-header-32" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-32", "code-header-32")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">animalList</span> <span class="o">=</span> <span class="p">[</span><span class="s">'cow'</span><span class="p">,</span> <span class="s">'cat'</span><span class="p">,</span> <span class="s">'dog'</span><span class="p">,</span> <span class="s">'hen'</span><span class="p">,</span> <span class="s">'goat'</span><span class="p">]</span>
+
+<span class="n">sep</span> <span class="o">=</span> <span class="s">','</span>
+<span class="k">print</span><span class="p">(</span><span class="n">sep</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">animalList</span><span class="p">))</span>
+
+<span class="n">sep</span> <span class="o">=</span> <span class="s">' '</span>
+<span class="k">print</span><span class="p">(</span><span class="n">sep</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">animalList</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+cow,cat,dog,hen,goat
+cow cat dog hen goat
+</pre></div>
+
+<hr />
+
+<h4 id="splitlineskeepends">splitlines([keepends])</h4>
+
+<p> Returns List of lines split by new line separator. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>keepends : </strong> Optional argument if given True it keeps new line separator with the result strings. </li>
+    </ul> 
+</div>
+
+<div id="code-block-33" class="code-block">
+<p id="code-header-33" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-33", "code-header-33")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">lines</span> <span class="o">=</span> <span class="s">'''</span><span class="se">\
+</span><span class="s">Today is Sunday.
+It's rainy outside.
+Don't forget to take your umbrella.</span><span class="se">\
+</span><span class="s">'''</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">lines</span><span class="o">.</span><span class="n">splitlines</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="n">lines</span><span class="o">.</span><span class="n">splitlines</span><span class="p">(</span><span class="bp">True</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+['Today is Sunday.', "It's rainy outside.", "Don't forget to take your umbrella."]
+['Today is Sunday.\n', "It's rainy outside.\n", "Don't forget to take your umbrella."]
+</pre></div>
+
+<hr />
+
+<h3 id="string-validation-functions">String Validation functions</h3>
+
+<h4 id="isalnum">isalnum()</h4>
+
+<p> Returns True if string contains only alphanumeric  [a-z A-z 0-9] values.</p>
+
+<div id="code-block-34" class="code-block">
+<p id="code-header-34" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-34", "code-header-34")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="s">'Abc123'</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="s">'Abc 123'</span>
+<span class="n">s3</span> <span class="o">=</span> <span class="s">'Abc_123'</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Is s1 alphanumeric ? :'</span><span class="p">,</span> <span class="n">s1</span><span class="o">.</span><span class="n">isalnum</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Is s2 alphanumeric ? :'</span><span class="p">,</span> <span class="n">s2</span><span class="o">.</span><span class="n">isalnum</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Is s3 alphanumeric ? :'</span><span class="p">,</span> <span class="n">s3</span><span class="o">.</span><span class="n">isalnum</span><span class="p">())</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Is s1 alphanumeric ? : True
+Is s2 alphanumeric ? : False
+Is s3 alphanumeric ? : False
+</pre></div>
+
+<hr />
+
+<h4 id="isalpha">isalpha()</h4>
+
+<p> Returns True if String contains only alphabets [A-Z,a-z].</p>
+
+<div id="code-block-35" class="code-block">
+<p id="code-header-35" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-35", "code-header-35")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="s">'Abc'</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="s">'Abc '</span>
+<span class="n">s3</span> <span class="o">=</span> <span class="s">'Abc_123'</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Is s1 alphabetic ? :'</span><span class="p">,</span> <span class="n">s1</span><span class="o">.</span><span class="n">isalpha</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Is s2 alphabetic ? :'</span><span class="p">,</span> <span class="n">s2</span><span class="o">.</span><span class="n">isalpha</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Is s3 alphabetic ? :'</span><span class="p">,</span> <span class="n">s3</span><span class="o">.</span><span class="n">isalpha</span><span class="p">())</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Is s1 alphabetic ? : True
+Is s2 alphabetic ? : False
+Is s3 alphabetic ? : False
+</pre></div>
+
+<hr />
+
+<h4 id="isdecimal">isdecimal()</h4>
+
+<p> Returns True if String contains only decimals [0-9].</p>
+
+<div id="code-block-36" class="code-block">
+<p id="code-header-36" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-36", "code-header-36")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="s">'123'</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="s">'2</span><span class="se">\u00B2</span><span class="s">'</span>         <span class="c1"># unicode digit 2^2
+</span><span class="n">s3</span> <span class="o">=</span> <span class="s">u'½'</span>              <span class="c1"># fraction value
+</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Is s1 decimal ? :'</span><span class="p">,</span> <span class="n">s1</span><span class="o">.</span><span class="n">isdecimal</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Is s2 decimal ? :'</span><span class="p">,</span> <span class="n">s2</span><span class="o">.</span><span class="n">isdecimal</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Is s3 decimal ? :'</span><span class="p">,</span> <span class="n">s3</span><span class="o">.</span><span class="n">isdecimal</span><span class="p">())</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Is s1 decimal ? : True
+Is s2 decimal ? : False
+Is s3 decimal ? : False
+</pre></div>
+
+<hr />
+
+<h4 id="isdigit">isdigit()</h4>
+
+<p> Returns True if string is a digit.</p>
+
+<div id="code-block-37" class="code-block">
+<p id="code-header-37" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-37", "code-header-37")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="s">'123'</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="s">'2</span><span class="se">\u00B2</span><span class="s">'</span>         <span class="c1"># unicode digit 2^2
+</span><span class="n">s3</span> <span class="o">=</span> <span class="s">u'½'</span>              <span class="c1"># fraction value
+</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Is s1 digit ? :'</span><span class="p">,</span> <span class="n">s1</span><span class="o">.</span><span class="n">isdigit</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Is s2 digit ? :'</span><span class="p">,</span> <span class="n">s2</span><span class="o">.</span><span class="n">isdigit</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Is s3 digit ? :'</span><span class="p">,</span> <span class="n">s3</span><span class="o">.</span><span class="n">isdigit</span><span class="p">())</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Is s1 digit ? : True
+Is s2 digit ? : True
+Is s3 digit ? : False
+</pre></div>
+
+<hr />
+
+<h4 id="isnumeric">isnumeric()</h4>
+
+<p>  Returns True if String is contains numeric value.</p>
+
+<div id="code-block-38" class="code-block">
+<p id="code-header-38" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-38", "code-header-38")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="s">'123'</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="s">'2</span><span class="se">\u00B2</span><span class="s">'</span>         <span class="c1"># unicode digit 2^2
+</span><span class="n">s3</span> <span class="o">=</span> <span class="s">u'½'</span>              <span class="c1"># fraction value
+</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Is s1 numeric ? :'</span><span class="p">,</span> <span class="n">s1</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Is s2 numeric ? :'</span><span class="p">,</span> <span class="n">s2</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Is s3 numeric ? :'</span><span class="p">,</span> <span class="n">s3</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">())</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Is s1 numeric ? : True
+Is s2 numeric ? : True
+Is s3 numeric ? : True
+</pre></div>
+
+<hr />
+
+<h4 id="isidentifier">isidentifier()</h4>
+
+<p>  Returns True if String is a valid identifier(variable name).</p>
+
+<div id="code-block-39" class="code-block">
+<p id="code-header-39" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-39", "code-header-39")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="s">'var1'</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="s">'1st'</span>
+<span class="n">s3</span> <span class="o">=</span> <span class="s">'__9'</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Is s1 a valid identifier? :'</span><span class="p">,</span> <span class="n">s1</span><span class="o">.</span><span class="n">isidentifier</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Is s2 a valid identifier? :'</span><span class="p">,</span> <span class="n">s2</span><span class="o">.</span><span class="n">isidentifier</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Is s3 a valid identifier? :'</span><span class="p">,</span> <span class="n">s3</span><span class="o">.</span><span class="n">isidentifier</span><span class="p">())</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Is s1 a valid identifier? : True
+Is s2 a valid identifier? : False
+Is s3 a valid identifier? : True
+</pre></div>
+
+<hr />
+
+<h4 id="islower">islower()</h4>
+
+<p> Returns True if string is in lower case. </p>
+
+<div id="code-block-40" class="code-block">
+<p id="code-header-40" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-40", "code-header-40")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="s">'Hello'</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="s">'hellp'</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Is s1 in lower case ? : '</span><span class="p">,</span> <span class="n">s1</span><span class="o">.</span><span class="n">islower</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Is s2 in lower case ? : '</span><span class="p">,</span> <span class="n">s2</span><span class="o">.</span><span class="n">islower</span><span class="p">())</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Is s1 in lower case ? :  False
+Is s2 in lower case ? :  True
+</pre></div>
+
+<hr />
+
+<h4 id="isupper">isupper()</h4>
+
+<p> Returns True if string is in upper case. </p>
+
+<div id="code-block-41" class="code-block">
+<p id="code-header-41" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-41", "code-header-41")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="s">'Hello'</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="s">'HELLO'</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Is s1 in upper case ? : '</span><span class="p">,</span> <span class="n">s1</span><span class="o">.</span><span class="n">isupper</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Is s2 in upper case ? : '</span><span class="p">,</span> <span class="n">s2</span><span class="o">.</span><span class="n">isupper</span><span class="p">())</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Is s1 in upper case ? :  False
+Is s2 in upper case ? :  True
+</pre></div>
+
+<hr />
+
+<h4 id="istitle">istitle()</h4>
+
+<p> Returns True if string is in title case. </p>
+
+<div id="code-block-42" class="code-block">
+<p id="code-header-42" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-42", "code-header-42")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="s">'Hello'</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="s">'HELLO'</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Is s1 in title case ? : '</span><span class="p">,</span> <span class="n">s1</span><span class="o">.</span><span class="n">istitle</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Is s2 in title case ? : '</span><span class="p">,</span> <span class="n">s2</span><span class="o">.</span><span class="n">istitle</span><span class="p">())</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Is s1 in title case ? :  True
+Is s2 in title case ? :  False
+</pre></div>
+
+<hr />
+
+<h4 id="isspace">isspace()</h4>
+
+<p> Returns True if string contains only white spaces. </p>
+
+<div id="code-block-43" class="code-block">
+<p id="code-header-43" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-43", "code-header-43")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">smt</span> <span class="o">=</span> <span class="s">'          '</span>
+<span class="k">print</span><span class="p">(</span><span class="n">smt</span><span class="o">.</span><span class="n">isspace</span><span class="p">())</span>
+
+<span class="n">smt</span> <span class="o">=</span> <span class="s">'          .'</span>
+<span class="k">print</span><span class="p">(</span><span class="n">smt</span><span class="o">.</span><span class="n">isspace</span><span class="p">())</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+True
+False
+</pre></div>
+
+<hr />
+
 
 
     <div class="tags">
@@ -960,8 +1776,6 @@ Hello Hello Hello
                     <p><img src="images/company_logo.png" alt="Company logo"/></p>
                &copy; 2020 Asha Tutorials. All rights reserved. <br />
  
-
-<!--Site last Updated: Mar 13, 2020 <br /> -->
 <br/><br/><br/>
 
                 </div>

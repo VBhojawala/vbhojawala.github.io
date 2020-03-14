@@ -516,6 +516,1116 @@ Hello Hello Hello
 
 
 
+### Functions
+
+
+#### len(str)
+
+<p> Returns length of the string. </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+s1 = 'Hello Python'
+length = len(s1)
+print("Length :", length)
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Length : 12
+</pre></div>
+
+<hr/>
+
+
+
+#### capitalize()
+
+<p> Capitalizes first character of first word of string and makes rest of words small case. </p>
+
+{% include callout.html content="**Note** : String is an immutable object any operation on object can not change the object, in order to modify content of existing string any string function returns new string object. We need to store the memory address of newly generated string object into variable." type="primary" %} 
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+s2 = 'hELLO World. HeLLO PyThOn.'
+s2.capitalize()
+print(s2)  
+
+# storing memory address of result object in variable.
+s2 = s2.capitalize()
+print(s2)
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Length : 12
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+#### find(subStr, start, end)
+
+<p> Returns lowest index of matching substring in given string , if substring does not exists it returns -1. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> 'start' and 'end' </strong> are optional param, if any of them is given, executes find() function within given range of indexes only. </li>
+    </ul> 
+</div>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+s3 = 'Today is Sunday. It is rainy outside. Do not forget to take your umbrella.'
+print('First occurrence of \'is\' in s3 at :', s3.find('is'))
+print('First occurrence of \'was\' in s3 at :', s3.find('was'))
+
+# with start and end
+print('Occurrence of \'is\' in s3[:10] at', s3.find('is', 0, 10))
+print('Occurrence of \'is\' in s3[10:] at', s3.find('is', 10))
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+First occurrence of 'is' in s3 at : 6
+First occurrence of 'was' in s3 at : -1
+Occurrence of 'is' in s3[:10] at 6
+Occurrence of 'is' in s3[10:] at 20
+</pre></div>
+
+<hr/>
+
+
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>in : </strong> Membership operator. For string it is used for checking a substring is part of the given string or not. Return True if substring is found in string.</li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+s3 = 'Today is Sunday. It is rainy outside. Do not forget to take your umbrella.'
+
+result = 'is' in s3
+print("'is' in s3 :", result)
+
+result = 'was' in s3
+print("'was' in s3 :", result)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+'is' in s3 : True
+'was' in s3 : False
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+
+#### index (subStr, start, end)
+
+<p> Returns lowest index of matching substring in given string , if substring does not exists it raises ValueError. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> 'start' and 'end' </strong> are optional param, if any of them is given, executes index() function within given range of indexes only. </li>
+    </ul> 
+</div>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+s3 = 'Today is Sunday. It is rainy outside. Do not forget to take your umbrella.'
+print('First occurrence of \'is\' in s3 at :', s3.index('is'))
+print('First occurrence of \'was\' in s3 at :', s3.index('was'))
+
+# with start and end
+print('Occurrence of \'is\' in s3[:10] at :', s3.index('is', 0, 10))
+print('Occurrence of \'is\' in s3[10:] at :', s3.index('is', 10))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+First occurrence of 'is' in s3 at : 6
+</pre>
+<pre id='tut-output-error' class="result-content">Traceback (most recent call last):
+  File "<&zwj;input&zwj;>", line 3, in <&zwj;module&zwj;>
+ValueError: substring not found
+</pre>
+<pre class="result-content">
+
+Occurrence of 'is' in s3[:10] at : 6
+Occurrence of 'is' in s3[10:] at : 20
+</pre>
+</div>
+
+<hr/>
+
+
+
+
+
+
+
+
+
+
+#### upper()
+
+<p> Returns string in uppercase. </p>
+
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+s4 = 'Hello World!'
+print(s4.upper())
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+HELLO WORLD!
+</pre>
+</div>
+
+<hr/>
+
+
+
+
+#### lower()
+
+<p> Returns string in lowercase. </p>
+
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+s4 = 'Hello World!'
+print(s4.lower())
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+hello world!
+</pre>
+</div>
+
+<hr/>
+
+
+
+
+
+
+
+
+
+
+
+#### count(subStr, start, end)
+
+<p> Counts number of occurrences of the 'subStr' substring in the given string. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> 'start' and 'end' </strong> are optional param, if any of them is given, executes count() function within given range of indexes only. </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+s3 = 'Today is Sunday. It is rainy outside. Do not forget to take your umbrella.'
+c = s3.count('is')
+print("No of occurrences of substring 'is' in s3 :", c)
+
+# with start and end
+print("No of occurrences of substring 'is' in s3[:10] :", s3.count('is', 0, 10))
+print("No of occurrences of substring 'is' in s3[10:] :", s3.count('is', 10))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+No of occurrences of substring 'is' in s3 : 2
+No of occurrences of substring 'is' in s3[:10] : 1
+No of occurrences of substring 'is' in s3[10:] : 1
+</pre></div>
+
+<hr/>
+
+
+
+
+
+#### rfind(subStr, start, end)
+
+<p> Returns highest index of matching substring in given string ,if substring does not exists it returns -1. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> 'start' and 'end' </strong> are optional param, if any of them is given, executes rfind() function within given range of indexes only. </li>
+    </ul> 
+</div>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+s3 = 'Today is Sunday. It is rainy outside. Do not forget to take your umbrella.'
+
+print('Last occurrence of \'is\' in s3 at :', s3.rfind('is'))
+print('Last occurrence of \'was\' in s3 at :', s3.rfind('was'))
+
+# with start and end
+
+print('Last occurrence of \'is\' in s3[:10] at :', s3.rfind('is', 0, 10))
+print('Last occurrence of \'is\' in s3[10:] at :', s3.rfind('is', 10))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Last occurrence of 'is' in s3 at : 20
+Last occurrence of 'was' in s3 at : -1
+Last occurrence of 'is' in s3[:10] at : 6
+Last occurrence of 'is' in s3[10:] at : 20
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+
+#### startswith(subStr, start, end)
+
+<p> Checks given string starts with substring 'subStr' and return True if it does else returns False. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> 'start' and 'end' </strong> are optional param, if any of them is given, executes startswith() function within given range of indexes only. </li>
+    </ul> 
+</div>
+
+
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+s3 = 'Today is Sunday. It is rainy outside. Do not forget to take your umbrella.'
+print('s3 starts with "Today" ? :', s3.startswith("Today"))
+print('s3 starts with "Tomorrow" ? :', s3.startswith("Tomorrow"))
+
+# with start and end
+print('s3[15:] starts with "Today" ? :', s3.startswith("It", 17))
+print('s3[15:] starts with "It" ? :', s3.startswith("It", 17))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+s3 starts with "Today" ? : True
+s3 starts with "Tomorrow" ? : False
+s3[15:] starts with "Today" ? : True
+s3[15:] starts with "It" ? : True
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+
+
+#### endswith(subStr, start, end)
+
+<p> check given string ends with substring 'subStr', if it does it returns True else returns False. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> 'start' and 'end' </strong> are optional param, if any of them is given, executes endswith() function within given range of indexes only. </li>
+    </ul> 
+</div>
+
+
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+s3 = 'Today is Sunday. It is rainy outside. Do not forget to take your umbrella.'
+print('Does s3 ends with "umbrella." ? :', s3.endswith("umbrella."))
+print('Does s3 ends with "Sunday." ? :', s3.endswith("Sunday."))
+
+# with start and end
+print('Does s3[:16] ends with "Sunday." ? :', s3.endswith("Sunday.", 0, 16))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Does s3 ends with "umbrella." ? : True
+Does s3 ends with "Sunday." ? : False
+Does s3[:16] ends with "Sunday." ? : True
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+
+#### replace(old, new, [count])
+
+<p> Replace all occurrences of given 'old' subString with 'new' subString. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>count : </strong>If optional argument count is given, it replaces only given count of 'old' subString with 'new' subString. </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+smt = "I am learning Java. Java is most powerful language. Java is object oriented."
+print(smt)
+print(smt.replace('Java', 'Python'))
+print(smt.replace('Java', 'Python', 2))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+I am learning Java. Java is most powerful language. Java is object oriented.
+I am learning Python. Python is most powerful language. Python is object oriented.
+I am learning Python. Python is most powerful language. Java is object oriented.
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+#### strip([char])
+
+<p> Removes white spaces from right and left hand side of string. </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+smt = '    I am learning Python. Python is most powerful language. Python is object oriented.        '
+print(smt)
+print(smt.strip())
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+    I am learning Python. Python is most powerful language. Python is object oriented.        
+I am learning Python. Python is most powerful language. Python is object oriented.
+</pre></div>
+
+<hr/>
+
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>char : </strong> If optional argument 'char' given, removes given characters from right and left of the string. </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+smt = '#->Please wait, we are processing your order ........................'
+
+print(smt)
+print(smt.strip('.>-# '))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+#->Please wait, we are processing your order ........................
+Please wait, we are processing your order
+</pre></div>
+
+<hr/>
+
+
+
+
+#### rstrip([char])
+
+<p> Removes white spaces from right hand side only. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>char : </strong> If optional argument 'char' given, removes given characters from right of the string. </li>
+    </ul> 
+</div>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+smt = '    I am learning Python. Python is most powerful language. Python is object oriented.        '
+print(smt)
+print(smt.rstrip())
+
+smt = '#->Please wait, we are processing your order ........................'
+print('\n'+smt)
+print(smt.rstrip('.>-# '))
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+    I am learning Python. Python is most powerful language. Python is object oriented.        
+I am learning Python. Python is most powerful language. Python is object oriented.        
+#->Please wait, we are processing your order ........................
+Please wait, we are processing your order ........................
+</pre></div>
+
+<hr/>
+
+
+
+
+
+#### lstrip([char])
+
+<p> Removes white spaces from left hand side only. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>char : </strong> If optional argument 'char' given, removes given characters from left of the string. </li>
+    </ul> 
+</div>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+smt = '    I am learning Python. Python is most powerful language. Python is object oriented.        '
+print(smt)
+print(smt.lstrip())
+
+smt = '#->Please wait, we are processing your order ........................'
+print('\n'+smt)
+print(smt.lstrip('.>-#, '))
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+    I am learning Python. Python is most powerful language. Python is object oriented.        
+I am learning Python. Python is most powerful language. Python is object oriented.        
+#->Please wait, we are processing your order ........................
+Please wait, we are processing your order ........................
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+#### expandtabs()
+
+<p> Expands \t in to a tab space. </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+tabS = 'My name :\t Mr.ABC'
+print(tabS.expandtabs())
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+My name :        Mr.ABC
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+#### split(sep=None, maxsplit=-1)
+
+<p> Splits the string in to collection (list) of strings using given separator. </p>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>maxsplit : </strong> If optional argument 'maxsplit' given, limits the no of splits to be made using given separator. </li>
+    </ul> 
+</div>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+animals = 'cow,cat,dog,hen,goat'
+result = animals.split(',')
+print(result)
+
+animals = 'cow,cat,dog,hen,goat'
+result = animals.split(',', 3)
+print(result)
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+['cow', 'cat', 'dog', 'hen', 'goat']
+['cow', 'cat', 'dog', 'hen,goat']
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+
+
+#### join()
+
+<p> Joins collection of string into single string with provided separator. </p>
+
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+animalList = ['cow', 'cat', 'dog', 'hen', 'goat']
+
+sep = ','
+print(sep.join(animalList))
+
+sep = ' '
+print(sep.join(animalList))
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+cow,cat,dog,hen,goat
+cow cat dog hen goat
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+#### splitlines([keepends])
+
+<p> Returns List of lines split by new line separator. </p>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>keepends : </strong> Optional argument if given True it keeps new line separator with the result strings. </li>
+    </ul> 
+</div>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+lines = '''\
+Today is Sunday.
+It's rainy outside.
+Don't forget to take your umbrella.\
+'''
+
+print(lines.splitlines())
+print(lines.splitlines(True))
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+['Today is Sunday.', "It's rainy outside.", "Don't forget to take your umbrella."]
+['Today is Sunday.\n', "It's rainy outside.\n", "Don't forget to take your umbrella."]
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+### String Validation functions
+
+
+#### isalnum()
+
+<p> Returns True if string contains only alphanumeric  [a-z A-z 0-9] values.</p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+s1 = 'Abc123'
+s2 = 'Abc 123'
+s3 = 'Abc_123'
+
+print('Is s1 alphanumeric ? :', s1.isalnum())
+print('Is s2 alphanumeric ? :', s2.isalnum())
+print('Is s3 alphanumeric ? :', s3.isalnum())
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Is s1 alphanumeric ? : True
+Is s2 alphanumeric ? : False
+Is s3 alphanumeric ? : False
+</pre></div>
+
+<hr/>
+
+
+
+
+
+#### isalpha()
+
+<p> Returns True if String contains only alphabets [A-Z,a-z].</p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+s1 = 'Abc'
+s2 = 'Abc '
+s3 = 'Abc_123'
+
+print('Is s1 alphabetic ? :', s1.isalpha())
+print('Is s2 alphabetic ? :', s2.isalpha())
+print('Is s3 alphabetic ? :', s3.isalpha())
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Is s1 alphabetic ? : True
+Is s2 alphabetic ? : False
+Is s3 alphabetic ? : False
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+
+#### isdecimal()
+
+<p> Returns True if String contains only decimals [0-9].</p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+s1 = '123'
+s2 = '2\u00B2'         # unicode digit 2^2
+s3 = u'½'              # fraction value
+
+print('Is s1 decimal ? :', s1.isdecimal())
+print('Is s2 decimal ? :', s2.isdecimal())
+print('Is s3 decimal ? :', s3.isdecimal())
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Is s1 decimal ? : True
+Is s2 decimal ? : False
+Is s3 decimal ? : False
+</pre></div>
+
+<hr/>
+
+
+#### isdigit()
+
+<p> Returns True if string is a digit.</p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+s1 = '123'
+s2 = '2\u00B2'         # unicode digit 2^2
+s3 = u'½'              # fraction value
+
+print('Is s1 digit ? :', s1.isdigit())
+print('Is s2 digit ? :', s2.isdigit())
+print('Is s3 digit ? :', s3.isdigit())
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Is s1 digit ? : True
+Is s2 digit ? : True
+Is s3 digit ? : False
+</pre></div>
+
+<hr/>
+
+
+
+
+#### isnumeric()
+
+<p>  Returns True if String is contains numeric value.</p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+s1 = '123'
+s2 = '2\u00B2'         # unicode digit 2^2
+s3 = u'½'              # fraction value
+
+print('Is s1 numeric ? :', s1.isnumeric())
+print('Is s2 numeric ? :', s2.isnumeric())
+print('Is s3 numeric ? :', s3.isnumeric())
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Is s1 numeric ? : True
+Is s2 numeric ? : True
+Is s3 numeric ? : True
+</pre></div>
+
+<hr/>
+
+
+
+
+#### isidentifier()
+
+<p>  Returns True if String is a valid identifier(variable name).</p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+s1 = 'var1'
+s2 = '1st'
+s3 = '__9'
+
+print('Is s1 a valid identifier? :', s1.isidentifier())
+print('Is s2 a valid identifier? :', s2.isidentifier())
+print('Is s3 a valid identifier? :', s3.isidentifier())
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Is s1 a valid identifier? : True
+Is s2 a valid identifier? : False
+Is s3 a valid identifier? : True
+</pre></div>
+
+<hr/>
+
+
+
+#### islower()
+
+<p> Returns True if string is in lower case. </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+s1 = 'Hello'
+s2 = 'hellp'
+
+print('Is s1 in lower case ? : ', s1.islower())
+print('Is s2 in lower case ? : ', s2.islower())
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Is s1 in lower case ? :  False
+Is s2 in lower case ? :  True
+</pre></div>
+
+<hr/>
+
+
+
+
+
+#### isupper()
+
+<p> Returns True if string is in upper case. </p>
+
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+s1 = 'Hello'
+s2 = 'HELLO'
+
+print('Is s1 in upper case ? : ', s1.isupper())
+print('Is s2 in upper case ? : ', s2.isupper())
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Is s1 in upper case ? :  False
+Is s2 in upper case ? :  True
+</pre></div>
+
+<hr/>
+
+
+#### istitle()
+
+<p> Returns True if string is in title case. </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+s1 = 'Hello'
+s2 = 'HELLO'
+
+print('Is s1 in title case ? : ', s1.istitle())
+print('Is s2 in title case ? : ', s2.istitle())
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Is s1 in title case ? :  True
+Is s2 in title case ? :  False
+</pre></div>
+
+<hr/>
 
 
 
@@ -534,14 +1644,33 @@ Hello Hello Hello
 
 
 
+#### isspace()
 
+<p> Returns True if string contains only white spaces. </p>
 
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
 
+smt = '          '
+print(smt.isspace())
 
+smt = '          .'
+print(smt.isspace())
 
+{% endhighlight %}
+</div>
 
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+True
+False
+</pre></div>
 
-
+<hr/>
 
 
 

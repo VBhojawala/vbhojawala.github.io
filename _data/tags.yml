@@ -40,3 +40,8 @@ allowed-tags:
   - slice()
   - indexing
   - substring
+  - len()
+  - capitalize()
+  - find()
+  - in
+  - index ()
