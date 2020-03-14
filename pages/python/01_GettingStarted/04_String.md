@@ -902,8 +902,8 @@ print('s3 starts with "Today" ? :', s3.startswith("Today"))
 print('s3 starts with "Tomorrow" ? :', s3.startswith("Tomorrow"))
 
 # with start and end
-print('s3[15:] starts with "Today" ? :', s3.startswith("It", 17))
-print('s3[15:] starts with "It" ? :', s3.startswith("It", 17))
+print('s3[17:] starts with "It" ? :', s3.startswith("It", 17))
+print('s3[17:] starts with "Was" ? :', s3.startswith("Was", 17))
 
 
 {% endhighlight %}
@@ -913,8 +913,8 @@ print('s3[15:] starts with "It" ? :', s3.startswith("It", 17))
 <pre class="result-content">
 s3 starts with "Today" ? : True
 s3 starts with "Tomorrow" ? : False
-s3[15:] starts with "Today" ? : True
-s3[15:] starts with "It" ? : True
+s3[17:] starts with "It" ? : True
+s3[17:] starts with "Was" ? : False
 </pre></div>
 
 <hr/>
