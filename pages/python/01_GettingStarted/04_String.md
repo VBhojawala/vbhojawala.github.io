@@ -1,7 +1,7 @@
 ---
 title: String
 layout: tutorial
-tags: [str, String, slicing, slice(), substring, indexing]
+tags: [str, String, slicing, slice(), substring, indexing, len(), capitalize(), find(), in, index (), upper(), lower(), count(), rfind(),startswith(), endswith(), replace(), strip(), lstrip(), rstrip(), expandtabs(),split(), join(), splitlines(), isalnum(), isalpha(), isdecimal(), isdigit(), isnumeric(),isidentifier(), islower(), isupper(), istitle(), isspace()]
 sidebar: python_sidebar
 permalink: python_string.html
 folder: python

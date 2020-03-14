@@ -1,0 +1,8 @@
+---
+title: "capitalize()"
+tagName: capitalize()
+search: exclude
+permalink: tag_capitalize().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

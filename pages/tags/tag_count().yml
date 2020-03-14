@@ -1,0 +1,8 @@
+---
+title: "count()"
+tagName: count()
+search: exclude
+permalink: tag_count().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

@@ -1,0 +1,8 @@
+---
+title: "splitlines()"
+tagName: splitlines()
+search: exclude
+permalink: tag_splitlines().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

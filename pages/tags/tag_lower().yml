@@ -1,0 +1,8 @@
+---
+title: "lower()"
+tagName: lower()
+search: exclude
+permalink: tag_lower().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

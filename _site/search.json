@@ -87,13 +87,67 @@
 
 {
 "title": "String",
-"tags": "strStringslicingslice()substringindexing",
+"tags": "strStringslicingslice()substringindexinglen()capitalize()find()inindex ()upper()lower()count()rfind()startswith()endswith()replace()strip()lstrip()rstrip()expandtabs()split()join()splitlines()isalnum()isalpha()isdecimal()isdigit()isnumeric()isidentifier()islower()isupper()istitle()isspace()",
 "keywords": "",
 "url": "python_string.html",
 "summary": "String object, indexing, slicing, concat, string operators.",
 "folder": "python"
 }
 ,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

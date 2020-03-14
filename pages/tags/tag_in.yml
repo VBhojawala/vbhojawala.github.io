@@ -1,0 +1,8 @@
+---
+title: "in"
+tagName: in
+search: exclude
+permalink: tag_in.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

@@ -1,0 +1,8 @@
+---
+title: "endswith()"
+tagName: endswith()
+search: exclude
+permalink: tag_endswith().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

@@ -1,0 +1,8 @@
+---
+title: "lstrip()"
+tagName: lstrip()
+search: exclude
+permalink: tag_lstrip().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

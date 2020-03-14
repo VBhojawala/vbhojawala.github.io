@@ -1,0 +1,8 @@
+---
+title: "islower()"
+tagName: islower()
+search: exclude
+permalink: tag_islower().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

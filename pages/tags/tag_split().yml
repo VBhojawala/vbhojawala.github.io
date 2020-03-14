@@ -1,0 +1,8 @@
+---
+title: "split()"
+tagName: split()
+search: exclude
+permalink: tag_split().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

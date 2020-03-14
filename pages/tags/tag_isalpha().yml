@@ -1,0 +1,8 @@
+---
+title: "isalpha()"
+tagName: isalpha()
+search: exclude
+permalink: tag_isalpha().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}
