@@ -1692,6 +1692,909 @@ False
 
 <hr />
 
+<h2 id="string-formatting">String formatting</h2>
+
+<h3 id="printf-style-old-way--compatible-with-all-versions-of-python">printf() style (Old way : Compatible with all versions of Python)</h3>
+
+<p> Following table contains symbol for most useful data types : </p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Symbol</th>
+      <th style="text-align: left">Variable Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">d</td>
+      <td style="text-align: left">Integer</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">f</td>
+      <td style="text-align: left">Float</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">F</td>
+      <td style="text-align: left">Float with special values nan -&gt; NAN, inf -&gt; INF</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">s</td>
+      <td style="text-align: left">String using str()</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">r</td>
+      <td style="text-align: left">String using repr()</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">c</td>
+      <td style="text-align: left">integer or single character</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">a</td>
+      <td style="text-align: left">ascii</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">b</td>
+      <td style="text-align: left">binary</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">o</td>
+      <td style="text-align: left">Octal</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">x</td>
+      <td style="text-align: left">Hexadecimal</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">X</td>
+      <td style="text-align: left">Hexadecimal Upper case</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">e</td>
+      <td style="text-align: left">Exponent with small letter ‘e’</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">E</td>
+      <td style="text-align: left">Exponent with capital letter ‘E’</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">g</td>
+      <td style="text-align: left">General format depending on magnitude it display in fixed point if larger than exponent</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">G</td>
+      <td style="text-align: left">same as ‘g’  but display nan -&gt; NAN, inf -&gt; INF</td>
+    </tr>
+  </tbody>
+</table>
+
+<p> Special symbols : </p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Symbol</th>
+      <th style="text-align: left">Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">#</td>
+      <td style="text-align: left">value conversion</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">+</td>
+      <td style="text-align: left">sign character</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: left">pad zero to match width</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">-</td>
+      <td style="text-align: left">left justified</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">’ ‘</td>
+      <td style="text-align: left">leave space for sign bit</td>
+    </tr>
+  </tbody>
+</table>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Formatting different variable types</strong>  </li>
+    </ul> 
+</div>
+
+<div id="code-block-44" class="code-block">
+<p id="code-header-44" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-44", "code-header-44")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># string formatting
+</span><span class="n">greeting</span> <span class="o">=</span> <span class="s">'Hello </span><span class="si">%</span><span class="s">s , have a nice day'</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s">'Bob'</span>
+<span class="k">print</span><span class="p">(</span><span class="n">greeting</span> <span class="o">%</span> <span class="n">name</span><span class="p">)</span>
+
+<span class="n">name</span> <span class="o">=</span> <span class="s">'Kim'</span>
+<span class="k">print</span><span class="p">(</span><span class="n">greeting</span> <span class="o">%</span> <span class="n">name</span><span class="p">)</span>
+
+
+<span class="c1"># int formatting
+</span><span class="k">print</span><span class="p">(</span><span class="s">'Loan duration is </span><span class="si">%</span><span class="s">d years. '</span> <span class="o">%</span> <span class="mi">9</span><span class="p">)</span>
+
+<span class="c1"># float formatting
+</span><span class="n">intRate</span> <span class="o">=</span> <span class="mf">7.4178401</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Loan interest rate is </span><span class="si">%</span><span class="s">f'</span> <span class="o">%</span> <span class="n">intRate</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Hello Bob , have a nice day
+Hello Kim , have a nice day
+Loan duration is 9 years. 
+Loan interest rate is 7.417840
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Passing multiple types of data in single string :</strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-45" class="code-block">
+<p id="code-header-45" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-45", "code-header-45")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">smt</span> <span class="o">=</span> <span class="s">'Hello </span><span class="si">%</span><span class="s">s , Welcome to ABC bank. Your Loan interest rate is </span><span class="si">%</span><span class="s">f and loan duration is </span><span class="si">%</span><span class="s">d years.'</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s">'Bob'</span>
+<span class="n">intRate</span> <span class="o">=</span> <span class="mf">7.4178401</span>
+<span class="n">duration</span> <span class="o">=</span> <span class="mi">9</span>
+<span class="k">print</span><span class="p">(</span><span class="n">smt</span> <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">intRate</span><span class="p">,</span> <span class="n">duration</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Hello Bob , Welcome to ABC bank. Your Loan interest rate is 7.417840 and loan duration is 9 years.
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Rounding float value : </strong> '%.nf' syntax is used for rounding float where n is replaced by up to number of digits to round. For example %.3f will round the given float up to three decimal places </li>
+    </ul> 
+</div>
+
+<div id="code-block-46" class="code-block">
+<p id="code-header-46" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-46", "code-header-46")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">intRate</span> <span class="o">=</span> <span class="mf">7.4178401</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Loan interest rate is </span><span class="si">%.3</span><span class="s">f and duration is </span><span class="si">%</span><span class="s">d years'</span> <span class="o">%</span> <span class="p">(</span><span class="n">intRate</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Loan interest rate is 7.418 and duration is 4 years
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Using '%s' as  string converter str(var). </strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-47" class="code-block">
+<p id="code-header-47" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-47", "code-header-47")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">'Loan interest rate is </span><span class="si">%</span><span class="s">s and duration is </span><span class="si">%</span><span class="s">s years'</span> <span class="o">%</span> <span class="p">(</span><span class="mf">7.15</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Loan interest rate is 7.15 and duration is 4 years
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Dictionary based formatting</strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-48" class="code-block">
+<p id="code-header-48" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-48", "code-header-48")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">d1</span> <span class="o">=</span> <span class="p">{</span><span class="s">'intRate'</span><span class="p">:</span> <span class="mf">7.4178401</span><span class="p">,</span> <span class="s">'duration'</span><span class="p">:</span> <span class="mi">5</span><span class="p">}</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Loan interest rate is </span><span class="si">%(intRate).3</span><span class="s">f and duration is </span><span class="si">%(duration).2</span><span class="s">d years'</span> <span class="o">%</span> <span class="n">d1</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Loan interest rate is 7.418 and duration is 05 years
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Giving size to each variable</strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-49" class="code-block">
+<p id="code-header-49" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-49", "code-header-49")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">smt</span> <span class="o">=</span> <span class="s">'</span><span class="si">%12</span><span class="s">s | </span><span class="si">%15</span><span class="s">d | </span><span class="si">%6.3</span><span class="s">f | </span><span class="si">%2.2</span><span class="s">d'</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'   Name      |       amount    |  rate  | yrs '</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'-----------------------------------------------'</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">smt</span> <span class="o">%</span> <span class="p">(</span><span class="s">'Kim'</span><span class="p">,</span> <span class="mi">15000</span><span class="p">,</span> <span class="mf">7.4178401</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">smt</span> <span class="o">%</span> <span class="p">(</span><span class="s">'Samantha'</span><span class="p">,</span> <span class="mi">9500</span><span class="p">,</span> <span class="mf">6.55</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">smt</span> <span class="o">%</span> <span class="p">(</span><span class="s">'Pete Clark'</span><span class="p">,</span> <span class="mi">25000</span><span class="p">,</span> <span class="mf">6.95</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+   Name      |       amount    |  rate  | yrs 
+-----------------------------------------------
+         Kim |           15000 |  7.418 | 05
+    Samantha |            9500 |  6.550 | 07
+  Pete Clark |           25000 |  6.950 | 12
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Value conversion using  ' # '</strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-50" class="code-block">
+<p id="code-header-50" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-50", "code-header-50")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">'Hexadecimal of 56 is </span><span class="si">%#5</span><span class="s">x'</span> <span class="o">%</span> <span class="mi">56</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Octal of 56 is </span><span class="si">%#5</span><span class="s">o'</span> <span class="o">%</span> <span class="mi">56</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Hexadecimal of 56 is  0x38
+Octal of 56 is  0o70
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Showing sign bit even for positive number using ' + '.</strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-51" class="code-block">
+<p id="code-header-51" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-51", "code-header-51")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">'Value of Int a is </span><span class="si">%</span><span class="s">d'</span> <span class="o">%</span> <span class="mi">108</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Value of Int a is </span><span class="si">%</span><span class="s">d'</span> <span class="o">%</span> <span class="o">-</span><span class="mi">108</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">Value of Int a is </span><span class="si">%+</span><span class="s">d'</span> <span class="o">%</span> <span class="mi">108</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Value of Int a is </span><span class="si">%+</span><span class="s">d'</span> <span class="o">%</span> <span class="o">-</span><span class="mi">108</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Value of Int a is 108
+Value of Int a is -108
+
+Value of Int a is +108
+Value of Int a is -108
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Leaving white space for sign bit always using ' '.</strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-52" class="code-block">
+<p id="code-header-52" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-52", "code-header-52")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">'Value of Int a is </span><span class="si">% </span><span class="s">d'</span> <span class="o">%</span> <span class="mi">108</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Value of Int a is </span><span class="si">% </span><span class="s">d'</span> <span class="o">%</span> <span class="o">-</span><span class="mi">108</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Value of Int a is  108
+Value of Int a is -108
+</pre></div>
+
+<hr />
+
+<h3 id="using-format-method-for-python-26-and-later">Using format() method (for Python 2.6 and later)</h3>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>format() :</strong> Formats string on position based argument. </li>
+    </ul> 
+</div>
+
+<div id="code-block-53" class="code-block">
+<p id="code-header-53" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-53", "code-header-53")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">fString</span> <span class="o">=</span> <span class="s">'I am learning {0} language.'</span>
+<span class="n">l1</span> <span class="o">=</span> <span class="s">"Python"</span>
+<span class="n">l2</span> <span class="o">=</span> <span class="s">"Java"</span>
+<span class="k">print</span><span class="p">(</span><span class="n">fString</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">l1</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">fString</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">l2</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+I am learning Python language.
+I am learning Java language.
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>With multiple argument and different data types in different order.</strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-54" class="code-block">
+<p id="code-header-54" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-54", "code-header-54")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">fString</span> <span class="o">=</span> <span class="s">'My name is {}. I am {} years old . My occupation is {}.'</span>
+<span class="k">print</span><span class="p">(</span><span class="n">fString</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="s">'Tintin'</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="s">'campaigning reporter'</span><span class="p">))</span>
+
+<span class="n">fString</span> <span class="o">=</span> <span class="s">'My name is {0}. I am {2} years old . My occupation is {1}.'</span>
+<span class="k">print</span><span class="p">(</span><span class="n">fString</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="s">'Tintin'</span><span class="p">,</span> <span class="s">'campaigning reporter'</span><span class="p">,</span> <span class="mi">19</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+My name is Tintin. I am 19 years old . My occupation is campaigning reporter.
+My name is Tintin. I am 19 years old . My occupation is campaigning reporter.
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Justifying variable values : </strong> Strings are by default right justified and numbers are left justified.</li>
+    </ul> 
+</div>
+
+<div class="bs-callout bs-callout-primary"><strong>syntax :</strong>  {value:[justify]width.precision} </div>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Symbol</th>
+      <th style="text-align: left">Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">^</td>
+      <td style="text-align: left">Center justified</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">&lt;</td>
+      <td style="text-align: left">Left justified</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">&gt;</td>
+      <td style="text-align: left">Right justified</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">=</td>
+      <td style="text-align: left">Adds padding after sign for numeric value only</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">+</td>
+      <td style="text-align: left">Show sign for both Positive and Negative</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: left">prepend zeros to match the width</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">,</td>
+      <td style="text-align: left">numeric digit formatting e.g. 100,000,000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">space</td>
+      <td style="text-align: left">leave blank space for positive sign</td>
+    </tr>
+  </tbody>
+</table>
+
+<div id="code-block-55" class="code-block">
+<p id="code-header-55" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-55", "code-header-55")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">fString</span> <span class="o">=</span> <span class="s">'{0:7s} education load interest rate is {1:5.2f} and duration is {2:2d} years.'</span>
+<span class="k">print</span><span class="p">(</span><span class="n">fString</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="s">'BOA'</span><span class="p">,</span> <span class="mf">8.4567</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="n">fString</span> <span class="o">=</span> <span class="s">'{0:^7} education load interest rate is {1:&gt;5.2f} and duration is {2:0&gt;2} years.'</span>
+<span class="k">print</span><span class="p">(</span><span class="n">fString</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="s">'BOA'</span><span class="p">,</span> <span class="mf">8.4567</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+BOA     education load interest rate is  8.46 and duration is  5 years.
+  BOA   education load interest rate is  8.46 and duration is 05 years.
+</pre></div>
+
+<hr />
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>format() using named field.  </strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-56" class="code-block">
+<p id="code-header-56" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-56", "code-header-56")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">fString</span> <span class="o">=</span> <span class="s">'{bName:7} education load interest rate is {intRate:.2f} and duration is {years:2} years.'</span>
+<span class="k">print</span><span class="p">(</span><span class="n">fString</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">bName</span><span class="o">=</span><span class="s">'BOA'</span><span class="p">,</span> <span class="n">intRate</span><span class="o">=</span><span class="mf">8.4567</span><span class="p">,</span> <span class="n">years</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="c1"># Justification
+</span><span class="n">fString</span> <span class="o">=</span> <span class="s">'{bName:^7} education load interest rate is {intRate:&gt;5.2f} and duration is {years:0&gt;2} years.'</span>
+<span class="k">print</span><span class="p">(</span><span class="n">fString</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">bName</span><span class="o">=</span><span class="s">'BOA'</span><span class="p">,</span> <span class="n">intRate</span><span class="o">=</span><span class="mf">8.4567</span><span class="p">,</span> <span class="n">years</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+BOA     education load interest rate is 8.46 and duration is  5 years.
+  BOA   education load interest rate is  8.46 and duration is 05 years.
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Binary Octal and Hexadecimal conversion from integer</strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-57" class="code-block">
+<p id="code-header-57" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-57", "code-header-57")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">'Binary {0:b}  Octal {0:o}  Hexadecimal {0:X}'</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="mi">125</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Binary 1111101  Octal 175  Hexadecimal 7D
+</pre></div>
+
+<hr />
+
+<h3 id="f-string-python-36-or-later">f-string (Python 3.6 or later)</h3>
+<p> It is simplified version of format() method</p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>'f' or 'F' :</strong> before string marks the string as f-string.</li>
+        <li> <strong>'{}' :</strong> contains expression which are evaluated at runtime. </li>
+        <li> <strong>'{{ ' :</strong> to escape '{' inside the f-string</li>
+        <li> <strong>'!' :</strong> used for conversion after the expression inside curly braces, such as '!s' for str() , '!r' for repr() , '!a' for ascii()</li>
+    </ul> 
+</div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Printing Variable values using f-string</strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-58" class="code-block">
+<p id="code-header-58" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-58", "code-header-58")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">v</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Value of v is {v}'</span><span class="p">)</span>
+<span class="n">v</span><span class="o">=</span> <span class="mi">25</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Value of v is {v}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Value of v is -10
+Value of v is 25
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Space after sign value using ' = ' and showing always sign bit using ' + '</strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-59" class="code-block">
+<p id="code-header-59" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-59", "code-header-59")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">v</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2500</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'{v:&gt;10}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'{v:=10}'</span><span class="p">)</span>
+
+<span class="c1"># Always showing sign of numeric
+</span><span class="n">v</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'</span><span class="se">\n</span><span class="s">{v:=10}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'{v:=+10}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+     -2500
+-     2500
+        50
++       50
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Pre-pending zeros to make equal lengths.</strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-60" class="code-block">
+<p id="code-header-60" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-60", "code-header-60")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">v1</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">v2</span> <span class="o">=</span> <span class="mi">1259</span>
+<span class="n">v3</span> <span class="o">=</span> <span class="mi">78</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'{v1:05} '</span><span class="p">,</span> <span class="n">f</span><span class="s">'{v2:05}'</span><span class="p">,</span> <span class="n">f</span><span class="s">'{v3:05}'</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+00100 
+01259
+00078
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Always leave the space for sign bit </strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-61" class="code-block">
+<p id="code-header-61" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-61", "code-header-61")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">v1</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">v2</span> <span class="o">=</span> <span class="mi">1259</span>
+<span class="n">v3</span> <span class="o">=</span> <span class="o">-</span><span class="mi">78</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'{v1:05} '</span><span class="p">,</span> <span class="n">f</span><span class="s">'{v2:05}'</span><span class="p">,</span> <span class="n">f</span><span class="s">'{v3:05}'</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'</span><span class="se">\n</span><span class="s">{v1: 05} '</span><span class="p">,</span> <span class="n">f</span><span class="s">'{v2: 05}'</span><span class="p">,</span> <span class="n">f</span><span class="s">'{v3: 05}'</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+00100 
+01259
+-0078
+
+ 0100 
+ 1259
+-0078
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Binary Octal and Hexadecimal conversion from integer</strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-62" class="code-block">
+<p id="code-header-62" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-62", "code-header-62")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">v</span> <span class="o">=</span> <span class="mi">125</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Binary {v:b}  Octal {v:o}  Hexadecimal {v:X}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Binary 1111101  Octal 175  Hexadecimal 7D
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Spacing with f-string</strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-63" class="code-block">
+<p id="code-header-63" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-63", "code-header-63")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">bName</span> <span class="o">=</span> <span class="s">'ABC Bank'</span>
+<span class="n">intRate</span> <span class="o">=</span> <span class="mf">6.78451</span>
+<span class="n">years</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">amount</span> <span class="o">=</span> <span class="mi">1000000000</span>
+
+<span class="n">opt</span> <span class="o">=</span> <span class="n">f</span><span class="s">'''{bName} business loan of amount {amount:,d} with </span><span class="se">\
+</span><span class="s">interest rate is {intRate:3.2f} and duration is {years:2d} years.
+'''</span>
+<span class="k">print</span><span class="p">(</span><span class="n">opt</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+ABC Bank business loan of amount 1,000,000,000 with interest rate is 6.78 and duration is  5 years.
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Evaluating expression in f-string</strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-64" class="code-block">
+<p id="code-header-64" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-64", "code-header-64")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">' 4 * 4  equals {4*4}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">' 4 ^ 4  equals {4**4}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">' 4 - 4  equals {4-4}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+ 4 * 4  equals 16
+ 4 ^ 4  equals 256
+ 4 - 4  equals 0
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Applying functions inside f-string :</strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-65" class="code-block">
+<p id="code-header-65" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-65", "code-header-65")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">'Bank Name         Interest     Duration'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'----------------------------------------'</span><span class="p">)</span>
+
+
+<span class="n">bName</span> <span class="o">=</span> <span class="s">'BoI Bank'</span>
+<span class="n">intRate</span> <span class="o">=</span> <span class="mf">6.78451</span>
+<span class="n">years</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'{bName.upper():15s}  {intRate:^10.2f}  {years:^12d}'</span><span class="p">)</span>
+
+
+<span class="n">bName</span> <span class="o">=</span> <span class="s">'Bank of America'</span>
+<span class="n">intRate</span> <span class="o">=</span> <span class="mf">6.2984</span>
+<span class="n">years</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'{bName.upper():15s}  {intRate:^10.2f}  {years:^12d}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Bank Name         Interest     Duration
+----------------------------------------
+BOI BANK            6.78          5      
+BANK OF AMERICA     6.30          5  
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Value conversion</strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-66" class="code-block">
+<p id="code-header-66" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-66", "code-header-66")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">decimal</span> <span class="kn">import</span> <span class="n">Decimal</span>
+<span class="n">intRate</span> <span class="o">=</span> <span class="n">Decimal</span><span class="p">(</span><span class="s">'6.78451'</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Interest rate is {intRate!s:10s}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Interest rate is {intRate!r:10s}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Interest rate is 6.78451   
+Interest rate is Decimal('6.78451')
+</pre></div>
+
+<hr />
+
+<h2 id="string-templating">String Templating</h2>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Template(str) : </strong> takes template string as argument and returns Template object </li>
+        <li> <strong>$identifier or ${identifier} :  </strong> is substitution place holder which will be replaced by substitute value. </li>
+        <li> $$ is used to print $ inside template string. </li>
+    </ul> 
+</div>
+
+<p> <strong>Methods</strong> </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> substitute(mapping={}, /, **kwargs) :</strong>Returns string replacing substitution place holder with value rovided in either mapping or with keyword arguments. </li>
+        <li> <strong> safe_substitute(mapping={}, /, **kwargs) : </strong> same as substitute, but does not raise KeyError in case of missing value for place holder.</li>
+    </ul> 
+</div>
+
+<p> <strong>Attributes</strong> </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> template :</strong> Returns template string passed when creating template object. </li>
+    </ul> 
+</div>
+
+<hr />
+
+<p> <strong>Example</strong> </p>
+
+<div id="code-block-67" class="code-block">
+<p id="code-header-67" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-67", "code-header-67")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">Template</span>
+<span class="n">iCard</span> <span class="o">=</span> <span class="n">Template</span><span class="p">(</span><span class="s">'''</span><span class="se">\
+</span><span class="s">Name         : $fname $lname
+Phone Number : $phno
+Blood Group  : ${bgroup}'''</span><span class="p">)</span>
+
+<span class="c1"># with keyword arguments
+</span><span class="k">print</span><span class="p">(</span><span class="n">iCard</span><span class="o">.</span><span class="n">substitute</span><span class="p">(</span><span class="n">fname</span><span class="o">=</span><span class="s">'Robert'</span><span class="p">,</span> <span class="n">lname</span><span class="o">=</span><span class="s">'Styris'</span><span class="p">,</span> <span class="n">phno</span><span class="o">=</span><span class="mi">3134554447</span><span class="p">,</span> <span class="n">bgroup</span><span class="o">=</span><span class="s">'A+'</span><span class="p">))</span>
+
+<span class="c1"># with map object:
+</span><span class="n">p1</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">fname</span><span class="o">=</span><span class="s">'Robert'</span><span class="p">,</span> <span class="n">lname</span><span class="o">=</span><span class="s">'Styris'</span><span class="p">,</span> <span class="n">phno</span><span class="o">=</span><span class="mi">3134554447</span><span class="p">,</span> <span class="n">bgroup</span><span class="o">=</span><span class="s">'A+'</span><span class="p">)</span>
+<span class="c1"># or
+</span><span class="n">p1</span> <span class="o">=</span> <span class="p">{</span><span class="s">'fname'</span><span class="p">:</span> <span class="s">'Robert'</span><span class="p">,</span> <span class="s">'lname'</span><span class="p">:</span> <span class="s">'Styris'</span><span class="p">,</span> <span class="s">'phno'</span><span class="p">:</span> <span class="mi">3134554447</span><span class="p">,</span> <span class="s">'bgroup'</span><span class="p">:</span> <span class="s">'A+'</span><span class="p">}</span>
+
+<span class="k">print</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">iCard</span><span class="o">.</span><span class="n">substitute</span><span class="p">(</span><span class="n">p1</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Name         : Robert Styris
+Phone Number : 3134554447
+Blood Group  : A+
+
+Name         : Robert Styris
+Phone Number : 3134554447
+Blood Group  : A+
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>substitute() raises KeyError if place holder value is missing. To avoid exception use safe_substitute(). </strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-68" class="code-block">
+<p id="code-header-68" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-68", "code-header-68")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">Template</span>
+
+<span class="n">iCard</span> <span class="o">=</span> <span class="n">Template</span><span class="p">(</span><span class="s">'''</span><span class="se">\
+</span><span class="s">Name         : $fname $lname
+Phone Number : $phno
+Blood Group  : ${bgroup}'''</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">iCard</span><span class="o">.</span><span class="n">substitute</span><span class="p">(</span><span class="n">fname</span><span class="o">=</span><span class="s">'Robert'</span><span class="p">,</span> <span class="n">phno</span><span class="o">=</span><span class="mi">3134554447</span><span class="p">,</span> <span class="n">bgroup</span><span class="o">=</span><span class="s">'A+'</span><span class="p">))</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">iCard</span><span class="o">.</span><span class="n">safe_substitute</span><span class="p">(</span><span class="n">fname</span><span class="o">=</span><span class="s">'Robert'</span><span class="p">,</span> <span class="n">phno</span><span class="o">=</span><span class="mi">3134554447</span><span class="p">,</span> <span class="n">bgroup</span><span class="o">=</span><span class="s">'A+'</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre id="tut-output-error" class="result-content">Traceback (most recent call last):
+  File "&lt;&zwj;input&zwj;&gt;", line 8, in &lt;&zwj;module&zwj;&gt;
+  File "/usr/local/lib/python3.8/string.py", line 126, in substitute
+    return self.pattern.sub(convert, self.template)
+  File "/usr/local/lib/python3.8/string.py", line 119, in convert
+    return str(mapping[named])
+KeyError: 'lname'
+
+</pre>
+
+<pre class="result-content">
+Name         : Robert $lname
+Phone Number : 3134554447
+Blood Group  : A+
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Returning original string object from Template object.</strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-69" class="code-block">
+<p id="code-header-69" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-69", "code-header-69")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">Template</span>
+
+<span class="n">iCard</span> <span class="o">=</span> <span class="n">Template</span><span class="p">(</span><span class="s">'''</span><span class="se">\
+</span><span class="s">Name         : $fname $lname
+Phone Number : $phno
+Blood Group  : ${bgroup}'''</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">iCard</span><span class="o">.</span><span class="n">template</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Name         : $fname $lname
+Phone Number : $phno
+Blood Group  : ${bgroup}
+</pre></div>
+
+<hr />
+
 
 
     <div class="tags">

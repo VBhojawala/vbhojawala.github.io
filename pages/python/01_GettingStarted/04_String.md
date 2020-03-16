@@ -1676,5 +1676,1143 @@ False
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## String formatting
+
+### printf() style (Old way : Compatible with all versions of Python)
+
+<p> Following table contains symbol for most useful data types : </p>
+
+Symbol |  Variable Type
+:-----:| :--- 
+ d      |  Integer
+ f      |  Float
+ F      |  Float with special values nan -> NAN, inf -> INF
+ s      |  String using str()
+ r      |  String using repr()
+ c      |  integer or single character
+ a      |  ascii
+ b      |  binary
+ o      |  Octal
+ x      |  Hexadecimal
+ X      |  Hexadecimal Upper case
+ e      |  Exponent with small letter 'e'
+ E      |  Exponent with capital letter 'E'
+ g      |  General format depending on magnitude it display in fixed point if larger than exponent
+ G      |  same as 'g'  but display nan -> NAN, inf -> INF
+
+
+<p> Special symbols : </p>
+
+Symbol |  Meaning
+:-----:| :--- 
+ #      |  value conversion
+ +      |  sign character
+ 0      |  pad zero to match width
+ -      |  left justified
+ ' '    |  leave space for sign bit
+
+
+
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Formatting different variable types</strong>  </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+# string formatting
+greeting = 'Hello %s , have a nice day'
+name = 'Bob'
+print(greeting % name)
+
+name = 'Kim'
+print(greeting % name)
+
+
+# int formatting
+print('Loan duration is %d years. ' % 9)
+
+# float formatting
+intRate = 7.4178401
+print('Loan interest rate is %f' % intRate)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Hello Bob , have a nice day
+Hello Kim , have a nice day
+Loan duration is 9 years. 
+Loan interest rate is 7.417840
+</pre></div>
+
+<hr/>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Passing multiple types of data in single string :</strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+smt = 'Hello %s , Welcome to ABC bank. Your Loan interest rate is %f and loan duration is %d years.'
+name = 'Bob'
+intRate = 7.4178401
+duration = 9
+print(smt % (name, intRate, duration))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Hello Bob , Welcome to ABC bank. Your Loan interest rate is 7.417840 and loan duration is 9 years.
+</pre></div>
+
+<hr/>
+
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Rounding float value : </strong> '%.nf' syntax is used for rounding float where n is replaced by up to number of digits to round. For example %.3f will round the given float up to three decimal places </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+intRate = 7.4178401
+print('Loan interest rate is %.3f and duration is %d years' % (intRate, 4))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Loan interest rate is 7.418 and duration is 4 years
+</pre></div>
+
+<hr/>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Using '%s' as  string converter str(var). </strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+print('Loan interest rate is %s and duration is %s years' % (7.15, 4))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Loan interest rate is 7.15 and duration is 4 years
+</pre></div>
+
+<hr/>
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Dictionary based formatting</strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+d1 = {'intRate': 7.4178401, 'duration': 5}
+print('Loan interest rate is %(intRate).3f and duration is %(duration).2d years' % d1)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Loan interest rate is 7.418 and duration is 05 years
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Giving size to each variable</strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+
+smt = '%12s | %15d | %6.3f | %2.2d'
+
+print('   Name      |       amount    |  rate  | yrs ')
+print('-----------------------------------------------')
+
+print(smt % ('Kim', 15000, 7.4178401, 5))
+print(smt % ('Samantha', 9500, 6.55, 7))
+print(smt % ('Pete Clark', 25000, 6.95, 12))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+   Name      |       amount    |  rate  | yrs 
+-----------------------------------------------
+         Kim |           15000 |  7.418 | 05
+    Samantha |            9500 |  6.550 | 07
+  Pete Clark |           25000 |  6.950 | 12
+</pre></div>
+
+<hr/>
+
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Value conversion using  ' # '</strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+print('Hexadecimal of 56 is %#5x' % 56)
+print('Octal of 56 is %#5o' % 56)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Hexadecimal of 56 is  0x38
+Octal of 56 is  0o70
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Showing sign bit even for positive number using ' + '.</strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+print('Value of Int a is %d' % 108)
+print('Value of Int a is %d' % -108)
+
+print('\nValue of Int a is %+d' % 108)
+print('Value of Int a is %+d' % -108)
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Value of Int a is 108
+Value of Int a is -108
+
+Value of Int a is +108
+Value of Int a is -108
+</pre></div>
+
+<hr/>
+
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Leaving white space for sign bit always using ' '.</strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+print('Value of Int a is % d' % 108)
+print('Value of Int a is % d' % -108)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Value of Int a is  108
+Value of Int a is -108
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+### Using format() method (for Python 2.6 and later)
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>format() :</strong> Formats string on position based argument. </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+fString = 'I am learning {0} language.'
+l1 = "Python"
+l2 = "Java"
+print(fString.format(l1))
+print(fString.format(l2))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+I am learning Python language.
+I am learning Java language.
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>With multiple argument and different data types in different order.</strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+fString = 'My name is {}. I am {} years old . My occupation is {}.'
+print(fString.format('Tintin', 19, 'campaigning reporter'))
+
+fString = 'My name is {0}. I am {2} years old . My occupation is {1}.'
+print(fString.format('Tintin', 'campaigning reporter', 19))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+My name is Tintin. I am 19 years old . My occupation is campaigning reporter.
+My name is Tintin. I am 19 years old . My occupation is campaigning reporter.
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+
+
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Justifying variable values : </strong> Strings are by default right justified and numbers are left justified.</li>
+    </ul> 
+</div>
+
+
+{% include callout.html content="**syntax :**  {value:[justify]width.precision} " type="primary" %} 
+
+Symbol |  Meaning
+:-----:| :--- 
+   ^       |   Center justified
+   <       |   Left justified
+   >       |   Right justified
+   =       |   Adds padding after sign for numeric value only
+   +       |   Show sign for both Positive and Negative
+   0       |   prepend zeros to match the width
+   ,       |   numeric digit formatting e.g. 100,000,000
+ space     |   leave blank space for positive sign
+
+
+
+
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+fString = '{0:7s} education load interest rate is {1:5.2f} and duration is {2:2d} years.'
+print(fString.format('BOA', 8.4567, 5))
+
+fString = '{0:^7} education load interest rate is {1:>5.2f} and duration is {2:0>2} years.'
+print(fString.format('BOA', 8.4567, 5))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+BOA     education load interest rate is  8.46 and duration is  5 years.
+  BOA   education load interest rate is  8.46 and duration is 05 years.
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+<hr/>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>format() using named field.  </strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+fString = '{bName:7} education load interest rate is {intRate:.2f} and duration is {years:2} years.'
+print(fString.format(bName='BOA', intRate=8.4567, years=5))
+
+# Justification
+fString = '{bName:^7} education load interest rate is {intRate:>5.2f} and duration is {years:0>2} years.'
+print(fString.format(bName='BOA', intRate=8.4567, years=5))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+BOA     education load interest rate is 8.46 and duration is  5 years.
+  BOA   education load interest rate is  8.46 and duration is 05 years.
+</pre></div>
+
+
+
+<hr/>
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Binary Octal and Hexadecimal conversion from integer</strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+print('Binary {0:b}  Octal {0:o}  Hexadecimal {0:X}'.format(125))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Binary 1111101  Octal 175  Hexadecimal 7D
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+
+
+### f-string (Python 3.6 or later)
+<p> It is simplified version of format() method</p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>'f' or 'F' :</strong> before string marks the string as f-string.</li>
+        <li> <strong>'{}' :</strong> contains expression which are evaluated at runtime. </li>
+        <li> <strong>'{{ "{{ " }}' :</strong> to escape '{' inside the f-string</li>
+        <li> <strong>'!' :</strong> used for conversion after the expression inside curly braces, such as '!s' for str() , '!r' for repr() , '!a' for ascii()</li>
+    </ul> 
+</div>
+
+
+<hr/>
+
+
+
+
+
+
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Printing Variable values using f-string</strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+v = -10
+print(f'Value of v is {v}')
+v= 25
+print(f'Value of v is {v}')
+
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Value of v is -10
+Value of v is 25
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Space after sign value using ' = ' and showing always sign bit using ' + '</strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+v = -2500
+
+print(f'{v:>10}')
+print(f'{v:=10}')
+
+# Always showing sign of numeric
+v = 50
+print(f'\n{v:=10}')
+print(f'{v:=+10}')
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+     -2500
+-     2500
+        50
++       50
+</pre></div>
+
+<hr/>
+
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Pre-pending zeros to make equal lengths.</strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+v1 = 100
+v2 = 1259
+v3 = 78
+
+print(f'{v1:05} ', f'{v2:05}', f'{v3:05}', sep='\n')
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+00100 
+01259
+00078
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Always leave the space for sign bit </strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+v1 = 100
+v2 = 1259
+v3 = -78
+print(f'{v1:05} ', f'{v2:05}', f'{v3:05}', sep='\n')
+print(f'\n{v1: 05} ', f'{v2: 05}', f'{v3: 05}', sep='\n')
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+00100 
+01259
+-0078
+
+ 0100 
+ 1259
+-0078
+</pre></div>
+
+<hr/>
+
+
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Binary Octal and Hexadecimal conversion from integer</strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+v = 125
+print(f'Binary {v:b}  Octal {v:o}  Hexadecimal {v:X}')
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Binary 1111101  Octal 175  Hexadecimal 7D
+</pre></div>
+
+<hr/>
+
+
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Spacing with f-string</strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+bName = 'ABC Bank'
+intRate = 6.78451
+years = 5
+amount = 1000000000
+
+opt = f'''{bName} business loan of amount {amount:,d} with \
+interest rate is {intRate:3.2f} and duration is {years:2d} years.
+'''
+print(opt)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+ABC Bank business loan of amount 1,000,000,000 with interest rate is 6.78 and duration is  5 years.
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Evaluating expression in f-string</strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+print(f' 4 * 4  equals {4*4}')
+print(f' 4 ^ 4  equals {4**4}')
+print(f' 4 - 4  equals {4-4}')
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+ 4 * 4  equals 16
+ 4 ^ 4  equals 256
+ 4 - 4  equals 0
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Applying functions inside f-string :</strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+print('Bank Name         Interest     Duration')
+print('----------------------------------------')
+
+
+bName = 'BoI Bank'
+intRate = 6.78451
+years = 5
+
+print(f'{bName.upper():15s}  {intRate:^10.2f}  {years:^12d}')
+
+
+bName = 'Bank of America'
+intRate = 6.2984
+years = 5
+
+print(f'{bName.upper():15s}  {intRate:^10.2f}  {years:^12d}')
+
+
+
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Bank Name         Interest     Duration
+----------------------------------------
+BOI BANK            6.78          5      
+BANK OF AMERICA     6.30          5  
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Value conversion</strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from decimal import Decimal
+intRate = Decimal('6.78451')
+
+print(f'Interest rate is {intRate!s:10s}')
+print(f'Interest rate is {intRate!r:10s}')
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Interest rate is 6.78451   
+Interest rate is Decimal('6.78451')
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+
+## String Templating
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Template(str) : </strong> takes template string as argument and returns Template object </li>
+        <li> <strong>$identifier or ${identifier} :  </strong> is substitution place holder which will be replaced by substitute value. </li>
+        <li> $$ is used to print $ inside template string. </li>
+    </ul> 
+</div>
+
+
+<p> <strong>Methods</strong> </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> substitute(mapping={}, /, **kwargs) :</strong>Returns string replacing substitution place holder with value rovided in either mapping or with keyword arguments. </li>
+        <li> <strong> safe_substitute(mapping={}, /, **kwargs) : </strong> same as substitute, but does not raise KeyError in case of missing value for place holder.</li>
+    </ul> 
+</div>
+
+
+<p> <strong>Attributes</strong> </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> template :</strong> Returns template string passed when creating template object. </li>
+    </ul> 
+</div>
+
+<hr/>
+
+
+<p> <strong>Example</strong> </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from string import Template
+iCard = Template('''\
+Name         : $fname $lname
+Phone Number : $phno
+Blood Group  : ${bgroup}''')
+
+# with keyword arguments
+print(iCard.substitute(fname='Robert', lname='Styris', phno=3134554447, bgroup='A+'))
+
+# with map object:
+p1 = dict(fname='Robert', lname='Styris', phno=3134554447, bgroup='A+')
+# or
+p1 = {'fname': 'Robert', 'lname': 'Styris', 'phno': 3134554447, 'bgroup': 'A+'}
+
+print()
+print(iCard.substitute(p1))
+
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Name         : Robert Styris
+Phone Number : 3134554447
+Blood Group  : A+
+
+Name         : Robert Styris
+Phone Number : 3134554447
+Blood Group  : A+
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>substitute() raises KeyError if place holder value is missing. To avoid exception use safe_substitute(). </strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from string import Template
+
+iCard = Template('''\
+Name         : $fname $lname
+Phone Number : $phno
+Blood Group  : ${bgroup}''')
+
+print(iCard.substitute(fname='Robert', phno=3134554447, bgroup='A+'))
+
+print(iCard.safe_substitute(fname='Robert', phno=3134554447, bgroup='A+'))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre id='tut-output-error' class="result-content">Traceback (most recent call last):
+  File "<&zwj;input&zwj;>", line 8, in <&zwj;module&zwj;>
+  File "/usr/local/lib/python3.8/string.py", line 126, in substitute
+    return self.pattern.sub(convert, self.template)
+  File "/usr/local/lib/python3.8/string.py", line 119, in convert
+    return str(mapping[named])
+KeyError: 'lname'
+
+</pre>
+
+<pre class="result-content">
+Name         : Robert $lname
+Phone Number : 3134554447
+Blood Group  : A+
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Returning original string object from Template object.</strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from string import Template
+
+iCard = Template('''\
+Name         : $fname $lname
+Phone Number : $phno
+Blood Group  : ${bgroup}''')
+
+print(iCard.template)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Name         : $fname $lname
+Phone Number : $phno
+Blood Group  : ${bgroup}
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {% include links.html %}
 
