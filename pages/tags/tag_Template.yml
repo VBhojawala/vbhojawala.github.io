@@ -1,0 +1,8 @@
+---
+title: "Template"
+tagName: Template
+search: exclude
+permalink: tag_Template.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

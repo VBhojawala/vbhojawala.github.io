@@ -1,0 +1,8 @@
+---
+title: "string formatting"
+tagName: string_formatting
+search: exclude
+permalink: tag_string_formatting.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

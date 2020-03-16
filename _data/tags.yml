@@ -69,3 +69,9 @@ allowed-tags:
   - isupper()
   - istitle()
   - isspace()
+  - string_formatting
+  - printf()
+  - format()
+  - f-string
+  - String_Templating
+  - Template

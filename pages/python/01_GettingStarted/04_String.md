@@ -1,7 +1,7 @@
 ---
 title: String
 layout: tutorial
-tags: [str, String, slicing, slice(), substring, indexing, len(), capitalize(), find(), in, index (), upper(), lower(), count(), rfind(),startswith(), endswith(), replace(), strip(), lstrip(), rstrip(), expandtabs(),split(), join(), splitlines(), isalnum(), isalpha(), isdecimal(), isdigit(), isnumeric(),isidentifier(), islower(), isupper(), istitle(), isspace()]
+tags: [str, String, slicing, slice(), substring, indexing, len(), capitalize(), find(), in, index (), upper(), lower(), count(), rfind(),startswith(), endswith(), replace(), strip(), lstrip(), rstrip(), expandtabs(),split(), join(), splitlines(), isalnum(), isalpha(), isdecimal(), isdigit(), isnumeric(),isidentifier(), islower(), isupper(), istitle(), isspace(), string_formatting, printf(), format(), f-string, String_Templating, Template]
 sidebar: python_sidebar
 permalink: python_string.html
 folder: python
@@ -1704,7 +1704,7 @@ Symbol |  Variable Type
 :-----:| :--- 
  d      |  Integer
  f      |  Float
- F      |  Float with special values nan -> NAN, inf -> INF
+ F      |  special values in upper case nan -> NAN, inf -> INF
  s      |  String using str()
  r      |  String using repr()
  c      |  integer or single character
@@ -2130,7 +2130,7 @@ My name is Tintin. I am 19 years old . My occupation is campaigning reporter.
 
 <div id="tut-content"> 
     <ul>
-        <li> <strong>Justifying variable values : </strong> Strings are by default right justified and numbers are left justified.</li>
+        <li> <strong>Justifying variable values : </strong> strings are by default left justified and numbers are right justified.</li>
     </ul> 
 </div>
 

@@ -1,0 +1,8 @@
+---
+title: "printf()"
+tagName: printf()
+search: exclude
+permalink: tag_printf().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}
