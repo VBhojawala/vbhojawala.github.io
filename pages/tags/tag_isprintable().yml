@@ -1,0 +1,8 @@
+---
+title: "isprintable()"
+tagName: isprintable()
+search: exclude
+permalink: tag_isprintable().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

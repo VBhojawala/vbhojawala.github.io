@@ -1,7 +1,7 @@
 ---
 title: String
 layout: tutorial
-tags: [str, String, slicing, slice(), substring, indexing, len(), capitalize(), find(), in, index (), upper(), lower(), count(), rfind(),startswith(), endswith(), replace(), strip(), lstrip(), rstrip(), expandtabs(),split(), join(), splitlines(), isalnum(), isalpha(), isdecimal(), isdigit(), isnumeric(),isidentifier(), islower(), isupper(), istitle(), isspace(), string_formatting, printf(), format(), f-string, String_Templating, Template]
+tags: [str, String, slicing, slice(), substring, indexing, len(), capitalize(), find(), in, index (), upper(), lower(), count(), rfind(),startswith(), endswith(), replace(), strip(), lstrip(), rstrip(), expandtabs(),split(), join(), splitlines(), casefold(), title(), partition(), rpartition(), swapcase(), maketrans(), translate(), isalnum(), isalpha(), isdecimal(), isdigit(), isnumeric(),isidentifier(), islower(), isupper(), istitle(), isspace(), isprintable(), isascii(), center(), ljust(), rjust(), zfill(), string_formatting, printf(), format(), f-string, String_Templating, Template]
 sidebar: python_sidebar
 permalink: python_string.html
 folder: python
@@ -1316,6 +1316,224 @@ print(lines.splitlines(True))
 
 
 
+#### casefold() 
+
+<p> Returns string suitable for caseless comparision. </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+s1 = 'hello world'
+s2 = 'Hello World'
+s3 = 'HeLLo WoRlD'
+
+print(s1 == s2 == s3)
+print(s1.casefold() == s2.casefold() == s3.casefold())
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+False
+True
+</pre></div>
+
+<hr/>
+
+
+
+
+
+#### title() 
+
+<p> Returns string with each word starting with title case. </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+s1 = 'hello world'
+print(s1.title())
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Hello World
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+
+#### partition(sep)
+
+<p> Splits the string  at the first occurrence of given separator and returns three strings. First is string before separator, second is separator used for separating, last string after separator.</p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+s1 = 'One, Two, Three'
+print(s1.partition(', '))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+('One', ', ', 'Two, Three')
+</pre></div>
+
+<hr/>
+
+
+
+
+
+#### rpartition(sep)
+
+<p> Same as partition but searches first occurrence of given separator from right hand side.</p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+s1 = 'One, Two, Three'
+print(s1.rpartition(', '))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+('One, Two', ', ', 'Three')
+</pre></div>
+
+<hr/>
+
+
+
+
+#### swapcase()
+
+<p> Converts upper case character to lower and lower case character to upper case.</p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+s1 = 'hello world'
+s2 = 'HeLLo WoRlD'
+
+print(s1.swapcase())
+print(s2.swapcase())
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+HELLO WORLD
+hEllO wOrLd
+</pre></div>
+
+<hr/>
+
+
+
+
+
+#### maketrans()
+
+<p> Returns translation table of given string in ordinal values which is used for translate() method.</p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+# using two strings
+print(str.maketrans('ABC', 'XYZ'))
+
+# using mappings
+print(str.maketrans({'A': 'X', 'B': 'Y', 'C': 'Z'}))
+
+print(s1.swapcase())
+print(s2.swapcase())
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+{65: 88, 66: 89, 67: 90}
+{65: 'X', 66: 'Y', 67: 'Z'}
+</pre></div>
+
+<hr/>
+
+
+#### translate(table)
+
+<p> translates characters of string according to provided translation table.</p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+s1 = 'A D B E C F'
+print(s1.translate(str.maketrans({'A': 'X', 'B': 'Y', 'C': 'Z'})))
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+X D Y E Z F
+</pre></div>
+
+<hr/>
 
 
 ### String Validation functions
@@ -1675,21 +1893,189 @@ False
 
 
 
+#### isprintable()
+
+<p> Returns True if all characters of string are printable. </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+s1 = 'hello world'
+print(s1.isprintable())
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+True
+</pre></div>
+
+<hr/>
 
 
 
 
 
 
+#### isascii()
+
+<p> Returns True if all characters of string are ASCII Characters. </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+s1 = 'hello world'
+s2 = 'café'
+print(s1.isascii())
+print(s2.isascii())
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+True
+False
+</pre></div>
+
+<hr/>
+
+
+
+
+### String Alignment functions
+
+
+
+#### center(width[, fillchar])
+
+<p> Centers the string with given width by adding fill character to left and right hand side of the string. By default fill character is ' ' white space. </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+msg = 'Hello World'
+print(msg.center(20))
+
+# optional fill char
+print(msg.center(20, '*'))
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+    Hello World     
+****Hello World*****
+</pre></div>
+
+<hr/>
+
+
+
+
+
+#### ljust(width[, fillchar])
+
+<p> left justified string, appends fillChar to adjust width </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+msg = 'Hello World'
+print(msg.ljust(20))
+print(msg.ljust(20, '*'))
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Hello World         
+Hello World*********
+</pre></div>
+
+<hr/>
+
+
+
+
+
+#### rjust(width[, fillchar])
+
+<p> Right justified string, prepends fillChar to adjust width. </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+numVal = '20000'
+print(numVal.rjust(7))
+print(numVal.rjust(7, '0'))
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+  20000
+0020000
+</pre></div>
+
+<hr/>
 
 
 
 
 
 
+#### zfill(width)
 
+<p> Appends zero to left hand side to match the given width. </p>
 
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
 
+v1 = '-707'
+v2 = '707'
+
+print(v1.zfill(7))
+print(v2.zfill(7))
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+-000707
+0000707
+</pre></div>
+
+<hr/>
 
 
 

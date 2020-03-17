@@ -1,0 +1,8 @@
+---
+title: "title()"
+tagName: title()
+search: exclude
+permalink: tag_title().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

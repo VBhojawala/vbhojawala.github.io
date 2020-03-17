@@ -1,0 +1,8 @@
+---
+title: "casefold()"
+tagName: casefold()
+search: exclude
+permalink: tag_casefold().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

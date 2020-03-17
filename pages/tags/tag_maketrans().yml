@@ -1,0 +1,8 @@
+---
+title: "maketrans()"
+tagName: maketrans()
+search: exclude
+permalink: tag_maketrans().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

@@ -1,0 +1,8 @@
+---
+title: "center()"
+tagName: center()
+search: exclude
+permalink: tag_center().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

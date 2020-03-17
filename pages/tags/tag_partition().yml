@@ -1,0 +1,8 @@
+---
+title: "partition()"
+tagName: partition()
+search: exclude
+permalink: tag_partition().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

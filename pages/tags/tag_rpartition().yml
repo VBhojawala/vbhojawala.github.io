@@ -1,0 +1,8 @@
+---
+title: "rpartition()"
+tagName: rpartition()
+search: exclude
+permalink: tag_rpartition().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

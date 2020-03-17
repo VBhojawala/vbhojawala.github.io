@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="String object, indexing, slicing, concat, string operators.">
-<meta name="keywords" content="strStringslicingslice()substringindexinglen()capitalize()find()inindex ()upper()lower()count()rfind()startswith()endswith()replace()strip()lstrip()rstrip()expandtabs()split()join()splitlines()isalnum()isalpha()isdecimal()isdigit()isnumeric()isidentifier()islower()isupper()istitle()isspace()string_formattingprintf()format()f-stringString_TemplatingTemplate,  ">
+<meta name="keywords" content="strStringslicingslice()substringindexinglen()capitalize()find()inindex ()upper()lower()count()rfind()startswith()endswith()replace()strip()lstrip()rstrip()expandtabs()split()join()splitlines()casefold()title()partition()rpartition()swapcase()maketrans()translate()isalnum()isalpha()isdecimal()isdigit()isnumeric()isidentifier()islower()isupper()istitle()isspace()isprintable()isascii()center()ljust()rjust()zfill()string_formattingprintf()format()f-stringString_TemplatingTemplate,  ">
 <meta name="theme-color" content="#36362C">
 <link rel="icon" sizes="192x192" href="images/favicon.ico">
 <title>String | Asha Tutorials</title>
@@ -1442,14 +1442,163 @@ Don't forget to take your umbrella.</span><span class="se">\
 
 <hr />
 
+<h4 id="casefold">casefold()</h4>
+
+<p> Returns string suitable for caseless comparision. </p>
+
+<div id="code-block-34" class="code-block">
+<p id="code-header-34" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-34", "code-header-34")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="s">'hello world'</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="s">'Hello World'</span>
+<span class="n">s3</span> <span class="o">=</span> <span class="s">'HeLLo WoRlD'</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">s1</span> <span class="o">==</span> <span class="n">s2</span> <span class="o">==</span> <span class="n">s3</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s1</span><span class="o">.</span><span class="n">casefold</span><span class="p">()</span> <span class="o">==</span> <span class="n">s2</span><span class="o">.</span><span class="n">casefold</span><span class="p">()</span> <span class="o">==</span> <span class="n">s3</span><span class="o">.</span><span class="n">casefold</span><span class="p">())</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+False
+True
+</pre></div>
+
+<hr />
+
+<h4 id="title">title()</h4>
+
+<p> Returns string with each word starting with title case. </p>
+
+<div id="code-block-35" class="code-block">
+<p id="code-header-35" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-35", "code-header-35")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="s">'hello world'</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s1</span><span class="o">.</span><span class="n">title</span><span class="p">())</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Hello World
+</pre></div>
+
+<hr />
+
+<h4 id="partitionsep">partition(sep)</h4>
+
+<p> Splits the string  at the first occurrence of given separator and returns three strings. First is string before separator, second is separator used for separating, last string after separator.</p>
+
+<div id="code-block-36" class="code-block">
+<p id="code-header-36" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-36", "code-header-36")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="s">'One, Two, Three'</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s1</span><span class="o">.</span><span class="n">partition</span><span class="p">(</span><span class="s">', '</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+('One', ', ', 'Two, Three')
+</pre></div>
+
+<hr />
+
+<h4 id="rpartitionsep">rpartition(sep)</h4>
+
+<p> Same as partition but searches first occurrence of given separator from right hand side.</p>
+
+<div id="code-block-37" class="code-block">
+<p id="code-header-37" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-37", "code-header-37")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="s">'One, Two, Three'</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s1</span><span class="o">.</span><span class="n">rpartition</span><span class="p">(</span><span class="s">', '</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+('One, Two', ', ', 'Three')
+</pre></div>
+
+<hr />
+
+<h4 id="swapcase">swapcase()</h4>
+
+<p> Converts upper case character to lower and lower case character to upper case.</p>
+
+<div id="code-block-38" class="code-block">
+<p id="code-header-38" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-38", "code-header-38")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="s">'hello world'</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="s">'HeLLo WoRlD'</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">s1</span><span class="o">.</span><span class="n">swapcase</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s2</span><span class="o">.</span><span class="n">swapcase</span><span class="p">())</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+HELLO WORLD
+hEllO wOrLd
+</pre></div>
+
+<hr />
+
+<h4 id="maketrans">maketrans()</h4>
+
+<p> Returns translation table of given string in ordinal values which is used for translate() method.</p>
+
+<div id="code-block-39" class="code-block">
+<p id="code-header-39" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-39", "code-header-39")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># using two strings
+</span><span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span><span class="s">'ABC'</span><span class="p">,</span> <span class="s">'XYZ'</span><span class="p">))</span>
+
+<span class="c1"># using mappings
+</span><span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">({</span><span class="s">'A'</span><span class="p">:</span> <span class="s">'X'</span><span class="p">,</span> <span class="s">'B'</span><span class="p">:</span> <span class="s">'Y'</span><span class="p">,</span> <span class="s">'C'</span><span class="p">:</span> <span class="s">'Z'</span><span class="p">}))</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">s1</span><span class="o">.</span><span class="n">swapcase</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s2</span><span class="o">.</span><span class="n">swapcase</span><span class="p">())</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+{65: 88, 66: 89, 67: 90}
+{65: 'X', 66: 'Y', 67: 'Z'}
+</pre></div>
+
+<hr />
+
+<h4 id="translatetable">translate(table)</h4>
+
+<p> translates characters of string according to provided translation table.</p>
+
+<div id="code-block-40" class="code-block">
+<p id="code-header-40" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-40", "code-header-40")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="s">'A D B E C F'</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s1</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">({</span><span class="s">'A'</span><span class="p">:</span> <span class="s">'X'</span><span class="p">,</span> <span class="s">'B'</span><span class="p">:</span> <span class="s">'Y'</span><span class="p">,</span> <span class="s">'C'</span><span class="p">:</span> <span class="s">'Z'</span><span class="p">})))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+X D Y E Z F
+</pre></div>
+
+<hr />
+
 <h3 id="string-validation-functions">String Validation functions</h3>
 
 <h4 id="isalnum">isalnum()</h4>
 
 <p> Returns True if string contains only alphanumeric  [a-z A-z 0-9] values.</p>
 
-<div id="code-block-34" class="code-block">
-<p id="code-header-34" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-34", "code-header-34")</script>
+<div id="code-block-41" class="code-block">
+<p id="code-header-41" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-41", "code-header-41")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="s">'Abc123'</span>
 <span class="n">s2</span> <span class="o">=</span> <span class="s">'Abc 123'</span>
@@ -1474,8 +1623,8 @@ Is s3 alphanumeric ? : False
 
 <p> Returns True if String contains only alphabets [A-Z,a-z].</p>
 
-<div id="code-block-35" class="code-block">
-<p id="code-header-35" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-35", "code-header-35")</script>
+<div id="code-block-42" class="code-block">
+<p id="code-header-42" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-42", "code-header-42")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="s">'Abc'</span>
 <span class="n">s2</span> <span class="o">=</span> <span class="s">'Abc '</span>
@@ -1500,8 +1649,8 @@ Is s3 alphabetic ? : False
 
 <p> Returns True if String contains only decimals [0-9].</p>
 
-<div id="code-block-36" class="code-block">
-<p id="code-header-36" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-36", "code-header-36")</script>
+<div id="code-block-43" class="code-block">
+<p id="code-header-43" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-43", "code-header-43")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="s">'123'</span>
 <span class="n">s2</span> <span class="o">=</span> <span class="s">'2</span><span class="se">\u00B2</span><span class="s">'</span>         <span class="c1"># unicode digit 2^2
@@ -1526,8 +1675,8 @@ Is s3 decimal ? : False
 
 <p> Returns True if string is a digit.</p>
 
-<div id="code-block-37" class="code-block">
-<p id="code-header-37" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-37", "code-header-37")</script>
+<div id="code-block-44" class="code-block">
+<p id="code-header-44" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-44", "code-header-44")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="s">'123'</span>
 <span class="n">s2</span> <span class="o">=</span> <span class="s">'2</span><span class="se">\u00B2</span><span class="s">'</span>         <span class="c1"># unicode digit 2^2
@@ -1552,8 +1701,8 @@ Is s3 digit ? : False
 
 <p>  Returns True if String is contains numeric value.</p>
 
-<div id="code-block-38" class="code-block">
-<p id="code-header-38" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-38", "code-header-38")</script>
+<div id="code-block-45" class="code-block">
+<p id="code-header-45" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-45", "code-header-45")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="s">'123'</span>
 <span class="n">s2</span> <span class="o">=</span> <span class="s">'2</span><span class="se">\u00B2</span><span class="s">'</span>         <span class="c1"># unicode digit 2^2
@@ -1578,8 +1727,8 @@ Is s3 numeric ? : True
 
 <p>  Returns True if String is a valid identifier(variable name).</p>
 
-<div id="code-block-39" class="code-block">
-<p id="code-header-39" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-39", "code-header-39")</script>
+<div id="code-block-46" class="code-block">
+<p id="code-header-46" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-46", "code-header-46")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="s">'var1'</span>
 <span class="n">s2</span> <span class="o">=</span> <span class="s">'1st'</span>
@@ -1604,8 +1753,8 @@ Is s3 a valid identifier? : True
 
 <p> Returns True if string is in lower case. </p>
 
-<div id="code-block-40" class="code-block">
-<p id="code-header-40" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-40", "code-header-40")</script>
+<div id="code-block-47" class="code-block">
+<p id="code-header-47" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-47", "code-header-47")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="s">'Hello'</span>
 <span class="n">s2</span> <span class="o">=</span> <span class="s">'hellp'</span>
@@ -1627,8 +1776,8 @@ Is s2 in lower case ? :  True
 
 <p> Returns True if string is in upper case. </p>
 
-<div id="code-block-41" class="code-block">
-<p id="code-header-41" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-41", "code-header-41")</script>
+<div id="code-block-48" class="code-block">
+<p id="code-header-48" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-48", "code-header-48")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="s">'Hello'</span>
 <span class="n">s2</span> <span class="o">=</span> <span class="s">'HELLO'</span>
@@ -1650,8 +1799,8 @@ Is s2 in upper case ? :  True
 
 <p> Returns True if string is in title case. </p>
 
-<div id="code-block-42" class="code-block">
-<p id="code-header-42" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-42", "code-header-42")</script>
+<div id="code-block-49" class="code-block">
+<p id="code-header-49" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-49", "code-header-49")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="s">'Hello'</span>
 <span class="n">s2</span> <span class="o">=</span> <span class="s">'HELLO'</span>
@@ -1673,8 +1822,8 @@ Is s2 in title case ? :  False
 
 <p> Returns True if string contains only white spaces. </p>
 
-<div id="code-block-43" class="code-block">
-<p id="code-header-43" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-43", "code-header-43")</script>
+<div id="code-block-50" class="code-block">
+<p id="code-header-50" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-50", "code-header-50")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">smt</span> <span class="o">=</span> <span class="s">'          '</span>
 <span class="k">print</span><span class="p">(</span><span class="n">smt</span><span class="o">.</span><span class="n">isspace</span><span class="p">())</span>
@@ -1688,6 +1837,137 @@ Is s2 in title case ? :  False
 <pre class="result-content">
 True
 False
+</pre></div>
+
+<hr />
+
+<h4 id="isprintable">isprintable()</h4>
+
+<p> Returns True if all characters of string are printable. </p>
+
+<div id="code-block-51" class="code-block">
+<p id="code-header-51" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-51", "code-header-51")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="s">'hello world'</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s1</span><span class="o">.</span><span class="n">isprintable</span><span class="p">())</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+True
+</pre></div>
+
+<hr />
+
+<h4 id="isascii">isascii()</h4>
+
+<p> Returns True if all characters of string are ASCII Characters. </p>
+
+<div id="code-block-52" class="code-block">
+<p id="code-header-52" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-52", "code-header-52")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="s">'hello world'</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="s">'café'</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s1</span><span class="o">.</span><span class="n">isascii</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s2</span><span class="o">.</span><span class="n">isascii</span><span class="p">())</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+True
+False
+</pre></div>
+
+<hr />
+
+<h3 id="string-alignment-functions">String Alignment functions</h3>
+
+<h4 id="centerwidth-fillchar">center(width[, fillchar])</h4>
+
+<p> Centers the string with given width by adding fill character to left and right hand side of the string. By default fill character is ' ' white space. </p>
+
+<div id="code-block-53" class="code-block">
+<p id="code-header-53" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-53", "code-header-53")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">msg</span> <span class="o">=</span> <span class="s">'Hello World'</span>
+<span class="k">print</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+
+<span class="c1"># optional fill char
+</span><span class="k">print</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="s">'*'</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+    Hello World     
+****Hello World*****
+</pre></div>
+
+<hr />
+
+<h4 id="ljustwidth-fillchar">ljust(width[, fillchar])</h4>
+
+<p> left justified string, appends fillChar to adjust width </p>
+
+<div id="code-block-54" class="code-block">
+<p id="code-header-54" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-54", "code-header-54")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">msg</span> <span class="o">=</span> <span class="s">'Hello World'</span>
+<span class="k">print</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="s">'*'</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Hello World         
+Hello World*********
+</pre></div>
+
+<hr />
+
+<h4 id="rjustwidth-fillchar">rjust(width[, fillchar])</h4>
+
+<p> Right justified string, prepends fillChar to adjust width. </p>
+
+<div id="code-block-55" class="code-block">
+<p id="code-header-55" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-55", "code-header-55")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">numVal</span> <span class="o">=</span> <span class="s">'20000'</span>
+<span class="k">print</span><span class="p">(</span><span class="n">numVal</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">7</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">numVal</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="s">'0'</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+  20000
+0020000
+</pre></div>
+
+<hr />
+
+<h4 id="zfillwidth">zfill(width)</h4>
+
+<p> Appends zero to left hand side to match the given width. </p>
+
+<div id="code-block-56" class="code-block">
+<p id="code-header-56" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-56", "code-header-56")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">v1</span> <span class="o">=</span> <span class="s">'-707'</span>
+<span class="n">v2</span> <span class="o">=</span> <span class="s">'707'</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">v1</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">7</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">v2</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">7</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+-000707
+0000707
 </pre></div>
 
 <hr />
@@ -1808,8 +2088,8 @@ False
     </ul> 
 </div>
 
-<div id="code-block-44" class="code-block">
-<p id="code-header-44" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-44", "code-header-44")</script>
+<div id="code-block-57" class="code-block">
+<p id="code-header-57" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-57", "code-header-57")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># string formatting
 </span><span class="n">greeting</span> <span class="o">=</span> <span class="s">'Hello </span><span class="si">%</span><span class="s">s , have a nice day'</span>
@@ -1845,8 +2125,8 @@ Loan interest rate is 7.417840
     </ul> 
 </div>
 
-<div id="code-block-45" class="code-block">
-<p id="code-header-45" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-45", "code-header-45")</script>
+<div id="code-block-58" class="code-block">
+<p id="code-header-58" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-58", "code-header-58")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">smt</span> <span class="o">=</span> <span class="s">'Hello </span><span class="si">%</span><span class="s">s , Welcome to ABC bank. Your Loan interest rate is </span><span class="si">%</span><span class="s">f and loan duration is </span><span class="si">%</span><span class="s">d years.'</span>
 <span class="n">name</span> <span class="o">=</span> <span class="s">'Bob'</span>
@@ -1869,8 +2149,8 @@ Hello Bob , Welcome to ABC bank. Your Loan interest rate is 7.417840 and loan du
     </ul> 
 </div>
 
-<div id="code-block-46" class="code-block">
-<p id="code-header-46" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-46", "code-header-46")</script>
+<div id="code-block-59" class="code-block">
+<p id="code-header-59" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-59", "code-header-59")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">intRate</span> <span class="o">=</span> <span class="mf">7.4178401</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'Loan interest rate is </span><span class="si">%.3</span><span class="s">f and duration is </span><span class="si">%</span><span class="s">d years'</span> <span class="o">%</span> <span class="p">(</span><span class="n">intRate</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span></code></pre></figure>
@@ -1890,8 +2170,8 @@ Loan interest rate is 7.418 and duration is 4 years
     </ul> 
 </div>
 
-<div id="code-block-47" class="code-block">
-<p id="code-header-47" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-47", "code-header-47")</script>
+<div id="code-block-60" class="code-block">
+<p id="code-header-60" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-60", "code-header-60")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">'Loan interest rate is </span><span class="si">%</span><span class="s">s and duration is </span><span class="si">%</span><span class="s">s years'</span> <span class="o">%</span> <span class="p">(</span><span class="mf">7.15</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span></code></pre></figure>
 
@@ -1910,8 +2190,8 @@ Loan interest rate is 7.15 and duration is 4 years
     </ul> 
 </div>
 
-<div id="code-block-48" class="code-block">
-<p id="code-header-48" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-48", "code-header-48")</script>
+<div id="code-block-61" class="code-block">
+<p id="code-header-61" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-61", "code-header-61")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">d1</span> <span class="o">=</span> <span class="p">{</span><span class="s">'intRate'</span><span class="p">:</span> <span class="mf">7.4178401</span><span class="p">,</span> <span class="s">'duration'</span><span class="p">:</span> <span class="mi">5</span><span class="p">}</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'Loan interest rate is </span><span class="si">%(intRate).3</span><span class="s">f and duration is </span><span class="si">%(duration).2</span><span class="s">d years'</span> <span class="o">%</span> <span class="n">d1</span><span class="p">)</span></code></pre></figure>
@@ -1931,8 +2211,8 @@ Loan interest rate is 7.418 and duration is 05 years
     </ul> 
 </div>
 
-<div id="code-block-49" class="code-block">
-<p id="code-header-49" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-49", "code-header-49")</script>
+<div id="code-block-62" class="code-block">
+<p id="code-header-62" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-62", "code-header-62")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">smt</span> <span class="o">=</span> <span class="s">'</span><span class="si">%12</span><span class="s">s | </span><span class="si">%15</span><span class="s">d | </span><span class="si">%6.3</span><span class="s">f | </span><span class="si">%2.2</span><span class="s">d'</span>
 
@@ -1962,8 +2242,8 @@ Loan interest rate is 7.418 and duration is 05 years
     </ul> 
 </div>
 
-<div id="code-block-50" class="code-block">
-<p id="code-header-50" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-50", "code-header-50")</script>
+<div id="code-block-63" class="code-block">
+<p id="code-header-63" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-63", "code-header-63")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">'Hexadecimal of 56 is </span><span class="si">%#5</span><span class="s">x'</span> <span class="o">%</span> <span class="mi">56</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'Octal of 56 is </span><span class="si">%#5</span><span class="s">o'</span> <span class="o">%</span> <span class="mi">56</span><span class="p">)</span></code></pre></figure>
@@ -1984,8 +2264,8 @@ Octal of 56 is  0o70
     </ul> 
 </div>
 
-<div id="code-block-51" class="code-block">
-<p id="code-header-51" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-51", "code-header-51")</script>
+<div id="code-block-64" class="code-block">
+<p id="code-header-64" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-64", "code-header-64")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">'Value of Int a is </span><span class="si">%</span><span class="s">d'</span> <span class="o">%</span> <span class="mi">108</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'Value of Int a is </span><span class="si">%</span><span class="s">d'</span> <span class="o">%</span> <span class="o">-</span><span class="mi">108</span><span class="p">)</span>
@@ -2012,8 +2292,8 @@ Value of Int a is -108
     </ul> 
 </div>
 
-<div id="code-block-52" class="code-block">
-<p id="code-header-52" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-52", "code-header-52")</script>
+<div id="code-block-65" class="code-block">
+<p id="code-header-65" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-65", "code-header-65")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">'Value of Int a is </span><span class="si">% </span><span class="s">d'</span> <span class="o">%</span> <span class="mi">108</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'Value of Int a is </span><span class="si">% </span><span class="s">d'</span> <span class="o">%</span> <span class="o">-</span><span class="mi">108</span><span class="p">)</span></code></pre></figure>
@@ -2036,8 +2316,8 @@ Value of Int a is -108
     </ul> 
 </div>
 
-<div id="code-block-53" class="code-block">
-<p id="code-header-53" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-53", "code-header-53")</script>
+<div id="code-block-66" class="code-block">
+<p id="code-header-66" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-66", "code-header-66")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">fString</span> <span class="o">=</span> <span class="s">'I am learning {0} language.'</span>
 <span class="n">l1</span> <span class="o">=</span> <span class="s">"Python"</span>
@@ -2061,8 +2341,8 @@ I am learning Java language.
     </ul> 
 </div>
 
-<div id="code-block-54" class="code-block">
-<p id="code-header-54" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-54", "code-header-54")</script>
+<div id="code-block-67" class="code-block">
+<p id="code-header-67" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-67", "code-header-67")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">fString</span> <span class="o">=</span> <span class="s">'My name is {}. I am {} years old . My occupation is {}.'</span>
 <span class="k">print</span><span class="p">(</span><span class="n">fString</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="s">'Tintin'</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="s">'campaigning reporter'</span><span class="p">))</span>
@@ -2131,8 +2411,8 @@ My name is Tintin. I am 19 years old . My occupation is campaigning reporter.
   </tbody>
 </table>
 
-<div id="code-block-55" class="code-block">
-<p id="code-header-55" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-55", "code-header-55")</script>
+<div id="code-block-68" class="code-block">
+<p id="code-header-68" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-68", "code-header-68")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">fString</span> <span class="o">=</span> <span class="s">'{0:7s} education load interest rate is {1:5.2f} and duration is {2:2d} years.'</span>
 <span class="k">print</span><span class="p">(</span><span class="n">fString</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="s">'BOA'</span><span class="p">,</span> <span class="mf">8.4567</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
@@ -2158,8 +2438,8 @@ BOA     education load interest rate is  8.46 and duration is  5 years.
     </ul> 
 </div>
 
-<div id="code-block-56" class="code-block">
-<p id="code-header-56" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-56", "code-header-56")</script>
+<div id="code-block-69" class="code-block">
+<p id="code-header-69" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-69", "code-header-69")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">fString</span> <span class="o">=</span> <span class="s">'{bName:7} education load interest rate is {intRate:.2f} and duration is {years:2} years.'</span>
 <span class="k">print</span><span class="p">(</span><span class="n">fString</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">bName</span><span class="o">=</span><span class="s">'BOA'</span><span class="p">,</span> <span class="n">intRate</span><span class="o">=</span><span class="mf">8.4567</span><span class="p">,</span> <span class="n">years</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>
@@ -2184,8 +2464,8 @@ BOA     education load interest rate is 8.46 and duration is  5 years.
     </ul> 
 </div>
 
-<div id="code-block-57" class="code-block">
-<p id="code-header-57" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-57", "code-header-57")</script>
+<div id="code-block-70" class="code-block">
+<p id="code-header-70" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-70", "code-header-70")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">'Binary {0:b}  Octal {0:o}  Hexadecimal {0:X}'</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="mi">125</span><span class="p">))</span></code></pre></figure>
 
@@ -2218,8 +2498,8 @@ Binary 1111101  Octal 175  Hexadecimal 7D
     </ul> 
 </div>
 
-<div id="code-block-58" class="code-block">
-<p id="code-header-58" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-58", "code-header-58")</script>
+<div id="code-block-71" class="code-block">
+<p id="code-header-71" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-71", "code-header-71")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">v</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span>
 <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Value of v is {v}'</span><span class="p">)</span>
@@ -2242,8 +2522,8 @@ Value of v is 25
     </ul> 
 </div>
 
-<div id="code-block-59" class="code-block">
-<p id="code-header-59" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-59", "code-header-59")</script>
+<div id="code-block-72" class="code-block">
+<p id="code-header-72" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-72", "code-header-72")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">v</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2500</span>
 
@@ -2273,8 +2553,8 @@ Value of v is 25
     </ul> 
 </div>
 
-<div id="code-block-60" class="code-block">
-<p id="code-header-60" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-60", "code-header-60")</script>
+<div id="code-block-73" class="code-block">
+<p id="code-header-73" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-73", "code-header-73")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">v1</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="n">v2</span> <span class="o">=</span> <span class="mi">1259</span>
@@ -2299,8 +2579,8 @@ Value of v is 25
     </ul> 
 </div>
 
-<div id="code-block-61" class="code-block">
-<p id="code-header-61" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-61", "code-header-61")</script>
+<div id="code-block-74" class="code-block">
+<p id="code-header-74" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-74", "code-header-74")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">v1</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="n">v2</span> <span class="o">=</span> <span class="mi">1259</span>
@@ -2329,8 +2609,8 @@ Value of v is 25
     </ul> 
 </div>
 
-<div id="code-block-62" class="code-block">
-<p id="code-header-62" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-62", "code-header-62")</script>
+<div id="code-block-75" class="code-block">
+<p id="code-header-75" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-75", "code-header-75")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">v</span> <span class="o">=</span> <span class="mi">125</span>
 <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Binary {v:b}  Octal {v:o}  Hexadecimal {v:X}'</span><span class="p">)</span></code></pre></figure>
@@ -2350,8 +2630,8 @@ Binary 1111101  Octal 175  Hexadecimal 7D
     </ul> 
 </div>
 
-<div id="code-block-63" class="code-block">
-<p id="code-header-63" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-63", "code-header-63")</script>
+<div id="code-block-76" class="code-block">
+<p id="code-header-76" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-76", "code-header-76")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">bName</span> <span class="o">=</span> <span class="s">'ABC Bank'</span>
 <span class="n">intRate</span> <span class="o">=</span> <span class="mf">6.78451</span>
@@ -2378,8 +2658,8 @@ ABC Bank business loan of amount 1,000,000,000 with interest rate is 6.78 and du
     </ul> 
 </div>
 
-<div id="code-block-64" class="code-block">
-<p id="code-header-64" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-64", "code-header-64")</script>
+<div id="code-block-77" class="code-block">
+<p id="code-header-77" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-77", "code-header-77")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">' 4 * 4  equals {4*4}'</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">' 4 ^ 4  equals {4**4}'</span><span class="p">)</span>
@@ -2402,8 +2682,8 @@ ABC Bank business loan of amount 1,000,000,000 with interest rate is 6.78 and du
     </ul> 
 </div>
 
-<div id="code-block-65" class="code-block">
-<p id="code-header-65" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-65", "code-header-65")</script>
+<div id="code-block-78" class="code-block">
+<p id="code-header-78" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-78", "code-header-78")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">'Bank Name         Interest     Duration'</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'----------------------------------------'</span><span class="p">)</span>
@@ -2440,8 +2720,8 @@ BANK OF AMERICA     6.30          5
     </ul> 
 </div>
 
-<div id="code-block-66" class="code-block">
-<p id="code-header-66" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-66", "code-header-66")</script>
+<div id="code-block-79" class="code-block">
+<p id="code-header-79" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-79", "code-header-79")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">decimal</span> <span class="kn">import</span> <span class="n">Decimal</span>
 <span class="n">intRate</span> <span class="o">=</span> <span class="n">Decimal</span><span class="p">(</span><span class="s">'6.78451'</span><span class="p">)</span>
@@ -2490,8 +2770,8 @@ Interest rate is Decimal('6.78451')
 
 <p> <strong>Example</strong> </p>
 
-<div id="code-block-67" class="code-block">
-<p id="code-header-67" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-67", "code-header-67")</script>
+<div id="code-block-80" class="code-block">
+<p id="code-header-80" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-80", "code-header-80")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">Template</span>
 <span class="n">iCard</span> <span class="o">=</span> <span class="n">Template</span><span class="p">(</span><span class="s">'''</span><span class="se">\
@@ -2531,8 +2811,8 @@ Blood Group  : A+
     </ul> 
 </div>
 
-<div id="code-block-68" class="code-block">
-<p id="code-header-68" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-68", "code-header-68")</script>
+<div id="code-block-81" class="code-block">
+<p id="code-header-81" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-81", "code-header-81")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">Template</span>
 
@@ -2572,8 +2852,8 @@ Blood Group  : A+
     </ul> 
 </div>
 
-<div id="code-block-69" class="code-block">
-<p id="code-header-69" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-69", "code-header-69")</script>
+<div id="code-block-82" class="code-block">
+<p id="code-header-82" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-82", "code-header-82")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">Template</span>
 
@@ -2703,6 +2983,34 @@ Blood Group  : ${bgroup}
         
         
         
+        <a href="tag_casefold().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">casefold()</a>
+        
+        
+        
+        <a href="tag_title().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">title()</a>
+        
+        
+        
+        <a href="tag_partition().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">partition()</a>
+        
+        
+        
+        <a href="tag_rpartition().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">rpartition()</a>
+        
+        
+        
+        <a href="tag_swapcase().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">swapcase()</a>
+        
+        
+        
+        <a href="tag_maketrans().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">maketrans()</a>
+        
+        
+        
+        <a href="tag_translate().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">translate()</a>
+        
+        
+        
         <a href="tag_isalnum().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">isalnum()</a>
         
         
@@ -2740,6 +3048,30 @@ Blood Group  : ${bgroup}
         
         
         <a href="tag_isspace().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">isspace()</a>
+        
+        
+        
+        <a href="tag_isprintable().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">isprintable()</a>
+        
+        
+        
+        <a href="tag_isascii().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">isascii()</a>
+        
+        
+        
+        <a href="tag_center().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">center()</a>
+        
+        
+        
+        <a href="tag_ljust().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">ljust()</a>
+        
+        
+        
+        <a href="tag_rjust().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">rjust()</a>
+        
+        
+        
+        <a href="tag_zfill().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">zfill()</a>
         
         
         

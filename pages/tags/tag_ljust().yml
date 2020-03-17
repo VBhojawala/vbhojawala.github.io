@@ -1,0 +1,8 @@
+---
+title: "ljust()"
+tagName: ljust()
+search: exclude
+permalink: tag_ljust().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

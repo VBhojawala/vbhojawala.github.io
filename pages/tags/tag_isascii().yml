@@ -1,0 +1,8 @@
+---
+title: "isascii()"
+tagName: isascii()
+search: exclude
+permalink: tag_isascii().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

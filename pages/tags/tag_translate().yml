@@ -1,0 +1,8 @@
+---
+title: "translate()"
+tagName: translate()
+search: exclude
+permalink: tag_translate().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}
