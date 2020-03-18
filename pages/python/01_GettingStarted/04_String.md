@@ -7,10 +7,8 @@ permalink: python_string.html
 folder: python
 prev: python_decimal_fraction.html
 prev_title: Decimal and Fraction
-next: 
-next_title:
-next_section: python_control_flow.html
-next_section_title: Control Flow
+next: python_bytes_bytearray.html
+next_title: Bytes and ByteArray
 summary: String object, indexing, slicing, concat, string operators.
 ---
 

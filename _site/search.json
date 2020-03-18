@@ -97,6 +97,18 @@
 
 
 
+{
+"title": "Bytes and ByteArray",
+"tags": "bytesbytearray",
+"keywords": "",
+"url": "python_bytes_bytearray.html",
+"summary": "String encoding and decoding, bytes object and bytearray.",
+"folder": "python"
+}
+,
+
+
+
 
 
 

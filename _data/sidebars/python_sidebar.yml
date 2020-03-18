@@ -30,6 +30,10 @@ entries:
       - title: String
         url: /python_string.html
         output: web, pdf
+
+      - title: Bytes and ByteArray
+        url: /python_bytes_bytearray.html
+        output: web, pdf
         
         
         # subfolders:
