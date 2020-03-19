@@ -1,0 +1,8 @@
+---
+title: "immutable"
+tagName: immutable
+search: exclude
+permalink: tag_immutable.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

@@ -1,0 +1,8 @@
+---
+title: "BOM"
+tagName: BOM
+search: exclude
+permalink: tag_BOM.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

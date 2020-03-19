@@ -1,0 +1,8 @@
+---
+title: "bytes"
+tagName: bytes
+search: exclude
+permalink: tag_bytes.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

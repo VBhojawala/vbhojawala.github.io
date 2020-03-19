@@ -1,0 +1,8 @@
+---
+title: "decode()"
+tagName: decode()
+search: exclude
+permalink: tag_decode().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

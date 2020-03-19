@@ -1,0 +1,8 @@
+---
+title: "encode()"
+tagName: encode()
+search: exclude
+permalink: tag_encode().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

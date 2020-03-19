@@ -1,7 +1,7 @@
 ---
 title: Bytes and ByteArray
 layout: tutorial
-tags: [bytes, bytearray]
+tags: [unicode, ASCII, ord(), chr(), hex(), fromhex(), encode(), decode(), BOM, bytes, bytearray, immutable_vs_mutable, mutable, append(), clear(), copy(), extend(), insert(), pop(), remove(), reverse()]
 sidebar: python_sidebar
 permalink: python_bytes_bytearray.html
 folder: python
@@ -11,7 +11,7 @@ next:
 next_title:
 next_section: python_control_flow.html
 next_section_title: Control Flow
-summary: String encoding and decoding, bytes object and bytearray.
+summary: encoding and decoding.  bytes and bytearray object and their methods.
 ---
 
 

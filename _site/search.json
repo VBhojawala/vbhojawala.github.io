@@ -99,13 +99,55 @@
 
 {
 "title": "Bytes and ByteArray",
-"tags": "bytesbytearray",
+"tags": "unicodeASCIIord()chr()hex()fromhex()encode()decode()BOMbytesbytearrayimmutable_vs_mutablemutableappend()clear()copy()extend()insert()pop()remove()reverse()",
 "keywords": "",
 "url": "python_bytes_bytearray.html",
-"summary": "String encoding and decoding, bytes object and bytearray.",
+"summary": "encoding and decoding.  bytes and bytearray object and their methods.",
 "folder": "python"
 }
 ,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

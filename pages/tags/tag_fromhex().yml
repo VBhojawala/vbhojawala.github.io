@@ -1,0 +1,8 @@
+---
+title: "fromhex()"
+tagName: fromhex()
+search: exclude
+permalink: tag_fromhex().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

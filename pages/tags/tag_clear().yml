@@ -1,0 +1,8 @@
+---
+title: "clear()"
+tagName: clear()
+search: exclude
+permalink: tag_clear().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

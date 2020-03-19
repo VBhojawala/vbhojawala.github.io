@@ -88,3 +88,24 @@ allowed-tags:
   - f-string
   - String_Templating
   - Template
+  - unicode
+  - ASCII
+  - ord()
+  - chr()
+  - hex()
+  - fromhex()
+  - encode()
+  - decode()
+  - BOM
+  - bytes
+  - bytearray
+  - append()
+  - clear()
+  - copy()
+  - extend()
+  - insert()
+  - pop()
+  - remove()
+  - reverse()
+  - mutable
+  - immutable

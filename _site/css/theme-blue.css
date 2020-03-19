@@ -324,10 +324,6 @@ h1, h2, h3, h4, .bs-callout{
     word-spacing: 3px;
     letter-spacing: 1.4px;
 }
-#mysidebar li ul li a{
-    word-spacing: 0.2px;
-}
-
 
 /* Media Queries */
 

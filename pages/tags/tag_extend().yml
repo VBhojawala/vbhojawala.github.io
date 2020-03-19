@@ -1,0 +1,8 @@
+---
+title: "extend()"
+tagName: extend()
+search: exclude
+permalink: tag_extend().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

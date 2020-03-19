@@ -1,0 +1,8 @@
+---
+title: "ASCII"
+tagName: ASCII
+search: exclude
+permalink: tag_ASCII.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

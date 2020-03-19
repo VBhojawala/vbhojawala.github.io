@@ -1,0 +1,8 @@
+---
+title: "insert()"
+tagName: insert()
+search: exclude
+permalink: tag_insert().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

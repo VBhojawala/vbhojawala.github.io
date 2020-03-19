@@ -1,0 +1,8 @@
+---
+title: "ord()"
+tagName: ord()
+search: exclude
+permalink: tag_ord().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}
