@@ -4,11 +4,11 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="print() function and use cases, types of comments, python console as calculator.">
-<meta name="keywords" content="Hello_Worldcommentspython_console_calculator,  ">
+<meta name="description" content="Date, Time and DateTime">
+<meta name="keywords" content=",  ">
 <meta name="theme-color" content="#36362C">
 <link rel="icon" sizes="192x192" href="images/favicon.ico">
-<title>Hello World! | Asha Tutorials</title>
+<title>Date, Time and DateTime | Asha Tutorials</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -283,7 +283,7 @@
 
 
 
-  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:?subject=Asha Tutorials feedback&body=I have some feedback about the Hello World! page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:?subject=Asha Tutorials feedback&body=I have some feedback about the Date, Time and DateTime page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
 
 </li>
 
@@ -335,7 +335,7 @@
                             searchInput: document.getElementById('search-input'),
                             resultsContainer: document.getElementById('results-container'),
                             dataSource: 'search.json',
-                            searchResultTemplate: '<li style="margin: 0px 0px;"><a href="{url}" title="Hello World!       " folder="python">{title} <sub>in {folder}</sub></a></li>',
+                            searchResultTemplate: '<li style="margin: 0px 0px;"><a href="{url}" title="Date, Time and DateTime       " folder="python">{title} <sub>in {folder}</sub></a></li>',
                 noResultsText: '<li style="margin: 0px 0px;"><a href="#">No results found.</a></li>',
                         limit: 10,
                         fuzzy: true,
@@ -377,7 +377,7 @@
           
           
           
-          <li class="active"><a title="Hello World!" href="python_hello_world.html">Hello World!</a></li>
+          <li><a title="Hello World!" href="python_hello_world.html">Hello World!</a></li>
           
           
           
@@ -412,7 +412,7 @@
           
           
           
-          <li><a title="DateTime" href="python_date_time_datetime.html">DateTime</a></li>
+          <li class="active"><a title="DateTime" href="python_date_time_datetime.html">DateTime</a></li>
           
           
           
@@ -478,7 +478,7 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">Hello World!</h1>
+   <h1 class="post-title-main">Date, Time and DateTime</h1>
 </div>
 
 
@@ -486,7 +486,7 @@
 <div class="post-content">
 
    <!-- 
-    <div class="summary">print() function and use cases, types of comments, python console as calculator.</div>
+    <div class="summary">Date, Time and DateTime</div>
     -->
 
     
@@ -517,341 +517,451 @@ $('#toc').on('click', 'a', function() {
 
     <!-- 
 
-    <a target="_blank" rel="noopener" href="https://github.com/ashatutorials/pages/python/01_GettingStarted/01_Hello_Wrold.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+    <a target="_blank" rel="noopener" href="https://github.com/ashatutorials/pages/python/01_GettingStarted/06_DateTime.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
 
      -->
 
-   <h2 id="print-function--prints-given-string-to-standard-output">print() function : Prints given string to standard output.</h2>
+   <h2 id="date">Date</h2>
 
-<!-- Section 1.1 -->
-<div id="tut-content"> 
-    <ul>
-        <li> Write string inside single quotes ( ‘Hello World!’ )  or double quotes comma ( “Hello World!” )inside the print() function.</li>
-    </ul> 
-</div>
+<h3 id="constructor">Constructor</h3>
+<p id="tut-cons"> date(year, month, day) </p>
 
-<div class="bs-callout bs-callout-primary"><strong>Tip</strong> : In PyCharm select the line(s) and press : ‘ Alt + Shift + E ‘ to execute in console. </div>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Attribute</th>
+      <th style="text-align: left">Range</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">year</td>
+      <td style="text-align: left">MINYEAR &lt;= year &lt;= MAXYEAR</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">month</td>
+      <td style="text-align: left">1 &lt;= month &lt;= 12</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">day</td>
+      <td style="text-align: left">1 &lt;= day &lt;= number of days in the given month and year</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="bs-callout bs-callout-primary"><strong>Note</strong> : date, time and datetime are immutable and hashable data type. </div>
 
 <div id="code-block-1" class="code-block">
 <p id="code-header-1" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-1", "code-header-1")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">"Hello World!"</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">'Hello World!'</span><span class="p">)</span></code></pre></figure>
+<span class="n">d1</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">d1</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-Hello World!
-Hello World!
+2020-03-20
 </pre></div>
 
 <hr />
 
-<!-- Section 1.2 -->
-<div id="tut-content"> 
-    <ul>
-        <li> Using escape character \ to print ' (single quote) inside single quoted string and print " (double quotes) inside double quoted string. </li>
-    </ul> 
-</div>
+<h3 id="today">today()</h3>
+<p> Returns date object representing today's date. </p>
 
 <div id="code-block-2" class="code-block">
 <p id="code-header-2" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-2", "code-header-2")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">'It</span><span class="se">\'</span><span class="s">s sunny outside.'</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">"Quoting inside </span><span class="se">\"</span><span class="s">Double quotes</span><span class="se">\"</span><span class="s">."</span><span class="p">)</span></code></pre></figure>
+<span class="n">today</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">today</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-It's sunny outside.
-Quoting inside "Double quotes".
+2020-03-21
 </pre></div>
 
 <hr />
 
-<!-- Section 1.3 -->
-<div id="tut-content"> 
-    <ul>
-        <li> New line using '\n' . </li>
-    </ul> 
-</div>
+<h3 id="attributes">Attributes</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Attribute</th>
+      <th style="text-align: left">Explanation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">day</td>
+      <td style="text-align: left">Returns day of the month from the date object.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">month</td>
+      <td style="text-align: left">Returns month from the date object.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">year</td>
+      <td style="text-align: left">Returns year from the date object.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">min</td>
+      <td style="text-align: left">minimum datetime.date(1, 1, 1) accepted by date class</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">max</td>
+      <td style="text-align: left">maximum datetime.date(9999, 12, 31) accepted by class</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">resolution</td>
+      <td style="text-align: left">smallest possible difference between two dates timedelta(days=1).</td>
+    </tr>
+  </tbody>
+</table>
 
 <div id="code-block-3" class="code-block">
 <p id="code-header-3" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-3", "code-header-3")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">"Today is Sunday.</span><span class="se">\n</span><span class="s">It's rainy outside."</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+
+<span class="n">today</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Day : {today.day}   Month : {today.month}   Year : {today.year}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Min : {date.min}   Max : {date.max}    Resolution : {date.resolution}'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-Today is Sunday.
-It's rainy outside.
+Day : 21   Month : 3   Year : 2020
+Min : 0001-01-01   Max : 9999-12-31    Resolution : 1 day, 0:00:00
 </pre></div>
 
 <hr />
 
-<!-- Section 1.4 -->
+<h2 id="time">Time</h2>
+
+<h3 id="constructor-1">Constructor</h3>
+<p id="tut-cons">  time(hour=0, minute=0, second=0, microsecond=0, tzinfo=None, *, fold=0)  </p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Argument</th>
+      <th style="text-align: left">range</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">hour</td>
+      <td style="text-align: left">0 &lt;= hour &lt; 24</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">minute</td>
+      <td style="text-align: left">0 &lt;= minute &lt; 60</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">second</td>
+      <td style="text-align: left">0 &lt;= second &lt; 60</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">microsecond</td>
+      <td style="text-align: left">0 &lt;= microsecond &lt; 1000000</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">fold</td>
+      <td style="text-align: left">0, 1</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="bs-callout bs-callout-primary">It raises ValueError if argument value goes outside of range.</div>
+
 <div id="tut-content"> 
     <ul>
-        <li> Print without breaking it to new line. </li>
+        <li> <strong>tzinfo : </strong> By default it is set to None. If given, it must be an object  of tzinfo subclass. </li>
+        <li> <strong>fold : </strong> It is used when repeated time interval occurred such as when clocks are rolled back at the end of daylight saving time or hen the UTC offset for the current zone is decreased for political reasons.  In such cases default value 0 represents earlier time and 1 represent later time to disambiguate wall times. </li>
     </ul> 
 </div>
+
+<hr />
+
+<h3 id="attributes-1">Attributes</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Attribute</th>
+      <th style="text-align: left">Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">hour</td>
+      <td style="text-align: left">Returns Hour from time object</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">minute</td>
+      <td style="text-align: left">Returns Minutes from time object</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">second</td>
+      <td style="text-align: left">Returns Seconds from time object</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Microseconds</td>
+      <td style="text-align: left">Returns Microseconds from time object</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">fold</td>
+      <td style="text-align: left">Returns fold value from time object</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">tzinfo</td>
+      <td style="text-align: left">Returns tzinfo object from time object</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">min</td>
+      <td style="text-align: left">Returns time object representing minimum time possible.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">max</td>
+      <td style="text-align: left">Returns time object representing maximum time possible.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">resolution</td>
+      <td style="text-align: left">Returns smallest time difference between two non-equal time object.</td>
+    </tr>
+  </tbody>
+</table>
 
 <div id="code-block-4" class="code-block">
 <p id="code-header-4" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-4", "code-header-4")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">"Hello "</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">''</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"World!"</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">time</span>
+
+<span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">33</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Hours : {t1.hour}  Minutes : {t1.minute}  Seconds : {t1.second}'</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">'</span><span class="se">\n\n</span><span class="s">'</span><span class="p">)</span>
+
+<span class="n">t2</span> <span class="o">=</span> <span class="n">time</span><span class="p">(</span><span class="n">hour</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">minute</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">second</span><span class="o">=</span><span class="mi">35</span><span class="p">,</span> <span class="n">microsecond</span><span class="o">=</span><span class="mi">5555</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Hours : {t2.hour}  Minutes : {t2.minute}  Seconds : {t2.second} Microseconds : {t2.microsecond}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Fold : {t2.fold}   tzinfo : {t2.tzinfo}'</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'</span><span class="se">\n</span><span class="s">Min : {t2.min}  Max : {t2.max}  Resolution : {t2.resolution}'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-Hello World!
+11:45:33
+Hours : 11  Minutes : 45  Seconds : 33
+
+11:45:35.005555
+Hours : 11  Minutes : 45  Seconds : 35 Microseconds : 5555
+Fold : 0   tzinfo : None
+
+Min : 00:00:00  Max : 23:59:59.999999  Resolution : 0:00:00.000001
 </pre></div>
 
 <hr />
 
-<!-- Section 1.5 -->
+<h2 id="datetime">DateTime</h2>
+
+<h3 id="constructor-2">Constructor</h3>
+
+<p id="tut-cons">  datetime(year, month, day, hour=0, minute=0, second=0, microsecond=0, tzinfo=None, *, fold=0)  </p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Parameter</th>
+      <th style="text-align: left">Range</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">year</td>
+      <td style="text-align: left">MINYEAR &lt;= year &lt;= MAXYEAR</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">month</td>
+      <td style="text-align: left">1 &lt;= month &lt;= 12</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">day</td>
+      <td style="text-align: left">1 &lt;= day &lt;= number of days in the given month and year</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">hour</td>
+      <td style="text-align: left">0 &lt;= hour &lt; 24</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">minute</td>
+      <td style="text-align: left">0 &lt;= minute &lt; 60</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">second</td>
+      <td style="text-align: left">0 &lt;= second &lt; 60</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">microsecond</td>
+      <td style="text-align: left">0 &lt;= microsecond &lt; 1000000</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">fold</td>
+      <td style="text-align: left">0, 1</td>
+    </tr>
+  </tbody>
+</table>
+
 <div id="tut-content"> 
     <ul>
-        <li> Using \ to continue in new line. </li>
+        <li> <strong>tzinfo : </strong> By default it is set to None. If given, it must be an object  of tzinfo subclass. </li>
+        <li> <strong>fold : </strong> It is used when repeated time interval occurred such as when clocks are rolled back at the end of daylight saving time or hen the UTC offset for the current zone is decreased for political reasons.  In such cases default value 0 represents earlier time and 1 represent later time to disambiguate wall times. </li>
     </ul> 
 </div>
 
 <div id="code-block-5" class="code-block">
 <p id="code-header-5" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-5", "code-header-5")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">'Hello </span><span class="se">\
-</span><span class="s">World!'</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
+
+<span class="n">d1</span> <span class="o">=</span> <span class="n">dt</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">21</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d1</span><span class="p">)</span>
+
+<span class="n">d2</span> <span class="o">=</span> <span class="n">dt</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">45</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d2</span><span class="p">)</span>
+
+<span class="n">d3</span> <span class="o">=</span> <span class="n">dt</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">1500</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d3</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-Hello World!
+2020-03-21 00:00:00
+2020-03-21 11:45:00
+2020-03-21 11:46:55.001500
 </pre></div>
 
 <hr />
 
-<!-- Section 1.6 -->
-<div id="tut-content"> 
-    <ul>
-        <li> Print string spanning multiple lines using triple quotes (Single or Double). </li>
-    </ul> 
-</div>
+<h3 id="now">now()</h3>
+<p> Returns datetime object representing current date and time. </p>
 
 <div id="code-block-6" class="code-block">
 <p id="code-header-6" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-6", "code-header-6")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">'''</span><span class="se">\
-</span><span class="s">Today is Sunday.
-It's rainy outside.
-Don't forget to take your umbrella.'''</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
+
+<span class="n">now</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">now</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-Today is Sunday.
-It's rainy outside.
-Don't forget to take your umbrella.
+2020-03-22 09:39:01.669841
 </pre></div>
 
 <hr />
 
-<!-- Section 1.7 -->
-<div id="tut-content"> 
-    <ul>
-        <li> <strong>Raw String</strong> : Interprets special characters as characters. </li>
-    </ul> 
-</div>
+<h3 id="attributes-2">Attributes</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Attribute</th>
+      <th style="text-align: left">Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">year</td>
+      <td style="text-align: left">Returns year from the datetime object.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">month</td>
+      <td style="text-align: left">Returns month from the datetime object.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">day</td>
+      <td style="text-align: left">Returns day of the month from the datetime object.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">hour</td>
+      <td style="text-align: left">Returns Hour from datetime object</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">minute</td>
+      <td style="text-align: left">Returns Minutes from datetime object</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">second</td>
+      <td style="text-align: left">Returns Seconds from datetime object</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Microseconds</td>
+      <td style="text-align: left">Returns Microseconds from datetime object</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">fold</td>
+      <td style="text-align: left">Returns fold value from datetime object</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">tzinfo</td>
+      <td style="text-align: left">Returns tzinfo object from datetime object</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">min</td>
+      <td style="text-align: left">Returns time object representing minimum datetime possible.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">max</td>
+      <td style="text-align: left">Returns time object representing maximum datetime possible.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">resolution</td>
+      <td style="text-align: left">Returns smallest time difference between two non-equal datetime object.</td>
+    </tr>
+  </tbody>
+</table>
 
 <div id="code-block-7" class="code-block">
 <p id="code-header-7" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-7", "code-header-7")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">r'Raw String : File Path C:\MyDir\PythonProg\newFolder'</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
+
+<span class="n">now</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Year : {now.year}    Month : {now.month}    Day : {now.day}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Hour : {now.hour}    Minutes : {now.minute}   Seconds : {now.second}  '</span>
+      <span class="n">f</span><span class="s">'Microseconds : {now.microsecond}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'fold : {now.fold}   tzinfo : {now.tzinfo} </span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Min : {dt.min}    Max : {dt.max}   Resolution : {dt.resolution}'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-Raw String : File Path C:\MyDir\PythonProg\newFolder
-</pre></div>
+Year : 2020    Month : 3    Day : 22
+Hour : 9    Minutes : 49   Seconds : 43  Microseconds : 344265
+fold : 0   tzinfo : None 
 
-<hr />
-
-<!-- Section 1.8 -->
-<div id="tut-content"> 
-    <ul>
-        <li> Printing multiple strings. </li>
-    </ul> 
-</div>
-
-<div id="code-block-8" class="code-block">
-<p id="code-header-8" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-8", "code-header-8")</script>
-
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">'Hello,'</span><span class="p">,</span> <span class="s">'how'</span><span class="p">,</span> <span class="s">'are'</span><span class="p">,</span> <span class="s">'you?'</span><span class="p">)</span></code></pre></figure>
-
-</div>
-
-<div class="result"><p class="result-header"><b>Output</b></p>
-<pre class="result-content">
-Hello, how are you?
-</pre></div>
-
-<hr />
-
-<!-- Section 1.9 -->
-<div id="tut-content"> 
-    <ul>
-        <li> Changing the separator of strings. </li>
-    </ul> 
-</div>
-
-<div id="code-block-9" class="code-block">
-<p id="code-header-9" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-9", "code-header-9")</script>
-
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">'4417'</span><span class="p">,</span> <span class="s">'2323'</span><span class="p">,</span> <span class="s">'1224'</span><span class="p">,</span> <span class="s">'1123'</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">'-'</span><span class="p">)</span></code></pre></figure>
-
-</div>
-
-<div class="result"><p class="result-header"><b>Output</b></p>
-<pre class="result-content">
-4417-2323-1224-1123
-</pre></div>
-
-<hr />
-
-<h2 id="comments-in-python">Comments in Python</h2>
-
-<!-- Section 2.1 -->
-<div id="tut-content"> 
-    <ul>
-        <li> <strong>Single-line comment </strong>: starts with ' # '. </li>
-    </ul> 
-</div>
-
-<div class="bs-callout bs-callout-primary"><strong>Tip</strong> : In PyCharm use shortcut : ‘ Ctrl + / ‘  to comment or uncomment line(s). </div>
-
-<div id="code-block-10" class="code-block">
-<p id="code-header-10" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-10", "code-header-10")</script>
-
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># This is Single Line comment</span></code></pre></figure>
-
-</div>
-
-<hr />
-
-<!-- Section 2.2 -->
-<div id="tut-content"> 
-    <ul>
-        <li> <strong>In-line comment </strong>: starts with ' # ' within line after python code. </li>
-    </ul> 
-</div>
-
-<div id="code-block-11" class="code-block">
-<p id="code-header-11" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-11", "code-header-11")</script>
-
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">'Hello World!'</span><span class="p">)</span>  <span class="c1"># Inline comment</span></code></pre></figure>
-
-
-</div>
-
-<div class="result"><p class="result-header"><b>Output</b></p>
-<pre class="result-content">
-Hello World!
-</pre></div>
-
-<hr />
-
-<!-- Section 2.3 -->
-<div id="tut-content"> 
-    <ul>
-        <li> <strong>Multi-line comment </strong>: Wrapped with in triple quotes (same as multiline string) . It is considered as documentation string (Doc string) if it is given as first line of function or class. </li>
-    </ul> 
-</div>
-
-<div id="code-block-12" class="code-block">
-<p id="code-header-12" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-12", "code-header-12")</script>
-
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="s">'''
- This is Multi-line comment. 
- It becomes doc-string when it's first line of class or function.
-'''</span>
-
-<span class="c1"># OR
-</span>
-<span class="s">"""
- This is Multi-line comment. 
- It becomes doc-string when it's first line of class or function.
-"""</span></code></pre></figure>
-
-</div>
-
-<hr />
-
-<!-- Section3 -->
-<h2 id="python-console-as-calculator">Python Console as Calculator</h2>
-
-<div id="tut-content"> 
-    <ul>
-        <li> Execute Following lines (One line at a time) inside python console. </li>
-    </ul> 
-</div>
-
-<div id="code-block-13" class="code-block">
-<p id="code-header-13" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-13", "code-header-13")</script>
-
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># Addition
-</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">2</span>
-
-<span class="c1"># Subtraction
-</span><span class="mi">56</span> <span class="o">-</span> <span class="mi">21</span>
-
-<span class="c1"># Multiplication
-</span><span class="mi">12</span> <span class="o">*</span> <span class="mi">8</span>
-
-<span class="c1"># Division (returns Float)
-</span><span class="mi">174</span> <span class="o">/</span> <span class="mi">12</span>
-
-<span class="c1"># floor division for Integer
-</span><span class="mi">174</span> <span class="o">//</span> <span class="mi">12</span>
-
-<span class="c1"># floor division for Float
-</span><span class="mi">12</span> <span class="o">//</span> <span class="mf">4.00</span>
-
-<span class="c1"># Remainder
-</span><span class="mi">100</span> <span class="o">%</span> <span class="mi">7</span>
-
-<span class="c1"># Exponential
-</span><span class="mi">2</span> <span class="o">**</span> <span class="mi">5</span></code></pre></figure>
-
-</div>
-
-<div class="result"><p class="result-header"><b>Output</b></p>
-<pre class="result-content">
-&gt;&gt;&gt; 5 + 2
-7
-&gt;&gt;&gt; 56 - 21
-35
-&gt;&gt;&gt; 12 * 8
-96
-&gt;&gt;&gt; 174 / 12 
-14.5
-&gt;&gt;&gt; 174 // 12
-14
-&gt;&gt;&gt; 12 // 4.00
-3.0
-&gt;&gt;&gt; 100 % 7
-2
-&gt;&gt;&gt; 2 ** 5
-32
+Min : 0001-01-01 00:00:00    Max : 9999-12-31 23:59:59.999999   Resolution : 0:00:00.000001
 </pre></div>
 
 <hr />
@@ -861,18 +971,6 @@ Hello World!
     <div class="tags">
         
         <p style="display: inline;"><b>Tags: </b></p>
-        
-        
-        
-        <a href="tag_Hello_World.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">Hello_World</a>
-        
-        
-        
-        <a href="tag_comments.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">comments</a>
-        
-        
-        
-        <a href="tag_python_console_calculator.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">python_console_calculator</a>
         
         
         
@@ -898,23 +996,23 @@ Hello World!
     
 
     
-        <a href="python_getting_started.html" >
+        <a href="python_bytes_bytearray.html" >
             <button type="button" class="btn btn-primary  "> 
                  <span class="fa fa-arrow-circle-left fa-lg"></span>  Previous  <br/>
-                 Getting Started 
+                 Bytes and ByteArray 
             </button>
         </a>
     
 
     
-        <a href="python_variables.html" >
-            <button type="button" class="btn btn-primary "> 
-                 Next <span class="fa fa-arrow-circle-right fa-lg"></span> <br/> 
-                 Python Variables
+
+    
+        <a href="python_control_flow.html" >
+            <button type="button" class="btn btn-success "> 
+                Next Section <span class="fa fa-chevron-right fa-lg"></span> <br/>  
+                Control Flow 
             </button>
         </a>
-    
-
     
 
 </div>

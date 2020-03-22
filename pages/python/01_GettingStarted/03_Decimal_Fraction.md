@@ -361,7 +361,7 @@ print(p1 / p2)
 
 ###  Creating custom context
 
-<p> <strong> Context Constructor :  Context(prec=None, rounding=None, Emin=None, Emax=None, capitals=None, clamp=None, flags=None, traps=None) </strong></p>
+<p id="tut-cons"> Context Constructor :  Context(prec=None, rounding=None, Emin=None, Emax=None, capitals=None, clamp=None, flags=None, traps=None) </p>
 
 
 <div id="tut-content"> 

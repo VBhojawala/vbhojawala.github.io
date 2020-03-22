@@ -1,16 +1,14 @@
 ---
 title: Bytes and ByteArray
 layout: tutorial
-tags: [unicode, ASCII, ord(), chr(), hex(), fromhex(), encode(), decode(), BOM, bytes, bytearray, immutable_vs_mutable, mutable, append(), clear(), copy(), extend(), insert(), pop(), remove(), reverse()]
+tags: [unicode, ASCII, ord(), chr(), hex(), fromhex(), encode(), decode(), BOM, bytes, bytearray, immutable_vs_mutable, mutable, immutable, append(), clear(), copy(), extend(), insert(), pop(), remove(), reverse()]
 sidebar: python_sidebar
 permalink: python_bytes_bytearray.html
 folder: python
 prev: python_string.html
 prev_title: String
-next: 
-next_title:
-next_section: python_control_flow.html
-next_section_title: Control Flow
+next: python_date_time_datetime.html
+next_title: DateTime
 summary: encoding and decoding.  bytes and bytearray object and their methods.
 ---
 
@@ -267,7 +265,7 @@ utf_32    b'\xff\xfe\x00\x00c\x00\x00\x00a\x00\x00\x00f\x00\x00\x00\xe9\x00\x00\
 
 
 ### bytes constructor
-<p> <strong>bytes(str, encoding [, errors])</strong> </p>
+<p id="tut-cons"> bytes(str, encoding [, errors]) </p>
 <div id="tut-content"> 
     <ul>
         <li> <strong> str :</strong> String to be represented as Bytes.  </li>

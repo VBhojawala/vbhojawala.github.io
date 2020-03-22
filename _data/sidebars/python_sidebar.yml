@@ -34,6 +34,10 @@ entries:
       - title: Bytes and ByteArray
         url: /python_bytes_bytearray.html
         output: web, pdf
+
+      - title: DateTime
+        url: /python_date_time_datetime.html
+        output: web, pdf
         
         
         # subfolders:

@@ -1555,7 +1555,16 @@ ul.mobile-toggle > a{
 #tut-tags:hover{
     border-color: #36362C;
 }
+#tut-cons{
+    font-size: 24px;
+    font-weight: bold;
+}
+
 .panel-body h4{
     font-style: normal;
     color: #36362C;
+}
+#copyright{
+    font-size: 16px;
+    word-spacing: 1.2px;
 }

@@ -3023,7 +3023,7 @@ Interest rate is Decimal('6.78451')
 </div>
 
 
-<p> <strong>Methods</strong> </p>
+<p id="tut-cons"> Methods </p>
 
 <div id="tut-content"> 
     <ul>
@@ -3033,7 +3033,7 @@ Interest rate is Decimal('6.78451')
 </div>
 
 
-<p> <strong>Attributes</strong> </p>
+<p id="tut-cons"> Attributes </p>
 
 <div id="tut-content"> 
     <ul>
@@ -3044,7 +3044,7 @@ Interest rate is Decimal('6.78451')
 <hr/>
 
 
-<p> <strong>Example</strong> </p>
+<p id="tut-cons"> Example </p>
 
 
 {% assign code_block = code_block | plus: 1 %}

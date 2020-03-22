@@ -351,6 +351,9 @@ h1, h2, h3, h4, .bs-callout{
     #tut-content ul li::before{
         font-size: 17px;
     }
+    #copyright{
+        font-size: 13px;
+    }
     h1{
         font-size: 32px;
     }
@@ -359,6 +362,9 @@ h1, h2, h3, h4, .bs-callout{
     }
     h3{
         font-size: 22px;
+    }
+    #tut-cons{
+        font-size: 20px;
     }
     h4{
         font-size: 20px;
@@ -390,6 +396,9 @@ h1, h2, h3, h4, .bs-callout{
     #tut-content ul li::before{
         font-size: 19px;
     }
+    #copyright{
+        font-size: 14px;
+    }
     h1{
         font-size: 34px;
     }
@@ -398,6 +407,9 @@ h1, h2, h3, h4, .bs-callout{
     }
     h3{
         font-size: 23px;
+    }
+    #tut-cons{
+        font-size: 21px;
     }
     h4{
         font-size: 20px;
@@ -429,6 +441,9 @@ h1, h2, h3, h4, .bs-callout{
     #tut-content ul li::before{
         font-size: 21px;
     }
+    #copyright{
+        font-size: 15px;
+    }
     h1{
         font-size: 36px;
     }
@@ -437,6 +452,9 @@ h1, h2, h3, h4, .bs-callout{
     }
     h3{
         font-size: 24px;
+    }
+    #tut-cons{
+        font-size: 22px;
     }
     h4{
         font-size: 20px;
@@ -468,6 +486,9 @@ h1, h2, h3, h4, .bs-callout{
     #tut-content ul li::before{
         font-size: 23px;
     }
+    #copyright{
+        font-size: 16px;
+    }
     h1{
         font-size: 38px;
     }
@@ -476,6 +497,9 @@ h1, h2, h3, h4, .bs-callout{
     }
     h3{
         font-size: 26px;
+    }
+    #tut-cons{
+        font-size: 24px;
     }
     h4{
         font-size: 22px;
