@@ -647,6 +647,238 @@ Min : 0001-01-01   Max : 9999-12-31    Resolution : 1 day, 0:00:00
 
 <hr />
 
+<h3 id="functions">Functions</h3>
+
+<h4 id="weekday">weekday()</h4>
+<p> Returns day of the week as integer where 0 for Monday and 6 for Sunday. </p>
+
+<div id="code-block-4" class="code-block">
+<p id="code-header-4" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-4", "code-header-4")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+<span class="n">d1</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">22</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d1</span><span class="o">.</span><span class="n">weekday</span><span class="p">())</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+6
+</pre></div>
+
+<hr />
+
+<h4 id="isoweekday">isoweekday()</h4>
+<p> Returns day of week as integer where 1 for Monday and 7 for Sunday. </p>
+
+<div id="code-block-5" class="code-block">
+<p id="code-header-5" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-5", "code-header-5")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+<span class="n">d1</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">22</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d1</span><span class="o">.</span><span class="n">isoweekday</span><span class="p">())</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+7
+</pre></div>
+
+<hr />
+
+<h4 id="isocalendar">isocalendar()</h4>
+<p> Returns tuple representing (ISO year, ISO week number, ISO weekday). </p>
+
+<div id="code-block-6" class="code-block">
+<p id="code-header-6" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-6", "code-header-6")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+<span class="n">d1</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">22</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d1</span><span class="o">.</span><span class="n">isocalendar</span><span class="p">())</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+(2020, 12, 7)
+</pre></div>
+
+<hr />
+
+<h4 id="fromisocalendar">fromisocalendar()</h4>
+<p> Returns date object from ISO year, ISO week number, ISO weekday. </p>
+
+<div id="code-block-7" class="code-block">
+<p id="code-header-7" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-7", "code-header-7")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+<span class="n">year</span><span class="p">,</span> <span class="n">week</span><span class="p">,</span> <span class="n">weekday</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">22</span><span class="p">)</span><span class="o">.</span><span class="n">isocalendar</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">fromisocalendar</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">week</span><span class="p">,</span> <span class="n">weekday</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+2020-03-22
+</pre></div>
+
+<hr />
+
+<h4 id="ctime">ctime()</h4>
+<p> date representation in as native C. same as ctime in C library 'time' </p>
+
+<div id="code-block-8" class="code-block">
+<p id="code-header-8" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-8", "code-header-8")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+<span class="n">d1</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">22</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d1</span><span class="o">.</span><span class="n">ctime</span><span class="p">())</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Sun Mar 22 00:00:00 2020
+</pre></div>
+
+<hr />
+
+<h4 id="toordinal">toordinal()</h4>
+<p> Return the proleptic Gregorian ordinal of the date, where January 1 of year 1 has ordinal 1. </p>
+
+<div id="code-block-9" class="code-block">
+<p id="code-header-9" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-9", "code-header-9")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+<span class="n">d1</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">22</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d1</span><span class="o">.</span><span class="n">toordinal</span><span class="p">())</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+737506
+</pre></div>
+
+<hr />
+
+<h4 id="fromordinal">fromordinal()</h4>
+<p> Returns date object from ordinal value. </p>
+
+<div id="code-block-10" class="code-block">
+<p id="code-header-10" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-10", "code-header-10")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+<span class="n">d2</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">fromordinal</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span><span class="o">.</span><span class="n">toordinal</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d2</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+2020-03-22
+</pre></div>
+
+<hr />
+
+<h4 id="fromtimestamp">fromtimestamp()</h4>
+<p> Returns date object from ordinal value. </p>
+
+<div id="code-block-11" class="code-block">
+<p id="code-header-11" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-11", "code-header-11")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="n">d1</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d1</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+2020-03-22
+</pre></div>
+
+<hr />
+
+<h4 id="isoformat">isoformat()</h4>
+<p> Returns date in iso format. </p>
+
+<div id="code-block-12" class="code-block">
+<p id="code-header-12" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-12", "code-header-12")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+<span class="n">d1</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">22</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d1</span><span class="o">.</span><span class="n">isoformat</span><span class="p">())</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+2020-03-22
+</pre></div>
+
+<hr />
+
+<h4 id="fromisoformat">fromisoformat()</h4>
+<p> Returns date object from string date represented in iso format. </p>
+
+<div id="code-block-13" class="code-block">
+<p id="code-header-13" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-13", "code-header-13")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+<span class="n">d1</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="s">'2020-10-02'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">d1</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+2020-10-02 &lt;class 'datetime.date'&gt;
+</pre></div>
+
+<hr />
+
+<h4 id="replaceyear-month-date">replace(year, month, date)</h4>
+<p> Returns new date object from an existing date object by replacing only provided parameter. </p>
+
+<div id="code-block-14" class="code-block">
+<p id="code-header-14" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-14", "code-header-14")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+<span class="n">d1</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">22</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d1</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="mi">2021</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+2021-03-22
+</pre></div>
+
+<hr />
+
+<h4 id="timetuple">timetuple()</h4>
+<p> Returns locale time tuple compatible with time.localtime(). </p>
+
+<div id="code-block-15" class="code-block">
+<p id="code-header-15" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-15", "code-header-15")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+<span class="n">d1</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">22</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d1</span><span class="o">.</span><span class="n">timetuple</span><span class="p">())</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+time.struct_time(tm_year=2020, tm_mon=3, tm_mday=22, tm_hour=0, tm_min=0, tm_sec=0, tm_wday=6, tm_yday=82, tm_isdst=-1)
+</pre></div>
+
+<hr />
+
 <h2 id="time">Time</h2>
 
 <h3 id="constructor-1">Constructor</h3>
@@ -743,8 +975,8 @@ Min : 0001-01-01   Max : 9999-12-31    Resolution : 1 day, 0:00:00
   </tbody>
 </table>
 
-<div id="code-block-4" class="code-block">
-<p id="code-header-4" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-4", "code-header-4")</script>
+<div id="code-block-16" class="code-block">
+<p id="code-header-16" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-16", "code-header-16")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">time</span>
 
@@ -774,6 +1006,10 @@ Min : 00:00:00  Max : 23:59:59.999999  Resolution : 0:00:00.000001
 </pre></div>
 
 <hr />
+
+<h3 id="functions-1">Functions</h3>
+
+<h4 id="fromisoformat-1">fromisoformat()</h4>
 
 <h2 id="datetime">DateTime</h2>
 
@@ -831,19 +1067,19 @@ Min : 00:00:00  Max : 23:59:59.999999  Resolution : 0:00:00.000001
     </ul> 
 </div>
 
-<div id="code-block-5" class="code-block">
-<p id="code-header-5" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-5", "code-header-5")</script>
+<div id="code-block-17" class="code-block">
+<p id="code-header-17" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-17", "code-header-17")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
 
-<span class="n">d1</span> <span class="o">=</span> <span class="n">dt</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">21</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">d1</span><span class="p">)</span>
+<span class="n">dt1</span> <span class="o">=</span> <span class="n">dt</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">21</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">dt1</span><span class="p">)</span>
 
-<span class="n">d2</span> <span class="o">=</span> <span class="n">dt</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">45</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">d2</span><span class="p">)</span>
+<span class="n">dt2</span> <span class="o">=</span> <span class="n">dt</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">45</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">dt2</span><span class="p">)</span>
 
-<span class="n">d3</span> <span class="o">=</span> <span class="n">dt</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">1500</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">d3</span><span class="p">)</span></code></pre></figure>
+<span class="n">dt3</span> <span class="o">=</span> <span class="n">dt</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">1500</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">dt3</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -856,23 +1092,38 @@ Min : 00:00:00  Max : 23:59:59.999999  Resolution : 0:00:00.000001
 
 <hr />
 
-<h3 id="now">now()</h3>
-<p> Returns datetime object representing current date and time. </p>
+<h3 id="today-1">today()</h3>
+<p> Returns current date and time with timezone None. </p>
 
-<div id="code-block-6" class="code-block">
-<p id="code-header-6" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-6", "code-header-6")</script>
+<div id="code-block-18" class="code-block">
+<p id="code-header-18" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-18", "code-header-18")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
-
-<span class="n">now</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">now</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="n">dt</span><span class="o">.</span><span class="n">today</span><span class="p">())</span></code></pre></figure>
 
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-2020-03-22 09:39:01.669841
+2020-03-22 18:47:26.616591
+</pre></div>
+
+<hr />
+
+<h3 id="nowtz">now([tz])</h3>
+<p> Returns current local date and  time. If optional param tz is not given works same as today() </p>
+
+<div id="code-block-19" class="code-block">
+<p id="code-header-19" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-19", "code-header-19")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
+<span class="k">print</span><span class="p">(</span><span class="n">dt</span><span class="o">.</span><span class="n">now</span><span class="p">())</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+2020-03-22 18:48:17.911678
 </pre></div>
 
 <hr />
@@ -938,8 +1189,8 @@ Min : 00:00:00  Max : 23:59:59.999999  Resolution : 0:00:00.000001
   </tbody>
 </table>
 
-<div id="code-block-7" class="code-block">
-<p id="code-header-7" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-7", "code-header-7")</script>
+<div id="code-block-20" class="code-block">
+<p id="code-header-20" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-20", "code-header-20")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
 
@@ -962,6 +1213,597 @@ Hour : 9    Minutes : 49   Seconds : 43  Microseconds : 344265
 fold : 0   tzinfo : None 
 
 Min : 0001-01-01 00:00:00    Max : 9999-12-31 23:59:59.999999   Resolution : 0:00:00.000001
+</pre></div>
+
+<hr />
+
+<h3 id="functions-2">Functions</h3>
+
+<h4 id="combinedate-time-tzinfo">combine(date, time[, tzinfo])</h4>
+<p> Returns datetime objects from given date and time objects. If optional argument tzinfo is given it is set to datetime object otherwise it is copied from time object.  </p>
+
+<div id="code-block-21" class="code-block">
+<p id="code-header-21" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-21", "code-header-21")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
+
+<span class="n">today</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+<span class="n">timeNow</span> <span class="o">=</span> <span class="n">time</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+
+<span class="n">dtCombine</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">combine</span><span class="p">(</span><span class="n">today</span><span class="p">,</span> <span class="n">timeNow</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">dtCombine</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+2020-03-22 12:11:00
+</pre></div>
+
+<hr />
+
+<h4 id="date-1">date()</h4>
+<p> Returns date object from datetime object. </p>
+
+<div id="code-block-22" class="code-block">
+<p id="code-header-22" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-22", "code-header-22")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
+
+<span class="n">dt1</span> <span class="o">=</span> <span class="n">dt</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">1500</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">dt1</span><span class="o">.</span><span class="n">date</span><span class="p">(),</span> <span class="nb">type</span><span class="p">(</span><span class="n">dt1</span><span class="o">.</span><span class="n">date</span><span class="p">()))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+2020-03-21 &lt;class 'datetime.date'&gt;
+</pre></div>
+
+<hr />
+
+<h4 id="time-1">time()</h4>
+<p> Returns time object from datetime object. </p>
+
+<div id="code-block-23" class="code-block">
+<p id="code-header-23" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-23", "code-header-23")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
+
+<span class="n">dt1</span> <span class="o">=</span> <span class="n">dt</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">1500</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">dt1</span><span class="o">.</span><span class="n">time</span><span class="p">(),</span> <span class="nb">type</span><span class="p">(</span><span class="n">dt1</span><span class="o">.</span><span class="n">time</span><span class="p">()))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+11:46:55.001500 &lt;class 'datetime.time'&gt;
+</pre></div>
+
+<hr />
+
+<h4 id="isoformatsept-timespecauto">isoformat(sep=’T’, timespec=’auto’)</h4>
+<p> Returns string representing datetime in iso format. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> sep : </strong> Defines separator which is placed between date and time.</li>
+        <li> <strong> timespec :</strong> Can have one of the following values. </li>
+    </ul> 
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">timespec</th>
+      <th style="text-align: left">output</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">auto</td>
+      <td style="text-align: left">YYYY-MM-DDTHH:MM:SS.ffffff or YYYY-MM-DDTHH:MM:SS if micro second is zero.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">hours</td>
+      <td style="text-align: left">YYYY-MM-DDTHH</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">minutes</td>
+      <td style="text-align: left">YYYY-MM-DDTHH:MM</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">seconds</td>
+      <td style="text-align: left">YYYY-MM-DDTHH:MM:SS</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">milliseconds</td>
+      <td style="text-align: left">YYYY-MM-DDTHH:MM:SS.sss</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">microseconds</td>
+      <td style="text-align: left">YYYY-MM-DDTHH:MM:SS.ffffff</td>
+    </tr>
+  </tbody>
+</table>
+
+<div id="code-block-24" class="code-block">
+<p id="code-header-24" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-24", "code-header-24")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
+
+<span class="n">dt1</span> <span class="o">=</span> <span class="n">dt</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="mi">2020</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">21</span><span class="p">,</span> <span class="n">hour</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
+         <span class="n">minute</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">second</span><span class="o">=</span><span class="mi">55</span><span class="p">,</span> <span class="n">microsecond</span><span class="o">=</span><span class="mi">569</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">dt1</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(</span><span class="n">timespec</span><span class="o">=</span><span class="s">'auto'</span><span class="p">))</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">dt1</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(</span><span class="n">timespec</span><span class="o">=</span><span class="s">'hours'</span><span class="p">))</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">dt1</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(</span><span class="n">timespec</span><span class="o">=</span><span class="s">'minutes'</span><span class="p">))</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">dt1</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(</span><span class="n">sep</span><span class="o">=</span><span class="s">' '</span><span class="p">,</span> <span class="n">timespec</span><span class="o">=</span><span class="s">'seconds'</span><span class="p">))</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">dt1</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(</span><span class="n">sep</span><span class="o">=</span><span class="s">' '</span><span class="p">,</span> <span class="n">timespec</span><span class="o">=</span><span class="s">'milliseconds'</span><span class="p">))</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">dt1</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(</span><span class="n">sep</span><span class="o">=</span><span class="s">' '</span><span class="p">,</span> <span class="n">timespec</span><span class="o">=</span><span class="s">'microseconds'</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+2020-03-21T15:45:55.000569
+2020-03-21T15
+2020-03-21T15:45
+2020-03-21 15:45:55
+2020-03-21 15:45:55.000
+2020-03-21 15:45:55.000569
+</pre></div>
+
+<hr />
+
+<h4 id="utcnow">utcnow()</h4>
+<p>  Returns current UTC time with tzinfo None.</p>
+
+<div id="code-block-25" class="code-block">
+<p id="code-header-25" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-25", "code-header-25")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
+<span class="k">print</span><span class="p">(</span><span class="n">dt</span><span class="o">.</span><span class="n">utcnow</span><span class="p">())</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+2020-03-22 13:33:43.298138
+</pre></div>
+
+<hr />
+
+<h4 id="fromtimestamptimestamp-tz">fromtimestamp(timestamp[, tz])</h4>
+<p>  Returns local date and time from timestamp (POSIX). If optional argument tz is give (instance of tzinfo) timestamp is converted in to tz's timestamp.</p>
+
+<div id="code-block-26" class="code-block">
+<p id="code-header-26" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-26", "code-header-26")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">dt</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+2020-03-22 19:06:19.541499
+</pre></div>
+
+<hr />
+
+<h4 id="utcfromtimestaptimestamp">utcfromtimestap(timestamp)</h4>
+<p>  Returns UTC timestamp from POSIX timestamp.</p>
+
+<div id="code-block-27" class="code-block">
+<p id="code-header-27" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-27", "code-header-27")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">dt</span><span class="o">.</span><span class="n">utcfromtimestamp</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+2020-03-22 13:38:43.090037
+</pre></div>
+
+<hr />
+
+<h4 id="strptimedate_string-format">strptime(date_string, format)</h4>
+<p>  Convert date_string in given format  to datetime object. </p>
+
+<div id="code-block-28" class="code-block">
+<p id="code-header-28" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-28", "code-header-28")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">dt</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="s">'22/Mar/2020 11:30 PM'</span><span class="p">,</span> <span class="s">'</span><span class="si">%</span><span class="s">d/</span><span class="si">%</span><span class="s">b/</span><span class="si">%</span><span class="s">Y </span><span class="si">%</span><span class="s">I:</span><span class="si">%</span><span class="s">M </span><span class="si">%</span><span class="s">p'</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+2020-03-22 23:30:00
+</pre></div>
+
+<hr />
+
+<h4 id="timetz">timetz()</h4>
+<p>  Returns time object with tzinfo. </p>
+
+<div id="code-block-29" class="code-block">
+<p id="code-header-29" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-29", "code-header-29")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span><span class="p">,</span> <span class="n">timezone</span>
+
+<span class="n">dt1</span> <span class="o">=</span> <span class="n">dt</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="mi">2020</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">22</span><span class="p">,</span> <span class="n">hour</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
+         <span class="n">minute</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">second</span><span class="o">=</span><span class="mi">55</span><span class="p">,</span> <span class="n">microsecond</span><span class="o">=</span><span class="mi">569</span><span class="p">,</span> <span class="n">tzinfo</span><span class="o">=</span><span class="n">timezone</span><span class="o">.</span><span class="n">utc</span><span class="p">)</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="n">dt1</span><span class="o">.</span><span class="n">timetz</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">t1</span><span class="o">.</span><span class="n">tzinfo</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+15:45:55.000569+00:00 UTC
+</pre></div>
+
+<hr />
+
+<h4 id="replaceyearselfyear-monthselfmonth-dayselfday-hourselfhour-minuteselfminute-secondselfsecond-microsecondselfmicrosecond-tzinfoselftzinfo--fold0">replace(year=self.year, month=self.month, day=self.day, hour=self.hour, minute=self.minute, second=self.second, microsecond=self.microsecond, tzinfo=self.tzinfo, * fold=0)</h4>
+<p> Return datetime object by replacing the given parameters of the datetime and retains others from original datetime object. </p>
+
+<div id="code-block-30" class="code-block">
+<p id="code-header-30" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-30", "code-header-30")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
+
+<span class="n">dt1</span> <span class="o">=</span> <span class="n">dt</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="mi">2020</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">22</span><span class="p">,</span> <span class="n">hour</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
+         <span class="n">minute</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">second</span><span class="o">=</span><span class="mi">55</span><span class="p">,</span> <span class="n">microsecond</span><span class="o">=</span><span class="mi">569</span><span class="p">)</span>
+<span class="n">dt2</span> <span class="o">=</span> <span class="n">dt1</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="mi">2022</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">dt1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">dt2</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+2020-03-22 15:45:55.000569
+2022-03-12 15:45:55.000569
+</pre></div>
+
+<hr />
+
+<h2 id="formatting">Formatting</h2>
+
+<h3 id="strftimeformat">strftime(format)</h3>
+
+<p> Returns string representing given date, time, datetime object in given format. </p>
+
+<h3 id="formatting-symbols">formatting symbols</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">symbol</th>
+      <th style="text-align: left">meaning</th>
+      <th style="text-align: left">Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">%d</td>
+      <td style="text-align: left">Day of Month Zero based</td>
+      <td style="text-align: left">01, 02, 03 … 31</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">%a</td>
+      <td style="text-align: left">Day of the week in short[Locale]</td>
+      <td style="text-align: left">Sun, Mon, … Sat</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">%A</td>
+      <td style="text-align: left">Day of week full[Locale]</td>
+      <td style="text-align: left">Sunday, Monday ….. Saturday</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">%m</td>
+      <td style="text-align: left">Month of  the year zero based</td>
+      <td style="text-align: left">01, 02, … 12</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">%b</td>
+      <td style="text-align: left">Month local in 3 characters [Locale]</td>
+      <td style="text-align: left">Jan, Feb … Dec (en_US)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">%B</td>
+      <td style="text-align: left">Month local in full name [Locale]</td>
+      <td style="text-align: left">January, February … December (en_US)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">%y</td>
+      <td style="text-align: left">year in two digit</td>
+      <td style="text-align: left">01, 05 .. 99</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">%Y</td>
+      <td style="text-align: left">year in four digit</td>
+      <td style="text-align: left">1968, 2005, 2012 ..</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">%H</td>
+      <td style="text-align: left">Hour in 24</td>
+      <td style="text-align: left">05, 12, 23</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">%I</td>
+      <td style="text-align: left">Hour in 12</td>
+      <td style="text-align: left">01, 02, 12</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">%j</td>
+      <td style="text-align: left">Day of the year as decimal</td>
+      <td style="text-align: left">01, 02 … 365</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">%U</td>
+      <td style="text-align: left">Week number of year as decimal</td>
+      <td style="text-align: left">01, 02 … 52 (Sunday as the first day of the week)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">%W</td>
+      <td style="text-align: left">Week number of year as decimal</td>
+      <td style="text-align: left">01, 02 … 52 (Monday as the first day of the week)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">%w</td>
+      <td style="text-align: left">week day as decimal</td>
+      <td style="text-align: left">0(sunday), 1 … 6</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">%p</td>
+      <td style="text-align: left">AM or PM</td>
+      <td style="text-align: left">AM, PM</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">%M</td>
+      <td style="text-align: left">Minute of an hour</td>
+      <td style="text-align: left">01, 02, … 60</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">%S</td>
+      <td style="text-align: left">Seconds</td>
+      <td style="text-align: left">01, 02, … 60</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">%Z</td>
+      <td style="text-align: left">Timezone</td>
+      <td style="text-align: left">UTC,CST …</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">%z</td>
+      <td style="text-align: left">UTC offset +HHMM or -HHMM</td>
+      <td style="text-align: left">+0430  -1230</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">%c</td>
+      <td style="text-align: left">date and time as per locale</td>
+      <td style="text-align: left">Sun Dec  8 18:47:54 2019</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">%x</td>
+      <td style="text-align: left">date as per locale</td>
+      <td style="text-align: left">12/08/19</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">%X</td>
+      <td style="text-align: left">locale specific time</td>
+      <td style="text-align: left">18:47:54</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">%%</td>
+      <td style="text-align: left">escape character</td>
+      <td style="text-align: left">%</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="date-formatting">date formatting</h3>
+
+<div id="code-block-31" class="code-block">
+<p id="code-header-31" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-31", "code-header-31")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+
+<span class="n">d1</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">21</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">d1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d1</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">'</span><span class="si">%</span><span class="s">d </span><span class="si">%</span><span class="s">b </span><span class="si">%</span><span class="s">Y'</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d1</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">'</span><span class="si">%</span><span class="s">d </span><span class="si">%</span><span class="s">B </span><span class="si">%</span><span class="s">Y'</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d1</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">'</span><span class="si">%</span><span class="s">A, </span><span class="si">%</span><span class="s">Y  </span><span class="si">%</span><span class="s">b  </span><span class="si">%</span><span class="s">d'</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+2020-03-21
+21 Mar 2020
+21 March 2020
+Saturday, 2020  Mar  21
+</pre></div>
+
+<hr />
+
+<h3 id="time-formatting">Time formatting</h3>
+
+<div id="code-block-32" class="code-block">
+<p id="code-header-32" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-32", "code-header-32")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">time</span>
+
+<span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">1599</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">'</span><span class="si">%</span><span class="s">H:</span><span class="si">%</span><span class="s">M:</span><span class="si">%</span><span class="s">S'</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">'</span><span class="si">%</span><span class="s">I-</span><span class="si">%</span><span class="s">M-</span><span class="si">%</span><span class="s">S'</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">'</span><span class="si">%</span><span class="s">I:</span><span class="si">%</span><span class="s">M:</span><span class="si">%</span><span class="s">S </span><span class="si">%</span><span class="s">p'</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+15:45:33
+03-45-33
+03:45:33 PM
+</pre></div>
+
+<hr />
+
+<h3 id="datetime-formatting">DateTime formatting</h3>
+
+<div id="code-block-33" class="code-block">
+<p id="code-header-33" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-33", "code-header-33")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
+
+
+<span class="n">dt1</span> <span class="o">=</span> <span class="n">dt</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="mi">2020</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">21</span><span class="p">,</span> <span class="n">hour</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
+         <span class="n">minute</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">second</span><span class="o">=</span><span class="mi">55</span><span class="p">,</span> <span class="n">microsecond</span><span class="o">=</span><span class="mi">569</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">dt1</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">'</span><span class="si">%</span><span class="s">d </span><span class="si">%</span><span class="s">b </span><span class="si">%</span><span class="s">Y </span><span class="si">%</span><span class="s">H:</span><span class="si">%</span><span class="s">M:</span><span class="si">%</span><span class="s">S'</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">dt1</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">'</span><span class="si">%</span><span class="s">B, </span><span class="si">%</span><span class="s">d  </span><span class="si">%</span><span class="s">Y </span><span class="si">%</span><span class="s">I:</span><span class="si">%</span><span class="s">M:</span><span class="si">%</span><span class="s">S </span><span class="si">%</span><span class="s">p'</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">dt1</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">'</span><span class="si">%</span><span class="s">A, </span><span class="si">%</span><span class="s">d </span><span class="si">%</span><span class="s">B </span><span class="si">%</span><span class="s">Y </span><span class="si">%</span><span class="s">I:</span><span class="si">%</span><span class="s">M:</span><span class="si">%</span><span class="s">S </span><span class="si">%</span><span class="s">p'</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+21 Mar 2020 15:45:55
+March, 21  2020 03:45:55 PM
+Saturday, 21 March 2020 03:45:55 PM
+</pre></div>
+
+<hr />
+
+<h2 id="comparision">Comparision</h2>
+
+<h3 id="operators">Operators</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Operator</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">&lt;</td>
+      <td style="text-align: left">Less-than</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">&gt;</td>
+      <td style="text-align: left">Greater-than</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">&lt;=</td>
+      <td style="text-align: left">Less-than or equal to</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">&gt;=</td>
+      <td style="text-align: left">Greater-than or equal to</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">==</td>
+      <td style="text-align: left">Equal to</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">!=</td>
+      <td style="text-align: left">Not equal to</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="example">Example</h3>
+
+<div id="code-block-34" class="code-block">
+<p id="code-header-34" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-34", "code-header-34")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'</span><span class="se">\n</span><span class="s">{"*"*5} Date comparision {"*"*5}'</span><span class="p">)</span>
+
+<span class="n">d1</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">21</span><span class="p">)</span>
+<span class="n">d2</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'d1 : {d1}    d2 : {d2}</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'d1 &lt; d2 ? -&gt;'</span><span class="p">,</span> <span class="n">d1</span> <span class="o">&lt;</span> <span class="n">d2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'d1 &gt; d2 ? -&gt;'</span><span class="p">,</span> <span class="n">d1</span> <span class="o">&gt;</span> <span class="n">d2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'d1 == d2 ? -&gt;'</span><span class="p">,</span> <span class="n">d1</span> <span class="o">==</span> <span class="n">d2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'d1 != d2 ? -&gt;'</span><span class="p">,</span> <span class="n">d1</span> <span class="o">!=</span> <span class="n">d2</span><span class="p">)</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'</span><span class="se">\n</span><span class="s">{"*"*5} Time comparision {"*"*5}'</span><span class="p">)</span>
+
+<span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">55</span><span class="p">)</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="n">time</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">45</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'t1 : {t1}   t2 : {t2}</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'t1 &lt; t2 ? -&gt;'</span><span class="p">,</span> <span class="n">t1</span> <span class="o">&lt;</span> <span class="n">t2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'t1 &gt; t2 ? -&gt;'</span><span class="p">,</span> <span class="n">t1</span> <span class="o">&gt;</span> <span class="n">t2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'t1 == t2 ? -&gt;'</span><span class="p">,</span> <span class="n">t1</span> <span class="o">==</span> <span class="n">t2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'t1 != t2 ? -&gt;'</span><span class="p">,</span> <span class="n">t1</span> <span class="o">!=</span> <span class="n">t2</span><span class="p">)</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'</span><span class="se">\n</span><span class="s">{"*"*5} DateTime comparision {"*"*5}'</span><span class="p">)</span>
+
+
+<span class="n">dt1</span> <span class="o">=</span> <span class="n">dt</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">55</span><span class="p">)</span>
+<span class="n">dt2</span> <span class="o">=</span> <span class="n">dt</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">45</span><span class="p">)</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'dt1 : {dt1}   dt2 : {dt2}</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'dt1 &lt; dt2 ? -&gt;'</span><span class="p">,</span> <span class="n">dt1</span> <span class="o">&lt;</span> <span class="n">dt2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'dt1 &gt; dt2 ? -&gt;'</span><span class="p">,</span> <span class="n">dt1</span> <span class="o">&gt;</span> <span class="n">dt2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'dt1 == dt2 ? -&gt;'</span><span class="p">,</span> <span class="n">dt1</span> <span class="o">==</span> <span class="n">dt2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'dt1 != dt2 ? -&gt;'</span><span class="p">,</span> <span class="n">dt1</span> <span class="o">!=</span> <span class="n">dt2</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+***** Date comparision *****
+d1 : 2020-03-21    d2 : 2020-06-15
+d1 &lt; d2 ? -&gt; True
+d1 &gt; d2 ? -&gt; False
+d1 == d2 ? -&gt; False
+d1 != d2 ? -&gt; True
+
+***** Time comparision *****
+t1 : 15:45:55   t2 : 11:15:45
+t1 &lt; t2 ? -&gt; False
+t1 &gt; t2 ? -&gt; True
+t1 == t2 ? -&gt; False
+t1 != t2 ? -&gt; True
+
+***** DateTime comparision *****
+dt1 : 2020-03-21 15:45:55   dt2 : 2020-06-15 11:15:45
+dt1 &lt; dt2 ? -&gt; True
+dt1 &gt; dt2 ? -&gt; False
+dt1 == dt2 ? -&gt; False
+dt1 != dt2 ? -&gt; True
+
 </pre></div>
 
 <hr />
