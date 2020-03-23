@@ -1,0 +1,8 @@
+---
+title: "time"
+tagName: time
+search: exclude
+permalink: tag_time.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

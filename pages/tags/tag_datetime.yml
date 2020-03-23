@@ -1,0 +1,8 @@
+---
+title: "datetime"
+tagName: datetime
+search: exclude
+permalink: tag_datetime.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

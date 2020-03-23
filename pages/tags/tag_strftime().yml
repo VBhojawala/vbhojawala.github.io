@@ -1,0 +1,8 @@
+---
+title: "strftime()"
+tagName: strftime()
+search: exclude
+permalink: tag_strftime().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

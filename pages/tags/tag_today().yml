@@ -1,0 +1,8 @@
+---
+title: "today()"
+tagName: today()
+search: exclude
+permalink: tag_today().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

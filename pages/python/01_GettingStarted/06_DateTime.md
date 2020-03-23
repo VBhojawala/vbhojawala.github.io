@@ -1,7 +1,7 @@
 ---
 title: Date, Time and DateTime
 layout: tutorial
-tags: []
+tags: [date, time, datetime, today(), now(), combine(), isoformat(), fromisoformat(), utcnow(), fromtimestamp(), utcfromtimestamp(), strptime(), timetz(), replace(), astimezone(), utcoffset(), dst(), tzname(), timetuple(), utctimetuple(), toordinal(), fromordinal(), timestamp(), weekday(), isoweekday(), isocalendar(), fromisocalendar(), ctime(), strftime(), comparision]
 sidebar: python_sidebar
 permalink: python_date_time_datetime.html
 folder: python
@@ -557,7 +557,111 @@ Min : 00:00:00  Max : 23:59:59.999999  Resolution : 0:00:00.000001
 
 ### Functions
 
-#### fromisoformat()
+#### isoformat(timespec='auto')
+<p> Returns string representing time in iso format. </p>
+
+timespec       | output
+:--- | :--- 
+  auto          |  HH:MM:SS.ffffff or YYYY-MM-DDTHH:MM:SS if micro second is zero.
+  hours         |  HH
+  minutes       |  HH:MM
+  seconds       |  HH:MM:SS
+  milliseconds  |  HH:MM:SS.sss
+  microseconds  |  HH:MM:SS.ffffff
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from datetime import time
+
+t1 = time(hour=12, minute=45, second=45, microsecond=1500)
+
+print(t1.isoformat())
+print("timespec='hours'  :  ", t1.isoformat(timespec='hours'))
+print("timespec='minutes'   :  ", t1.isoformat(timespec='minutes'))
+print("timespec='seconds'  :  ", t1.isoformat(timespec='seconds'))
+print("timespec='milliseconds' :  ", t1.isoformat(timespec='milliseconds'))
+print("timespec='microseconds' :  ", t1.isoformat(timespec='microseconds'))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+12:45:45.001500
+timespec='hours'  :   12
+timespec='minutes'   :   12:45
+timespec='seconds'  :   12:45:45
+timespec='milliseconds' :   12:45:45.001
+timespec='microseconds' :   12:45:45.001500
+</pre></div>
+
+<hr/>
+
+
+
+
+#### fromisoformat(time_string)
+
+<p> Returns time object constructed from given string containing isotime. </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from datetime import time
+t1 = time.fromisoformat('12:45:45.001500')
+print(t1, type(t1))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+12:45:45.001500 <class 'datetime.time'>
+</pre></div>
+
+<hr/>
+
+
+
+#### replace(hour=self.hour, minute=self.minute, second=self.second, microsecond=self.microsecond, tzinfo=self.tzinfo, * fold=0)
+<p> Returns new time object from an existing time object by replacing given param values. </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from datetime import time
+
+t1 = time(hour=12, minute=45, second=45, microsecond=1500)
+t2 = t1.replace(minute=25)
+
+print(t1)
+print(t2)
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+12:45:45.001500
+12:25:45.001500
+</pre></div>
+
+<hr/>
 
 
 
@@ -565,6 +669,91 @@ Min : 00:00:00  Max : 23:59:59.999999  Resolution : 0:00:00.000001
 
 
 
+
+#### utcoffset()
+<p> Returns timedelta object having time difference between local time and UTC time. </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from datetime import time, timezone, timedelta
+
+t1 = time(11, 45, 33, tzinfo=timezone(timedelta(hours=5, minutes=30)))
+print(t1.utcoffset(), type(t1.utcoffset()))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+5:30:00 <class 'datetime.timedelta'>  
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+#### dst()
+<p> Returns timedelta object having local daylight savings value, returns None if tzinfo is None. </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from datetime import time, timezone, timedelta
+
+t1 = time(11, 45, 33,  tzinfo=timezone(timedelta(hours=-4), 'EDST – Eastern Daylight Savings Time'))
+print(t1.dst())
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+None
+</pre></div>
+
+<hr/>
+
+
+#### tzname()
+
+<p> Returns string representing name of timezone. </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from datetime import time, timezone, timedelta
+
+t1 = time(11, 45, 33, tzinfo=timezone(timedelta(hours=-4), 'EDST – Eastern Daylight Savings Time'))
+print(t1.tzname())
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+EDST – Eastern Daylight Savings Time
+</pre></div>
+
+<hr/>
 
 
 

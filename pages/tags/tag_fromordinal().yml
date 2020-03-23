@@ -1,0 +1,8 @@
+---
+title: "fromordinal()"
+tagName: fromordinal()
+search: exclude
+permalink: tag_fromordinal().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

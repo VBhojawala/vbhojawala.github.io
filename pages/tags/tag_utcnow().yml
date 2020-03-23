@@ -1,0 +1,8 @@
+---
+title: "utcnow()"
+tagName: utcnow()
+search: exclude
+permalink: tag_utcnow().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

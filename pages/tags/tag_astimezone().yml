@@ -1,0 +1,8 @@
+---
+title: "astimezone()"
+tagName: astimezone()
+search: exclude
+permalink: tag_astimezone().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

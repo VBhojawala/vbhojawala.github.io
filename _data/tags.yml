@@ -109,3 +109,33 @@ allowed-tags:
   - reverse()
   - mutable
   - immutable
+  - date
+  - time
+  - datetime
+  - today()
+  - now()
+  - combine()
+  - isoformat()
+  - fromisoformat()
+  - utcnow()
+  - fromtimestamp()
+  - utcfromtimestamp()
+  - strptime()
+  - timetz()
+  - replace()
+  - astimezone()
+  - utcoffset()
+  - dst()
+  - tzname()
+  - timetuple()
+  - utctimetuple()
+  - toordinal()
+  - fromordinal()
+  - timestamp()
+  - weekday()
+  - isoweekday()
+  - isocalendar()
+  - fromisocalendar()
+  - ctime()
+  - strftime()
+  - comparision

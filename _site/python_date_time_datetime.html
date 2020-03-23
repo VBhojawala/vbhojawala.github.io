@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Date, Time and DateTime">
-<meta name="keywords" content=",  ">
+<meta name="keywords" content="datetimedatetimetoday()now()combine()isoformat()fromisoformat()utcnow()fromtimestamp()utcfromtimestamp()strptime()timetz()replace()astimezone()utcoffset()dst()tzname()timetuple()utctimetuple()toordinal()fromordinal()timestamp()weekday()isoweekday()isocalendar()fromisocalendar()ctime()strftime()comparision,  ">
 <meta name="theme-color" content="#36362C">
 <link rel="icon" sizes="192x192" href="images/favicon.ico">
 <title>Date, Time and DateTime | Asha Tutorials</title>
@@ -1009,7 +1009,176 @@ Min : 00:00:00  Max : 23:59:59.999999  Resolution : 0:00:00.000001
 
 <h3 id="functions-1">Functions</h3>
 
-<h4 id="fromisoformat">fromisoformat()</h4>
+<h4 id="isoformattimespecauto">isoformat(timespec=’auto’)</h4>
+<p> Returns string representing time in iso format. </p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">timespec</th>
+      <th style="text-align: left">output</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">auto</td>
+      <td style="text-align: left">HH:MM:SS.ffffff or YYYY-MM-DDTHH:MM:SS if micro second is zero.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">hours</td>
+      <td style="text-align: left">HH</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">minutes</td>
+      <td style="text-align: left">HH:MM</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">seconds</td>
+      <td style="text-align: left">HH:MM:SS</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">milliseconds</td>
+      <td style="text-align: left">HH:MM:SS.sss</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">microseconds</td>
+      <td style="text-align: left">HH:MM:SS.ffffff</td>
+    </tr>
+  </tbody>
+</table>
+
+<div id="code-block-17" class="code-block">
+<p id="code-header-17" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-17", "code-header-17")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">time</span>
+
+<span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="p">(</span><span class="n">hour</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">minute</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">second</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">microsecond</span><span class="o">=</span><span class="mi">1500</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="o">.</span><span class="n">isoformat</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"timespec='hours'  :  "</span><span class="p">,</span> <span class="n">t1</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(</span><span class="n">timespec</span><span class="o">=</span><span class="s">'hours'</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"timespec='minutes'   :  "</span><span class="p">,</span> <span class="n">t1</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(</span><span class="n">timespec</span><span class="o">=</span><span class="s">'minutes'</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"timespec='seconds'  :  "</span><span class="p">,</span> <span class="n">t1</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(</span><span class="n">timespec</span><span class="o">=</span><span class="s">'seconds'</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"timespec='milliseconds' :  "</span><span class="p">,</span> <span class="n">t1</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(</span><span class="n">timespec</span><span class="o">=</span><span class="s">'milliseconds'</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"timespec='microseconds' :  "</span><span class="p">,</span> <span class="n">t1</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(</span><span class="n">timespec</span><span class="o">=</span><span class="s">'microseconds'</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+12:45:45.001500
+timespec='hours'  :   12
+timespec='minutes'   :   12:45
+timespec='seconds'  :   12:45:45
+timespec='milliseconds' :   12:45:45.001
+timespec='microseconds' :   12:45:45.001500
+</pre></div>
+
+<hr />
+
+<h4 id="fromisoformattime_string">fromisoformat(time_string)</h4>
+
+<p> Returns time object constructed from given string containing isotime. </p>
+
+<div id="code-block-18" class="code-block">
+<p id="code-header-18" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-18", "code-header-18")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">time</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="s">'12:45:45.001500'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">t1</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+12:45:45.001500 &lt;class 'datetime.time'&gt;
+</pre></div>
+
+<hr />
+
+<h4 id="replacehourselfhour-minuteselfminute-secondselfsecond-microsecondselfmicrosecond-tzinfoselftzinfo--fold0">replace(hour=self.hour, minute=self.minute, second=self.second, microsecond=self.microsecond, tzinfo=self.tzinfo, * fold=0)</h4>
+<p> Returns new time object from an existing time object by replacing given param values. </p>
+
+<div id="code-block-19" class="code-block">
+<p id="code-header-19" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-19", "code-header-19")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">time</span>
+
+<span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="p">(</span><span class="n">hour</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">minute</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">second</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">microsecond</span><span class="o">=</span><span class="mi">1500</span><span class="p">)</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="n">t1</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">minute</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+12:45:45.001500
+12:25:45.001500
+</pre></div>
+
+<hr />
+
+<h4 id="utcoffset">utcoffset()</h4>
+<p> Returns timedelta object having time difference between local time and UTC time. </p>
+
+<div id="code-block-20" class="code-block">
+<p id="code-header-20" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-20", "code-header-20")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">time</span><span class="p">,</span> <span class="n">timezone</span><span class="p">,</span> <span class="n">timedelta</span>
+
+<span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="n">tzinfo</span><span class="o">=</span><span class="n">timezone</span><span class="p">(</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">minutes</span><span class="o">=</span><span class="mi">30</span><span class="p">)))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="o">.</span><span class="n">utcoffset</span><span class="p">(),</span> <span class="nb">type</span><span class="p">(</span><span class="n">t1</span><span class="o">.</span><span class="n">utcoffset</span><span class="p">()))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+5:30:00 &lt;class 'datetime.timedelta'&gt;  
+</pre></div>
+
+<hr />
+
+<h4 id="dst">dst()</h4>
+<p> Returns timedelta object having local daylight savings value, returns None if tzinfo is None. </p>
+
+<div id="code-block-21" class="code-block">
+<p id="code-header-21" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-21", "code-header-21")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">time</span><span class="p">,</span> <span class="n">timezone</span><span class="p">,</span> <span class="n">timedelta</span>
+
+<span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span>  <span class="n">tzinfo</span><span class="o">=</span><span class="n">timezone</span><span class="p">(</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=-</span><span class="mi">4</span><span class="p">),</span> <span class="s">'EDST – Eastern Daylight Savings Time'</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="o">.</span><span class="n">dst</span><span class="p">())</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+None
+</pre></div>
+
+<hr />
+
+<h4 id="tzname">tzname()</h4>
+
+<p> Returns string representing name of timezone. </p>
+
+<div id="code-block-22" class="code-block">
+<p id="code-header-22" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-22", "code-header-22")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">time</span><span class="p">,</span> <span class="n">timezone</span><span class="p">,</span> <span class="n">timedelta</span>
+
+<span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="n">tzinfo</span><span class="o">=</span><span class="n">timezone</span><span class="p">(</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=-</span><span class="mi">4</span><span class="p">),</span> <span class="s">'EDST – Eastern Daylight Savings Time'</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="o">.</span><span class="n">tzname</span><span class="p">())</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+EDST – Eastern Daylight Savings Time
+</pre></div>
+
+<hr />
 
 <h2 id="datetime">DateTime</h2>
 
@@ -1067,8 +1236,8 @@ Min : 00:00:00  Max : 23:59:59.999999  Resolution : 0:00:00.000001
     </ul> 
 </div>
 
-<div id="code-block-17" class="code-block">
-<p id="code-header-17" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-17", "code-header-17")</script>
+<div id="code-block-23" class="code-block">
+<p id="code-header-23" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-23", "code-header-23")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
 
@@ -1095,8 +1264,8 @@ Min : 00:00:00  Max : 23:59:59.999999  Resolution : 0:00:00.000001
 <h3 id="today-1">today()</h3>
 <p> Returns current date and time with timezone None. </p>
 
-<div id="code-block-18" class="code-block">
-<p id="code-header-18" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-18", "code-header-18")</script>
+<div id="code-block-24" class="code-block">
+<p id="code-header-24" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-24", "code-header-24")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
 <span class="k">print</span><span class="p">(</span><span class="n">dt</span><span class="o">.</span><span class="n">today</span><span class="p">())</span></code></pre></figure>
@@ -1113,8 +1282,8 @@ Min : 00:00:00  Max : 23:59:59.999999  Resolution : 0:00:00.000001
 <h3 id="nowtz">now([tz])</h3>
 <p> Returns current local date and  time. If optional param tz is not given works same as today() </p>
 
-<div id="code-block-19" class="code-block">
-<p id="code-header-19" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-19", "code-header-19")</script>
+<div id="code-block-25" class="code-block">
+<p id="code-header-25" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-25", "code-header-25")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
 <span class="k">print</span><span class="p">(</span><span class="n">dt</span><span class="o">.</span><span class="n">now</span><span class="p">())</span></code></pre></figure>
@@ -1189,8 +1358,8 @@ Min : 00:00:00  Max : 23:59:59.999999  Resolution : 0:00:00.000001
   </tbody>
 </table>
 
-<div id="code-block-20" class="code-block">
-<p id="code-header-20" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-20", "code-header-20")</script>
+<div id="code-block-26" class="code-block">
+<p id="code-header-26" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-26", "code-header-26")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
 
@@ -1222,8 +1391,8 @@ Min : 0001-01-01 00:00:00    Max : 9999-12-31 23:59:59.999999   Resolution : 0:0
 <h4 id="combinedate-time-tzinfo">combine(date, time[, tzinfo])</h4>
 <p> Returns datetime objects from given date and time objects. If optional argument tzinfo is given it is set to datetime object otherwise it is copied from time object.  </p>
 
-<div id="code-block-21" class="code-block">
-<p id="code-header-21" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-21", "code-header-21")</script>
+<div id="code-block-27" class="code-block">
+<p id="code-header-27" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-27", "code-header-27")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
 
@@ -1245,8 +1414,8 @@ Min : 0001-01-01 00:00:00    Max : 9999-12-31 23:59:59.999999   Resolution : 0:0
 <h4 id="date-1">date()</h4>
 <p> Returns date object from datetime object. </p>
 
-<div id="code-block-22" class="code-block">
-<p id="code-header-22" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-22", "code-header-22")</script>
+<div id="code-block-28" class="code-block">
+<p id="code-header-28" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-28", "code-header-28")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
 
@@ -1266,8 +1435,8 @@ Min : 0001-01-01 00:00:00    Max : 9999-12-31 23:59:59.999999   Resolution : 0:0
 <h4 id="time-1">time()</h4>
 <p> Returns time object from datetime object. </p>
 
-<div id="code-block-23" class="code-block">
-<p id="code-header-23" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-23", "code-header-23")</script>
+<div id="code-block-29" class="code-block">
+<p id="code-header-29" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-29", "code-header-29")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
 
@@ -1328,8 +1497,8 @@ Min : 0001-01-01 00:00:00    Max : 9999-12-31 23:59:59.999999   Resolution : 0:0
   </tbody>
 </table>
 
-<div id="code-block-24" class="code-block">
-<p id="code-header-24" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-24", "code-header-24")</script>
+<div id="code-block-30" class="code-block">
+<p id="code-header-30" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-30", "code-header-30")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
 
@@ -1365,8 +1534,8 @@ Min : 0001-01-01 00:00:00    Max : 9999-12-31 23:59:59.999999   Resolution : 0:0
 <h4 id="fromisoformatstr-1">fromisoformat(str)</h4>
 <p> Returns datetime object from string datetime represented in iso format.</p>
 
-<div id="code-block-25" class="code-block">
-<p id="code-header-25" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-25", "code-header-25")</script>
+<div id="code-block-31" class="code-block">
+<p id="code-header-31" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-31", "code-header-31")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
 
@@ -1385,8 +1554,8 @@ Min : 0001-01-01 00:00:00    Max : 9999-12-31 23:59:59.999999   Resolution : 0:0
 <h4 id="utcnow">utcnow()</h4>
 <p>  Returns current UTC time with tzinfo None.</p>
 
-<div id="code-block-26" class="code-block">
-<p id="code-header-26" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-26", "code-header-26")</script>
+<div id="code-block-32" class="code-block">
+<p id="code-header-32" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-32", "code-header-32")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
 <span class="k">print</span><span class="p">(</span><span class="n">dt</span><span class="o">.</span><span class="n">utcnow</span><span class="p">())</span></code></pre></figure>
@@ -1403,8 +1572,8 @@ Min : 0001-01-01 00:00:00    Max : 9999-12-31 23:59:59.999999   Resolution : 0:0
 <h4 id="fromtimestamptimestamp-tz">fromtimestamp(timestamp[, tz])</h4>
 <p>  Returns local date and time from timestamp (POSIX). If optional argument tz is give (instance of tzinfo) timestamp is converted in to tz's timestamp.</p>
 
-<div id="code-block-27" class="code-block">
-<p id="code-header-27" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-27", "code-header-27")</script>
+<div id="code-block-33" class="code-block">
+<p id="code-header-33" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-33", "code-header-33")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
 <span class="kn">import</span> <span class="nn">time</span>
@@ -1423,8 +1592,8 @@ Min : 0001-01-01 00:00:00    Max : 9999-12-31 23:59:59.999999   Resolution : 0:0
 <h4 id="utcfromtimestamptimestamp">utcfromtimestamp(timestamp)</h4>
 <p>  Returns UTC timestamp from POSIX timestamp.</p>
 
-<div id="code-block-28" class="code-block">
-<p id="code-header-28" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-28", "code-header-28")</script>
+<div id="code-block-34" class="code-block">
+<p id="code-header-34" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-34", "code-header-34")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
 <span class="kn">import</span> <span class="nn">time</span>
@@ -1443,8 +1612,8 @@ Min : 0001-01-01 00:00:00    Max : 9999-12-31 23:59:59.999999   Resolution : 0:0
 <h4 id="strptimedate_string-format">strptime(date_string, format)</h4>
 <p>  Convert date_string in given format  to datetime object. </p>
 
-<div id="code-block-29" class="code-block">
-<p id="code-header-29" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-29", "code-header-29")</script>
+<div id="code-block-35" class="code-block">
+<p id="code-header-35" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-35", "code-header-35")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
 
@@ -1462,8 +1631,8 @@ Min : 0001-01-01 00:00:00    Max : 9999-12-31 23:59:59.999999   Resolution : 0:0
 <h4 id="timetz">timetz()</h4>
 <p>  Returns time object with tzinfo. </p>
 
-<div id="code-block-30" class="code-block">
-<p id="code-header-30" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-30", "code-header-30")</script>
+<div id="code-block-36" class="code-block">
+<p id="code-header-36" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-36", "code-header-36")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span><span class="p">,</span> <span class="n">timezone</span>
 
@@ -1484,8 +1653,8 @@ Min : 0001-01-01 00:00:00    Max : 9999-12-31 23:59:59.999999   Resolution : 0:0
 <h4 id="replaceyearselfyear-monthselfmonth-dayselfday-hourselfhour-minuteselfminute-secondselfsecond-microsecondselfmicrosecond-tzinfoselftzinfo--fold0">replace(year=self.year, month=self.month, day=self.day, hour=self.hour, minute=self.minute, second=self.second, microsecond=self.microsecond, tzinfo=self.tzinfo, * fold=0)</h4>
 <p> Return datetime object by replacing the given parameters of the datetime and retains others from original datetime object. </p>
 
-<div id="code-block-31" class="code-block">
-<p id="code-header-31" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-31", "code-header-31")</script>
+<div id="code-block-37" class="code-block">
+<p id="code-header-37" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-37", "code-header-37")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
 
@@ -1508,8 +1677,8 @@ Min : 0001-01-01 00:00:00    Max : 9999-12-31 23:59:59.999999   Resolution : 0:0
 <h4 id="astimezonetznone">astimezone(tz=None)</h4>
 <p>  Returns date and time adjusted to local time of tz(tzinfo) passed as argument. </p>
 
-<div id="code-block-32" class="code-block">
-<p id="code-header-32" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-32", "code-header-32")</script>
+<div id="code-block-38" class="code-block">
+<p id="code-header-38" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-38", "code-header-38")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span><span class="p">,</span> <span class="n">timezone</span><span class="p">,</span> <span class="n">timedelta</span>
 
@@ -1529,11 +1698,11 @@ Min : 0001-01-01 00:00:00    Max : 9999-12-31 23:59:59.999999   Resolution : 0:0
 
 <hr />
 
-<h4 id="utcoffset">utcoffset()</h4>
+<h4 id="utcoffset-1">utcoffset()</h4>
 <p> Returns timedelta object having time difference between local time and UTC time. </p>
 
-<div id="code-block-33" class="code-block">
-<p id="code-header-33" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-33", "code-header-33")</script>
+<div id="code-block-39" class="code-block">
+<p id="code-header-39" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-39", "code-header-39")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span><span class="p">,</span> <span class="n">timezone</span><span class="p">,</span> <span class="n">timedelta</span>
 
@@ -1550,11 +1719,11 @@ Min : 0001-01-01 00:00:00    Max : 9999-12-31 23:59:59.999999   Resolution : 0:0
 
 <hr />
 
-<h4 id="dst">dst()</h4>
+<h4 id="dst-1">dst()</h4>
 <p> Returns timedelta object having local daylight savings value, returns None if tzinfo is None. </p>
 
-<div id="code-block-34" class="code-block">
-<p id="code-header-34" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-34", "code-header-34")</script>
+<div id="code-block-40" class="code-block">
+<p id="code-header-40" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-40", "code-header-40")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span><span class="p">,</span> <span class="n">timezone</span><span class="p">,</span> <span class="n">timedelta</span>
 
@@ -1572,11 +1741,11 @@ None
 
 <hr />
 
-<h4 id="tzname">tzname()</h4>
+<h4 id="tzname-1">tzname()</h4>
 <p> Returns string representing name of timezone. </p>
 
-<div id="code-block-35" class="code-block">
-<p id="code-header-35" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-35", "code-header-35")</script>
+<div id="code-block-41" class="code-block">
+<p id="code-header-41" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-41", "code-header-41")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span><span class="p">,</span> <span class="n">timezone</span><span class="p">,</span> <span class="n">timedelta</span>
 
@@ -1597,8 +1766,8 @@ AKST/Alaska Standard Time
 <h4 id="timetuple-1">timetuple()</h4>
 <p> Returns time.struct_time representing datetime which is compatible with time.localtime(). </p>
 
-<div id="code-block-36" class="code-block">
-<p id="code-header-36" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-36", "code-header-36")</script>
+<div id="code-block-42" class="code-block">
+<p id="code-header-42" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-42", "code-header-42")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span><span class="p">,</span> <span class="n">timezone</span><span class="p">,</span> <span class="n">timedelta</span>
 
@@ -1619,8 +1788,8 @@ time.struct_time(tm_year=2020, tm_mon=3, tm_mday=22, tm_hour=15, tm_min=45, tm_s
 <h4 id="utctimetuple">utctimetuple()</h4>
 <p> Returns time.struct_time representing UTC date and time as tuple which is compatible with time.gmttime(). </p>
 
-<div id="code-block-37" class="code-block">
-<p id="code-header-37" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-37", "code-header-37")</script>
+<div id="code-block-43" class="code-block">
+<p id="code-header-43" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-43", "code-header-43")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span><span class="p">,</span> <span class="n">timezone</span><span class="p">,</span> <span class="n">timedelta</span>
 
@@ -1643,8 +1812,8 @@ time.struct_time(tm_year=2020, tm_mon=3, tm_mday=23, tm_hour=0, tm_min=45, tm_se
 <h4 id="toordinal-1">toordinal()</h4>
 <p> Returns proleptic Gregorian ordinal of the datetime object, where January 1 of year 1 has ordinal 1. </p>
 
-<div id="code-block-38" class="code-block">
-<p id="code-header-38" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-38", "code-header-38")</script>
+<div id="code-block-44" class="code-block">
+<p id="code-header-44" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-44", "code-header-44")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span><span class="p">,</span> <span class="n">timezone</span><span class="p">,</span> <span class="n">timedelta</span>
 
@@ -1665,8 +1834,8 @@ time.struct_time(tm_year=2020, tm_mon=3, tm_mday=23, tm_hour=0, tm_min=45, tm_se
 <h4 id="fromordinal-1">fromordinal()</h4>
 <p> Returns datetime object from ordinal value.</p>
 
-<div id="code-block-39" class="code-block">
-<p id="code-header-39" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-39", "code-header-39")</script>
+<div id="code-block-45" class="code-block">
+<p id="code-header-45" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-45", "code-header-45")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
 <span class="n">dt1</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">fromordinal</span><span class="p">(</span><span class="mi">737506</span><span class="p">)</span>
@@ -1684,8 +1853,8 @@ time.struct_time(tm_year=2020, tm_mon=3, tm_mday=23, tm_hour=0, tm_min=45, tm_se
 <h4 id="timestamp">timestamp()</h4>
 <p> Returns POSIX timestamp corresponding to datetime instance.</p>
 
-<div id="code-block-40" class="code-block">
-<p id="code-header-40" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-40", "code-header-40")</script>
+<div id="code-block-46" class="code-block">
+<p id="code-header-46" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-46", "code-header-46")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span><span class="p">,</span> <span class="n">timezone</span><span class="p">,</span> <span class="n">timedelta</span>
 
@@ -1706,8 +1875,8 @@ time.struct_time(tm_year=2020, tm_mon=3, tm_mday=23, tm_hour=0, tm_min=45, tm_se
 <h4 id="weekday-1">weekday()</h4>
 <p> Returns day of the week as integer where 0 for Monday and 6 for Sunday.</p>
 
-<div id="code-block-41" class="code-block">
-<p id="code-header-41" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-41", "code-header-41")</script>
+<div id="code-block-47" class="code-block">
+<p id="code-header-47" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-47", "code-header-47")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
 <span class="n">dt1</span> <span class="o">=</span> <span class="n">dt</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="mi">2020</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">22</span><span class="p">,</span> <span class="n">hour</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">minute</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
@@ -1725,8 +1894,8 @@ time.struct_time(tm_year=2020, tm_mon=3, tm_mday=23, tm_hour=0, tm_min=45, tm_se
 <h4 id="isoweekday-1">isoweekday()</h4>
 <p> Returns day of week as integer where 1 for Monday and 7 for Sunday.</p>
 
-<div id="code-block-42" class="code-block">
-<p id="code-header-42" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-42", "code-header-42")</script>
+<div id="code-block-48" class="code-block">
+<p id="code-header-48" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-48", "code-header-48")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
 <span class="n">dt1</span> <span class="o">=</span> <span class="n">dt</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="mi">2020</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">22</span><span class="p">,</span> <span class="n">hour</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">minute</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
@@ -1744,8 +1913,8 @@ time.struct_time(tm_year=2020, tm_mon=3, tm_mday=23, tm_hour=0, tm_min=45, tm_se
 <h4 id="isocalendar-1">isocalendar()</h4>
 <p> Returns tuple representing (ISO year, ISO week number, ISO weekday).</p>
 
-<div id="code-block-43" class="code-block">
-<p id="code-header-43" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-43", "code-header-43")</script>
+<div id="code-block-49" class="code-block">
+<p id="code-header-49" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-49", "code-header-49")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
 <span class="n">dt1</span> <span class="o">=</span> <span class="n">dt</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="mi">2020</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">22</span><span class="p">,</span> <span class="n">hour</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">minute</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
@@ -1763,8 +1932,8 @@ time.struct_time(tm_year=2020, tm_mon=3, tm_mday=23, tm_hour=0, tm_min=45, tm_se
 <h4 id="fromisocalendar-1">fromisocalendar()</h4>
 <p> Returns datetime object from ISO year, ISO week number, ISO weekday. </p>
 
-<div id="code-block-44" class="code-block">
-<p id="code-header-44" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-44", "code-header-44")</script>
+<div id="code-block-50" class="code-block">
+<p id="code-header-50" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-50", "code-header-50")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
 <span class="n">year</span><span class="p">,</span> <span class="n">week</span><span class="p">,</span> <span class="n">weekday</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
@@ -1784,8 +1953,8 @@ time.struct_time(tm_year=2020, tm_mon=3, tm_mday=23, tm_hour=0, tm_min=45, tm_se
 <h4 id="ctime-1">ctime()</h4>
 <p> Returns str representing date as ctime in C library 'time'.</p>
 
-<div id="code-block-45" class="code-block">
-<p id="code-header-45" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-45", "code-header-45")</script>
+<div id="code-block-51" class="code-block">
+<p id="code-header-51" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-51", "code-header-51")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
 
@@ -1939,8 +2108,8 @@ Sun Mar 22 15:45:00 2020
 
 <h3 id="date-formatting">date formatting</h3>
 
-<div id="code-block-46" class="code-block">
-<p id="code-header-46" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-46", "code-header-46")</script>
+<div id="code-block-52" class="code-block">
+<p id="code-header-52" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-52", "code-header-52")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
 
@@ -1965,8 +2134,8 @@ Saturday, 2020  Mar  21
 
 <h3 id="time-formatting">Time formatting</h3>
 
-<div id="code-block-47" class="code-block">
-<p id="code-header-47" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-47", "code-header-47")</script>
+<div id="code-block-53" class="code-block">
+<p id="code-header-53" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-53", "code-header-53")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">time</span>
 
@@ -1989,8 +2158,8 @@ Saturday, 2020  Mar  21
 
 <h3 id="datetime-formatting">DateTime formatting</h3>
 
-<div id="code-block-48" class="code-block">
-<p id="code-header-48" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-48", "code-header-48")</script>
+<div id="code-block-54" class="code-block">
+<p id="code-header-54" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-54", "code-header-54")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
 
@@ -2054,8 +2223,8 @@ Saturday, 21 March 2020 03:45:55 PM
 
 <h3 id="example">Example</h3>
 
-<div id="code-block-49" class="code-block">
-<p id="code-header-49" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-49", "code-header-49")</script>
+<div id="code-block-55" class="code-block">
+<p id="code-header-55" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-55", "code-header-55")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
 
@@ -2130,6 +2299,126 @@ dt1 != dt2 ? -&gt; True
     <div class="tags">
         
         <p style="display: inline;"><b>Tags: </b></p>
+        
+        
+        
+        <a href="tag_date.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">date</a>
+        
+        
+        
+        <a href="tag_time.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">time</a>
+        
+        
+        
+        <a href="tag_datetime.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">datetime</a>
+        
+        
+        
+        <a href="tag_today().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">today()</a>
+        
+        
+        
+        <a href="tag_now().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">now()</a>
+        
+        
+        
+        <a href="tag_combine().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">combine()</a>
+        
+        
+        
+        <a href="tag_isoformat().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">isoformat()</a>
+        
+        
+        
+        <a href="tag_fromisoformat().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">fromisoformat()</a>
+        
+        
+        
+        <a href="tag_utcnow().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">utcnow()</a>
+        
+        
+        
+        <a href="tag_fromtimestamp().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">fromtimestamp()</a>
+        
+        
+        
+        <a href="tag_utcfromtimestamp().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">utcfromtimestamp()</a>
+        
+        
+        
+        <a href="tag_strptime().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">strptime()</a>
+        
+        
+        
+        <a href="tag_timetz().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">timetz()</a>
+        
+        
+        
+        <a href="tag_replace().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">replace()</a>
+        
+        
+        
+        <a href="tag_astimezone().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">astimezone()</a>
+        
+        
+        
+        <a href="tag_utcoffset().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">utcoffset()</a>
+        
+        
+        
+        <a href="tag_dst().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">dst()</a>
+        
+        
+        
+        <a href="tag_tzname().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">tzname()</a>
+        
+        
+        
+        <a href="tag_timetuple().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">timetuple()</a>
+        
+        
+        
+        <a href="tag_utctimetuple().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">utctimetuple()</a>
+        
+        
+        
+        <a href="tag_toordinal().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">toordinal()</a>
+        
+        
+        
+        <a href="tag_fromordinal().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">fromordinal()</a>
+        
+        
+        
+        <a href="tag_timestamp().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">timestamp()</a>
+        
+        
+        
+        <a href="tag_weekday().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">weekday()</a>
+        
+        
+        
+        <a href="tag_isoweekday().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">isoweekday()</a>
+        
+        
+        
+        <a href="tag_isocalendar().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">isocalendar()</a>
+        
+        
+        
+        <a href="tag_fromisocalendar().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">fromisocalendar()</a>
+        
+        
+        
+        <a href="tag_ctime().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">ctime()</a>
+        
+        
+        
+        <a href="tag_strftime().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">strftime()</a>
+        
+        
+        
+        <a href="tag_comparision.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">comparision</a>
         
         
         

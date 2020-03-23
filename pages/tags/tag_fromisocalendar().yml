@@ -1,0 +1,8 @@
+---
+title: "fromisocalendar()"
+tagName: fromisocalendar()
+search: exclude
+permalink: tag_fromisocalendar().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

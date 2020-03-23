@@ -1,0 +1,8 @@
+---
+title: "now()"
+tagName: now()
+search: exclude
+permalink: tag_now().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

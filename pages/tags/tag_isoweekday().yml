@@ -1,0 +1,8 @@
+---
+title: "isoweekday()"
+tagName: isoweekday()
+search: exclude
+permalink: tag_isoweekday().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

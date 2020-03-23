@@ -1,0 +1,8 @@
+---
+title: "toordinal()"
+tagName: toordinal()
+search: exclude
+permalink: tag_toordinal().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

@@ -1,0 +1,8 @@
+---
+title: "timetuple()"
+tagName: timetuple()
+search: exclude
+permalink: tag_timetuple().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

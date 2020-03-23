@@ -1,0 +1,8 @@
+---
+title: "utctimetuple()"
+tagName: utctimetuple()
+search: exclude
+permalink: tag_utctimetuple().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

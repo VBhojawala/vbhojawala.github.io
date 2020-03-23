@@ -1,0 +1,8 @@
+---
+title: "isoformat()"
+tagName: isoformat()
+search: exclude
+permalink: tag_isoformat().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

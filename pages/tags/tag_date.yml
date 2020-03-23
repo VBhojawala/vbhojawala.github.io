@@ -1,0 +1,8 @@
+---
+title: "date"
+tagName: date
+search: exclude
+permalink: tag_date.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

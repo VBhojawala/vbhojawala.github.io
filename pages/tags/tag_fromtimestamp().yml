@@ -1,0 +1,8 @@
+---
+title: "fromtimestamp()"
+tagName: fromtimestamp()
+search: exclude
+permalink: tag_fromtimestamp().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

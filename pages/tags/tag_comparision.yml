@@ -1,0 +1,8 @@
+---
+title: "comparision"
+tagName: comparision
+search: exclude
+permalink: tag_comparision.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

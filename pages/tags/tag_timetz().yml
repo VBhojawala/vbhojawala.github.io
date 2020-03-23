@@ -1,0 +1,8 @@
+---
+title: "timetz()"
+tagName: timetz()
+search: exclude
+permalink: tag_timetz().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}
