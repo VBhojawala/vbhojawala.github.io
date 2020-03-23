@@ -386,7 +386,7 @@ print(d1.isoformat())
 
 
 
-#### fromisoformat()
+#### fromisoformat(str)
 <p> Returns date object from string date represented in iso format. </p>
 
 {% assign code_block = code_block | plus: 1 %}
@@ -899,6 +899,34 @@ print(dt1.isoformat(sep=' ', timespec='microseconds'))
 <hr/>
 
 
+#### fromisoformat(str)
+<p> Returns datetime object from string datetime represented in iso format.</p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from datetime import datetime as dt
+
+dt1 = dt.fromisoformat('2020-03-21T15:45:55.000569')
+print(dt1, type(dt1))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+2020-03-21 15:45:55.000569 <class 'datetime.datetime'>
+</pre></div>
+
+<hr/>
+
+
 
 
 #### utcnow()
@@ -961,7 +989,7 @@ print(dt.fromtimestamp(time.time()))
 
 
 
-#### utcfromtimestap(timestamp)
+#### utcfromtimestamp(timestamp)
 <p>  Returns UTC timestamp from POSIX timestamp.</p>
 
 
@@ -1083,6 +1111,444 @@ print(dt2)
 
 <hr/>
 
+
+
+#### astimezone(tz=None)
+<p>  Returns date and time adjusted to local time of tz(tzinfo) passed as argument. </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from datetime import datetime as dt, timezone, timedelta
+
+dt1 = dt(year=2020, month=3, day=22, hour=15,
+         minute=45, second=55, microsecond=569)
+dt3 = dt1.astimezone(timezone(timedelta(hours=-9), 'AKST/Alaska Standard Time'))
+print(dt1)
+print(dt3)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+2020-03-22 15:45:55.000569
+2020-03-22 01:15:55.000569-09:00
+</pre></div>
+
+<hr/>
+
+
+
+
+#### utcoffset()
+<p> Returns timedelta object having time difference between local time and UTC time. </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from datetime import datetime as dt, timezone, timedelta
+
+dt1 = dt(year=2020, month=3, day=22, hour=15, minute=45, second=55,
+         microsecond=569, tzinfo=timezone(timedelta(hours=-9), 'AKST/Alaska Standard Time'))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+2020-03-22 15:45:55.000569
+2020-03-22 01:15:55.000569-09:00
+</pre></div>
+
+<hr/>
+
+
+
+#### dst()
+<p> Returns timedelta object having local daylight savings value, returns None if tzinfo is None. </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from datetime import datetime as dt, timezone, timedelta
+
+dt1 = dt(year=2020, month=3, day=21, hour=9, minute=45, second=55,
+         microsecond=569, tzinfo=timezone(timedelta(hours=-9), 'AKST/Alaska Standard Time'))
+
+print(dt1.dst())
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+None
+</pre></div>
+
+<hr/>
+
+
+
+
+
+#### tzname()
+<p> Returns string representing name of timezone. </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from datetime import datetime as dt, timezone, timedelta
+
+dt1 = dt(year=2020, month=3, day=22, hour=15, minute=45, second=55, microsecond=569,
+         tzinfo=timezone(timedelta(hours=-9), 'AKST/Alaska Standard Time'))
+
+print(dt1.tzname())
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+AKST/Alaska Standard Time
+</pre></div>
+
+<hr/>
+
+
+
+
+
+#### timetuple()
+<p> Returns time.struct_time representing datetime which is compatible with time.localtime(). </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from datetime import datetime as dt, timezone, timedelta
+
+dt1 = dt(year=2020, month=3, day=22, hour=15, minute=45, second=55, microsecond=569,
+         tzinfo=timezone(timedelta(hours=-9), 'AKST/Alaska Standard Time'))
+
+print(dt1.timetuple())
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+time.struct_time(tm_year=2020, tm_mon=3, tm_mday=22, tm_hour=15, tm_min=45, tm_sec=55, tm_wday=6, tm_yday=82, tm_isdst=-1)
+</pre></div>
+
+<hr/>
+
+
+
+#### utctimetuple()
+<p> Returns time.struct_time representing UTC date and time as tuple which is compatible with time.gmttime(). </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from datetime import datetime as dt, timezone, timedelta
+
+dt1 = dt(year=2020, month=3, day=22, hour=15, minute=45, second=55, microsecond=569,
+         tzinfo=timezone(timedelta(hours=-9), 'AKST/Alaska Standard Time'))
+
+print(dt1)
+print(dt1.utctimetuple())
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+2020-03-22 15:45:55.000569-09:00
+time.struct_time(tm_year=2020, tm_mon=3, tm_mday=23, tm_hour=0, tm_min=45, tm_sec=55, tm_wday=0, tm_yday=83, tm_isdst=0)
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+
+
+#### toordinal()
+<p> Returns proleptic Gregorian ordinal of the datetime object, where January 1 of year 1 has ordinal 1. </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from datetime import datetime as dt, timezone, timedelta
+
+dt1 = dt(year=2020, month=3, day=22, hour=15, minute=45, second=55, microsecond=569,
+         tzinfo=timezone(timedelta(hours=-9), 'AKST/Alaska Standard Time'))
+
+print(dt1.toordinal())
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+737506
+</pre></div>
+
+<hr/>
+
+
+
+
+#### fromordinal()
+<p> Returns datetime object from ordinal value.</p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from datetime import datetime as dt
+dt1 = dt.fromordinal(737506)
+print(dt1, type(dt1))
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+2020-03-22 00:00:00 <class 'datetime.datetime'>
+</pre></div>
+
+<hr/>
+
+
+
+#### timestamp()
+<p> Returns POSIX timestamp corresponding to datetime instance.</p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from datetime import datetime as dt, timezone, timedelta
+
+dt1 = dt(year=2020, month=3, day=22, hour=15, minute=45, second=55, microsecond=569,
+         tzinfo=timezone(timedelta(hours=-9), 'AKST/Alaska Standard Time'))
+
+print(dt1.timestamp())
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+1584924355.000569
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+
+#### weekday()
+<p> Returns day of the week as integer where 0 for Monday and 6 for Sunday.</p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from datetime import datetime as dt
+dt1 = dt(year=2020, month=3, day=22, hour=15, minute=45)
+print(dt1.weekday())
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+6
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+
+
+
+#### isoweekday()
+<p> Returns day of week as integer where 1 for Monday and 7 for Sunday.</p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from datetime import datetime as dt
+dt1 = dt(year=2020, month=3, day=22, hour=15, minute=45)
+print(dt1.isoweekday())
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+7
+</pre></div>
+
+<hr/>
+
+
+
+#### isocalendar()
+<p> Returns tuple representing (ISO year, ISO week number, ISO weekday).</p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from datetime import datetime as dt
+dt1 = dt(year=2020, month=3, day=22, hour=15, minute=45)
+print(dt1.isocalendar())
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+(2020, 12, 7)
+</pre></div>
+
+<hr/>
+
+
+#### fromisocalendar()
+<p> Returns datetime object from ISO year, ISO week number, ISO weekday. </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from datetime import datetime as dt
+year, week, weekday = (2020, 12, 7)
+
+dt1 = dt.fromisocalendar(year, week, weekday)
+print(dt1, type(dt1))
+
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+2020-03-22 00:00:00 <class 'datetime.datetime'>
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+#### ctime()
+<p> Returns str representing date as ctime in C library 'time'.</p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from datetime import datetime as dt
+
+dt1 = dt(year=2020, month=3, day=22, hour=15, minute=45)
+
+print(dt1.ctime())
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Sun Mar 22 15:45:00 2020
+</pre></div>
+
+<hr/>
 
 
 
