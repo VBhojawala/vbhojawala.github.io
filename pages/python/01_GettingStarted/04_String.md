@@ -17,13 +17,12 @@ summary: String object, indexing, slicing, concat, string operators.
 ## String 
 
 
-### Built-in sequences
+### String : sequence of characters 
 
 <div id="tut-content"> 
-    <ol>    
-        <li> <strong> Flat Sequence : </strong>  Holds object of the same type. Example: str, bytes, array.array, memoryview etc. </li>
-        <li> <strong> Container sequence : </strong>  Holds reference of objects that can be of different type. Example: list, map, dqueue etc. </li>
-    </ol>
+    <ul>    
+        <li> <strong> String in python is sequence of character, each character in sequence can be accessed using index. </strong>  </li>
+    </ul>
 </div>
 
 

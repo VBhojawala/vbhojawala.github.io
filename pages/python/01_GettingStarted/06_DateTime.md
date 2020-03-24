@@ -562,7 +562,7 @@ Min : 00:00:00  Max : 23:59:59.999999  Resolution : 0:00:00.000001
 
 timespec       | output
 :--- | :--- 
-  auto          |  HH:MM:SS.ffffff or YYYY-MM-DDTHH:MM:SS if micro second is zero.
+  auto          |  HH:MM:SS.ffffff or HH:MM:SS if micro second is zero.
   hours         |  HH
   minutes       |  HH:MM
   seconds       |  HH:MM:SS
@@ -854,8 +854,12 @@ print(dt.today())
 <p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
 {% highlight python %}
 
-from datetime import datetime as dt
+from datetime import datetime as dt, timezone, timedelta
 print(dt.now())
+print(dt.now(timezone.utc))
+print(dt.now(timezone(timedelta(hours=-8))))
+
+
 
 
 
@@ -864,7 +868,9 @@ print(dt.now())
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-2020-03-22 18:48:17.911678
+2020-03-22 18:33:02.944741
+2020-03-22 13:03:02.944869+00:00
+2020-03-22 05:03:02.944950-08:00
 </pre></div>
 
 <hr/>
@@ -1160,10 +1166,12 @@ print(dt.utcnow())
 <p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
 {% highlight python %}
 
-from datetime import datetime as dt
+from datetime import datetime as dt, timezone, timedelta
 import time
 
 print(dt.fromtimestamp(time.time()))
+print(dt.fromtimestamp(time.time(), timezone.utc))
+print(dt.fromtimestamp(time.time(), timezone(timedelta(hours=-8))))
 
 
 {% endhighlight %}
@@ -1171,7 +1179,10 @@ print(dt.fromtimestamp(time.time()))
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-2020-03-22 19:06:19.541499
+2020-03-22 18:36:01.974095
+2020-03-22 13:06:01.974164+00:00
+2020-03-22 05:06:01.974197-08:00
+
 </pre></div>
 
 <hr/>
@@ -1978,6 +1989,1131 @@ dt1 != dt2 ? -> True
 
 <hr/>
 
+
+
+
+## timedelta
+<p> Represents a duration or difference between two date, time or datetime objects. </p>
+
+### Constructor
+<p id="tut-cons"> timedelta(days=0, seconds=0, microseconds=0, milliseconds=0, minutes=0, hours=0, weeks=0) </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>All parameters are optional and can be given Integer or Float type with positive or negative value.</strong> </li>
+         <li> <strong>Only days, seconds and microseconds are stored internally, Other arguments are converted into following units :</strong> </li>
+    </ul> 
+</div>
+
+Parameter | Converted to
+:--- | :--- 
+1 millisecond |  1000 microseconds
+1 minute      |  60 seconds
+1 hour        |  3600 seconds
+1 week        |  7 days
+
+
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from datetime import timedelta
+td1 = timedelta(weeks=2, days=3, hours=10.5)
+td2 = timedelta(weeks=12, days=12, hours=115, minutes=45, milliseconds=12, microseconds=11)
+
+
+print(td1)
+print(td2)
+
+# Internal representation
+print(repr(td1))
+print(repr(td2))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+17 days, 10:30:00
+100 days, 19:45:00.012011
+datetime.timedelta(days=17, seconds=37800)
+datetime.timedelta(days=100, seconds=71100, microseconds=12011)
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+### Attributes 
+
+attribute  |  Explanation
+:--- | :--- 
+days          |   Can be between -999999999 and 999999999 inclusive
+seconds       |   Can be between 0 and 86399 inclusive
+microseconds  |   Can be between 0 and 999999 inclusive
+min           |   most negative value timedelta can hold
+max           |   most positive value timedelta can hold
+resolution    |   smallest possible difference between two timedelta (timedelta(microseconds=1)
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from datetime import timedelta
+td1 = timedelta(weeks=2, days=3, hours=10.5)
+
+
+print(f'Days : {td1.days}  | Seconds : {td1.seconds} |  Microseconds : {td1.microseconds}')
+print(f'Min : {timedelta.min} | Max : {timedelta.max} | Resolution : {timedelta.resolution}')
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Days : 17  | Seconds : 37800 |  Microseconds : 0
+Min : -999999999 days, 0:00:00 | Max : 999999999 days, 23:59:59.999999 | Resolution : 0:00:00.000001
+</pre></div>
+
+<hr/>
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Seconds can be converted to hours by dividing 3600.</strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from datetime import timedelta
+td1 = timedelta(weeks=2, days=3, hours=10.5)
+
+print(td1.seconds)
+print(td1.seconds / 3600)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+37800
+10.5
+</pre></div>
+
+<hr/>
+
+
+### Functions 
+
+#### total_seconds()
+
+<p> Returns total duration represented in seconds. </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from datetime import timedelta
+td1 = timedelta(weeks=2, days=3, hours=10.5)
+print(td1.total_seconds())
+
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+1506600.0
+</pre></div>
+
+<hr/>
+
+
+### Operations 
+
+operation  |    Example
+:--- | :--- 
+   +      |   td1 + td2
+   -      |   td1 - td2
+   *      |   td1 * 1, td1 * 1.5  (Can be int or float / positive or negative)
+   /      |   td1 / 2, td1 / 1.5  (Can be int or float / positive or negative)
+   %      |   td1 % td2
+  divmod  |   divmod(td1, td2) return quotient and remainder.
+   +      |   +td1
+   -      |   -td1
+  abs     |   abs(td1)
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from datetime import timedelta
+td1 = timedelta(weeks=2, days=3, hours=10.5)
+td2 = timedelta(days=4, hours=5)
+
+print('td1 :', td1)
+print('td2:', td2)
+
+
+print('Addition       :', td1 + td2)
+print('Subtraction    :', td1 - td2)
+print('Multiplication :', td1 * 2.5)
+print('Division       :', td1 / 1.5)
+print('Modulus        :', td1 % td2)
+print('divmod         :', divmod(td1, td2))
+print('Positive       :', +td1)
+print('Negative       :', -td1)
+print('Absolute       :', abs(td1))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+td1 : 17 days, 10:30:00
+td2: 4 days, 5:00:00
+Addition       : 21 days, 15:30:00
+Subtraction    : 13 days, 5:30:00
+Multiplication : 43 days, 14:15:00
+Division       : 11 days, 15:00:00
+Modulus        : 14:30:00
+divmod         : (4, datetime.timedelta(seconds=52200))
+Positive       : 17 days, 10:30:00
+Negative       : -18 days, 13:30:00
+Absolute       : 17 days, 10:30:00
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+
+
+#### Date and timedelta
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from datetime import date, timedelta
+
+d1 = date(2020, 3, 22)
+twoDays = timedelta(days=2)
+
+afterTwoDays = d1 + twoDays
+
+print('Date :', d1)
+print('After Two Days :', afterTwoDays)
+
+before5Days = d1 - timedelta(days=5)
+print('Before 5 days :', before5Days)
+
+beforeFourDays = d1 - (twoDays * 2)
+print('Before 4 days :', beforeFourDays)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Date : 2020-03-22
+After Two Days : 2020-03-24
+Before 5 days : 2020-03-17
+Before 4 days : 2020-03-18
+</pre></div>
+
+<hr/>
+
+
+#### DateTime and timedelta
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from datetime import datetime as dt, timedelta
+
+dt1 = dt(2020, 3, 22, 15, 45, 55)
+
+td1 = timedelta(days=1, hours=2, minutes=30)
+
+print('DateTime : ', dt1)
+print('Before 1 day 2:30 hours :', dt1 - td1)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+DateTime :  2020-03-22 15:45:55
+Before 1 day 2:30 hours : 2020-03-21 13:15:55
+</pre></div>
+
+<hr/>
+
+
+
+
+
+### Comparision
+
+#### Operators 
+
+Operator | Description 
+:--- | :--- 
+<  | Less-than
+>  | Greater-than
+<= | Less-than or equal to
+>= | Greater-than or equal to
+== | Equal to
+!= | Not equal to
+
+
+#### Example 
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from datetime import timedelta
+
+td1 = timedelta(hours=18, minutes=40)
+td2 = timedelta(hours=12, minutes=10)
+
+print('td1 < td2 ? ->', td1 < td2)
+print('td1 > td2 ? ->', td1 > td2)
+print('td1 <= td2 ? ->', td1 <= td2)
+print('td1 <= td2 ? ->', td1 <= td2)
+print('td1 == td2 ? ->', td1 == td2)
+print('td1 != td2 ? ->', td1 != td2)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+td1 < td2 ? -> False
+td1 > td2 ? -> True
+td1 <= td2 ? -> False
+td1 <= td2 ? -> False
+td1 == td2 ? -> False
+td1 != td2 ? -> True
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+
+
+
+
+## timezone
+
+
+### tzinfo class
+
+
+<p> tzinfo is an abstract base class timezone classes. An instance of subclass of the tzinfo is passed to constructor of time and datetime objects. </p>
+
+
+### terminologies
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> epoch : </strong> Seconds since midnight of January 1, 1970. used in UNIX system majorly. </li>
+        <li> <strong> UTC : </strong> Coordinated Universal Time(formerly Greenwich Mean Time, or GMT). </li>
+        <li> <strong> DST : </strong>  Daylight savings </li>
+    </ul> 
+</div>
+
+
+### timezone class
+
+<p> timezone is subclass of tzinfo which can be used to supply timezone data to date and datetime object. </p>
+
+### Constructor
+
+<p id="tut-cons"> timezone(offset, name=None) </p>
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>offset : </strong> Is given an instance of the timedelta class which represents the defference between the local time and UTC time. </li>
+        <li> <strong>name : </strong>is an optional argument represents name of timezone.datetime.tzname() returns value provided in name. </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from datetime import timezone,timedelta
+
+austd = timedelta(hours=10, minutes=30)
+actd = timezone(austd, 'ACDT – Australian Central Daylight Time')
+
+print(actd)
+print(repr(actd))
+
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+ACDT – Australian Central Daylight Time
+datetime.timezone(datetime.timedelta(seconds=37800), 'ACDT – Australian Central Daylight Time')
+</pre></div>
+
+<hr/>
+
+
+
+
+
+### Attributes
+
+attribute  |  meaning
+:--- | :---
+  min      |  minimum value for timezone
+  max      |  maximum value for timezone
+  utc      |  returns UTC timezone [timezone(timedelta(0))]
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from datetime import timezone
+
+print(f'Min : {timezone.min}  Max : {timezone.max}  ')
+print(f'utc : {timezone.utc}  type : {type(timezone.utc)}')
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Min : UTC-23:59  Max : UTC+23:59  
+utc : UTC  type : <class 'datetime.timezone'>
+</pre></div>
+
+<hr/>
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Setting utc timezone and converting datetime to local timezone</strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from datetime import timezone, tzinfo, datetime as dt
+dt1 = dt.now()
+dt2 = dt.now(timezone.utc)
+print('Local now() :', dt1)
+print('UTC now() :', dt2)
+
+
+# converting to local time zone
+dt3 = dt2.astimezone()
+print('astimezone() :', dt3)
+
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Local now() : 2020-03-24 14:57:28.039818
+UTC now() : 2020-03-24 09:27:28.039834+00:00
+astimezone() : 2020-03-24 14:57:28.039834+05:30
+</pre></div>
+
+<hr/>
+
+
+
+
+### Functions
+
+#### utcoffset(dt)
+<p> Returns fixed value of timedelta specified in constructor of timezone. </p>
+
+
+#### tzname(dt)
+<p> Returns timezone name given timezone constructor. </p>
+
+
+#### dst(dt)
+<p> Always returns None. </p>
+
+
+#### dst(dt)
+<p> Return dt + offset. dt must have tzinfo set. </p>
+
+
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from datetime import datetime as dt, timezone, timedelta
+
+austd = timedelta(hours=10, minutes=30)
+actd = timezone(austd, 'ACDT – Australian Central Daylight Time')
+
+pdtd = timedelta(hours=-7)
+pdtz = timezone(pdtd, 'PDT – Pacific Daylight Time')
+
+
+dt1 = dt(2020, 3, 22, 12, 45, 55, tzinfo=actd)
+dt2 = dt(2020, 3, 26, 16, 45, 55, tzinfo=pdtz)
+
+
+print('dt1 :', dt1)
+print('dt2 :', dt2)
+
+
+print(f'\n{"*"*5}  utcoffset(dt)    {"*"*5}')
+print(actd.utcoffset(dt1))
+print(pdtz.utcoffset(dt1))
+
+print(f'\n{"*"*5}  tzname(dt)    {"*"*5}')
+print(actd.tzname(dt1))
+print(pdtz.tzname(dt1))
+
+print(f'\n{"*"*5}  dst(dt)    {"*"*5}')
+print(actd.dst(dt1))
+print(pdtz.dst(dt1))
+
+print(f'\n{"*"*5}  fromutc(dt)    {"*"*5}')
+print(actd.fromutc(dt1))
+print(pdtz.fromutc(dt2))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+dt1 : 2020-03-22 12:45:55+10:30
+dt2 : 2020-03-26 16:45:55-07:00
+
+*****  utcoffset(dt)    *****
+10:30:00
+-1 day, 17:00:00
+
+*****  tzname(dt)    *****
+ACDT – Australian Central Daylight Time
+PDT – Pacific Daylight Time
+
+*****  dst(dt)    *****
+None
+None
+
+*****  fromutc(dt)    *****
+2020-03-22 23:15:55+10:30
+2020-03-26 09:45:55-07:00
+
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+
+## time module
+
+<p> Provides time related functions. </p>
+
+
+### Functions 
+
+#### time() 
+<p> Returns current time in second since epoch(Seconds since midnight of January 1, 1970). </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import time
+
+epochNow = time.time()
+print(epochNow)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+1585050051.2949681
+</pre></div>
+
+<hr/>
+
+
+
+
+#### time_ns()
+<p> Returns current time in second since epoch(Seconds since midnight of January 1, 1970). </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import time
+print(time.time_ns())
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+1585050093748821013
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+
+
+#### perf_counter()
+<p> Clock with highest precision that can be achieved to measure short duration. </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import time
+
+start = time.perf_counter()   # Performance counter
+print('Hello World')
+end = time.perf_counter()
+
+print(f'Time taken to execute print() : {end - start} seconds')
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Hello World
+Time taken to execute print() : 5.408899960457347e-05 seconds
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+#### perf_counter_ns()
+<p> same as perf_counter() but returns time in nanoseconds. </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import time
+
+start = time.perf_counter_ns()   # Performance counter
+print('Hello World')
+end = time.perf_counter_ns()
+
+print(f'Time taken to execute print() : {end - start}  nanoseconds')
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Hello World
+Time taken to execute print() : 212924  nanoseconds
+</pre></div>
+
+<hr/>
+
+
+
+
+#### monotonic()
+<p> monotonic clock that does not go backward when executed repeatedly. </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import time
+print(time.monotonic())
+print(time.monotonic())
+print(time.monotonic())
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+14423.870910069
+14423.871002955
+14423.871015759
+</pre></div>
+
+<hr/>
+
+
+
+#### ctime(seconds)
+<p> Converts epoch to string, same as ctime in C language. </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import time
+
+epochNow = time.time()
+print(time.ctime(epochNow))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Tue Mar 24 17:18:59 2020
+</pre></div>
+
+<hr/>
+
+
+
+#### ctime(seconds)
+<p> Converts epoch to string, same as ctime in C language. </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import time
+
+epochNow = time.time()
+print(time.ctime(epochNow))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Tue Mar 24 17:18:59 2020
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+
+
+#### localtime(epoch)
+<p> Converting epoch time into timezone struct_time object. struct_time object is used to exchange time over the netwrork. Returns UTC + Offset in struct_time object.</p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>struct_time object (Named Tuple)</strong> </li>
+    </ul> 
+</div>
+
+
+index |         attribute        |    value
+:--- | :--- | :--- 
+  0   |        tm_year           |  1981, 2001, 2012 etc
+  1   |        tm_mon            |  month (1, 2, 3 ... 12)
+  2   |        tm_mday           |  day of the month (1, 2, 3, ....31)
+  3   |        tm_hour           |  hour (0, 1, 2, ....., 23)
+  4   |        tm_min            |  min  (0, 1, 2, ....., 59)
+  5   |        tm_sec            |  second (0, 1, 2, ..... 61)
+  6   |        tm_wday           |  day of week (0, 1, 2, ..., 6)
+  7   |        tm_yday           |  day of the year(1, 2, 3, .... 366)
+  8   |        tm_isdst          |  is day light saving (0, 1, -1)
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import time
+
+epochNow = time.time()
+lctime = time.localtime(epochNow)
+print(lctime)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+time.struct_time(tm_year=2020, tm_mon=3, tm_mday=24, tm_hour=17, tm_min=24, tm_sec=26, tm_wday=1, tm_yday=84, tm_isdst=0)
+</pre></div>
+
+<hr/>
+
+
+
+#### asctime(struct_time)
+<p>  Returns formatted string time from struct_time object returned by localtime().</p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import time
+epochNow = time.time()
+lctime = time.localtime(epochNow)
+print(time.asctime(lctime))
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Tue Mar 24 17:29:26 2020
+</pre></div>
+
+<hr/>
+
+
+
+
+#### gmtime(epoch)
+<p> Converts given time to UTC (formerly Greenwich Mean Time or GMT).</p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import time
+epochNow = time.time()
+print('Local Time:', time.localtime(epochNow))
+print('GMT Time:', time.gmtime(epochNow))
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Local Time: time.struct_time(tm_year=2020, tm_mon=3, tm_mday=24, tm_hour=17, tm_min=31, tm_sec=58, tm_wday=1, tm_yday=84, tm_isdst=0)
+GMT Time: time.struct_time(tm_year=2020, tm_mon=3, tm_mday=24, tm_hour=12, tm_min=1, tm_sec=58, tm_wday=1, tm_yday=84, tm_isdst=0)
+</pre></div>
+
+<hr/>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>UTC time to epoch</strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import calendar as cal
+import time
+
+epochNow = time.time()
+epochNow = cal.timegm(time.gmtime(epochNow))
+print(epochNow)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+1585051442
+</pre></div>
+
+<hr/>
+
+
+
+
+
+#### mktime(struct_time)
+<p> Converts struct_time time into epoch.</p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import time
+epochNow = time.time()
+lctime = time.localtime(epochNow)
+epoch1 = time.mktime(lctime)
+print(epoch1, epochNow)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+1585052121.0 1585052121.4990368
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+### Attributes
+
+
+#### altzone
+<p> Returns offset in seconds of local DST timezone with UTC. </p>
+
+
+
+{% include callout.html content="**Note** : Only use this if daylight is nonzero otherwise use time.timezone. " type="primary" %} 
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import time
+print(time.altzone)
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+-19800
+</pre></div>
+
+<hr/>
+
+
+
+
+#### daylight
+<p> Returns nonzero if a DST timezone is defined. </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import time
+print(time.daylight)
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+0
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+
+#### timezone
+<p> The offset of the local (non-DST) timezone, in seconds of UTC. </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import time
+print(time.timezone)
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+-19800
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+
+#### tzname
+<p> tuple of two string (name of locale non-DST timezone, name of locale non-DST timezone). </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import time
+print(time.tzname)
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+('IST', 'IST')
+</pre></div>
+
+<hr/>
 
 
 
