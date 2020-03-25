@@ -1,0 +1,8 @@
+---
+title: "perf counter()"
+tagName: perf_counter()
+search: exclude
+permalink: tag_perf_counter().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

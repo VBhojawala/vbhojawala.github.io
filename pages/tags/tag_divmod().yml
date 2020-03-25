@@ -1,0 +1,8 @@
+---
+title: "divmod()"
+tagName: divmod()
+search: exclude
+permalink: tag_divmod().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

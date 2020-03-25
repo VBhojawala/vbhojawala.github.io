@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Date, Time and DateTime">
-<meta name="keywords" content="datetimedatetimetoday()now()combine()isoformat()fromisoformat()utcnow()fromtimestamp()utcfromtimestamp()strptime()timetz()replace()astimezone()utcoffset()dst()tzname()timetuple()utctimetuple()toordinal()fromordinal()timestamp()weekday()isoweekday()isocalendar()fromisocalendar()ctime()strftime()comparision,  ">
+<meta name="keywords" content="datetimedatetimetoday()now()combine()isoformat()fromisoformat()utcnow()fromtimestamp()utcfromtimestamp()strptime()timetz()replace()astimezone()utcoffset()dst()tzname()timetuple()utctimetuple()toordinal()fromordinal()timestamp()weekday()isoweekday()isocalendar()fromisocalendar()ctime()strftime()comparisiontimedeltatotal_seconds()divmod()abs()timezonetzinfoepochUTCDSTutcoffset()tzname()dst()fromutc()time_ns()perf_counter()perf_counter_ns()monotonic()ctime()localtime()asctime()gmtime()mktime(),  ">
 <meta name="theme-color" content="#36362C">
 <link rel="icon" sizes="192x192" href="images/favicon.ico">
 <title>Date, Time and DateTime | Asha Tutorials</title>
@@ -1022,7 +1022,7 @@ Min : 00:00:00  Max : 23:59:59.999999  Resolution : 0:00:00.000001
   <tbody>
     <tr>
       <td style="text-align: left">auto</td>
-      <td style="text-align: left">HH:MM:SS.ffffff or YYYY-MM-DDTHH:MM:SS if micro second is zero.</td>
+      <td style="text-align: left">HH:MM:SS.ffffff or HH:MM:SS if micro second is zero.</td>
     </tr>
     <tr>
       <td style="text-align: left">hours</td>
@@ -2826,7 +2826,7 @@ astimezone() : 2020-03-24 14:57:28.039834+05:30
 <h4 id="dstdt">dst(dt)</h4>
 <p> Always returns None. </p>
 
-<h4 id="dstdt-1">dst(dt)</h4>
+<h4 id="fromutcdt">fromutc(dt)</h4>
 <p> Return dt + offset. dt must have tzinfo set. </p>
 
 <div id="code-block-67" class="code-block">
@@ -3026,26 +3026,6 @@ Tue Mar 24 17:18:59 2020
 
 <hr />
 
-<h4 id="ctimeseconds-1">ctime(seconds)</h4>
-<p> Converts epoch to string, same as ctime in C language. </p>
-
-<div id="code-block-74" class="code-block">
-<p id="code-header-74" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-74", "code-header-74")</script>
-
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">time</span>
-
-<span class="n">epochNow</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">ctime</span><span class="p">(</span><span class="n">epochNow</span><span class="p">))</span></code></pre></figure>
-
-</div>
-
-<div class="result"><p class="result-header"><b>Output</b></p>
-<pre class="result-content">
-Tue Mar 24 17:18:59 2020
-</pre></div>
-
-<hr />
-
 <h4 id="localtimeepoch">localtime(epoch)</h4>
 <p> Converting epoch time into timezone struct_time object. struct_time object is used to exchange time over the netwrork. Returns UTC + Offset in struct_time object.</p>
 
@@ -3112,8 +3092,8 @@ Tue Mar 24 17:18:59 2020
   </tbody>
 </table>
 
-<div id="code-block-75" class="code-block">
-<p id="code-header-75" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-75", "code-header-75")</script>
+<div id="code-block-74" class="code-block">
+<p id="code-header-74" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-74", "code-header-74")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">time</span>
 
@@ -3133,8 +3113,8 @@ time.struct_time(tm_year=2020, tm_mon=3, tm_mday=24, tm_hour=17, tm_min=24, tm_s
 <h4 id="asctimestruct_time">asctime(struct_time)</h4>
 <p>  Returns formatted string time from struct_time object returned by localtime().</p>
 
-<div id="code-block-76" class="code-block">
-<p id="code-header-76" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-76", "code-header-76")</script>
+<div id="code-block-75" class="code-block">
+<p id="code-header-75" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-75", "code-header-75")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">time</span>
 <span class="n">epochNow</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
@@ -3153,8 +3133,8 @@ Tue Mar 24 17:29:26 2020
 <h4 id="gmtimeepoch">gmtime(epoch)</h4>
 <p> Converts given time to UTC (formerly Greenwich Mean Time or GMT).</p>
 
-<div id="code-block-77" class="code-block">
-<p id="code-header-77" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-77", "code-header-77")</script>
+<div id="code-block-76" class="code-block">
+<p id="code-header-76" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-76", "code-header-76")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">time</span>
 <span class="n">epochNow</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
@@ -3177,8 +3157,8 @@ GMT Time: time.struct_time(tm_year=2020, tm_mon=3, tm_mday=24, tm_hour=12, tm_mi
     </ul> 
 </div>
 
-<div id="code-block-78" class="code-block">
-<p id="code-header-78" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-78", "code-header-78")</script>
+<div id="code-block-77" class="code-block">
+<p id="code-header-77" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-77", "code-header-77")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">calendar</span> <span class="k">as</span> <span class="n">cal</span>
 <span class="kn">import</span> <span class="nn">time</span>
@@ -3199,8 +3179,8 @@ GMT Time: time.struct_time(tm_year=2020, tm_mon=3, tm_mday=24, tm_hour=12, tm_mi
 <h4 id="mktimestruct_time">mktime(struct_time)</h4>
 <p> Converts struct_time time into epoch.</p>
 
-<div id="code-block-79" class="code-block">
-<p id="code-header-79" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-79", "code-header-79")</script>
+<div id="code-block-78" class="code-block">
+<p id="code-header-78" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-78", "code-header-78")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">time</span>
 <span class="n">epochNow</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
@@ -3224,8 +3204,8 @@ GMT Time: time.struct_time(tm_year=2020, tm_mon=3, tm_mday=24, tm_hour=12, tm_mi
 
 <div class="bs-callout bs-callout-primary"><strong>Note</strong> : Only use this if daylight is nonzero otherwise use time.timezone. </div>
 
-<div id="code-block-80" class="code-block">
-<p id="code-header-80" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-80", "code-header-80")</script>
+<div id="code-block-79" class="code-block">
+<p id="code-header-79" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-79", "code-header-79")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">time</span>
 <span class="k">print</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">altzone</span><span class="p">)</span></code></pre></figure>
@@ -3242,8 +3222,8 @@ GMT Time: time.struct_time(tm_year=2020, tm_mon=3, tm_mday=24, tm_hour=12, tm_mi
 <h4 id="daylight">daylight</h4>
 <p> Returns nonzero if a DST timezone is defined. </p>
 
-<div id="code-block-81" class="code-block">
-<p id="code-header-81" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-81", "code-header-81")</script>
+<div id="code-block-80" class="code-block">
+<p id="code-header-80" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-80", "code-header-80")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">time</span>
 <span class="k">print</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">daylight</span><span class="p">)</span></code></pre></figure>
@@ -3260,8 +3240,8 @@ GMT Time: time.struct_time(tm_year=2020, tm_mon=3, tm_mday=24, tm_hour=12, tm_mi
 <h4 id="timezone-1">timezone</h4>
 <p> The offset of the local (non-DST) timezone, in seconds of UTC. </p>
 
-<div id="code-block-82" class="code-block">
-<p id="code-header-82" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-82", "code-header-82")</script>
+<div id="code-block-81" class="code-block">
+<p id="code-header-81" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-81", "code-header-81")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">time</span>
 <span class="k">print</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">timezone</span><span class="p">)</span></code></pre></figure>
@@ -3278,8 +3258,8 @@ GMT Time: time.struct_time(tm_year=2020, tm_mon=3, tm_mday=24, tm_hour=12, tm_mi
 <h4 id="tzname-2">tzname</h4>
 <p> tuple of two string (name of locale non-DST timezone, name of locale non-DST timezone). </p>
 
-<div id="code-block-83" class="code-block">
-<p id="code-header-83" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-83", "code-header-83")</script>
+<div id="code-block-82" class="code-block">
+<p id="code-header-82" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-82", "code-header-82")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">time</span>
 <span class="k">print</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">tzname</span><span class="p">)</span></code></pre></figure>
@@ -3418,6 +3398,94 @@ GMT Time: time.struct_time(tm_year=2020, tm_mon=3, tm_mday=24, tm_hour=12, tm_mi
         
         
         <a href="tag_comparision.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">comparision</a>
+        
+        
+        
+        <a href="tag_timedelta.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">timedelta</a>
+        
+        
+        
+        <a href="tag_total_seconds().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">total_seconds()</a>
+        
+        
+        
+        <a href="tag_divmod().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">divmod()</a>
+        
+        
+        
+        <a href="tag_abs().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">abs()</a>
+        
+        
+        
+        <a href="tag_timezone.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">timezone</a>
+        
+        
+        
+        <a href="tag_tzinfo.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">tzinfo</a>
+        
+        
+        
+        <a href="tag_epoch.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">epoch</a>
+        
+        
+        
+        <a href="tag_UTC.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">UTC</a>
+        
+        
+        
+        <a href="tag_DST.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">DST</a>
+        
+        
+        
+        <a href="tag_utcoffset().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">utcoffset()</a>
+        
+        
+        
+        <a href="tag_tzname().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">tzname()</a>
+        
+        
+        
+        <a href="tag_dst().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">dst()</a>
+        
+        
+        
+        <a href="tag_fromutc().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">fromutc()</a>
+        
+        
+        
+        <a href="tag_time_ns().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">time_ns()</a>
+        
+        
+        
+        <a href="tag_perf_counter().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">perf_counter()</a>
+        
+        
+        
+        <a href="tag_perf_counter_ns().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">perf_counter_ns()</a>
+        
+        
+        
+        <a href="tag_monotonic().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">monotonic()</a>
+        
+        
+        
+        <a href="tag_ctime().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">ctime()</a>
+        
+        
+        
+        <a href="tag_localtime().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">localtime()</a>
+        
+        
+        
+        <a href="tag_asctime().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">asctime()</a>
+        
+        
+        
+        <a href="tag_gmtime().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">gmtime()</a>
+        
+        
+        
+        <a href="tag_mktime().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">mktime()</a>
         
         
         

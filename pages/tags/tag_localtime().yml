@@ -1,0 +1,8 @@
+---
+title: "localtime()"
+tagName: localtime()
+search: exclude
+permalink: tag_localtime().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

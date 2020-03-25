@@ -1,0 +1,8 @@
+---
+title: "epoch"
+tagName: epoch
+search: exclude
+permalink: tag_epoch.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

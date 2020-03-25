@@ -1,7 +1,7 @@
 ---
 title: Date, Time and DateTime
 layout: tutorial
-tags: [date, time, datetime, today(), now(), combine(), isoformat(), fromisoformat(), utcnow(), fromtimestamp(), utcfromtimestamp(), strptime(), timetz(), replace(), astimezone(), utcoffset(), dst(), tzname(), timetuple(), utctimetuple(), toordinal(), fromordinal(), timestamp(), weekday(), isoweekday(), isocalendar(), fromisocalendar(), ctime(), strftime(), comparision]
+tags: [date, time, datetime, today(), now(), combine(), isoformat(), fromisoformat(), utcnow(), fromtimestamp(), utcfromtimestamp(), strptime(), timetz(), replace(), astimezone(), utcoffset(), dst(), tzname(), timetuple(), utctimetuple(), toordinal(), fromordinal(), timestamp(), weekday(), isoweekday(), isocalendar(), fromisocalendar(), ctime(), strftime(), comparision, timedelta, total_seconds(), divmod(), abs(), timezone, tzinfo, epoch, UTC, DST, utcoffset(), tzname(), dst(), fromutc(), time_ns(), perf_counter(), perf_counter_ns(), monotonic(), ctime(), localtime(), asctime(), gmtime(), mktime()]
 sidebar: python_sidebar
 permalink: python_date_time_datetime.html
 folder: python
@@ -2514,7 +2514,7 @@ astimezone() : 2020-03-24 14:57:28.039834+05:30
 <p> Always returns None. </p>
 
 
-#### dst(dt)
+#### fromutc(dt)
 <p> Return dt + offset. dt must have tzinfo set. </p>
 
 
@@ -2787,38 +2787,6 @@ Tue Mar 24 17:18:59 2020
 </pre></div>
 
 <hr/>
-
-
-
-#### ctime(seconds)
-<p> Converts epoch to string, same as ctime in C language. </p>
-
-
-{% assign code_block = code_block | plus: 1 %}
-{% assign code_block_id = "code-block-" | append: code_block %}
-{% assign code_header_id = "code-header-" | append: code_block %}
-<div id="{{ code_block_id }}" class="code-block">
-<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
-{% highlight python %}
-
-import time
-
-epochNow = time.time()
-print(time.ctime(epochNow))
-
-
-{% endhighlight %}
-</div>
-
-<div class="result"><p class="result-header"><b>Output</b></p>
-<pre class="result-content">
-Tue Mar 24 17:18:59 2020
-</pre></div>
-
-<hr/>
-
-
-
 
 
 

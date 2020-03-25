@@ -1,0 +1,8 @@
+---
+title: "monotonic()"
+tagName: monotonic()
+search: exclude
+permalink: tag_monotonic().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

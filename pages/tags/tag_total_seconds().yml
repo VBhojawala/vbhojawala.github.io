@@ -1,0 +1,8 @@
+---
+title: "total seconds()"
+tagName: total_seconds()
+search: exclude
+permalink: tag_total_seconds().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

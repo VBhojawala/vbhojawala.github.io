@@ -139,3 +139,26 @@ allowed-tags:
   - ctime()
   - strftime()
   - comparision
+  - timedelta
+  - total_seconds()
+  - divmod()
+  - abs()
+  - timezone
+  - tzinfo
+  - epoch
+  - UTC
+  - DST
+  - utcoffset()
+  - tzname()
+  - dst()
+  - fromutc()
+  - time_ns()
+  - perf_counter()
+  - perf_counter_ns()
+  - monotonic()
+  - ctime()
+  - localtime()
+  - asctime()
+  - gmtime()
+  - mktime()
+

@@ -1,0 +1,8 @@
+---
+title: "gmtime()"
+tagName: gmtime()
+search: exclude
+permalink: tag_gmtime().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

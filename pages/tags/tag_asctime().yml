@@ -1,0 +1,8 @@
+---
+title: "asctime()"
+tagName: asctime()
+search: exclude
+permalink: tag_asctime().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

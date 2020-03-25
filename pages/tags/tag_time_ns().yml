@@ -1,0 +1,8 @@
+---
+title: "time ns()"
+tagName: time_ns()
+search: exclude
+permalink: tag_time_ns().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

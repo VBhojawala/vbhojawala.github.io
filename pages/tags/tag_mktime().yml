@@ -1,0 +1,8 @@
+---
+title: "mktime()"
+tagName: mktime()
+search: exclude
+permalink: tag_mktime().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

@@ -1,0 +1,8 @@
+---
+title: "tzinfo"
+tagName: tzinfo
+search: exclude
+permalink: tag_tzinfo.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}
