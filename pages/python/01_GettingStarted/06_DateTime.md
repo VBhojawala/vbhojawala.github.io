@@ -7,10 +7,10 @@ permalink: python_date_time_datetime.html
 folder: python
 prev: python_bytes_bytearray.html
 prev_title: Bytes and ByteArray
-next: 
-next_title:
-next_section: python_control_flow.html
-next_section_title: Control Flow
+next: python_calendar.html
+next_title: Calendar
+next_section: 
+next_section_title: 
 summary: Date, Time and DateTime
 ---
 
@@ -1928,7 +1928,9 @@ d2 = date(2020, 6, 15)
 
 print(f'd1 : {d1}    d2 : {d2}\n')
 print('d1 < d2 ? ->', d1 < d2)
+print('d1 <= d2 ? ->', d1 <= d2)
 print('d1 > d2 ? ->', d1 > d2)
+print('d1 >= d2 ? ->', d1 >= d2)
 print('d1 == d2 ? ->', d1 == d2)
 print('d1 != d2 ? ->', d1 != d2)
 
@@ -1940,7 +1942,9 @@ t2 = time(11, 15, 45)
 
 print(f't1 : {t1}   t2 : {t2}\n')
 print('t1 < t2 ? ->', t1 < t2)
+print('t1 <= t2 ? ->', t1 <= t2)
 print('t1 > t2 ? ->', t1 > t2)
+print('t1 >= t2 ? ->', t1 >= t2)
 print('t1 == t2 ? ->', t1 == t2)
 print('t1 != t2 ? ->', t1 != t2)
 
@@ -1954,7 +1958,9 @@ dt2 = dt(2020, 6, 15, 11, 15, 45)
 
 print(f'dt1 : {dt1}   dt2 : {dt2}\n')
 print('dt1 < dt2 ? ->', dt1 < dt2)
+print('dt1 <= dt2 ? ->', dt1 <= dt2)
 print('dt1 > dt2 ? ->', dt1 > dt2)
+print('dt1 >= dt2 ? ->', dt1 >= dt2)
 print('dt1 == dt2 ? ->', dt1 == dt2)
 print('dt1 != dt2 ? ->', dt1 != dt2)
 
@@ -1967,23 +1973,30 @@ print('dt1 != dt2 ? ->', dt1 != dt2)
 ***** Date comparision *****
 d1 : 2020-03-21    d2 : 2020-06-15
 d1 < d2 ? -> True
+d1 <= d2 ? -> True
 d1 > d2 ? -> False
+d1 >= d2 ? -> False
 d1 == d2 ? -> False
 d1 != d2 ? -> True
 
 ***** Time comparision *****
 t1 : 15:45:55   t2 : 11:15:45
 t1 < t2 ? -> False
+t1 <= t2 ? -> False
 t1 > t2 ? -> True
+t1 >= t2 ? -> True
 t1 == t2 ? -> False
 t1 != t2 ? -> True
 
 ***** DateTime comparision *****
 dt1 : 2020-03-21 15:45:55   dt2 : 2020-06-15 11:15:45
 dt1 < dt2 ? -> True
+dt1 <= dt2 ? -> True
 dt1 > dt2 ? -> False
+dt1 >= dt2 ? -> False
 dt1 == dt2 ? -> False
 dt1 != dt2 ? -> True
+
 
 </pre></div>
 
@@ -2326,10 +2339,15 @@ from datetime import timedelta
 td1 = timedelta(hours=18, minutes=40)
 td2 = timedelta(hours=12, minutes=10)
 
+from datetime import timedelta
+
+td1 = timedelta(hours=18, minutes=40)
+td2 = timedelta(hours=12, minutes=10)
+
 print('td1 < td2 ? ->', td1 < td2)
 print('td1 > td2 ? ->', td1 > td2)
 print('td1 <= td2 ? ->', td1 <= td2)
-print('td1 <= td2 ? ->', td1 <= td2)
+print('td1 >= td2 ? ->', td1 >= td2)
 print('td1 == td2 ? ->', td1 == td2)
 print('td1 != td2 ? ->', td1 != td2)
 
@@ -2342,7 +2360,7 @@ print('td1 != td2 ? ->', td1 != td2)
 td1 < td2 ? -> False
 td1 > td2 ? -> True
 td1 <= td2 ? -> False
-td1 <= td2 ? -> False
+td1 >= td2 ? -> True
 td1 == td2 ? -> False
 td1 != td2 ? -> True
 </pre></div>

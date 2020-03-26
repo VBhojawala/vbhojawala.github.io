@@ -22,7 +22,6 @@ entries:
         url: /python_variables.html
         output: web, pdf
 
-
       - title: Decimal and Fraction
         url: /python_decimal_fraction.html
         output: web, pdf
@@ -39,7 +38,10 @@ entries:
         url: /python_date_time_datetime.html
         output: web, pdf
         
-        
+      - title: Calendar
+        url: /python_calendar.html
+        output: web, pdf
+
         # subfolders:
         # - title: Tag archive pages
         #   output: web
