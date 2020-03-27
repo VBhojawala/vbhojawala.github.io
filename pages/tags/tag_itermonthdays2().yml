@@ -1,0 +1,8 @@
+---
+title: "itermonthdays2()"
+tagName: itermonthdays2()
+search: exclude
+permalink: tag_itermonthdays2().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

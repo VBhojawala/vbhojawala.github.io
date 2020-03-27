@@ -1,0 +1,8 @@
+---
+title: "formatday()"
+tagName: formatday()
+search: exclude
+permalink: tag_formatday().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

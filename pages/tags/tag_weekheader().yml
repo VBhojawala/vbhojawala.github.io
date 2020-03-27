@@ -1,0 +1,8 @@
+---
+title: "weekheader()"
+tagName: weekheader()
+search: exclude
+permalink: tag_weekheader().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

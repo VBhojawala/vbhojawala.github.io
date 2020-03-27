@@ -1,0 +1,8 @@
+---
+title: "pryear()"
+tagName: pryear()
+search: exclude
+permalink: tag_pryear().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

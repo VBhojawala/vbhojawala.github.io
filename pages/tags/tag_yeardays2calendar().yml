@@ -1,0 +1,8 @@
+---
+title: "yeardays2calendar()"
+tagName: yeardays2calendar()
+search: exclude
+permalink: tag_yeardays2calendar().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

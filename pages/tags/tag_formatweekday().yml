@@ -1,0 +1,8 @@
+---
+title: "formatweekday()"
+tagName: formatweekday()
+search: exclude
+permalink: tag_formatweekday().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

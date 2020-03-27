@@ -1,0 +1,8 @@
+---
+title: "TextCalendar"
+tagName: TextCalendar
+search: exclude
+permalink: tag_TextCalendar.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

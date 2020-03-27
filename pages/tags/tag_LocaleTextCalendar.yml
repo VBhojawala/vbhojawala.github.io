@@ -1,0 +1,8 @@
+---
+title: "LocaleTextCalendar"
+tagName: LocaleTextCalendar
+search: exclude
+permalink: tag_LocaleTextCalendar.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

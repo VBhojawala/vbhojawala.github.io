@@ -1,7 +1,7 @@
 ---
 title: Calendar
 layout: tutorial
-tags: []
+tags: [calendar, firstweekday(), setfirstweekday(), isleap(), leapdays(), weekday(), weekheader(), monthrange(), monthcalendar(), calendar(), month(), weekday(), prcal(), prmonth(), timegm(), getfirstweekday(), iterweekdays(), itermonthdates(), itermonthdays(), itermonthdays2(), itermonthdays3(), itermonthdays4(), monthdatescalendar(), monthdays2calendar(),  monthdayscalendar(), yeardatescalendar(),  yeardayscalendar(), yeardays2calendar(), TextCalendar, formatmonth(), formatyear(), pryear(), prmonth(), prweek(), formatweekheader(), formatweek(), formatday(), formatweekday(), formatmonthname(), LocaleTextCalendar, locale]
 sidebar: python_sidebar
 permalink:  python_calendar.html
 folder: python
@@ -11,12 +11,12 @@ next:
 next_title:
 next_section: python_control_flow.html
 next_section_title: Control Flow
-summary: Calendar module
+summary: Calendar module attributes and functions. Calendar, TextCalendar class and LocaleTextCalendar attributes and methods.
 ---
 
 ## Calendar Module
 
-<p> Calendar module provides useful calendar functions. </p>
+<p> Calendar module provides useful calendar functions and classes. </p>
 
 <div id="tut-content"> 
     <ul>

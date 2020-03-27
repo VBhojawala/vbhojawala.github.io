@@ -1,0 +1,8 @@
+---
+title: "monthdatescalendar()"
+tagName: monthdatescalendar()
+search: exclude
+permalink: tag_monthdatescalendar().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

@@ -1,0 +1,8 @@
+---
+title: "formatmonth()"
+tagName: formatmonth()
+search: exclude
+permalink: tag_formatmonth().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

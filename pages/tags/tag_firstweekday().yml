@@ -1,0 +1,8 @@
+---
+title: "firstweekday()"
+tagName: firstweekday()
+search: exclude
+permalink: tag_firstweekday().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

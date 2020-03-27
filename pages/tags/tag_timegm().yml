@@ -1,0 +1,8 @@
+---
+title: "timegm()"
+tagName: timegm()
+search: exclude
+permalink: tag_timegm().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}
