@@ -214,4 +214,8 @@ allowed-tags:
   - operator_precedence
   - pow()
   - nested_if-else
+  - while_loop
+  - break
+  - continue
+  - while-else
 

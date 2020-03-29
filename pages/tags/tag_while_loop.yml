@@ -1,0 +1,8 @@
+---
+title: "while loop"
+tagName: while_loop
+search: exclude
+permalink: tag_while_loop.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

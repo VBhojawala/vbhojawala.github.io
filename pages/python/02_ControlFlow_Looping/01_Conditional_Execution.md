@@ -9,10 +9,10 @@ prev_section: python_getting_started.html
 prev_section_title: Getting Started
 prev: 
 prev_title: 
-next: 
-next_title:
-next_section: python_while_loop.html
-next_section_title: While Loop
+next: python_while_loop.html
+next_title: While Loop
+next_section: 
+next_section_title: 
 ---
 
 ## if-else

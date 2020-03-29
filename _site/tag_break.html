@@ -8,7 +8,7 @@
 <meta name="keywords" content=" ">
 <meta name="theme-color" content="#36362C">
 <link rel="icon" sizes="192x192" href="images/favicon.ico">
-<title>Getting Started | Asha Tutorials</title>
+<title>break | Asha Tutorials</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -215,25 +215,6 @@
         });
     </script>
     
-    <!-- Include the standard DataTables bits -->
-    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.css">
-    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.js"></script>
-    <!-- First, this walks through the tables that occur between ...-begin
-         and ...-end and add the "datatable" class to them.
-         Then it invokes DataTable's standard initializer
-         Credit here: http://www.beardedhacker.com/blog/2015/08/28/add-class-attribute-to-markdown-table/
-      -->
-    <script>
-      $(document).ready(function(){
-          $('div.datatable-begin').nextUntil('div.datatable-end', 'table').addClass('display');
-          $('table.display').DataTable( {
-              paging: true,
-              stateSave: true,
-              searching: true
-          });
-       });
-    </script>
-    
 
 </head>
 <body>
@@ -284,7 +265,7 @@
                 
                 
                 
-                <li class="active"><a href="python_getting_started.html">Python</a></li>
+                <li><a href="python_getting_started.html">Python</a></li>
                 
                 
                 
@@ -302,7 +283,7 @@
 
 
 
-  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:?subject=Asha Tutorials feedback&body=I have some feedback about the Getting Started page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:?subject=Asha Tutorials feedback&body=I have some feedback about the break page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
 
 </li>
 
@@ -354,7 +335,7 @@
                             searchInput: document.getElementById('search-input'),
                             resultsContainer: document.getElementById('results-container'),
                             dataSource: 'search.json',
-                            searchResultTemplate: '<li style="margin: 0px 0px;"><a href="{url}" title="Getting Started       " folder="python">{title} <sub>in {folder}</sub></a></li>',
+                            searchResultTemplate: '<li style="margin: 0px 0px;"><a href="{url}" title="break       " folder="">{title} <sub>in {folder}</sub></a></li>',
                 noResultsText: '<li style="margin: 0px 0px;"><a href="#">No results found.</a></li>',
                         limit: 10,
                         fuzzy: true,
@@ -379,89 +360,24 @@
                 
 
 <ul id="mysidebar" class="nav">
-  <li class="sidebarTitle">Python </li>
+  <li class="sidebarTitle">Home </li>
   
   
   
   <li>
-      <a title="Getting Started" href="#">Getting Started</a>
+      <a title="Tutorials" href="#">Tutorials</a>
       <ul class="nav1">
           
           
           
-          <li class="active"><a title="Getting started" href="python_getting_started.html">Getting started</a></li>
+          <li><a title="News" href="news.html">News</a></li>
           
           
           
           
           
           
-          <li><a title="Hello World!" href="python_hello_world.html">Hello World!</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="Variables" href="python_variables.html">Variables</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="Decimal and Fraction" href="python_decimal_fraction.html">Decimal and Fraction</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="String" href="python_string.html">String</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="Bytes and ByteArray" href="python_bytes_bytearray.html">Bytes and ByteArray</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="DateTime" href="python_date_time_datetime.html">DateTime</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="Calendar" href="python_calendar.html">Calendar</a></li>
-          
-          
-          
-          
-      </ul>
-   </li>
-     
-      
-  
-  <li>
-      <a title="ControlFlow and Looping" href="#">ControlFlow and Looping</a>
-      <ul class="nav1">
-          
-          
-          
-          <li><a title="Control Flow" href="python_control_flow.html">Control Flow</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="While Loop" href="python_while_loop.html">While Loop</a></li>
+          <li><a title="Python" href="python_getting_started.html">Python</a></li>
           
           
           
@@ -488,14 +404,14 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">Getting Started</h1>
+   <h1 class="post-title-main">break</h1>
 </div>
 
 
 
 <div class="post-content">
 
-   <!--  -->
+   
 
     
     
@@ -525,144 +441,20 @@ $('#toc').on('click', 'a', function() {
 
     <!-- 
 
-    <a target="_blank" rel="noopener" href="https://github.com/ashatutorials/pages/python/01_GettingStarted/00_GettingStarted.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+    <a target="_blank" rel="noopener" href="https://github.com/ashatutorials/pages/tags/tag_break.yml" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
 
      -->
 
-   <p>Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle. By the same illusion which lifts the horizon of the sea to the level of the spectator on a hillside, the sable cloud beneath was dished out, and the car seemed to float in the middle of an immense dark sphere, whose upper half was strewn with silver. Looking down into the dark gulf below, I could see a ruddy light streaming through a rift in the clouds.</p>
+   <p>The following pages and posts are tagged with <button type="button" style="cursor: default" class="btn btn-default navbar-btn">break</button></p>
+<table><thead><tr><th>Title</th><th>Folder</th><th>Type</th><th>Contents</th></tr></thead><tbody><tr><td><a href="python_while_loop.html">While Loop</a></td><td><span class="label label-folder">python</span></td><td><span class="label label-default">Page</span></td><td> while loop  Copy p = 1 while p &lt; 11: print(p) p += 1  Output ... </td></tr>
+</tbody></table>
 
-<h2 id="print-function">print() function</h2>
-
-<p>Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle. By the same illusion which lifts the horizon of the sea to the level of the spectator on a hillside, the sable cloud beneath was dished out</p>
-
-<div id="code-block-1" class="code-block">
-<p id="code-header-1" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-1", "code-header-1")</script>
-
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">"Hello World"</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span></code></pre></figure>
-
-</div>
-
-<div class="result"><p class="result-header"><b>Output</b></p>
-<pre class="result-content">Hello World
-0
-1
-2
-3
-4
-</pre></div>
-
-<div class="bs-callout bs-callout-primary"><strong>Note</strong> : This is my callout. It has a border on the left whose color you define by passing a type parameter. </div>
-
-<figure><a class="no_icon" target="_blank" rel="noopener" href="http://jekyllrb.com"><img class="docimage" src="images/jekyll.png" alt="Jekyll" /></a><figcaption>This is a sample caption</figcaption></figure>
-
-<ul id="profileTabs" class="nav-tab-profile ">
-    <li class="active"><a href="#profile" data-toggle="tab">Profile</a></li>
-    <li><a href="#about" data-toggle="tab">About</a></li>
-    <li><a href="#match" data-toggle="tab">Match</a></li>
-</ul>
-<div class="tab-content">
-<div role="tabpanel" class="tab-pane active" id="profile">
-    <h3>Profile</h3>
-<p>Praesent sit amet fermentum leo....</p>
-</div>
-
-<div role="tabpanel" class="tab-pane" id="about">
-    <h3>About</h3>
-    <p>Lorem ipsum ...</p></div>
-
-<div role="tabpanel" class="tab-pane" id="match">
-    <h3>Match</h3>
-    <p>Vel vehicula ....</p>
-</div>
-</div>
-
-<p>Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle. By the same illusion which lifts the horizon of the sea to the level of the spectator on a hillside, the sable cloud beneath was dished out, and the car seemed to float in the middle of an immense dark sphere, whose upper half was strewn with silver. Looking down into the dark gulf below, I could see a ruddy light streaming through a rift in the clouds.</p>
-
-<h3 id="h3">H3</h3>
-
-<p>unordered list:</p>
-<ul>
-  <li>item-1
-    <ul>
-      <li>sub-item-1</li>
-      <li>sub-item-2</li>
-    </ul>
-  </li>
-  <li>item-2
-    <ul>
-      <li>sub-item-3</li>
-      <li>sub-item-4</li>
-    </ul>
-  </li>
-  <li>item-3
-    <ul>
-      <li>sub-item-5</li>
-      <li>sub-item-6</li>
-    </ul>
-  </li>
-</ul>
-
-<p>ordered list:</p>
-
-<ol>
-  <li>
-    <p>item-1 : Apparently we had reached a great height in the atmosphere,</p>
-  </li>
-  <li>
-    <p>item-2 : Apparently we had reached a great height in the atmosphere,</p>
-  </li>
-  <li>
-    <p>item-3 : Apparently we had reached a great height in the atmosphere,</p>
-  </li>
-</ol>
-
-<h4 id="header4">Header4</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: left">Table Header-1</th>
-      <th style="text-align: center">Table Header-2</th>
-      <th style="text-align: right">Table Header-3</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left">Table Data-1</td>
-      <td style="text-align: center">Table Data-2</td>
-      <td style="text-align: right">Table Data-3</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">TD-4</td>
-      <td style="text-align: center">Td-5</td>
-      <td style="text-align: right">TD-6</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">Table Data-7</td>
-      <td style="text-align: center">Table Data-8</td>
-      <td style="text-align: right">Table Data-9</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>You may also want some images right in here like <img src="https://cloud.githubusercontent.com/assets/5456665/13322882/e74f6626-dc00-11e5-921d-f6d024a01eaa.png" alt="GitHub Logo" title="GitHub" /> - you can do that but I would recommend you to use the component “image” and simply split your text.</p>
-
-<h6 id="header6">Header6</h6>
-
-<p>Let us do some links - this for example:</p>
 
 
 
     <div class="tags">
         
     </div>
-
-<a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button">
-    <span class="fa fa-arrow-up" tabindex="-1"></span>
-</a>
 
 <!-- 
 <div id="commento"></div>
@@ -674,27 +466,6 @@ $('#toc').on('click', 'a', function() {
 </div>
 
 <!-- <hr class="shaded"/> -->
-
-<div class="seriesContext" align="right">
-
-    
-
-    
-
-    
-        <a href="python_hello_world.html" >
-            <button type="button" class="btn btn-primary "> 
-                 Next <span class="fa fa-arrow-circle-right fa-lg"></span> <br/> 
-                 Hello World!
-            </button>
-        </a>
-    
-
-    
-
-</div>
-
-
 <hr />
 
 <footer>

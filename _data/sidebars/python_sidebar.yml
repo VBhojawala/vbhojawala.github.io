@@ -61,4 +61,7 @@ entries:
       - title: Control Flow
         url: /python_control_flow.html
         output: web, pdf
+      - title: While Loop
+        url: /python_while_loop.html
+        output: web, pdf
         

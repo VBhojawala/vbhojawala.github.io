@@ -1,0 +1,8 @@
+---
+title: "while-else"
+tagName: while-else
+search: exclude
+permalink: tag_while-else.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}
