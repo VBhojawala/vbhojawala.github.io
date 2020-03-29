@@ -1,0 +1,8 @@
+---
+title: "lazy evaluation"
+tagName: lazy_evaluation
+search: exclude
+permalink: tag_lazy_evaluation.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

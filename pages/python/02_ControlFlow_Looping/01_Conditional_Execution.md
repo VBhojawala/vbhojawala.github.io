@@ -1,6 +1,7 @@
 ---
 title: Control Flow
 layout: tutorial
+tags: [if-else, comparision_operators, identity_operator,  if-elif-else, logical_operators, ternary, chained_expression, lazy_evaluation, short-circuit_logic, bitwise_operators, operator_precedence, divmod(), pow(), nested_if-else]
 sidebar: python_sidebar
 permalink: python_control_flow.html
 folder: python
@@ -721,8 +722,8 @@ Test failed
 
 <div id="tut-content"> 
     <ul>
-        <li> <strong>In 'and' logical operation  expr1 and exp2, if expr1 is evaluated as False python will not evaluate expr2.</strong> </li>
-        <li> <strong>For 'or' logical operation expr1 or expr2 , if expr1 is True it will return True without evaluating expr2.</strong> </li>
+        <li> In 'and' logical operation  expr1 and exp2, if expr1 is evaluated as False python will not evaluate expr2. </li>
+        <li> For 'or' logical operation expr1 or expr2 , if expr1 is True it will return True without evaluating expr2. </li>
     </ul> 
 </div>
 
@@ -798,7 +799,7 @@ inside If
 operator    |           meaning
 :--- | :---
      &        |        binary and
-     |        |        binary OR
+     \|        |        binary OR
      ^        |        binary XOR
      ~        |        binary 1's complement
      <<       |        binary left shift

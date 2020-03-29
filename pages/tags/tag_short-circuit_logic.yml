@@ -1,0 +1,8 @@
+---
+title: "short-circuit logic"
+tagName: short-circuit_logic
+search: exclude
+permalink: tag_short-circuit_logic.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

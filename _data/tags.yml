@@ -202,4 +202,16 @@ allowed-tags:
   - formatmonthname()
   - LocaleTextCalendar
   - locale
+  - if-else
+  - comparision_operators
+  - if-elif-else
+  - logical_operators
+  - ternary
+  - chained_expression
+  - lazy_evaluation
+  - short-circuit_logic
+  - bitwise_operators
+  - operator_precedence
+  - pow()
+  - nested_if-else
 

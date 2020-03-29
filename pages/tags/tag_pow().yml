@@ -1,0 +1,8 @@
+---
+title: "pow()"
+tagName: pow()
+search: exclude
+permalink: tag_pow().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

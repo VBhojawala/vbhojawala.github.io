@@ -1,0 +1,8 @@
+---
+title: "logical operators"
+tagName: logical_operators
+search: exclude
+permalink: tag_logical_operators.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}
