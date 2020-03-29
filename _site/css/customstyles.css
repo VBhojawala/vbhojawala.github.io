@@ -460,6 +460,7 @@ ul#mysidebar {
 .nav ul li a {
     background-color: #F5F5F5;
     color: black;
+    word-spacing: 0.3px;
 }
 
 .nav li a {

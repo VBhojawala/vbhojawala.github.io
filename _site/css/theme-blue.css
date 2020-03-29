@@ -110,6 +110,7 @@ background-color: #5D917D;
 }
 .nav > li > a {
     font-size: 14px;
+    word-spacing: 0.3px;
 }
 
 .nav > li > a:hover {

@@ -55,21 +55,10 @@ entries:
         #     url: /tag_formatting.html
         #     output: web
 
-  - title: Control Flow
+  - title: ControlFlow and Looping
     output: web, pdf
     folderitems:
       - title: Control Flow
         url: /python_control_flow.html
         output: web, pdf
         
-  - title: Looping
-    output: web, pdf
-    folderitems:
-      - title: While Loop
-        url: /python_while_loop.html
-        output: web, pdf
-        
-      - title: For Loop
-        url: /python_for_loop.html
-        output: web, pdf
-         
