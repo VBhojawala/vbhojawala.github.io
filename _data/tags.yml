@@ -218,4 +218,10 @@ allowed-tags:
   - break
   - continue
   - while-else
+  - for
+  - range()
+  - for-each
+  - for-else
+  - command_line_argument
+  - sys.argv
 

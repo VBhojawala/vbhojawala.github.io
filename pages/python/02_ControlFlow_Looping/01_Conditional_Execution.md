@@ -13,6 +13,7 @@ next: python_while_loop.html
 next_title: While Loop
 next_section: 
 next_section_title: 
+summary: if-else, identity operators, comparision operator, if-elif-else, Logical operators, lazy evaluation, short circuit logic, Bitwise operators, operator precedence, divmod(), pow(), nested if-else. 
 ---
 
 ## if-else

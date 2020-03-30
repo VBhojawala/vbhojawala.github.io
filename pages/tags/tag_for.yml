@@ -1,0 +1,8 @@
+---
+title: "for"
+tagName: for
+search: exclude
+permalink: tag_for.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

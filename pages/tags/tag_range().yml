@@ -1,0 +1,8 @@
+---
+title: "range()"
+tagName: range()
+search: exclude
+permalink: tag_range().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

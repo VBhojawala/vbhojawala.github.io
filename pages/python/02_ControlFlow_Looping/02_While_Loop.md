@@ -9,10 +9,11 @@ prev_section:
 prev_section_title: 
 prev: python_control_flow.html
 prev_title: Control Flow
-next: 
-next_title:
-next_section: python_while_loop.html
-next_section_title: While Loop
+next: python_for_loop.html
+next_title: For Loop
+next_section: 
+next_section_title: 
+summary: While loop, break, continue, while-else.
 ---
 
 ## while loop
@@ -100,7 +101,7 @@ Enter your Name [Press Enter to exit] ->>?
 
 ## continue
 
-<p> Executed when exceptional condition satisfied , it skips remaining statements in current iteration and start next iteration. </p>
+<p> Executed when exceptional condition satisfied , it skips remaining statements in current iteration and continue next iteration. </p>
 
 <div id="tut-content"> 
     <ul>
