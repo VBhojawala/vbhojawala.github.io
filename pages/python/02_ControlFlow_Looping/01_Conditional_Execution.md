@@ -885,7 +885,7 @@ print(ans)
 # expected answer can be calculated from above table
 # using parentheses to explicitly give precedence to operation
 
-ans = (~78 + (-12 // 78)) ^ ((12 * 89) & (12 % 2))
+ans = ((~78) + (-12 // 78)) ^ ((12 * 89) & (12 % 2))
 print(ans)
 
 

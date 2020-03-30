@@ -56,6 +56,8 @@ while p < 11:
 
 ## break
 
+<p> Executed when end of loop condition satisfied, which exits the while loop. </p>
+
 <div id="tut-content"> 
     <ul>
         <li> <strong> Infinite while loop and break statement : </strong> </li>
@@ -97,6 +99,8 @@ Enter your Name [Press Enter to exit] ->>?
 
 
 ## continue
+
+<p> Executed when exceptional condition satisfied , it skips remaining statements in current iteration and start next iteration. </p>
 
 <div id="tut-content"> 
     <ul>
