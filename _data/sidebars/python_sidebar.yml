@@ -67,4 +67,11 @@ entries:
       - title: For Loop
         url: /python_for_loop.html
         output: web, pdf
+
+  - title: Functions
+    output: web, pdf
+    folderitems:
+      - title: Functions
+        url: /python_functions.html
+        output: web, pdf
         

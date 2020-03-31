@@ -4,11 +4,11 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="for loop, range() function, continue,  for-each loop, for-else, Command Line Arguments.">
-<meta name="keywords" content="forrange()continuefor-eachfor-elsecommand_line_argumentsys.argv,  ">
+<meta name="description" content="Benefits of functions, Built-in functions, User defined functions.">
+<meta name="keywords" content=",  ">
 <meta name="theme-color" content="#36362C">
 <link rel="icon" sizes="192x192" href="images/favicon.ico">
-<title>For Loop | Asha Tutorials</title>
+<title>Functions | Asha Tutorials</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -283,7 +283,7 @@
 
 
 
-  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:?subject=Asha Tutorials feedback&body=I have some feedback about the For Loop page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:?subject=Asha Tutorials feedback&body=I have some feedback about the Functions page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
 
 </li>
 
@@ -335,7 +335,7 @@
                             searchInput: document.getElementById('search-input'),
                             resultsContainer: document.getElementById('results-container'),
                             dataSource: 'search.json',
-                            searchResultTemplate: '<li style="margin: 0px 0px;"><a href="{url}" title="For Loop       " folder="python">{title} <sub>in {folder}</sub></a></li>',
+                            searchResultTemplate: '<li style="margin: 0px 0px;"><a href="{url}" title="Functions       " folder="python">{title} <sub>in {folder}</sub></a></li>',
                 noResultsText: '<li style="margin: 0px 0px;"><a href="#">No results found.</a></li>',
                         limit: 10,
                         fuzzy: true,
@@ -449,7 +449,7 @@
           
           
           
-          <li class="active"><a title="For Loop" href="python_for_loop.html">For Loop</a></li>
+          <li><a title="For Loop" href="python_for_loop.html">For Loop</a></li>
           
           
           
@@ -465,7 +465,7 @@
           
           
           
-          <li><a title="Functions" href="python_functions.html">Functions</a></li>
+          <li class="active"><a title="Functions" href="python_functions.html">Functions</a></li>
           
           
           
@@ -492,7 +492,7 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">For Loop</h1>
+   <h1 class="post-title-main">Functions</h1>
 </div>
 
 
@@ -500,7 +500,7 @@
 <div class="post-content">
 
    <!-- 
-    <div class="summary">for loop, range() function, continue,  for-each loop, for-else, Command Line Arguments.</div>
+    <div class="summary">Benefits of functions, Built-in functions, User defined functions.</div>
     -->
 
     
@@ -531,220 +531,63 @@ $('#toc').on('click', 'a', function() {
 
     <!-- 
 
-    <a target="_blank" rel="noopener" href="https://github.com/ashatutorials/pages/python/02_ControlFlow_Looping/03_For_loop.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+    <a target="_blank" rel="noopener" href="https://github.com/ashatutorials/pages/python/03_Functions/01_Functions.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
 
      -->
 
-   <h2 id="rangestop">range(stop)</h2>
-<p> Is a generator function which evaluates values on the fly at runtime. </p>
-<p> Generates numbers from 0 to up to stop (not including stop). </p>
+   <h2 id="benefits-of-functions">Benefits of functions</h2>
 
-<h2 id="for-loop">for loop</h2>
+<div id="tut-content"> 
+    <ol>    
+        <li> Abstraction </li>
+        <li> Code re-use and single codebase </li>
+        <li> Modularization of long procedural code </li>
+        <li> easy to maintain  </li>
+    </ol>
+</div>
 
-<p> Iterates over items of iterator / generator. </p>
+<h2 id="user-defined-function">User defined function</h2>
+
+<h3 id="pass">pass</h3>
 
 <div id="tut-content"> 
     <ul>
-        <li> <strong>print 'Hello World' 10 times using for loop</strong> </li>
+        <li> <strong>def : </strong> Marks the beginning of the function </li>
+        <li> <strong>pass : </strong> Marks the function as empty function. Empty function is declared so that it can be implemented later. </li>
     </ul> 
 </div>
+
+<div class="bs-callout bs-callout-primary"><strong>Note</strong> : function in python are first class object which means it can be passed as a variable to method or assigned to a variable. </div>
 
 <div id="code-block-1" class="code-block">
 <p id="code-header-1" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-1", "code-header-1")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'{i}. Hello World'</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">empty_func</span><span class="p">():</span>
+    <span class="k">pass</span></code></pre></figure>
 
 </div>
-
-<div class="result"><p class="result-header"><b>Output</b></p>
-<pre class="result-content">
-0. Hello World
-1. Hello World
-2. Hello World
-3. Hello World
-4. Hello World
-5. Hello World
-6. Hello World
-7. Hello World
-8. Hello World
-9. Hello World
-</pre></div>
 
 <hr />
 
+<h3 id="doc-string">doc-string</h3>
+
 <div id="tut-content"> 
     <ul>
-        <li> <strong>generator function (range) / iterator  can be assigned to a variable : </strong> </li>
+        <li> <strong> Creating a function with doc-string which prints 'Hello World!'</strong> </li>
     </ul> 
 </div>
+
+<div class="bs-callout bs-callout-primary"><strong>doc-string</strong> : If first line of function is multiline string (Triple quoted single or double), it is considered as a documentation string for that function. It can be viewed in function call by pressing Ctrl + Q in PyCharm.</div>
 
 <div id="code-block-2" class="code-block">
 <p id="code-header-2" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-2", "code-header-2")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">limit</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">say_hello</span><span class="p">():</span>
+    <span class="s">"""Prints Hello World!"""</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Hello World!'</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">limit</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span></code></pre></figure>
-
-</div>
-
-<div class="result"><p class="result-header"><b>Output</b></p>
-<pre class="result-content">
-0
-1
-2
-3
-4
-5
-6
-7
-8
-9
-</pre></div>
-
-<hr />
-
-<h2 id="continue">continue</h2>
-
-<p> Executed when exceptional condition satisfied , it skips remaining statements in current iteration and continue next iteration. </p>
-
-<div id="code-block-3" class="code-block">
-<p id="code-header-3" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-3", "code-header-3")</script>
-
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">continue</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'i -&gt; {i}'</span><span class="p">)</span></code></pre></figure>
-
-</div>
-
-<div class="result"><p class="result-header"><b>Output</b></p>
-<pre class="result-content">
-i -&gt; 1
-i -&gt; 3
-i -&gt; 5
-i -&gt; 7
-i -&gt; 9
-</pre></div>
-
-<hr />
-
-<h2 id="rangestart-end-step">range(start, end[, step])</h2>
-<p> Generates numbers from start to up to stop (not including stop) with given optional step. </p>
-<div id="tut-content"> 
-    <ul>
-        <li> <strong>start : </strong> first number to be generated.</li>
-        <li> <strong>end : </strong>  last number up to which generator function generates number from start.</li>
-        <li> <strong>step : </strong>  Optional argument step which gets added to generate next number.</li>
-    </ul> 
-</div>
-
-<div id="tut-content"> 
-    <ul>
-        <li> <strong>Previous example with steps</strong> </li>
-    </ul> 
-</div>
-
-<div id="code-block-4" class="code-block">
-<p id="code-header-4" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-4", "code-header-4")</script>
-
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'i -&gt; {i}'</span><span class="p">)</span></code></pre></figure>
-
-</div>
-
-<div class="result"><p class="result-header"><b>Output</b></p>
-<pre class="result-content">
-i -&gt; 1
-i -&gt; 3
-i -&gt; 5
-i -&gt; 7
-i -&gt; 9
-</pre></div>
-
-<hr />
-
-<div id="tut-content"> 
-    <ul>
-        <li> <strong> range with negative step</strong> </li>
-    </ul> 
-</div>
-
-<div id="code-block-5" class="code-block">
-<p id="code-header-5" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-5", "code-header-5")</script>
-
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span></code></pre></figure>
-
-</div>
-
-<div class="result"><p class="result-header"><b>Output</b></p>
-<pre class="result-content">
-10
-9
-8
-7
-6
-5
-4
-3
-2
-1
-</pre></div>
-
-<hr />
-
-<h2 id="for-each">for-each</h2>
-<p> Iterating through items of collection. </p>
-
-<div id="tut-content"> 
-    <ul>
-        <li> <strong>iterating through the characters of the string</strong> </li>
-    </ul> 
-</div>
-
-<div id="code-block-6" class="code-block">
-<p id="code-header-6" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-6", "code-header-6")</script>
-
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">msg</span> <span class="o">=</span> <span class="s">'Hello World!'</span>
-
-<span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">msg</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span></code></pre></figure>
-
-</div>
-
-<div class="result"><p class="result-header"><b>Output</b></p>
-<pre class="result-content">
-H
-e
-l
-l
-o
- 
-W
-o
-r
-l
-d
-!
-</pre></div>
-
-<hr />
-
-<div id="tut-content"> 
-    <ul>
-        <li> <strong>looping through the index of the string </strong> </li>
-    </ul> 
-</div>
-
-<div id="code-block-7" class="code-block">
-<p id="code-header-7" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-7", "code-header-7")</script>
-
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">msg</span> <span class="o">=</span> <span class="s">'Hello World!'</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">msg</span><span class="p">)):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">msg</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="s">''</span><span class="p">)</span></code></pre></figure>
+<span class="c1"># calling function
+</span><span class="n">say_hello</span><span class="p">()</span></code></pre></figure>
 
 </div>
 
@@ -755,302 +598,458 @@ Hello World!
 
 <hr />
 
+<h3 id="return">return</h3>
+
 <div id="tut-content"> 
     <ul>
-        <li> <strong>Iterating through collection</strong> </li>
+        <li> <strong> return  : </strong> Returns the value to the caller. </li>
     </ul> 
 </div>
 
-<div id="code-block-8" class="code-block">
-<p id="code-header-8" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-8", "code-header-8")</script>
+<div id="code-block-3" class="code-block">
+<p id="code-header-3" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-3", "code-header-3")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">persons</span> <span class="o">=</span> <span class="p">((</span><span class="s">'Bob'</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">50_000</span><span class="p">,</span> <span class="s">'Male'</span><span class="p">),</span> <span class="p">(</span><span class="s">'Kelly'</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">70_000</span><span class="p">,</span> <span class="s">'Female'</span><span class="p">),</span>
-           <span class="p">(</span><span class="s">'Pamela'</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">65_000</span><span class="p">,</span> <span class="s">'Female'</span><span class="p">),</span> <span class="p">(</span><span class="s">'Andy'</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">75_000</span><span class="p">,</span> <span class="s">'Male'</span><span class="p">))</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="s">"""Returns x + y"""</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
 
 
-<span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">persons</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
-
-<span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">salary</span><span class="p">,</span> <span class="n">gender</span> <span class="ow">in</span> <span class="n">persons</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Name : {name} | Age : {age} | Salary:{salary} | Gender : {gender}'</span><span class="p">)</span></code></pre></figure>
+<span class="n">ans</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-('Bob', 29, 50000, 'Male')
-('Kelly', 22, 70000, 'Female')
-('Pamela', 36, 65000, 'Female')
-('Andy', 45, 75000, 'Male')
-
-
-Name : Bob | Age : 29 | Salary:50000 | Gender : Male
-Name : Kelly | Age : 22 | Salary:70000 | Gender : Female
-Name : Pamela | Age : 36 | Salary:65000 | Gender : Female
-Name : Andy | Age : 45 | Salary:75000 | Gender : Male
+35
 </pre></div>
 
 <hr />
 
-<h2 id="for-else">for-else</h2>
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Return with multiple values : </strong> When returning multiple values, they are wrapped in Tuple object implicitly.</li>
+    </ul> 
+</div>
+
+<div id="code-block-4" class="code-block">
+<p id="code-header-4" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-4", "code-header-4")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">div_mod</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="s">"""Returns (x//y, x</span><span class="si">%</span><span class="s">y)"""</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">//</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="o">%</span><span class="n">y</span>
+
+
+<span class="n">ans</span> <span class="o">=</span> <span class="n">div_mod</span><span class="p">(</span><span class="mi">52</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">ans</span><span class="p">))</span>
+
+<span class="c1"># un-wrapping tuple object
+</span><span class="n">q</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">div_mod</span><span class="p">(</span><span class="mi">52</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Quotient : {q}   Remainder : {r}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+(17, 1) &lt;class 'tuple'&gt;
+Quotient : 17   Remainder : 1
+</pre></div>
+
+<hr />
 
 <div id="tut-content"> 
     <ul>
-        <li> <strong>else : </strong> else-block gets executed if for loop is exited normally without break.</li>
+        <li> Statements after return does not gets executed </li>
+    </ul> 
+</div>
+
+<div id="code-block-5" class="code-block">
+<p id="code-header-5" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-5", "code-header-5")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">div_mod</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="s">"""Returns (x//y, x</span><span class="si">%</span><span class="s">y)"""</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">//</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="o">%</span><span class="n">y</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'After Return'</span><span class="p">)</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="n">div_mod</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+(2, 2)
+</pre></div>
+
+<hr />
+
+<h3 id="parameter-with-default--value">parameter with default  value</h3>
+
+<div id="tut-content"> 
+    <ul>
+        <li> function can be called without passing parameter with default value, if value is passed default value gets replaced with given value. </li>
+    </ul> 
+</div>
+
+<div id="code-block-6" class="code-block">
+<p id="code-header-6" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-6", "code-header-6")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">say_hello</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">'Unknown'</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Hello {name}!'</span><span class="p">)</span>
+
+
+<span class="n">say_hello</span><span class="p">(</span><span class="s">'Ron'</span><span class="p">)</span>
+<span class="n">say_hello</span><span class="p">()</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Hello Ron!
+Hello Unknown!
+
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> Mixing parameter with default value  and required[normal] parameters </li>
+    </ul> 
+</div>
+
+<div class="bs-callout bs-callout-primary"><strong>Rule</strong> : All required[normal] parameters must come before default value parameters.</div>
+
+<div id="code-block-7" class="code-block">
+<p id="code-header-7" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-7", "code-header-7")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">decorate_string</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">decorator</span><span class="o">=</span><span class="s">'*'</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'{decorator*8}  {msg}  {decorator*8}'</span><span class="p">)</span>
+
+
+<span class="n">decorate_string</span><span class="p">(</span><span class="s">'Hello World!'</span><span class="p">)</span>
+<span class="n">decorate_string</span><span class="p">(</span><span class="s">'Hello World!'</span><span class="p">,</span> <span class="s">'@'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+********  Hello World!  ********
+@@@@@@@@  Hello World!  @@@@@@@@
+</pre></div>
+
+<hr />
+
+<h3 id="functional-annotation">functional annotation</h3>
+<p> Functional annotation is used for annotating type of object accepted by the parameter and return type of function. </p>
+
+<div class="bs-callout bs-callout-primary"><strong>Note</strong> : Python is dynamically typed language, which means we can not  restrict type of value passed to a parameter of function at compile time.</div>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> 'param: type' : </strong> Is used for annotating parameter where param is name of parameter and type is type of object which is accepted by the parameter. </li>
+        <li> <strong> '(params) -&gt; type' : </strong> Is used for annotating type of the object which is returned by the function. </li>
+    </ul> 
+</div>
+
+<div class="bs-callout bs-callout-primary"><strong>PyCharm</strong> : In ‘:param param_name: explanation’ is used for write documentation about param_name parameter of given function</div>
+
+<div id="code-block-8" class="code-block">
+<p id="code-header-8" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-8", "code-header-8")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">sendmail</span><span class="p">(</span><span class="n">to</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">subject</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">cc</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s">''</span><span class="p">,</span> <span class="n">bcc</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s">''</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="s">"""
+    sends email to any valid email address
+
+    :param to: Person(s) to whom mail is to be sent. If Multiple persons are recipient separate by ','
+    :param subject: Subject of the mail visible to recipient before opening the mail.
+    :param message: message to be sent to recipient.
+    :param cc: Recipient to whom carbon copy of the message to be sent
+    :param bcc: Persons who are Behind the Carbon copy of  the message
+    """</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Connecting to mail Server ..'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Sending mail ....'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> When viewed quick documentation in PyCharm by pressing 'Ctrl + Q' on function call or function definition it looks as shown below:  </li>
+    </ul> 
+</div>
+
+<div id="tut-img">
+    <img src="/images/tutorials/python/functional_annotation.png" class="tut-img" alt="Functional Annotation in PyCharm Quick Doc" />
+</div>
+
+<hr />
+
+<h3 id="helpobj">help(obj)</h3>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> for function : </strong> Returns module name, signature and documentation string name for given function  </li>
     </ul> 
 </div>
 
 <div id="code-block-9" class="code-block">
 <p id="code-header-9" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-9", "code-header-9")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">'For loop terminated without break'</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">help</span><span class="p">(</span><span class="n">sendmail</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-0
-1
-2
-3
-4
-5
-6
-7
-8
-9
-For loop terminated without break
+Help on function sendmail in module __main__:
+
+sendmail(to: str, subject: str, message: str, cc: str = '', bcc: str = '') -&gt; None
+    sends email to any valid email address
+    
+    :param to: Person(s) to whom mail is to be sent. If Multiple persons are recipient separate by ','
+    :param subject: Subject of the mail visible to recipient before opening the mail.
+    :param message: message to be sent to recipient.
+    :param cc: Recipient to whom carbon copy of the message to be sent
+    :param bcc: Persons who are Behind the Carbon copy of  the message
 </pre></div>
 
 <hr />
 
 <div id="tut-content"> 
     <ul>
-        <li> <strong>for loop terminated with break</strong> </li>
+        <li> <strong> for class :  </strong> Returns documentation for constructor, attributes and methods(For methods documentation is extracted from doc-string) with given class doc-string.   </li>
     </ul> 
 </div>
 
 <div id="code-block-10" class="code-block">
 <p id="code-header-10" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-10", "code-header-10")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">6</span><span class="p">:</span>
-        <span class="k">break</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">'For loop terminated with break'</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">help</span><span class="p">(</span><span class="nb">tuple</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-0
-1
-2
-3
-4
-5
-6
+Help on class tuple in module builtins:
+
+class tuple(object)
+ |  tuple(iterable=(), /)
+ |  
+ |  Built-in immutable sequence.
+ |  
+ |  If no argument is given, the constructor returns an empty tuple.
+ |  If iterable is specified the tuple is initialized from iterable's items.
+ |  
+ |  If the argument is a tuple, the return value is the same object.
+ |  
+ |  Built-in subclasses:
+ |      asyncgen_hooks
+ |      UnraisableHookArgs
+ |  
+ |  Methods defined here:
+ |  
+ |  __add__(self, value, /)
+ |      Return self+value.
+ |  
+ |  __contains__(self, key, /)
+ |      Return key in self.
+ |  
+ |  __eq__(self, value, /)
+ |      Return self==value.
+ |  
+ |  __ge__(self, value, /)
+ |      Return self&gt;=value.
+ |  
+ |  __getattribute__(self, name, /)
+ |      Return getattr(self, name).
+ |  
+ |  __getitem__(self, key, /)
+ |      Return self[key].
+ |  
+ |  __getnewargs__(self, /)
+ |  
+ |  __gt__(self, value, /)
+ |      Return self&gt;value.
+ |  
+ |  __hash__(self, /)
+ |      Return hash(self).
+ |  
+ |  __iter__(self, /)
+ |      Implement iter(self).
+ |  
+ |  __le__(self, value, /)
+ |      Return self&lt;=value.
+ |  
+ |  __len__(self, /)
+ |      Return len(self).
+ |  
+ |  __lt__(self, value, /)
+ |      Return self&lt;value.
+ |  
+ |  __mul__(self, value, /)
+ |      Return self*value.
+ |  
+ |  __ne__(self, value, /)
+ |      Return self!=value.
+ |  
+ |  __repr__(self, /)
+ |      Return repr(self).
+ |  
+ |  __rmul__(self, value, /)
+ |      Return value*self.
+ |  
+ |  count(self, value, /)
+ |      Return number of occurrences of value.
+ |  
+ |  index(self, value, start=0, stop=9223372036854775807, /)
+ |      Return first index of value.
+ |      
+ |      Raises ValueError if the value is not present.
+ |  
+ |  ----------------------------------------------------------------------
+ |  Static methods defined here:
+ |  
+ |  __new__(*args, **kwargs) from builtins.type
+ |      Create and return a new object.  See help(type) for accurate signature.
+
+
 </pre></div>
 
 <hr />
 
-<h2 id="examples">Examples</h2>
+<h3 id="special-attributes-for-documentation">Special attributes for documentation</h3>
 
-<div id="tut-content"> 
-    <ul>
-        <li> <strong>Print acute triangle using for loop :</strong> </li>
-    </ul> 
-</div>
+<h4 id="__doc__"><strong>__doc</strong>__</h4>
+
+<p> Returns documentation string from class or function. </p>
 
 <div id="code-block-11" class="code-block">
 <p id="code-header-11" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-11", "code-header-11")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">'*'</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">''</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">''</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">sendmail</span><span class="p">(</span><span class="n">to</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">subject</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">cc</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s">''</span><span class="p">,</span> <span class="n">bcc</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s">''</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="s">"""
+    sends email to any valid email address
+
+    :param to: Person(s) to whom mail is to be sent. If Multiple persons are recipient separate by ','
+    :param subject: Subject of the mail visible to recipient before opening the mail.
+    :param message: message to be sent to recipient.
+    :param cc: Recipient to whom carbon copy of the message to be sent
+    :param bcc: Persons who are Behind the Carbon copy of  the message
+    """</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Connecting to mail Server ..'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Sending mail ....'</span><span class="p">)</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="n">sendmail</span><span class="o">.</span><span class="n">__doc__</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-*
-**
-***
-****
-*****
-******
-*******
-********
-*********
-**********
+
+    sends email to any valid email address
+
+    :param to: Person(s) to whom mail is to be sent. If Multiple persons are recipient separate by ','
+    :param subject: Subject of the mail visible to recipient before opening the mail.
+    :param message: message to be sent to recipient.
+    :param cc: Recipient to whom carbon copy of the message to be sent
+    :param bcc: Persons who are Behind the Carbon copy of  the message
+    
 </pre></div>
 
 <hr />
 
-<div id="tut-content"> 
-    <ul>
-        <li> <strong>print mirror of acute triangle</strong> </li>
-    </ul> 
-</div>
+<h4 id="__annotations__"><strong>__annotations</strong>__</h4>
+
+<p> Returns dictionary with parameter as key and annotated type as value. </p>
 
 <div id="code-block-12" class="code-block">
 <p id="code-header-12" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-12", "code-header-12")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">11</span><span class="o">-</span><span class="n">i</span><span class="p">)):</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">' '</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">''</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">'*'</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">''</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">''</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="n">sendmail</span><span class="o">.</span><span class="n">__annotations__</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-        *
-       **
-      ***
-     ****
-    *****
-   ******
-  *******
- ********
-*********
+{'to': &lt;class 'str'&gt;, 'subject': &lt;class 'str'&gt;, 'message': &lt;class 'str'&gt;, 'cc': &lt;class 'str'&gt;, 'bcc': &lt;class 'str'&gt;, 'return': None}
 </pre></div>
 
 <hr />
 
+<h3 id="scope-of-variables">Scope of variables</h3>
+
 <div id="tut-content"> 
     <ul>
-        <li> <strong> Print Equilateral triangle </strong> </li>
+        <li> <strong>Slides</strong> </li>
+    </ul> 
+</div>
+
+<div id="tut-ppt">
+    <div class="embed-responsive embed-responsive-4by3">
+        <iframe class="embed-responsive-item" src="/docs/03Functions_scope.pdf" allowfullscreen=""></iframe>
+    </div>
+</div>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>locale scope : </strong> </li>
     </ul> 
 </div>
 
 <div id="code-block-13" class="code-block">
 <p id="code-header-13" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-13", "code-header-13")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="mi">11</span><span class="o">-</span><span class="n">i</span><span class="p">)):</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">' '</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">''</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">'*'</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">''</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">''</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">'It</span><span class="se">\'</span><span class="s">s sunny outside.'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-          *
-         ***
-        *****
-       *******
-      *********
-     ***********
-    *************
-   ***************
-  *****************
- *******************
+It's sunny outside.
+Quoting inside "Double quotes".
 </pre></div>
 
 <hr />
 
-<!-- ## Iterator vs Generator
+<h3 id="local-variable-vs-global-variable">Local variable vs Global variable</h3>
 
-<p> Difference in Nutshell. In OOP section explained in details </p>
-
-<div id="tut-content"> 
-    <ul>
-        <li> Iterator iterates over items which are already present in memory / object. Generators generates values on the fly. </li>
-        <li> Generators remembers local variable values where as for iterator it needs to be preserved explicitly in object. </li>
-    </ul> 
-</div>
-
-
-<div id="tut-content"> 
-    <ul>
-        <li> <strong>yield  : </strong> Returns variable value to caller function without destroying the local variables. </li>
-         <li> <strong> return : </strong> After returns statement local variables are destroyed. </li>
-    </ul> 
-</div>
-
-
-<hr/>
-
-
-<div id="tut-content"> 
-    <ul>
-        <li> <strong> Defining custom range() function</strong> </li>
-    </ul> 
-</div>
-
-
-
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Local variable</th>
+      <th style="text-align: left">Global variable</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Variables defined inside of function is called as local variables.</td>
+      <td style="text-align: left">Variables defined at module level are called as global variables.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Local variables are created when function is called and destroyed when call is completed.</td>
+      <td style="text-align: left">Global variables are created when module is loaded and remains in memory until it’s python is running or removed / reloaded by code.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Local variables can’t be accessed outside of function.</td>
+      <td style="text-align: left">Global variables can be accessed inside the function but can not be modified until it’s declared global.</td>
+    </tr>
+  </tbody>
+</table>
 
 <div id="code-block-14" class="code-block">
-<p id= "code-header-14" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-14", "code-header-14")</script>
+<p id="code-header-14" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-14", "code-header-14")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">cust_range</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-    <span class="k">while</span> <span class="n">start</span> <span class="o">&lt;</span> <span class="n">end</span><span class="p">:</span>
-        <span class="k">yield</span> <span class="n">start</span>
-        <span class="n">start</span> <span class="o">+=</span> <span class="mi">1</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">cust_range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">'It</span><span class="se">\'</span><span class="s">s sunny outside.'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-0
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-</pre></div>
-
-<hr/> -->
-
-<h2 id="command-line-arguments">Command Line Arguments</h2>
-
-<p> sys module provides an attribute argv which returns list of argument passed at command line separated by space. </p>
-
-<div id="tut-content"> 
-    <ul>
-        <li> First string of list returned by sys.argv is full path to python file which is getting executed. </li>
-    </ul> 
-</div>
-
-<div id="code-block-15" class="code-block">
-<p id="code-header-15" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-15", "code-header-15")</script>
-
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">sys</span>
-
-<span class="k">print</span><span class="p">(</span><span class="s">'Command line Argument passed :'</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">argument</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">argument</span><span class="p">)</span></code></pre></figure>
-
-</div>
-
-<div class="result"><p class="result-header"><b>Output</b></p>
-<pre class="result-content">
-Command line Argument passed :
-/home/asha/PycharmProjects/pythonEx/02_ControlFlow_Looping/04_CommandLineArguments.py
-A
-B
-C
+It's sunny outside.
+Quoting inside "Double quotes".
 </pre></div>
 
 <hr />
@@ -1060,34 +1059,6 @@ C
     <div class="tags">
         
         <p style="display: inline;"><b>Tags: </b></p>
-        
-        
-        
-        <a href="tag_for.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">for</a>
-        
-        
-        
-        <a href="tag_range().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">range()</a>
-        
-        
-        
-        <a href="tag_continue.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">continue</a>
-        
-        
-        
-        <a href="tag_for-each.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">for-each</a>
-        
-        
-        
-        <a href="tag_for-else.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">for-else</a>
-        
-        
-        
-        <a href="tag_command_line_argument.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">command_line_argument</a>
-        
-        
-        
-        <a href="tag_sys.argv.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">sys.argv</a>
         
         
         
@@ -1111,25 +1082,18 @@ C
 <div class="seriesContext" align="right">
 
     
-
-    
-        <a href="python_while_loop.html" >
-            <button type="button" class="btn btn-primary  "> 
-                 <span class="fa fa-arrow-circle-left fa-lg"></span>  Previous  <br/>
-                 While Loop 
-            </button>
-        </a>
-    
-
-    
-
-    
-        <a href="python_functions.html" >
+        <a href="python_control_flow.html" >
             <button type="button" class="btn btn-success "> 
-                Next Section <span class="fa fa-chevron-right fa-lg"></span> <br/>  
-                Functions 
+                 <span class="fa fa-chevron-left fa-lg"></span> Previous Section <br/>
+                 Control Flow  
             </button>
         </a>
+    
+
+    
+
+    
+
     
 
 </div>

@@ -22,6 +22,12 @@
   
   
   <url>
+    <loc>http://localhost:4000/python_functions.html</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>http://localhost:4000/python_hello_world.html</loc>
   </url>
   
@@ -41,6 +47,12 @@
   
   <url>
     <loc>http://localhost:4000/python_decimal_fraction.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/python_for_loop.html</loc>
   </url>
   
   
@@ -66,6 +78,18 @@
   <url>
     <loc>http://localhost:4000/python_calendar.html</loc>
   </url>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   

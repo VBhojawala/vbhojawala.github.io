@@ -142,7 +142,6 @@ th {
     text-align: left;
 }
 table {
-    max-width: 90%;
     margin-bottom: 20px;
     border: 1px solid #dedede;
 }
@@ -1541,6 +1540,8 @@ ul.mobile-toggle > a{
 }
 #tut-img img{
     width: 100%;
+    max-width: unset;
+    border-radius: 3px;
 }
 #tut-ppt{
     margin-top: 25px;

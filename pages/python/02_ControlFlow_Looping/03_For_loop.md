@@ -11,8 +11,8 @@ prev: python_while_loop.html
 prev_title: While Loop
 next: 
 next_title:
-next_section: python_while_loop.html
-next_section_title: While Loop
+next_section: python_functions.html
+next_section_title: Functions
 summary: for loop, range() function, continue,  for-each loop, for-else, Command Line Arguments.
 ---
 
@@ -440,8 +440,8 @@ else:
 <p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
 {% highlight python %}
 
-for i in range(10):
-    for j in range(i+1):
+for i in range(1, 11):
+    for j in range(i):
         print('*', end='')
     print('')
 
@@ -525,9 +525,7 @@ for i in range(1, 11):
 for i in range(1, 11):
     for j in range(0, (11-i)):
         print(' ', end='')
-    k = 0
-    while k < 2*i - 1:
-        k += 1
+    for k in range(2*i-1):
         print('*', end='')
     print('')
 
