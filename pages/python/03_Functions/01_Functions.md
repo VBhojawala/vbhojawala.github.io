@@ -568,20 +568,49 @@ print(sendmail.__annotations__)
 
 <div id="tut-content"> 
     <ul>
-        <li> <strong>Slides</strong> </li>
+        <li> Python implicitly imports some builtin modules, functions, classes and attributes in global scope of all modules. That is the reason why we are able to use print() function without any imports. </li>
+        <li> All Variables defined at module level by default becomes global variables to functions and classes defined in particular module. </li>
     </ul> 
 </div>
 
-<div id='tut-ppt'>
-    <div class="embed-responsive embed-responsive-4by3">
-        <iframe class="embed-responsive-item" src="/docs/03Functions_scope.pdf" allowfullscreen></iframe>
-    </div>
+#### locale()
+<p> Returns dictionary containing locale variable as per current scope. </p>
+
+#### global()
+<p> Returns dictionary containing global variables. </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+a = 12
+b = 50
+
+print()
+print('Globals :', globals())
+print('============='*10)
+print('Locals  : ', locals())
+
+
+{% endhighlight %}
 </div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Globals : {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': <_frozen_importlib_external.SourceFileLoader object at 0x7ffa67c393d0>, '__spec__': None, '__file__': '< input >', '__builtins__': {'__name__': 'builtins', '__doc__': "Built-in functions, exceptions, and other objects.\n\nNoteworthy: None is the `nil' object;  ....................................................................................................'sys': <module 'sys' (built-in)>, 'a': 12, 'b': 50}
+==================================================================================================================================
+Locals  :  {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': <_frozen_importlib_external.SourceFileLoader object at 0x7ffa67c393d0>, '__spec__': None, '__file__': '< input >', '__builtins__': {'__name__': 'builtins', '__doc__': "Built-in functions,....................................................................................................'sys': <module 'sys' (built-in)>, 'a': 12, 'b': 50} 
+</pre></div>
+
+<hr/>
 
 
 <div id="tut-content"> 
     <ul>
-        <li> <strong>locale scope : </strong> </li>
+        <li> <strong> locale and global scope  inside function</strong> </li>
     </ul> 
 </div>
 
@@ -592,7 +621,22 @@ print(sendmail.__annotations__)
 <p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
 {% highlight python %}
 
-print('It\'s sunny outside.')
+a = 12
+b = 50
+
+
+def local_func():
+    """
+    Demonstration of built-in local() function
+
+    """
+    c = 70
+    print('Locale scope inside function -> ', locals())
+    print('=============' * 10)
+    print('Global scope inside function -> ', globals())
+
+
+local_func()
 
 
 {% endhighlight %}
@@ -600,11 +644,28 @@ print('It\'s sunny outside.')
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-It's sunny outside.
-Quoting inside "Double quotes".
+Locale scope inside function ->  {'c': 70}
+==================================================================================================================================
+Global scope inside function ->  {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': <_frozen_importlib_external.SourceFileLoader object at 0x7ffa67c393d0>, '__spec__': None, '__file__': '< input >', '__builtins__': {'__name__': 'builtins', '__doc__': "Built-in functions,...............................................................'sys': <module 'sys' (built-in)>, 'a': 12, 'b': 50, 'local_func': <function local_func at 0x7ffa61fad3a0>}
 </pre></div>
 
 <hr/>
+
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Slides</strong> </li>
+    </ul> 
+</div>
+
+<div id='tut-ppt'>
+    <div class="embed-responsive embed-responsive-4by3">
+        <iframe class="embed-responsive-item" src="/docs/python/03Functions_scope.pdf" allowfullscreen></iframe>
+    </div>
+</div>
+
 
 
 
@@ -625,7 +686,12 @@ Local variables can't be accessed outside of function. | Global variables can be
 <p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
 {% highlight python %}
 
-print('It\'s sunny outside.')
+intGlobal = 150
+
+def access_global():
+    print(intGlobal)
+
+access_global()
 
 
 {% endhighlight %}
@@ -633,14 +699,773 @@ print('It\'s sunny outside.')
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-It's sunny outside.
-Quoting inside "Double quotes".
+150
+</pre></div>
+
+<hr/>
+
+
+### global
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>global : </strong> Allows global variable to be modified in locale scope. </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+intGlobal = 150
+
+
+def increment_global():
+    global intGlobal
+    intGlobal += 1
+
+
+print('Int Global before function :', intGlobal)
+increment_global()
+print('Int Global after  function :', intGlobal)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Int Global before function : 150
+Int Global after  function : 151
 </pre></div>
 
 <hr/>
 
 
 
+### pass by value VS pass by reference
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> In Python variable stores the memory location of an object in memory. </li>
+        <li> When passing a variable to a parameter of a function it also passes the memory address of the particular object to local variable of the function. </li>
+        <li> Depending on type of object, if it is an immutable data type modifying it's value does not affect the original object stored at given memory address but for mutable data type object values gets modified and memory address remains the same for the given variable.</li>
+        <li> In short all immutable data types can be considered as pass by value and all mutable data type can be considered as pass by reference.</li>
+    </ul> 
+</div>
+
+<hr/>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Pass by value : </strong>  passing immutable data type to the parameter of function. </li>
+    </ul> 
+</div>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+def cube(n: int) -> int:
+    """
+    Return cube of n (n*n*n)
+
+    :param n: Int number for which cube to be calculated
+    """
+    n = n * n * n
+    print('value of n inside the function :', n)
+    return n
+
+
+n = 10
+
+print('value of n before calling function :', n)
+cube(n)
+print('value of n after  calling function :', n)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+value of n before calling function : 10
+value of n inside the function : 1000
+value of n after  calling function : 10
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Pass by reference : </strong>  passing mutable data type to the parameter of function. </li>
+    </ul> 
+</div>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+list1 = [1, 2, 3]
+
+
+def add_element(intlist, element):
+    intlist.append(element)
+
+
+print('List before calling function :', list1)
+add_element(list1, 4)
+print('List after  calling function :', list1)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+List before calling function : [1, 2, 3]
+List after  calling function : [1, 2, 3, 4]
+</pre></div>
+
+<hr/>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Slides</strong> </li>
+    </ul> 
+</div>
+
+<div id='tut-ppt'>
+    <div class="embed-responsive embed-responsive-4by3">
+        <iframe class="embed-responsive-item" src="/docs/python/03Functions_PBV_PBR.pdf" allowfullscreen></iframe>
+    </div>
+</div>
+
+
+<hr/>
+
+
+
+
+
+
+###  Positional and Keyword arguments
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Positional argument :</strong> are given according to order of parameters in definition of function.  </li>
+        <li> <strong>Keyword argument :</strong> are given ' parameter_name = value ' and can be given in any order.  </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+def self_intro(name: str, occupation: str) -> None:
+    """Demo function with multiple arguments, which prints formatted string.
+
+    :param name: Name of the Person.
+    :param occupation: Occupation of the Person
+    """
+    print(f'My name is {name}. I am {occupation} by profession.')
+
+
+# positional argument
+self_intro('Jhon', 'Pianist')
+self_intro('Marian', 'Teacher')
+
+
+# keyword argument
+self_intro(name='Jhon', occupation='Pianist')
+
+# keyword argument in different order
+self_intro(occupation='Teacher', name='Marian')
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+My name is Jhon. I am Pianist by profession.
+My name is Marian. I am Teacher by profession.
+My name is Jhon. I am Pianist by profession.
+My name is Marian. I am Teacher by profession.
+</pre></div>
+
+<hr/>
+
+
+
+
+### default parameter with functional annotation
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> ' var: type = value ' : </strong> format is used for defining default parameter with functional annotation. </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+def get_icecream(flavour: str, size: str, package: str = 'cup', quantity: 'int>0' = 1):
+    """
+    processes customizable ice-cream order.
+
+    :param flavour: Flavour of the ice-cream.
+    :param size: Size of the ice-cream ['Small', 'Medium', 'Large']
+    :param package: Package in which ice-cream to be received ['cup','cone']
+    :param quantity: no of ice-creams to be ordered
+    """
+    print(f'Packing {flavour} flavoured {size} sized, packed in {package} of quantity {quantity}.')
+
+
+get_icecream('Vanilla', 'small')  
+
+get_icecream('Butterscotch', package='cone', size='Medium')
+get_icecream('Butterscotch', 'Large', 'cone', quantity=3)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Packing Vanilla flavoured small sized, packed in cup of quantity 1.
+Packing Butterscotch flavoured Medium sized, packed in cone of quantity 1.
+Packing Butterscotch flavoured Large sized, packed in cone of quantity 3.
+</pre></div>
+
+<hr/>
+
+
+
+### default parameter value as variable
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Caution : </strong> While assigning variable as default parameter value, default value in function are created while loading the function not when calling the function. </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+globalflavour = 'vanilla'
+
+
+def choose_flavour(flavour=globalflavour):
+    print('You have chosen', flavour)
+
+
+globalflavour = 'Chocolate'
+
+choose_flavour()
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+You have chosen vanilla
+</pre></div>
+
+<hr/>
+
+
+### Variable arguments 
+
+
+#### Variable Positional argument
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> *varname : </strong> Declares the parameter as variable positional parameter. It can collect variable number of positional parameters which are stored in list. </li>
+        <li> It must be declared at the end of all positional arguments. </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+def get_micecream(size: str, package: str = 'cup', quantity: int =1, *flavours: str):
+    """
+      processes multiple customizable ice-cream order.
+
+      :param size: Size of the ice-cream ['Small', 'Medium', 'Large']
+      :param package: Package in which ice-cream to be received ['cup','cone']
+      :param quantity: no of ice-creams to be ordered
+      :param flavours: Multiple Flavours of ice-creams want to order.
+      """
+    for flavour in flavours:
+        print(f'Packing {flavour} flavoured {size} sized, packed in {package} of quantity {quantity}.')
+    print('@@@@@@@@  All Done @@@@@@@@ :)')
+
+
+get_micecream('small', 'cup', 1, 'Butterscotch', 'Rose', 'Chocolate Chips', 'Pineapple')
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Packing Butterscotch flavoured small sized, packed in cup of quantity 1.
+Packing Rose flavoured small sized, packed in cup of quantity 1.
+Packing Chocolate Chips flavoured small sized, packed in cup of quantity 1.
+Packing Pineapple flavoured small sized, packed in cup of quantity 1.
+@@@@@@@@  All Done @@@@@@@@ :)
+</pre></div>
+
+<hr/>
+
+
+#### Variable Keyword argument
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> **varname : </strong> Declares the parameter as variable keyword parameter. It can collect variable number of keyword parameters which are stored in dictionary in which parameter name is key and value as value of dictionary.  </li>
+        <li> It must be declared at the end of all keyword arguments. </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+def get_micecream(size: str, package: str = 'cup', quantity: int =1, *flavours: str, **extra):
+    """
+      processes multiple customizable ice-cream order.
+
+      :param size: Size of the ice-cream ['Small', 'Medium', 'Large']
+      :param package: Package in which ice-cream to be received ['cup','cone']
+      :param quantity: no of ice-creams to be ordered
+      :param flavours: Multiple Flavours of ice-creams want to order.
+      """
+    for flavour in flavours:
+        print(f'Packing {flavour} flavoured {size} sized, packed in {package} of quantity {quantity} . '
+              f'Extras : {extra}')
+
+    print('@@@@@@@@  All Done @@@@@@@@ :)')
+
+
+get_micecream('small', 'Cone', 1, 'Butterscotch', 'Rose', doubleIceCream=True, chocolateCone=True)
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Packing Butterscotch flavoured small sized, packed in Cone of quantity 1 . Extras : {'doubleIceCream': True, 'chocolateCone': True}
+Packing Rose flavoured small sized, packed in Cone of quantity 1 . Extras : {'doubleIceCream': True, 'chocolateCone': True}
+@@@@@@@@  All Done @@@@@@@@ :)
+</pre></div>
+
+<hr/>
+
+
+### order of arguments 
+
+
+<div id="tut-content"> 
+    <ol>    
+        <li> <strong> Positional arguments </strong> </li>
+        <li> <strong> *args : </strong> variable positional arguments </li>
+        <li> <strong> Keyword arguments </strong> </li>
+        <li> <strong> Default value argument </strong> </li>
+        <li> <strong> **kwargs : </strong> variable keyword arguments </li>
+    </ol>
+</div>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Example 1</strong> </li>
+    </ul> 
+</div>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+
+def get_cicecream(size: str, *flavours: str, package: str, quantity: int =1, **extra):
+    """
+    Function demonstrates the use of order of arguments.
+
+    :param size:  Positional argument, can have one of  ['Small', 'Medium', 'Large'] value
+    :param flavours: variable positional argument, which can be multiple flavours of ice-cream in string.
+    :param package: Keyword only argument, which can have value one of ['cup','cone']
+    :param quantity: Default value argument, which can have value in positive int
+    :param extra: variable keyword arguments which takes optional extra customization.
+    :return: None
+    """
+
+    for flavour in flavours:
+        print(f'Packing {flavour} flavoured {size} sized, packed in {package} of quantity {quantity}  . ', end='')
+        for k in extra:
+            print(f'[ {k} :  {extra[k]} ]   ', end='')
+        print()
+
+
+get_cicecream('Small', 'Butterscotch', 'Rose', 'Chocolate Chips',
+              'Pineapple', package='cone', coneType='Choco', iceCream='Double')
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Packing Butterscotch flavoured Small sized, packed in cone of quantity 1  . [ coneType :  Choco ]   [ iceCream :  Double ]   
+Packing Rose flavoured Small sized, packed in cone of quantity 1  . [ coneType :  Choco ]   [ iceCream :  Double ]   
+Packing Chocolate Chips flavoured Small sized, packed in cone of quantity 1  . [ coneType :  Choco ]   [ iceCream :  Double ]   
+Packing Pineapple flavoured Small sized, packed in cone of quantity 1  . [ coneType :  Choco ]   [ iceCream :  Double ]   
+
+</pre></div>
+
+<hr/>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Example 2</strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+def func1(x, *y, z):
+    print(x, y, z)
+
+
+func1(1, 2, 3, 4, z=5)
+func1(1, z=2)
+func1(1, 2, 3)  # this will raise error as z becomes kwargs by the order of argument
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+1 (2, 3, 4) 5
+1 () 2
+</pre>
+<pre id='tut-output-error' class="result-content">Traceback (most recent call last):
+  File "<&zwj;input&zwj;>", line 7, in <&zwj;module&zwj;>
+TypeError: func1() missing 1 required keyword-only argument: 'z'</pre>
+</div>
+
+<hr/>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Example 3</strong> </li>
+    </ul> 
+</div>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+def func2(x, y, *z, a, b, c=10, d=50, **e):
+    print(x, y, *z, a, b, c, d, **e)
+
+func2(1, 2, a=1, b=3) # minimum required keyword arguments
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+1 2 1 3 10 50
+</pre>
+</div>
+
+<hr/>
+
+
+### Positional only argument
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>'/' : </strong> separates positional arguments from rest of the arguments  </li>
+        <li> All arguments defined before '/' are position only argument, they can be passed as keyword argument.  </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+def calculate_interest(p: float, r: float, n: int, /, *args, **kwargs) -> int:
+    """
+    calculates interest based on keyword based arguments only
+
+    :param p: Amount
+    :param r: Rate of interest in %
+    :param n: years
+
+    """
+    return (p*r*n)//100
+
+
+print(calculate_interest(10000, 6.7, 5))
+
+
+print(calculate_interest(10000, 6.7, 5, -10, extra1=10))
+
+print(calculate_interest(10000, 6.7, n=5)) # This will raise an error
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+3350.0
+3350.0
+
+<pre id='tut-output-error' class="result-content">Traceback (most recent call last):
+  File "<&zwj;input&zwj;>", line 1, in <&zwj;module&zwj;>
+TypeError: calculate_interest() missing 1 required positional argument: 'n'</pre>
+</pre></div>
+
+<hr/>
+
+###  Keyword only argument
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> '*' : </strong> Marks the beginning of keyword only argument. </li>
+        <li> Arguments defined after '*' are strictly keyword based only.</li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+def calculate_interest( p: float, *, r: float, n: int) -> int:
+    """
+    calculates interest based on keyword based arguments only
+
+    :param p: Amount
+    :param r: Rate of interest in %
+    :param n: years
+
+    """
+    return (p*r*n)//100
+
+
+print(calculate_interest(10000, r=6.7, n=5))
+
+print(calculate_interest(p=10000, r=6.7, n=5))
+
+print(calculate_interest(10000, 6.7, n=5)) # This will raise an error
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+3350.0
+3350.0
+</pre>
+<pre id='tut-output-error' class="result-content">Traceback (most recent call last):
+  File "<&zwj;input&zwj;>", line 17, in <&zwj;module&zwj;>
+TypeError: calculate_interest() takes 1 positional argument but 2 positional arguments (and 1 keyword-only argument) were given</pre>
+
+</div>
+
+<hr/>
+
+
+
+
+### Attribute of the function
+
+<div id="tut-content"> 
+    <ul>
+        <li> Function can have attributes, which is like variable stored inside the function object. </li>
+        <li> Attributes preserves their value between multiple function calls.</li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+def f1():
+    f1.count += 1
+    print(f'Called {f1.count} times.')
+
+
+f1.count = 0
+
+f1()
+f1()
+f1()
+f1()
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Called 1 times.
+Called 2 times.
+Called 3 times.
+Called 4 times.
+</pre></div>
+
+<hr/>
+
+
+
+### Un-packing sequence as argument
+
+#### Flat sequences
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> ' *sequence ' : </strong> Un-packs the given flat sequence in data structures such as tuple, list to positional arguments.  </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+
+def point(x, y, z):
+    print(f'X : {x}  Y : {y}  Z : {z}')
+
+
+t1 = (12, 15, 19)
+l1 = [12, 15, 19]
+
+point(*t1)
+point(*l1)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+X : 12  Y : 15  Z : 19
+X : 12  Y : 15  Z : 19
+</pre></div>
+
+<hr/>
+
+
+#### Key-Value sequences 
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> ' **sequence ' : </strong> Un-packs the given Key-Value sequence in data structures such as dictionary to keyword arguments.  </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+
+def point(*, x, y, z):
+    """Only takes keyword based arguments for Point dimensions x, y, z"""
+    print(f'X : {x}  Y : {y}  Z : {z}')
+
+
+d1 = {'x': 12, 'y': 25, 'z': 19}
+d2 = {'x': 12, 'z': 19, 'y': 25}
+
+point(**d1)
+point(**d2)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+X : 12  Y : 25  Z : 19
+X : 12  Y : 25  Z : 19
+</pre></div>
+
+<hr/>
 
 
 {% include links.html %}

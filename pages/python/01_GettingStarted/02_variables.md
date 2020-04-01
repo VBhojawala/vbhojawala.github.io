@@ -489,7 +489,7 @@ print(id(a))
 
 <div id='tut-ppt'>
     <div class="embed-responsive embed-responsive-4by3">
-        <iframe class="embed-responsive-item" src="/docs/01Variables.pdf" allowfullscreen></iframe>
+        <iframe class="embed-responsive-item" src="/docs/python/01Variables.pdf" allowfullscreen></iframe>
     </div>
 </div>
 

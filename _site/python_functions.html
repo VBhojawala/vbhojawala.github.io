@@ -983,36 +983,87 @@ class tuple(object)
 
 <div id="tut-content"> 
     <ul>
+        <li> Python implicitly imports some builtin modules, functions, classes and attributes in global scope of all modules. That is the reason why we are able to use print() function without any imports. </li>
+        <li> All Variables defined at module level by default becomes global variables to functions and classes defined in particular module. </li>
+    </ul> 
+</div>
+
+<h4 id="locale">locale()</h4>
+<p> Returns dictionary containing locale variable as per current scope. </p>
+
+<h4 id="global">global()</h4>
+<p> Returns dictionary containing global variables. </p>
+
+<div id="code-block-13" class="code-block">
+<p id="code-header-13" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-13", "code-header-13")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">a</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">50</span>
+
+<span class="k">print</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Globals :'</span><span class="p">,</span> <span class="nb">globals</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'============='</span><span class="o">*</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Locals  : '</span><span class="p">,</span> <span class="nb">locals</span><span class="p">())</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Globals : {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': &lt;_frozen_importlib_external.SourceFileLoader object at 0x7ffa67c393d0&gt;, '__spec__': None, '__file__': '&lt; input &gt;', '__builtins__': {'__name__': 'builtins', '__doc__': "Built-in functions, exceptions, and other objects.\n\nNoteworthy: None is the `nil' object;  ....................................................................................................'sys': &lt;module 'sys' (built-in)&gt;, 'a': 12, 'b': 50}
+==================================================================================================================================
+Locals  :  {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': &lt;_frozen_importlib_external.SourceFileLoader object at 0x7ffa67c393d0&gt;, '__spec__': None, '__file__': '&lt; input &gt;', '__builtins__': {'__name__': 'builtins', '__doc__': "Built-in functions,....................................................................................................'sys': &lt;module 'sys' (built-in)&gt;, 'a': 12, 'b': 50} 
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> locale and global scope  inside function</strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-14" class="code-block">
+<p id="code-header-14" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-14", "code-header-14")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">a</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">50</span>
+
+
+<span class="k">def</span> <span class="nf">local_func</span><span class="p">():</span>
+    <span class="s">"""
+    Demonstration of built-in local() function
+
+    """</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="mi">70</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Locale scope inside function -&gt; '</span><span class="p">,</span> <span class="nb">locals</span><span class="p">())</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'============='</span> <span class="o">*</span> <span class="mi">10</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Global scope inside function -&gt; '</span><span class="p">,</span> <span class="nb">globals</span><span class="p">())</span>
+
+
+<span class="n">local_func</span><span class="p">()</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Locale scope inside function -&gt;  {'c': 70}
+==================================================================================================================================
+Global scope inside function -&gt;  {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': &lt;_frozen_importlib_external.SourceFileLoader object at 0x7ffa67c393d0&gt;, '__spec__': None, '__file__': '&lt; input &gt;', '__builtins__': {'__name__': 'builtins', '__doc__': "Built-in functions,...............................................................'sys': &lt;module 'sys' (built-in)&gt;, 'a': 12, 'b': 50, 'local_func': &lt;function local_func at 0x7ffa61fad3a0&gt;}
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
         <li> <strong>Slides</strong> </li>
     </ul> 
 </div>
 
 <div id="tut-ppt">
     <div class="embed-responsive embed-responsive-4by3">
-        <iframe class="embed-responsive-item" src="/docs/03Functions_scope.pdf" allowfullscreen=""></iframe>
+        <iframe class="embed-responsive-item" src="/docs/python/03Functions_scope.pdf" allowfullscreen=""></iframe>
     </div>
 </div>
-
-<div id="tut-content"> 
-    <ul>
-        <li> <strong>locale scope : </strong> </li>
-    </ul> 
-</div>
-
-<div id="code-block-13" class="code-block">
-<p id="code-header-13" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-13", "code-header-13")</script>
-
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">'It</span><span class="se">\'</span><span class="s">s sunny outside.'</span><span class="p">)</span></code></pre></figure>
-
-</div>
-
-<div class="result"><p class="result-header"><b>Output</b></p>
-<pre class="result-content">
-It's sunny outside.
-Quoting inside "Double quotes".
-</pre></div>
-
-<hr />
 
 <h3 id="local-variable-vs-global-variable">Local variable vs Global variable</h3>
 
@@ -1039,17 +1090,647 @@ Quoting inside "Double quotes".
   </tbody>
 </table>
 
-<div id="code-block-14" class="code-block">
-<p id="code-header-14" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-14", "code-header-14")</script>
+<div id="code-block-15" class="code-block">
+<p id="code-header-15" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-15", "code-header-15")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">'It</span><span class="se">\'</span><span class="s">s sunny outside.'</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">intGlobal</span> <span class="o">=</span> <span class="mi">150</span>
+
+<span class="k">def</span> <span class="nf">access_global</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">intGlobal</span><span class="p">)</span>
+
+<span class="n">access_global</span><span class="p">()</span></code></pre></figure>
 
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-It's sunny outside.
-Quoting inside "Double quotes".
+150
+</pre></div>
+
+<hr />
+
+<h3 id="global-1">global</h3>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>global : </strong> Allows global variable to be modified in locale scope. </li>
+    </ul> 
+</div>
+
+<div id="code-block-16" class="code-block">
+<p id="code-header-16" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-16", "code-header-16")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">intGlobal</span> <span class="o">=</span> <span class="mi">150</span>
+
+
+<span class="k">def</span> <span class="nf">increment_global</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">intGlobal</span>
+    <span class="n">intGlobal</span> <span class="o">+=</span> <span class="mi">1</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Int Global before function :'</span><span class="p">,</span> <span class="n">intGlobal</span><span class="p">)</span>
+<span class="n">increment_global</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Int Global after  function :'</span><span class="p">,</span> <span class="n">intGlobal</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Int Global before function : 150
+Int Global after  function : 151
+</pre></div>
+
+<hr />
+
+<h3 id="pass-by-value-vs-pass-by-reference">pass by value VS pass by reference</h3>
+
+<div id="tut-content"> 
+    <ul>
+        <li> In Python variable stores the memory location of an object in memory. </li>
+        <li> When passing a variable to a parameter of a function it also passes the memory address of the particular object to local variable of the function. </li>
+        <li> Depending on type of object, if it is an immutable data type modifying it's value does not affect the original object stored at given memory address but for mutable data type object values gets modified and memory address remains the same for the given variable.</li>
+        <li> In short all immutable data types can be considered as pass by value and all mutable data type can be considered as pass by reference.</li>
+    </ul> 
+</div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Pass by value : </strong>  passing immutable data type to the parameter of function. </li>
+    </ul> 
+</div>
+
+<div id="code-block-17" class="code-block">
+<p id="code-header-17" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-17", "code-header-17")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">cube</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="s">"""
+    Return cube of n (n*n*n)
+
+    :param n: Int number for which cube to be calculated
+    """</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">n</span> <span class="o">*</span> <span class="n">n</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'value of n inside the function :'</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">n</span>
+
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'value of n before calling function :'</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="n">cube</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'value of n after  calling function :'</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+value of n before calling function : 10
+value of n inside the function : 1000
+value of n after  calling function : 10
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Pass by reference : </strong>  passing mutable data type to the parameter of function. </li>
+    </ul> 
+</div>
+
+<div id="code-block-18" class="code-block">
+<p id="code-header-18" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-18", "code-header-18")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">add_element</span><span class="p">(</span><span class="n">intlist</span><span class="p">,</span> <span class="n">element</span><span class="p">):</span>
+    <span class="n">intlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="s">'List before calling function :'</span><span class="p">,</span> <span class="n">list1</span><span class="p">)</span>
+<span class="n">add_element</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'List after  calling function :'</span><span class="p">,</span> <span class="n">list1</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+List before calling function : [1, 2, 3]
+List after  calling function : [1, 2, 3, 4]
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Slides</strong> </li>
+    </ul> 
+</div>
+
+<div id="tut-ppt">
+    <div class="embed-responsive embed-responsive-4by3">
+        <iframe class="embed-responsive-item" src="/docs/python/03Functions_PBV_PBR.pdf" allowfullscreen=""></iframe>
+    </div>
+</div>
+
+<hr />
+
+<h3 id="positional-and-keyword-arguments">Positional and Keyword arguments</h3>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Positional argument :</strong> are given according to order of parameters in definition of function.  </li>
+        <li> <strong>Keyword argument :</strong> are given ' parameter_name = value ' and can be given in any order.  </li>
+    </ul> 
+</div>
+
+<div id="code-block-19" class="code-block">
+<p id="code-header-19" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-19", "code-header-19")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">self_intro</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">occupation</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="s">"""Demo function with multiple arguments, which prints formatted string.
+
+    :param name: Name of the Person.
+    :param occupation: Occupation of the Person
+    """</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'My name is {name}. I am {occupation} by profession.'</span><span class="p">)</span>
+
+
+<span class="c1"># positional argument
+</span><span class="n">self_intro</span><span class="p">(</span><span class="s">'Jhon'</span><span class="p">,</span> <span class="s">'Pianist'</span><span class="p">)</span>
+<span class="n">self_intro</span><span class="p">(</span><span class="s">'Marian'</span><span class="p">,</span> <span class="s">'Teacher'</span><span class="p">)</span>
+
+
+<span class="c1"># keyword argument
+</span><span class="n">self_intro</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">'Jhon'</span><span class="p">,</span> <span class="n">occupation</span><span class="o">=</span><span class="s">'Pianist'</span><span class="p">)</span>
+
+<span class="c1"># keyword argument in different order
+</span><span class="n">self_intro</span><span class="p">(</span><span class="n">occupation</span><span class="o">=</span><span class="s">'Teacher'</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">'Marian'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+My name is Jhon. I am Pianist by profession.
+My name is Marian. I am Teacher by profession.
+My name is Jhon. I am Pianist by profession.
+My name is Marian. I am Teacher by profession.
+</pre></div>
+
+<hr />
+
+<h3 id="default-parameter-with-functional-annotation">default parameter with functional annotation</h3>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> ' var: type = value ' : </strong> format is used for defining default parameter with functional annotation. </li>
+    </ul> 
+</div>
+
+<div id="code-block-20" class="code-block">
+<p id="code-header-20" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-20", "code-header-20")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">get_icecream</span><span class="p">(</span><span class="n">flavour</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">size</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">package</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s">'cup'</span><span class="p">,</span> <span class="n">quantity</span><span class="p">:</span> <span class="s">'int&gt;0'</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="s">"""
+    processes customizable ice-cream order.
+
+    :param flavour: Flavour of the ice-cream.
+    :param size: Size of the ice-cream ['Small', 'Medium', 'Large']
+    :param package: Package in which ice-cream to be received ['cup','cone']
+    :param quantity: no of ice-creams to be ordered
+    """</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Packing {flavour} flavoured {size} sized, packed in {package} of quantity {quantity}.'</span><span class="p">)</span>
+
+
+<span class="n">get_icecream</span><span class="p">(</span><span class="s">'Vanilla'</span><span class="p">,</span> <span class="s">'small'</span><span class="p">)</span>  
+
+<span class="n">get_icecream</span><span class="p">(</span><span class="s">'Butterscotch'</span><span class="p">,</span> <span class="n">package</span><span class="o">=</span><span class="s">'cone'</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s">'Medium'</span><span class="p">)</span>
+<span class="n">get_icecream</span><span class="p">(</span><span class="s">'Butterscotch'</span><span class="p">,</span> <span class="s">'Large'</span><span class="p">,</span> <span class="s">'cone'</span><span class="p">,</span> <span class="n">quantity</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Packing Vanilla flavoured small sized, packed in cup of quantity 1.
+Packing Butterscotch flavoured Medium sized, packed in cone of quantity 1.
+Packing Butterscotch flavoured Large sized, packed in cone of quantity 3.
+</pre></div>
+
+<hr />
+
+<h3 id="default-parameter-value-as-variable">default parameter value as variable</h3>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Caution : </strong> While assigning variable as default parameter value, default value in function are created while loading the function not when calling the function. </li>
+    </ul> 
+</div>
+
+<div id="code-block-21" class="code-block">
+<p id="code-header-21" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-21", "code-header-21")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">globalflavour</span> <span class="o">=</span> <span class="s">'vanilla'</span>
+
+
+<span class="k">def</span> <span class="nf">choose_flavour</span><span class="p">(</span><span class="n">flavour</span><span class="o">=</span><span class="n">globalflavour</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'You have chosen'</span><span class="p">,</span> <span class="n">flavour</span><span class="p">)</span>
+
+
+<span class="n">globalflavour</span> <span class="o">=</span> <span class="s">'Chocolate'</span>
+
+<span class="n">choose_flavour</span><span class="p">()</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+You have chosen vanilla
+</pre></div>
+
+<hr />
+
+<h3 id="variable-arguments">Variable arguments</h3>
+
+<h4 id="variable-positional-argument">Variable Positional argument</h4>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> *varname : </strong> Declares the parameter as variable positional parameter. It can collect variable number of positional parameters which are stored in list. </li>
+        <li> It must be declared at the end of all positional arguments. </li>
+    </ul> 
+</div>
+
+<div id="code-block-22" class="code-block">
+<p id="code-header-22" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-22", "code-header-22")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">get_micecream</span><span class="p">(</span><span class="n">size</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">package</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s">'cup'</span><span class="p">,</span> <span class="n">quantity</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="o">*</span><span class="n">flavours</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="s">"""
+      processes multiple customizable ice-cream order.
+
+      :param size: Size of the ice-cream ['Small', 'Medium', 'Large']
+      :param package: Package in which ice-cream to be received ['cup','cone']
+      :param quantity: no of ice-creams to be ordered
+      :param flavours: Multiple Flavours of ice-creams want to order.
+      """</span>
+    <span class="k">for</span> <span class="n">flavour</span> <span class="ow">in</span> <span class="n">flavours</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Packing {flavour} flavoured {size} sized, packed in {package} of quantity {quantity}.'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'@@@@@@@@  All Done @@@@@@@@ :)'</span><span class="p">)</span>
+
+
+<span class="n">get_micecream</span><span class="p">(</span><span class="s">'small'</span><span class="p">,</span> <span class="s">'cup'</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'Butterscotch'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Chocolate Chips'</span><span class="p">,</span> <span class="s">'Pineapple'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Packing Butterscotch flavoured small sized, packed in cup of quantity 1.
+Packing Rose flavoured small sized, packed in cup of quantity 1.
+Packing Chocolate Chips flavoured small sized, packed in cup of quantity 1.
+Packing Pineapple flavoured small sized, packed in cup of quantity 1.
+@@@@@@@@  All Done @@@@@@@@ :)
+</pre></div>
+
+<hr />
+
+<h4 id="variable-keyword-argument">Variable Keyword argument</h4>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> **varname : </strong> Declares the parameter as variable keyword parameter. It can collect variable number of keyword parameters which are stored in dictionary in which parameter name is key and value as value of dictionary.  </li>
+        <li> It must be declared at the end of all keyword arguments. </li>
+    </ul> 
+</div>
+
+<div id="code-block-23" class="code-block">
+<p id="code-header-23" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-23", "code-header-23")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">get_micecream</span><span class="p">(</span><span class="n">size</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">package</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s">'cup'</span><span class="p">,</span> <span class="n">quantity</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="o">*</span><span class="n">flavours</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">extra</span><span class="p">):</span>
+    <span class="s">"""
+      processes multiple customizable ice-cream order.
+
+      :param size: Size of the ice-cream ['Small', 'Medium', 'Large']
+      :param package: Package in which ice-cream to be received ['cup','cone']
+      :param quantity: no of ice-creams to be ordered
+      :param flavours: Multiple Flavours of ice-creams want to order.
+      """</span>
+    <span class="k">for</span> <span class="n">flavour</span> <span class="ow">in</span> <span class="n">flavours</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Packing {flavour} flavoured {size} sized, packed in {package} of quantity {quantity} . '</span>
+              <span class="n">f</span><span class="s">'Extras : {extra}'</span><span class="p">)</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s">'@@@@@@@@  All Done @@@@@@@@ :)'</span><span class="p">)</span>
+
+
+<span class="n">get_micecream</span><span class="p">(</span><span class="s">'small'</span><span class="p">,</span> <span class="s">'Cone'</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'Butterscotch'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="n">doubleIceCream</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">chocolateCone</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Packing Butterscotch flavoured small sized, packed in Cone of quantity 1 . Extras : {'doubleIceCream': True, 'chocolateCone': True}
+Packing Rose flavoured small sized, packed in Cone of quantity 1 . Extras : {'doubleIceCream': True, 'chocolateCone': True}
+@@@@@@@@  All Done @@@@@@@@ :)
+</pre></div>
+
+<hr />
+
+<h3 id="order-of-arguments">order of arguments</h3>
+
+<div id="tut-content"> 
+    <ol>    
+        <li> <strong> Positional arguments </strong> </li>
+        <li> <strong> *args : </strong> variable positional arguments </li>
+        <li> <strong> Keyword arguments </strong> </li>
+        <li> <strong> Default value argument </strong> </li>
+        <li> <strong> **kwargs : </strong> variable keyword arguments </li>
+    </ol>
+</div>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Example 1</strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-24" class="code-block">
+<p id="code-header-24" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-24", "code-header-24")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">get_cicecream</span><span class="p">(</span><span class="n">size</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="n">flavours</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">package</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">quantity</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="o">**</span><span class="n">extra</span><span class="p">):</span>
+    <span class="s">"""
+    Function demonstrates the use of order of arguments.
+
+    :param size:  Positional argument, can have one of  ['Small', 'Medium', 'Large'] value
+    :param flavours: variable positional argument, which can be multiple flavours of ice-cream in string.
+    :param package: Keyword only argument, which can have value one of ['cup','cone']
+    :param quantity: Default value argument, which can have value in positive int
+    :param extra: variable keyword arguments which takes optional extra customization.
+    :return: None
+    """</span>
+
+    <span class="k">for</span> <span class="n">flavour</span> <span class="ow">in</span> <span class="n">flavours</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Packing {flavour} flavoured {size} sized, packed in {package} of quantity {quantity}  . '</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">''</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">extra</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'[ {k} :  {extra[k]} ]   '</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">''</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">()</span>
+
+
+<span class="n">get_cicecream</span><span class="p">(</span><span class="s">'Small'</span><span class="p">,</span> <span class="s">'Butterscotch'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Chocolate Chips'</span><span class="p">,</span>
+              <span class="s">'Pineapple'</span><span class="p">,</span> <span class="n">package</span><span class="o">=</span><span class="s">'cone'</span><span class="p">,</span> <span class="n">coneType</span><span class="o">=</span><span class="s">'Choco'</span><span class="p">,</span> <span class="n">iceCream</span><span class="o">=</span><span class="s">'Double'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Packing Butterscotch flavoured Small sized, packed in cone of quantity 1  . [ coneType :  Choco ]   [ iceCream :  Double ]   
+Packing Rose flavoured Small sized, packed in cone of quantity 1  . [ coneType :  Choco ]   [ iceCream :  Double ]   
+Packing Chocolate Chips flavoured Small sized, packed in cone of quantity 1  . [ coneType :  Choco ]   [ iceCream :  Double ]   
+Packing Pineapple flavoured Small sized, packed in cone of quantity 1  . [ coneType :  Choco ]   [ iceCream :  Double ]   
+
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Example 2</strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-25" class="code-block">
+<p id="code-header-25" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-25", "code-header-25")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">func1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">*</span><span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+
+
+<span class="n">func1</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">func1</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">func1</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># this will raise error as z becomes kwargs by the order of argument</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+1 (2, 3, 4) 5
+1 () 2
+</pre>
+<pre id="tut-output-error" class="result-content">Traceback (most recent call last):
+  File "&lt;&zwj;input&zwj;&gt;", line 7, in &lt;&zwj;module&zwj;&gt;
+TypeError: func1() missing 1 required keyword-only argument: 'z'</pre>
+</div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Example 3</strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-26" class="code-block">
+<p id="code-header-26" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-26", "code-header-26")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">func2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">*</span><span class="n">z</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="o">**</span><span class="n">e</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">*</span><span class="n">z</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="o">**</span><span class="n">e</span><span class="p">)</span>
+
+<span class="n">func2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># minimum required keyword arguments</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+1 2 1 3 10 50
+</pre>
+</div>
+
+<hr />
+
+<h3 id="positional-only-argument">Positional only argument</h3>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>'/' : </strong> separates positional arguments from rest of the arguments  </li>
+        <li> All arguments defined before '/' are position only argument, they can be passed as keyword argument.  </li>
+    </ul> 
+</div>
+
+<div id="code-block-27" class="code-block">
+<p id="code-header-27" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-27", "code-header-27")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">calculate_interest</span><span class="p">(</span><span class="n">p</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">r</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="s">"""
+    calculates interest based on keyword based arguments only
+
+    :param p: Amount
+    :param r: Rate of interest in </span><span class="si">%</span><span class="s">
+    :param n: years
+
+    """</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">p</span><span class="o">*</span><span class="n">r</span><span class="o">*</span><span class="n">n</span><span class="p">)</span><span class="o">//</span><span class="mi">100</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="n">calculate_interest</span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span> <span class="mf">6.7</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="n">calculate_interest</span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span> <span class="mf">6.7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="n">extra1</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">calculate_interest</span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span> <span class="mf">6.7</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span> <span class="c1"># This will raise an error</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+3350.0
+3350.0
+
+<pre id="tut-output-error" class="result-content">Traceback (most recent call last):
+  File "&lt;&zwj;input&zwj;&gt;", line 1, in &lt;&zwj;module&zwj;&gt;
+TypeError: calculate_interest() missing 1 required positional argument: 'n'</pre>
+</pre></div>
+
+<hr />
+
+<h3 id="keyword-only-argument">Keyword only argument</h3>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> '*' : </strong> Marks the beginning of keyword only argument. </li>
+        <li> Arguments defined after '*' are strictly keyword based only.</li>
+    </ul> 
+</div>
+
+<div id="code-block-28" class="code-block">
+<p id="code-header-28" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-28", "code-header-28")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">calculate_interest</span><span class="p">(</span> <span class="n">p</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">r</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="s">"""
+    calculates interest based on keyword based arguments only
+
+    :param p: Amount
+    :param r: Rate of interest in </span><span class="si">%</span><span class="s">
+    :param n: years
+
+    """</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">p</span><span class="o">*</span><span class="n">r</span><span class="o">*</span><span class="n">n</span><span class="p">)</span><span class="o">//</span><span class="mi">100</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="n">calculate_interest</span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mf">6.7</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">calculate_interest</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mf">6.7</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">calculate_interest</span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span> <span class="mf">6.7</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span> <span class="c1"># This will raise an error</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+3350.0
+3350.0
+</pre>
+<pre id="tut-output-error" class="result-content">Traceback (most recent call last):
+  File "&lt;&zwj;input&zwj;&gt;", line 17, in &lt;&zwj;module&zwj;&gt;
+TypeError: calculate_interest() takes 1 positional argument but 2 positional arguments (and 1 keyword-only argument) were given</pre>
+
+</div>
+
+<hr />
+
+<h3 id="attribute-of-the-function">Attribute of the function</h3>
+
+<div id="tut-content"> 
+    <ul>
+        <li> Function can have attributes, which is like variable stored inside the function object. </li>
+        <li> Attributes preserves their value between multiple function calls.</li>
+    </ul> 
+</div>
+
+<div id="code-block-29" class="code-block">
+<p id="code-header-29" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-29", "code-header-29")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">f1</span><span class="p">():</span>
+    <span class="n">f1</span><span class="o">.</span><span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Called {f1.count} times.'</span><span class="p">)</span>
+
+
+<span class="n">f1</span><span class="o">.</span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">f1</span><span class="p">()</span>
+<span class="n">f1</span><span class="p">()</span>
+<span class="n">f1</span><span class="p">()</span>
+<span class="n">f1</span><span class="p">()</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Called 1 times.
+Called 2 times.
+Called 3 times.
+Called 4 times.
+</pre></div>
+
+<hr />
+
+<h3 id="un-packing-sequence-as-argument">Un-packing sequence as argument</h3>
+
+<h4 id="flat-sequences">Flat sequences</h4>
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> ' *sequence ' : </strong> Un-packs the given flat sequence in data structures such as tuple, list to positional arguments.  </li>
+    </ul> 
+</div>
+
+<div id="code-block-30" class="code-block">
+<p id="code-header-30" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-30", "code-header-30")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">point</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'X : {x}  Y : {y}  Z : {z}'</span><span class="p">)</span>
+
+
+<span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">19</span><span class="p">)</span>
+<span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">19</span><span class="p">]</span>
+
+<span class="n">point</span><span class="p">(</span><span class="o">*</span><span class="n">t1</span><span class="p">)</span>
+<span class="n">point</span><span class="p">(</span><span class="o">*</span><span class="n">l1</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+X : 12  Y : 15  Z : 19
+X : 12  Y : 15  Z : 19
+</pre></div>
+
+<hr />
+
+<h4 id="key-value-sequences">Key-Value sequences</h4>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> ' **sequence ' : </strong> Un-packs the given Key-Value sequence in data structures such as dictionary to keyword arguments.  </li>
+    </ul> 
+</div>
+
+<div id="code-block-31" class="code-block">
+<p id="code-header-31" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-31", "code-header-31")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">point</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+    <span class="s">"""Only takes keyword based arguments for Point dimensions x, y, z"""</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'X : {x}  Y : {y}  Z : {z}'</span><span class="p">)</span>
+
+
+<span class="n">d1</span> <span class="o">=</span> <span class="p">{</span><span class="s">'x'</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span> <span class="s">'y'</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s">'z'</span><span class="p">:</span> <span class="mi">19</span><span class="p">}</span>
+<span class="n">d2</span> <span class="o">=</span> <span class="p">{</span><span class="s">'x'</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span> <span class="s">'z'</span><span class="p">:</span> <span class="mi">19</span><span class="p">,</span> <span class="s">'y'</span><span class="p">:</span> <span class="mi">25</span><span class="p">}</span>
+
+<span class="n">point</span><span class="p">(</span><span class="o">**</span><span class="n">d1</span><span class="p">)</span>
+<span class="n">point</span><span class="p">(</span><span class="o">**</span><span class="n">d2</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+X : 12  Y : 25  Z : 19
+X : 12  Y : 25  Z : 19
 </pre></div>
 
 <hr />
