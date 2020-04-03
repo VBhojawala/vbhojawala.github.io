@@ -1,0 +1,8 @@
+---
+title: "global variable"
+tagName: global_variable
+search: exclude
+permalink: tag_global_variable.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

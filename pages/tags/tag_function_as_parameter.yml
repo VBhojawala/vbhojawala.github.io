@@ -1,0 +1,8 @@
+---
+title: "function as parameter"
+tagName: function_as_parameter
+search: exclude
+permalink: tag_function_as_parameter.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

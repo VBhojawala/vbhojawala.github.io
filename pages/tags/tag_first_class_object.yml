@@ -1,0 +1,8 @@
+---
+title: "first class object"
+tagName: first_class_object
+search: exclude
+permalink: tag_first_class_object.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

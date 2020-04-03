@@ -1,0 +1,8 @@
+---
+title: "callable()"
+tagName: callable()
+search: exclude
+permalink: tag_callable().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

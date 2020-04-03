@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Benefits of functions, Built-in functions, User defined functions.">
-<meta name="keywords" content=",  ">
+<meta name="keywords" content="defpassdoc-stringreturndefault_value_parameterfunctional_annotationhelp()docannotationslocale()global()locale_variableglobal_variablelocale_vs_global_variablepass_by_valuepass_by_referencepass_by_value_VS_referencepositional_argumentskeywords_argumentsvarargsvariable_positional_argumentvariable_keyword_argumentsorder_of_argumentspositional_only_argumentkeyword_only_argumentsfunction_attributeunpacking_sequencefirst_class_objectcallable()nested_functionclosurefree_variablenonlocalfunction_as_parameter,  ">
 <meta name="theme-color" content="#36362C">
 <link rel="icon" sizes="192x192" href="images/favicon.ico">
 <title>Functions | Asha Tutorials</title>
@@ -637,7 +637,7 @@ Hello World!
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">div_mod</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="s">"""Returns (x//y, x</span><span class="si">%</span><span class="s">y)"""</span>
-    <span class="k">return</span> <span class="n">x</span><span class="o">//</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="o">%</span><span class="n">y</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">//</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">%</span> <span class="n">y</span>
 
 
 <span class="n">ans</span> <span class="o">=</span> <span class="n">div_mod</span><span class="p">(</span><span class="mi">52</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
@@ -782,6 +782,18 @@ Hello Unknown!
 
 <div id="tut-img">
     <img src="/images/tutorials/python/functional_annotation.png" class="tut-img" alt="Functional Annotation in PyCharm Quick Doc" />
+</div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> When viewed quick documentation in PyCharm by pressing 'Ctrl + Q' on parameter definition it looks as shown below:  </li>
+    </ul> 
+</div>
+
+<div id="tut-img">
+    <img src="/images/tutorials/python/function_annotation2.png" class="tut-img" alt="Functional Annotation in PyCharm Quick Doc Parameter" />
 </div>
 
 <hr />
@@ -963,7 +975,7 @@ class tuple(object)
 
 <h4 id="__annotations__"><strong>__annotations</strong>__</h4>
 
-<p> Returns dictionary with parameter as key and annotated type as value. </p>
+<p> Returns dictionary with parameter as key and annotated type as value. REturns empty dictionary if no functional annotation is given. </p>
 
 <div id="code-block-12" class="code-block">
 <p id="code-header-12" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-12", "code-header-12")</script>
@@ -985,8 +997,26 @@ class tuple(object)
     <ul>
         <li> Python implicitly imports some builtin modules, functions, classes and attributes in global scope of all modules. That is the reason why we are able to use print() function without any imports. </li>
         <li> All Variables defined at module level by default becomes global variables to functions and classes defined in particular module. </li>
+        <li> <strong> Locale scope : </strong> Variables and functions declared inside current code blocks comes under locale scope. </li>
+        <li> <strong> Global scope : </strong> Variables and functions which are declared at module level or implicitly imported by python, and accessible within locale scope comes under global scope.   </li>
     </ul> 
 </div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Slides</strong> </li>
+    </ul> 
+</div>
+
+<div id="tut-ppt">
+    <div class="embed-responsive embed-responsive-4by3">
+        <iframe class="embed-responsive-item" src="/docs/python/03Functions_scope.pdf" allowfullscreen=""></iframe>
+    </div>
+</div>
+
+<hr />
 
 <h4 id="locale">locale()</h4>
 <p> Returns dictionary containing locale variable as per current scope. </p>
@@ -1009,9 +1039,9 @@ class tuple(object)
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-Globals : {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': &lt;_frozen_importlib_external.SourceFileLoader object at 0x7ffa67c393d0&gt;, '__spec__': None, '__file__': '&lt; input &gt;', '__builtins__': {'__name__': 'builtins', '__doc__': "Built-in functions, exceptions, and other objects.\n\nNoteworthy: None is the `nil' object;  ....................................................................................................'sys': &lt;module 'sys' (built-in)&gt;, 'a': 12, 'b': 50}
+Globals : {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': &lt;_frozen_importlib_external.SourceFileLoader object at 0x7ffa67c393d0&gt;, '__spec__': None, '__file__': '&lt; input &gt;', '__builtins__': {'__name__': 'builtins', '__doc__': "Built-in functions, exceptions, and other objects.\n\nNoteworthy: None is the `nil' object;  ....................................................................................................'sys': &lt;module 'sys' (built-in)&gt;, <div id="tut-highlight">'a': 12, 'b': 50 </div>}
 ==================================================================================================================================
-Locals  :  {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': &lt;_frozen_importlib_external.SourceFileLoader object at 0x7ffa67c393d0&gt;, '__spec__': None, '__file__': '&lt; input &gt;', '__builtins__': {'__name__': 'builtins', '__doc__': "Built-in functions,....................................................................................................'sys': &lt;module 'sys' (built-in)&gt;, 'a': 12, 'b': 50} 
+Locals  :  {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': &lt;_frozen_importlib_external.SourceFileLoader object at 0x7ffa67c393d0&gt;, '__spec__': None, '__file__': '&lt; input &gt;', '__builtins__': {'__name__': 'builtins', '__doc__': "Built-in functions,....................................................................................................'sys': &lt;module 'sys' (built-in)&gt;,<div id="tut-highlight"> 'a': 12, 'b': 50 </div>} 
 </pre></div>
 
 <hr />
@@ -1046,24 +1076,12 @@ Locals  :  {'__name__': '__main__', '__doc__': None, '__package__': None, '__loa
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-Locale scope inside function -&gt;  {'c': 70}
+Locale scope inside function -&gt; <div id="tut-highlight"> {'c': 70} </div>
 ==================================================================================================================================
-Global scope inside function -&gt;  {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': &lt;_frozen_importlib_external.SourceFileLoader object at 0x7ffa67c393d0&gt;, '__spec__': None, '__file__': '&lt; input &gt;', '__builtins__': {'__name__': 'builtins', '__doc__': "Built-in functions,...............................................................'sys': &lt;module 'sys' (built-in)&gt;, 'a': 12, 'b': 50, 'local_func': &lt;function local_func at 0x7ffa61fad3a0&gt;}
+Global scope inside function -&gt;  {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': &lt;_frozen_importlib_external.SourceFileLoader object at 0x7ffa67c393d0&gt;, '__spec__': None, '__file__': '&lt; input &gt;', '__builtins__': {'__name__': 'builtins', '__doc__': "Built-in functions,...............................................................'sys': &lt;module 'sys' (built-in)&gt;, <div id="tut-highlight"> 'a': 12, 'b': 50, 'local_func': &lt;function local_func at 0x7ffa61fad3a0&gt; </div> }
 </pre></div>
 
 <hr />
-
-<div id="tut-content"> 
-    <ul>
-        <li> <strong>Slides</strong> </li>
-    </ul> 
-</div>
-
-<div id="tut-ppt">
-    <div class="embed-responsive embed-responsive-4by3">
-        <iframe class="embed-responsive-item" src="/docs/python/03Functions_scope.pdf" allowfullscreen=""></iframe>
-    </div>
-</div>
 
 <h3 id="local-variable-vs-global-variable">Local variable vs Global variable</h3>
 
@@ -1142,7 +1160,7 @@ Int Global after  function : 151
 
 <hr />
 
-<h3 id="pass-by-value-vs-pass-by-reference">pass by value VS pass by reference</h3>
+<h3 id="pass-by-value-vs-pass-by-reference">Pass by value VS Pass by reference</h3>
 
 <div id="tut-content"> 
     <ul>
@@ -2191,13 +2209,149 @@ Your order will be delivered by purple express
 
 <hr />
 
-<div class="bs-callout bs-callout-primary"><strong>Note</strong> : For more on function, check <strong>decorators</strong> and <strong>functool</strong> . </div>
+<div class="bs-callout bs-callout-primary"><strong>Note</strong> : For more details on function, check <strong>decorators</strong> and <strong>functool</strong> . </div>
 
 
 
     <div class="tags">
         
         <p style="display: inline;"><b>Tags: </b></p>
+        
+        
+        
+        <a href="tag_def.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">def</a>
+        
+        
+        
+        <a href="tag_pass.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">pass</a>
+        
+        
+        
+        <a href="tag_doc-string.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">doc-string</a>
+        
+        
+        
+        <a href="tag_return.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">return</a>
+        
+        
+        
+        <a href="tag_default_value_parameter.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">default_value_parameter</a>
+        
+        
+        
+        <a href="tag_functional_annotation.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">functional_annotation</a>
+        
+        
+        
+        <a href="tag_help().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">help()</a>
+        
+        
+        
+        <a href="tag_doc.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">doc</a>
+        
+        
+        
+        <a href="tag_annotations.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">annotations</a>
+        
+        
+        
+        <a href="tag_locale().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">locale()</a>
+        
+        
+        
+        <a href="tag_global().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">global()</a>
+        
+        
+        
+        <a href="tag_locale_variable.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">locale_variable</a>
+        
+        
+        
+        <a href="tag_global_variable.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">global_variable</a>
+        
+        
+        
+        <a href="tag_locale_vs_global_variable.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">locale_vs_global_variable</a>
+        
+        
+        
+        <a href="tag_pass_by_value.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">pass_by_value</a>
+        
+        
+        
+        <a href="tag_pass_by_reference.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">pass_by_reference</a>
+        
+        
+        
+        <a href="tag_pass_by_value_VS_reference.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">pass_by_value_VS_reference</a>
+        
+        
+        
+        <a href="tag_positional_arguments.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">positional_arguments</a>
+        
+        
+        
+        <a href="tag_keywords_arguments.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">keywords_arguments</a>
+        
+        
+        
+        <a href="tag_varargs.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">varargs</a>
+        
+        
+        
+        <a href="tag_variable_positional_argument.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">variable_positional_argument</a>
+        
+        
+        
+        <a href="tag_variable_keyword_arguments.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">variable_keyword_arguments</a>
+        
+        
+        
+        <a href="tag_order_of_arguments.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">order_of_arguments</a>
+        
+        
+        
+        <a href="tag_positional_only_argument.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">positional_only_argument</a>
+        
+        
+        
+        <a href="tag_keyword_only_arguments.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">keyword_only_arguments</a>
+        
+        
+        
+        <a href="tag_function_attribute.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">function_attribute</a>
+        
+        
+        
+        <a href="tag_unpacking_sequence.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">unpacking_sequence</a>
+        
+        
+        
+        <a href="tag_first_class_object.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">first_class_object</a>
+        
+        
+        
+        <a href="tag_callable().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">callable()</a>
+        
+        
+        
+        <a href="tag_nested_function.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">nested_function</a>
+        
+        
+        
+        <a href="tag_closure.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">closure</a>
+        
+        
+        
+        <a href="tag_free_variable.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">free_variable</a>
+        
+        
+        
+        <a href="tag_nonlocal.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">nonlocal</a>
+        
+        
+        
+        <a href="tag_function_as_parameter.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">function_as_parameter</a>
         
         
         

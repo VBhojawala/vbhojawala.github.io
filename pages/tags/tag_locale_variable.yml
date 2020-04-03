@@ -1,0 +1,8 @@
+---
+title: "locale variable"
+tagName: locale_variable
+search: exclude
+permalink: tag_locale_variable.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

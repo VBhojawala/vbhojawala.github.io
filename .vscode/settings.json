@@ -6,6 +6,7 @@
         "lname",
         "localcontext",
         "lstrip",
-        "ndigit"
+        "ndigit",
+        "varargs"
     ]
 }

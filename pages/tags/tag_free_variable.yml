@@ -1,0 +1,8 @@
+---
+title: "free variable"
+tagName: free_variable
+search: exclude
+permalink: tag_free_variable.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

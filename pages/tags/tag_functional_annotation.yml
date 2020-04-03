@@ -1,0 +1,8 @@
+---
+title: "functional annotation"
+tagName: functional_annotation
+search: exclude
+permalink: tag_functional_annotation.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

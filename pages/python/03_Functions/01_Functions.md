@@ -1,7 +1,7 @@
 ---
 title: Functions
 layout: tutorial
-tags: []
+tags: [def, pass, doc-string, return, default_value_parameter, functional_annotation,help(), doc, annotations, locale(), global(), locale_variable, global_variable,locale_vs_global_variable, pass_by_value, pass_by_reference, pass_by_value_VS_reference,positional_arguments, keywords_arguments, varargs, variable_positional_argument,variable_keyword_arguments, order_of_arguments, positional_only_argument,keyword_only_arguments, function_attribute, unpacking_sequence, first_class_object,callable(), nested_function, closure, free_variable, nonlocal, function_as_parameter]
 sidebar: python_sidebar
 permalink: python_functions.html
 folder: python
@@ -148,7 +148,7 @@ print(ans)
 
 def div_mod(x, y):
     """Returns (x//y, x%y)"""
-    return x//y, x%y
+    return x // y, x % y
 
 
 ans = div_mod(52, 3)
@@ -331,6 +331,19 @@ def sendmail(to: str, subject: str, message: str, cc: str = '', bcc: str = '') -
 
 <div id="tut-img">
     <img src="/images/tutorials/python/functional_annotation.png" class="tut-img" alt="Functional Annotation in PyCharm Quick Doc">
+</div>
+
+
+<hr/>
+
+<div id="tut-content"> 
+    <ul>
+        <li> When viewed quick documentation in PyCharm by pressing 'Ctrl + Q' on parameter definition it looks as shown below:  </li>
+    </ul> 
+</div>
+
+<div id="tut-img">
+    <img src="/images/tutorials/python/function_annotation2.png" class="tut-img" alt="Functional Annotation in PyCharm Quick Doc Parameter">
 </div>
 
 
@@ -539,7 +552,7 @@ print(sendmail.__doc__)
 
 #### ____annotations____
 
-<p> Returns dictionary with parameter as key and annotated type as value. </p>
+<p> Returns dictionary with parameter as key and annotated type as value. REturns empty dictionary if no functional annotation is given. </p>
 
 
 {% assign code_block = code_block | plus: 1 %}
@@ -570,8 +583,28 @@ print(sendmail.__annotations__)
     <ul>
         <li> Python implicitly imports some builtin modules, functions, classes and attributes in global scope of all modules. That is the reason why we are able to use print() function without any imports. </li>
         <li> All Variables defined at module level by default becomes global variables to functions and classes defined in particular module. </li>
+        <li> <strong> Locale scope : </strong> Variables and functions declared inside current code blocks comes under locale scope. </li>
+        <li> <strong> Global scope : </strong> Variables and functions which are declared at module level or implicitly imported by python, and accessible within locale scope comes under global scope.   </li>
     </ul> 
 </div>
+
+
+<hr/>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Slides</strong> </li>
+    </ul> 
+</div>
+
+
+<div id='tut-ppt'>
+    <div class="embed-responsive embed-responsive-4by3">
+        <iframe class="embed-responsive-item" src="/docs/python/03Functions_scope.pdf" allowfullscreen></iframe>
+    </div>
+</div>
+
+<hr/>
 
 #### locale()
 <p> Returns dictionary containing locale variable as per current scope. </p>
@@ -600,9 +633,9 @@ print('Locals  : ', locals())
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-Globals : {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': <_frozen_importlib_external.SourceFileLoader object at 0x7ffa67c393d0>, '__spec__': None, '__file__': '< input >', '__builtins__': {'__name__': 'builtins', '__doc__': "Built-in functions, exceptions, and other objects.\n\nNoteworthy: None is the `nil' object;  ....................................................................................................'sys': <module 'sys' (built-in)>, 'a': 12, 'b': 50}
+Globals : {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': <_frozen_importlib_external.SourceFileLoader object at 0x7ffa67c393d0>, '__spec__': None, '__file__': '< input >', '__builtins__': {'__name__': 'builtins', '__doc__': "Built-in functions, exceptions, and other objects.\n\nNoteworthy: None is the `nil' object;  ....................................................................................................'sys': <module 'sys' (built-in)>, <div id='tut-highlight'>'a': 12, 'b': 50 </div>}
 ==================================================================================================================================
-Locals  :  {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': <_frozen_importlib_external.SourceFileLoader object at 0x7ffa67c393d0>, '__spec__': None, '__file__': '< input >', '__builtins__': {'__name__': 'builtins', '__doc__': "Built-in functions,....................................................................................................'sys': <module 'sys' (built-in)>, 'a': 12, 'b': 50} 
+Locals  :  {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': <_frozen_importlib_external.SourceFileLoader object at 0x7ffa67c393d0>, '__spec__': None, '__file__': '< input >', '__builtins__': {'__name__': 'builtins', '__doc__': "Built-in functions,....................................................................................................'sys': <module 'sys' (built-in)>,<div id='tut-highlight'> 'a': 12, 'b': 50 </div>} 
 </pre></div>
 
 <hr/>
@@ -644,9 +677,9 @@ local_func()
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-Locale scope inside function ->  {'c': 70}
+Locale scope inside function -> <div id='tut-highlight'> {'c': 70} </div>
 ==================================================================================================================================
-Global scope inside function ->  {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': <_frozen_importlib_external.SourceFileLoader object at 0x7ffa67c393d0>, '__spec__': None, '__file__': '< input >', '__builtins__': {'__name__': 'builtins', '__doc__': "Built-in functions,...............................................................'sys': <module 'sys' (built-in)>, 'a': 12, 'b': 50, 'local_func': <function local_func at 0x7ffa61fad3a0>}
+Global scope inside function ->  {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': <_frozen_importlib_external.SourceFileLoader object at 0x7ffa67c393d0>, '__spec__': None, '__file__': '< input >', '__builtins__': {'__name__': 'builtins', '__doc__': "Built-in functions,...............................................................'sys': <module 'sys' (built-in)>, <div id='tut-highlight'> 'a': 12, 'b': 50, 'local_func': <function local_func at 0x7ffa61fad3a0> </div> }
 </pre></div>
 
 <hr/>
@@ -654,17 +687,6 @@ Global scope inside function ->  {'__name__': '__main__', '__doc__': None, '__pa
 
 
 
-<div id="tut-content"> 
-    <ul>
-        <li> <strong>Slides</strong> </li>
-    </ul> 
-</div>
-
-<div id='tut-ppt'>
-    <div class="embed-responsive embed-responsive-4by3">
-        <iframe class="embed-responsive-item" src="/docs/python/03Functions_scope.pdf" allowfullscreen></iframe>
-    </div>
-</div>
 
 
 
@@ -746,7 +768,7 @@ Int Global after  function : 151
 
 
 
-### pass by value VS pass by reference
+### Pass by value VS Pass by reference
 
 
 <div id="tut-content"> 
@@ -1993,6 +2015,6 @@ Your order will be delivered by purple express
 
 
 
-{% include callout.html content="**Note** : For more on function, check **decorators** and **functool** . " type="primary" %} 
+{% include callout.html content="**Note** : For more details on function, check **decorators** and **functool** . " type="primary" %} 
 
 {% include links.html %}

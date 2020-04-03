@@ -1,0 +1,8 @@
+---
+title: "doc-string"
+tagName: doc-string
+search: exclude
+permalink: tag_doc-string.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

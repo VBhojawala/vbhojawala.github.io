@@ -1,0 +1,8 @@
+---
+title: "locale vs global variable"
+tagName: locale_vs_global_variable
+search: exclude
+permalink: tag_locale_vs_global_variable.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

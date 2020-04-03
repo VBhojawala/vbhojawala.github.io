@@ -1,0 +1,8 @@
+---
+title: "def"
+tagName: def
+search: exclude
+permalink: tag_def.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

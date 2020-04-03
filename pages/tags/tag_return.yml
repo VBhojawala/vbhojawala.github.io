@@ -1,0 +1,8 @@
+---
+title: "return"
+tagName: return
+search: exclude
+permalink: tag_return.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

@@ -1561,6 +1561,11 @@ ul.mobile-toggle > a{
     font-size: 24px;
     font-weight: bold;
 }
+#tut-highlight{
+    background-color: gold;
+    display: inline;
+    border-radius: 6px;
+}
 
 .panel-body h4{
     font-style: normal;

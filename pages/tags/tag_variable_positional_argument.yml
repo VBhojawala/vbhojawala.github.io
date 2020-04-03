@@ -1,0 +1,8 @@
+---
+title: "variable positional argument"
+tagName: variable_positional_argument
+search: exclude
+permalink: tag_variable_positional_argument.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

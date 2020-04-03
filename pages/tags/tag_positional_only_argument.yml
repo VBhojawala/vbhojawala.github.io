@@ -1,0 +1,8 @@
+---
+title: "positional only argument"
+tagName: positional_only_argument
+search: exclude
+permalink: tag_positional_only_argument.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}
