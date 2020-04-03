@@ -542,7 +542,7 @@ $('#toc').on('click', 'a', function() {
         <li> Abstraction </li>
         <li> Code re-use and single codebase </li>
         <li> Modularization of long procedural code </li>
-        <li> easy to maintain  </li>
+        <li> Easy to maintain  </li>
     </ol>
 </div>
 
@@ -1734,6 +1734,464 @@ X : 12  Y : 25  Z : 19
 </pre></div>
 
 <hr />
+
+<h3 id="function-as-first-class-objects">function as first class objects</h3>
+
+<h4 id="callableobj">callable(obj)</h4>
+
+<p> Returns True if an object is callable( which can be called like function). </p>
+
+<h4 id="assigning-to-a-variable">Assigning to a variable</h4>
+
+<div id="tut-content"> 
+    <ul>
+        <li> In python functions are first class object which can be assigned  to a variable. </li>
+    </ul> 
+</div>
+
+<div id="code-block-32" class="code-block">
+<p id="code-header-32" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-32", "code-header-32")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">point</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'X : {x}  Y : {y}  Z : {z}'</span><span class="p">)</span>
+
+
+<span class="n">pointX</span> <span class="o">=</span> <span class="n">point</span>
+
+<span class="c1"># id
+</span><span class="k">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">point</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">pointX</span><span class="p">))</span>
+
+<span class="c1"># checking given variable is function or not
+</span><span class="k">print</span><span class="p">(</span><span class="nb">callable</span><span class="p">(</span><span class="n">point</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">callable</span><span class="p">(</span><span class="n">pointX</span><span class="p">))</span>
+
+<span class="c1"># Calling function from variable
+</span><span class="n">pointX</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+140270329431952 140270329431952
+True
+True
+X : 12  Y : 19  Z : 15
+</pre></div>
+
+<hr />
+
+<h3 id="nested-functions">Nested functions</h3>
+
+<h4 id="inner-function-called-within-outer-function">Inner function called within outer function</h4>
+
+<p> Function can be defined within function. </p>
+
+<div id="code-block-33" class="code-block">
+<p id="code-header-33" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-33", "code-header-33")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">outer_func</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">inner_func</span><span class="p">():</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Message from the inner function.'</span><span class="p">)</span>
+    <span class="n">inner_func</span><span class="p">()</span>
+
+
+<span class="n">outer_func</span><span class="p">()</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Message from the inner function.
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Exmaple : </strong> Nested functions can help modularization of business logic.  </li>
+    </ul> 
+</div>
+
+<div id="code-block-34" class="code-block">
+<p id="code-header-34" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-34", "code-header-34")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">deposit</span><span class="p">(</span><span class="n">amount</span><span class="p">,</span> <span class="n">accNo</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">bronze_deposit</span><span class="p">():</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'{} amount has been deposited to account no : {}'</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">amount</span><span class="p">,</span> <span class="n">accNo</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">silver_deposit</span><span class="p">():</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Requesting approval from branch manager ....'</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Request approved'</span><span class="p">)</span>
+        <span class="n">approve</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="k">if</span> <span class="n">approve</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">'{} amount has been deposited to account no : {}'</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">amount</span><span class="p">,</span> <span class="n">accNo</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">gold_deposit</span><span class="p">():</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Request additional security while processing transaction ...'</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Requesting approval from branch manager ....'</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Request approved'</span><span class="p">)</span>
+        <span class="n">approve</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="k">if</span> <span class="n">approve</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">'{} amount has been deposited to account no : {}'</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">amount</span><span class="p">,</span> <span class="n">accNo</span><span class="p">))</span>
+
+    <span class="c1"># Main business logic
+</span>    <span class="k">print</span><span class="p">(</span><span class="s">'------------'</span><span class="o">*</span><span class="mi">5</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">amount</span> <span class="o">&lt;</span> <span class="mi">1_00_000</span><span class="p">:</span>
+        <span class="n">bronze_deposit</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="n">amount</span> <span class="o">&lt;</span> <span class="mi">10_00_000</span><span class="p">:</span>
+        <span class="n">silver_deposit</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">gold_deposit</span><span class="p">()</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s">'------------'</span><span class="o">*</span><span class="mi">5</span><span class="p">)</span>
+
+
+<span class="n">deposit</span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span> <span class="mi">2652644545</span><span class="p">)</span>
+<span class="n">deposit</span><span class="p">(</span><span class="mi">1_20_000</span><span class="p">,</span> <span class="mi">2652644545</span><span class="p">)</span>
+<span class="n">deposit</span><span class="p">(</span><span class="mi">12_20_000</span><span class="p">,</span> <span class="mi">2652644545</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+------------------------------------------------------------
+10000 amount has been deposited to account no : 2652644545
+------------------------------------------------------------
+------------------------------------------------------------
+Requesting approval from branch manager ....
+Request approved
+120000 amount has been deposited to account no : 2652644545
+------------------------------------------------------------
+------------------------------------------------------------
+Request additional security while processing transaction ...
+Requesting approval from branch manager ....
+Request approved
+1220000 amount has been deposited to account no : 2652644545
+------------------------------------------------------------
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Nested Function returning value : </strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-35" class="code-block">
+<p id="code-header-35" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-35", "code-header-35")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">show_mobiles</span><span class="p">(</span><span class="n">budget</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">entry_level</span><span class="p">():</span>
+        <span class="k">return</span> <span class="s">"catalogue of Entry Level mobile phones"</span>
+
+    <span class="k">def</span> <span class="nf">mid_range</span><span class="p">():</span>
+        <span class="k">return</span> <span class="s">"catalogue of mid range mobile phones "</span>
+
+    <span class="k">def</span> <span class="nf">flagships</span><span class="p">():</span>
+        <span class="k">return</span> <span class="s">"catalogue of flagship mobile phones"</span>
+
+    <span class="c1">#business logic
+</span>    <span class="k">if</span> <span class="n">budget</span> <span class="o">&lt;=</span> <span class="mi">300</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">entry_level</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="n">budget</span> <span class="o">&lt;=</span> <span class="mi">600</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">mid_range</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">flagships</span><span class="p">()</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="s">'show_mobiles(250) :'</span><span class="p">,</span> <span class="n">show_mobiles</span><span class="p">(</span><span class="mi">250</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'show_mobiles(550) :'</span><span class="p">,</span> <span class="n">show_mobiles</span><span class="p">(</span><span class="mi">550</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'show_mobiles(700) :'</span><span class="p">,</span> <span class="n">show_mobiles</span><span class="p">(</span><span class="mi">700</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+show_mobiles(250) : catalogue of Entry Level mobile phones
+show_mobiles(550) : catalogue of mid range mobile phones 
+show_mobiles(700) : catalogue of flagship mobile phones
+</pre></div>
+
+<hr />
+
+<h4 id="closure">closure</h4>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Closure : </strong> is the function which remember the local variable from enclosing scope. </li>
+        <li>  It is also called as Factory function in terms of design pattern. </li>
+    </ul> 
+</div>
+
+<div id="code-block-36" class="code-block">
+<p id="code-header-36" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-36", "code-header-36")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">multiplyx</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">withy</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span>
+
+    <span class="k">return</span> <span class="n">withy</span>   <span class="c1"># Returns Closure
+</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">multiplyx</span><span class="p">(</span><span class="mi">45</span><span class="p">)(</span><span class="mi">3</span><span class="p">))</span>
+
+<span class="c1"># Another way of calling function : fetching closure
+</span><span class="n">multiY</span> <span class="o">=</span> <span class="n">multiplyx</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span> 
+
+<span class="k">print</span><span class="p">(</span><span class="n">multiY</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">multiY</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+135
+135
+180
+</pre></div>
+
+<hr />
+
+<h4 id="free-variable">Free Variable</h4>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Free Variable : </strong> Is a variable used in the code block but not defined in local scope as well as not declared in global scope. </li>
+    </ul> 
+</div>
+
+<p> Attributes of function for inspecting free variables </p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Variable name</th>
+      <th style="text-align: left">Definition</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">co_freevars</td>
+      <td style="text-align: left">tuple containing names of free variable used by the function</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">co_varnames</td>
+      <td style="text-align: left">tuple containing names of local variable used by function</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">co_cellvars</td>
+      <td style="text-align: left">tuple containing names of local variables referenced by nested inner function.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div id="code-block-37" class="code-block">
+<p id="code-header-37" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-37", "code-header-37")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">multiplyx</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">withy</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span>
+
+    <span class="k">return</span> <span class="n">withy</span>   <span class="c1"># Returns Closure
+</span>
+
+<span class="n">multiY</span> <span class="o">=</span> <span class="n">multiplyx</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'multiY.co_freevars :'</span><span class="p">,</span> <span class="n">multiY</span><span class="o">.</span><span class="n">__code__</span><span class="o">.</span><span class="n">co_freevars</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'multiY.co_varnames :'</span><span class="p">,</span> <span class="n">multiY</span><span class="o">.</span><span class="n">__code__</span><span class="o">.</span><span class="n">co_varnames</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'multiplyx.co_cellvars :'</span><span class="p">,</span> <span class="n">multiplyx</span><span class="o">.</span><span class="n">__code__</span><span class="o">.</span><span class="n">co_cellvars</span><span class="p">)</span>
+
+
+<span class="c1"># Closer is tuple of Cell(s)
+</span><span class="k">print</span><span class="p">(</span><span class="s">'multiY.__closure__ :'</span><span class="p">,</span> <span class="n">multiY</span><span class="o">.</span><span class="n">__closure__</span><span class="p">)</span>
+
+<span class="c1"># getting content of the cell
+</span><span class="k">print</span><span class="p">(</span><span class="s">'multiY.closure[0].cell_contents :'</span><span class="p">,</span> <span class="n">multiY</span><span class="o">.</span><span class="n">__closure__</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">cell_contents</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+multiY.co_freevars : ('x',)
+multiY.co_varnames : ('y',)
+multiplyx.co_cellvars : ('x',)
+multiY.__closure__ : (&lt;cell at 0x7fb20728ad00: int object at 0x55c64a295c80&gt;,)
+multiY.closure[0].cell_contents : 45
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> Variables and namespaces of outer and inner function </li>
+    </ul> 
+</div>
+
+<p> Local variable with same name hides the global variable or variable in enclosing scope. </p>
+
+<div id="code-block-38" class="code-block">
+<p id="code-header-38" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-38", "code-header-38")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">outer_func</span><span class="p">():</span>
+    <span class="n">varA</span> <span class="o">=</span> <span class="mi">15</span>
+
+    <span class="k">def</span> <span class="nf">inner_func</span><span class="p">():</span>
+        <span class="n">varA</span> <span class="o">=</span> <span class="mi">25</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Variable A in inner function :'</span><span class="p">,</span> <span class="n">varA</span><span class="p">)</span>
+
+    <span class="n">inner_func</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Variable A in outer function :'</span><span class="p">,</span> <span class="n">varA</span><span class="p">)</span>
+
+
+<span class="n">varA</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="n">outer_func</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Variable A in global scope :'</span><span class="p">,</span> <span class="n">varA</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Variable A in inner function : 25
+Variable A in outer function : 15
+Variable A in global scope : 5
+</pre></div>
+
+<hr />
+
+<h4 id="nonlocal">nonlocal</h4>
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> nonlocal : </strong> Allows free variables to be modified. </li>
+    </ul> 
+</div>
+
+<div id="code-block-39" class="code-block">
+<p id="code-header-39" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-39", "code-header-39")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">outer_func</span><span class="p">():</span>
+    <span class="n">varA</span> <span class="o">=</span> <span class="mi">15</span>
+
+    <span class="k">def</span> <span class="nf">inner_func</span><span class="p">():</span>
+        <span class="k">nonlocal</span> <span class="n">varA</span>   <span class="c1"># define variable as non local
+</span>        <span class="n">varA</span> <span class="o">=</span> <span class="mi">25</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Variable A in inner function'</span><span class="p">,</span> <span class="n">varA</span><span class="p">)</span>
+
+    <span class="n">inner_func</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Variable A in outer function'</span><span class="p">,</span> <span class="n">varA</span><span class="p">)</span>
+
+
+<span class="n">outer_func</span><span class="p">()</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Variable A in inner function 25
+Variable A in outer function 25
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Mutable data type such as list, set can be modified without declaring nonlocal. </strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-40" class="code-block">
+<p id="code-header-40" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-40", "code-header-40")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">outer_func</span><span class="p">():</span>
+    <span class="n">varA</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">inner_func</span><span class="p">():</span>
+
+        <span class="n">varA</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">25</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'modifying immutable variable in inner function '</span><span class="p">,</span> <span class="n">varA</span><span class="p">)</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s">'Variable A in outer function'</span><span class="p">,</span> <span class="n">varA</span><span class="p">)</span>
+    <span class="n">inner_func</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'varA After calling inner function'</span><span class="p">,</span> <span class="n">varA</span><span class="p">)</span>
+
+<span class="n">outer_func</span><span class="p">()</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Variable A in outer function [1, 2, 3]
+modifying immutable variable in inner function  [25, 2, 3]
+varA After calling inner function [25, 2, 3]
+</pre></div>
+
+<hr />
+
+<h3 id="passing-function-as-parameter">passing function as parameter</h3>
+
+<div id="tut-content"> 
+    <ul>
+        <li> Function in python are first class object which can be passed to parameter of a function same as passing other object such as int or str. </li>
+        <li> Functions passed as an argument still remains callable, which can be called inside function which takes it as an argument.</li>
+    </ul> 
+</div>
+
+<div id="code-block-41" class="code-block">
+<p id="code-header-41" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-41", "code-header-41")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">prime_cust</span><span class="p">(</span><span class="n">order</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'processing prime order......'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Your order will be delivered within 2 days'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">order</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Your order will be delivered by red express'</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">reg_cust</span><span class="p">(</span><span class="n">order</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'processing regular order......'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Your order will be delivered within 7 days'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'order :'</span><span class="p">,</span> <span class="n">order</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Your order will be delivered by purple express'</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">process_order</span><span class="p">(</span><span class="n">custType</span><span class="p">,</span> <span class="n">order</span><span class="p">):</span>
+    <span class="n">custType</span><span class="p">(</span><span class="n">order</span><span class="p">)</span>
+
+
+<span class="n">order</span> <span class="o">=</span> <span class="p">{</span><span class="s">'item'</span><span class="p">:</span> <span class="s">'headphones'</span><span class="p">,</span> <span class="s">'color'</span><span class="p">:</span> <span class="s">'black'</span><span class="p">,</span> <span class="s">'type'</span><span class="p">:</span> <span class="s">'wireless'</span><span class="p">}</span>
+<span class="n">primeCustomer</span> <span class="o">=</span> <span class="n">prime_cust</span>
+<span class="n">regularCustomer</span> <span class="o">=</span> <span class="n">reg_cust</span>
+
+<span class="c1"># passing function as an argument
+</span><span class="n">process_order</span><span class="p">(</span><span class="n">primeCustomer</span><span class="p">,</span> <span class="n">order</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+<span class="n">process_order</span><span class="p">(</span><span class="n">regularCustomer</span><span class="p">,</span> <span class="n">order</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+processing prime order......
+Your order will be delivered within 2 days
+{'item': 'headphones', 'color': 'black', 'type': 'wireless'}
+Your order will be delivered by red express
+
+
+processing regular order......
+Your order will be delivered within 7 days
+order : {'item': 'headphones', 'color': 'black', 'type': 'wireless'}
+Your order will be delivered by purple express
+</pre></div>
+
+<hr />
+
+<div class="bs-callout bs-callout-primary"><strong>Note</strong> : For more on function, check <strong>decorators</strong> and <strong>functool</strong> . </div>
 
 
 

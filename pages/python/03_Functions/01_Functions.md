@@ -24,7 +24,7 @@ summary: Benefits of functions, Built-in functions, User defined functions.
         <li> Abstraction </li>
         <li> Code re-use and single codebase </li>
         <li> Modularization of long procedural code </li>
-        <li> easy to maintain  </li>
+        <li> Easy to maintain  </li>
     </ol>
 </div>
 
@@ -1467,5 +1467,532 @@ X : 12  Y : 25  Z : 19
 
 <hr/>
 
+
+
+### function as first class objects
+
+
+#### callable(obj)
+
+<p> Returns True if an object is callable( which can be called like function). </p>
+
+#### Assigning to a variable
+
+<div id="tut-content"> 
+    <ul>
+        <li> In python functions are first class object which can be assigned  to a variable. </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+def point(x, y, z):
+    print(f'X : {x}  Y : {y}  Z : {z}')
+
+
+pointX = point
+
+# id
+print(id(point), id(pointX))
+
+# checking given variable is function or not
+print(callable(point))
+print(callable(pointX))
+
+# Calling function from variable
+pointX(12, 19, 15)
+
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+140270329431952 140270329431952
+True
+True
+X : 12  Y : 19  Z : 15
+</pre></div>
+
+<hr/>
+
+
+
+### Nested functions
+
+
+#### Inner function called within outer function
+
+<p> Function can be defined within function. </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+def outer_func():
+    def inner_func():
+        print('Message from the inner function.')
+    inner_func()
+
+
+outer_func()
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Message from the inner function.
+</pre></div>
+
+<hr/>
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Exmaple : </strong> Nested functions can help modularization of business logic.  </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+def deposit(amount, accNo):
+
+    def bronze_deposit():
+        print('{} amount has been deposited to account no : {}'.format(amount, accNo))
+
+    def silver_deposit():
+        print('Requesting approval from branch manager ....')
+        print('Request approved')
+        approve = True
+        if approve:
+            print('{} amount has been deposited to account no : {}'.format(amount, accNo))
+
+    def gold_deposit():
+        print('Request additional security while processing transaction ...')
+        print('Requesting approval from branch manager ....')
+        print('Request approved')
+        approve = True
+        if approve:
+            print('{} amount has been deposited to account no : {}'.format(amount, accNo))
+
+    # Main business logic
+    print('------------'*5)
+
+    if amount < 1_00_000:
+        bronze_deposit()
+    elif amount < 10_00_000:
+        silver_deposit()
+    else:
+        gold_deposit()
+
+    print('------------'*5)
+
+
+deposit(10000, 2652644545)
+deposit(1_20_000, 2652644545)
+deposit(12_20_000, 2652644545)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+------------------------------------------------------------
+10000 amount has been deposited to account no : 2652644545
+------------------------------------------------------------
+------------------------------------------------------------
+Requesting approval from branch manager ....
+Request approved
+120000 amount has been deposited to account no : 2652644545
+------------------------------------------------------------
+------------------------------------------------------------
+Request additional security while processing transaction ...
+Requesting approval from branch manager ....
+Request approved
+1220000 amount has been deposited to account no : 2652644545
+------------------------------------------------------------
+</pre></div>
+
+<hr/>
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Nested Function returning value : </strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+def show_mobiles(budget):
+
+    def entry_level():
+        return "catalogue of Entry Level mobile phones"
+
+    def mid_range():
+        return "catalogue of mid range mobile phones "
+
+    def flagships():
+        return "catalogue of flagship mobile phones"
+
+    #business logic
+    if budget <= 300:
+        return entry_level()
+    elif budget <= 600:
+        return mid_range()
+    else:
+        return flagships()
+
+
+print('show_mobiles(250) :', show_mobiles(250))
+print('show_mobiles(550) :', show_mobiles(550))
+print('show_mobiles(700) :', show_mobiles(700))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+show_mobiles(250) : catalogue of Entry Level mobile phones
+show_mobiles(550) : catalogue of mid range mobile phones 
+show_mobiles(700) : catalogue of flagship mobile phones
+</pre></div>
+
+<hr/>
+
+
+
+#### closure 
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Closure : </strong> is the function which remember the local variable from enclosing scope. </li>
+        <li>  It is also called as Factory function in terms of design pattern. </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+def multiplyx(x):
+
+    def withy(y):
+        return x*y
+
+    return withy   # Returns Closure
+
+
+print(multiplyx(45)(3))
+
+# Another way of calling function : fetching closure
+multiY = multiplyx(45) 
+
+print(multiY(3))
+print(multiY(4))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+135
+135
+180
+</pre></div>
+
+<hr/>
+
+
+
+#### Free Variable 
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Free Variable : </strong> Is a variable used in the code block but not defined in local scope as well as not declared in global scope. </li>
+    </ul> 
+</div>
+
+
+<p> Attributes of function for inspecting free variables </p>
+
+Variable name      |        Definition
+:--- | :---
+  co_freevars         |  tuple containing names of free variable used by the function
+  co_varnames         |  tuple containing names of local variable used by function
+  co_cellvars         |  tuple containing names of local variables referenced by nested inner function.
+
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+def multiplyx(x):
+
+    def withy(y):
+        return x*y
+
+    return withy   # Returns Closure
+
+
+multiY = multiplyx(45)
+
+print('multiY.co_freevars :', multiY.__code__.co_freevars)
+print('multiY.co_varnames :', multiY.__code__.co_varnames)
+print('multiplyx.co_cellvars :', multiplyx.__code__.co_cellvars)
+
+
+# Closer is tuple of Cell(s)
+print('multiY.__closure__ :', multiY.__closure__)
+
+# getting content of the cell
+print('multiY.closure[0].cell_contents :', multiY.__closure__[0].cell_contents)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+multiY.co_freevars : ('x',)
+multiY.co_varnames : ('y',)
+multiplyx.co_cellvars : ('x',)
+multiY.__closure__ : (<cell at 0x7fb20728ad00: int object at 0x55c64a295c80>,)
+multiY.closure[0].cell_contents : 45
+</pre></div>
+
+<hr/>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> Variables and namespaces of outer and inner function </li>
+    </ul> 
+</div>
+
+
+<p> Local variable with same name hides the global variable or variable in enclosing scope. </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+def outer_func():
+    varA = 15
+
+    def inner_func():
+        varA = 25
+        print('Variable A in inner function :', varA)
+
+    inner_func()
+    print('Variable A in outer function :', varA)
+
+
+varA = 5
+
+outer_func()
+
+print('Variable A in global scope :', varA)
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Variable A in inner function : 25
+Variable A in outer function : 15
+Variable A in global scope : 5
+</pre></div>
+
+<hr/>
+
+
+#### nonlocal
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> nonlocal : </strong> Allows free variables to be modified. </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+def outer_func():
+    varA = 15
+
+    def inner_func():
+        nonlocal varA   # define variable as non local
+        varA = 25
+        print('Variable A in inner function', varA)
+
+    inner_func()
+    print('Variable A in outer function', varA)
+
+
+outer_func()
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Variable A in inner function 25
+Variable A in outer function 25
+</pre></div>
+
+<hr/>
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Mutable data type such as list, set can be modified without declaring nonlocal. </strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+def outer_func():
+    varA = [1, 2, 3]
+
+    def inner_func():
+
+        varA[0] = 25
+        print('modifying immutable variable in inner function ', varA)
+
+    print('Variable A in outer function', varA)
+    inner_func()
+    print('varA After calling inner function', varA)
+
+outer_func()
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Variable A in outer function [1, 2, 3]
+modifying immutable variable in inner function  [25, 2, 3]
+varA After calling inner function [25, 2, 3]
+</pre></div>
+
+<hr/>
+
+
+
+### passing function as parameter
+
+<div id="tut-content"> 
+    <ul>
+        <li> Function in python are first class object which can be passed to parameter of a function same as passing other object such as int or str. </li>
+        <li> Functions passed as an argument still remains callable, which can be called inside function which takes it as an argument.</li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+def prime_cust(order):
+    print('processing prime order......')
+    print('Your order will be delivered within 2 days')
+    print(order)
+    print('Your order will be delivered by red express')
+
+
+def reg_cust(order):
+    print('processing regular order......')
+    print('Your order will be delivered within 7 days')
+    print('order :', order)
+    print('Your order will be delivered by purple express')
+
+
+def process_order(custType, order):
+    custType(order)
+
+
+order = {'item': 'headphones', 'color': 'black', 'type': 'wireless'}
+primeCustomer = prime_cust
+regularCustomer = reg_cust
+
+# passing function as an argument
+process_order(primeCustomer, order)
+print('\n')
+process_order(regularCustomer, order)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+processing prime order......
+Your order will be delivered within 2 days
+{'item': 'headphones', 'color': 'black', 'type': 'wireless'}
+Your order will be delivered by red express
+
+
+processing regular order......
+Your order will be delivered within 7 days
+order : {'item': 'headphones', 'color': 'black', 'type': 'wireless'}
+Your order will be delivered by purple express
+</pre></div>
+
+<hr/>
+
+
+
+
+{% include callout.html content="**Note** : For more on function, check **decorators** and **functool** . " type="primary" %} 
 
 {% include links.html %}
