@@ -77,3 +77,10 @@ entries:
       - title: Recursion
         url: /python_recursion.html
         output: web        
+
+  - title: Builtin Data Structures
+    output: web
+    folderitems:
+      - title: List
+        url: /python_list.html
+        output: web

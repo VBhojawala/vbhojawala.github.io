@@ -10,10 +10,10 @@ prev_section_title:
 prev: python_functions.html
 prev_title: Functions
 next: 
-next_title:
-next_section: 
-next_section_title: 
-summary: Recursion :- function calling itself.
+next_title: 
+next_section: python_list.html
+next_section_title: Builtin Data Structures
+summary: Recursion, recursive function , power_xn(), factorial, fibonacci, binary search.
 ---
 
 ## Recursion
