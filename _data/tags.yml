@@ -258,4 +258,10 @@ allowed-tags:
   - free_variable
   - nonlocal
   - function_as_parameter
+  - recursion
+  - recursive_function
+  - power_xn
+  - factorial
+  - fibonacci
+  - binary_search
 

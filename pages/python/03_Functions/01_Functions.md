@@ -9,11 +9,11 @@ prev_section: python_control_flow.html
 prev_section_title: Control Flow
 prev: 
 prev_title: 
-next: 
-next_title:
+next: python_recursion.html
+next_title: Recursion
 next_section: 
 next_section_title: 
-summary: Benefits of functions, Built-in functions, User defined functions.
+summary: Benefits of functions, User defined functions, return statement, functional annotation, variable scopes, local vs global variable, positional and keyword arguments, variable arguments, nested functions, closure etc.
 ---
 
 

@@ -1,0 +1,8 @@
+---
+title: "binary search"
+tagName: binary_search
+search: exclude
+permalink: tag_binary_search.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

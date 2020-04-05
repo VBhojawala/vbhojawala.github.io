@@ -1,0 +1,8 @@
+---
+title: "power xn"
+tagName: power_xn
+search: exclude
+permalink: tag_power_xn.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

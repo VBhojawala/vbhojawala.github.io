@@ -7,40 +7,40 @@ entries:
   folders:
 
   - title: Getting Started
-    output: web, pdf
+    output: web
     folderitems:
       - title: Getting started
         url: /python_getting_started.html
-        output: web, pdf
+        output: web
         type: homepage
 
       - title: Hello World!
         url: /python_hello_world.html
-        output: web, pdf
+        output: web
 
       - title: Variables
         url: /python_variables.html
-        output: web, pdf
+        output: web
 
       - title: Decimal and Fraction
         url: /python_decimal_fraction.html
-        output: web, pdf
+        output: web
 
       - title: String
         url: /python_string.html
-        output: web, pdf
+        output: web
 
       - title: Bytes and ByteArray
         url: /python_bytes_bytearray.html
-        output: web, pdf
+        output: web
 
       - title: DateTime
         url: /python_date_time_datetime.html
-        output: web, pdf
+        output: web
         
       - title: Calendar
         url: /python_calendar.html
-        output: web, pdf
+        output: web
 
         # subfolders:
         # - title: Tag archive pages
@@ -56,22 +56,24 @@ entries:
         #     output: web
 
   - title: ControlFlow and Looping
-    output: web, pdf
+    output: web
     folderitems:
       - title: Control Flow
         url: /python_control_flow.html
-        output: web, pdf
+        output: web
       - title: While Loop
         url: /python_while_loop.html
-        output: web, pdf
+        output: web
       - title: For Loop
         url: /python_for_loop.html
-        output: web, pdf
+        output: web
 
   - title: Functions
-    output: web, pdf
+    output: web
     folderitems:
       - title: Functions
         url: /python_functions.html
-        output: web, pdf
-        
+        output: web
+      - title: Recursion
+        url: /python_recursion.html
+        output: web        
