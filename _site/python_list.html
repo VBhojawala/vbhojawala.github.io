@@ -1347,6 +1347,337 @@ highest : 97  lowest : 35  rest : [91, 84, 78, 71, 66, 65, 59, 55, 54, 45]
 
 <hr />
 
+<h3 id="unpacking-list-as-arguments-of-functions">Unpacking list as arguments of functions</h3>
+
+<div id="code-block-31" class="code-block">
+<p id="code-header-31" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-31", "code-header-31")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">print_todolist</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="n">arg3</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Arg1: {arg1}  Arg2: {arg2} Arg3: {arg3}'</span><span class="p">)</span>
+
+
+<span class="n">todoList</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Learn Python'</span><span class="p">,</span> <span class="s">'Practice HandsOn'</span><span class="p">,</span> <span class="s">'Work on live project'</span><span class="p">]</span>
+
+<span class="n">print_todolist</span><span class="p">(</span><span class="o">*</span><span class="n">todoList</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Arg1: Learn Python  Arg2: Practice HandsOn Arg3: Work on live project
+</pre></div>
+
+<hr />
+
+<h3 id="2d-lists-nested-list">2D lists (Nested list)</h3>
+
+<div id="code-block-32" class="code-block">
+<p id="code-header-32" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-32", "code-header-32")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">mat1</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">mat1</span><span class="p">)</span>
+
+<span class="c1"># Accessing an indexed element
+</span><span class="k">print</span><span class="p">(</span><span class="s">'mat1[0][2] :'</span><span class="p">,</span> <span class="n">mat1</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+mat1[0][2] : 3
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> 2D list where each inner list holds data for a person </li>
+    </ul> 
+</div>
+
+<div id="code-block-33" class="code-block">
+<p id="code-header-33" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-33", "code-header-33")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">persons</span> <span class="o">=</span> <span class="p">[[</span><span class="s">'John'</span><span class="p">,</span> <span class="mi">9978412287</span><span class="p">,</span> <span class="s">'A+'</span><span class="p">],</span> <span class="p">[</span><span class="s">'Victor'</span><span class="p">,</span> <span class="mi">7852122123</span><span class="p">,</span> <span class="s">'O+'</span><span class="p">],</span>
+           <span class="p">[</span><span class="s">'Kelly'</span><span class="p">,</span> <span class="mi">8845454454</span><span class="p">,</span> <span class="s">'B-'</span><span class="p">],</span> <span class="p">[</span><span class="s">'Sam'</span><span class="p">,</span> <span class="mi">7665415445</span><span class="p">,</span> <span class="s">'B+'</span><span class="p">],</span>
+           <span class="p">[</span><span class="s">'Jane'</span><span class="p">,</span> <span class="mi">7984546721</span><span class="p">,</span> <span class="s">'A-'</span><span class="p">]]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">persons</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">Person at index 2 :'</span><span class="p">,</span> <span class="n">persons</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Person at index 4 :'</span><span class="p">,</span> <span class="n">persons</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+[['John', 9978412287, 'A+'], ['Victor', 7852122123, 'O+'], ['Kelly', 8845454454, 'B-'], ['Sam', 7665415445, 'B+'], ['Jane', 7984546721, 'A-']]
+
+Person at index 2 : ['Kelly', 8845454454, 'B-']
+Person at index 4 : ['Jane', 7984546721, 'A-']
+</pre></div>
+
+<hr />
+
+<h3 id="3d-lists">3D lists</h3>
+
+<p> In Python list each elements holds pointer to an object in memory. Depending on the type of object we can index it further. When index is accessed object at stored memory address is accessed, when chaining indexing next index is invoked on returned object.  </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>3D list with variable dimensions</strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-34" class="code-block">
+<p id="code-header-34" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-34", "code-header-34")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">mat2</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]]</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'mat2[0][1][2] : '</span><span class="p">,</span> <span class="n">mat2</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+mat2[0][1][2] :  4
+</pre></div>
+
+<hr />
+
+<h3 id="list-comprehension">List Comprehension</h3>
+
+<p> Performs faster than normal for loop. </p>
+
+<h4 id="syntax">Syntax</h4>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> [expr for item in iterator [if expr] ] </strong> </li>
+    </ul> 
+</div>
+
+<hr />
+
+<h4 id="examples">Examples</h4>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Creating list of 1 to 10 </strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-35" class="code-block">
+<p id="code-header-35" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-35", "code-header-35")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">intList</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">intList</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Extracting person name from list of persons data </strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-36" class="code-block">
+<p id="code-header-36" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-36", "code-header-36")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">persons</span> <span class="o">=</span> <span class="p">[[</span><span class="s">'John'</span><span class="p">,</span> <span class="mi">9978412287</span><span class="p">,</span> <span class="s">'A+'</span><span class="p">],</span> <span class="p">[</span><span class="s">'Victor'</span><span class="p">,</span> <span class="mi">7852122123</span><span class="p">,</span> <span class="s">'O+'</span><span class="p">],</span>
+           <span class="p">[</span><span class="s">'Kelly'</span><span class="p">,</span> <span class="mi">8845454454</span><span class="p">,</span> <span class="s">'B-'</span><span class="p">],</span> <span class="p">[</span><span class="s">'Sam'</span><span class="p">,</span> <span class="mi">7665415445</span><span class="p">,</span> <span class="s">'B+'</span><span class="p">],</span>
+           <span class="p">[</span><span class="s">'Jane'</span><span class="p">,</span> <span class="mi">7984546721</span><span class="p">,</span> <span class="s">'A-'</span><span class="p">]]</span>
+
+<span class="n">perNames</span> <span class="o">=</span> <span class="p">[</span><span class="n">person</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">persons</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">perNames</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+['John', 'Victor', 'Kelly', 'Sam', 'Jane']
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Creating list of squares from 1 to 10 </strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-37" class="code-block">
+<p id="code-header-37" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-37", "code-header-37")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">intList</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">intList</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Using two nested for loops </strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-38" class="code-block">
+<p id="code-header-38" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-38", "code-header-38")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">intList</span> <span class="o">=</span> <span class="p">[[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">)]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">intList</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+[[1, 4], [1, 5], [1, 6], [2, 4], [2, 5], [2, 6]]
+</pre></div>
+
+<hr />
+
+<div class="bs-callout bs-callout-primary"><strong>Note</strong> : You can even use more than 2 nested for loop in list comprehension there is no such restrictions. </div>
+
+<div id="code-block-39" class="code-block">
+<p id="code-header-39" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-39", "code-header-39")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">intList</span> <span class="o">=</span> <span class="p">[[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span> <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">11</span><span class="p">)]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">intList</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+[[1, 4, 8], [1, 4, 9], [1, 4, 10], [1, 5, 8], [1, 5, 9], [1, 5, 10], [1, 6, 8], [1, 6, 9], [1, 6, 10], [2, 4, 8], [2, 4, 9], [2, 4, 10], [2, 5, 8], [2, 5, 9], [2, 5, 10], [2, 6, 8], [2, 6, 9], [2, 6, 10]]
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Iterating through 2d array </strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-40" class="code-block">
+<p id="code-header-40" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-40", "code-header-40")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">arr1</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]]</span>
+
+<span class="k">print</span><span class="p">([</span><span class="n">col</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">arr1</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">row</span><span class="p">])</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+[1, 2, 3, 4, 5, 6, 7, 8, 9]
+</pre></div>
+
+<hr />
+
+<h4 id="filtering">Filtering</h4>
+
+<p> With use of if &lt;&amp;zwjexpr&amp;zwj&gt; inside for loop we can filter the elements. Only elements which is evaluated as True by given expression becomes the part of result list.  </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Filtering only even Number from number 1 to 10 </strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-41" class="code-block">
+<p id="code-header-41" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-41", "code-header-41")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">intList</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">intList</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+[2, 4, 6, 8, 10]
+</pre></div>
+
+<hr />
+
+<h4 id="applying-function">Applying function</h4>
+
+<div id="code-block-42" class="code-block">
+<p id="code-header-42" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-42", "code-header-42")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">todoList</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Learn Python'</span><span class="p">,</span> <span class="s">'Practice HandsOn'</span><span class="p">,</span> <span class="s">'Work on live project'</span><span class="p">]</span>
+<span class="n">todoListUpper</span> <span class="o">=</span> <span class="p">[</span><span class="n">todo</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="k">for</span> <span class="n">todo</span> <span class="ow">in</span> <span class="n">todoList</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">todoListUpper</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+['LEARN PYTHON', 'PRACTICE HANDSON', 'WORK ON LIVE PROJECT']
+</pre></div>
+
+<hr />
+
+<h4 id="type-conversion">Type conversion</h4>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Converting list of str object to list of int objects.</strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-43" class="code-block">
+<p id="code-header-43" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-43", "code-header-43")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">intString</span> <span class="o">=</span> <span class="p">[</span><span class="s">'12'</span><span class="p">,</span> <span class="s">'23'</span><span class="p">,</span> <span class="s">'43'</span><span class="p">,</span> <span class="s">'63'</span><span class="p">,</span> <span class="s">'87'</span><span class="p">]</span>
+<span class="n">intList</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">intString</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'intString :'</span><span class="p">,</span> <span class="n">intString</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'intList   :'</span><span class="p">,</span> <span class="n">intList</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+intString : ['12', '23', '43', '63', '87']
+intList   : [12, 23, 43, 63, 87]
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Flattening the list   </strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-44" class="code-block">
+<p id="code-header-44" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-44", "code-header-44")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">numList</span> <span class="o">=</span> <span class="p">[[</span><span class="s">'One'</span><span class="p">,</span> <span class="s">'Two'</span><span class="p">,</span> <span class="s">'Three'</span><span class="p">],</span> <span class="p">[</span><span class="s">'Four'</span><span class="p">,</span> <span class="s">'Five'</span><span class="p">,</span> <span class="s">'Six'</span><span class="p">],</span> <span class="p">[</span><span class="s">'Seven'</span><span class="p">]]</span>
+<span class="n">numListFlat</span> <span class="o">=</span> <span class="p">[</span><span class="n">num</span> <span class="k">for</span> <span class="n">slist</span> <span class="ow">in</span> <span class="n">numList</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">slist</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">numListFlat</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+['One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven']
+</pre></div>
+
+<hr />
+
 
 
     <div class="tags">

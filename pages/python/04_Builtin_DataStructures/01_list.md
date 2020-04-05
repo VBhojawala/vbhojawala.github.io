@@ -1034,5 +1034,448 @@ print(d)
 <hr/>
 
 
+### Unpacking list as arguments of functions
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+
+def print_todolist(arg1, arg2, arg3):
+    print(f'Arg1: {arg1}  Arg2: {arg2} Arg3: {arg3}')
+
+
+todoList = ['Learn Python', 'Practice HandsOn', 'Work on live project']
+
+print_todolist(*todoList)
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Arg1: Learn Python  Arg2: Practice HandsOn Arg3: Work on live project
+</pre></div>
+
+<hr/>
+
+
+
+### 2D lists (Nested list)
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+mat1 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+print(mat1)
+
+# Accessing an indexed element
+print('mat1[0][2] :', mat1[0][2])
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+mat1[0][2] : 3
+</pre></div>
+
+<hr/>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> 2D list where each inner list holds data for a person </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+persons = [['John', 9978412287, 'A+'], ['Victor', 7852122123, 'O+'],
+           ['Kelly', 8845454454, 'B-'], ['Sam', 7665415445, 'B+'],
+           ['Jane', 7984546721, 'A-']]
+
+print(persons)
+print('\nPerson at index 2 :', persons[2])
+print('Person at index 4 :', persons[4])
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+[['John', 9978412287, 'A+'], ['Victor', 7852122123, 'O+'], ['Kelly', 8845454454, 'B-'], ['Sam', 7665415445, 'B+'], ['Jane', 7984546721, 'A-']]
+
+Person at index 2 : ['Kelly', 8845454454, 'B-']
+Person at index 4 : ['Jane', 7984546721, 'A-']
+</pre></div>
+
+<hr/>
+
+
+
+### 3D lists
+
+<p> In Python list each elements holds pointer to an object in memory. Depending on the type of object we can index it further. When index is accessed object at stored memory address is accessed, when chaining indexing next index is invoked on returned object.  </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>3D list with variable dimensions</strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+mat2 = [[1, [2, 3, 4], 3], [4, 5, 6], [7, 8, 9]]
+print('mat2[0][1][2] : ', mat2[0][1][2])
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+mat2[0][1][2] :  4
+</pre></div>
+
+<hr/>
+
+
+
+### List Comprehension
+
+<p> Performs faster than normal for loop. </p>
+
+#### Syntax
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> [expr for item in iterator [if expr] ] </strong> </li>
+    </ul> 
+</div>
+
+<hr/>
+
+
+
+
+#### Examples
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Creating list of 1 to 10 </strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+intList = [i for i in range(1, 11)]
+print(intList)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+</pre></div>
+
+<hr/>
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Extracting person name from list of persons data </strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+persons = [['John', 9978412287, 'A+'], ['Victor', 7852122123, 'O+'],
+           ['Kelly', 8845454454, 'B-'], ['Sam', 7665415445, 'B+'],
+           ['Jane', 7984546721, 'A-']]
+
+perNames = [person[0] for person in persons]
+print(perNames)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+['John', 'Victor', 'Kelly', 'Sam', 'Jane']
+</pre></div>
+
+<hr/>
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Creating list of squares from 1 to 10 </strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+intList = [i * i for i in range(1, 11)]
+print(intList)
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+</pre></div>
+
+<hr/>
+
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Using two nested for loops </strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+intList = [[x, y] for x in range(1, 3) for y in range(4, 7)]
+print(intList)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+[[1, 4], [1, 5], [1, 6], [2, 4], [2, 5], [2, 6]]
+</pre></div>
+
+<hr/>
+
+
+
+
+{% include callout.html content="**Note** : You can even use more than 2 nested for loop in list comprehension there is no such restrictions. " type="primary" %} 
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+intList = [[x, y, z] for x in range(1, 3) for y in range(4, 7) for z in range(8, 11)]
+print(intList)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+[[1, 4, 8], [1, 4, 9], [1, 4, 10], [1, 5, 8], [1, 5, 9], [1, 5, 10], [1, 6, 8], [1, 6, 9], [1, 6, 10], [2, 4, 8], [2, 4, 9], [2, 4, 10], [2, 5, 8], [2, 5, 9], [2, 5, 10], [2, 6, 8], [2, 6, 9], [2, 6, 10]]
+</pre></div>
+
+<hr/>
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Iterating through 2d array </strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+arr1 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+print([col for row in arr1 for col in row])
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+[1, 2, 3, 4, 5, 6, 7, 8, 9]
+</pre></div>
+
+<hr/>
+
+
+
+#### Filtering
+
+<p> With use of if <&zwjexpr&zwj> inside for loop we can filter the elements. Only elements which is evaluated as True by given expression becomes the part of result list.  </p>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Filtering only even Number from number 1 to 10 </strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+intList = [i for i in range(1, 11) if i % 2 == 0]
+print(intList)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+[2, 4, 6, 8, 10]
+</pre></div>
+
+<hr/>
+
+
+#### Applying function
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+todoList = ['Learn Python', 'Practice HandsOn', 'Work on live project']
+todoListUpper = [todo.upper() for todo in todoList]
+print(todoListUpper)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+['LEARN PYTHON', 'PRACTICE HANDSON', 'WORK ON LIVE PROJECT']
+</pre></div>
+
+<hr/>
+
+
+#### Type conversion
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Converting list of str object to list of int objects.</strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+intString = ['12', '23', '43', '63', '87']
+intList = [int(s) for s in intString]
+print('intString :', intString)
+print('intList   :', intList)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+intString : ['12', '23', '43', '63', '87']
+intList   : [12, 23, 43, 63, 87]
+</pre></div>
+
+<hr/>
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Flattening the list   </strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+numList = [['One', 'Two', 'Three'], ['Four', 'Five', 'Six'], ['Seven']]
+numListFlat = [num for slist in numList for num in slist]
+print(numListFlat)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+['One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven']
+</pre></div>
+
+<hr/>
+
 
 {% include links.html %}
