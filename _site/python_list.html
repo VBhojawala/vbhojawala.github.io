@@ -560,6 +560,14 @@ $('#toc').on('click', 'a', function() {
 
    <h2 id="list">List</h2>
 
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Mutable Data type</strong> </li>
+        <li> <strong>Indexed</strong> </li>
+        <li> <strong>Can have duplicate values</strong> </li>
+    </ul> 
+</div>
+
 <h3 id="storing-group-of-values-in-multiple-variables">Storing group of values in multiple variables</h3>
 
 <div id="tut-content"> 
@@ -610,10 +618,11 @@ Following are the list of flower available for orders :
 <p id="code-header-2" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-2", "code-header-2")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers1</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">flowers1</span><span class="p">)</span>
 <span class="c1"># Or
 </span><span class="n">flowers1</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
-
 <span class="k">print</span><span class="p">(</span><span class="n">flowers1</span><span class="p">)</span>
+
 
 <span class="c1"># Creating list with elements
 </span><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
@@ -624,6 +633,7 @@ Following are the list of flower available for orders :
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
+[]
 []
 ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
 </pre></div>
@@ -722,18 +732,18 @@ IndexError: list index out of range</pre></div>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">'Flower at index 5 -&gt; '</span><span class="p">,</span> <span class="n">flowers</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Flower at index 5 -&gt; '</span><span class="p">,</span> <span class="n">flowers</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="nb">id</span><span class="p">(</span><span class="n">flowers</span><span class="p">[</span><span class="mi">5</span><span class="p">]))</span>
 <span class="n">flowers</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="s">'Aster'</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'After changing ...'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'Flower at index 5 -&gt; '</span><span class="p">,</span> <span class="n">flowers</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">'Flower at index 5 -&gt; '</span><span class="p">,</span> <span class="n">flowers</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="nb">id</span><span class="p">(</span><span class="n">flowers</span><span class="p">[</span><span class="mi">5</span><span class="p">]))</span></code></pre></figure>
 
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-Flower at index 5 -&gt;  Tulips
+Flower at index 5 -&gt;  Tulips 139935278588528
 After changing ...
-Flower at index 5 -&gt;  Aster
+Flower at index 5 -&gt;  Aster 139935278628208
 </pre></div>
 
 <hr />
@@ -783,16 +793,16 @@ flowers[-1:-4:-1] : ['Tulips', 'Lavender', 'Rose']
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">flowers</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">flowers</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">flowers</span><span class="p">))</span>
 <span class="n">flowers</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Aster'</span><span class="p">,</span> <span class="s">'Calendula'</span><span class="p">]</span>
-<span class="k">print</span><span class="p">(</span><span class="n">flowers</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="n">flowers</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">flowers</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
-['Lotus', 'Aster', 'Calendula', 'Rose', 'Lavender', 'Tulips']
+['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips'] 139935314214464
+['Lotus', 'Aster', 'Calendula', 'Rose', 'Lavender', 'Tulips'] 139935314214464
 </pre></div>
 
 <hr />
@@ -1674,6 +1684,263 @@ intList   : [12, 23, 43, 63, 87]
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
 ['One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven']
+</pre></div>
+
+<hr />
+
+<h3 id="functions">Functions</h3>
+
+<p> Because list is a mutable data type any function on list will modify the list. </p>
+
+<h4 id="appendobj">append(obj)</h4>
+
+<p> Adds an element to the end of the list. </p>
+
+<div id="code-block-45" class="code-block">
+<p id="code-header-45" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-45", "code-header-45")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'flowers before :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span>
+<span class="n">flowers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">'Aster'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'flowers after :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+flowers before : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+flowers after : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips', 'Aster']
+</pre></div>
+
+<hr />
+
+<h4 id="insertindexelement">insert(index,element)</h4>
+
+<p> Inserts an element at given index. </p>
+
+<div id="code-block-46" class="code-block">
+<p id="code-header-46" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-46", "code-header-46")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'flowers before :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span>
+<span class="n">flowers</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">'Orchids'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'flowers after :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+flowers before : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+flowers after : ['Lotus', 'Orchids', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Insert multiple elements at particular index </strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-47" class="code-block">
+<p id="code-header-47" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-47", "code-header-47")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
+<span class="n">moreFlowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Calendula'</span><span class="p">,</span> <span class="s">'Bougainvillea'</span><span class="p">,</span> <span class="s">'Peony'</span><span class="p">,</span> <span class="s">'Dahlia'</span><span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'flowers before :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span>
+<span class="n">flowers</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">moreFlowers</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'flowers after :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+flowers before : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+flowers after : ['Lotus', 'Lily', 'Calendula', 'Bougainvillea', 'Peony', 'Dahlia', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+</pre></div>
+
+<hr />
+
+<h4 id="removeelement">remove(element)</h4>
+
+<p> Removes the particular element from the list. </p>
+
+<div id="code-block-48" class="code-block">
+<p id="code-header-48" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-48", "code-header-48")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'flowers before :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span>
+<span class="n">flowers</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s">'Jasmine'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'flowers after :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+flowers before : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+flowers after : ['Lotus', 'Lily', 'Rose', 'Lavender', 'Tulips']
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> It raises ValueError if given element does not exists in list.</strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-49" class="code-block">
+<p id="code-header-49" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-49", "code-header-49")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
+<span class="n">flowers</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s">'Aster'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre id="tut-output-error" class="result-content">Traceback (most recent call last):
+  File "&lt;&zwj;input&zwj;&gt;", line 2, in &lt;&zwj;module&zwj;&gt;
+ValueError: list.remove(x): x not in list</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> If list contains duplicate items , it will remove only first occurrence of given element.</strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-50" class="code-block">
+<p id="code-header-50" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-50", "code-header-50")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'flowers before :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span>
+<span class="n">flowers</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s">'Lily'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'flowers after :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+flowers before : ['Lotus', 'Lily', 'Jasmine', 'Lily', 'Lavender', 'Lily']
+flowers after : ['Lotus', 'Jasmine', 'Lily', 'Lavender', 'Lily']
+</pre></div>
+
+<hr />
+
+<h4 id="del">del</h4>
+
+<p> Removes element at given index. </p>
+
+<div id="code-block-51" class="code-block">
+<p id="code-header-51" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-51", "code-header-51")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'flowers before :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span>
+<span class="k">del</span> <span class="n">flowers</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'flowers after :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+flowers before : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+flowers after : ['Lotus', 'Lily', 'Rose', 'Lavender', 'Tulips']
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> del with slice : Removes slice of list [Recommended way] </strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-52" class="code-block">
+<p id="code-header-52" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-52", "code-header-52")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'flowers before :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span>
+<span class="k">del</span> <span class="n">flowers</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'flowers after :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+flowers before : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+flowers after : ['Lotus', 'Rose', 'Lavender', 'Tulips']
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Replacing slice with empty list </strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-53" class="code-block">
+<p id="code-header-53" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-53", "code-header-53")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'flowers before :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span>
+<span class="n">flowers</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'flowers after :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+flowers before : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+flowers after : ['Lotus', 'Rose', 'Lavender', 'Tulips']
+</pre></div>
+
+<hr />
+
+<h4 id="countelement">count(element)</h4>
+
+<p> Returns no of times an element is in the list. </p>
+
+<div id="code-block-54" class="code-block">
+<p id="code-header-54" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-54", "code-header-54")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"'Lily' count is :"</span><span class="p">,</span> <span class="n">flowers</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s">'Lily'</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+'Lily' count is : 3
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> It returns 0 if given element does not exists in list </strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-55" class="code-block">
+<p id="code-header-55" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-55", "code-header-55")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"'Poppy' count is :"</span><span class="p">,</span> <span class="n">flowers</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s">'Poppy'</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+'Poppy' count is : 0
 </pre></div>
 
 <hr />
