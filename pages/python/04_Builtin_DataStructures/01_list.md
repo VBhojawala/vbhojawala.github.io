@@ -1845,4 +1845,977 @@ print("'Poppy' count is :", flowers.count('Poppy'))
 
 
 
+#### extend(iterable)
+
+<p> Appends all elements of given iterable to the current list. </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+flowers = ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+moreFlowers = ['Calendula', 'Bougainvillea', 'Peony', 'Dahlia']
+
+print('flowers before :', flowers, id(flowers))
+flowers.extend(moreFlowers)
+print('flowers after :', flowers, id(flowers))
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+flowers before : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips'] 139935278629824
+flowers after : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips', 'Calendula', 'Bougainvillea', 'Peony', 'Dahlia'] 139935278629824
+</pre></div>
+
+<hr/>
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>extending using shorthand '+' : </strong> Here we need to assign it to variable in order to reflect changes. </li>
+    </ul> 
+</div>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+flowers = ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+moreFlowers = ['Calendula', 'Bougainvillea', 'Peony', 'Dahlia']
+
+print('flowers before :', flowers, id(flowers))
+flowers += moreFlowers
+print('flowers after :', flowers, id(flowers))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+flowers before : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips'] <div id="tut-highlight">139935278628928</div>
+flowers after : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips', 'Calendula', 'Bougainvillea', 'Peony', 'Dahlia'] <div id="tut-highlight">139935278628928</div>
+</pre></div>
+
+<hr/>
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>extending using  '+' : </strong> extending list using operator '+' will return a new list which contains combined elements of both lists. </li>
+    </ul> 
+</div>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+flowers = ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+moreFlowers = ['Calendula', 'Bougainvillea', 'Peony', 'Dahlia']
+
+print('flowers before :', flowers, id(flowers))
+flowers = flowers + moreFlowers
+print('flowers after :', flowers, id(flowers))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+flowers before : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']<div id="tut-highlight">139935278625344</div>
+flowers after : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips', 'Calendula', 'Bougainvillea', 'Peony', 'Dahlia']<div id="tut-highlight">139935278629952</div>
+</pre></div>
+
+<hr/>
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Assigning list variable to a variable : </strong> Both variables will points to same memory location (same object in memory), modification made to the list using one of variable instantly visible to other variable. </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+flowers = ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+
+copyFlowers = flowers
+flowers.append('Sunflower')
+
+print('flowers', flowers, id(flowers))
+print('copyFlowers', copyFlowers, id(copyFlowers))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+flowers ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips', 'Sunflower'] 139935376900928
+copyFlowers ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips', 'Sunflower'] 139935376900928
+
+</pre></div>
+
+<hr/>
+
+
+
+#### pop([index])
+
+<p> If optional argument index is not given removes and returns  the last element from the list. </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+flowers = ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+print('flowers before :', flowers)
+print('Element popped -> ', flowers.pop())
+print('flowers after :', flowers)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+flowers before : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+Element popped ->  Tulips
+flowers after : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender']
+</pre></div>
+
+<hr/>
+
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>If optional argument index is  given, removes and returns an element at particular index.</strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+flowers = ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+
+print('flowers before :', flowers)
+print('flowers.pop(0) -> ', flowers.pop(0))
+print('flowers after :', flowers)
+
+print('\n\nflowers before :', flowers)
+print('flowers.pop(3) -> ', flowers.pop(3))
+print('flowers after :', flowers)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+flowers before : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+flowers.pop(0) ->  Lotus
+flowers after : ['Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+
+
+flowers before : ['Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+flowers.pop(3) ->  Lavender
+flowers after : ['Lily', 'Jasmine', 'Rose', 'Tulips']
+</pre></div>
+
+<hr/>
+
+
+
+#### index(element)
+
+<p> Search for given element in list and returns index of element. If the list have duplicate elements it will return index of first occurrence of an element.</p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+flowers = ['Lotus', 'Rose', 'Jasmine', 'Lily', 'Lavender', 'Tulips']
+print(flowers)
+print("index('Lily') :", flowers.index('Lily'))
+
+flowers = ['Lotus', 'Lily', 'Jasmine', 'Lily', 'Lavender', 'Tulips']
+print(flowers)
+print("index('Lily') :", flowers.index('Lily'))
+
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+['Lotus', 'Rose', 'Jasmine', 'Lily', 'Lavender', 'Tulips']
+index('Lily') : 3
+['Lotus', 'Lily', 'Jasmine', 'Lily', 'Lavender', 'Tulips']
+index('Lily') : 1
+</pre></div>
+
+<hr/>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> It will raise ValueError if element not found in the list.</strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+flowers = ['Lotus', 'Lily', 'Jasmine', 'Lily', 'Lavender', 'Tulips']
+print(flowers)
+print("index('Rose') :", flowers.index('Rose'))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+['Lotus', 'Lily', 'Jasmine', 'Lily', 'Lavender', 'Tulips']
+</pre><pre id='tut-output-error' class="result-content">Traceback (most recent call last):
+  File "<&zwj;input&zwj;>", line 3, in <&zwj;module&zwj;>
+ValueError: 'Rose' is not in list</pre></div>
+
+<hr/>
+
+
+
+#### sort(key = none, reverse = False)
+
+<p> sorts elements of list in ascending order.</p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>key : </strong> By default set to None will sort list in default order defined by class. If given key as callable it will sort list based on value returned by given callable. </li>
+        <li> <strong>reverse : </strong> By default set to False will sort in ascending order. If given True it will sort list in descending order. </li>
+    </ul> 
+</div>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+flowers = ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+print('Default :', flowers)
+flowers.sort()
+print('Sorted  :', flowers)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Default : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+Sorted  : ['Jasmine', 'Lavender', 'Lily', 'Lotus', 'Rose', 'Tulips']
+</pre></div>
+
+<hr/>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>sorting with key : </strong>sorting based on length of the elements </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+flowers = ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+print('Default        :', flowers)
+flowers.sort(key=len)
+print('Sorted by len  :', flowers)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Default        : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+Sorted by len  : ['Lily', 'Rose', 'Lotus', 'Tulips', 'Jasmine', 'Lavender']
+</pre></div>
+
+<hr/>
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Case insensitive sort </strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+flowers = ['Lotus', 'Lily', 'jasmine', 'Rose', 'Lavender', 'tulips','lily']
+print('Default                 :', flowers)
+flowers.sort(key=str.lower)
+print('Sorted case insensitive :', flowers)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Default                 : ['Lotus', 'Lily', 'jasmine', 'Rose', 'Lavender', 'tulips', 'lily']
+Sorted case insensitive : ['jasmine', 'Lavender', 'Lily', 'lily', 'Lotus', 'Rose', 'tulips']
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+
+
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>sorting in descending order </strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+flowers = ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+print('Default         :', flowers)
+flowers.sort(reverse=True)
+print('Reverse Sorted  :', flowers)
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Default         : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+Reverse Sorted  : ['Tulips', 'Rose', 'Lotus', 'Lily', 'Lavender', 'Jasmine']
+</pre></div>
+
+<hr/>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Sorting 2D list</strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+pointList = [[45, 12], [12, 22], [47, 25], [23, 10]]
+
+print('Default :', pointList)
+pointList.sort()
+print('Sorted  :', pointList)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Default : [[45, 12], [12, 22], [47, 25], [23, 10]]
+Sorted  : [[12, 22], [23, 10], [45, 12], [47, 25]]
+</pre></div>
+
+<hr/>
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Sorting 2D list by particular index of inner list.</strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+studentList = [['John', 101, 'O+'], ['Victor', 105, 'A-'], ['Kelly', 103, 'B+'], ['Sam', 102, 'A+'],
+               ['Jane', 104, 'B+']]
+
+# sorting list of students by roll number
+from operator import itemgetter
+
+print('Default :', studentList)
+studentList.sort(key=itemgetter(1))
+print('Sorted  :', studentList)
+
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Default : [['John', 101, 'O+'], ['Victor', 105, 'A-'], ['Kelly', 103, 'B+'], ['Sam', 102, 'A+'], ['Jane', 104, 'B+']]
+Sorted  : [['John', 101, 'O+'], ['Sam', 102, 'A+'], ['Kelly', 103, 'B+'], ['Jane', 104, 'B+'], ['Victor', 105, 'A-']]
+</pre></div>
+
+<hr/>
+
+
+#### min(iterable)
+
+<p> For numeric list only, it returns element which is having minimum value. </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+numList = [155, 125, 741, 859, 914, 152, 654, 425, 351, 254]
+print('Minimum :', min(numList))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Minimum : 125
+</pre></div>
+
+<hr/>
+
+
+
+#### max(iterable)
+
+<p> For numeric list only, it returns element which is having maximum value. </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+numList = [155, 125, 741, 859, 914, 152, 654, 425, 351, 254]
+print('Maximum :', max(numList))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Maximum : 914
+</pre></div>
+
+<hr/>
+
+
+
+#### copy()
+
+<p> Returns shallow copy of the list </p>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Shallow copy : </strong> Creates new list and copy references from original list. </li>
+        <li> <strong> Deep copy : </strong> Creates new list and recursively creates copy of elements. </li>
+    </ul> 
+</div>
+
+<hr/>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> copy () on immutable elements of list </strong> </li>
+    </ul> 
+</div>
+
+<p> Here making changes to copy of the original list does not affect the original list. </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+flowers = ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+
+copyFlowers = flowers.copy()
+
+flowers.remove('Lotus')
+
+print('flowers :', flowers)
+print('copyFlowers :', copyFlowers)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+flowers : ['Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+copyFlowers : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+</pre></div>
+
+<hr/>
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> copy () on mutable elements of list </strong> </li>
+    </ul> 
+</div>
+
+<p> Here making changes to copy of the original list affects the original list, because we object type is mutable and only references of object is copied. </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+flowers = ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+moreFlowers = ['Calendula', 'Bougainvillea', 'Peony', 'Dahlia']
+someMoreFlowers = ['Hibiscus', 'Sunflower', 'Lilac', 'Pansy', 'Ixora']
+flowersList = [flowers, moreFlowers, someMoreFlowers]
+
+
+copyFlowerList = flowersList.copy()
+
+print('Original List Before Removal --> ', flowersList)
+
+copyFlowerList[0].remove('Rose')
+
+print('Original List After Removal --> ', flowersList)
+print('Copy List After Removal --> ', copyFlowerList)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Original List Before Removal -->  [['Lotus', 'Lily', 'Jasmine', <div id="tut-highlight">'Rose'</div>, 'Lavender', 'Tulips'], ['Calendula', 'Bougainvillea', 'Peony', 'Dahlia'], ['Hibiscus', 'Sunflower', 'Lilac', 'Pansy', 'Ixora']]
+Original List After Removal -->  [['Lotus', 'Lily', 'Jasmine', 'Lavender', 'Tulips'], ['Calendula', 'Bougainvillea', 'Peony', 'Dahlia'], ['Hibiscus', 'Sunflower', 'Lilac', 'Pansy', 'Ixora']]
+Copy List After Removal -->  [['Lotus', 'Lily', 'Jasmine', 'Lavender', 'Tulips'], ['Calendula', 'Bougainvillea', 'Peony', 'Dahlia'], ['Hibiscus', 'Sunflower', 'Lilac', 'Pansy', 'Ixora']]
+</pre></div>
+
+<hr/>
+
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Copy lists (Shallow copy) using slicing : </strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+secondcopy = flowers[:]
+flowers = ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+print(secondcopy)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+['Lotus', 'Lily', 'Jasmine', 'Lavender', 'Tulips']
+</pre></div>
+
+<hr/>
+
+
+
+#### deepcopy() 
+
+<p> copies object recursively rather than copying memory reference to objects. </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import copy
+flowers = ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+moreFlowers = ['Calendula', 'Bougainvillea', 'Peony', 'Dahlia']
+someMoreFlowers = ['Hibiscus', 'Sunflower', 'Lilac', 'Pansy', 'Ixora']
+flowersList = [flowers, moreFlowers, someMoreFlowers]
+
+
+copyFlowerList = copy.deepcopy(flowersList)
+
+print('Original List Before Removal --> ', flowersList)
+
+copyFlowerList[0].remove('Rose')
+
+print('Original List After Removal --> ', flowersList)
+print('Copy List After Removal --> ', copyFlowerList)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Original List Before Removal -->  [['Lotus', 'Lily', 'Jasmine',  <div id="tut-highlight">'Rose'</div>, 'Lavender', 'Tulips'], ['Calendula', 'Bougainvillea', 'Peony', 'Dahlia'], ['Hibiscus', 'Sunflower', 'Lilac', 'Pansy', 'Ixora']]
+Original List After Removal -->  [['Lotus', 'Lily', 'Jasmine',  <div id="tut-highlight">'Rose'</div>, 'Lavender', 'Tulips'], ['Calendula', 'Bougainvillea', 'Peony', 'Dahlia'], ['Hibiscus', 'Sunflower', 'Lilac', 'Pansy', 'Ixora']]
+Copy List After Removal -->  [['Lotus', 'Lily', 'Jasmine', 'Lavender', 'Tulips'], ['Calendula', 'Bougainvillea', 'Peony', 'Dahlia'], ['Hibiscus', 'Sunflower', 'Lilac', 'Pansy', 'Ixora']]
+</pre></div>
+
+<hr/>
+
+
+
+
+#### reverse()
+
+<p>  Reverse the elements of list. </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+flowers = ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+
+print('Original list :', flowers)
+flowers.reverse()
+print('Reversed list :', flowers)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Original list : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+Reversed list : ['Tulips', 'Lavender', 'Rose', 'Jasmine', 'Lily', 'Lotus']
+
+</pre></div>
+
+<hr/>
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Reverse list using slice</strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+flowers = ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+
+print('Original list :', flowers)
+flowers = flowers[::-1]
+print('Reversed list :', flowers)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Original list : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+Reversed list : ['Tulips', 'Lavender', 'Rose', 'Jasmine', 'Lily', 'Lotus']
+</pre></div>
+
+<hr/>
+
+
+
+
+
+#### clear()
+
+<p> Removes all elements from the list. </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+flowers = ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+print('Original list :', flowers)
+
+flowers.clear()
+
+print('Cleared list :', flowers)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Original list : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+Cleared list : []
+</pre></div>
+
+<hr/>
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Clear using slice</strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+flowers = ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+print('Original list :', flowers)
+
+flowers[:] = []
+
+print('Cleared list :', flowers)
+
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Original list : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+Cleared list : []
+</pre></div>
+
+<hr/>
+
+
+### List to String
+
+#### join()
+
+<p> Joins collection of string into single string with provided separator. </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+flowers = ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+ch = ','
+
+flowersString = ch.join(flowers)
+print(flowersString)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Lotus,Lily,Jasmine,Rose,Lavender,Tulips
+</pre></div>
+
+<hr/>
+
+
+### String to List
+
+#### split(sep=None, maxsplit=-1)
+
+<p> Splits the string in to collection (list) of strings using given separator. </p>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>maxsplit : </strong> If optional argument 'maxsplit' given, limits the no of splits to be made using given separator. </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+flowersString = 'Lotus,Lily,Jasmine,Rose,Lavender,Tulips'
+flowerList = flowersString.split(',')
+print(flowerList)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+</pre></div>
+
+<hr/>
+
+
+### List variable Assignment 
+
+<p> Variable pointing to a list object can be assign to another variable, which will copy the memory address of list object. At later point if reference to original variable changes it will not affect reference assigned to other variable.   </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+flowers = ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+
+copyFlowers = flowers
+
+copyFlowers.remove('Lily')
+print("flowers before :", flowers)
+print("copyFlowers before :", copyFlowers)
+
+flowers = None  # Changing reference of original variable
+
+print("flowers after :", flowers)
+print("copyFlowers after :", copyFlowers)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+flowers before : ['Lotus', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+copyFlowers before : ['Lotus', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+flowers after : None
+copyFlowers after : ['Lotus', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+</pre></div>
+
+<hr/>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Slides</strong> </li>
+    </ul> 
+</div>
+
+<div id='tut-ppt'>
+    <div class="embed-responsive embed-responsive-4by3">
+        <iframe class="embed-responsive-item" src="/docs/python/14_List_Assignment.pdf" allowfullscreen></iframe>
+    </div>
+</div>
+
+
+
 {% include links.html %}

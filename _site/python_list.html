@@ -1945,6 +1945,743 @@ flowers after : ['Lotus', 'Rose', 'Lavender', 'Tulips']
 
 <hr />
 
+<h4 id="extenditerable">extend(iterable)</h4>
+
+<p> Appends all elements of given iterable to the current list. </p>
+
+<div id="code-block-56" class="code-block">
+<p id="code-header-56" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-56", "code-header-56")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
+<span class="n">moreFlowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Calendula'</span><span class="p">,</span> <span class="s">'Bougainvillea'</span><span class="p">,</span> <span class="s">'Peony'</span><span class="p">,</span> <span class="s">'Dahlia'</span><span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'flowers before :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">flowers</span><span class="p">))</span>
+<span class="n">flowers</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">moreFlowers</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'flowers after :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">flowers</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+flowers before : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips'] 139935278629824
+flowers after : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips', 'Calendula', 'Bougainvillea', 'Peony', 'Dahlia'] 139935278629824
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>extending using shorthand '+' : </strong> Here we need to assign it to variable in order to reflect changes. </li>
+    </ul> 
+</div>
+
+<div id="code-block-57" class="code-block">
+<p id="code-header-57" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-57", "code-header-57")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
+<span class="n">moreFlowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Calendula'</span><span class="p">,</span> <span class="s">'Bougainvillea'</span><span class="p">,</span> <span class="s">'Peony'</span><span class="p">,</span> <span class="s">'Dahlia'</span><span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'flowers before :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">flowers</span><span class="p">))</span>
+<span class="n">flowers</span> <span class="o">+=</span> <span class="n">moreFlowers</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'flowers after :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">flowers</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+flowers before : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips'] <div id="tut-highlight">139935278628928</div>
+flowers after : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips', 'Calendula', 'Bougainvillea', 'Peony', 'Dahlia'] <div id="tut-highlight">139935278628928</div>
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>extending using  '+' : </strong> extending list using operator '+' will return a new list which contains combined elements of both lists. </li>
+    </ul> 
+</div>
+
+<div id="code-block-58" class="code-block">
+<p id="code-header-58" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-58", "code-header-58")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
+<span class="n">moreFlowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Calendula'</span><span class="p">,</span> <span class="s">'Bougainvillea'</span><span class="p">,</span> <span class="s">'Peony'</span><span class="p">,</span> <span class="s">'Dahlia'</span><span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'flowers before :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">flowers</span><span class="p">))</span>
+<span class="n">flowers</span> <span class="o">=</span> <span class="n">flowers</span> <span class="o">+</span> <span class="n">moreFlowers</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'flowers after :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">flowers</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+flowers before : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']<div id="tut-highlight">139935278625344</div>
+flowers after : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips', 'Calendula', 'Bougainvillea', 'Peony', 'Dahlia']<div id="tut-highlight">139935278629952</div>
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Assigning list variable to a variable : </strong> Both variables will points to same memory location (same object in memory), modification made to the list using one of variable instantly visible to other variable. </li>
+    </ul> 
+</div>
+
+<div id="code-block-59" class="code-block">
+<p id="code-header-59" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-59", "code-header-59")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
+
+<span class="n">copyFlowers</span> <span class="o">=</span> <span class="n">flowers</span>
+<span class="n">flowers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">'Sunflower'</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'flowers'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">flowers</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'copyFlowers'</span><span class="p">,</span> <span class="n">copyFlowers</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">copyFlowers</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+flowers ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips', 'Sunflower'] 139935376900928
+copyFlowers ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips', 'Sunflower'] 139935376900928
+
+</pre></div>
+
+<hr />
+
+<h4 id="popindex">pop([index])</h4>
+
+<p> If optional argument index is not given removes and returns  the last element from the list. </p>
+
+<div id="code-block-60" class="code-block">
+<p id="code-header-60" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-60", "code-header-60")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'flowers before :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Element popped -&gt; '</span><span class="p">,</span> <span class="n">flowers</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'flowers after :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+flowers before : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+Element popped -&gt;  Tulips
+flowers after : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender']
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>If optional argument index is  given, removes and returns an element at particular index.</strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-61" class="code-block">
+<p id="code-header-61" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-61", "code-header-61")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'flowers before :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'flowers.pop(0) -&gt; '</span><span class="p">,</span> <span class="n">flowers</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'flowers after :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n\n</span><span class="s">flowers before :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'flowers.pop(3) -&gt; '</span><span class="p">,</span> <span class="n">flowers</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'flowers after :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+flowers before : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+flowers.pop(0) -&gt;  Lotus
+flowers after : ['Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+
+
+flowers before : ['Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+flowers.pop(3) -&gt;  Lavender
+flowers after : ['Lily', 'Jasmine', 'Rose', 'Tulips']
+</pre></div>
+
+<hr />
+
+<h4 id="indexelement">index(element)</h4>
+
+<p> Search for given element in list and returns index of element. If the list have duplicate elements it will return index of first occurrence of an element.</p>
+
+<div id="code-block-62" class="code-block">
+<p id="code-header-62" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-62", "code-header-62")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">flowers</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"index('Lily') :"</span><span class="p">,</span> <span class="n">flowers</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s">'Lily'</span><span class="p">))</span>
+
+<span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">flowers</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"index('Lily') :"</span><span class="p">,</span> <span class="n">flowers</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s">'Lily'</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+['Lotus', 'Rose', 'Jasmine', 'Lily', 'Lavender', 'Tulips']
+index('Lily') : 3
+['Lotus', 'Lily', 'Jasmine', 'Lily', 'Lavender', 'Tulips']
+index('Lily') : 1
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> It will raise ValueError if element not found in the list.</strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-63" class="code-block">
+<p id="code-header-63" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-63", "code-header-63")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">flowers</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"index('Rose') :"</span><span class="p">,</span> <span class="n">flowers</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s">'Rose'</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+['Lotus', 'Lily', 'Jasmine', 'Lily', 'Lavender', 'Tulips']
+</pre><pre id="tut-output-error" class="result-content">Traceback (most recent call last):
+  File "&lt;&zwj;input&zwj;&gt;", line 3, in &lt;&zwj;module&zwj;&gt;
+ValueError: 'Rose' is not in list</pre></div>
+
+<hr />
+
+<h4 id="sortkey--none-reverse--false">sort(key = none, reverse = False)</h4>
+
+<p> sorts elements of list in ascending order.</p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>key : </strong> By default set to None will sort list in default order defined by class. If given key as callable it will sort list based on value returned by given callable. </li>
+        <li> <strong>reverse : </strong> By default set to False will sort in ascending order. If given True it will sort list in descending order. </li>
+    </ul> 
+</div>
+
+<div id="code-block-64" class="code-block">
+<p id="code-header-64" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-64", "code-header-64")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Default :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span>
+<span class="n">flowers</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Sorted  :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Default : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+Sorted  : ['Jasmine', 'Lavender', 'Lily', 'Lotus', 'Rose', 'Tulips']
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>sorting with key : </strong>sorting based on length of the elements </li>
+    </ul> 
+</div>
+
+<div id="code-block-65" class="code-block">
+<p id="code-header-65" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-65", "code-header-65")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Default        :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span>
+<span class="n">flowers</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Sorted by len  :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Default        : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+Sorted by len  : ['Lily', 'Rose', 'Lotus', 'Tulips', 'Jasmine', 'Lavender']
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Case insensitive sort </strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-66" class="code-block">
+<p id="code-header-66" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-66", "code-header-66")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'tulips'</span><span class="p">,</span><span class="s">'lily'</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Default                 :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span>
+<span class="n">flowers</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="nb">str</span><span class="o">.</span><span class="n">lower</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Sorted case insensitive :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Default                 : ['Lotus', 'Lily', 'jasmine', 'Rose', 'Lavender', 'tulips', 'lily']
+Sorted case insensitive : ['jasmine', 'Lavender', 'Lily', 'lily', 'Lotus', 'Rose', 'tulips']
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>sorting in descending order </strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-67" class="code-block">
+<p id="code-header-67" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-67", "code-header-67")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Default         :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span>
+<span class="n">flowers</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Reverse Sorted  :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Default         : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+Reverse Sorted  : ['Tulips', 'Rose', 'Lotus', 'Lily', 'Lavender', 'Jasmine']
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Sorting 2D list</strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-68" class="code-block">
+<p id="code-header-68" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-68", "code-header-68")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">pointList</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">45</span><span class="p">,</span> <span class="mi">12</span><span class="p">],</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">22</span><span class="p">],</span> <span class="p">[</span><span class="mi">47</span><span class="p">,</span> <span class="mi">25</span><span class="p">],</span> <span class="p">[</span><span class="mi">23</span><span class="p">,</span> <span class="mi">10</span><span class="p">]]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Default :'</span><span class="p">,</span> <span class="n">pointList</span><span class="p">)</span>
+<span class="n">pointList</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Sorted  :'</span><span class="p">,</span> <span class="n">pointList</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Default : [[45, 12], [12, 22], [47, 25], [23, 10]]
+Sorted  : [[12, 22], [23, 10], [45, 12], [47, 25]]
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Sorting 2D list by particular index of inner list.</strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-69" class="code-block">
+<p id="code-header-69" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-69", "code-header-69")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">studentList</span> <span class="o">=</span> <span class="p">[[</span><span class="s">'John'</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="s">'O+'</span><span class="p">],</span> <span class="p">[</span><span class="s">'Victor'</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="s">'A-'</span><span class="p">],</span> <span class="p">[</span><span class="s">'Kelly'</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="s">'B+'</span><span class="p">],</span> <span class="p">[</span><span class="s">'Sam'</span><span class="p">,</span> <span class="mi">102</span><span class="p">,</span> <span class="s">'A+'</span><span class="p">],</span>
+               <span class="p">[</span><span class="s">'Jane'</span><span class="p">,</span> <span class="mi">104</span><span class="p">,</span> <span class="s">'B+'</span><span class="p">]]</span>
+
+<span class="c1"># sorting list of students by roll number
+</span><span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">itemgetter</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Default :'</span><span class="p">,</span> <span class="n">studentList</span><span class="p">)</span>
+<span class="n">studentList</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Sorted  :'</span><span class="p">,</span> <span class="n">studentList</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Default : [['John', 101, 'O+'], ['Victor', 105, 'A-'], ['Kelly', 103, 'B+'], ['Sam', 102, 'A+'], ['Jane', 104, 'B+']]
+Sorted  : [['John', 101, 'O+'], ['Sam', 102, 'A+'], ['Kelly', 103, 'B+'], ['Jane', 104, 'B+'], ['Victor', 105, 'A-']]
+</pre></div>
+
+<hr />
+
+<h4 id="miniterable">min(iterable)</h4>
+
+<p> For numeric list only, it returns element which is having minimum value. </p>
+
+<div id="code-block-70" class="code-block">
+<p id="code-header-70" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-70", "code-header-70")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">numList</span> <span class="o">=</span> <span class="p">[</span><span class="mi">155</span><span class="p">,</span> <span class="mi">125</span><span class="p">,</span> <span class="mi">741</span><span class="p">,</span> <span class="mi">859</span><span class="p">,</span> <span class="mi">914</span><span class="p">,</span> <span class="mi">152</span><span class="p">,</span> <span class="mi">654</span><span class="p">,</span> <span class="mi">425</span><span class="p">,</span> <span class="mi">351</span><span class="p">,</span> <span class="mi">254</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Minimum :'</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">numList</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Minimum : 125
+</pre></div>
+
+<hr />
+
+<h4 id="maxiterable">max(iterable)</h4>
+
+<p> For numeric list only, it returns element which is having maximum value. </p>
+
+<div id="code-block-71" class="code-block">
+<p id="code-header-71" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-71", "code-header-71")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">numList</span> <span class="o">=</span> <span class="p">[</span><span class="mi">155</span><span class="p">,</span> <span class="mi">125</span><span class="p">,</span> <span class="mi">741</span><span class="p">,</span> <span class="mi">859</span><span class="p">,</span> <span class="mi">914</span><span class="p">,</span> <span class="mi">152</span><span class="p">,</span> <span class="mi">654</span><span class="p">,</span> <span class="mi">425</span><span class="p">,</span> <span class="mi">351</span><span class="p">,</span> <span class="mi">254</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Maximum :'</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">numList</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Maximum : 914
+</pre></div>
+
+<hr />
+
+<h4 id="copy">copy()</h4>
+
+<p> Returns shallow copy of the list </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Shallow copy : </strong> Creates new list and copy references from original list. </li>
+        <li> <strong> Deep copy : </strong> Creates new list and recursively creates copy of elements. </li>
+    </ul> 
+</div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> copy () on immutable elements of list </strong> </li>
+    </ul> 
+</div>
+
+<p> Here making changes to copy of the original list does not affect the original list. </p>
+
+<div id="code-block-72" class="code-block">
+<p id="code-header-72" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-72", "code-header-72")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
+
+<span class="n">copyFlowers</span> <span class="o">=</span> <span class="n">flowers</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="n">flowers</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s">'Lotus'</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'flowers :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'copyFlowers :'</span><span class="p">,</span> <span class="n">copyFlowers</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+flowers : ['Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+copyFlowers : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> copy () on mutable elements of list </strong> </li>
+    </ul> 
+</div>
+
+<p> Here making changes to copy of the original list affects the original list, because we object type is mutable and only references of object is copied. </p>
+
+<div id="code-block-73" class="code-block">
+<p id="code-header-73" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-73", "code-header-73")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
+<span class="n">moreFlowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Calendula'</span><span class="p">,</span> <span class="s">'Bougainvillea'</span><span class="p">,</span> <span class="s">'Peony'</span><span class="p">,</span> <span class="s">'Dahlia'</span><span class="p">]</span>
+<span class="n">someMoreFlowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Hibiscus'</span><span class="p">,</span> <span class="s">'Sunflower'</span><span class="p">,</span> <span class="s">'Lilac'</span><span class="p">,</span> <span class="s">'Pansy'</span><span class="p">,</span> <span class="s">'Ixora'</span><span class="p">]</span>
+<span class="n">flowersList</span> <span class="o">=</span> <span class="p">[</span><span class="n">flowers</span><span class="p">,</span> <span class="n">moreFlowers</span><span class="p">,</span> <span class="n">someMoreFlowers</span><span class="p">]</span>
+
+
+<span class="n">copyFlowerList</span> <span class="o">=</span> <span class="n">flowersList</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Original List Before Removal --&gt; '</span><span class="p">,</span> <span class="n">flowersList</span><span class="p">)</span>
+
+<span class="n">copyFlowerList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s">'Rose'</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Original List After Removal --&gt; '</span><span class="p">,</span> <span class="n">flowersList</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Copy List After Removal --&gt; '</span><span class="p">,</span> <span class="n">copyFlowerList</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Original List Before Removal --&gt;  [['Lotus', 'Lily', 'Jasmine', <div id="tut-highlight">'Rose'</div>, 'Lavender', 'Tulips'], ['Calendula', 'Bougainvillea', 'Peony', 'Dahlia'], ['Hibiscus', 'Sunflower', 'Lilac', 'Pansy', 'Ixora']]
+Original List After Removal --&gt;  [['Lotus', 'Lily', 'Jasmine', 'Lavender', 'Tulips'], ['Calendula', 'Bougainvillea', 'Peony', 'Dahlia'], ['Hibiscus', 'Sunflower', 'Lilac', 'Pansy', 'Ixora']]
+Copy List After Removal --&gt;  [['Lotus', 'Lily', 'Jasmine', 'Lavender', 'Tulips'], ['Calendula', 'Bougainvillea', 'Peony', 'Dahlia'], ['Hibiscus', 'Sunflower', 'Lilac', 'Pansy', 'Ixora']]
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Copy lists (Shallow copy) using slicing : </strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-74" class="code-block">
+<p id="code-header-74" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-74", "code-header-74")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">secondcopy</span> <span class="o">=</span> <span class="n">flowers</span><span class="p">[:]</span>
+<span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">secondcopy</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+['Lotus', 'Lily', 'Jasmine', 'Lavender', 'Tulips']
+</pre></div>
+
+<hr />
+
+<h4 id="deepcopy">deepcopy()</h4>
+
+<p> copies object recursively rather than copying memory reference to objects. </p>
+
+<div id="code-block-75" class="code-block">
+<p id="code-header-75" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-75", "code-header-75")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">copy</span>
+<span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
+<span class="n">moreFlowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Calendula'</span><span class="p">,</span> <span class="s">'Bougainvillea'</span><span class="p">,</span> <span class="s">'Peony'</span><span class="p">,</span> <span class="s">'Dahlia'</span><span class="p">]</span>
+<span class="n">someMoreFlowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Hibiscus'</span><span class="p">,</span> <span class="s">'Sunflower'</span><span class="p">,</span> <span class="s">'Lilac'</span><span class="p">,</span> <span class="s">'Pansy'</span><span class="p">,</span> <span class="s">'Ixora'</span><span class="p">]</span>
+<span class="n">flowersList</span> <span class="o">=</span> <span class="p">[</span><span class="n">flowers</span><span class="p">,</span> <span class="n">moreFlowers</span><span class="p">,</span> <span class="n">someMoreFlowers</span><span class="p">]</span>
+
+
+<span class="n">copyFlowerList</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">flowersList</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Original List Before Removal --&gt; '</span><span class="p">,</span> <span class="n">flowersList</span><span class="p">)</span>
+
+<span class="n">copyFlowerList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s">'Rose'</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Original List After Removal --&gt; '</span><span class="p">,</span> <span class="n">flowersList</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Copy List After Removal --&gt; '</span><span class="p">,</span> <span class="n">copyFlowerList</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Original List Before Removal --&gt;  [['Lotus', 'Lily', 'Jasmine',  <div id="tut-highlight">'Rose'</div>, 'Lavender', 'Tulips'], ['Calendula', 'Bougainvillea', 'Peony', 'Dahlia'], ['Hibiscus', 'Sunflower', 'Lilac', 'Pansy', 'Ixora']]
+Original List After Removal --&gt;  [['Lotus', 'Lily', 'Jasmine',  <div id="tut-highlight">'Rose'</div>, 'Lavender', 'Tulips'], ['Calendula', 'Bougainvillea', 'Peony', 'Dahlia'], ['Hibiscus', 'Sunflower', 'Lilac', 'Pansy', 'Ixora']]
+Copy List After Removal --&gt;  [['Lotus', 'Lily', 'Jasmine', 'Lavender', 'Tulips'], ['Calendula', 'Bougainvillea', 'Peony', 'Dahlia'], ['Hibiscus', 'Sunflower', 'Lilac', 'Pansy', 'Ixora']]
+</pre></div>
+
+<hr />
+
+<h4 id="reverse">reverse()</h4>
+
+<p>  Reverse the elements of list. </p>
+
+<div id="code-block-76" class="code-block">
+<p id="code-header-76" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-76", "code-header-76")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Original list :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span>
+<span class="n">flowers</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Reversed list :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Original list : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+Reversed list : ['Tulips', 'Lavender', 'Rose', 'Jasmine', 'Lily', 'Lotus']
+
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Reverse list using slice</strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-77" class="code-block">
+<p id="code-header-77" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-77", "code-header-77")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Original list :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span>
+<span class="n">flowers</span> <span class="o">=</span> <span class="n">flowers</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Reversed list :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Original list : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+Reversed list : ['Tulips', 'Lavender', 'Rose', 'Jasmine', 'Lily', 'Lotus']
+</pre></div>
+
+<hr />
+
+<h4 id="clear">clear()</h4>
+
+<p> Removes all elements from the list. </p>
+
+<div id="code-block-78" class="code-block">
+<p id="code-header-78" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-78", "code-header-78")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Original list :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span>
+
+<span class="n">flowers</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Cleared list :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Original list : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+Cleared list : []
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Clear using slice</strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-79" class="code-block">
+<p id="code-header-79" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-79", "code-header-79")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Original list :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span>
+
+<span class="n">flowers</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Cleared list :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Original list : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+Cleared list : []
+</pre></div>
+
+<hr />
+
+<h3 id="list-to-string">List to String</h3>
+
+<h4 id="join">join()</h4>
+
+<p> Joins collection of string into single string with provided separator. </p>
+
+<div id="code-block-80" class="code-block">
+<p id="code-header-80" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-80", "code-header-80")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
+<span class="n">ch</span> <span class="o">=</span> <span class="s">','</span>
+
+<span class="n">flowersString</span> <span class="o">=</span> <span class="n">ch</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">flowers</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">flowersString</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Lotus,Lily,Jasmine,Rose,Lavender,Tulips
+</pre></div>
+
+<hr />
+
+<h3 id="string-to-list">String to List</h3>
+
+<h4 id="splitsepnone-maxsplit-1">split(sep=None, maxsplit=-1)</h4>
+
+<p> Splits the string in to collection (list) of strings using given separator. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>maxsplit : </strong> If optional argument 'maxsplit' given, limits the no of splits to be made using given separator. </li>
+    </ul> 
+</div>
+
+<div id="code-block-81" class="code-block">
+<p id="code-header-81" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-81", "code-header-81")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowersString</span> <span class="o">=</span> <span class="s">'Lotus,Lily,Jasmine,Rose,Lavender,Tulips'</span>
+<span class="n">flowerList</span> <span class="o">=</span> <span class="n">flowersString</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">','</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">flowerList</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+</pre></div>
+
+<hr />
+
+<h3 id="list-variable-assignment">List variable Assignment</h3>
+
+<p> Variable pointing to a list object can be assign to another variable, which will copy the memory address of list object. At later point if reference to original variable changes it will not affect reference assigned to other variable.   </p>
+
+<div id="code-block-82" class="code-block">
+<p id="code-header-82" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-82", "code-header-82")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
+
+<span class="n">copyFlowers</span> <span class="o">=</span> <span class="n">flowers</span>
+
+<span class="n">copyFlowers</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s">'Lily'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"flowers before :"</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"copyFlowers before :"</span><span class="p">,</span> <span class="n">copyFlowers</span><span class="p">)</span>
+
+<span class="n">flowers</span> <span class="o">=</span> <span class="bp">None</span>  <span class="c1"># Changing reference of original variable
+</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"flowers after :"</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"copyFlowers after :"</span><span class="p">,</span> <span class="n">copyFlowers</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+flowers before : ['Lotus', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+copyFlowers before : ['Lotus', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+flowers after : None
+copyFlowers after : ['Lotus', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Slides</strong> </li>
+    </ul> 
+</div>
+
+<div id="tut-ppt">
+    <div class="embed-responsive embed-responsive-4by3">
+        <iframe class="embed-responsive-item" src="/docs/python/14_List_Assignment.pdf" allowfullscreen=""></iframe>
+    </div>
+</div>
+
 
 
     <div class="tags">
