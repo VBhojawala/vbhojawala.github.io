@@ -2336,57 +2336,6 @@ Sorted  : [['John', 101, 'O+'], ['Sam', 102, 'A+'], ['Kelly', 103, 'B+'], ['Jane
 <hr/>
 
 
-#### min(iterable)
-
-<p> For numeric list only, it returns element which is having minimum value. </p>
-
-{% assign code_block = code_block | plus: 1 %}
-{% assign code_block_id = "code-block-" | append: code_block %}
-{% assign code_header_id = "code-header-" | append: code_block %}
-<div id="{{ code_block_id }}" class="code-block">
-<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
-{% highlight python %}
-
-numList = [155, 125, 741, 859, 914, 152, 654, 425, 351, 254]
-print('Minimum :', min(numList))
-
-
-{% endhighlight %}
-</div>
-
-<div class="result"><p class="result-header"><b>Output</b></p>
-<pre class="result-content">
-Minimum : 125
-</pre></div>
-
-<hr/>
-
-
-
-#### max(iterable)
-
-<p> For numeric list only, it returns element which is having maximum value. </p>
-
-{% assign code_block = code_block | plus: 1 %}
-{% assign code_block_id = "code-block-" | append: code_block %}
-{% assign code_header_id = "code-header-" | append: code_block %}
-<div id="{{ code_block_id }}" class="code-block">
-<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
-{% highlight python %}
-
-numList = [155, 125, 741, 859, 914, 152, 654, 425, 351, 254]
-print('Maximum :', max(numList))
-
-
-{% endhighlight %}
-</div>
-
-<div class="result"><p class="result-header"><b>Output</b></p>
-<pre class="result-content">
-Maximum : 914
-</pre></div>
-
-<hr/>
 
 
 
@@ -2780,7 +2729,6 @@ flowers = ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
 
 copyFlowers = flowers
 
-copyFlowers.remove('Lily')
 print("flowers before :", flowers)
 print("copyFlowers before :", copyFlowers)
 
@@ -2790,15 +2738,17 @@ print("flowers after :", flowers)
 print("copyFlowers after :", copyFlowers)
 
 
+
+
 {% endhighlight %}
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-flowers before : ['Lotus', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
-copyFlowers before : ['Lotus', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+flowers before : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+copyFlowers before : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
 flowers after : None
-copyFlowers after : ['Lotus', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+copyFlowers after : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
 </pre></div>
 
 <hr/>
@@ -2815,6 +2765,658 @@ copyFlowers after : ['Lotus', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
         <iframe class="embed-responsive-item" src="/docs/python/14_List_Assignment.pdf" allowfullscreen></iframe>
     </div>
 </div>
+
+
+
+
+### List as function parameter
+
+<p> List is mutable data type, if it is passed as function parameter memory address for same list is copied. If function modifies the list object it will reflect changes outside scope of function.  </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+numbers = [12, 45, 25, 65, 84, 73, 49, 18, 54, 37, 52]
+
+
+def multiply(numbers, num):
+    for i in range(len(numbers)):
+        numbers[i] *= num
+    return numbers
+
+
+# Passing original list object
+print('numbers before :', numbers)
+print('Result :', multiply(numbers, 5))
+print('numbers after :', numbers)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+numbers before : [12, 45, 25, 65, 84, 73, 49, 18, 54, 37, 52]
+Result : [60, 225, 125, 325, 420, 365, 245, 90, 270, 185, 260]
+numbers after : [60, 225, 125, 325, 420, 365, 245, 90, 270, 185, 260]
+</pre></div>
+
+<hr/>
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Passing shallow copy </strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+numbers = [12, 45, 25, 65, 84, 73, 49, 18, 54, 37, 52]
+
+
+def multiply(numbers, num):
+    for i in range(len(numbers)):
+        numbers[i] *= num
+    return numbers
+
+print('numbers before :', numbers)
+print('Result :', multiply(numbers[:], 5))
+print('numbers after :', numbers)
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+numbers before : [12, 45, 25, 65, 84, 73, 49, 18, 54, 37, 52]
+Result : [60, 225, 125, 325, 420, 365, 245, 90, 270, 185, 260]
+numbers after : [12, 45, 25, 65, 84, 73, 49, 18, 54, 37, 52]
+</pre></div>
+
+<hr/>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Creating shallow copy using list constructor </strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+numbers = [12, 45, 25, 65, 84, 73, 49, 18, 54, 37, 52]
+
+
+def multiply(numbers, num):
+    for i in range(len(numbers)):
+        numbers[i] *= num
+    return numbers
+
+
+print('numbers before :', numbers)
+print('Result :', multiply(list(numbers), 5))
+print('numbers after :', numbers)
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+numbers before : [12, 45, 25, 65, 84, 73, 49, 18, 54, 37, 52]
+Result : [60, 225, 125, 325, 420, 365, 245, 90, 270, 185, 260]
+numbers after : [12, 45, 25, 65, 84, 73, 49, 18, 54, 37, 52]
+</pre></div>
+
+<hr/>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Correct way to write function which accepts and modifies mutable data types</strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+numbers = [12, 45, 25, 65, 84, 73, 49, 18, 54, 37, 52]
+
+def multiply(numbers, num):
+    localnums = list(numbers)
+    for i in range(len(numbers)):
+        localnums[i] *= num
+    return localnums
+
+# OR
+
+def multiply(numbers, num):
+    return [i*num for i in numbers]
+
+
+print('numbers before :', numbers)
+print('Result :', multiply(numbers, 5))
+print('numbers after :', numbers)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+numbers before : [12, 45, 25, 65, 84, 73, 49, 18, 54, 37, 52]
+Result : [60, 225, 125, 325, 420, 365, 245, 90, 270, 185, 260]
+numbers after : [12, 45, 25, 65, 84, 73, 49, 18, 54, 37, 52]
+</pre></div>
+
+<hr/>
+
+
+
+
+
+### List as default parameter
+
+<p> If empty list is assigned to a function as default parameter, it's value is evaluated only when function is loaded in memory. If function modifies list inside changes made to list will persist among multiple function call. </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+flowers = ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+
+
+def add_flower(flowertoadd='', flist=[]):
+    """ adds supplied flower to given list"""
+    flist.append(flowertoadd)
+    return flist
+
+
+print('flowers before :', flowers)
+print('Result', add_flower('Sunflower', flowers))
+print('flowers after :', flowers)
+
+print('\nCalling function with default argument :\n')
+
+print("add_flower('Sunflower') : ", add_flower('Sunflower'))
+print("add_flower('Rose') :", add_flower('Rose'))
+print("add_flower('Lily')", add_flower('Lily'))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+flowers before : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+Result ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips', 'Sunflower']
+flowers after : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips', 'Sunflower']
+
+Calling function with default argument :
+
+add_flower('Sunflower') :  ['Sunflower']
+add_flower('Rose') : ['Sunflower', 'Rose']
+add_flower('Lily') ['Sunflower', 'Rose', 'Lily']
+</pre></div>
+
+<hr/>
+
+
+
+### Operators
+
+#### ==
+<p> Compares Values of two lists. If both list contains same values it returns True.</p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+flowers1 = ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+flowers2 = ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+flowers3 = ['Lotus', 'Lily', 'Calendula', 'Bougainvillea', 'Lavender', 'Tulips']
+
+print('flowers1 == flowers2 :', flowers1 == flowers2)
+print('flowers1 == flowers3 :', flowers1 == flowers3)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+flowers1 == flowers2 : True
+flowers1 == flowers3 : False
+</pre></div>
+
+<hr/>
+
+
+
+#### !=
+<p> Compares Values of two lists. If both list does not contains same values it returns True.</p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+flowers1 = ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+flowers2 = ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+flowers3 = ['Lotus', 'Lily', 'Calendula', 'Bougainvillea', 'Lavender', 'Tulips']
+
+print('flowers1 != flowers2 :', flowers1 != flowers2)
+print('flowers1 != flowers3 :', flowers1 != flowers3)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+flowers1 != flowers2 : False
+flowers1 != flowers3 : True
+</pre></div>
+
+<hr/>
+
+
+
+#### is
+<p> An identity operator compares origin (memory address : id(obj)) of given two list :</p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+flowers1 = ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+flowers2 = ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+flowers3 = flowers1
+
+
+print('flowers1 is flowers2 :', flowers1 is flowers2)
+print('flowers1 is flowers3 :', flowers1 is flowers3)
+
+# checking the id
+print('\nid(flowers1) :', id(flowers1))
+print('id(flowers2) :', id(flowers2))
+print('id(flowers3) :', id(flowers3))
+
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+flowers1 is flowers2 : False
+flowers1 is flowers3 : True
+
+id(flowers1) : 139636998268416
+id(flowers2) : 139636998317760
+id(flowers3) : 139636998268416
+</pre></div>
+
+<hr/>
+ 
+
+
+#### del
+
+<p> Decrement the reference counter of an object and removes the given variable from memory. If object's reference counter reaches to 0 object is removed from memory. </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+flowers1 = ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+flowers2 = flowers1
+
+del flower1
+
+print(flower2)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips', 'Sunflower']
+</pre></div>
+
+<hr/>
+
+
+#### <, >, <= , >=
+
+<p> First compares the length of string, if equal compares each elements recursively. </p>
+
+Operator  | Meaning
+:--- | :---
+< | Less than
+> | Greater than
+<= | Less than or equal
+>= | Greater than or euqal
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> List of strings.</strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+flowers1 = ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+flowers2 = ['Lotus', 'Lily', 'Calendula', 'Bougainvillea', 'Lavender', 'Tulips']
+
+print('flowers1 < flowers2  :', flowers1 < flowers2)
+print('flowers1 > flowers2  :', flowers1 > flowers2)
+print('flowers1 <= flowers2 :', flowers1 <= flowers2)
+print('flowers1 >= flowers2 :', flowers1 >= flowers2)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+flowers1 < flowers2  : False
+flowers1 > flowers2  : True
+flowers1 <= flowers2 : False
+flowers1 >= flowers2 : True
+</pre></div>
+
+<hr/>
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> List of integers.</strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+l1 = [1, 2, 4]
+l2 = [1, 2, 3]
+
+print('l1 > l2  :', l1 > l2)
+print('l1 < l2  :', l1 < l2)
+print('l1 <= l2 :', l1 <= l2)
+print('l1 >= l2 :', l1 >= l2)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+l1 > l2  : True
+l1 < l2  : False
+l1 <= l2 : False
+l1 >= l2 : True
+</pre></div>
+
+<hr/>
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Nested List : </strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+l1 = [1, [1, 2, 3], 3]
+l2 = [1, [1, 2, 4], 3]
+
+print('l1 > l2  :', l1 > l2)
+print('l1 < l2  :', l1 < l2)
+print('l1 <= l2 :', l1 <= l2)
+print('l1 >= l2 :', l1 >= l2)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+l1 > l2  : False
+l1 < l2  : True
+l1 <= l2 : True
+l1 >= l2 : False
+</pre></div>
+
+<hr/>
+
+
+
+
+### Builtin functions on numeric list
+
+
+#### min(iterable)
+
+<p> Returns element which is having minimum value. </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+l1 = [12, 55, 48, 24, 87, 76, 34, 65]
+print('Minimum : ', min(l1))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Minimum :  12
+</pre></div>
+
+<hr/>
+
+
+
+#### max(iterable)
+
+<p> Returns element which is having maximum value. </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+l1 = [12, 55, 48, 24, 87, 76, 34, 65]
+print('Maximum :', max(l1))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Maximum : 87
+</pre></div>
+
+<hr/>
+
+
+
+
+#### sum(iterable)
+
+<p> Returns sum of each numeric values inside given iterable. </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+l1 = [12, 55, 48, 24, 87, 76, 34, 65]
+print('Sum :', sum(l1))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Sum : 401
+</pre></div>
+
+<hr/>
+
+
+#### sorted(iterable, key, reverse)
+
+<p> Works same as list.sort() </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+l1 = [12, 55, 48, 24, 87, 76, 34, 65]
+print('original :', l1)
+print('sorted   :', sorted(l1))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+original : [12, 55, 48, 24, 87, 76, 34, 65]
+sorted   : [12, 24, 34, 48, 55, 65, 76, 87]
+</pre></div>
+
+<hr/>
+
+
+
+#### any(iterable)
+
+<p> Returns True if any if any item is evaluated as Boolean equivalent to True. </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+l1 = [12, 55, 48, 24, 87, 76, 34, 65]
+l2 = [0, 0, 0, 0, 0, 0]
+print('any(l1) :', any(l1))
+print('any(l2) :', any(l2))
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+any(l1) : True
+any(l2) : False
+</pre></div>
+
+<hr/>
+
+
+
+#### all(iterable)
+
+<p> Returns True if any if all item is evaluated as Boolean equivalent to True. </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+l1 = [12, 55, 48, 24, 87, 76, 34, 65]
+l2 = [12, 55, 0, 24, 87, 76, 34, 65]
+
+print('all(l1) :', all(l1))
+print('all(l2) :', all(l2))
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+all(l1) : True
+all(l2) : False
+</pre></div>
+
+<hr/>
+
 
 
 
