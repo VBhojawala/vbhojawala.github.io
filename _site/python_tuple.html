@@ -4,11 +4,11 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="While loop, break, continue, while-else.">
-<meta name="keywords" content="while_loopbreakcontinuewhile-else,  ">
+<meta name="description" content="List constructor, indexing, slicing, iterating, unpacking, functions of list object, list operators, builtin functions, list as stack and queue.">
+<meta name="keywords" content=",  ">
 <meta name="theme-color" content="#36362C">
 <link rel="icon" sizes="192x192" href="images/favicon.ico">
-<title>While Loop | Asha Tutorials</title>
+<title>Tuple | Asha Tutorials</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -283,7 +283,7 @@
 
 
 
-  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:?subject=Asha Tutorials feedback&body=I have some feedback about the While Loop page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:?subject=Asha Tutorials feedback&body=I have some feedback about the Tuple page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
 
 </li>
 
@@ -335,7 +335,7 @@
                             searchInput: document.getElementById('search-input'),
                             resultsContainer: document.getElementById('results-container'),
                             dataSource: 'search.json',
-                            searchResultTemplate: '<li style="margin: 0px 0px;"><a href="{url}" title="While Loop       " folder="python">{title} <sub>in {folder}</sub></a></li>',
+                            searchResultTemplate: '<li style="margin: 0px 0px;"><a href="{url}" title="Tuple       " folder="python">{title} <sub>in {folder}</sub></a></li>',
                 noResultsText: '<li style="margin: 0px 0px;"><a href="#">No results found.</a></li>',
                         limit: 10,
                         fuzzy: true,
@@ -442,7 +442,7 @@
           
           
           
-          <li class="active"><a title="While Loop" href="python_while_loop.html">While Loop</a></li>
+          <li><a title="While Loop" href="python_while_loop.html">While Loop</a></li>
           
           
           
@@ -495,7 +495,7 @@
           
           
           
-          <li><a title="Tuple" href="python_tuple.html">Tuple</a></li>
+          <li class="active"><a title="Tuple" href="python_tuple.html">Tuple</a></li>
           
           
           
@@ -522,7 +522,7 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">While Loop</h1>
+   <h1 class="post-title-main">Tuple</h1>
 </div>
 
 
@@ -530,7 +530,7 @@
 <div class="post-content">
 
    <!-- 
-    <div class="summary">While loop, break, continue, while-else.</div>
+    <div class="summary">List constructor, indexing, slicing, iterating, unpacking, functions of list object, list operators, builtin functions, list as stack and queue.</div>
     -->
 
     
@@ -561,331 +561,16 @@ $('#toc').on('click', 'a', function() {
 
     <!-- 
 
-    <a target="_blank" rel="noopener" href="https://github.com/ashatutorials/pages/python/02_ControlFlow_Looping/02_While_Loop.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+    <a target="_blank" rel="noopener" href="https://github.com/ashatutorials/pages/python/04_Builtin_DataStructures/02_Tuple.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
 
      -->
 
-   <h2 id="while-loop">while loop</h2>
-
-<div id="code-block-1" class="code-block">
-<p id="code-header-1" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-1", "code-header-1")</script>
-
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">p</span> <span class="o">=</span> <span class="mi">1</span>
-
-<span class="k">while</span> <span class="n">p</span> <span class="o">&lt;</span> <span class="mi">11</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
-    <span class="n">p</span> <span class="o">+=</span> <span class="mi">1</span></code></pre></figure>
-
-</div>
-
-<div class="result"><p class="result-header"><b>Output</b></p>
-<pre class="result-content">
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-
-</pre></div>
-
-<hr />
-
-<h2 id="break">break</h2>
-
-<p> Executed when end of loop condition satisfied, which exits the while loop. </p>
-
-<div id="tut-content"> 
-    <ul>
-        <li> <strong> Infinite while loop and break statement : </strong> </li>
-    </ul> 
-</div>
-
-<div id="code-block-2" class="code-block">
-<p id="code-header-2" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-2", "code-header-2")</script>
-
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
-    <span class="n">inpt</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">'Enter your Name [Press Enter to exit] -&gt;'</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">inpt</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Hi, {inpt}. Welcome to the world of Python.'</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">break</span></code></pre></figure>
-
-</div>
-
-<div class="result"><p class="result-header"><b>Output</b></p>
-<pre class="result-content">
-Enter your Name [Press Enter to exit] -&gt;&gt;? Vicky
-Hi, Vicky. Welcome to the world of Python.
-Enter your Name [Press Enter to exit] -&gt;&gt;? Mike
-Hi, Mike. Welcome to the world of Python.
-Enter your Name [Press Enter to exit] -&gt;&gt;? Kim
-Hi, Kim. Welcome to the world of Python.
-Enter your Name [Press Enter to exit] -&gt;&gt;? 
-
-</pre></div>
-
-<hr />
-
-<h2 id="continue">continue</h2>
-
-<p> Executed when exceptional condition satisfied , it skips remaining statements in current iteration and continue next iteration. </p>
-
-<div id="tut-content"> 
-    <ul>
-        <li> <strong> Infinite loop with break and continue : </strong> </li>
-    </ul> 
-</div>
-
-<p> Following program prints number only if it is not divisible by 2,3,5 other wise ignore it, 0 to exit. </p>
-
-<div id="code-block-3" class="code-block">
-<p id="code-header-3" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-3", "code-header-3")</script>
-
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
-    <span class="n">inpt</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">'Enter a Number [Enter 0 to exit] -&gt;'</span><span class="p">))</span>
-    <span class="k">if</span> <span class="n">inpt</span><span class="p">:</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">inpt</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">inpt</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">inpt</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
-            <span class="k">continue</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Adding {inpt} to the list ....'</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">break</span></code></pre></figure>
-
-</div>
-
-<div class="result"><p class="result-header"><b>Output</b></p>
-<pre class="result-content">
-Enter a Number [Enter 0 to exit] -&gt;&gt;? 255
-Enter a Number [Enter 0 to exit] -&gt;&gt;? 1212
-Enter a Number [Enter 0 to exit] -&gt;&gt;? 541
-Adding 541 to the list ....
-Enter a Number [Enter 0 to exit] -&gt;&gt;? 97
-Adding 97 to the list ....
-Enter a Number [Enter 0 to exit] -&gt;&gt;? 665
-Enter a Number [Enter 0 to exit] -&gt;&gt;? 323
-Adding 323 to the list ....
-Enter a Number [Enter 0 to exit] -&gt;&gt;? 121
-Adding 121 to the list ....
-Enter a Number [Enter 0 to exit] -&gt;&gt;? 111
-Enter a Number [Enter 0 to exit] -&gt;&gt;? 1221
-Enter a Number [Enter 0 to exit] -&gt;&gt;? 123127
-Adding 123127 to the list ....
-Enter a Number [Enter 0 to exit] -&gt;&gt;? 0
-
-</pre></div>
-
-<hr />
-
-<h2 id="while-else">while-else</h2>
-
-<div id="tut-content"> 
-    <ul>
-        <li> <strong> else : </strong> statements in else gets executed if break statement inside loop is not called. </li>
-    </ul> 
-</div>
-
-<div id="code-block-4" class="code-block">
-<p id="code-header-4" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-4", "code-header-4")</script>
-
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
-
-<span class="k">while</span> <span class="n">x</span><span class="p">:</span>
-    <span class="n">x</span> <span class="o">-=</span> <span class="mi">1</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">'Conditional break'</span><span class="p">)</span>
-        <span class="k">break</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">'while loop exited normally'</span><span class="p">)</span></code></pre></figure>
-
-</div>
-
-<div class="result"><p class="result-header"><b>Output</b></p>
-<pre class="result-content">
-9
-8
-7
-6
-5
-4
-3
-2
-1
-0
-while loop exited normally
-</pre></div>
-
-<hr />
-
-<div id="code-block-5" class="code-block">
-<p id="code-header-5" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-5", "code-header-5")</script>
-
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
-
-<span class="k">while</span> <span class="n">x</span><span class="p">:</span>
-    <span class="n">x</span> <span class="o">-=</span> <span class="mi">1</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># changed
-</span>        <span class="k">print</span><span class="p">(</span><span class="s">'Conditional break'</span><span class="p">)</span>
-        <span class="k">break</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">'while loop exited normally'</span><span class="p">)</span></code></pre></figure>
-
-</div>
-
-<div class="result"><p class="result-header"><b>Output</b></p>
-<pre class="result-content">
-9
-8
-7
-6
-5
-4
-3
-2
-1
-0
-Conditional break
-</pre></div>
-
-<hr />
-
-<h2 id="examples">Examples</h2>
-
-<div id="tut-content"> 
-    <ul>
-        <li> <strong>Online order processing facility which ships the order until none is left</strong> </li>
-    </ul> 
-</div>
-
-<div id="code-block-6" class="code-block">
-<p id="code-header-6" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-6", "code-header-6")</script>
-
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">random</span>
-<span class="n">hasOrder</span> <span class="o">=</span> <span class="bp">True</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'Press &lt;Enter&gt; to exit</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
-<span class="k">while</span> <span class="n">hasOrder</span><span class="p">:</span>
-    <span class="n">order</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">'Enter the item name to be order'</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">order</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">'Finding '</span><span class="p">,</span> <span class="n">order</span><span class="p">,</span> <span class="s">' .......'</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">'Updating inventory ......'</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">'Printing shipping details '</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">'Packaging the order'</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">'Assign shipment to Courier services'</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Estimated delivery time --&gt; {random.randint(1, 5)} Days'</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">'----------------------------------------------------'</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">hasOrder</span> <span class="o">=</span> <span class="bp">False</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">'Shutting down ........'</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">'@@@@@@@@@@ Exit @@@@@@@@@@'</span><span class="p">)</span></code></pre></figure>
-
-</div>
-
-<div class="result"><p class="result-header"><b>Output</b></p>
-<pre class="result-content">
-Press &lt;&zwj;Enter&zwj;&gt; to exit
-
-Enter the item name to be order&gt;? 16GB RAM
-Finding  16GB RAM  .......
-Updating inventory ......
-Printing shipping details 
-Packaging the order
-Assign shipment to Courier services
-Estimated delivery time --&gt; 2 Days
-----------------------------------------------------
-Enter the item name to be order&gt;? RTX 2080 SUPER
-Finding  RTX 2080 SUPER  .......
-Updating inventory ......
-Printing shipping details 
-Packaging the order
-Assign shipment to Courier services
-Estimated delivery time --&gt; 2 Days
-----------------------------------------------------
-Enter the item name to be order&gt;? RYZEN 3700H
-Finding  RYZEN 3700H  .......
-Updating inventory ......
-Printing shipping details 
-Packaging the order
-Assign shipment to Courier services
-Estimated delivery time --&gt; 2 Days
-----------------------------------------------------
-Enter the item name to be order&gt;? 650W Power Supply
-Finding  650W Power Supply  .......
-Updating inventory ......
-Printing shipping details 
-Packaging the order
-Assign shipment to Courier services
-Estimated delivery time --&gt; 4 Days
-----------------------------------------------------
-Enter the item name to be order&gt;? 
-Shutting down ........
-@@@@@@@@@@ Exit @@@@@@@@@@
-
-</pre></div>
-
-<hr />
-
-<div id="tut-content"> 
-    <ul>
-        <li> <strong>Let python pick the number ball from box without removing randomly until it matches with given number.</strong> </li>
-    </ul> 
-</div>
-
-<div id="code-block-7" class="code-block">
-<p id="code-header-7" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-7", "code-header-7")</script>
-
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">random</span>
-<span class="n">begin</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">'Enter starting range -&gt; '</span><span class="p">))</span>
-<span class="n">end</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">'Enter end range -&gt; '</span><span class="p">))</span>
-<span class="n">number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">'Enter no to be found -&gt; '</span><span class="p">))</span>
-
-<span class="n">found</span> <span class="o">=</span> <span class="bp">False</span>
-<span class="n">trial</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="k">while</span> <span class="ow">not</span> <span class="n">found</span><span class="p">:</span>
-    <span class="n">trial</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">begin</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="n">number</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Python found in {trial} trial(s)'</span><span class="p">)</span>
-        <span class="n">found</span> <span class="o">=</span> <span class="bp">True</span></code></pre></figure>
-
-</div>
-
-<div class="result"><p class="result-header"><b>Output</b></p>
-<pre class="result-content">
-Enter starting range -&gt; &gt;? 1
-Enter end range -&gt; &gt;? 100
-Enter no to be found -&gt; &gt;? 99
-Python found in 29 trial(s)
-</pre></div>
-
-<hr />
-
+   
 
 
     <div class="tags">
         
         <p style="display: inline;"><b>Tags: </b></p>
-        
-        
-        
-        <a href="tag_while_loop.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">while_loop</a>
-        
-        
-        
-        <a href="tag_break.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">break</a>
-        
-        
-        
-        <a href="tag_continue.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">continue</a>
-        
-        
-        
-        <a href="tag_while-else.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">while-else</a>
         
         
         
@@ -911,21 +596,14 @@ Python found in 29 trial(s)
     
 
     
-        <a href="python_control_flow.html" >
+        <a href="python_list.html" >
             <button type="button" class="btn btn-primary  "> 
                  <span class="fa fa-arrow-circle-left fa-lg"></span>  Previous  <br/>
-                 Control Flow 
+                 List 
             </button>
         </a>
     
 
-    
-        <a href="python_for_loop.html" >
-            <button type="button" class="btn btn-primary "> 
-                 Next <span class="fa fa-arrow-circle-right fa-lg"></span> <br/> 
-                 For Loop
-            </button>
-        </a>
     
 
     

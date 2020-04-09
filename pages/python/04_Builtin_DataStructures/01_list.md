@@ -9,8 +9,8 @@ prev_section: python_functions.html
 prev_section_title: Functions
 prev: 
 prev_title: 
-next: 
-next_title: 
+next: python_tuple.html
+next_title: Tuple
 next_section: 
 next_section_title: 
 summary: List constructor, indexing, slicing, iterating, unpacking, functions of list object, list operators, builtin functions, list as stack and queue.
@@ -2210,7 +2210,7 @@ Sorted by len  : ['Lily', 'Rose', 'Lotus', 'Tulips', 'Jasmine', 'Lavender']
 {% highlight python %}
 
 flowers = ['Lotus', 'Lily', 'jasmine', 'Rose', 'Lavender', 'tulips','lily']
-print('Default                 :', flowers)
+print('Default :', flowers)
 flowers.sort(key=str.lower)
 print('Sorted case insensitive :', flowers)
 
@@ -2220,7 +2220,7 @@ print('Sorted case insensitive :', flowers)
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-Default                 : ['Lotus', 'Lily', 'jasmine', 'Rose', 'Lavender', 'tulips', 'lily']
+Default : ['Lotus', 'Lily', 'jasmine', 'Rose', 'Lavender', 'tulips', 'lily']
 Sorted case insensitive : ['jasmine', 'Lavender', 'Lily', 'lily', 'Lotus', 'Rose', 'tulips']
 </pre></div>
 
@@ -2250,7 +2250,7 @@ Sorted case insensitive : ['jasmine', 'Lavender', 'Lily', 'lily', 'Lotus', 'Rose
 {% highlight python %}
 
 flowers = ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
-print('Default         :', flowers)
+print('Default :', flowers)
 flowers.sort(reverse=True)
 print('Reverse Sorted  :', flowers)
 
@@ -2259,7 +2259,7 @@ print('Reverse Sorted  :', flowers)
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-Default         : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+Default : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
 Reverse Sorted  : ['Tulips', 'Rose', 'Lotus', 'Lily', 'Lavender', 'Jasmine']
 </pre></div>
 
