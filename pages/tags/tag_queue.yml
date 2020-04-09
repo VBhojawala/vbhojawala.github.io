@@ -1,0 +1,8 @@
+---
+title: "queue"
+tagName: queue
+search: exclude
+permalink: tag_queue.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

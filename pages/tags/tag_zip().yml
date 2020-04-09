@@ -1,0 +1,8 @@
+---
+title: "zip()"
+tagName: zip()
+search: exclude
+permalink: tag_zip().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

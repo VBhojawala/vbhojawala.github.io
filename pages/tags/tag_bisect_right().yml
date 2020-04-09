@@ -1,0 +1,8 @@
+---
+title: "bisect right()"
+tagName: bisect_right()
+search: exclude
+permalink: tag_bisect_right().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

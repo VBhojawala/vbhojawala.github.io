@@ -1,0 +1,8 @@
+---
+title: "bisect left()"
+tagName: bisect_left()
+search: exclude
+permalink: tag_bisect_left().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

@@ -1,0 +1,8 @@
+---
+title: "reversed()"
+tagName: reversed()
+search: exclude
+permalink: tag_reversed().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

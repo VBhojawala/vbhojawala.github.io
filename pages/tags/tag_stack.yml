@@ -1,0 +1,8 @@
+---
+title: "stack"
+tagName: stack
+search: exclude
+permalink: tag_stack.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

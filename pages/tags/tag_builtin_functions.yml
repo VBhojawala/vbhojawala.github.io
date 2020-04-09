@@ -1,0 +1,8 @@
+---
+title: "builtin functions"
+tagName: builtin_functions
+search: exclude
+permalink: tag_builtin_functions.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

@@ -1,0 +1,8 @@
+---
+title: "sorted()"
+tagName: sorted()
+search: exclude
+permalink: tag_sorted().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

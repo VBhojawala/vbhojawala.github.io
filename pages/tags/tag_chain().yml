@@ -1,0 +1,8 @@
+---
+title: "chain()"
+tagName: chain()
+search: exclude
+permalink: tag_chain().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

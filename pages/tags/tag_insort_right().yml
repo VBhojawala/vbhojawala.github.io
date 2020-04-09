@@ -1,0 +1,8 @@
+---
+title: "insort right()"
+tagName: insort_right()
+search: exclude
+permalink: tag_insort_right().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

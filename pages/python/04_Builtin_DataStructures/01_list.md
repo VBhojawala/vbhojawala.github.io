@@ -1,7 +1,7 @@
 ---
 title: List
 layout: tutorial
-tags: []
+tags: [slice, indexing, slicing, len(), in, not_in, for-each, reversed(), enumerate(), chain(), zip(), unpacking, 2d_list, 3d_list, list_comprehension, filtering, append(), insert(), remove(), count(), extend(), pop(), index(), sort(), copy(), deepcopy(), reverse(), clear(), join(), split(), List_Operators, builtin_functions, min(), max(), sum(), sorted(), any(), all(), bisect, bisect_left(), bisect_right(), insort_left(), insort_right(), bytes, stack, queue]
 sidebar: python_sidebar
 permalink: python_list.html
 folder: python
@@ -13,7 +13,7 @@ next:
 next_title: 
 next_section: 
 next_section_title: 
-summary: constructor and functions of list.
+summary: List constructor, indexing, slicing, iterating, unpacking, functions of list object, list operators, builtin functions, list as stack and queue.
 ---
 
 
@@ -3107,10 +3107,9 @@ id(flowers3) : 139636998268416
 flowers1 = ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
 flowers2 = flowers1
 
-del flower1
+del flowers1
 
-print(flower2)
-
+print(flowers2)
 
 {% endhighlight %}
 </div>
@@ -3655,7 +3654,7 @@ Stack after pop() [4, 7, 2, 5]
 <hr/>
 
 
-#### list as queue
+### list as queue
 
 
 <div id="tut-content"> 

@@ -1,0 +1,8 @@
+---
+title: "min()"
+tagName: min()
+search: exclude
+permalink: tag_min().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

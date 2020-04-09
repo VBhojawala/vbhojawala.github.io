@@ -1,0 +1,8 @@
+---
+title: "deepcopy()"
+tagName: deepcopy()
+search: exclude
+permalink: tag_deepcopy().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

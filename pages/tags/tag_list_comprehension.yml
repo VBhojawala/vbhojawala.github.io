@@ -1,0 +1,8 @@
+---
+title: "list comprehension"
+tagName: list_comprehension
+search: exclude
+permalink: tag_list_comprehension.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

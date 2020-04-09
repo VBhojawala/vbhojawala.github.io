@@ -264,4 +264,40 @@ allowed-tags:
   - factorial
   - fibonacci
   - binary_search
-
+  - not_in
+  - reversed()
+  - enumerate()
+  - chain()
+  - zip()
+  - unpacking
+  - 2d_list
+  - 3d_list
+  - list_comprehension
+  - filtering
+  - append()
+  - insert()
+  - remove()
+  - count()
+  - extend()
+  - pop()
+  - index()
+  - sort()
+  - copy()
+  - deepcopy()
+  - reverse()
+  - clear()
+  - List_Operators
+  - builtin_functions
+  - min()
+  - max()
+  - sum()
+  - sorted()
+  - any()
+  - all()
+  - bisect
+  - bisect_left()
+  - bisect_right()
+  - insort_left()
+  - insort_right()
+  - stack
+  - queue

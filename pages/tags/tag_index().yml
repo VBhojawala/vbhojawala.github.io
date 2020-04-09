@@ -1,0 +1,8 @@
+---
+title: "index()"
+tagName: index()
+search: exclude
+permalink: tag_index().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}
