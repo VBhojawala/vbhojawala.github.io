@@ -3418,6 +3418,298 @@ all(l2) : False
 <hr/>
 
 
+### bisect module
 
+<p> Provides interface to maintain list sorted after insertion of an element. It uses bisection algorithm to maintain list sorted.</p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Functions of bisect module :</strong> </li>
+    </ul> 
+</div>
+
+#### bisect_left(a, x, lo=0, hi=len(a))
+
+<p> Locates insertion point for element x in list a. </p>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> lo and hi : </strong> Optional parameters  for specifying subset of list. </li>
+        <li> If x is already present in list insertion point will be before the existing element. </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import bisect
+
+l1 = [5, 8, 11, 17, 19]
+
+print('Insertion position for 15 : ', bisect.bisect_left(l1, 15))
+
+# inserting element
+print('Inserting element at position returned by bisect :')
+
+print('Before :', l1)
+l1.insert(bisect.bisect_left(l1, 15), 15)
+print('After :', l1)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Insertion position for 15 :  3
+Inserting element at position returned by bisect :
+Before : [5, 8, 11, 17, 19]
+After : [5, 8, 11, 15, 17, 19]
+</pre></div>
+
+<hr/>
+
+
+
+#### bisect_right(a, x, lo=0, hi=len(a))
+
+<p> Same as bisect_left but in case of element already present returns insertion point after the existing element. </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+l1 = [5, 8, 11, 15, 17, 19]
+
+print(l1)
+print('bisect_left(15) :', bisect.bisect_left(l1, 15))
+print('bisect_right(15) :', bisect.bisect_right(l1, 15))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+[5, 8, 11, 15, 17, 19]
+bisect_left(15) : 3
+bisect_right(15) : 4
+</pre></div>
+
+<hr/>
+
+
+
+#### insort_left(a, x, lo=0, hi=len(a))
+
+<p> Inserts element x in sorted order in to list a, in case of element is already in list insert new element to left of existing element. </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+l1 = [5, 8, 11, 17, 19]
+
+print('Before :', l1)
+bisect.insort_left(l1, 16)
+print('After :', l1)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Before : [5, 8, 11, 17, 19]
+After : [5, 8, 11, 16, 17, 19]
+</pre></div>
+
+<hr/>
+
+
+
+
+#### insort_right(a, x, lo=0, hi=len(a))
+
+<p> Similar to insort_left() but in case of element is already in list inserts new element to the right of existing element. </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+l1 = [5, 8, 11, 17, 19]
+
+print('Before :', l1)
+bisect.insort_right(l1, 16)
+print('After :', l1)
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Before : [5, 8, 11, 17, 19]
+After : [5, 8, 11, 16, 17, 19]
+</pre></div>
+
+<hr/>
+
+
+### bytes to list
+
+<div id="tut-content"> 
+    <ul>
+        <li> Bytes string passed in constructor of list returns list contains ordinal values of each character present in byte string. </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+byteStr = b'Hello World!'
+list1 = list(byteStr)
+print(list1)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+[72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100, 33]
+</pre></div>
+
+<hr/>
+
+
+### list as stack
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> Stack operation using list functions append() and pop(). </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+stack = [4, 7, 2, 5, 6]
+
+
+def push(n):
+    stack.append(n)
+
+
+def pop():
+    return stack.pop()
+
+
+print(stack)
+push(10)
+print('Stack after push(10)', stack)
+print('popped', pop())
+print('Stack after pop()', stack)
+print('popped', pop())
+print('Stack after pop()', stack)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+[4, 7, 2, 5, 6]
+Stack after push(10) [4, 7, 2, 5, 6, 10]
+popped 10
+Stack after pop() [4, 7, 2, 5, 6]
+popped 6
+Stack after pop() [4, 7, 2, 5]
+</pre></div>
+
+<hr/>
+
+
+#### list as queue
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> Queue operation using list functions append() and pop(). </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+queue = [4, 7, 2, 5, 6]
+
+
+def enqueue(n):
+    queue.append(n)
+
+
+def dequeue():
+    return queue.pop(0)
+
+
+print(queue)
+print('dequeue ->', dequeue())
+print('Queue after dequeue', queue)
+
+enqueue(9)
+print('Queue after enqueue 9 ', queue)
+
+print('dequeue ->',dequeue())
+print('Queue after dequeue', queue)
+
+enqueue(15)
+print('Queue after enqueue 15 ', queue)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+[4, 7, 2, 5, 6]
+dequeue -> 4
+Queue after dequeue [7, 2, 5, 6]
+Queue after enqueue 9  [7, 2, 5, 6, 9]
+dequeue -> 7
+Queue after dequeue [2, 5, 6, 9]
+Queue after enqueue 15  [2, 5, 6, 9, 15]
+</pre></div>
+
+<hr/>
 
 {% include links.html %}

@@ -3168,6 +3168,243 @@ all(l2) : False
 
 <hr />
 
+<h3 id="bisect-module">bisect module</h3>
+
+<p> Provides interface to maintain list sorted after insertion of an element. It uses bisection algorithm to maintain list sorted.</p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Functions of bisect module :</strong> </li>
+    </ul> 
+</div>
+
+<h4 id="bisect_lefta-x-lo0-hilena">bisect_left(a, x, lo=0, hi=len(a))</h4>
+
+<p> Locates insertion point for element x in list a. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> lo and hi : </strong> Optional parameters  for specifying subset of list. </li>
+        <li> If x is already present in list insertion point will be before the existing element. </li>
+    </ul> 
+</div>
+
+<div id="code-block-99" class="code-block">
+<p id="code-header-99" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-99", "code-header-99")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">bisect</span>
+
+<span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Insertion position for 15 : '</span><span class="p">,</span> <span class="n">bisect</span><span class="o">.</span><span class="n">bisect_left</span><span class="p">(</span><span class="n">l1</span><span class="p">,</span> <span class="mi">15</span><span class="p">))</span>
+
+<span class="c1"># inserting element
+</span><span class="k">print</span><span class="p">(</span><span class="s">'Inserting element at position returned by bisect :'</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Before :'</span><span class="p">,</span> <span class="n">l1</span><span class="p">)</span>
+<span class="n">l1</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">bisect</span><span class="o">.</span><span class="n">bisect_left</span><span class="p">(</span><span class="n">l1</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="mi">15</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'After :'</span><span class="p">,</span> <span class="n">l1</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Insertion position for 15 :  3
+Inserting element at position returned by bisect :
+Before : [5, 8, 11, 17, 19]
+After : [5, 8, 11, 15, 17, 19]
+</pre></div>
+
+<hr />
+
+<h4 id="bisect_righta-x-lo0-hilena">bisect_right(a, x, lo=0, hi=len(a))</h4>
+
+<p> Same as bisect_left but in case of element already present returns insertion point after the existing element. </p>
+
+<div id="code-block-100" class="code-block">
+<p id="code-header-100" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-100", "code-header-100")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">l1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'bisect_left(15) :'</span><span class="p">,</span> <span class="n">bisect</span><span class="o">.</span><span class="n">bisect_left</span><span class="p">(</span><span class="n">l1</span><span class="p">,</span> <span class="mi">15</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'bisect_right(15) :'</span><span class="p">,</span> <span class="n">bisect</span><span class="o">.</span><span class="n">bisect_right</span><span class="p">(</span><span class="n">l1</span><span class="p">,</span> <span class="mi">15</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+[5, 8, 11, 15, 17, 19]
+bisect_left(15) : 3
+bisect_right(15) : 4
+</pre></div>
+
+<hr />
+
+<h4 id="insort_lefta-x-lo0-hilena">insort_left(a, x, lo=0, hi=len(a))</h4>
+
+<p> Inserts element x in sorted order in to list a, in case of element is already in list insert new element to left of existing element. </p>
+
+<div id="code-block-101" class="code-block">
+<p id="code-header-101" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-101", "code-header-101")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Before :'</span><span class="p">,</span> <span class="n">l1</span><span class="p">)</span>
+<span class="n">bisect</span><span class="o">.</span><span class="n">insort_left</span><span class="p">(</span><span class="n">l1</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'After :'</span><span class="p">,</span> <span class="n">l1</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Before : [5, 8, 11, 17, 19]
+After : [5, 8, 11, 16, 17, 19]
+</pre></div>
+
+<hr />
+
+<h4 id="insort_righta-x-lo0-hilena">insort_right(a, x, lo=0, hi=len(a))</h4>
+
+<p> Similar to insort_left() but in case of element is already in list inserts new element to the right of existing element. </p>
+
+<div id="code-block-102" class="code-block">
+<p id="code-header-102" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-102", "code-header-102")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Before :'</span><span class="p">,</span> <span class="n">l1</span><span class="p">)</span>
+<span class="n">bisect</span><span class="o">.</span><span class="n">insort_right</span><span class="p">(</span><span class="n">l1</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'After :'</span><span class="p">,</span> <span class="n">l1</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Before : [5, 8, 11, 17, 19]
+After : [5, 8, 11, 16, 17, 19]
+</pre></div>
+
+<hr />
+
+<h3 id="bytes-to-list">bytes to list</h3>
+
+<div id="tut-content"> 
+    <ul>
+        <li> Bytes string passed in constructor of list returns list contains ordinal values of each character present in byte string. </li>
+    </ul> 
+</div>
+
+<div id="code-block-103" class="code-block">
+<p id="code-header-103" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-103", "code-header-103")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">byteStr</span> <span class="o">=</span> <span class="n">b</span><span class="s">'Hello World!'</span>
+<span class="n">list1</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">byteStr</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+[72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100, 33]
+</pre></div>
+
+<hr />
+
+<h3 id="list-as-stack">list as stack</h3>
+
+<div id="tut-content"> 
+    <ul>
+        <li> Stack operation using list functions append() and pop(). </li>
+    </ul> 
+</div>
+
+<div id="code-block-104" class="code-block">
+<p id="code-header-104" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-104", "code-header-104")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">stack</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">push</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">pop</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="n">stack</span><span class="p">)</span>
+<span class="n">push</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Stack after push(10)'</span><span class="p">,</span> <span class="n">stack</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'popped'</span><span class="p">,</span> <span class="n">pop</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Stack after pop()'</span><span class="p">,</span> <span class="n">stack</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'popped'</span><span class="p">,</span> <span class="n">pop</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Stack after pop()'</span><span class="p">,</span> <span class="n">stack</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+[4, 7, 2, 5, 6]
+Stack after push(10) [4, 7, 2, 5, 6, 10]
+popped 10
+Stack after pop() [4, 7, 2, 5, 6]
+popped 6
+Stack after pop() [4, 7, 2, 5]
+</pre></div>
+
+<hr />
+
+<h4 id="list-as-queue">list as queue</h4>
+
+<div id="tut-content"> 
+    <ul>
+        <li> Queue operation using list functions append() and pop(). </li>
+    </ul> 
+</div>
+
+<div id="code-block-105" class="code-block">
+<p id="code-header-105" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-105", "code-header-105")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">queue</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">enqueue</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">queue</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">dequeue</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">queue</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="n">queue</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'dequeue -&gt;'</span><span class="p">,</span> <span class="n">dequeue</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Queue after dequeue'</span><span class="p">,</span> <span class="n">queue</span><span class="p">)</span>
+
+<span class="n">enqueue</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Queue after enqueue 9 '</span><span class="p">,</span> <span class="n">queue</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'dequeue -&gt;'</span><span class="p">,</span><span class="n">dequeue</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Queue after dequeue'</span><span class="p">,</span> <span class="n">queue</span><span class="p">)</span>
+
+<span class="n">enqueue</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Queue after enqueue 15 '</span><span class="p">,</span> <span class="n">queue</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+[4, 7, 2, 5, 6]
+dequeue -&gt; 4
+Queue after dequeue [7, 2, 5, 6]
+Queue after enqueue 9  [7, 2, 5, 6, 9]
+dequeue -&gt; 7
+Queue after dequeue [2, 5, 6, 9]
+Queue after enqueue 15  [2, 5, 6, 9, 15]
+</pre></div>
+
+<hr />
+
 
 
     <div class="tags">
