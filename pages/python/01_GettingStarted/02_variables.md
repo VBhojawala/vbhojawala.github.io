@@ -7,8 +7,10 @@ permalink: python_variables.html
 folder: python
 prev: python_hello_world.html
 prev_title: Hello World!
-next: python_decimal_fraction.html
-next_title: Decimal and Fraction
+next: 
+next_title: 
+next_section: python_decimal_fraction.html
+next_section_title: Data Types
 summary: variables int, float, string, boolean. Variable declaration, assignment, comparision, caching, memory management. Int and Float class methods. Conversion between variable types. Binary, Octal and Hexadecimal assignment and conversion.
 ---
 

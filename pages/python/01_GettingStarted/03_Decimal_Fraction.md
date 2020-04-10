@@ -5,8 +5,10 @@ tags: [Decimal, round(), Fraction, float, infinity, signals, context, context_ma
 sidebar: python_sidebar
 permalink: python_decimal_fraction.html
 folder: python
-prev: python_variables.html
-prev_title: Variables
+prev: 
+prev_title: 
+prev_section: python_getting_started.html
+prev_section_title: Getting Started
 next: python_string.html
 next_title: String
 

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="List constructor, indexing, slicing, iterating, unpacking, functions of list object, list operators, builtin functions, list as stack and queue.">
+<meta name="description" content="tuple constructor, indexing, slicing, iterating, functions of tuple object.">
 <meta name="keywords" content=",  ">
 <meta name="theme-color" content="#36362C">
 <link rel="icon" sizes="192x192" href="images/favicon.ico">
@@ -389,6 +389,15 @@
           
           
           
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Data Types" href="#">Data Types</a>
+      <ul class="nav1">
+          
           
           
           <li><a title="Decimal and Fraction" href="python_decimal_fraction.html">Decimal and Fraction</a></li>
@@ -530,7 +539,7 @@
 <div class="post-content">
 
    <!-- 
-    <div class="summary">List constructor, indexing, slicing, iterating, unpacking, functions of list object, list operators, builtin functions, list as stack and queue.</div>
+    <div class="summary">tuple constructor, indexing, slicing, iterating, functions of tuple object.</div>
     -->
 
     
@@ -565,7 +574,898 @@ $('#toc').on('click', 'a', function() {
 
      -->
 
-   
+   <h2 id="tuple">Tuple</h2>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Immutable Data type.</strong> </li>
+        <li> <strong>Ordered and indexed sequence.</strong> </li>
+        <li> <strong>It can contain duplicates.</strong> </li>
+        <li> <strong>Hashable data structure.</strong> </li>
+    </ul> 
+</div>
+
+<h3 id="constructor">Constructor</h3>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>tupe() : </strong> Creating empty tuple object. </li>
+    </ul> 
+</div>
+
+<div id="code-block-1" class="code-block">
+<p id="code-header-1" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-1", "code-header-1")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">t1</span> <span class="o">=</span> <span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span>
+
+<span class="c1"># or
+</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+()
+()
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>tuple(*elements) : </strong> Creating tuple object with elements. </li>
+    </ul> 
+</div>
+
+<div id="code-block-2" class="code-block">
+<p id="code-header-2" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-2", "code-header-2")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span>
+
+<span class="c1"># or
+</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span>
+<span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+(1, 2, 3)
+(1, 2, 3)
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>tuple(iterable) : </strong> Creating tuple from iterator / generator function. </li>
+    </ul> 
+</div>
+
+<div id="code-block-3" class="code-block">
+<p id="code-header-3" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-3", "code-header-3")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">t1</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Tuple with different kinds of objects.</strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-4" class="code-block">
+<p id="code-header-4" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-4", "code-header-4")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="mf">12.00</span><span class="p">,</span> <span class="s">'Hello Tuple'</span><span class="p">,</span> <span class="mi">1245</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+(12.0, 'Hello Tuple', 1245, False)
+</pre></div>
+
+<hr />
+
+<h3 id="indexing">Indexing</h3>
+
+<div id="code-block-5" class="code-block">
+<p id="code-header-5" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-5", "code-header-5")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">(</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div id="tut-img">
+    <img src="/images/tutorials/python/list-Indexing.png" class="tut-img" alt="Indexing in list" />
+</div>
+
+<div id="code-block-6" class="code-block">
+<p id="code-header-6" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-6", "code-header-6")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">(</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'flowers[0] :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'flowers[3] :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'flowers[5] :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'flowers[-1] :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'flowers[-4] :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'flowers[-6] :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">[</span><span class="o">-</span><span class="mi">6</span><span class="p">])</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+flowers[0] : Lotus
+flowers[3] : Rose
+flowers[5] : Tulips
+flowers[-1] : Tulips
+flowers[-4] : Jasmine
+flowers[-6] : Lotus
+</pre></div>
+
+<hr />
+
+<h3 id="slicing">Slicing</h3>
+
+<div class="bs-callout bs-callout-primary"><strong>Note</strong> : Slicing works same as we have explained in string. For in depth slicing tutorials checkout slicing in string. </div>
+
+<div id="tut-img">
+    <img src="/images/tutorials/python/list-Indexing.png" class="tut-img" alt="Indexing in list" />
+</div>
+
+<div id="code-block-7" class="code-block">
+<p id="code-header-7" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-7", "code-header-7")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">(</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">flowers</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'flowers[2:4]      :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'flowers[1::2]     :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'flowers[4:1:-1]   :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'flowers[-1:-4:-1] :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">4</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+('Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips')
+flowers[2:4]      : ('Jasmine', 'Rose')
+flowers[1::2]     : ('Lily', 'Rose', 'Tulips')
+flowers[4:1:-1]   : ('Lavender', 'Rose', 'Jasmine')
+flowers[-1:-4:-1] : ('Tulips', 'Lavender', 'Rose')
+</pre></div>
+
+<hr />
+
+<h3 id="unpacking">Unpacking</h3>
+
+<div class="bs-callout bs-callout-primary"><strong>Note</strong> :  *variable always returns list even if one or no element is selected by it.</div>
+
+<div id="code-block-8" class="code-block">
+<p id="code-header-8" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-8", "code-header-8")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="mf">12.00</span><span class="p">,</span> <span class="s">'Hello Tuple'</span><span class="p">,</span> <span class="mi">1245</span><span class="p">)</span>
+<span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="n">v3</span> <span class="o">=</span> <span class="n">t1</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'v1 : {v1} |  v2 : {v2} |  v3 : {v3}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+v1 : 12.0 |  v2 : Hello Tuple |  v3 : 1245
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> Unpacking values from the beginning of tuple </li>
+    </ul> 
+</div>
+
+<div id="code-block-9" class="code-block">
+<p id="code-header-9" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-9", "code-header-9")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">marks</span> <span class="o">=</span> <span class="p">(</span><span class="mi">97</span><span class="p">,</span> <span class="mi">91</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">71</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">35</span><span class="p">)</span>
+
+<span class="n">top1</span><span class="p">,</span> <span class="n">top2</span><span class="p">,</span> <span class="n">top3</span><span class="p">,</span> <span class="o">*</span><span class="n">rest</span> <span class="o">=</span> <span class="n">marks</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Top1 : {top1}   Top2 : {top2}   Top3 : {top3}   rest : {rest}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Top1 : 97   Top2 : 91   Top3 : 84   rest : [78, 71, 66, 65, 59, 55, 54, 45, 35]
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> Unpacking values from the end of tuple </li>
+    </ul> 
+</div>
+
+<div id="code-block-10" class="code-block">
+<p id="code-header-10" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-10", "code-header-10")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">marks</span> <span class="o">=</span> <span class="p">(</span><span class="mi">97</span><span class="p">,</span> <span class="mi">91</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">71</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">35</span><span class="p">)</span>
+
+<span class="o">*</span><span class="n">rest</span><span class="p">,</span> <span class="n">low2</span><span class="p">,</span> <span class="n">low1</span> <span class="o">=</span> <span class="n">marks</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'low1 : {low1}   low2 : {low2}  rest : {rest}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+low1 : 35   low2 : 45  rest : [97, 91, 84, 78, 71, 66, 65, 59, 55, 54]
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> Unpacking values from the beginning and  end of tuple </li>
+    </ul> 
+</div>
+
+<div id="code-block-11" class="code-block">
+<p id="code-header-11" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-11", "code-header-11")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">marks</span> <span class="o">=</span> <span class="p">(</span><span class="mi">97</span><span class="p">,</span> <span class="mi">91</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">71</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">35</span><span class="p">)</span>
+
+<span class="n">high</span><span class="p">,</span> <span class="o">*</span><span class="n">rest</span><span class="p">,</span> <span class="n">low</span> <span class="o">=</span> <span class="n">marks</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'highest : {high}  lowest : {low}  rest : {rest}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+highest : 97  lowest : 35  rest : [91, 84, 78, 71, 66, 65, 59, 55, 54, 45]
+</pre></div>
+
+<hr />
+
+<h3 id="iterating">Iterating</h3>
+
+<h4 id="for-each">for-each</h4>
+
+<div id="code-block-12" class="code-block">
+<p id="code-header-12" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-12", "code-header-12")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="mf">12.00</span><span class="p">,</span> <span class="s">'Hello Tuple'</span><span class="p">,</span> <span class="mi">1245</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">t1</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Element : {element}  Type : {type(element)}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Element : 12.0  Type : &lt;class 'float'&gt;
+Element : Hello Tuple  Type : &lt;class 'str'&gt;
+Element : 1245  Type : &lt;class 'int'&gt;
+</pre></div>
+
+<hr />
+
+<h4 id="for-each-with-unpacking">for-each with unpacking</h4>
+
+<div id="code-block-13" class="code-block">
+<p id="code-header-13" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-13", "code-header-13")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">personT</span> <span class="o">=</span> <span class="p">((</span><span class="s">'John'</span><span class="p">,</span> <span class="mi">9978412287</span><span class="p">,</span> <span class="s">'A+'</span><span class="p">),</span> <span class="p">(</span><span class="s">'Victor'</span><span class="p">,</span> <span class="mi">7852122123</span><span class="p">,</span> <span class="s">'O+'</span><span class="p">),</span>
+           <span class="p">(</span><span class="s">'Kelly'</span><span class="p">,</span> <span class="mi">8845454454</span><span class="p">,</span> <span class="s">'B-'</span><span class="p">),</span> <span class="p">(</span><span class="s">'Sam'</span><span class="p">,</span> <span class="mi">7665415445</span><span class="p">,</span> <span class="s">'B+'</span><span class="p">),</span>
+           <span class="p">(</span><span class="s">'Jane'</span><span class="p">,</span> <span class="mi">7984546721</span><span class="p">,</span> <span class="s">'A-'</span><span class="p">))</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Name       PhoneNumber   BloodGroup'</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">phone</span><span class="p">,</span> <span class="n">bGroup</span> <span class="ow">in</span> <span class="n">personT</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'{name:10s} {phone:&lt;12d} {bGroup:^10s}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Name       PhoneNumber   BloodGroup
+John       9978412287       A+    
+Victor     7852122123       O+    
+Kelly      8845454454       B-    
+Sam        7665415445       B+    
+Jane       7984546721       A-    
+</pre></div>
+
+<hr />
+
+<h4 id="reversedseq">reversed(seq)</h4>
+
+<p> Returns iterator from given sequence which iterates over items of sequence in reversed order. </p>
+
+<div id="code-block-14" class="code-block">
+<p id="code-header-14" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-14", "code-header-14")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">(</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">flower</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">flowers</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">flower</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Tulips
+Lavender
+Rose
+Jasmine
+Lily
+Lotus
+</pre></div>
+
+<hr />
+
+<h4 id="iterating-list-using-index">Iterating list using index</h4>
+
+<div id="code-block-15" class="code-block">
+<p id="code-header-15" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-15", "code-header-15")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">(</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">flowers</span><span class="p">)):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'{i}. {flowers[i]}'</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">Printing number starting with 1</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">flowers</span><span class="p">)):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'{i+1}. {flowers[i]}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+0. Lotus
+1. Lily
+2. Jasmine
+3. Rose
+4. Lavender
+5. Tulips
+
+Printing number starting with 1
+
+1. Lotus
+2. Lily
+3. Jasmine
+4. Rose
+5. Lavender
+6. Tulips
+
+</pre></div>
+
+<hr />
+
+<h4 id="enumerateiterable-start0">enumerate(iterable, start=0)</h4>
+
+<div id="tut-content"> 
+    <ul>
+        <li> Returns in enumerate object which supports iterator protocol. </li>
+        <li> When iterated returns tuple(count, element) where count begins from 'start' which is by default set to 0. </li>
+    </ul> 
+</div>
+
+<div id="code-block-16" class="code-block">
+<p id="code-header-16" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-16", "code-header-16")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">(</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">count</span><span class="p">,</span> <span class="n">element</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">flowers</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'{count}. {element}'</span><span class="p">)</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">Printing number starting with 1</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">count</span><span class="p">,</span> <span class="n">element</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">flowers</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'{count}. {element}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+0. Lotus
+1. Lily
+2. Jasmine
+3. Rose
+4. Lavender
+5. Tulips
+
+Printing number starting with 1
+
+1. Lotus
+2. Lily
+3. Jasmine
+4. Rose
+5. Lavender
+6. Tulips
+
+</pre></div>
+
+<hr />
+
+<h4 id="itertoolschainiterables">itertools.chain(*iterables)</h4>
+<p> Returns an iterator which iterates over all items of multiple iterables one by one (Serially) in given order. </p>
+
+<div id="code-block-17" class="code-block">
+<p id="code-header-17" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-17", "code-header-17")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">chain</span>
+
+<span class="n">flowers</span> <span class="o">=</span> <span class="p">(</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">)</span>
+<span class="n">moreFlowers</span> <span class="o">=</span> <span class="p">(</span><span class="s">'Calendula'</span><span class="p">,</span> <span class="s">'Bougainvillea'</span><span class="p">,</span> <span class="s">'Poeny'</span><span class="p">,</span> <span class="s">'Dahlia'</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">flower</span> <span class="ow">in</span> <span class="n">chain</span><span class="p">(</span><span class="n">flowers</span><span class="p">,</span> <span class="n">moreFlowers</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">flower</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Lotus
+Lily
+Jasmine
+Rose
+Lavender
+Tulips
+Calendula
+Bougainvillea
+Poeny
+Dahlia
+</pre></div>
+
+<hr />
+
+<h4 id="zipiterables">zip(*iterables)</h4>
+
+<div id="tut-content"> 
+    <ul>
+        <li> Iterates over multiple iterable in parallel using indexing. </li>
+        <li> When different length of iterable is given, it stops when shortest iterable is finished. </li>
+    </ul> 
+</div>
+
+<div id="code-block-18" class="code-block">
+<p id="code-header-18" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-18", "code-header-18")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">(</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">)</span>
+<span class="n">prices</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">flower</span><span class="p">,</span> <span class="n">price</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">flowers</span><span class="p">,</span> <span class="n">prices</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Price of {flower} is $ {price}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Price of Lotus is $ 3
+Price of Lily is $ 5
+Price of Jasmine is $ 6
+Price of Rose is $ 3.5
+Price of Lavender is $ 4
+Price of Tulips is $ 3
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> Aggregating elements </li>
+    </ul> 
+</div>
+
+<div id="code-block-19" class="code-block">
+<p id="code-header-19" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-19", "code-header-19")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">name</span> <span class="o">=</span> <span class="p">(</span><span class="s">'John'</span><span class="p">,</span> <span class="s">'Victor'</span><span class="p">,</span> <span class="s">'Kelly'</span><span class="p">,</span> <span class="s">'Sam'</span><span class="p">,</span> <span class="s">'Jane'</span><span class="p">)</span>
+<span class="n">phone</span> <span class="o">=</span> <span class="p">(</span><span class="mi">9978412287</span><span class="p">,</span> <span class="mi">7852122123</span><span class="p">,</span> <span class="mi">8845454454</span><span class="p">,</span> <span class="mi">7665415445</span><span class="p">,</span> <span class="mi">7984546721</span><span class="p">)</span>
+<span class="n">bGroup</span> <span class="o">=</span> <span class="p">(</span><span class="s">'A+'</span><span class="p">,</span> <span class="s">'O+'</span><span class="p">,</span> <span class="s">'B-'</span><span class="p">,</span> <span class="s">'B+'</span><span class="p">,</span> <span class="s">'A-'</span><span class="p">)</span>
+
+<span class="n">personT</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">phone</span><span class="p">,</span> <span class="n">bGroup</span><span class="p">))</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">personT</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+(('John', 9978412287, 'A+'), ('Victor', 7852122123, 'O+'), ('Kelly', 8845454454, 'B-'), ('Sam', 7665415445, 'B+'), ('Jane', 7984546721, 'A-'))
+</pre></div>
+
+<hr />
+
+<h3 id="functions">Functions</h3>
+
+<h4 id="indexx">index(x)</h4>
+
+<p> Returns the index of the element x in tuple object. </p>
+
+<div id="code-block-20" class="code-block">
+<p id="code-header-20" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-20", "code-header-20")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">19</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'t1 : {t1}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'t1.index(11) : {t1.index(11)}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+t1 : (1, 4, 6, 11, 15, 19)
+t1.index(11) : 3
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> If tuple object contains duplicate items, it returns index of first element. </li>
+    </ul> 
+</div>
+
+<div id="code-block-21" class="code-block">
+<p id="code-header-21" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-21", "code-header-21")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">19</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'t1 : {t1}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'t1.index(11) : {t1.index(4)}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+t1 : (1, 4, 6, 4, 11, 4, 15, 19)
+t1.index(11) : 1
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> If given element does not exists in tuple it will raise ValueError.  </li>
+    </ul> 
+</div>
+
+<div id="code-block-22" class="code-block">
+<p id="code-header-22" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-22", "code-header-22")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">19</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'t1 : {t1}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'t1.index(11) : {t1.index(16)}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+t1 : (1, 4, 6, 11, 15, 19)
+</pre><pre id="tut-output-error" class="result-content">Traceback (most recent call last):
+  File "&lt;&zwj;input&zwj;&gt;", line 3, in &lt;&zwj;module&zwj;&gt;
+ValueError: tuple.index(x): x not in tuple</pre></div>
+
+<hr />
+
+<h4 id="countx">count(x)</h4>
+
+<p> Counts and returns the occurrences of element x in the Tuple. </p>
+
+<div id="code-block-23" class="code-block">
+<p id="code-header-23" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-23", "code-header-23")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">19</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'t1.count(4) : {t1.count(4)}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+t1.count(4) : 3
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> If given element does not exists in tuple, it returns 0. </li>
+    </ul> 
+</div>
+
+<div id="code-block-24" class="code-block">
+<p id="code-header-24" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-24", "code-header-24")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">19</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'t1.count(16) : {t1.count(16)}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+t1.count(16) : 0
+</pre></div>
+
+<hr />
+
+<h4 id="lenx">len(x)</h4>
+
+<p> Returns number of elements inside the given tuple object. </p>
+
+<div id="code-block-25" class="code-block">
+<p id="code-header-25" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-25", "code-header-25")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">19</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'len(t1) : {len(t1)}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+len(t1) : 8
+</pre></div>
+
+<hr />
+
+<h3 id="membership-operators">Membership operators</h3>
+
+<h4 id="in">in</h4>
+<p> Checks the given element exists inside the tuple object, if it exists returns True.  </p>
+
+<div id="code-block-26" class="code-block">
+<p id="code-header-26" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-26", "code-header-26")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">t1</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'1 in t1  :'</span><span class="p">,</span> <span class="mi">1</span> <span class="ow">in</span> <span class="n">t1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'15 in t1 :'</span><span class="p">,</span> <span class="mi">15</span> <span class="ow">in</span> <span class="n">t1</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+1 in t1  : True
+15 in t1 : False
+</pre></div>
+
+<hr />
+
+<h4 id="not-in">not in</h4>
+<p> Checks the given element does not exists inside the tuple object, if it does not exists returns True.  </p>
+
+<div id="code-block-27" class="code-block">
+<p id="code-header-27" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-27", "code-header-27")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">t1</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'1 not in t1  :'</span><span class="p">,</span> <span class="mi">1</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">t1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'15 not in t1 :'</span><span class="p">,</span> <span class="mi">15</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">t1</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+1 not in t1  : False
+15 not in t1 : True
+</pre></div>
+
+<hr />
+
+<h3 id="operators">Operators</h3>
+
+<h4 id="--">’ + ‘</h4>
+
+<p> Returns new tuple object by concating elements of two tuple.</p>
+
+<div id="code-block-28" class="code-block">
+<p id="code-header-28" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-28", "code-header-28")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+
+<span class="n">t3</span> <span class="o">=</span> <span class="n">t1</span> <span class="o">+</span> <span class="n">t2</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'t1 : {t1}  id(t1) : {id(t1)}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'t2 : {t2}  id(t2) : {id(t2)}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'t3 : {t3}  id(t3) : {id(t3)}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+t1 : (1, 2, 3)  id(t1) : 140531096670656
+t2 : (4, 5, 6)  id(t2) : 140531066864000
+t3 : (1, 2, 3, 4, 5, 6)  id(t3) : 140531093851680
+</pre></div>
+
+<hr />
+
+<h4 id="---1">’ * ‘</h4>
+
+<p> Returns new tuple object which repeats elements of tuple 'n' times. </p>
+
+<div id="code-block-29" class="code-block">
+<p id="code-header-29" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-29", "code-header-29")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">)</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="n">t1</span> <span class="o">*</span> <span class="mi">10</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'t1 : {t1}  id(t1) : {id(t1)}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'t2 : {t2}  id(t2) : {id(t2)}'</span><span class="p">)</span>
+
+<span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="n">t1</span> <span class="o">*</span> <span class="mi">3</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'t1 : {t1}  id(t1) : {id(t1)}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'t2 : {t2}  id(t2) : {id(t2)}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+t1 : (1,)  id(t1) : 140531066796496
+t2 : (1, 1, 1, 1, 1, 1, 1, 1, 1, 1)  id(t2) : 140531088755264
+t1 : (1, 2, 3)  id(t1) : 140531096101696
+t2 : (1, 2, 3, 1, 2, 3, 1, 2, 3)  id(t2) : 140531088612032
+</pre></div>
+
+<hr />
+
+<h3 id="builtin-function-on-numeric-tuple">Builtin function on numeric tuple</h3>
+
+<h4 id="miniterable">min(iterable)</h4>
+
+<p> Returns element which is having minimum value. </p>
+
+<div id="code-block-30" class="code-block">
+<p id="code-header-30" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-30", "code-header-30")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">65</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Minimum : '</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">t1</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Minimum :  12
+</pre></div>
+
+<hr />
+
+<h4 id="maxiterable">max(iterable)</h4>
+
+<p> Returns element which is having maximum value. </p>
+
+<div id="code-block-31" class="code-block">
+<p id="code-header-31" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-31", "code-header-31")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">65</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Maximum :'</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">t1</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Maximum : 87
+</pre></div>
+
+<hr />
+
+<h4 id="sumiterable">sum(iterable)</h4>
+
+<p> Returns sum of each numeric values inside given iterable. </p>
+
+<div id="code-block-32" class="code-block">
+<p id="code-header-32" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-32", "code-header-32")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">65</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Sum :'</span><span class="p">,</span> <span class="nb">sum</span><span class="p">(</span><span class="n">t1</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Sum : 401
+</pre></div>
+
+<hr />
+
+<h4 id="sortediterable-key-reverse">sorted(iterable, key, reverse)</h4>
+
+<p> sorts elements of Tuple in ascending order and returns list.</p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>key : </strong> By default set to None will sort list in default order defined by class. If given key as callable it will sort list based on value returned by given callable. </li>
+        <li> <strong>reverse : </strong> By default set to False will sort in ascending order. If given True it will sort list in descending order. </li>
+    </ul> 
+</div>
+
+<div class="bs-callout bs-callout-primary"><strong>Note</strong> : sorted() works same way as sort() function of list, it has same semantics for ‘key’ and ‘reverse’ argument. For more examples and detailed explanation of ‘key’ and ‘reverse’ argument check sort() method of list.</div>
+
+<div id="code-block-33" class="code-block">
+<p id="code-header-33" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-33", "code-header-33")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">65</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'original :'</span><span class="p">,</span> <span class="n">t1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'sorted   :'</span><span class="p">,</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">t1</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+original : (12, 55, 48, 24, 87, 76, 34, 65)
+sorted   : [12, 24, 34, 48, 55, 65, 76, 87]
+</pre></div>
+
+<hr />
+
+<h4 id="anyiterable">any(iterable)</h4>
+
+<p> Returns True if any if any item is evaluated as Boolean equivalent to True. </p>
+
+<div id="code-block-34" class="code-block">
+<p id="code-header-34" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-34", "code-header-34")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">65</span><span class="p">)</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'any(t1) :'</span><span class="p">,</span> <span class="nb">any</span><span class="p">(</span><span class="n">t1</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'any(t2) :'</span><span class="p">,</span> <span class="nb">any</span><span class="p">(</span><span class="n">t2</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+any(t1) : True
+any(t2) : False
+</pre></div>
+
+<hr />
+
+<h4 id="alliterable">all(iterable)</h4>
+
+<p> Returns True if any if all item is evaluated as Boolean equivalent to True. </p>
+
+<div id="code-block-35" class="code-block">
+<p id="code-header-35" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-35", "code-header-35")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">65</span><span class="p">)</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">65</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'all(t1) :'</span><span class="p">,</span> <span class="nb">all</span><span class="p">(</span><span class="n">t1</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'all(t2) :'</span><span class="p">,</span> <span class="nb">all</span><span class="p">(</span><span class="n">t2</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+all(t1) : True
+all(t2) : False
+</pre></div>
+
+<hr />
+
 
 
     <div class="tags">

@@ -730,7 +730,7 @@ Dahlia
 
 ### iterating through multiple list in parallel
 
-#### zip()
+#### zip(*iterables)
 
 <div id="tut-content"> 
     <ul>
@@ -2320,6 +2320,47 @@ from operator import itemgetter
 
 print('Default :', studentList)
 studentList.sort(key=itemgetter(1))
+print('Sorted  :', studentList)
+
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Default : [['John', 101, 'O+'], ['Victor', 105, 'A-'], ['Kelly', 103, 'B+'], ['Sam', 102, 'A+'], ['Jane', 104, 'B+']]
+Sorted  : [['John', 101, 'O+'], ['Sam', 102, 'A+'], ['Kelly', 103, 'B+'], ['Jane', 104, 'B+'], ['Victor', 105, 'A-']]
+</pre></div>
+
+<hr/>
+
+
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Sorting 2D list with user defined function passed as key</strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+studentList = [['John', 101, 'O+'], ['Victor', 105, 'A-'], ['Kelly', 103, 'B+'], ['Sam', 102, 'A+'],['Jane', 104, 'B+']]
+
+
+def by_roll_no(student):
+    return student[1]
+
+
+print('Default :', studentList)
+studentList.sort(key=by_roll_no)
 print('Sorted  :', studentList)
 
 

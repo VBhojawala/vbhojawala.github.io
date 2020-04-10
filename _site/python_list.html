@@ -389,6 +389,15 @@
           
           
           
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Data Types" href="#">Data Types</a>
+      <ul class="nav1">
+          
           
           
           <li><a title="Decimal and Fraction" href="python_decimal_fraction.html">Decimal and Fraction</a></li>
@@ -1122,7 +1131,7 @@ Dahlia
 
 <h3 id="iterating-through-multiple-list-in-parallel">iterating through multiple list in parallel</h3>
 
-<h4 id="zip">zip()</h4>
+<h4 id="zipiterables">zip(*iterables)</h4>
 
 <div id="tut-content"> 
     <ul>
@@ -2320,6 +2329,36 @@ Sorted  : [['John', 101, 'O+'], ['Sam', 102, 'A+'], ['Kelly', 103, 'B+'], ['Jane
 
 <hr />
 
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Sorting 2D list with user defined function passed as key</strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-70" class="code-block">
+<p id="code-header-70" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-70", "code-header-70")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">studentList</span> <span class="o">=</span> <span class="p">[[</span><span class="s">'John'</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="s">'O+'</span><span class="p">],</span> <span class="p">[</span><span class="s">'Victor'</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="s">'A-'</span><span class="p">],</span> <span class="p">[</span><span class="s">'Kelly'</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="s">'B+'</span><span class="p">],</span> <span class="p">[</span><span class="s">'Sam'</span><span class="p">,</span> <span class="mi">102</span><span class="p">,</span> <span class="s">'A+'</span><span class="p">],[</span><span class="s">'Jane'</span><span class="p">,</span> <span class="mi">104</span><span class="p">,</span> <span class="s">'B+'</span><span class="p">]]</span>
+
+
+<span class="k">def</span> <span class="nf">by_roll_no</span><span class="p">(</span><span class="n">student</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">student</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Default :'</span><span class="p">,</span> <span class="n">studentList</span><span class="p">)</span>
+<span class="n">studentList</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">by_roll_no</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Sorted  :'</span><span class="p">,</span> <span class="n">studentList</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Default : [['John', 101, 'O+'], ['Victor', 105, 'A-'], ['Kelly', 103, 'B+'], ['Sam', 102, 'A+'], ['Jane', 104, 'B+']]
+Sorted  : [['John', 101, 'O+'], ['Sam', 102, 'A+'], ['Kelly', 103, 'B+'], ['Jane', 104, 'B+'], ['Victor', 105, 'A-']]
+</pre></div>
+
+<hr />
+
 <h4 id="copy">copy()</h4>
 
 <p> Returns shallow copy of the list </p>
@@ -2341,8 +2380,8 @@ Sorted  : [['John', 101, 'O+'], ['Sam', 102, 'A+'], ['Kelly', 103, 'B+'], ['Jane
 
 <p> Here making changes to copy of the original list does not affect the original list. </p>
 
-<div id="code-block-70" class="code-block">
-<p id="code-header-70" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-70", "code-header-70")</script>
+<div id="code-block-71" class="code-block">
+<p id="code-header-71" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-71", "code-header-71")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
 
@@ -2371,8 +2410,8 @@ copyFlowers : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
 
 <p> Here making changes to copy of the original list affects the original list, because we object type is mutable and only references of object is copied. </p>
 
-<div id="code-block-71" class="code-block">
-<p id="code-header-71" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-71", "code-header-71")</script>
+<div id="code-block-72" class="code-block">
+<p id="code-header-72" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-72", "code-header-72")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
 <span class="n">moreFlowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Calendula'</span><span class="p">,</span> <span class="s">'Bougainvillea'</span><span class="p">,</span> <span class="s">'Peony'</span><span class="p">,</span> <span class="s">'Dahlia'</span><span class="p">]</span>
@@ -2406,8 +2445,8 @@ Copy List After Removal --&gt;  [['Lotus', 'Lily', 'Jasmine', 'Lavender', 'Tulip
     </ul> 
 </div>
 
-<div id="code-block-72" class="code-block">
-<p id="code-header-72" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-72", "code-header-72")</script>
+<div id="code-block-73" class="code-block">
+<p id="code-header-73" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-73", "code-header-73")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">secondcopy</span> <span class="o">=</span> <span class="n">flowers</span><span class="p">[:]</span>
 <span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
@@ -2426,8 +2465,8 @@ Copy List After Removal --&gt;  [['Lotus', 'Lily', 'Jasmine', 'Lavender', 'Tulip
 
 <p> copies object recursively rather than copying memory reference to objects. </p>
 
-<div id="code-block-73" class="code-block">
-<p id="code-header-73" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-73", "code-header-73")</script>
+<div id="code-block-74" class="code-block">
+<p id="code-header-74" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-74", "code-header-74")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">copy</span>
 <span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
@@ -2460,8 +2499,8 @@ Copy List After Removal --&gt;  [['Lotus', 'Lily', 'Jasmine', 'Lavender', 'Tulip
 
 <p>  Reverse the elements of list. </p>
 
-<div id="code-block-74" class="code-block">
-<p id="code-header-74" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-74", "code-header-74")</script>
+<div id="code-block-75" class="code-block">
+<p id="code-header-75" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-75", "code-header-75")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
 
@@ -2486,8 +2525,8 @@ Reversed list : ['Tulips', 'Lavender', 'Rose', 'Jasmine', 'Lily', 'Lotus']
     </ul> 
 </div>
 
-<div id="code-block-75" class="code-block">
-<p id="code-header-75" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-75", "code-header-75")</script>
+<div id="code-block-76" class="code-block">
+<p id="code-header-76" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-76", "code-header-76")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
 
@@ -2509,8 +2548,8 @@ Reversed list : ['Tulips', 'Lavender', 'Rose', 'Jasmine', 'Lily', 'Lotus']
 
 <p> Removes all elements from the list. </p>
 
-<div id="code-block-76" class="code-block">
-<p id="code-header-76" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-76", "code-header-76")</script>
+<div id="code-block-77" class="code-block">
+<p id="code-header-77" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-77", "code-header-77")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'Original list :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span>
@@ -2535,8 +2574,8 @@ Cleared list : []
     </ul> 
 </div>
 
-<div id="code-block-77" class="code-block">
-<p id="code-header-77" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-77", "code-header-77")</script>
+<div id="code-block-78" class="code-block">
+<p id="code-header-78" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-78", "code-header-78")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'Original list :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span>
@@ -2561,8 +2600,8 @@ Cleared list : []
 
 <p> Joins collection of string into single string with provided separator. </p>
 
-<div id="code-block-78" class="code-block">
-<p id="code-header-78" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-78", "code-header-78")</script>
+<div id="code-block-79" class="code-block">
+<p id="code-header-79" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-79", "code-header-79")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
 <span class="n">ch</span> <span class="o">=</span> <span class="s">','</span>
@@ -2591,8 +2630,8 @@ Lotus,Lily,Jasmine,Rose,Lavender,Tulips
     </ul> 
 </div>
 
-<div id="code-block-79" class="code-block">
-<p id="code-header-79" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-79", "code-header-79")</script>
+<div id="code-block-80" class="code-block">
+<p id="code-header-80" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-80", "code-header-80")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowersString</span> <span class="o">=</span> <span class="s">'Lotus,Lily,Jasmine,Rose,Lavender,Tulips'</span>
 <span class="n">flowerList</span> <span class="o">=</span> <span class="n">flowersString</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">','</span><span class="p">)</span>
@@ -2611,8 +2650,8 @@ Lotus,Lily,Jasmine,Rose,Lavender,Tulips
 
 <p> Variable pointing to a list object can be assign to another variable, which will copy the memory address of list object. At later point if reference to original variable changes it will not affect reference assigned to other variable.   </p>
 
-<div id="code-block-80" class="code-block">
-<p id="code-header-80" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-80", "code-header-80")</script>
+<div id="code-block-81" class="code-block">
+<p id="code-header-81" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-81", "code-header-81")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
 
@@ -2654,8 +2693,8 @@ copyFlowers after : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
 
 <p> List is mutable data type, if it is passed as function parameter memory address for same list is copied. If function modifies the list object it will reflect changes outside scope of function.  </p>
 
-<div id="code-block-81" class="code-block">
-<p id="code-header-81" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-81", "code-header-81")</script>
+<div id="code-block-82" class="code-block">
+<p id="code-header-82" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-82", "code-header-82")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">52</span><span class="p">]</span>
 
@@ -2688,8 +2727,8 @@ numbers after : [60, 225, 125, 325, 420, 365, 245, 90, 270, 185, 260]
     </ul> 
 </div>
 
-<div id="code-block-82" class="code-block">
-<p id="code-header-82" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-82", "code-header-82")</script>
+<div id="code-block-83" class="code-block">
+<p id="code-header-83" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-83", "code-header-83")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">52</span><span class="p">]</span>
 
@@ -2720,8 +2759,8 @@ numbers after : [12, 45, 25, 65, 84, 73, 49, 18, 54, 37, 52]
     </ul> 
 </div>
 
-<div id="code-block-83" class="code-block">
-<p id="code-header-83" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-83", "code-header-83")</script>
+<div id="code-block-84" class="code-block">
+<p id="code-header-84" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-84", "code-header-84")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">52</span><span class="p">]</span>
 
@@ -2753,8 +2792,8 @@ numbers after : [12, 45, 25, 65, 84, 73, 49, 18, 54, 37, 52]
     </ul> 
 </div>
 
-<div id="code-block-84" class="code-block">
-<p id="code-header-84" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-84", "code-header-84")</script>
+<div id="code-block-85" class="code-block">
+<p id="code-header-85" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-85", "code-header-85")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">52</span><span class="p">]</span>
 
@@ -2789,8 +2828,8 @@ numbers after : [12, 45, 25, 65, 84, 73, 49, 18, 54, 37, 52]
 
 <p> If empty list is assigned to a function as default parameter, it's value is evaluated only when function is loaded in memory. If function modifies list inside changes made to list will persist among multiple function call. </p>
 
-<div id="code-block-85" class="code-block">
-<p id="code-header-85" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-85", "code-header-85")</script>
+<div id="code-block-86" class="code-block">
+<p id="code-header-86" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-86", "code-header-86")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
 
@@ -2833,8 +2872,8 @@ add_flower('Lily') ['Sunflower', 'Rose', 'Lily']
 <h4>==</h4>
 <p> Compares Values of two lists. If both list contains same values it returns True.</p>
 
-<div id="code-block-86" class="code-block">
-<p id="code-header-86" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-86", "code-header-86")</script>
+<div id="code-block-87" class="code-block">
+<p id="code-header-87" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-87", "code-header-87")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers1</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
 <span class="n">flowers2</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
@@ -2856,8 +2895,8 @@ flowers1 == flowers3 : False
 <h4 id="-1">!=</h4>
 <p> Compares Values of two lists. If both list does not contains same values it returns True.</p>
 
-<div id="code-block-87" class="code-block">
-<p id="code-header-87" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-87", "code-header-87")</script>
+<div id="code-block-88" class="code-block">
+<p id="code-header-88" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-88", "code-header-88")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers1</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
 <span class="n">flowers2</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
@@ -2879,8 +2918,8 @@ flowers1 != flowers3 : True
 <h4 id="is">is</h4>
 <p> An identity operator compares origin (memory address : id(obj)) of given two list :</p>
 
-<div id="code-block-88" class="code-block">
-<p id="code-header-88" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-88", "code-header-88")</script>
+<div id="code-block-89" class="code-block">
+<p id="code-header-89" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-89", "code-header-89")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers1</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
 <span class="n">flowers2</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
@@ -2913,8 +2952,8 @@ id(flowers3) : 139636998268416
 
 <p> Decrement the reference counter of an object and removes the given variable from memory. If object's reference counter reaches to 0 object is removed from memory. </p>
 
-<div id="code-block-89" class="code-block">
-<p id="code-header-89" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-89", "code-header-89")</script>
+<div id="code-block-90" class="code-block">
+<p id="code-header-90" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-90", "code-header-90")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers1</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
 <span class="n">flowers2</span> <span class="o">=</span> <span class="n">flowers1</span>
@@ -2969,8 +3008,8 @@ id(flowers3) : 139636998268416
     </ul> 
 </div>
 
-<div id="code-block-90" class="code-block">
-<p id="code-header-90" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-90", "code-header-90")</script>
+<div id="code-block-91" class="code-block">
+<p id="code-header-91" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-91", "code-header-91")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers1</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
 <span class="n">flowers2</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Calendula'</span><span class="p">,</span> <span class="s">'Bougainvillea'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
@@ -2998,8 +3037,8 @@ flowers1 &gt;= flowers2 : True
     </ul> 
 </div>
 
-<div id="code-block-91" class="code-block">
-<p id="code-header-91" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-91", "code-header-91")</script>
+<div id="code-block-92" class="code-block">
+<p id="code-header-92" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-92", "code-header-92")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 <span class="n">l2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
@@ -3027,8 +3066,8 @@ l1 &gt;= l2 : True
     </ul> 
 </div>
 
-<div id="code-block-92" class="code-block">
-<p id="code-header-92" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-92", "code-header-92")</script>
+<div id="code-block-93" class="code-block">
+<p id="code-header-93" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-93", "code-header-93")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">3</span><span class="p">]</span>
 <span class="n">l2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="mi">3</span><span class="p">]</span>
@@ -3056,8 +3095,8 @@ l1 &gt;= l2 : False
 
 <p> Returns element which is having minimum value. </p>
 
-<div id="code-block-93" class="code-block">
-<p id="code-header-93" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-93", "code-header-93")</script>
+<div id="code-block-94" class="code-block">
+<p id="code-header-94" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-94", "code-header-94")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">65</span><span class="p">]</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'Minimum : '</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">l1</span><span class="p">))</span></code></pre></figure>
@@ -3075,8 +3114,8 @@ Minimum :  12
 
 <p> Returns element which is having maximum value. </p>
 
-<div id="code-block-94" class="code-block">
-<p id="code-header-94" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-94", "code-header-94")</script>
+<div id="code-block-95" class="code-block">
+<p id="code-header-95" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-95", "code-header-95")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">65</span><span class="p">]</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'Maximum :'</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">l1</span><span class="p">))</span></code></pre></figure>
@@ -3094,8 +3133,8 @@ Maximum : 87
 
 <p> Returns sum of each numeric values inside given iterable. </p>
 
-<div id="code-block-95" class="code-block">
-<p id="code-header-95" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-95", "code-header-95")</script>
+<div id="code-block-96" class="code-block">
+<p id="code-header-96" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-96", "code-header-96")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">65</span><span class="p">]</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'Sum :'</span><span class="p">,</span> <span class="nb">sum</span><span class="p">(</span><span class="n">l1</span><span class="p">))</span></code></pre></figure>
@@ -3113,8 +3152,8 @@ Sum : 401
 
 <p> Works same as list.sort() </p>
 
-<div id="code-block-96" class="code-block">
-<p id="code-header-96" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-96", "code-header-96")</script>
+<div id="code-block-97" class="code-block">
+<p id="code-header-97" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-97", "code-header-97")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">65</span><span class="p">]</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'original :'</span><span class="p">,</span> <span class="n">l1</span><span class="p">)</span>
@@ -3134,8 +3173,8 @@ sorted   : [12, 24, 34, 48, 55, 65, 76, 87]
 
 <p> Returns True if any if any item is evaluated as Boolean equivalent to True. </p>
 
-<div id="code-block-97" class="code-block">
-<p id="code-header-97" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-97", "code-header-97")</script>
+<div id="code-block-98" class="code-block">
+<p id="code-header-98" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-98", "code-header-98")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">65</span><span class="p">]</span>
 <span class="n">l2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
@@ -3156,8 +3195,8 @@ any(l2) : False
 
 <p> Returns True if any if all item is evaluated as Boolean equivalent to True. </p>
 
-<div id="code-block-98" class="code-block">
-<p id="code-header-98" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-98", "code-header-98")</script>
+<div id="code-block-99" class="code-block">
+<p id="code-header-99" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-99", "code-header-99")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">65</span><span class="p">]</span>
 <span class="n">l2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">65</span><span class="p">]</span>
@@ -3196,8 +3235,8 @@ all(l2) : False
     </ul> 
 </div>
 
-<div id="code-block-99" class="code-block">
-<p id="code-header-99" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-99", "code-header-99")</script>
+<div id="code-block-100" class="code-block">
+<p id="code-header-100" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-100", "code-header-100")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">bisect</span>
 
@@ -3228,8 +3267,8 @@ After : [5, 8, 11, 15, 17, 19]
 
 <p> Same as bisect_left but in case of element already present returns insertion point after the existing element. </p>
 
-<div id="code-block-100" class="code-block">
-<p id="code-header-100" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-100", "code-header-100")</script>
+<div id="code-block-101" class="code-block">
+<p id="code-header-101" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-101", "code-header-101")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">]</span>
 
@@ -3252,8 +3291,8 @@ bisect_right(15) : 4
 
 <p> Inserts element x in sorted order in to list a, in case of element is already in list insert new element to left of existing element. </p>
 
-<div id="code-block-101" class="code-block">
-<p id="code-header-101" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-101", "code-header-101")</script>
+<div id="code-block-102" class="code-block">
+<p id="code-header-102" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-102", "code-header-102")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">]</span>
 
@@ -3275,8 +3314,8 @@ After : [5, 8, 11, 16, 17, 19]
 
 <p> Similar to insort_left() but in case of element is already in list inserts new element to the right of existing element. </p>
 
-<div id="code-block-102" class="code-block">
-<p id="code-header-102" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-102", "code-header-102")</script>
+<div id="code-block-103" class="code-block">
+<p id="code-header-103" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-103", "code-header-103")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">]</span>
 
@@ -3302,8 +3341,8 @@ After : [5, 8, 11, 16, 17, 19]
     </ul> 
 </div>
 
-<div id="code-block-103" class="code-block">
-<p id="code-header-103" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-103", "code-header-103")</script>
+<div id="code-block-104" class="code-block">
+<p id="code-header-104" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-104", "code-header-104")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">byteStr</span> <span class="o">=</span> <span class="n">b</span><span class="s">'Hello World!'</span>
 <span class="n">list1</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">byteStr</span><span class="p">)</span>
@@ -3326,8 +3365,8 @@ After : [5, 8, 11, 16, 17, 19]
     </ul> 
 </div>
 
-<div id="code-block-104" class="code-block">
-<p id="code-header-104" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-104", "code-header-104")</script>
+<div id="code-block-105" class="code-block">
+<p id="code-header-105" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-105", "code-header-105")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">stack</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
 
@@ -3370,8 +3409,8 @@ Stack after pop() [4, 7, 2, 5]
     </ul> 
 </div>
 
-<div id="code-block-105" class="code-block">
-<p id="code-header-105" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-105", "code-header-105")</script>
+<div id="code-block-106" class="code-block">
+<p id="code-header-106" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-106", "code-header-106")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">queue</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
 
