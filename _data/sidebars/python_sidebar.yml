@@ -88,6 +88,6 @@ entries:
       - title: List
         url: /python_list.html
         output: web
-      - title: Tuple
-        url: /python_tuple.html
+      - title: Tuple and NamedTuple
+        url: /python_tuple_namedtuple.html
         output: web

@@ -301,3 +301,9 @@ allowed-tags:
   - insort_right()
   - stack
   - queue
+  - namedtuple
+  - _fields
+  - _field_defaults
+  - _make()
+  - _asdict()
+  - _replace()

@@ -1,0 +1,8 @@
+---
+title: " asdict()"
+tagName: _asdict()
+search: exclude
+permalink: tag__asdict().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

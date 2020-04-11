@@ -1,0 +1,8 @@
+---
+title: " replace()"
+tagName: _replace()
+search: exclude
+permalink: tag__replace().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

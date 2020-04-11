@@ -1,0 +1,8 @@
+---
+title: "namedtuple"
+tagName: namedtuple
+search: exclude
+permalink: tag_namedtuple.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

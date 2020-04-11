@@ -4,11 +4,11 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="tuple constructor, indexing, slicing, iterating, functions of tuple object.">
-<meta name="keywords" content=",  ">
+<meta name="description" content="tuple constructor, indexing, slicing, iterating, functions of tuple object, operators, named tuple, attributes and functions of namedtuple.">
+<meta name="keywords" content="indexingslicingfor-eachreversed()enumerate()chain()zip()index()count()len()innot_inmin()max()sum()sorted()any()all()comparision_operatorsnamedtuple_fields_field_defaults_make()_asdict()_replace(),  ">
 <meta name="theme-color" content="#36362C">
 <link rel="icon" sizes="192x192" href="images/favicon.ico">
-<title>Tuple | Asha Tutorials</title>
+<title>Tuple and NamedTuple | Asha Tutorials</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -283,7 +283,7 @@
 
 
 
-  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:?subject=Asha Tutorials feedback&body=I have some feedback about the Tuple page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:?subject=Asha Tutorials feedback&body=I have some feedback about the Tuple and NamedTuple page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
 
 </li>
 
@@ -335,7 +335,7 @@
                             searchInput: document.getElementById('search-input'),
                             resultsContainer: document.getElementById('results-container'),
                             dataSource: 'search.json',
-                            searchResultTemplate: '<li style="margin: 0px 0px;"><a href="{url}" title="Tuple       " folder="python">{title} <sub>in {folder}</sub></a></li>',
+                            searchResultTemplate: '<li style="margin: 0px 0px;"><a href="{url}" title="Tuple and NamedTuple       " folder="python">{title} <sub>in {folder}</sub></a></li>',
                 noResultsText: '<li style="margin: 0px 0px;"><a href="#">No results found.</a></li>',
                         limit: 10,
                         fuzzy: true,
@@ -504,7 +504,7 @@
           
           
           
-          <li class="active"><a title="Tuple" href="python_tuple.html">Tuple</a></li>
+          <li class="active"><a title="Tuple and NamedTuple" href="python_tuple_namedtuple.html">Tuple and NamedTuple</a></li>
           
           
           
@@ -531,7 +531,7 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">Tuple</h1>
+   <h1 class="post-title-main">Tuple and NamedTuple</h1>
 </div>
 
 
@@ -539,7 +539,7 @@
 <div class="post-content">
 
    <!-- 
-    <div class="summary">tuple constructor, indexing, slicing, iterating, functions of tuple object.</div>
+    <div class="summary">tuple constructor, indexing, slicing, iterating, functions of tuple object, operators, named tuple, attributes and functions of namedtuple.</div>
     -->
 
     
@@ -581,7 +581,7 @@ $('#toc').on('click', 'a', function() {
         <li> <strong>Immutable Data type.</strong> </li>
         <li> <strong>Ordered and indexed sequence.</strong> </li>
         <li> <strong>It can contain duplicates.</strong> </li>
-        <li> <strong>Hashable data structure.</strong> </li>
+        <li> <strong>Hashable data structure.(if it contains immutable data only)</strong> </li>
     </ul> 
 </div>
 
@@ -1466,11 +1466,682 @@ all(t2) : False
 
 <hr />
 
+<h3 id="tuple-with-immutable-data">Tuple with immutable data</h3>
+
+<div id="code-block-36" class="code-block">
+<p id="code-header-36" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-36", "code-header-36")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'t1 == t2 :'</span><span class="p">,</span> <span class="n">t1</span> <span class="o">==</span> <span class="n">t2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'t1 is t2 :'</span><span class="p">,</span> <span class="n">t1</span> <span class="ow">is</span> <span class="n">t2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'id(t1) : {id(t1)}  </span><span class="se">\n</span><span class="s">id(t2) : {id(t2)}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+t1 == t2 : True
+t1 is t2 : True
+id(t1) : 139941349736896  
+id(t2) : 139941349736896
+
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> Creating alias for tuple </li>
+    </ul> 
+</div>
+
+<div id="code-block-37" class="code-block">
+<p id="code-header-37" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-37", "code-header-37")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="n">t1</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'t1 == t2 :'</span><span class="p">,</span> <span class="n">t1</span> <span class="o">==</span> <span class="n">t2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'t1 is t2 :'</span><span class="p">,</span> <span class="n">t1</span> <span class="ow">is</span> <span class="n">t2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'id(t1) : {id(t1)}  </span><span class="se">\n</span><span class="s">id(t2) : {id(t2)}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+t1 == t2 : True
+t1 is t2 : True
+id(t1) : 139941387023232  
+id(t2) : 139941387023232
+</pre></div>
+
+<hr />
+
+<h3 id="tuple-with-mutable-data">Tuple with mutable data</h3>
+
+<div id="code-block-38" class="code-block">
+<p id="code-header-38" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-38", "code-header-38")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'t1 == t2 :'</span><span class="p">,</span> <span class="n">t1</span> <span class="o">==</span> <span class="n">t2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'t1 is t2 :'</span><span class="p">,</span> <span class="n">t1</span> <span class="ow">is</span> <span class="n">t2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'id(t1) : {id(t1)}  </span><span class="se">\n</span><span class="s">id(t2) : {id(t2)}'</span><span class="p">)</span>
+
+<span class="c1"># Modifying mutable element of tuple
+</span><span class="n">t1</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'After t1[2].append(5)'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'t1 : {t1}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'t2 : {t2}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+t1 == t2 : True
+t1 is t2 :<div id="tut-highlight"> False </div>
+id(t1) : 139941349736896  
+id(t2) : 139941349706752
+After t1[2].append(5)
+t1 : (1, 2, [3, 4, 5])
+t2 : (1, 2, [3, 4])
+</pre></div>
+
+<hr />
+
+<h3 id="comparision-operators">Comparision Operators</h3>
+
+<h4 id="-and-">== and !=</h4>
+
+<p> </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> == : </strong> Compares Values of two tuples. If both tuples contains same values it returns True.</li>
+        <li> <strong> != : </strong>  Compares Values of two tuples. If both tuples does not contains same values it returns True.</li>
+    </ul> 
+</div>
+
+<div id="code-block-39" class="code-block">
+<p id="code-header-39" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-39", "code-header-39")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">t3</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'t1 == t2 :'</span><span class="p">,</span> <span class="n">t1</span> <span class="o">==</span> <span class="n">t2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'t2 == t3 :'</span><span class="p">,</span> <span class="n">t2</span> <span class="o">==</span> <span class="n">t3</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'t1 != t2 :'</span><span class="p">,</span> <span class="n">t1</span> <span class="o">!=</span> <span class="n">t2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'t2 != t3 :'</span><span class="p">,</span> <span class="n">t2</span> <span class="o">!=</span> <span class="n">t3</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+t1 == t2 : False
+t2 == t3 : True
+t1 != t2 : True
+t2 != t3 : False
+
+</pre></div>
+
+<hr />
+
+<h4 id="is">is</h4>
+
+<p> An identity operator compares origin (memory address : id(obj)) of given two tuples :</p>
+
+<div id="code-block-40" class="code-block">
+<p id="code-header-40" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-40", "code-header-40")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">t3</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">t4</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'t1 is t2 :'</span><span class="p">,</span> <span class="n">t1</span> <span class="ow">is</span> <span class="n">t2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'t2 is t3 :'</span><span class="p">,</span> <span class="n">t2</span> <span class="ow">is</span> <span class="n">t3</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'t1 is t4 :'</span><span class="p">,</span> <span class="n">t1</span> <span class="ow">is</span> <span class="n">t4</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+t1 is t2 : False
+t2 is t3 : False
+t1 is t4 : True
+</pre></div>
+
+<hr />
+
+<h4 id="----">&lt;, &gt;, &lt;= , &gt;=</h4>
+
+<p> Compares each element values recursively. </p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Operator</th>
+      <th style="text-align: left">Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">&lt;</td>
+      <td style="text-align: left">Less than</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">&gt;</td>
+      <td style="text-align: left">Greater than</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">&lt;=</td>
+      <td style="text-align: left">Less than or equal</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">&gt;=</td>
+      <td style="text-align: left">Greater than or euqal</td>
+    </tr>
+  </tbody>
+</table>
+
+<div id="code-block-41" class="code-block">
+<p id="code-header-41" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-41", "code-header-41")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'t1 &gt; t2  :'</span><span class="p">,</span> <span class="n">t1</span> <span class="o">&gt;</span> <span class="n">t2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'t1 &lt; t2  :'</span><span class="p">,</span> <span class="n">t1</span> <span class="o">&lt;</span> <span class="n">t2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'t1 &lt;= t2 :'</span><span class="p">,</span> <span class="n">t1</span> <span class="o">&lt;=</span> <span class="n">t2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'t1 &gt;= t2 :'</span><span class="p">,</span> <span class="n">t1</span> <span class="o">&gt;=</span> <span class="n">t2</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+t1 &gt; t2  : False
+t1 &lt; t2  : True
+t1 &lt;= t2 : True
+t1 &gt;= t2 : False
+</pre></div>
+
+<hr />
+
+<h2 id="namedtuple">NamedTuple</h2>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> namedtuple : </strong> Contains immutable named data. </li>
+    </ul> 
+</div>
+
+<h3 id="constructor-1">Constructor</h3>
+
+<p id="tut-cons"> namedtuple(typename, field_names, *, rename=False, defaults=None, module=None) </p>
+
+<p>Returns new subclass of tuple class with given typename. Returned subclass is used for creating object of named tuple which allows access of elements by field name in addition of indexed access. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>field_names : </strong> Defines field name for each indexed element. It can be defined in string which contains field name separated by ',' comma.  It can also be given as sequence (list or tuple) of string.</li>
+    </ul> 
+</div>
+
+<div id="code-block-42" class="code-block">
+<p id="code-header-42" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-42", "code-header-42")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+
+<span class="n">Person</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s">'Person'</span><span class="p">,</span> <span class="s">'name,phone,bGroup'</span><span class="p">)</span>
+<span class="c1"># Or
+</span><span class="n">Person</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s">'Person'</span><span class="p">,</span> <span class="p">[</span><span class="s">'name'</span><span class="p">,</span> <span class="s">'phone'</span><span class="p">,</span> <span class="s">'bGroup'</span><span class="p">])</span>
+<span class="c1"># Or
+</span><span class="n">Person</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s">'Person'</span><span class="p">,</span> <span class="p">(</span><span class="s">'name'</span><span class="p">,</span> <span class="s">'phone'</span><span class="p">,</span> <span class="s">'bGroup'</span><span class="p">))</span>
+
+<span class="c1">#
+</span><span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Is Person subclass of tuple ? : {issubclass(Person, tuple)}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Is Person subclass of tuple ? : True
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> rename : </strong> If given True replaces invalid field names with _index. For example ('a1', '2a', '3a') will be converted to ('a1', '_1', '_2') because '2a' and '3a' are invalid identifiers. </li>
+    </ul> 
+</div>
+
+<div id="code-block-43" class="code-block">
+<p id="code-header-43" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-43", "code-header-43")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+
+<span class="n">Alpha1</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s">'Alpha1'</span><span class="p">,</span> <span class="p">(</span><span class="s">'a1'</span><span class="p">,</span> <span class="s">'2a'</span><span class="p">,</span> <span class="s">'3a'</span><span class="p">),</span> <span class="n">rename</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="n">a1</span> <span class="o">=</span> <span class="n">Alpha1</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Alpha1(a1=1, _1=2, _2=3)
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> defaults :  </strong> If defined must be iterable which contains default values for fields. If less number of default values are given compare to number of fields, fields from the beginning becomes required fields for creating an object of named tuple. </li>
+    </ul> 
+</div>
+
+<div id="code-block-44" class="code-block">
+<p id="code-header-44" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-44", "code-header-44")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+
+
+<span class="n">Point</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s">'Point'</span><span class="p">,</span> <span class="p">(</span><span class="s">'x'</span><span class="p">,</span> <span class="s">'y'</span><span class="p">,</span> <span class="s">'color'</span><span class="p">),</span> <span class="n">defaults</span><span class="o">=</span><span class="p">(</span><span class="s">'Black'</span><span class="p">,))</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="s">'Red'</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">29</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'P1 : {p1}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'P2 : {p2}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+P1 : Point(x=12, y=25, color='Red')
+P2 : Point(x=16, y=29, color='Black')
+</pre></div>
+
+<hr />
+
+<h3 id="accessing-elements-by-field-name">Accessing elements by field name</h3>
+
+<div id="code-block-45" class="code-block">
+<p id="code-header-45" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-45", "code-header-45")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+
+<span class="n">Person</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s">'Person'</span><span class="p">,</span> <span class="p">(</span><span class="s">'name'</span><span class="p">,</span> <span class="s">'phone'</span><span class="p">,</span> <span class="s">'bGroup'</span><span class="p">))</span>
+
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s">'Jhon'</span><span class="p">,</span> <span class="mi">9978412287</span><span class="p">,</span> <span class="s">'A+'</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Name         : {p1.name}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Phone Number : {p1.phone}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Blood Group  : {p1.bGroup}'</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">Accessing same elements using indexes :'</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Name         : {p1[0]}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Phone Number : {p1[1]}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Blood Group  : {p1[2]}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Person(name='Jhon', phone=9978412287, bGroup='A+')
+Name         : Jhon
+Phone Number : 9978412287
+Blood Group  : A+
+
+Accessing same elements using indexes :
+Name         : Jhon
+Phone Number : 9978412287
+Blood Group  : A+
+</pre></div>
+
+<hr />
+
+<h3 id="tuple-of-namedtuples">Tuple of namedtuple(s)</h3>
+
+<div class="bs-callout bs-callout-primary"><strong>Note</strong> : Returned class by namedtuple constructor is subclass of tuple class, so all functionality we saw for tuple object are inherited for namedtuple.</div>
+
+<div id="code-block-46" class="code-block">
+<p id="code-header-46" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-46", "code-header-46")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+
+<span class="n">Person</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s">'Person'</span><span class="p">,</span> <span class="p">(</span><span class="s">'name'</span><span class="p">,</span> <span class="s">'phone'</span><span class="p">,</span> <span class="s">'bGroup'</span><span class="p">))</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s">'Victor'</span><span class="p">,</span> <span class="mi">7852122123</span><span class="p">,</span> <span class="s">'O+'</span><span class="p">)</span>
+<span class="n">p3</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s">'Kelly'</span><span class="p">,</span> <span class="mi">8845454454</span><span class="p">,</span> <span class="s">'A-'</span><span class="p">)</span>
+<span class="n">p4</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s">'Sam'</span><span class="p">,</span> <span class="mi">7665415445</span><span class="p">,</span> <span class="s">'B+'</span><span class="p">)</span>
+<span class="n">p5</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s">'Jane'</span><span class="p">,</span> <span class="mi">9978412287</span><span class="p">,</span> <span class="s">'A+'</span><span class="p">)</span>
+
+<span class="n">personT</span> <span class="o">=</span> <span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">p4</span><span class="p">,</span> <span class="n">p5</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Name     Phone Number   Blood Group'</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">personT</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'{person.name:8s}  {person.phone:10}    {person.bGroup:^10}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Name     Phone Number   Blood Group
+Jhon      9978412287        A+    
+Victor    7852122123        O+    
+Kelly     8845454454        A-    
+Sam       7665415445        B+    
+Jane      9978412287        A+    
+</pre></div>
+
+<hr />
+
+<h3 id="attributes">Attributes</h3>
+
+<h4 id="_fields">_fields</h4>
+
+<p> Returns tuple containing names of fields </p>
+
+<div id="code-block-47" class="code-block">
+<p id="code-header-47" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-47", "code-header-47")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+
+<span class="n">Person</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s">'Person'</span><span class="p">,</span> <span class="p">(</span><span class="s">'name'</span><span class="p">,</span> <span class="s">'phone'</span><span class="p">,</span> <span class="s">'bGroup'</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Fields : {Person._fields}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Fields : ('name', 'phone', 'bGroup')
+</pre></div>
+
+<hr />
+
+<h4 id="_field_defaults">_field_defaults</h4>
+
+<p> Returns dictionary containing field_name as key and it's default value as value. </p>
+
+<div id="code-block-48" class="code-block">
+<p id="code-header-48" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-48", "code-header-48")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+
+<span class="n">Point</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s">'Point'</span><span class="p">,</span> <span class="p">(</span><span class="s">'x'</span><span class="p">,</span> <span class="s">'y'</span><span class="p">,</span> <span class="s">'color'</span><span class="p">),</span> <span class="n">defaults</span><span class="o">=</span><span class="p">(</span><span class="s">'Black'</span><span class="p">,))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'field defaults : {Point._field_defaults}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+field defaults : {'color': 'Black'}
+</pre></div>
+
+<hr />
+
+<h3 id="functions-1">Functions</h3>
+
+<h4 id="_makeiterable">_make(iterable)</h4>
+
+<p> Creates namedtuple object from iterable </p>
+
+<div id="code-block-49" class="code-block">
+<p id="code-header-49" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-49", "code-header-49")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+
+<span class="n">Person</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s">'Person'</span><span class="p">,</span> <span class="p">(</span><span class="s">'name'</span><span class="p">,</span> <span class="s">'phone'</span><span class="p">,</span> <span class="s">'bGroup'</span><span class="p">))</span>
+<span class="n">person1</span> <span class="o">=</span> <span class="p">(</span><span class="s">'Victor'</span><span class="p">,</span> <span class="mi">7852122123</span><span class="p">,</span> <span class="s">'O+'</span><span class="p">)</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">Person</span><span class="o">.</span><span class="n">_make</span><span class="p">(</span><span class="n">person1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Name : {p1.name}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Name : Victor
+</pre></div>
+
+<hr />
+
+<h4 id="_asdict">_asdict()</h4>
+
+<p> Returns dictionary constructed from namedtuple. </p>
+
+<div id="code-block-50" class="code-block">
+<p id="code-header-50" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-50", "code-header-50")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+
+<span class="n">Person</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s">'Person'</span><span class="p">,</span> <span class="p">(</span><span class="s">'name'</span><span class="p">,</span> <span class="s">'phone'</span><span class="p">,</span> <span class="s">'bGroup'</span><span class="p">))</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s">'Victor'</span><span class="p">,</span> <span class="mi">7852122123</span><span class="p">,</span> <span class="s">'O+'</span><span class="p">)</span>
+<span class="n">dict1</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="n">_asdict</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Dictionary : {dict1} '</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Dictionary : {'name': 'Victor', 'phone': 7852122123, 'bGroup': 'O+'}
+</pre></div>
+
+<hr />
+
+<h4 id="_replacekwargs">_replace(**kwargs)</h4>
+
+<p> Form existing namedtuple object returns new tuple object by replacing values provided as keyword arguments. </p>
+
+<div id="code-block-51" class="code-block">
+<p id="code-header-51" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-51", "code-header-51")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+
+<span class="n">Point</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s">'Point'</span><span class="p">,</span> <span class="p">(</span><span class="s">'x'</span><span class="p">,</span> <span class="s">'y'</span><span class="p">,</span> <span class="s">'color'</span><span class="p">))</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="s">'Red'</span><span class="p">)</span>
+
+<span class="n">p2</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="n">_replace</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'P1 : {p1}  </span><span class="se">\n</span><span class="s">P2 : {p2}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+P1 : Point(x=12, y=25, color='Red')  
+P2 : Point(x=18, y=11,<div id="tut-highlight"> color='Red'</div>)
+</pre></div>
+
+<hr />
+
+<h3 id="sorting">Sorting</h3>
+
+<p> Sorted() function works same as explained earlier, difference here is we can use field name to sort.
+Instead of defining  user defined function for sorting (lambda params : returnValues)  function is used, it is explained in details in functional programming section.</p>
+
+<div id="code-block-52" class="code-block">
+<p id="code-header-52" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-52", "code-header-52")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+
+<span class="n">Person</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s">'Person'</span><span class="p">,</span> <span class="s">'name, age, income, gender'</span><span class="p">)</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s">'Bob'</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">50_000</span><span class="p">,</span> <span class="s">'Male'</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s">'Kelly'</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">70_000</span><span class="p">,</span> <span class="s">'Female'</span><span class="p">)</span>
+<span class="n">p3</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s">'Pamela'</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">65_000</span><span class="p">,</span> <span class="s">'Female'</span><span class="p">)</span>
+<span class="n">p4</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s">'Andy'</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">75_000</span><span class="p">,</span> <span class="s">'Male'</span><span class="p">)</span>
+
+<span class="n">personDB</span> <span class="o">=</span> <span class="p">[</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">p4</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">print_persons</span><span class="p">(</span><span class="n">persons</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Name     Age    Income     Gender '</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'----------------------------------'</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">persons</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'{p.name:8} {p.age:^5} {p.income:^10} {p.gender:^8}'</span><span class="p">)</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Default Sort [Sort by Name] :</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+<span class="n">print_persons</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">personDB</span><span class="p">))</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">Sorted by Age :</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+<span class="n">print_persons</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">personDB</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="n">p</span><span class="o">.</span><span class="n">age</span><span class="p">))</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">Sorted by income in descending order :</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+<span class="n">print_persons</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">personDB</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="n">p</span><span class="o">.</span><span class="n">income</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Default Sort [Sort by Name] :
+
+Name     Age    Income     Gender 
+----------------------------------
+Andy      45     75000      Male  
+Bob       29     50000      Male  
+Kelly     22     70000     Female 
+Pamela    36     65000     Female 
+
+Sorted by Age :
+
+Name     Age    Income     Gender 
+----------------------------------
+Kelly     22     70000     Female 
+Bob       29     50000      Male  
+Pamela    36     65000     Female 
+Andy      45     75000      Male  
+
+Sorted by income in descending order :
+
+Name     Age    Income     Gender 
+----------------------------------
+Andy      45     75000      Male  
+Kelly     22     70000     Female 
+Pamela    36     65000     Female 
+Bob       29     50000      Male  
+
+</pre></div>
+
+<hr />
+
 
 
     <div class="tags">
         
         <p style="display: inline;"><b>Tags: </b></p>
+        
+        
+        
+        <a href="tag_indexing.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">indexing</a>
+        
+        
+        
+        <a href="tag_slicing.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">slicing</a>
+        
+        
+        
+        <a href="tag_for-each.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">for-each</a>
+        
+        
+        
+        <a href="tag_reversed().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">reversed()</a>
+        
+        
+        
+        <a href="tag_enumerate().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">enumerate()</a>
+        
+        
+        
+        <a href="tag_chain().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">chain()</a>
+        
+        
+        
+        <a href="tag_zip().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">zip()</a>
+        
+        
+        
+        <a href="tag_index().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">index()</a>
+        
+        
+        
+        <a href="tag_count().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">count()</a>
+        
+        
+        
+        <a href="tag_len().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">len()</a>
+        
+        
+        
+        <a href="tag_in.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">in</a>
+        
+        
+        
+        <a href="tag_not_in.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">not_in</a>
+        
+        
+        
+        <a href="tag_min().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">min()</a>
+        
+        
+        
+        <a href="tag_max().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">max()</a>
+        
+        
+        
+        <a href="tag_sum().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">sum()</a>
+        
+        
+        
+        <a href="tag_sorted().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">sorted()</a>
+        
+        
+        
+        <a href="tag_any().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">any()</a>
+        
+        
+        
+        <a href="tag_all().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">all()</a>
+        
+        
+        
+        <a href="tag_comparision_operators.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">comparision_operators</a>
+        
+        
+        
+        <a href="tag_namedtuple.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">namedtuple</a>
+        
+        
+        
+        <a href="tag__fields.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">_fields</a>
+        
+        
+        
+        <a href="tag__field_defaults.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">_field_defaults</a>
+        
+        
+        
+        <a href="tag__make().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">_make()</a>
+        
+        
+        
+        <a href="tag__asdict().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">_asdict()</a>
+        
+        
+        
+        <a href="tag__replace().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">_replace()</a>
         
         
         

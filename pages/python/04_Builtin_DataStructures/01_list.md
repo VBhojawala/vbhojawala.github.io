@@ -9,8 +9,8 @@ prev_section: python_functions.html
 prev_section_title: Functions
 prev: 
 prev_title: 
-next: python_tuple.html
-next_title: Tuple
+next: python_tuple_namedtuple.html
+next_title: Tuple and NamedTuple
 next_section: 
 next_section_title: 
 summary: List constructor, indexing, slicing, iterating, unpacking, functions of list object, list operators, builtin functions, list as stack and queue.
@@ -2494,8 +2494,8 @@ Copy List After Removal -->  [['Lotus', 'Lily', 'Jasmine', 'Lavender', 'Tulips']
 <p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
 {% highlight python %}
 
-secondcopy = flowers[:]
 flowers = ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+secondcopy = flowers[:]
 print(secondcopy)
 
 
@@ -3165,7 +3165,7 @@ print(flowers2)
 
 #### <, >, <= , >=
 
-<p> First compares the length of string, if equal compares each elements recursively. </p>
+<p> Compares each element values recursively. </p>
 
 Operator  | Meaning
 :--- | :---
