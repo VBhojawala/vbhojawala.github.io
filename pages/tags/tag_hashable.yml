@@ -1,0 +1,8 @@
+---
+title: "hashable"
+tagName: hashable
+search: exclude
+permalink: tag_hashable.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

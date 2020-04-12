@@ -1,0 +1,8 @@
+---
+title: "issuperset()"
+tagName: issuperset()
+search: exclude
+permalink: tag_issuperset().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

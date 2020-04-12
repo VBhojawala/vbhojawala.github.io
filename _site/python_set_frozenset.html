@@ -5,10 +5,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Set  constructor methods, operators.">
-<meta name="keywords" content=",  ">
+<meta name="keywords" content="hashablenonhashablefor-eachenumerate()len()add()remove()discard()pop()clear()copy()update()intersection_update()difference_update()symmetric_difference_update()issuperset()issubset()identity_operatoroperatorsset_comprehensionfrozenset,  ">
 <meta name="theme-color" content="#36362C">
 <link rel="icon" sizes="192x192" href="images/favicon.ico">
-<title>Set | Asha Tutorials</title>
+<title>Set and FrozenSet | Asha Tutorials</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -283,7 +283,7 @@
 
 
 
-  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:?subject=Asha Tutorials feedback&body=I have some feedback about the Set page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:?subject=Asha Tutorials feedback&body=I have some feedback about the Set and FrozenSet page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
 
 </li>
 
@@ -335,7 +335,7 @@
                             searchInput: document.getElementById('search-input'),
                             resultsContainer: document.getElementById('results-container'),
                             dataSource: 'search.json',
-                            searchResultTemplate: '<li style="margin: 0px 0px;"><a href="{url}" title="Set       " folder="python">{title} <sub>in {folder}</sub></a></li>',
+                            searchResultTemplate: '<li style="margin: 0px 0px;"><a href="{url}" title="Set and FrozenSet       " folder="python">{title} <sub>in {folder}</sub></a></li>',
                 noResultsText: '<li style="margin: 0px 0px;"><a href="#">No results found.</a></li>',
                         limit: 10,
                         fuzzy: true,
@@ -511,7 +511,7 @@
           
           
           
-          <li class="active"><a title="Set" href="python_set.html">Set</a></li>
+          <li class="active"><a title="Set and FrozenSet" href="python_set_frozenset.html">Set and FrozenSet</a></li>
           
           
           
@@ -538,7 +538,7 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">Set</h1>
+   <h1 class="post-title-main">Set and FrozenSet</h1>
 </div>
 
 
@@ -1054,12 +1054,35 @@ After  clear() :  set()
 
 <hr />
 
+<h4 id="copy">copy()</h4>
+
+<p> Returns shallow copy of set. </p>
+
+<div id="code-block-16" class="code-block">
+<p id="code-header-16" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-16", "code-header-16")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowerSet</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">}</span>
+
+<span class="n">copySet</span> <span class="o">=</span> <span class="n">flowerSet</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'flowerSet :'</span><span class="p">,</span> <span class="n">flowerSet</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'copySet   :'</span><span class="p">,</span> <span class="n">copySet</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+flowerSet : {'Tulips', 'Lily', 'Lotus', 'Lavender', 'Rose', 'Jasmine'}
+copySet   : {'Lavender', 'Tulips', 'Rose', 'Lily', 'Jasmine', 'Lotus'}
+</pre></div>
+
+<hr />
+
 <h4 id="updateiterable">update(iterable)</h4>
 
 <p> Adds elements from supplied set to given iterable of hashable. </p>
 
-<div id="code-block-16" class="code-block">
-<p id="code-header-16" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-16", "code-header-16")</script>
+<div id="code-block-17" class="code-block">
+<p id="code-header-17" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-17", "code-header-17")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowerSet</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">}</span>
 <span class="n">moreFlowers</span> <span class="o">=</span> <span class="p">(</span><span class="s">'Calendula'</span><span class="p">,</span> <span class="s">'Bougainvillea'</span><span class="p">,</span> <span class="s">'Peony'</span><span class="p">,</span> <span class="s">'Dahlia'</span><span class="p">)</span>
@@ -1085,8 +1108,8 @@ flowerset After update() :  {'Tulips', 'Lily', 'Peony', 'Dahlia', 'Lotus', 'Rose
 
 <p> Retains only elements which are common to set and given  iterable of hashable. </p>
 
-<div id="code-block-17" class="code-block">
-<p id="code-header-17" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-17", "code-header-17")</script>
+<div id="code-block-18" class="code-block">
+<p id="code-header-18" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-18", "code-header-18")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowerSet</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">}</span>
 <span class="n">flowers2</span> <span class="o">=</span> <span class="p">(</span><span class="s">'Tulips'</span><span class="p">,</span> <span class="s">'Calendula'</span><span class="p">,</span> <span class="s">'Bougainvillea'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Peony'</span><span class="p">,</span> <span class="s">'Dahlia'</span><span class="p">)</span>
@@ -1111,8 +1134,8 @@ flowerset After intersection_update() :  {'Tulips', 'Lily'}
 
 <p> Removes common element to set and given iterable. </p>
 
-<div id="code-block-18" class="code-block">
-<p id="code-header-18" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-18", "code-header-18")</script>
+<div id="code-block-19" class="code-block">
+<p id="code-header-19" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-19", "code-header-19")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowerSet</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">}</span>
 <span class="n">flowers2</span> <span class="o">=</span> <span class="p">(</span><span class="s">'Tulips'</span><span class="p">,</span> <span class="s">'Calendula'</span><span class="p">,</span> <span class="s">'Bougainvillea'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Peony'</span><span class="p">,</span> <span class="s">'Dahlia'</span><span class="p">)</span>
@@ -1138,8 +1161,8 @@ flowerSet After difference_update() :  {'Lotus', 'Rose', 'Jasmine', 'Lavender'}
 
 <p> Retains uncommon elements between set and given iterable. </p>
 
-<div id="code-block-19" class="code-block">
-<p id="code-header-19" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-19", "code-header-19")</script>
+<div id="code-block-20" class="code-block">
+<p id="code-header-20" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-20", "code-header-20")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowerSet</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">}</span>
 <span class="n">flowers2</span> <span class="o">=</span> <span class="p">(</span><span class="s">'Tulips'</span><span class="p">,</span> <span class="s">'Calendula'</span><span class="p">,</span> <span class="s">'Bougainvillea'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Peony'</span><span class="p">,</span> <span class="s">'Dahlia'</span><span class="p">)</span>
@@ -1165,8 +1188,8 @@ flowerSet After symmetric_difference_update() :  {'Dahlia', 'Lotus', 'Rose', 'Ja
 
 <p> Checks given set is super-set of supplied set, returns True if it is.</p>
 
-<div id="code-block-20" class="code-block">
-<p id="code-header-20" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-20", "code-header-20")</script>
+<div id="code-block-21" class="code-block">
+<p id="code-header-21" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-21", "code-header-21")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowerSet1</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">}</span>
 <span class="n">flowerSet2</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">}</span>
@@ -1186,8 +1209,8 @@ True
 
 <p> Checks given set is subset of supplied set, returns True if it is.</p>
 
-<div id="code-block-21" class="code-block">
-<p id="code-header-21" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-21", "code-header-21")</script>
+<div id="code-block-22" class="code-block">
+<p id="code-header-22" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-22", "code-header-22")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowerSet1</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">}</span>
 <span class="n">flowerSet2</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">}</span>
@@ -1202,78 +1225,176 @@ True
 
 <hr />
 
-<h3 id="operators">Operators</h3>
+<h3 id="membership-operators">Membership operators</h3>
 
-<table>
-  <thead>
-    <tr>
-      <th>operator</th>
-      <th style="text-align: left">meaning</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>|</td>
-      <td style="text-align: left">Union</td>
-    </tr>
-    <tr>
-      <td>&amp;</td>
-      <td style="text-align: left">Intersection</td>
-    </tr>
-    <tr>
-      <td>-</td>
-      <td style="text-align: left">Difference</td>
-    </tr>
-    <tr>
-      <td>^</td>
-      <td style="text-align: left">symmetry</td>
-    </tr>
-    <tr>
-      <td>&gt;=</td>
-      <td style="text-align: left">superset</td>
-    </tr>
-    <tr>
-      <td>&lt;=</td>
-      <td style="text-align: left">subset</td>
-    </tr>
-  </tbody>
-</table>
+<h4 id="in">in</h4>
+<p> Returns True if given element exists in set. </p>
 
-<p> Returns a new set which holds result of operation on given two sets </p>
+<h4 id="not-in">not in</h4>
+<p> Returns True if given element does not exists in set. </p>
 
-<div id="code-block-22" class="code-block">
-<p id="code-header-22" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-22", "code-header-22")</script>
+<div id="code-block-23" class="code-block">
+<p id="code-header-23" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-23", "code-header-23")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">set1</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">}</span>
-<span class="n">set2</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Tulips'</span><span class="p">,</span> <span class="s">'Calendula'</span><span class="p">,</span> <span class="s">'Bougainvillea'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Peony'</span><span class="p">,</span> <span class="s">'Dahlia'</span><span class="p">}</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowerSet</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">}</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'set1 : {set1} </span><span class="se">\n</span><span class="s">set2 : {set2}'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'</span><span class="se">\n</span><span class="s">Union : {set1 | set2}</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'</span><span class="se">\n</span><span class="s">Intersection : {set1 &amp; set2}</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'</span><span class="se">\n</span><span class="s">Difference : {set1 - set2}</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'</span><span class="se">\n</span><span class="s">superset : {set1  &gt;= set2}</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'</span><span class="se">\n</span><span class="s">subset : {set1  &lt;= set2}</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
+<span class="k">if</span> <span class="s">'Lily'</span> <span class="ow">in</span> <span class="n">flowerSet</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"'Lily' is present in flowerSet"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"'Lily' is not  in flowerSet"</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="s">'Jasmine'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">flowerSet</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"'Jasmine' is not in flowerSet"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"'Jasmine' is already in flowerSet"</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-set1 : {'Tulips', 'Lily', 'Lotus', 'Rose', 'Jasmine', 'Lavender'} 
-set2 : {'Tulips', 'Lily', 'Dahlia', 'Peony', 'Calendula', 'Bougainvillea'}
+'Lily' is present in flowerSet
+'Jasmine' is not in flowerSet
+</pre></div>
 
-Union : {'Tulips', 'Lily', 'Dahlia', 'Lotus', 'Rose', 'Jasmine', 'Peony', 'Calendula', 'Bougainvillea', 'Lavender'}
+<hr />
 
+<h3 id="identity-operators">Identity operators</h3>
+
+<h4 id="is">is</h4>
+<p> Returns True if both variables points to same set object in memory. </p>
+
+<h4 id="is-not">is not</h4>
+<p> Returns True if both variables does not points to same set object in memory. </p>
+
+<div id="code-block-24" class="code-block">
+<p id="code-header-24" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-24", "code-header-24")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">set1</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">}</span>
+<span class="n">set2</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">}</span>
+<span class="n">set3</span> <span class="o">=</span> <span class="n">set1</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'set1 is set2 :'</span><span class="p">,</span> <span class="n">set1</span> <span class="ow">is</span> <span class="n">set2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'set1 is set3 :'</span><span class="p">,</span> <span class="n">set1</span> <span class="ow">is</span> <span class="n">set3</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'set1 is not set2 :'</span><span class="p">,</span> <span class="n">set1</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">set2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'set1 is not set3 :'</span><span class="p">,</span> <span class="n">set1</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">set3</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+set1 is set2 : False
+set1 is set3 : True
+set1 is not set2 : True
+set1 is not set3 : False
+</pre></div>
+
+<hr />
+
+<h3 id="operators">Operators</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">operator</th>
+      <th style="text-align: left">meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">|</td>
+      <td style="text-align: left">union</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">&amp;</td>
+      <td style="text-align: left">intersection</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">-</td>
+      <td style="text-align: left">difference</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">^</td>
+      <td style="text-align: left">symmetric difference</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">&gt;</td>
+      <td style="text-align: left">superset</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">&gt;=</td>
+      <td style="text-align: left">superset or equal</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">&lt;</td>
+      <td style="text-align: left">subset</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">&lt;=</td>
+      <td style="text-align: left">subset or equal</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">==</td>
+      <td style="text-align: left">equality</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">!=</td>
+      <td style="text-align: left">not equal</td>
+    </tr>
+  </tbody>
+</table>
+
+<p> </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li>  Returns a new set which holds result of operation on given two sets. </li>
+        <li>  Unlike set function where other object can be any iterable, with operator both object must of set class. </li>
+    </ul> 
+</div>
+
+<div id="code-block-25" class="code-block">
+<p id="code-header-25" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-25", "code-header-25")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">set1</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">}</span>
+<span class="n">set2</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Tulips'</span><span class="p">,</span> <span class="s">'Calendula'</span><span class="p">,</span> <span class="s">'Bougainvillea'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Peony'</span><span class="p">,</span> <span class="s">'Dahlia'</span><span class="p">}</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'set1 : {set1} </span><span class="se">\n</span><span class="s">set2 : {set2}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'</span><span class="se">\n</span><span class="s">Union : {set1 | set2}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'</span><span class="se">\n</span><span class="s">Intersection : {set1 &amp; set2}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'</span><span class="se">\n</span><span class="s">Difference : {set1 - set2}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'</span><span class="se">\n</span><span class="s">Symmetric difference : {set1 ^ set2}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'</span><span class="se">\n</span><span class="s">Superset : {set1  &gt; set2}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'</span><span class="se">\n</span><span class="s">Subset : {set1  &lt; set2}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'</span><span class="se">\n</span><span class="s">Equality : {set1  == set2}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'</span><span class="se">\n</span><span class="s">not equals : {set1  != set2}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+set1 : {'Tulips', 'Lily', 'Lotus', 'Lavender', 'Rose', 'Jasmine'} 
+set2 : {'Tulips', 'Lily', 'Calendula', 'Dahlia', 'Bougainvillea', 'Peony'}
+
+Union : {'Tulips', 'Lily', 'Calendula', 'Dahlia', 'Bougainvillea', 'Lotus', 'Lavender', 'Peony', 'Rose', 'Jasmine'}
 
 Intersection : {'Tulips', 'Lily'}
 
-
 Difference : {'Lavender', 'Rose', 'Jasmine', 'Lotus'}
 
+Symmetric difference : {'Calendula', 'Dahlia', 'Bougainvillea', 'Jasmine', 'Lotus', 'Peony', 'Lavender', 'Rose'}
 
-superset : False
+Superset : False
+
+Subset : False
+
+Equality : False
+
+not equals : True
 
 
-subset : False
+
 </pre></div>
 
 <hr />
@@ -1282,8 +1403,8 @@ subset : False
 
 <p id="tut-cons"> <strong> Syntax : </strong> [expr for item in iterator [if expr] ] </p>
 
-<div id="code-block-23" class="code-block">
-<p id="code-header-23" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-23", "code-header-23")</script>
+<div id="code-block-26" class="code-block">
+<p id="code-header-26" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-26", "code-header-26")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">intSet</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)}</span>
 <span class="k">print</span><span class="p">(</span><span class="n">intSet</span><span class="p">)</span></code></pre></figure>
@@ -1303,8 +1424,8 @@ subset : False
     </ul> 
 </div>
 
-<div id="code-block-24" class="code-block">
-<p id="code-header-24" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-24", "code-header-24")</script>
+<div id="code-block-27" class="code-block">
+<p id="code-header-27" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-27", "code-header-27")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="s">'5a'</span><span class="p">,</span> <span class="s">'68'</span><span class="p">,</span> <span class="s">'89'</span><span class="p">,</span> <span class="s">'5D'</span><span class="p">,</span> <span class="s">'7Z'</span><span class="p">,</span> <span class="s">'53'</span><span class="p">,</span> <span class="s">'T9'</span><span class="p">,</span> <span class="s">'48'</span><span class="p">]</span>
 
@@ -1326,8 +1447,10 @@ subset : False
     </ul> 
 </div>
 
-<div id="code-block-25" class="code-block">
-<p id="code-header-25" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-25", "code-header-25")</script>
+<p><a href="https://www.gutenberg.org/files/11/11-0.txt" target="_blank">Alice’s Adventures in Wonderland Book</a></p>
+
+<div id="code-block-28" class="code-block">
+<p id="code-header-28" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-28", "code-header-28")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">get_words</span><span class="p">():</span>
     <span class="s">"""
@@ -1336,22 +1459,128 @@ subset : False
     <span class="nb">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">r'./04_Builtin_DataStructures/Docs/AliceInWonderland.txt'</span><span class="p">,</span> <span class="s">'r'</span><span class="p">)</span>
     <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">file</span><span class="p">:</span>
-        <span class="n">result</span> <span class="o">+=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">' '</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">+=</span> <span class="p">[</span><span class="n">word</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s">' .-()</span><span class="se">\'</span><span class="s">"!?_[]`’“;”,:‘'</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()]</span>
     <span class="nb">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">result</span>
 
 
 <span class="c1"># constructing set of words used in  book
-</span>
-<span class="n">aliceWords</span> <span class="o">=</span> <span class="p">{</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">get_words</span><span class="p">()}</span>
+</span><span class="n">aliceWords</span> <span class="o">=</span> <span class="p">{</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">get_words</span><span class="p">()}</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'No of unique words used :'</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">aliceWords</span><span class="p">))</span>
 <span class="k">print</span><span class="p">(</span><span class="n">aliceWords</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-It's sunny outside.
-Quoting inside "Double quotes".
+No of unique words used : 3287
+{'exact', 'tide', 'treacle-well', '', 'leave', 'clear', 'tremble', 'trickling', 'aloud', 'quick', 'soldiers', 'trials', 'bite', 'ear', 'executive', 'middle-aged', 'method', 'defects', 'alice’s', 'indeed', 'planning', '2001', 'knows', 'actual', 'employee', 'locks', 'custard', 'timidly', 'convert', 'daisies', 'sneezes', 'heads', 'fancied', 'refund', 'lived', 'skirt', 'forty-two', 'true', 'above', 'punitive', 'shouted', 'open', 'show', 'more--as', 'past', 'reduced', 'feebly', 'pattern', 'reasonable', 'e--e--evening', 'special', 'miss', 'registered', 'panther', 'neat', 'copied', 'prove', 'idiot', 'overhead', 'pour', 'fancy', 'globe', 'else”--but', 'tea-party', 'dipped', 'snout', 'viii', 'chrysalis--you', 'pleased', 'passing', 'flung', 'tidy', 'seem', 'group', 'throat', 'file', 'exempt', 'f3', 'feel', 'resource', 'forepaws', 'school', 'knowledge', 'serpent', 'bristling', 'interrupting', 'fell', .................................................., 'bend', 'lesson-book', 'provision', 'spread', 'son', 'muttering', 'sneezed', 'asleep', 'mad--at', 'now--but', 'should', '3', 'muscular', 'dainties', 'clean', 'begun', 'bear?--mind', 'rapped', 'rising'}
+</pre></div>
+
+<hr />
+
+<h2 id="frozenset">frozenset</h2>
+
+<p> Read-Only set.</p>
+
+<h3 id="constructor-1">Constructor</h3>
+
+<div id="code-block-29" class="code-block">
+<p id="code-header-29" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-29", "code-header-29")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowerSet</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">}</span>
+<span class="n">flowerList</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
+<span class="n">flowerTuple</span> <span class="o">=</span> <span class="p">(</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">)</span>
+
+<span class="n">flowerSetRO</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">(</span><span class="n">flowerSet</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">flowerSetRO</span><span class="p">)</span>
+
+<span class="n">flowerSetRO</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">(</span><span class="n">flowerList</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">flowerSetRO</span><span class="p">)</span>
+
+<span class="n">flowerSetRO</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">(</span><span class="n">flowerTuple</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">flowerSetRO</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+frozenset({'Lavender', 'Tulips', 'Rose', 'Lily', 'Jasmine', 'Lotus'})
+frozenset({'Tulips', 'Lily', 'Lotus', 'Lavender', 'Rose', 'Jasmine'})
+frozenset({'Tulips', 'Lily', 'Lotus', 'Lavender', 'Rose', 'Jasmine'})
+</pre></div>
+
+<hr />
+
+<h3 id="functions-and-operations">Functions and Operations</h3>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Functions and Operations :</strong> frozenset has same functionality as set, except functions which modifies the set such as add(), remove() etc are not available. </li>
+    </ul> 
+</div>
+
+<div id="code-block-30" class="code-block">
+<p id="code-header-30" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-30", "code-header-30")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">'Methods of frozenset :'</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">attr</span> <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="nb">frozenset</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">attr</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">'__'</span><span class="p">)))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Methods of set not available in frozenset :'</span><span class="p">,</span>
+      <span class="nb">tuple</span><span class="p">(</span><span class="n">attr</span> <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="nb">set</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">set</span><span class="p">))</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">frozenset</span><span class="p">))</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">attr</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">'__'</span><span class="p">)))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Methods of frozenset : ('copy', 'difference', 'intersection', 'isdisjoint', 'issubset', 'issuperset', 'symmetric_difference', 'union')
+Methods of set not available in frozen set : ('discard', 'clear', 'update', 'add', 'symmetric_difference_update', 'pop', 'remove', 'difference_update', 'intersection_update')
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> Invoking methods which is not available in frozenset class will raise AttributeError </li>
+    </ul> 
+</div>
+
+<div id="code-block-31" class="code-block">
+<p id="code-header-31" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-31", "code-header-31")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowerSet</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">}</span>
+<span class="n">flowerSetRO</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">(</span><span class="n">flowerSet</span><span class="p">)</span>
+<span class="n">flowerSetRO</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">'Sunflower'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre id="tut-output-error" class="result-content">Traceback (most recent call last):
+  File "&lt;&zwj;input&zwj;&gt;", line 3, in &lt;&zwj;module&zwj;&gt;
+AttributeError: 'frozenset' object has no attribute 'add'</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> After creating frozenset object from iterable, if the iterable is modified it does not effect the frozen set.</li>
+    </ul> 
+</div>
+
+<div id="code-block-32" class="code-block">
+<p id="code-header-32" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-32", "code-header-32")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowerSet</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">}</span>
+<span class="n">flowerSetRO</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">(</span><span class="n">flowerSet</span><span class="p">)</span>
+<span class="n">flowerSet</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">'Sunflower'</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'flowerset   : {flowerSet}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'flowersetRO : {flowerSetRO}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+flowerset   : {'Tulips', 'Lily', 'Lotus', 'Lavender', 'Rose', 'Sunflower', 'Jasmine'}
+flowersetRO : frozenset({'Lavender', 'Tulips', 'Rose', 'Lily', 'Jasmine', 'Lotus'})
 </pre></div>
 
 <hr />
@@ -1361,6 +1590,90 @@ Quoting inside "Double quotes".
     <div class="tags">
         
         <p style="display: inline;"><b>Tags: </b></p>
+        
+        
+        
+        <a href="tag_hashable.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">hashable</a>
+        
+        
+        
+        <a href="tag_nonhashable.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">nonhashable</a>
+        
+        
+        
+        <a href="tag_for-each.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">for-each</a>
+        
+        
+        
+        <a href="tag_enumerate().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">enumerate()</a>
+        
+        
+        
+        <a href="tag_len().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">len()</a>
+        
+        
+        
+        <a href="tag_add().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">add()</a>
+        
+        
+        
+        <a href="tag_remove().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">remove()</a>
+        
+        
+        
+        <a href="tag_discard().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">discard()</a>
+        
+        
+        
+        <a href="tag_pop().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">pop()</a>
+        
+        
+        
+        <a href="tag_clear().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">clear()</a>
+        
+        
+        
+        <a href="tag_copy().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">copy()</a>
+        
+        
+        
+        <a href="tag_update().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">update()</a>
+        
+        
+        
+        <a href="tag_intersection_update().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">intersection_update()</a>
+        
+        
+        
+        <a href="tag_difference_update().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">difference_update()</a>
+        
+        
+        
+        <a href="tag_symmetric_difference_update().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">symmetric_difference_update()</a>
+        
+        
+        
+        <a href="tag_issuperset().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">issuperset()</a>
+        
+        
+        
+        <a href="tag_issubset().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">issubset()</a>
+        
+        
+        
+        <a href="tag_identity_operator.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">identity_operator</a>
+        
+        
+        
+        <a href="tag_operators.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">operators</a>
+        
+        
+        
+        <a href="tag_set_comprehension.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">set_comprehension</a>
+        
+        
+        
+        <a href="tag_frozenset.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">frozenset</a>
         
         
         

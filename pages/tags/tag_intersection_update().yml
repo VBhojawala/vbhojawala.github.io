@@ -1,0 +1,8 @@
+---
+title: "intersection update()"
+tagName: intersection_update()
+search: exclude
+permalink: tag_intersection_update().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

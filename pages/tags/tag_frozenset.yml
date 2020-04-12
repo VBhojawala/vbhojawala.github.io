@@ -1,0 +1,8 @@
+---
+title: "frozenset"
+tagName: frozenset
+search: exclude
+permalink: tag_frozenset.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

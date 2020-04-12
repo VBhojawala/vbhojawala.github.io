@@ -1,0 +1,8 @@
+---
+title: "difference update()"
+tagName: difference_update()
+search: exclude
+permalink: tag_difference_update().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

@@ -1,0 +1,8 @@
+---
+title: "set comprehension"
+tagName: set_comprehension
+search: exclude
+permalink: tag_set_comprehension.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

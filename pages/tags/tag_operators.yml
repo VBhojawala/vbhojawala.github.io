@@ -1,0 +1,8 @@
+---
+title: "operators"
+tagName: operators
+search: exclude
+permalink: tag_operators.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

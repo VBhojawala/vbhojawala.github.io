@@ -1,0 +1,8 @@
+---
+title: "membership operator"
+tagName: membership_operator
+search: exclude
+permalink: tag_membership_operator.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

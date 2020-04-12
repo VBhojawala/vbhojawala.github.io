@@ -307,3 +307,17 @@ allowed-tags:
   - _make()
   - _asdict()
   - _replace()
+  - hashable
+  - nonhashable
+  - add()
+  - discard()
+  - update()
+  - intersection_update()
+  - difference_update()
+  - symmetric_difference_update()
+  - issuperset()
+  - issubset()
+  - operators
+  - set_comprehension
+  - frozenset
+  - membership_operator

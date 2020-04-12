@@ -1,9 +1,9 @@
 ---
-title: Set
+title: Set and FrozenSet
 layout: tutorial
-tags: []
+tags: [hashable, nonhashable, for-each, enumerate(), len(), add(), remove(), discard(), pop(), clear(), copy(), update(), intersection_update(), difference_update(), symmetric_difference_update(), issuperset(), issubset(),identity_operator, operators, set_comprehension, frozenset]
 sidebar: python_sidebar
-permalink: python_set.html
+permalink: python_set_frozenset.html
 folder: python
 prev_section: 
 prev_section_title: 
@@ -560,6 +560,36 @@ After  clear() :  set()
 <hr/>
 
 
+#### copy()
+
+<p> Returns shallow copy of set. </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+flowerSet = {'Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips'}
+
+copySet = flowerSet.copy()
+print('flowerSet :', flowerSet)
+print('copySet   :', copySet)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+flowerSet : {'Tulips', 'Lily', 'Lotus', 'Lavender', 'Rose', 'Jasmine'}
+copySet   : {'Lavender', 'Tulips', 'Rose', 'Lily', 'Jasmine', 'Lotus'}
+</pre></div>
+
+<hr/>
+
+
 
 #### update(iterable)
 
@@ -761,19 +791,114 @@ True
 <hr/>
 
 
+### Membership operators
+
+#### in
+<p> Returns True if given element exists in set. </p>
+
+#### not in
+<p> Returns True if given element does not exists in set. </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+flowerSet = {'Lotus', 'Lily', 'Rose', 'Lavender', 'Tulips'}
+
+if 'Lily' in flowerSet:
+    print("'Lily' is present in flowerSet")
+else:
+    print("'Lily' is not  in flowerSet")
+
+
+if 'Jasmine' not in flowerSet:
+    print("'Jasmine' is not in flowerSet")
+else:
+    print("'Jasmine' is already in flowerSet")
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+'Lily' is present in flowerSet
+'Jasmine' is not in flowerSet
+</pre></div>
+
+<hr/>
+
+
+### Identity operators
+
+#### is
+<p> Returns True if both variables points to same set object in memory. </p>
+
+
+#### is not
+<p> Returns True if both variables does not points to same set object in memory. </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+set1 = {'Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips'}
+set2 = {'Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips'}
+set3 = set1
+
+print('set1 is set2 :', set1 is set2)
+print('set1 is set3 :', set1 is set3)
+
+print('set1 is not set2 :', set1 is not set2)
+print('set1 is not set3 :', set1 is not set3)
+
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+set1 is set2 : False
+set1 is set3 : True
+set1 is not set2 : True
+set1 is not set3 : False
+</pre></div>
+
+<hr/>
+
+
 ### Operators
 
 operator | meaning
----- | :---
-  \|      | Union
-  &       | Intersection
-  -       | Difference
-  ^       | symmetry
-  >=      | superset
-  <=      | subset
+:----: | :---
+  \|     | union
+  &      | intersection
+  -      | difference
+  ^      | symmetric difference
+  >      | superset
+  >=     | superset or equal
+  <      | subset
+  <=     | subset or equal
+  ==     | equality
+  !=     | not equal
 
 
-<p> Returns a new set which holds result of operation on given two sets </p>
+<p> </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li>  Returns a new set which holds result of operation on given two sets. </li>
+        <li>  Unlike set function where other object can be any iterable, with operator both object must of set class. </li>
+    </ul> 
+</div>
 
 {% assign code_block = code_block | plus: 1 %}
 {% assign code_block_id = "code-block-" | append: code_block %}
@@ -786,11 +911,14 @@ set1 = {'Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips'}
 set2 = {'Tulips', 'Calendula', 'Bougainvillea', 'Lily', 'Peony', 'Dahlia'}
 
 print(f'set1 : {set1} \nset2 : {set2}')
-print(f'\nUnion : {set1 | set2}\n')
-print(f'\nIntersection : {set1 & set2}\n')
-print(f'\nDifference : {set1 - set2}\n')
-print(f'\nsuperset : {set1  >= set2}\n')
-print(f'\nsubset : {set1  <= set2}\n')
+print(f'\nUnion : {set1 | set2}')
+print(f'\nIntersection : {set1 & set2}')
+print(f'\nDifference : {set1 - set2}')
+print(f'\nSymmetric difference : {set1 ^ set2}')
+print(f'\nSuperset : {set1  > set2}')
+print(f'\nSubset : {set1  < set2}')
+print(f'\nEquality : {set1  == set2}')
+print(f'\nnot equals : {set1  != set2}')
 
 
 {% endhighlight %}
@@ -798,22 +926,27 @@ print(f'\nsubset : {set1  <= set2}\n')
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-set1 : {'Tulips', 'Lily', 'Lotus', 'Rose', 'Jasmine', 'Lavender'} 
-set2 : {'Tulips', 'Lily', 'Dahlia', 'Peony', 'Calendula', 'Bougainvillea'}
+set1 : {'Tulips', 'Lily', 'Lotus', 'Lavender', 'Rose', 'Jasmine'} 
+set2 : {'Tulips', 'Lily', 'Calendula', 'Dahlia', 'Bougainvillea', 'Peony'}
 
-Union : {'Tulips', 'Lily', 'Dahlia', 'Lotus', 'Rose', 'Jasmine', 'Peony', 'Calendula', 'Bougainvillea', 'Lavender'}
-
+Union : {'Tulips', 'Lily', 'Calendula', 'Dahlia', 'Bougainvillea', 'Lotus', 'Lavender', 'Peony', 'Rose', 'Jasmine'}
 
 Intersection : {'Tulips', 'Lily'}
 
-
 Difference : {'Lavender', 'Rose', 'Jasmine', 'Lotus'}
 
+Symmetric difference : {'Calendula', 'Dahlia', 'Bougainvillea', 'Jasmine', 'Lotus', 'Peony', 'Lavender', 'Rose'}
 
-superset : False
+Superset : False
+
+Subset : False
+
+Equality : False
+
+not equals : True
 
 
-subset : False
+
 </pre></div>
 
 <hr/>
@@ -883,6 +1016,8 @@ print(numSet)
     </ul> 
 </div>
 
+[Alice's Adventures in Wonderland Book](https://www.gutenberg.org/files/11/11-0.txt){:target="_blank"}
+
 {% assign code_block = code_block | plus: 1 %}
 {% assign code_block_id = "code-block-" | append: code_block %}
 {% assign code_header_id = "code-header-" | append: code_block %}
@@ -897,15 +1032,54 @@ def get_words():
     file = open(r'./04_Builtin_DataStructures/Docs/AliceInWonderland.txt', 'r')
     result = []
     for line in file:
-        result += line.split(' ')
+        result += [word.strip().strip(' .-()\'"!?_[]`’“;”,:‘').lower() for word in line.split()]
     file.close()
     return result
 
 
 # constructing set of words used in  book
-
 aliceWords = {word for word in get_words()}
+print('No of unique words used :', len(aliceWords))
 print(aliceWords)
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+No of unique words used : 3287
+{'exact', 'tide', 'treacle-well', '', 'leave', 'clear', 'tremble', 'trickling', 'aloud', 'quick', 'soldiers', 'trials', 'bite', 'ear', 'executive', 'middle-aged', 'method', 'defects', 'alice’s', 'indeed', 'planning', '2001', 'knows', 'actual', 'employee', 'locks', 'custard', 'timidly', 'convert', 'daisies', 'sneezes', 'heads', 'fancied', 'refund', 'lived', 'skirt', 'forty-two', 'true', 'above', 'punitive', 'shouted', 'open', 'show', 'more--as', 'past', 'reduced', 'feebly', 'pattern', 'reasonable', 'e--e--evening', 'special', 'miss', 'registered', 'panther', 'neat', 'copied', 'prove', 'idiot', 'overhead', 'pour', 'fancy', 'globe', 'else”--but', 'tea-party', 'dipped', 'snout', 'viii', 'chrysalis--you', 'pleased', 'passing', 'flung', 'tidy', 'seem', 'group', 'throat', 'file', 'exempt', 'f3', 'feel', 'resource', 'forepaws', 'school', 'knowledge', 'serpent', 'bristling', 'interrupting', 'fell', .................................................., 'bend', 'lesson-book', 'provision', 'spread', 'son', 'muttering', 'sneezed', 'asleep', 'mad--at', 'now--but', 'should', '3', 'muscular', 'dainties', 'clean', 'begun', 'bear?--mind', 'rapped', 'rising'}
+</pre></div>
+
+<hr/>
+
+
+
+## frozenset
+
+<p> Read-Only set.</p>
+
+### Constructor
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+flowerSet = {'Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips'}
+flowerList = ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
+flowerTuple = ('Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips')
+
+flowerSetRO = frozenset(flowerSet)
+print(flowerSetRO)
+
+flowerSetRO = frozenset(flowerList)
+print(flowerSetRO)
+
+flowerSetRO = frozenset(flowerTuple)
+print(flowerSetRO)
 
 
 {% endhighlight %}
@@ -913,11 +1087,113 @@ print(aliceWords)
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-It's sunny outside.
-Quoting inside "Double quotes".
+frozenset({'Lavender', 'Tulips', 'Rose', 'Lily', 'Jasmine', 'Lotus'})
+frozenset({'Tulips', 'Lily', 'Lotus', 'Lavender', 'Rose', 'Jasmine'})
+frozenset({'Tulips', 'Lily', 'Lotus', 'Lavender', 'Rose', 'Jasmine'})
 </pre></div>
 
 <hr/>
+
+
+### Functions and Operations
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Functions and Operations :</strong> frozenset has same functionality as set, except functions which modifies the set such as add(), remove() etc are not available. </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+print('Methods of frozenset :', tuple(attr for attr in dir(frozenset) if not attr.startswith('__')))
+print('Methods of set not available in frozenset :',
+      tuple(attr for attr in set(dir(set)) - set(dir(frozenset)) if not attr.startswith('__')))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Methods of frozenset : ('copy', 'difference', 'intersection', 'isdisjoint', 'issubset', 'issuperset', 'symmetric_difference', 'union')
+Methods of set not available in frozen set : ('discard', 'clear', 'update', 'add', 'symmetric_difference_update', 'pop', 'remove', 'difference_update', 'intersection_update')
+</pre></div>
+
+<hr/>
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> Invoking methods which is not available in frozenset class will raise AttributeError </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+flowerSet = {'Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips'}
+flowerSetRO = frozenset(flowerSet)
+flowerSetRO.add('Sunflower')
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre id='tut-output-error' class="result-content">Traceback (most recent call last):
+  File "<&zwj;input&zwj;>", line 3, in <&zwj;module&zwj;>
+AttributeError: 'frozenset' object has no attribute 'add'</pre></div>
+
+<hr/>
+
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> After creating frozenset object from iterable, if the iterable is modified it does not effect the frozen set.</li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+flowerSet = {'Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips'}
+flowerSetRO = frozenset(flowerSet)
+flowerSet.add('Sunflower')
+
+print(f'flowerset   : {flowerSet}')
+print(f'flowersetRO : {flowerSetRO}')
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+flowerset   : {'Tulips', 'Lily', 'Lotus', 'Lavender', 'Rose', 'Sunflower', 'Jasmine'}
+flowersetRO : frozenset({'Lavender', 'Tulips', 'Rose', 'Lily', 'Jasmine', 'Lotus'})
+</pre></div>
+
+<hr/>
+
+
+
+
+
 
 
 {% include links.html %}

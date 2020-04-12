@@ -1,0 +1,8 @@
+---
+title: "issubset()"
+tagName: issubset()
+search: exclude
+permalink: tag_issubset().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}
