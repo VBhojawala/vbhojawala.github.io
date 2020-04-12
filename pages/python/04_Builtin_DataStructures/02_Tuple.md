@@ -9,8 +9,8 @@ prev_section:
 prev_section_title: 
 prev: python_list.html
 prev_title: List
-next: 
-next_title: 
+next: python_set.html
+next_title: Set
 next_section: 
 next_section_title: 
 summary: tuple constructor, indexing, slicing, iterating, functions of tuple object, operators, named tuple, attributes and functions of namedtuple.
@@ -20,7 +20,7 @@ summary: tuple constructor, indexing, slicing, iterating, functions of tuple obj
 
 <div id="tut-content"> 
     <ul>
-        <li> <strong>Immutable Data type.</strong> </li>
+        <li> <strong>Immutable Sequence.</strong> </li>
         <li> <strong>Ordered and indexed sequence.</strong> </li>
         <li> <strong>It can contain duplicates.</strong> </li>
         <li> <strong>Hashable data structure.(if it contains immutable data only)</strong> </li>
@@ -45,20 +45,20 @@ summary: tuple constructor, indexing, slicing, iterating, functions of tuple obj
 {% highlight python %}
 
 t1 = ()
-print(t1)
+print(f't1 : {t1}  Type : {type(t1)}')
 
 # or
 
 t1 = tuple()
-print(t1)
+print(f't1 : {t1}  Type : {type(t1)}')
 
 {% endhighlight %}
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-()
-()
+t1 : ()  Type : <class 'tuple'>
+t1 : ()  Type : <class 'tuple'>
 </pre></div>
 
 <hr/>

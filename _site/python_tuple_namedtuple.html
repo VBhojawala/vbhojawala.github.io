@@ -509,6 +509,13 @@
           
           
           
+          
+          
+          <li><a title="Set" href="python_set.html">Set</a></li>
+          
+          
+          
+          
       </ul>
    </li>
      
@@ -578,7 +585,7 @@ $('#toc').on('click', 'a', function() {
 
 <div id="tut-content"> 
     <ul>
-        <li> <strong>Immutable Data type.</strong> </li>
+        <li> <strong>Immutable Sequence.</strong> </li>
         <li> <strong>Ordered and indexed sequence.</strong> </li>
         <li> <strong>It can contain duplicates.</strong> </li>
         <li> <strong>Hashable data structure.(if it contains immutable data only)</strong> </li>
@@ -597,19 +604,19 @@ $('#toc').on('click', 'a', function() {
 <p id="code-header-1" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-1", "code-header-1")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">t1</span> <span class="o">=</span> <span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'t1 : {t1}  Type : {type(t1)}'</span><span class="p">)</span>
 
 <span class="c1"># or
 </span>
 <span class="n">t1</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'t1 : {t1}  Type : {type(t1)}'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-()
-()
+t1 : ()  Type : &lt;class 'tuple'&gt;
+t1 : ()  Type : &lt;class 'tuple'&gt;
 </pre></div>
 
 <hr />
@@ -2175,6 +2182,13 @@ Bob       29     50000      Male
         </a>
     
 
+    
+        <a href="python_set.html" >
+            <button type="button" class="btn btn-primary "> 
+                 Next <span class="fa fa-arrow-circle-right fa-lg"></span> <br/> 
+                 Set
+            </button>
+        </a>
     
 
     

@@ -635,7 +635,7 @@ Printing number starting with 1
 
 <div id="tut-content"> 
     <ul>
-        <li> Returns in enumerate object which supports iterator protocol. </li>
+        <li> Returns enumerate object which supports iterator protocol. </li>
         <li> When iterated returns tuple(count, element) where count begins from 'start' which is by default set to 0. </li>
     </ul> 
 </div>

@@ -76,6 +76,12 @@
   
   
   <url>
+    <loc>http://localhost:4000/python_set.html</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>http://localhost:4000/python_string.html</loc>
   </url>
   

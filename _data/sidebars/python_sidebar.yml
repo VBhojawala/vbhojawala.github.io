@@ -91,3 +91,6 @@ entries:
       - title: Tuple and NamedTuple
         url: /python_tuple_namedtuple.html
         output: web
+      - title: Set
+        url: /python_set.html
+        output: web        
