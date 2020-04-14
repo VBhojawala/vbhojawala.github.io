@@ -93,4 +93,7 @@ entries:
         output: web
       - title: Set and FrozenSet
         url: /python_set_frozenset.html
-        output: web        
+        output: web
+      - title: Dictionary
+        url: /python_dictionary.html
+        output: web    

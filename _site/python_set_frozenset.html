@@ -4,8 +4,8 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Set  constructor methods, operators.">
-<meta name="keywords" content="hashablenonhashablefor-eachenumerate()len()add()remove()discard()pop()clear()copy()update()intersection_update()difference_update()symmetric_difference_update()issuperset()issubset()identity_operatoroperatorsset_comprehensionfrozenset,  ">
+<meta name="description" content="Set  constructor methods, operators, iterator, set comprehension, frozenset.">
+<meta name="keywords" content="hashablenonhashablefor-eachenumerate()len()add()remove()discard()pop()clear()copy()update()intersection_update()difference_update()symmetric_difference_update()issuperset()issubset()identity_operatormembership_operatoroperatorsset_comprehensionfrozenset,  ">
 <meta name="theme-color" content="#36362C">
 <link rel="icon" sizes="192x192" href="images/favicon.ico">
 <title>Set and FrozenSet | Asha Tutorials</title>
@@ -516,6 +516,13 @@
           
           
           
+          
+          
+          <li><a title="Dictionary" href="python_dictionary.html">Dictionary</a></li>
+          
+          
+          
+          
       </ul>
    </li>
      
@@ -546,7 +553,7 @@
 <div class="post-content">
 
    <!-- 
-    <div class="summary">Set  constructor methods, operators.</div>
+    <div class="summary">Set  constructor methods, operators, iterator, set comprehension, frozenset.</div>
     -->
 
     
@@ -622,19 +629,19 @@ vSet : set()  Type : &lt;class 'set'&gt;
 <p id="code-header-2" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-2", "code-header-2")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowerSet</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">}</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'flowerSet : {flowerSet}  Type : {type(vSet)}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'flowerSet : {flowerSet}  Type : {type(flowerSet)}'</span><span class="p">)</span>
 
-<span class="c1"># OR
+<span class="c1"># OR  set(iterable) : Iterable can be list, set or any object which supports iterator protocol.
 </span>
 <span class="n">flowerSet</span> <span class="o">=</span> <span class="nb">set</span><span class="p">((</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'flowerSet : {flowerSet}  Type : {type(vSet)}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'flowerSet : {flowerSet}  Type : {type(flowerSet)}'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-flowerSet : {'Rose', 'Tulips', 'Jasmine', 'Lotus', 'Lavender', 'Lily'}  Type : &lt;class 'set'&gt;
-flowerSet : {'Rose', 'Tulips', 'Jasmine', 'Lotus', 'Lavender', 'Lily'}  Type : &lt;class 'set'&gt;
+flowerSet : {'Lily', 'Jasmine', 'Lotus', 'Tulips', 'Lavender', 'Rose'}  Type : &lt;class 'set'&gt;
+flowerSet : {'Lily', 'Jasmine', 'Lotus', 'Tulips', 'Lavender', 'Rose'}  Type : &lt;class 'set'&gt;
 </pre></div>
 
 <hr />
@@ -1008,24 +1015,24 @@ After  discard('Peony')   : {'Rose', 'Tulips', 'Lotus', 'Lavender', 'Lily'}
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowerSet</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">}</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'Before pop : '</span><span class="p">,</span> <span class="n">flowerSet</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'Popped     : {flowerSet.pop()}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Popped     : {flowerSet.pop()}'</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'After  pop : '</span><span class="p">,</span> <span class="n">flowerSet</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">Before pop : '</span><span class="p">,</span> <span class="n">flowerSet</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'Popped     : {flowerSet.pop()}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Popped     : {flowerSet.pop()}'</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'After  pop : '</span><span class="p">,</span> <span class="n">flowerSet</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-Before pop :  {'Tulips', 'Lily', 'Lotus', 'Rose', 'Jasmine', 'Lavender'}
-Popped     : {flowerSet.pop()}
-After  pop :  {'Tulips', 'Lily', 'Lotus', 'Rose', 'Jasmine', 'Lavender'}
+Before pop :  {'Lily', 'Jasmine', 'Lotus', 'Tulips', 'Lavender', 'Rose'}
+Popped     : Lily
+After  pop :  {'Jasmine', 'Lotus', 'Tulips', 'Lavender', 'Rose'}
 
-Before pop :  {'Tulips', 'Lily', 'Lotus', 'Rose', 'Jasmine', 'Lavender'}
-Popped     : {flowerSet.pop()}
-After  pop :  {'Tulips', 'Lily', 'Lotus', 'Rose', 'Jasmine', 'Lavender'}
+Before pop :  {'Jasmine', 'Lotus', 'Tulips', 'Lavender', 'Rose'}
+Popped     : Jasmine
+After  pop :  {'Lotus', 'Tulips', 'Lavender', 'Rose'}
 
 </pre></div>
 
@@ -1401,7 +1408,7 @@ not equals : True
 
 <h3 id="set-comprehension">set comprehension</h3>
 
-<p id="tut-cons"> <strong> Syntax : </strong> [expr for item in iterator [if expr] ] </p>
+<p id="tut-cons"> <strong> Syntax : </strong> {expr for item in iterator [if expr] } </p>
 
 <div id="code-block-26" class="code-block">
 <p id="code-header-26" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-26", "code-header-26")</script>
@@ -1665,6 +1672,10 @@ flowersetRO : frozenset({'Lavender', 'Tulips', 'Rose', 'Lily', 'Jasmine', 'Lotus
         
         
         
+        <a href="tag_membership_operator.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">membership_operator</a>
+        
+        
+        
         <a href="tag_operators.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">operators</a>
         
         
@@ -1707,6 +1718,13 @@ flowersetRO : frozenset({'Lavender', 'Tulips', 'Rose', 'Lily', 'Jasmine', 'Lotus
         </a>
     
 
+    
+        <a href="python_dictionary.html" >
+            <button type="button" class="btn btn-primary "> 
+                 Next <span class="fa fa-arrow-circle-right fa-lg"></span> <br/> 
+                 Dictionary
+            </button>
+        </a>
     
 
     

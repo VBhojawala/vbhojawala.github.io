@@ -1,7 +1,7 @@
 ---
 title: Set and FrozenSet
 layout: tutorial
-tags: [hashable, nonhashable, for-each, enumerate(), len(), add(), remove(), discard(), pop(), clear(), copy(), update(), intersection_update(), difference_update(), symmetric_difference_update(), issuperset(), issubset(),identity_operator, operators, set_comprehension, frozenset]
+tags: [hashable, nonhashable, for-each, enumerate(), len(), add(), remove(), discard(), pop(), clear(), copy(), update(), intersection_update(), difference_update(), symmetric_difference_update(), issuperset(), issubset(),identity_operator, membership_operator, operators, set_comprehension, frozenset]
 sidebar: python_sidebar
 permalink: python_set_frozenset.html
 folder: python
@@ -9,11 +9,11 @@ prev_section:
 prev_section_title: 
 prev: python_tuple_namedtuple.html
 prev_title: Tuple and NamedTuple
-next: 
-next_title: 
+next: python_dictionary.html
+next_title: Dictionary
 next_section: 
 next_section_title: 
-summary: Set  constructor methods, operators.
+summary: Set  constructor methods, operators, iterator, set comprehension, frozenset.
 ---
 
 ## Set
@@ -70,12 +70,12 @@ vSet : set()  Type : <class 'set'>
 {% highlight python %}
 
 flowerSet = {'Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips'}
-print(f'flowerSet : {flowerSet}  Type : {type(vSet)}')
+print(f'flowerSet : {flowerSet}  Type : {type(flowerSet)}')
 
-# OR
+# OR  set(iterable) : Iterable can be list, set or any object which supports iterator protocol.
 
 flowerSet = set(('Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips'))
-print(f'flowerSet : {flowerSet}  Type : {type(vSet)}')
+print(f'flowerSet : {flowerSet}  Type : {type(flowerSet)}')
 
 
 {% endhighlight %}
@@ -83,8 +83,8 @@ print(f'flowerSet : {flowerSet}  Type : {type(vSet)}')
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-flowerSet : {'Rose', 'Tulips', 'Jasmine', 'Lotus', 'Lavender', 'Lily'}  Type : <class 'set'>
-flowerSet : {'Rose', 'Tulips', 'Jasmine', 'Lotus', 'Lavender', 'Lily'}  Type : <class 'set'>
+flowerSet : {'Lily', 'Jasmine', 'Lotus', 'Tulips', 'Lavender', 'Rose'}  Type : <class 'set'>
+flowerSet : {'Lily', 'Jasmine', 'Lotus', 'Tulips', 'Lavender', 'Rose'}  Type : <class 'set'>
 </pre></div>
 
 <hr/>
@@ -502,11 +502,11 @@ After  discard('Peony')   : {'Rose', 'Tulips', 'Lotus', 'Lavender', 'Lily'}
 
 flowerSet = {'Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips'}
 print('Before pop : ', flowerSet)
-print('Popped     : {flowerSet.pop()}')
+print(f'Popped     : {flowerSet.pop()}')
 print('After  pop : ', flowerSet)
 
 print('\nBefore pop : ', flowerSet)
-print('Popped     : {flowerSet.pop()}')
+print(f'Popped     : {flowerSet.pop()}')
 print('After  pop : ', flowerSet)
 
 
@@ -516,13 +516,13 @@ print('After  pop : ', flowerSet)
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-Before pop :  {'Tulips', 'Lily', 'Lotus', 'Rose', 'Jasmine', 'Lavender'}
-Popped     : {flowerSet.pop()}
-After  pop :  {'Tulips', 'Lily', 'Lotus', 'Rose', 'Jasmine', 'Lavender'}
+Before pop :  {'Lily', 'Jasmine', 'Lotus', 'Tulips', 'Lavender', 'Rose'}
+Popped     : Lily
+After  pop :  {'Jasmine', 'Lotus', 'Tulips', 'Lavender', 'Rose'}
 
-Before pop :  {'Tulips', 'Lily', 'Lotus', 'Rose', 'Jasmine', 'Lavender'}
-Popped     : {flowerSet.pop()}
-After  pop :  {'Tulips', 'Lily', 'Lotus', 'Rose', 'Jasmine', 'Lavender'}
+Before pop :  {'Jasmine', 'Lotus', 'Tulips', 'Lavender', 'Rose'}
+Popped     : Jasmine
+After  pop :  {'Lotus', 'Tulips', 'Lavender', 'Rose'}
 
 </pre></div>
 
@@ -955,7 +955,7 @@ not equals : True
 
 ### set comprehension
 
-<p id="tut-cons"> <strong> Syntax : </strong> [expr for item in iterator [if expr] ] </p>
+<p id="tut-cons"> <strong> Syntax : </strong> {expr for item in iterator [if expr] } </p>
 
 {% assign code_block = code_block | plus: 1 %}
 {% assign code_block_id = "code-block-" | append: code_block %}
