@@ -3172,7 +3172,7 @@ Operator  | Meaning
 < | Less than
 > | Greater than
 <= | Less than or equal
->= | Greater than or euqal
+>= | Greater than or equal
 
 
 <div id="tut-content"> 

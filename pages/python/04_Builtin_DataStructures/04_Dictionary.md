@@ -204,6 +204,35 @@ print(phnDir)
 <hr/>
 
 
+<div id="tut-content"> 
+    <ul>
+        <li> Dictionary with tuple as keys </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+# 3D point and it's value
+points = {(0, 1, 0): 88, (2, 1, 8): 75, (6, 8, 10): 88}
+print(points)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+{(0, 1, 0): 88, (2, 1, 8): 75, (6, 8, 10): 88}
+</pre></div>
+
+<hr/>
+
+
 ### Accessing value using key
 
 
@@ -312,7 +341,7 @@ Jane : 7984546721
 <hr/>
 
 
-### Add new Entry
+### Add new Element
 
 {% assign code_block = code_block | plus: 1 %}
 {% assign code_block_id = "code-block-" | append: code_block %}
@@ -880,6 +909,52 @@ Emily : None
 <hr/>
 
 
+#### Iterating through sorted keys
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+studentDB = {}
+
+studentDB[101] = {'Name': 'Victor', 'bGroup': 'O+', 'contactNo': 6468774878}
+studentDB[103] = {'Name': 'Kelly', 'bGroup': 'A-', 'contactNo': 4647841233}
+studentDB[102] = {'Name': 'Jane', 'bGroup': 'A+', 'contactNo': 4565123478}
+studentDB[104] = {'Name': 'Sam', 'bGroup': 'B+', 'contactNo': 4564113145}
+studentDB[105] = {'Name': 'John', 'bGroup': 'A+', 'contactNo': 4446657411}
+
+print('Default order')
+for key in studentDB:
+    print(f'{key} : {studentDB[key]}')
+
+print('\nSorted order by key')
+for key in sorted(studentDB):
+    print(f'{key} : {studentDB[key]}')
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Default order
+101 : {'Name': 'Victor', 'bGroup': 'O+', 'contactNo': 6468774878}
+103 : {'Name': 'Kelly', 'bGroup': 'A-', 'contactNo': 4647841233}
+102 : {'Name': 'Jane', 'bGroup': 'A+', 'contactNo': 4565123478}
+104 : {'Name': 'Sam', 'bGroup': 'B+', 'contactNo': 4564113145}
+105 : {'Name': 'John', 'bGroup': 'A+', 'contactNo': 4446657411}
+
+Sorted order by key
+101 : {'Name': 'Victor', 'bGroup': 'O+', 'contactNo': 6468774878}
+102 : {'Name': 'Jane', 'bGroup': 'A+', 'contactNo': 4565123478}
+103 : {'Name': 'Kelly', 'bGroup': 'A-', 'contactNo': 4647841233}
+104 : {'Name': 'Sam', 'bGroup': 'B+', 'contactNo': 4564113145}
+105 : {'Name': 'John', 'bGroup': 'A+', 'contactNo': 4446657411}
+</pre></div>
+
+<hr/>
 
 ### Searching Key based on Value
 {% assign code_block = code_block | plus: 1 %}
@@ -908,6 +983,213 @@ else:
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
 Found Key : Sam
+</pre></div>
+
+<hr/>
+
+
+#### Adding or removing elements while iterating
+
+{% include callout.html content="**Note** : Adding or removing elements from list or dictionary while iterating will raise RuntimeError.Instead create copy of dictionary or list and apply modification on copy object. " type="primary" %} 
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> Modifying element value during iteration is fine </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+dict1 = {'a': 5, 'b': 6, 'c': -1}
+
+print('Before', dict1)
+
+for key in dict1:
+    if dict1[key] < 0:
+        dict1[key] = 0
+
+print('After', dict1)
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Before {'a': 5, 'b': 6, 'c': -1}
+After {'a': 5, 'b': 6, 'c': 0}
+</pre></div>
+
+<hr/>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> Adding or removing an element from same dictionary which is in iteration will raise RuntimeError. </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+dict1 = {'a': 5, 'b': 6, 'c': -1}
+
+print('Before', dict1)
+
+for key in dict1:
+    if dict1[key] < 0:
+        del dict1[key]
+
+print('After', dict1)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Before {'a': 5, 'b': 6, 'c': -1}
+</pre><pre id='tut-output-error' class="result-content">Traceback (most recent call last):
+  File "<&zwj;input&zwj;>", line 5, in <&zwj;module&zwj;>
+RuntimeError: dictionary changed size during iteration</pre></div>
+
+<hr/>
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> Modifying copy of dictionary </li>
+    </ul> 
+</div>
+
+
+{% include callout.html content="**Note** : Depending on type of element (mutable or immutable) copy() or deepcopy() should be used. " type="primary" %} 
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+dict1 = {'a': 5, 'b': 6, 'c': -1}
+dict1Copy = dict1.copy()
+
+print('Before dict1 :', dict1)
+print('Before dict1Copy :', dict1Copy)
+
+for key in dict1:
+    if dict1[key] < 0:
+        del dict1Copy[key]
+
+print('\nAfter dict1 :', dict1)
+print('After dict1Copy :', dict1Copy)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Before dict1 : {'a': 5, 'b': 6, 'c': -1}
+Before dict1Copy : {'a': 5, 'b': 6, <div id="tut-highlight">'c': -1</div>}
+
+After dict1 : {'a': 5, 'b': 6, 'c': -1}
+After dict1Copy : {'a': 5, 'b': 6}
+</pre></div>
+
+<hr/>
+
+
+### Unpacking as keyword argument of function
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+def get_cicecream(*args, **kwargs):
+    """ usage: first enter all flavours you want followed by customization options with keyword arguments"""
+    for order in args:
+        print(f'Processing {order} .....')
+        for k in kwargs:
+            print(f'processing  {k} : {kwargs[k]}')
+        print('Finished order ->', order, '\n')
+
+
+get_cicecream('Butterscotch', 'Rose', 'Chocolate Chips', 'Pineapple', size='Mid', quantity=2, package='cup')
+
+# unpacking the parameter
+iceCreams = ['Butterscotch', 'Rose', 'Chocolate Chips', 'Pineapple']
+orderInfo = {'size': 'Mid', 'quantity': 2, 'package': 'cup'}
+
+get_cicecream(*iceCreams, **orderInfo)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Processing Butterscotch .....
+processing  size : Mid
+processing  quantity : 2
+processing  package : cup
+Finished order -> Butterscotch 
+
+Processing Rose .....
+processing  size : Mid
+processing  quantity : 2
+processing  package : cup
+Finished order -> Rose 
+
+Processing Chocolate Chips .....
+processing  size : Mid
+processing  quantity : 2
+processing  package : cup
+Finished order -> Chocolate Chips 
+
+Processing Pineapple .....
+processing  size : Mid
+processing  quantity : 2
+processing  package : cup
+Finished order -> Pineapple 
+
+Processing Butterscotch .....
+processing  size : Mid
+processing  quantity : 2
+processing  package : cup
+Finished order -> Butterscotch 
+
+Processing Rose .....
+processing  size : Mid
+processing  quantity : 2
+processing  package : cup
+Finished order -> Rose 
+
+Processing Chocolate Chips .....
+processing  size : Mid
+processing  quantity : 2
+processing  package : cup
+Finished order -> Chocolate Chips 
+
+Processing Pineapple .....
+processing  size : Mid
+processing  quantity : 2
+processing  package : cup
+Finished order -> Pineapple 
 </pre></div>
 
 <hr/>
@@ -1364,5 +1646,397 @@ default=8000800088 : {'John': 8000800088, 'Victor': 8000800088, 'Kelly': 8000800
 </pre></div>
 
 <hr/>
+
+
+### Identity Operators
+
+#### is
+
+<p> Returns True if given variables point to same dictionary object in memory. </p>
+
+#### is not
+
+<p> Returns True if given variables does not point to same dictionary object in memory. </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+dict1 = {'a': 5, 'b': 6}
+dict2 = {'a': 5, 'b': 6}
+dict3 = dict1
+
+print('dict1 is dict2 :', dict1 is dict2)
+print('dict1 is dict3 :', dict1 is dict3)
+
+print('dict1 is not dict2 :', dict1 is not dict2)
+print('dict1 is not dict3 :', dict1 is not dict3)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+dict1 is dict2 : False
+dict1 is dict3 : True
+dict1 is not dict2 : True
+dict1 is not dict3 : False
+</pre></div>
+
+<hr/>
+
+
+### Comparision Operator
+
+#### == 
+
+<p> Returns True if all elements are equal for given dictionaries. </p>
+
+
+#### != 
+
+<p> Returns True if all elements are not equal for given dictionaries.</p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+dict1 = {'a': 5, 'b': 6}
+dict2 = dict(a=5, b=6)
+dict3 = {'b': 6}
+
+print('dict1 == dict2 :', dict1 == dict2)
+print('dict1 == dict3 :', dict1 == dict3)
+
+print('dict1 != dict2 :', dict1 != dict2)
+print('dict1 != dict3 :', dict1 != dict3)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+dict1 == dict2 : True
+dict1 == dict3 : False
+dict1 != dict2 : False
+dict1 != dict3 : True
+</pre></div>
+
+<hr/>
+
+
+### Comparing elements
+
+<p> Dictionary objects can not be compared directly using <, >, <=, >= . But we can convert dictionary into sorted list or tuple so that we can use comparision operators on elements. </p>
+
+{% include callout.html content="**Note** : To compare elements must be sorted because dictionary does not preserve order of elements internally. " type="primary" %} 
+
+Operator  | Meaning
+:---: | :---
+< | Less than
+> | Greater than
+<= | Less than or equal
+>= | Greater than or equal
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+dict1 = {'a': 5, 'b': 6}
+dict2 = {'b': 6}
+
+print('Return  type of sorted() :', type(sorted(dict1.items())), end='\n\n')
+
+print('dict1 <  dict2 :', sorted(dict1.items()) < sorted(dict2.items()))
+print('dict1 <= dict2 :', sorted(dict1.items()) <= sorted(dict2.items()))
+print('dict1 > dict2  :', sorted(dict1.items()) > sorted(dict2.items()))
+print('dict1 >= dict2 :', sorted(dict1.items()) >= sorted(dict2.items()))
+
+
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Return  type of sorted() : <div id="tut-highlight"><class 'list'></div>
+
+dict1 <  dict2 : True
+dict1 <= dict2 : True
+dict1 > dict2  : False
+dict1 >= dict2 : False
+</pre></div>
+
+<hr/>
+
+
+### Comparing keys for subset or superset
+
+<p> set(dict) returns set of keys for given dictionary which can be compared for subset or superset. </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+dict1 = {'a': 5, 'b': 6, 'c': 7}
+dict2 = {'a': 5, 'b': 6}
+
+
+print('dict > dict2  :', set(dict1) > set(dict2))
+print('dict >= dict2 :', set(dict1) >= set(dict2))
+print('dict < dict2  :', set(dict1) < set(dict2))
+print('dict <= dict2 :', set(dict1) <= set(dict2))
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+dict > dict2  : True
+dict >= dict2 : True
+dict < dict2  : False
+dict <= dict2 : False
+</pre></div>
+
+<hr/>
+
+
+### Dictionary comprehension
+
+<div id="tut-content"> 
+    <ul>
+        <li> From keys with default value </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+keyMap = {k: 8000800088 for k in ['John', 'Victor', 'Kelly', 'Sam', 'Jane']}
+print(keyMap)
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+{'John': 8000800088, 'Victor': 8000800088, 'Kelly': 8000800088, 'Sam': 8000800088, 'Jane': 8000800088}
+</pre></div>
+
+<hr/>
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> Using generator function </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+squareDict = {i: i*i for i in range(1, 11)}
+print(squareDict)
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+{1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81, 10: 100}
+</pre></div>
+
+<hr/>
+
+
+
+### Ordered Dictionary
+
+<p> Keeps element ordered as per insertion order. </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from collections import OrderedDict
+
+studentDB = OrderedDict()
+
+name = ['John', 'Victor', 'Kelly', 'Sam', 'Jane']
+studentDB[101] = {'Name': 'Victor', 'bGroup': 'O+', 'contactNo': 6468774878}
+studentDB[103] = {'Name': 'Kelly', 'bGroup': 'A-', 'contactNo': 4647841233}
+studentDB[102] = {'Name': 'Jane', 'bGroup': 'A+', 'contactNo': 4565123478}
+studentDB[104] = {'Name': 'Sam', 'bGroup': 'B+', 'contactNo': 4564113145}
+studentDB[105] = {'Name': 'John', 'bGroup': 'A+', 'contactNo': 4446657411}
+
+print(studentDB)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+OrderedDict([(101, {'Name': 'Victor', 'bGroup': 'O+', 'contactNo': 6468774878}), (103, {'Name': 'Kelly', 'bGroup': 'A-', 'contactNo': 4647841233}), (102, {'Name': 'Jane', 'bGroup': 'A+', 'contactNo': 4565123478}), (104, {'Name': 'Sam', 'bGroup': 'B+', 'contactNo': 4564113145}), (105, {'Name': 'John', 'bGroup': 'A+', 'contactNo': 4446657411})])
+</pre></div>
+
+<hr/>
+
+
+### Default Dictionary
+
+<p> Assigns given default value to newly created element. </p>
+
+#### Constructor
+<p id="tut-cons"> defaultdict([default_factory[, ...]]) </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>default_factory : </strong>  Must be a callable which takes no arguments and return an object which is set as default value for newly created element. </li>
+    </ul> 
+</div>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> Dictionary of persons who owns list of files </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+fOwner = [('John', 'File A'), ('John', 'File Y'), ('Sam', 'File Z'), ('Kelly', 'File C'), ('Jane', 'File G'),
+          ('Victor', 'File X'), ('Victor', 'File O'), ('John', 'File L'), ('Jane', 'File M')]
+
+perFileDict = {}
+
+# one way of doing it
+for file in fOwner:
+    if file[0] in perFileDict:
+        perFileDict[file[0]].append(file[1])
+    else:
+        perFileDict[file[0]] = []
+        perFileDict[file[0]].append(file[1])
+
+print(perFileDict)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+{'John': ['File A', 'File Y', 'File L'], 'Sam': ['File Z'], 'Kelly': ['File C'], 'Jane': ['File G', 'File M'], 'Victor': ['File X', 'File O']}
+</pre></div>
+
+<hr/>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> using setdefault()  </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+fOwner = [('John', 'File A'), ('John', 'File Y'), ('Sam', 'File Z'), ('Kelly', 'File C'), ('Jane', 'File G'),
+          ('Victor', 'File X'), ('Victor', 'File O'), ('John', 'File L'), ('Jane', 'File M')]
+
+perFileDict = {}
+for file in fOwner:
+    fileList = perFileDict.setdefault(file[0], [])
+    fileList.append(file[1])
+
+print(perFileDict)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+{'John': ['File A', 'File Y', 'File L'], 'Sam': ['File Z'], 'Kelly': ['File C'], 'Jane': ['File G', 'File M'], 'Victor': ['File X', 'File O']}
+</pre></div>
+
+<hr/>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> Using defaultdict() </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from collections import defaultdict
+
+fOwner = [('John', 'File A'), ('John', 'File Y'), ('Sam', 'File Z'), ('Kelly', 'File C'), ('Jane', 'File G'),
+          ('Victor', 'File X'), ('Victor', 'File O'), ('John', 'File L'), ('Jane', 'File M')]
+
+perFileDict = defaultdict(list)
+
+for file in fOwner:
+    (perFileDict[file[0]]).append(file[1])
+
+print(perFileDict)
+
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+defaultdict(<class 'list'>, {'John': ['File A', 'File Y', 'File L'], 'Sam': ['File Z'], 'Kelly': ['File C'], 'Jane': ['File G', 'File M'], 'Victor': ['File X', 'File O']})
+</pre></div>
+
+<hr/>
+
 
 {% include links.html %}

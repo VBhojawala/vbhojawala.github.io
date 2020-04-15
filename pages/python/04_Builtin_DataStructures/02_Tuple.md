@@ -1382,7 +1382,7 @@ Operator  | Meaning
 < | Less than
 > | Greater than
 <= | Less than or equal
->= | Greater than or euqal
+>= | Greater than or equal
 
 
 {% assign code_block = code_block | plus: 1 %}
