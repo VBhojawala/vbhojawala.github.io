@@ -1,0 +1,8 @@
+---
+title: "ordered dictionary"
+tagName: ordered_dictionary
+search: exclude
+permalink: tag_ordered_dictionary.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

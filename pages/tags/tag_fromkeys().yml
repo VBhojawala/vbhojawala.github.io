@@ -1,0 +1,8 @@
+---
+title: "fromkeys()"
+tagName: fromkeys()
+search: exclude
+permalink: tag_fromkeys().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

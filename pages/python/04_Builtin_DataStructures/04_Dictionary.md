@@ -1,7 +1,7 @@
 ---
 title: Dictionary
 layout: tutorial
-tags: []
+tags: [hashable, hashmap, associative_array,  key, get(), keys(), dict(), for-each  , items(), len(), pop(), popitem(), update(), copy(), deepcopy(), clear() setdefault(), fromkeys(), dictionary_comprehension, ordered_dictionary, default_dictionary]
 sidebar: python_sidebar
 permalink: python_dictionary.html
 folder: python
@@ -13,7 +13,7 @@ next:
 next_title: 
 next_section: 
 next_section_title: 
-summary: Dictionary constructor methods, operators, dictionary comprehension, dictionary examples, ordered dictionary.
+summary: Dictionary constructor methods, operators, dictionary comprehension, dictionary examples, ordered dictionary, default dictionary.
 ---
 
 ## Dictionary
@@ -1693,12 +1693,12 @@ dict1 is not dict3 : False
 
 ### Comparision Operator
 
-#### == 
+#### ' == '
 
 <p> Returns True if all elements are equal for given dictionaries. </p>
 
 
-#### != 
+#### ' != '
 
 <p> Returns True if all elements are not equal for given dictionaries.</p>
 
@@ -1820,6 +1820,16 @@ dict <= dict2 : False
 
 ### Dictionary comprehension
 
+#### Syntax
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> {expr: expr for item in iterator [if expr] } </strong> </li>
+    </ul> 
+</div>
+
+<hr/>
+
 <div id="tut-content"> 
     <ul>
         <li> From keys with default value </li>
@@ -1870,6 +1880,34 @@ print(squareDict)
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
 {1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81, 10: 100}
+</pre></div>
+
+<hr/>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li>  Filtering result keys </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+squareDict = {i: i*i for i in range(1, 11) if i % 2 == 0}
+print(squareDict)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+{2: 4, 4: 16, 6: 36, 8: 64, 10: 100}
 </pre></div>
 
 <hr/>
@@ -1939,8 +1977,7 @@ OrderedDict([(101, {'Name': 'Victor', 'bGroup': 'O+', 'contactNo': 6468774878}),
 <p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
 {% highlight python %}
 
-fOwner = [('John', 'File A'), ('John', 'File Y'), ('Sam', 'File Z'), ('Kelly', 'File C'), ('Jane', 'File G'),
-          ('Victor', 'File X'), ('Victor', 'File O'), ('John', 'File L'), ('Jane', 'File M')]
+fOwner = [('John', 'File A'), ('John', 'File Y'), ('Sam', 'File Z'), ('Kelly', 'File C'), ('Jane', 'File G'), ('Victor', 'File X'), ('Victor', 'File O'), ('John', 'File L'), ('Jane', 'File M')]
 
 perFileDict = {}
 
@@ -1979,8 +2016,7 @@ print(perFileDict)
 <p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
 {% highlight python %}
 
-fOwner = [('John', 'File A'), ('John', 'File Y'), ('Sam', 'File Z'), ('Kelly', 'File C'), ('Jane', 'File G'),
-          ('Victor', 'File X'), ('Victor', 'File O'), ('John', 'File L'), ('Jane', 'File M')]
+fOwner = [('John', 'File A'), ('John', 'File Y'), ('Sam', 'File Z'), ('Kelly', 'File C'), ('Jane', 'File G'), ('Victor', 'File X'), ('Victor', 'File O'), ('John', 'File L'), ('Jane', 'File M')]
 
 perFileDict = {}
 for file in fOwner:
@@ -2016,8 +2052,7 @@ print(perFileDict)
 
 from collections import defaultdict
 
-fOwner = [('John', 'File A'), ('John', 'File Y'), ('Sam', 'File Z'), ('Kelly', 'File C'), ('Jane', 'File G'),
-          ('Victor', 'File X'), ('Victor', 'File O'), ('John', 'File L'), ('Jane', 'File M')]
+fOwner = [('John', 'File A'), ('John', 'File Y'), ('Sam', 'File Z'), ('Kelly', 'File C'), ('Jane', 'File G'), ('Victor', 'File X'), ('Victor', 'File O'), ('John', 'File L'), ('Jane', 'File M')]
 
 perFileDict = defaultdict(list)
 
@@ -2038,5 +2073,558 @@ defaultdict(<class 'list'>, {'John': ['File A', 'File Y', 'File L'], 'Sam': ['Fi
 
 <hr/>
 
+
+### Examples
+
+#### List of Dictionaries
+
+<div id="tut-content"> 
+    <ul>
+        <li> Iterating </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+laptops = [
+    {'oem': 'DELL', 'model': 'Dell Inspiron 5300', 'ram': 8, 'processor': 'AMD Ryzen™ 3 3500H',
+     'gpu': 'Radeon™ Vega 6 Graphics', 'gMemory': 2, 'price': 469.99, 'os': 'Linux', 'hdd': 500},
+    {'oem': 'DELL', 'model': 'Dell Inspiron 3580', 'ram': 8, 'processor': 'Intel® Core™ i5-8265U',
+     'gpu': 'Intel® UHD Graphics 620', 'gMemory': 0, 'price': 599, 'os': 'Windows', 'hdd': 500},
+    {'oem': 'DELL', 'model': 'Latitude 5580', 'ram': 16, 'processor': 'Intel Core i7-8820HQ',
+     'gpu': 'NVIDIA GeForce 1660Ti', 'gMemory': 4, 'price': 1329, 'os': 'Windows', 'hdd': 500},
+    {'oem': 'HP', 'model': 'ENVY 17t', 'ram': 16, 'processor': 'Intel® Core™ i7-9550U',
+     'gpu': 'NVIDIA® GeForce® MX350', 'gMemory': 2, 'price': 809.99, 'os': 'Windows', 'hdd': 512},
+    {'oem': 'HP', 'model': 'EliteBook 840', 'ram': 16, 'processor': 'Intel® Core™ i7-9500U',
+     'gpu': 'AMD Radeon™ RX 540', 'gMemory': 2, 'price': 1356.75, 'os': 'Windows', 'hdd': 256},
+    {'oem': 'Apple', 'model': 'MacBook Air', 'ram': 16, 'processor': 'Intel® Core™ i7-9500U',
+     'gpu': 'Intel Iris Plus Graphics 640', 'gMemory': 2, 'price': 1356.75, 'os': 'macOS', 'hdd': 256},
+    {'oem': 'Apple', 'model': 'MacBook Pro', 'ram': 8, 'processor': 'Intel® Core™ i9-9500H',
+     'gpu': 'Intel UHD Graphics 617', 'gMemory': 2, 'price': 1199, 'os': 'macOS', 'hdd': 128},
+]
+
+
+
+for laptop in laptops:
+    for key in laptop:
+        print(key, ':', laptop[key])
+    print('=========================\n')
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+oem : DELL
+model : Dell Inspiron 5300
+ram : 8
+processor : AMD Ryzen™ 3 3500H
+gpu : Radeon™ Vega 6 Graphics
+gMemory : 2
+price : 469.99
+os : Linux
+hdd : 500
+=========================
+
+oem : DELL
+model : Dell Inspiron 3580
+ram : 8
+processor : Intel® Core™ i5-8265U
+gpu : Intel® UHD Graphics 620
+gMemory : 0
+price : 599
+os : Windows
+hdd : 500
+=========================
+
+oem : DELL
+model : Latitude 5580
+ram : 16
+processor : Intel Core i7-8820HQ
+gpu : NVIDIA GeForce 1660Ti
+gMemory : 4
+price : 1329
+os : Windows
+hdd : 500
+=========================
+
+oem : HP
+model : ENVY 17t
+ram : 16
+processor : Intel® Core™ i7-9550U
+gpu : NVIDIA® GeForce® MX350
+gMemory : 2
+price : 809.99
+os : Windows
+hdd : 512
+=========================
+
+oem : HP
+model : EliteBook 840
+ram : 16
+processor : Intel® Core™ i7-9500U
+gpu : AMD Radeon™ RX 540
+gMemory : 2
+price : 1356.75
+os : Windows
+hdd : 256
+=========================
+
+oem : Apple
+model : MacBook Air
+ram : 16
+processor : Intel® Core™ i7-9500U
+gpu : Intel Iris Plus Graphics 640
+gMemory : 2
+price : 1356.75
+os : macOS
+hdd : 256
+=========================
+
+oem : Apple
+model : MacBook Pro
+ram : 8
+processor : Intel® Core™ i9-9500H
+gpu : Intel UHD Graphics 617
+gMemory : 2
+price : 1199
+os : macOS
+hdd : 128
+=========================
+
+</pre></div>
+
+<hr/>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> Searching </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+laptops = [
+    {'oem': 'DELL', 'model': 'Dell Inspiron 5300', 'ram': 8, 'processor': 'AMD Ryzen™ 3 3500H',
+     'gpu': 'Radeon™ Vega 6 Graphics', 'gMemory': 2, 'price': 469.99, 'os': 'Linux', 'hdd': 500},
+    {'oem': 'DELL', 'model': 'Dell Inspiron 3580', 'ram': 8, 'processor': 'Intel® Core™ i5-8265U',
+     'gpu': 'Intel® UHD Graphics 620', 'gMemory': 0, 'price': 599, 'os': 'Windows', 'hdd': 500},
+    {'oem': 'DELL', 'model': 'Latitude 5580', 'ram': 16, 'processor': 'Intel Core i7-8820HQ',
+     'gpu': 'NVIDIA GeForce 1660Ti', 'gMemory': 4, 'price': 1329, 'os': 'Windows', 'hdd': 500},
+    {'oem': 'HP', 'model': 'ENVY 17t', 'ram': 16, 'processor': 'Intel® Core™ i7-9550U',
+     'gpu': 'NVIDIA® GeForce® MX350', 'gMemory': 2, 'price': 809.99, 'os': 'Windows', 'hdd': 512},
+    {'oem': 'HP', 'model': 'EliteBook 840', 'ram': 16, 'processor': 'Intel® Core™ i7-9500U',
+     'gpu': 'AMD Radeon™ RX 540', 'gMemory': 2, 'price': 1356.75, 'os': 'Windows', 'hdd': 256},
+    {'oem': 'Apple', 'model': 'MacBook Air', 'ram': 16, 'processor': 'Intel® Core™ i7-9500U',
+     'gpu': 'Intel Iris Plus Graphics 640', 'gMemory': 2, 'price': 1356.75, 'os': 'macOS', 'hdd': 256},
+    {'oem': 'Apple', 'model': 'MacBook Pro', 'ram': 8, 'processor': 'Intel® Core™ i9-9500H',
+     'gpu': 'Intel UHD Graphics 617', 'gMemory': 2, 'price': 1199, 'os': 'macOS', 'hdd': 128},
+]
+
+print('Laptops with price < 900 :\n')
+
+for laptop in laptops:
+    if laptop['price'] < 900:
+        for key in laptop:
+            print(key, ':', laptop[key])
+        print('=========================\n')
+
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Laptops with price < 900 :
+
+oem : DELL
+model : Dell Inspiron 5300
+ram : 8
+processor : AMD Ryzen™ 3 3500H
+gpu : Radeon™ Vega 6 Graphics
+gMemory : 2
+price : 469.99
+os : Linux
+hdd : 500
+=========================
+
+oem : DELL
+model : Dell Inspiron 3580
+ram : 8
+processor : Intel® Core™ i5-8265U
+gpu : Intel® UHD Graphics 620
+gMemory : 0
+price : 599
+os : Windows
+hdd : 500
+=========================
+
+oem : HP
+model : ENVY 17t
+ram : 16
+processor : Intel® Core™ i7-9550U
+gpu : NVIDIA® GeForce® MX350
+gMemory : 2
+price : 809.99
+os : Windows
+hdd : 512
+=========================
+
+
+</pre></div>
+
+<hr/>
+
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> Search with mutiple criteria </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+laptops = [
+    {'oem': 'DELL', 'model': 'Dell Inspiron 5300', 'ram': 8, 'processor': 'AMD Ryzen™ 3 3500H',
+     'gpu': 'Radeon™ Vega 6 Graphics', 'gMemory': 2, 'price': 469.99, 'os': 'Linux', 'hdd': 500},
+    {'oem': 'DELL', 'model': 'Dell Inspiron 3580', 'ram': 8, 'processor': 'Intel® Core™ i5-8265U',
+     'gpu': 'Intel® UHD Graphics 620', 'gMemory': 0, 'price': 599, 'os': 'Windows', 'hdd': 500},
+    {'oem': 'DELL', 'model': 'Latitude 5580', 'ram': 16, 'processor': 'Intel Core i7-8820HQ',
+     'gpu': 'NVIDIA GeForce 1660Ti', 'gMemory': 4, 'price': 1329, 'os': 'Windows', 'hdd': 500},
+    {'oem': 'HP', 'model': 'ENVY 17t', 'ram': 16, 'processor': 'Intel® Core™ i7-9550U',
+     'gpu': 'NVIDIA® GeForce® MX350', 'gMemory': 2, 'price': 809.99, 'os': 'Windows', 'hdd': 512},
+    {'oem': 'HP', 'model': 'EliteBook 840', 'ram': 16, 'processor': 'Intel® Core™ i7-9500U',
+     'gpu': 'AMD Radeon™ RX 540', 'gMemory': 2, 'price': 1356.75, 'os': 'Windows', 'hdd': 256},
+    {'oem': 'Apple', 'model': 'MacBook Air', 'ram': 16, 'processor': 'Intel® Core™ i7-9500U',
+     'gpu': 'Intel Iris Plus Graphics 640', 'gMemory': 2, 'price': 1356.75, 'os': 'macOS', 'hdd': 256},
+    {'oem': 'Apple', 'model': 'MacBook Pro', 'ram': 8, 'processor': 'Intel® Core™ i9-9500H',
+     'gpu': 'Intel UHD Graphics 617', 'gMemory': 2, 'price': 1199, 'os': 'macOS', 'hdd': 128},
+]
+
+print('Laptops with i7 processor and ram >= 16GB with Graphics memory >= 2GB :\n')
+
+for laptop in laptops:
+    if 'i7' in laptop['processor'] and laptop['ram'] >= 16 and laptop['gMemory'] >= 2:
+        for key in laptop:
+            print(key, ':', laptop[key])
+        print('=========================\n')
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Laptops with i7 processor and ram >= 16GB with Graphics memory >= 2GB :
+
+oem : DELL
+model : Latitude 5580
+ram : 16
+processor : Intel Core i7-8820HQ
+gpu : NVIDIA GeForce 1660Ti
+gMemory : 4
+price : 1329
+os : Windows
+hdd : 500
+=========================
+
+oem : HP
+model : ENVY 17t
+ram : 16
+processor : Intel® Core™ i7-9550U
+gpu : NVIDIA® GeForce® MX350
+gMemory : 2
+price : 809.99
+os : Windows
+hdd : 512
+=========================
+
+oem : HP
+model : EliteBook 840
+ram : 16
+processor : Intel® Core™ i7-9500U
+gpu : AMD Radeon™ RX 540
+gMemory : 2
+price : 1356.75
+os : Windows
+hdd : 256
+=========================
+
+oem : Apple
+model : MacBook Air
+ram : 16
+processor : Intel® Core™ i7-9500U
+gpu : Intel Iris Plus Graphics 640
+gMemory : 2
+price : 1356.75
+os : macOS
+hdd : 256
+=========================
+</pre></div>
+
+<hr/>
+
+
+
+#### Dictionary of  Dictionaries with Lists
+
+<p> Person database based on SSN number </p>
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> Iterating </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+personDB = {
+    '497-20-3112': {'name': 'Calvin Mercer', 'phone': ['330-751-3244', '330-707-3520'], 'email': ['cmercer@hillstone.edu', 'cavin1011@gmail.com'], 'age': 30,'profession': 'education', 'bGroup': 'A-'},
+
+    '289-48-9874': {'name': 'John Stuart', 'phone': ['440-926-2089'], 'email': ['jhon.stuart@pinecorp.com', 'jstuart886@yahoo.com'], 'age': 45, 'profession': 'Heat treating equipment setter', 'bGroup': 'A+'},
+
+    '379-15-7321': {'name': 'Margaret Robinson', 'phone': ['248-363-7063', '248-364-7063', '248-148-9898'], 'email': ['jhon.stuart@pinecorp.com', 'jstuart886@yahoo.com'], 'age': 45, 'profession': 'Writer', 'bGroup': 'O+'},
+
+    '263-49-7810': {'name': 'Rachel Schneider', 'phone': ['386-214-2160'], 'email': ['rschneider@osworld.com', 'rschneider660@gmail.com'], 'age': 52, 'profession': 'Computer Operator', 'bGroup': 'B+'},
+
+    '572-25-2300': {'name': 'Lee Vaughan', 'phone': ['707-443-5231', '707-568-1279'], 'email': ['lvaughan@rediff.com'], 'age': 24, 'profession': 'Structural engineer', 'bGroup': 'A+'}
+}
+
+
+for ssn in personDB:
+    print("Social Security Number :", ssn)
+    dictP = personDB[ssn]
+    for key in dictP:
+        print()
+        if str(type(dictP[key])).find('list') > -1:
+            print(key, ': ')
+            for val in dictP[key]:
+                print(val)
+        else:
+            print(key, ':', dictP[key])
+
+    print('----------------------------------\n')
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Social Security Number : 497-20-3112
+
+name : Calvin Mercer
+
+phone : 
+330-751-3244
+330-707-3520
+
+email : 
+cmercer@hillstone.edu
+cavin1011@gmail.com
+
+age : 30
+
+profession : education
+
+bGroup : A-
+----------------------------------
+
+Social Security Number : 289-48-9874
+
+name : John Stuart
+
+phone : 
+440-926-2089
+
+email : 
+jhon.stuart@pinecorp.com
+jstuart886@yahoo.com
+
+age : 45
+
+profession : Heat treating equipment setter
+
+bGroup : A+
+----------------------------------
+
+Social Security Number : 379-15-7321
+
+name : Margaret Robinson
+
+phone : 
+248-363-7063
+248-364-7063
+248-148-9898
+
+email : 
+jhon.stuart@pinecorp.com
+jstuart886@yahoo.com
+
+age : 45
+
+profession : Writer
+
+bGroup : O+
+----------------------------------
+
+Social Security Number : 263-49-7810
+
+name : Rachel Schneider
+
+phone : 
+386-214-2160
+
+email : 
+rschneider@osworld.com
+rschneider660@gmail.com
+
+age : 52
+
+profession : Computer Operator
+
+bGroup : B+
+----------------------------------
+
+Social Security Number : 572-25-2300
+
+name : Lee Vaughan
+
+phone : 
+707-443-5231
+707-568-1279
+
+email : 
+lvaughan@rediff.com
+
+age : 24
+
+profession : Structural engineer
+
+bGroup : A+
+----------------------------------
+
+</pre></div>
+
+<hr/>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> Filtering person based on age </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+personDB = {
+    '497-20-3112': {'name': 'Calvin Mercer', 'phone': ['330-751-3244', '330-707-3520'], 'email': ['cmercer@hillstone.edu', 'cavin1011@gmail.com'], 'age': 30,'profession': 'education', 'bGroup': 'A-'},
+
+    '289-48-9874': {'name': 'John Stuart', 'phone': ['440-926-2089'], 'email': ['jhon.stuart@pinecorp.com', 'jstuart886@yahoo.com'], 'age': 45, 'profession': 'Heat treating equipment setter', 'bGroup': 'A+'},
+
+    '379-15-7321': {'name': 'Margaret Robinson', 'phone': ['248-363-7063', '248-364-7063', '248-148-9898'], 'email': ['jhon.stuart@pinecorp.com', 'jstuart886@yahoo.com'], 'age': 45, 'profession': 'Writer', 'bGroup': 'O+'},
+
+    '263-49-7810': {'name': 'Rachel Schneider', 'phone': ['386-214-2160'], 'email': ['rschneider@osworld.com', 'rschneider660@gmail.com'], 'age': 52, 'profession': 'Computer Operator', 'bGroup': 'B+'},
+
+    '572-25-2300': {'name': 'Lee Vaughan', 'phone': ['707-443-5231', '707-568-1279'], 'email': ['lvaughan@rediff.com'], 'age': 24, 'profession': 'Structural engineer', 'bGroup': 'A+'}
+}
+
+print('Persons with age < 35 :\n')
+print('----------------------------------\n')
+for ssn in personDB:
+    if personDB[ssn]['age'] < 35:
+        print("Social Security Number :", ssn)
+        dictP = personDB[ssn]
+        for key in dictP:
+            print()
+            if str(type(dictP[key])).find('list') > -1:
+                print(key, ': ')
+                for val in dictP[key]:
+                    print(val)
+            else:
+                print(key, ':', dictP[key])
+        print('----------------------------------\n')
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Persons with age < 35 :
+
+----------------------------------
+
+Social Security Number : 497-20-3112
+
+name : Calvin Mercer
+
+phone : 
+330-751-3244
+330-707-3520
+
+email : 
+cmercer@hillstone.edu
+cavin1011@gmail.com
+
+age : 30
+
+profession : education
+
+bGroup : A-
+----------------------------------
+
+Social Security Number : 572-25-2300
+
+name : Lee Vaughan
+
+phone : 
+707-443-5231
+707-568-1279
+
+email : 
+lvaughan@rediff.com
+
+age : 24
+
+profession : Structural engineer
+
+bGroup : A+
+----------------------------------
+</pre></div>
+
+<hr/>
 
 {% include links.html %}

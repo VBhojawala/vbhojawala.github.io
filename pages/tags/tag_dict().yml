@@ -1,0 +1,8 @@
+---
+title: "dict()"
+tagName: dict()
+search: exclude
+permalink: tag_dict().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

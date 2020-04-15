@@ -321,3 +321,16 @@ allowed-tags:
   - set_comprehension
   - frozenset
   - membership_operator
+  - hashmap
+  - associative_array
+  - key
+  - get()
+  - keys()
+  - dict()
+  - items()
+  - popitem()
+  - setdefault()
+  - fromkeys()
+  - dictionary_comprehension
+  - ordered_dictionary
+  - default_dictionary

@@ -1,0 +1,8 @@
+---
+title: "dictionary comprehension"
+tagName: dictionary_comprehension
+search: exclude
+permalink: tag_dictionary_comprehension.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

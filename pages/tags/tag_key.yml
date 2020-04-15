@@ -1,0 +1,8 @@
+---
+title: "key"
+tagName: key
+search: exclude
+permalink: tag_key.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

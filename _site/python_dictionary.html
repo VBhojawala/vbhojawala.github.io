@@ -4,8 +4,8 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Dictionary constructor methods, operators, dictionary comprehension, dictionary examples, ordered dictionary.">
-<meta name="keywords" content=",  ">
+<meta name="description" content="Dictionary constructor methods, operators, dictionary comprehension, dictionary examples, ordered dictionary, default dictionary.">
+<meta name="keywords" content="hashablehashmapassociative_arraykeyget()keys()dict()for-eachitems()len()pop()popitem()update()copy()deepcopy()clear() setdefault()fromkeys()dictionary_comprehensionordered_dictionarydefault_dictionary,  ">
 <meta name="theme-color" content="#36362C">
 <link rel="icon" sizes="192x192" href="images/favicon.ico">
 <title>Dictionary | Asha Tutorials</title>
@@ -553,7 +553,7 @@
 <div class="post-content">
 
    <!-- 
-    <div class="summary">Dictionary constructor methods, operators, dictionary comprehension, dictionary examples, ordered dictionary.</div>
+    <div class="summary">Dictionary constructor methods, operators, dictionary comprehension, dictionary examples, ordered dictionary, default dictionary.</div>
     -->
 
     
@@ -1934,11 +1934,11 @@ dict1 is not dict3 : False
 
 <h3 id="comparision-operator">Comparision Operator</h3>
 
-<h4>==</h4>
+<h4 id="--">’ == ‘</h4>
 
 <p> Returns True if all elements are equal for given dictionaries. </p>
 
-<h4 id="-1">!=</h4>
+<h4 id="---1">’ != ‘</h4>
 
 <p> Returns True if all elements are not equal for given dictionaries.</p>
 
@@ -2057,6 +2057,16 @@ dict &lt;= dict2 : False
 
 <h3 id="dictionary-comprehension">Dictionary comprehension</h3>
 
+<h4 id="syntax">Syntax</h4>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> {expr: expr for item in iterator [if expr] } </strong> </li>
+    </ul> 
+</div>
+
+<hr />
+
 <div id="tut-content"> 
     <ul>
         <li> From keys with default value </li>
@@ -2099,12 +2109,33 @@ dict &lt;= dict2 : False
 
 <hr />
 
+<div id="tut-content"> 
+    <ul>
+        <li>  Filtering result keys </li>
+    </ul> 
+</div>
+
+<div id="code-block-50" class="code-block">
+<p id="code-header-50" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-50", "code-header-50")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">squareDict</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="n">i</span><span class="o">*</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">}</span>
+<span class="k">print</span><span class="p">(</span><span class="n">squareDict</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+{2: 4, 4: 16, 6: 36, 8: 64, 10: 100}
+</pre></div>
+
+<hr />
+
 <h3 id="ordered-dictionary">Ordered Dictionary</h3>
 
 <p> Keeps element ordered as per insertion order. </p>
 
-<div id="code-block-50" class="code-block">
-<p id="code-header-50" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-50", "code-header-50")</script>
+<div id="code-block-51" class="code-block">
+<p id="code-header-51" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-51", "code-header-51")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
 
@@ -2147,11 +2178,10 @@ OrderedDict([(101, {'Name': 'Victor', 'bGroup': 'O+', 'contactNo': 6468774878}),
     </ul> 
 </div>
 
-<div id="code-block-51" class="code-block">
-<p id="code-header-51" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-51", "code-header-51")</script>
+<div id="code-block-52" class="code-block">
+<p id="code-header-52" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-52", "code-header-52")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">fOwner</span> <span class="o">=</span> <span class="p">[(</span><span class="s">'John'</span><span class="p">,</span> <span class="s">'File A'</span><span class="p">),</span> <span class="p">(</span><span class="s">'John'</span><span class="p">,</span> <span class="s">'File Y'</span><span class="p">),</span> <span class="p">(</span><span class="s">'Sam'</span><span class="p">,</span> <span class="s">'File Z'</span><span class="p">),</span> <span class="p">(</span><span class="s">'Kelly'</span><span class="p">,</span> <span class="s">'File C'</span><span class="p">),</span> <span class="p">(</span><span class="s">'Jane'</span><span class="p">,</span> <span class="s">'File G'</span><span class="p">),</span>
-          <span class="p">(</span><span class="s">'Victor'</span><span class="p">,</span> <span class="s">'File X'</span><span class="p">),</span> <span class="p">(</span><span class="s">'Victor'</span><span class="p">,</span> <span class="s">'File O'</span><span class="p">),</span> <span class="p">(</span><span class="s">'John'</span><span class="p">,</span> <span class="s">'File L'</span><span class="p">),</span> <span class="p">(</span><span class="s">'Jane'</span><span class="p">,</span> <span class="s">'File M'</span><span class="p">)]</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">fOwner</span> <span class="o">=</span> <span class="p">[(</span><span class="s">'John'</span><span class="p">,</span> <span class="s">'File A'</span><span class="p">),</span> <span class="p">(</span><span class="s">'John'</span><span class="p">,</span> <span class="s">'File Y'</span><span class="p">),</span> <span class="p">(</span><span class="s">'Sam'</span><span class="p">,</span> <span class="s">'File Z'</span><span class="p">),</span> <span class="p">(</span><span class="s">'Kelly'</span><span class="p">,</span> <span class="s">'File C'</span><span class="p">),</span> <span class="p">(</span><span class="s">'Jane'</span><span class="p">,</span> <span class="s">'File G'</span><span class="p">),</span> <span class="p">(</span><span class="s">'Victor'</span><span class="p">,</span> <span class="s">'File X'</span><span class="p">),</span> <span class="p">(</span><span class="s">'Victor'</span><span class="p">,</span> <span class="s">'File O'</span><span class="p">),</span> <span class="p">(</span><span class="s">'John'</span><span class="p">,</span> <span class="s">'File L'</span><span class="p">),</span> <span class="p">(</span><span class="s">'Jane'</span><span class="p">,</span> <span class="s">'File M'</span><span class="p">)]</span>
 
 <span class="n">perFileDict</span> <span class="o">=</span> <span class="p">{}</span>
 
@@ -2180,11 +2210,10 @@ OrderedDict([(101, {'Name': 'Victor', 'bGroup': 'O+', 'contactNo': 6468774878}),
     </ul> 
 </div>
 
-<div id="code-block-52" class="code-block">
-<p id="code-header-52" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-52", "code-header-52")</script>
+<div id="code-block-53" class="code-block">
+<p id="code-header-53" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-53", "code-header-53")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">fOwner</span> <span class="o">=</span> <span class="p">[(</span><span class="s">'John'</span><span class="p">,</span> <span class="s">'File A'</span><span class="p">),</span> <span class="p">(</span><span class="s">'John'</span><span class="p">,</span> <span class="s">'File Y'</span><span class="p">),</span> <span class="p">(</span><span class="s">'Sam'</span><span class="p">,</span> <span class="s">'File Z'</span><span class="p">),</span> <span class="p">(</span><span class="s">'Kelly'</span><span class="p">,</span> <span class="s">'File C'</span><span class="p">),</span> <span class="p">(</span><span class="s">'Jane'</span><span class="p">,</span> <span class="s">'File G'</span><span class="p">),</span>
-          <span class="p">(</span><span class="s">'Victor'</span><span class="p">,</span> <span class="s">'File X'</span><span class="p">),</span> <span class="p">(</span><span class="s">'Victor'</span><span class="p">,</span> <span class="s">'File O'</span><span class="p">),</span> <span class="p">(</span><span class="s">'John'</span><span class="p">,</span> <span class="s">'File L'</span><span class="p">),</span> <span class="p">(</span><span class="s">'Jane'</span><span class="p">,</span> <span class="s">'File M'</span><span class="p">)]</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">fOwner</span> <span class="o">=</span> <span class="p">[(</span><span class="s">'John'</span><span class="p">,</span> <span class="s">'File A'</span><span class="p">),</span> <span class="p">(</span><span class="s">'John'</span><span class="p">,</span> <span class="s">'File Y'</span><span class="p">),</span> <span class="p">(</span><span class="s">'Sam'</span><span class="p">,</span> <span class="s">'File Z'</span><span class="p">),</span> <span class="p">(</span><span class="s">'Kelly'</span><span class="p">,</span> <span class="s">'File C'</span><span class="p">),</span> <span class="p">(</span><span class="s">'Jane'</span><span class="p">,</span> <span class="s">'File G'</span><span class="p">),</span> <span class="p">(</span><span class="s">'Victor'</span><span class="p">,</span> <span class="s">'File X'</span><span class="p">),</span> <span class="p">(</span><span class="s">'Victor'</span><span class="p">,</span> <span class="s">'File O'</span><span class="p">),</span> <span class="p">(</span><span class="s">'John'</span><span class="p">,</span> <span class="s">'File L'</span><span class="p">),</span> <span class="p">(</span><span class="s">'Jane'</span><span class="p">,</span> <span class="s">'File M'</span><span class="p">)]</span>
 
 <span class="n">perFileDict</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">fOwner</span><span class="p">:</span>
@@ -2208,13 +2237,12 @@ OrderedDict([(101, {'Name': 'Victor', 'bGroup': 'O+', 'contactNo': 6468774878}),
     </ul> 
 </div>
 
-<div id="code-block-53" class="code-block">
-<p id="code-header-53" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-53", "code-header-53")</script>
+<div id="code-block-54" class="code-block">
+<p id="code-header-54" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-54", "code-header-54")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
 
-<span class="n">fOwner</span> <span class="o">=</span> <span class="p">[(</span><span class="s">'John'</span><span class="p">,</span> <span class="s">'File A'</span><span class="p">),</span> <span class="p">(</span><span class="s">'John'</span><span class="p">,</span> <span class="s">'File Y'</span><span class="p">),</span> <span class="p">(</span><span class="s">'Sam'</span><span class="p">,</span> <span class="s">'File Z'</span><span class="p">),</span> <span class="p">(</span><span class="s">'Kelly'</span><span class="p">,</span> <span class="s">'File C'</span><span class="p">),</span> <span class="p">(</span><span class="s">'Jane'</span><span class="p">,</span> <span class="s">'File G'</span><span class="p">),</span>
-          <span class="p">(</span><span class="s">'Victor'</span><span class="p">,</span> <span class="s">'File X'</span><span class="p">),</span> <span class="p">(</span><span class="s">'Victor'</span><span class="p">,</span> <span class="s">'File O'</span><span class="p">),</span> <span class="p">(</span><span class="s">'John'</span><span class="p">,</span> <span class="s">'File L'</span><span class="p">),</span> <span class="p">(</span><span class="s">'Jane'</span><span class="p">,</span> <span class="s">'File M'</span><span class="p">)]</span>
+<span class="n">fOwner</span> <span class="o">=</span> <span class="p">[(</span><span class="s">'John'</span><span class="p">,</span> <span class="s">'File A'</span><span class="p">),</span> <span class="p">(</span><span class="s">'John'</span><span class="p">,</span> <span class="s">'File Y'</span><span class="p">),</span> <span class="p">(</span><span class="s">'Sam'</span><span class="p">,</span> <span class="s">'File Z'</span><span class="p">),</span> <span class="p">(</span><span class="s">'Kelly'</span><span class="p">,</span> <span class="s">'File C'</span><span class="p">),</span> <span class="p">(</span><span class="s">'Jane'</span><span class="p">,</span> <span class="s">'File G'</span><span class="p">),</span> <span class="p">(</span><span class="s">'Victor'</span><span class="p">,</span> <span class="s">'File X'</span><span class="p">),</span> <span class="p">(</span><span class="s">'Victor'</span><span class="p">,</span> <span class="s">'File O'</span><span class="p">),</span> <span class="p">(</span><span class="s">'John'</span><span class="p">,</span> <span class="s">'File L'</span><span class="p">),</span> <span class="p">(</span><span class="s">'Jane'</span><span class="p">,</span> <span class="s">'File M'</span><span class="p">)]</span>
 
 <span class="n">perFileDict</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
 
@@ -2232,11 +2260,602 @@ defaultdict(&lt;class 'list'&gt;, {'John': ['File A', 'File Y', 'File L'], 'Sam'
 
 <hr />
 
+<h3 id="examples">Examples</h3>
+
+<h4 id="list-of-dictionaries">List of Dictionaries</h4>
+
+<div id="tut-content"> 
+    <ul>
+        <li> Iterating </li>
+    </ul> 
+</div>
+
+<div id="code-block-55" class="code-block">
+<p id="code-header-55" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-55", "code-header-55")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">laptops</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s">'oem'</span><span class="p">:</span> <span class="s">'DELL'</span><span class="p">,</span> <span class="s">'model'</span><span class="p">:</span> <span class="s">'Dell Inspiron 5300'</span><span class="p">,</span> <span class="s">'ram'</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span> <span class="s">'processor'</span><span class="p">:</span> <span class="s">'AMD Ryzen™ 3 3500H'</span><span class="p">,</span>
+     <span class="s">'gpu'</span><span class="p">:</span> <span class="s">'Radeon™ Vega 6 Graphics'</span><span class="p">,</span> <span class="s">'gMemory'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'price'</span><span class="p">:</span> <span class="mf">469.99</span><span class="p">,</span> <span class="s">'os'</span><span class="p">:</span> <span class="s">'Linux'</span><span class="p">,</span> <span class="s">'hdd'</span><span class="p">:</span> <span class="mi">500</span><span class="p">},</span>
+    <span class="p">{</span><span class="s">'oem'</span><span class="p">:</span> <span class="s">'DELL'</span><span class="p">,</span> <span class="s">'model'</span><span class="p">:</span> <span class="s">'Dell Inspiron 3580'</span><span class="p">,</span> <span class="s">'ram'</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span> <span class="s">'processor'</span><span class="p">:</span> <span class="s">'Intel® Core™ i5-8265U'</span><span class="p">,</span>
+     <span class="s">'gpu'</span><span class="p">:</span> <span class="s">'Intel® UHD Graphics 620'</span><span class="p">,</span> <span class="s">'gMemory'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s">'price'</span><span class="p">:</span> <span class="mi">599</span><span class="p">,</span> <span class="s">'os'</span><span class="p">:</span> <span class="s">'Windows'</span><span class="p">,</span> <span class="s">'hdd'</span><span class="p">:</span> <span class="mi">500</span><span class="p">},</span>
+    <span class="p">{</span><span class="s">'oem'</span><span class="p">:</span> <span class="s">'DELL'</span><span class="p">,</span> <span class="s">'model'</span><span class="p">:</span> <span class="s">'Latitude 5580'</span><span class="p">,</span> <span class="s">'ram'</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span> <span class="s">'processor'</span><span class="p">:</span> <span class="s">'Intel Core i7-8820HQ'</span><span class="p">,</span>
+     <span class="s">'gpu'</span><span class="p">:</span> <span class="s">'NVIDIA GeForce 1660Ti'</span><span class="p">,</span> <span class="s">'gMemory'</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s">'price'</span><span class="p">:</span> <span class="mi">1329</span><span class="p">,</span> <span class="s">'os'</span><span class="p">:</span> <span class="s">'Windows'</span><span class="p">,</span> <span class="s">'hdd'</span><span class="p">:</span> <span class="mi">500</span><span class="p">},</span>
+    <span class="p">{</span><span class="s">'oem'</span><span class="p">:</span> <span class="s">'HP'</span><span class="p">,</span> <span class="s">'model'</span><span class="p">:</span> <span class="s">'ENVY 17t'</span><span class="p">,</span> <span class="s">'ram'</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span> <span class="s">'processor'</span><span class="p">:</span> <span class="s">'Intel® Core™ i7-9550U'</span><span class="p">,</span>
+     <span class="s">'gpu'</span><span class="p">:</span> <span class="s">'NVIDIA® GeForce® MX350'</span><span class="p">,</span> <span class="s">'gMemory'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'price'</span><span class="p">:</span> <span class="mf">809.99</span><span class="p">,</span> <span class="s">'os'</span><span class="p">:</span> <span class="s">'Windows'</span><span class="p">,</span> <span class="s">'hdd'</span><span class="p">:</span> <span class="mi">512</span><span class="p">},</span>
+    <span class="p">{</span><span class="s">'oem'</span><span class="p">:</span> <span class="s">'HP'</span><span class="p">,</span> <span class="s">'model'</span><span class="p">:</span> <span class="s">'EliteBook 840'</span><span class="p">,</span> <span class="s">'ram'</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span> <span class="s">'processor'</span><span class="p">:</span> <span class="s">'Intel® Core™ i7-9500U'</span><span class="p">,</span>
+     <span class="s">'gpu'</span><span class="p">:</span> <span class="s">'AMD Radeon™ RX 540'</span><span class="p">,</span> <span class="s">'gMemory'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'price'</span><span class="p">:</span> <span class="mf">1356.75</span><span class="p">,</span> <span class="s">'os'</span><span class="p">:</span> <span class="s">'Windows'</span><span class="p">,</span> <span class="s">'hdd'</span><span class="p">:</span> <span class="mi">256</span><span class="p">},</span>
+    <span class="p">{</span><span class="s">'oem'</span><span class="p">:</span> <span class="s">'Apple'</span><span class="p">,</span> <span class="s">'model'</span><span class="p">:</span> <span class="s">'MacBook Air'</span><span class="p">,</span> <span class="s">'ram'</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span> <span class="s">'processor'</span><span class="p">:</span> <span class="s">'Intel® Core™ i7-9500U'</span><span class="p">,</span>
+     <span class="s">'gpu'</span><span class="p">:</span> <span class="s">'Intel Iris Plus Graphics 640'</span><span class="p">,</span> <span class="s">'gMemory'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'price'</span><span class="p">:</span> <span class="mf">1356.75</span><span class="p">,</span> <span class="s">'os'</span><span class="p">:</span> <span class="s">'macOS'</span><span class="p">,</span> <span class="s">'hdd'</span><span class="p">:</span> <span class="mi">256</span><span class="p">},</span>
+    <span class="p">{</span><span class="s">'oem'</span><span class="p">:</span> <span class="s">'Apple'</span><span class="p">,</span> <span class="s">'model'</span><span class="p">:</span> <span class="s">'MacBook Pro'</span><span class="p">,</span> <span class="s">'ram'</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span> <span class="s">'processor'</span><span class="p">:</span> <span class="s">'Intel® Core™ i9-9500H'</span><span class="p">,</span>
+     <span class="s">'gpu'</span><span class="p">:</span> <span class="s">'Intel UHD Graphics 617'</span><span class="p">,</span> <span class="s">'gMemory'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'price'</span><span class="p">:</span> <span class="mi">1199</span><span class="p">,</span> <span class="s">'os'</span><span class="p">:</span> <span class="s">'macOS'</span><span class="p">,</span> <span class="s">'hdd'</span><span class="p">:</span> <span class="mi">128</span><span class="p">},</span>
+<span class="p">]</span>
+
+
+
+<span class="k">for</span> <span class="n">laptop</span> <span class="ow">in</span> <span class="n">laptops</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">laptop</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="s">':'</span><span class="p">,</span> <span class="n">laptop</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'=========================</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+oem : DELL
+model : Dell Inspiron 5300
+ram : 8
+processor : AMD Ryzen™ 3 3500H
+gpu : Radeon™ Vega 6 Graphics
+gMemory : 2
+price : 469.99
+os : Linux
+hdd : 500
+=========================
+
+oem : DELL
+model : Dell Inspiron 3580
+ram : 8
+processor : Intel® Core™ i5-8265U
+gpu : Intel® UHD Graphics 620
+gMemory : 0
+price : 599
+os : Windows
+hdd : 500
+=========================
+
+oem : DELL
+model : Latitude 5580
+ram : 16
+processor : Intel Core i7-8820HQ
+gpu : NVIDIA GeForce 1660Ti
+gMemory : 4
+price : 1329
+os : Windows
+hdd : 500
+=========================
+
+oem : HP
+model : ENVY 17t
+ram : 16
+processor : Intel® Core™ i7-9550U
+gpu : NVIDIA® GeForce® MX350
+gMemory : 2
+price : 809.99
+os : Windows
+hdd : 512
+=========================
+
+oem : HP
+model : EliteBook 840
+ram : 16
+processor : Intel® Core™ i7-9500U
+gpu : AMD Radeon™ RX 540
+gMemory : 2
+price : 1356.75
+os : Windows
+hdd : 256
+=========================
+
+oem : Apple
+model : MacBook Air
+ram : 16
+processor : Intel® Core™ i7-9500U
+gpu : Intel Iris Plus Graphics 640
+gMemory : 2
+price : 1356.75
+os : macOS
+hdd : 256
+=========================
+
+oem : Apple
+model : MacBook Pro
+ram : 8
+processor : Intel® Core™ i9-9500H
+gpu : Intel UHD Graphics 617
+gMemory : 2
+price : 1199
+os : macOS
+hdd : 128
+=========================
+
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> Searching </li>
+    </ul> 
+</div>
+
+<div id="code-block-56" class="code-block">
+<p id="code-header-56" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-56", "code-header-56")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">laptops</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s">'oem'</span><span class="p">:</span> <span class="s">'DELL'</span><span class="p">,</span> <span class="s">'model'</span><span class="p">:</span> <span class="s">'Dell Inspiron 5300'</span><span class="p">,</span> <span class="s">'ram'</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span> <span class="s">'processor'</span><span class="p">:</span> <span class="s">'AMD Ryzen™ 3 3500H'</span><span class="p">,</span>
+     <span class="s">'gpu'</span><span class="p">:</span> <span class="s">'Radeon™ Vega 6 Graphics'</span><span class="p">,</span> <span class="s">'gMemory'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'price'</span><span class="p">:</span> <span class="mf">469.99</span><span class="p">,</span> <span class="s">'os'</span><span class="p">:</span> <span class="s">'Linux'</span><span class="p">,</span> <span class="s">'hdd'</span><span class="p">:</span> <span class="mi">500</span><span class="p">},</span>
+    <span class="p">{</span><span class="s">'oem'</span><span class="p">:</span> <span class="s">'DELL'</span><span class="p">,</span> <span class="s">'model'</span><span class="p">:</span> <span class="s">'Dell Inspiron 3580'</span><span class="p">,</span> <span class="s">'ram'</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span> <span class="s">'processor'</span><span class="p">:</span> <span class="s">'Intel® Core™ i5-8265U'</span><span class="p">,</span>
+     <span class="s">'gpu'</span><span class="p">:</span> <span class="s">'Intel® UHD Graphics 620'</span><span class="p">,</span> <span class="s">'gMemory'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s">'price'</span><span class="p">:</span> <span class="mi">599</span><span class="p">,</span> <span class="s">'os'</span><span class="p">:</span> <span class="s">'Windows'</span><span class="p">,</span> <span class="s">'hdd'</span><span class="p">:</span> <span class="mi">500</span><span class="p">},</span>
+    <span class="p">{</span><span class="s">'oem'</span><span class="p">:</span> <span class="s">'DELL'</span><span class="p">,</span> <span class="s">'model'</span><span class="p">:</span> <span class="s">'Latitude 5580'</span><span class="p">,</span> <span class="s">'ram'</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span> <span class="s">'processor'</span><span class="p">:</span> <span class="s">'Intel Core i7-8820HQ'</span><span class="p">,</span>
+     <span class="s">'gpu'</span><span class="p">:</span> <span class="s">'NVIDIA GeForce 1660Ti'</span><span class="p">,</span> <span class="s">'gMemory'</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s">'price'</span><span class="p">:</span> <span class="mi">1329</span><span class="p">,</span> <span class="s">'os'</span><span class="p">:</span> <span class="s">'Windows'</span><span class="p">,</span> <span class="s">'hdd'</span><span class="p">:</span> <span class="mi">500</span><span class="p">},</span>
+    <span class="p">{</span><span class="s">'oem'</span><span class="p">:</span> <span class="s">'HP'</span><span class="p">,</span> <span class="s">'model'</span><span class="p">:</span> <span class="s">'ENVY 17t'</span><span class="p">,</span> <span class="s">'ram'</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span> <span class="s">'processor'</span><span class="p">:</span> <span class="s">'Intel® Core™ i7-9550U'</span><span class="p">,</span>
+     <span class="s">'gpu'</span><span class="p">:</span> <span class="s">'NVIDIA® GeForce® MX350'</span><span class="p">,</span> <span class="s">'gMemory'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'price'</span><span class="p">:</span> <span class="mf">809.99</span><span class="p">,</span> <span class="s">'os'</span><span class="p">:</span> <span class="s">'Windows'</span><span class="p">,</span> <span class="s">'hdd'</span><span class="p">:</span> <span class="mi">512</span><span class="p">},</span>
+    <span class="p">{</span><span class="s">'oem'</span><span class="p">:</span> <span class="s">'HP'</span><span class="p">,</span> <span class="s">'model'</span><span class="p">:</span> <span class="s">'EliteBook 840'</span><span class="p">,</span> <span class="s">'ram'</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span> <span class="s">'processor'</span><span class="p">:</span> <span class="s">'Intel® Core™ i7-9500U'</span><span class="p">,</span>
+     <span class="s">'gpu'</span><span class="p">:</span> <span class="s">'AMD Radeon™ RX 540'</span><span class="p">,</span> <span class="s">'gMemory'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'price'</span><span class="p">:</span> <span class="mf">1356.75</span><span class="p">,</span> <span class="s">'os'</span><span class="p">:</span> <span class="s">'Windows'</span><span class="p">,</span> <span class="s">'hdd'</span><span class="p">:</span> <span class="mi">256</span><span class="p">},</span>
+    <span class="p">{</span><span class="s">'oem'</span><span class="p">:</span> <span class="s">'Apple'</span><span class="p">,</span> <span class="s">'model'</span><span class="p">:</span> <span class="s">'MacBook Air'</span><span class="p">,</span> <span class="s">'ram'</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span> <span class="s">'processor'</span><span class="p">:</span> <span class="s">'Intel® Core™ i7-9500U'</span><span class="p">,</span>
+     <span class="s">'gpu'</span><span class="p">:</span> <span class="s">'Intel Iris Plus Graphics 640'</span><span class="p">,</span> <span class="s">'gMemory'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'price'</span><span class="p">:</span> <span class="mf">1356.75</span><span class="p">,</span> <span class="s">'os'</span><span class="p">:</span> <span class="s">'macOS'</span><span class="p">,</span> <span class="s">'hdd'</span><span class="p">:</span> <span class="mi">256</span><span class="p">},</span>
+    <span class="p">{</span><span class="s">'oem'</span><span class="p">:</span> <span class="s">'Apple'</span><span class="p">,</span> <span class="s">'model'</span><span class="p">:</span> <span class="s">'MacBook Pro'</span><span class="p">,</span> <span class="s">'ram'</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span> <span class="s">'processor'</span><span class="p">:</span> <span class="s">'Intel® Core™ i9-9500H'</span><span class="p">,</span>
+     <span class="s">'gpu'</span><span class="p">:</span> <span class="s">'Intel UHD Graphics 617'</span><span class="p">,</span> <span class="s">'gMemory'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'price'</span><span class="p">:</span> <span class="mi">1199</span><span class="p">,</span> <span class="s">'os'</span><span class="p">:</span> <span class="s">'macOS'</span><span class="p">,</span> <span class="s">'hdd'</span><span class="p">:</span> <span class="mi">128</span><span class="p">},</span>
+<span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Laptops with price &lt; 900 :</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">laptop</span> <span class="ow">in</span> <span class="n">laptops</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">laptop</span><span class="p">[</span><span class="s">'price'</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">900</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">laptop</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="s">':'</span><span class="p">,</span> <span class="n">laptop</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'=========================</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Laptops with price &lt; 900 :
+
+oem : DELL
+model : Dell Inspiron 5300
+ram : 8
+processor : AMD Ryzen™ 3 3500H
+gpu : Radeon™ Vega 6 Graphics
+gMemory : 2
+price : 469.99
+os : Linux
+hdd : 500
+=========================
+
+oem : DELL
+model : Dell Inspiron 3580
+ram : 8
+processor : Intel® Core™ i5-8265U
+gpu : Intel® UHD Graphics 620
+gMemory : 0
+price : 599
+os : Windows
+hdd : 500
+=========================
+
+oem : HP
+model : ENVY 17t
+ram : 16
+processor : Intel® Core™ i7-9550U
+gpu : NVIDIA® GeForce® MX350
+gMemory : 2
+price : 809.99
+os : Windows
+hdd : 512
+=========================
+
+
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> Search with mutiple criteria </li>
+    </ul> 
+</div>
+
+<div id="code-block-57" class="code-block">
+<p id="code-header-57" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-57", "code-header-57")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">laptops</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s">'oem'</span><span class="p">:</span> <span class="s">'DELL'</span><span class="p">,</span> <span class="s">'model'</span><span class="p">:</span> <span class="s">'Dell Inspiron 5300'</span><span class="p">,</span> <span class="s">'ram'</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span> <span class="s">'processor'</span><span class="p">:</span> <span class="s">'AMD Ryzen™ 3 3500H'</span><span class="p">,</span>
+     <span class="s">'gpu'</span><span class="p">:</span> <span class="s">'Radeon™ Vega 6 Graphics'</span><span class="p">,</span> <span class="s">'gMemory'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'price'</span><span class="p">:</span> <span class="mf">469.99</span><span class="p">,</span> <span class="s">'os'</span><span class="p">:</span> <span class="s">'Linux'</span><span class="p">,</span> <span class="s">'hdd'</span><span class="p">:</span> <span class="mi">500</span><span class="p">},</span>
+    <span class="p">{</span><span class="s">'oem'</span><span class="p">:</span> <span class="s">'DELL'</span><span class="p">,</span> <span class="s">'model'</span><span class="p">:</span> <span class="s">'Dell Inspiron 3580'</span><span class="p">,</span> <span class="s">'ram'</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span> <span class="s">'processor'</span><span class="p">:</span> <span class="s">'Intel® Core™ i5-8265U'</span><span class="p">,</span>
+     <span class="s">'gpu'</span><span class="p">:</span> <span class="s">'Intel® UHD Graphics 620'</span><span class="p">,</span> <span class="s">'gMemory'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s">'price'</span><span class="p">:</span> <span class="mi">599</span><span class="p">,</span> <span class="s">'os'</span><span class="p">:</span> <span class="s">'Windows'</span><span class="p">,</span> <span class="s">'hdd'</span><span class="p">:</span> <span class="mi">500</span><span class="p">},</span>
+    <span class="p">{</span><span class="s">'oem'</span><span class="p">:</span> <span class="s">'DELL'</span><span class="p">,</span> <span class="s">'model'</span><span class="p">:</span> <span class="s">'Latitude 5580'</span><span class="p">,</span> <span class="s">'ram'</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span> <span class="s">'processor'</span><span class="p">:</span> <span class="s">'Intel Core i7-8820HQ'</span><span class="p">,</span>
+     <span class="s">'gpu'</span><span class="p">:</span> <span class="s">'NVIDIA GeForce 1660Ti'</span><span class="p">,</span> <span class="s">'gMemory'</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s">'price'</span><span class="p">:</span> <span class="mi">1329</span><span class="p">,</span> <span class="s">'os'</span><span class="p">:</span> <span class="s">'Windows'</span><span class="p">,</span> <span class="s">'hdd'</span><span class="p">:</span> <span class="mi">500</span><span class="p">},</span>
+    <span class="p">{</span><span class="s">'oem'</span><span class="p">:</span> <span class="s">'HP'</span><span class="p">,</span> <span class="s">'model'</span><span class="p">:</span> <span class="s">'ENVY 17t'</span><span class="p">,</span> <span class="s">'ram'</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span> <span class="s">'processor'</span><span class="p">:</span> <span class="s">'Intel® Core™ i7-9550U'</span><span class="p">,</span>
+     <span class="s">'gpu'</span><span class="p">:</span> <span class="s">'NVIDIA® GeForce® MX350'</span><span class="p">,</span> <span class="s">'gMemory'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'price'</span><span class="p">:</span> <span class="mf">809.99</span><span class="p">,</span> <span class="s">'os'</span><span class="p">:</span> <span class="s">'Windows'</span><span class="p">,</span> <span class="s">'hdd'</span><span class="p">:</span> <span class="mi">512</span><span class="p">},</span>
+    <span class="p">{</span><span class="s">'oem'</span><span class="p">:</span> <span class="s">'HP'</span><span class="p">,</span> <span class="s">'model'</span><span class="p">:</span> <span class="s">'EliteBook 840'</span><span class="p">,</span> <span class="s">'ram'</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span> <span class="s">'processor'</span><span class="p">:</span> <span class="s">'Intel® Core™ i7-9500U'</span><span class="p">,</span>
+     <span class="s">'gpu'</span><span class="p">:</span> <span class="s">'AMD Radeon™ RX 540'</span><span class="p">,</span> <span class="s">'gMemory'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'price'</span><span class="p">:</span> <span class="mf">1356.75</span><span class="p">,</span> <span class="s">'os'</span><span class="p">:</span> <span class="s">'Windows'</span><span class="p">,</span> <span class="s">'hdd'</span><span class="p">:</span> <span class="mi">256</span><span class="p">},</span>
+    <span class="p">{</span><span class="s">'oem'</span><span class="p">:</span> <span class="s">'Apple'</span><span class="p">,</span> <span class="s">'model'</span><span class="p">:</span> <span class="s">'MacBook Air'</span><span class="p">,</span> <span class="s">'ram'</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span> <span class="s">'processor'</span><span class="p">:</span> <span class="s">'Intel® Core™ i7-9500U'</span><span class="p">,</span>
+     <span class="s">'gpu'</span><span class="p">:</span> <span class="s">'Intel Iris Plus Graphics 640'</span><span class="p">,</span> <span class="s">'gMemory'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'price'</span><span class="p">:</span> <span class="mf">1356.75</span><span class="p">,</span> <span class="s">'os'</span><span class="p">:</span> <span class="s">'macOS'</span><span class="p">,</span> <span class="s">'hdd'</span><span class="p">:</span> <span class="mi">256</span><span class="p">},</span>
+    <span class="p">{</span><span class="s">'oem'</span><span class="p">:</span> <span class="s">'Apple'</span><span class="p">,</span> <span class="s">'model'</span><span class="p">:</span> <span class="s">'MacBook Pro'</span><span class="p">,</span> <span class="s">'ram'</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span> <span class="s">'processor'</span><span class="p">:</span> <span class="s">'Intel® Core™ i9-9500H'</span><span class="p">,</span>
+     <span class="s">'gpu'</span><span class="p">:</span> <span class="s">'Intel UHD Graphics 617'</span><span class="p">,</span> <span class="s">'gMemory'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'price'</span><span class="p">:</span> <span class="mi">1199</span><span class="p">,</span> <span class="s">'os'</span><span class="p">:</span> <span class="s">'macOS'</span><span class="p">,</span> <span class="s">'hdd'</span><span class="p">:</span> <span class="mi">128</span><span class="p">},</span>
+<span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Laptops with i7 processor and ram &gt;= 16GB with Graphics memory &gt;= 2GB :</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">laptop</span> <span class="ow">in</span> <span class="n">laptops</span><span class="p">:</span>
+    <span class="k">if</span> <span class="s">'i7'</span> <span class="ow">in</span> <span class="n">laptop</span><span class="p">[</span><span class="s">'processor'</span><span class="p">]</span> <span class="ow">and</span> <span class="n">laptop</span><span class="p">[</span><span class="s">'ram'</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">16</span> <span class="ow">and</span> <span class="n">laptop</span><span class="p">[</span><span class="s">'gMemory'</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">laptop</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="s">':'</span><span class="p">,</span> <span class="n">laptop</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'=========================</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Laptops with i7 processor and ram &gt;= 16GB with Graphics memory &gt;= 2GB :
+
+oem : DELL
+model : Latitude 5580
+ram : 16
+processor : Intel Core i7-8820HQ
+gpu : NVIDIA GeForce 1660Ti
+gMemory : 4
+price : 1329
+os : Windows
+hdd : 500
+=========================
+
+oem : HP
+model : ENVY 17t
+ram : 16
+processor : Intel® Core™ i7-9550U
+gpu : NVIDIA® GeForce® MX350
+gMemory : 2
+price : 809.99
+os : Windows
+hdd : 512
+=========================
+
+oem : HP
+model : EliteBook 840
+ram : 16
+processor : Intel® Core™ i7-9500U
+gpu : AMD Radeon™ RX 540
+gMemory : 2
+price : 1356.75
+os : Windows
+hdd : 256
+=========================
+
+oem : Apple
+model : MacBook Air
+ram : 16
+processor : Intel® Core™ i7-9500U
+gpu : Intel Iris Plus Graphics 640
+gMemory : 2
+price : 1356.75
+os : macOS
+hdd : 256
+=========================
+</pre></div>
+
+<hr />
+
+<h4 id="dictionary-of--dictionaries-with-lists">Dictionary of  Dictionaries with Lists</h4>
+
+<p> Person database based on SSN number </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> Iterating </li>
+    </ul> 
+</div>
+
+<div id="code-block-58" class="code-block">
+<p id="code-header-58" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-58", "code-header-58")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">personDB</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'497-20-3112'</span><span class="p">:</span> <span class="p">{</span><span class="s">'name'</span><span class="p">:</span> <span class="s">'Calvin Mercer'</span><span class="p">,</span> <span class="s">'phone'</span><span class="p">:</span> <span class="p">[</span><span class="s">'330-751-3244'</span><span class="p">,</span> <span class="s">'330-707-3520'</span><span class="p">],</span> <span class="s">'email'</span><span class="p">:</span> <span class="p">[</span><span class="s">'cmercer@hillstone.edu'</span><span class="p">,</span> <span class="s">'cavin1011@gmail.com'</span><span class="p">],</span> <span class="s">'age'</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span><span class="s">'profession'</span><span class="p">:</span> <span class="s">'education'</span><span class="p">,</span> <span class="s">'bGroup'</span><span class="p">:</span> <span class="s">'A-'</span><span class="p">},</span>
+
+    <span class="s">'289-48-9874'</span><span class="p">:</span> <span class="p">{</span><span class="s">'name'</span><span class="p">:</span> <span class="s">'John Stuart'</span><span class="p">,</span> <span class="s">'phone'</span><span class="p">:</span> <span class="p">[</span><span class="s">'440-926-2089'</span><span class="p">],</span> <span class="s">'email'</span><span class="p">:</span> <span class="p">[</span><span class="s">'jhon.stuart@pinecorp.com'</span><span class="p">,</span> <span class="s">'jstuart886@yahoo.com'</span><span class="p">],</span> <span class="s">'age'</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span> <span class="s">'profession'</span><span class="p">:</span> <span class="s">'Heat treating equipment setter'</span><span class="p">,</span> <span class="s">'bGroup'</span><span class="p">:</span> <span class="s">'A+'</span><span class="p">},</span>
+
+    <span class="s">'379-15-7321'</span><span class="p">:</span> <span class="p">{</span><span class="s">'name'</span><span class="p">:</span> <span class="s">'Margaret Robinson'</span><span class="p">,</span> <span class="s">'phone'</span><span class="p">:</span> <span class="p">[</span><span class="s">'248-363-7063'</span><span class="p">,</span> <span class="s">'248-364-7063'</span><span class="p">,</span> <span class="s">'248-148-9898'</span><span class="p">],</span> <span class="s">'email'</span><span class="p">:</span> <span class="p">[</span><span class="s">'jhon.stuart@pinecorp.com'</span><span class="p">,</span> <span class="s">'jstuart886@yahoo.com'</span><span class="p">],</span> <span class="s">'age'</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span> <span class="s">'profession'</span><span class="p">:</span> <span class="s">'Writer'</span><span class="p">,</span> <span class="s">'bGroup'</span><span class="p">:</span> <span class="s">'O+'</span><span class="p">},</span>
+
+    <span class="s">'263-49-7810'</span><span class="p">:</span> <span class="p">{</span><span class="s">'name'</span><span class="p">:</span> <span class="s">'Rachel Schneider'</span><span class="p">,</span> <span class="s">'phone'</span><span class="p">:</span> <span class="p">[</span><span class="s">'386-214-2160'</span><span class="p">],</span> <span class="s">'email'</span><span class="p">:</span> <span class="p">[</span><span class="s">'rschneider@osworld.com'</span><span class="p">,</span> <span class="s">'rschneider660@gmail.com'</span><span class="p">],</span> <span class="s">'age'</span><span class="p">:</span> <span class="mi">52</span><span class="p">,</span> <span class="s">'profession'</span><span class="p">:</span> <span class="s">'Computer Operator'</span><span class="p">,</span> <span class="s">'bGroup'</span><span class="p">:</span> <span class="s">'B+'</span><span class="p">},</span>
+
+    <span class="s">'572-25-2300'</span><span class="p">:</span> <span class="p">{</span><span class="s">'name'</span><span class="p">:</span> <span class="s">'Lee Vaughan'</span><span class="p">,</span> <span class="s">'phone'</span><span class="p">:</span> <span class="p">[</span><span class="s">'707-443-5231'</span><span class="p">,</span> <span class="s">'707-568-1279'</span><span class="p">],</span> <span class="s">'email'</span><span class="p">:</span> <span class="p">[</span><span class="s">'lvaughan@rediff.com'</span><span class="p">],</span> <span class="s">'age'</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span> <span class="s">'profession'</span><span class="p">:</span> <span class="s">'Structural engineer'</span><span class="p">,</span> <span class="s">'bGroup'</span><span class="p">:</span> <span class="s">'A+'</span><span class="p">}</span>
+<span class="p">}</span>
+
+
+<span class="k">for</span> <span class="n">ssn</span> <span class="ow">in</span> <span class="n">personDB</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Social Security Number :"</span><span class="p">,</span> <span class="n">ssn</span><span class="p">)</span>
+    <span class="n">dictP</span> <span class="o">=</span> <span class="n">personDB</span><span class="p">[</span><span class="n">ssn</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">dictP</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">dictP</span><span class="p">[</span><span class="n">key</span><span class="p">]))</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">'list'</span><span class="p">)</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="s">': '</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">dictP</span><span class="p">[</span><span class="n">key</span><span class="p">]:</span>
+                <span class="k">print</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="s">':'</span><span class="p">,</span> <span class="n">dictP</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s">'----------------------------------</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Social Security Number : 497-20-3112
+
+name : Calvin Mercer
+
+phone : 
+330-751-3244
+330-707-3520
+
+email : 
+cmercer@hillstone.edu
+cavin1011@gmail.com
+
+age : 30
+
+profession : education
+
+bGroup : A-
+----------------------------------
+
+Social Security Number : 289-48-9874
+
+name : John Stuart
+
+phone : 
+440-926-2089
+
+email : 
+jhon.stuart@pinecorp.com
+jstuart886@yahoo.com
+
+age : 45
+
+profession : Heat treating equipment setter
+
+bGroup : A+
+----------------------------------
+
+Social Security Number : 379-15-7321
+
+name : Margaret Robinson
+
+phone : 
+248-363-7063
+248-364-7063
+248-148-9898
+
+email : 
+jhon.stuart@pinecorp.com
+jstuart886@yahoo.com
+
+age : 45
+
+profession : Writer
+
+bGroup : O+
+----------------------------------
+
+Social Security Number : 263-49-7810
+
+name : Rachel Schneider
+
+phone : 
+386-214-2160
+
+email : 
+rschneider@osworld.com
+rschneider660@gmail.com
+
+age : 52
+
+profession : Computer Operator
+
+bGroup : B+
+----------------------------------
+
+Social Security Number : 572-25-2300
+
+name : Lee Vaughan
+
+phone : 
+707-443-5231
+707-568-1279
+
+email : 
+lvaughan@rediff.com
+
+age : 24
+
+profession : Structural engineer
+
+bGroup : A+
+----------------------------------
+
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> Filtering person based on age </li>
+    </ul> 
+</div>
+
+<div id="code-block-59" class="code-block">
+<p id="code-header-59" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-59", "code-header-59")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">personDB</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'497-20-3112'</span><span class="p">:</span> <span class="p">{</span><span class="s">'name'</span><span class="p">:</span> <span class="s">'Calvin Mercer'</span><span class="p">,</span> <span class="s">'phone'</span><span class="p">:</span> <span class="p">[</span><span class="s">'330-751-3244'</span><span class="p">,</span> <span class="s">'330-707-3520'</span><span class="p">],</span> <span class="s">'email'</span><span class="p">:</span> <span class="p">[</span><span class="s">'cmercer@hillstone.edu'</span><span class="p">,</span> <span class="s">'cavin1011@gmail.com'</span><span class="p">],</span> <span class="s">'age'</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span><span class="s">'profession'</span><span class="p">:</span> <span class="s">'education'</span><span class="p">,</span> <span class="s">'bGroup'</span><span class="p">:</span> <span class="s">'A-'</span><span class="p">},</span>
+
+    <span class="s">'289-48-9874'</span><span class="p">:</span> <span class="p">{</span><span class="s">'name'</span><span class="p">:</span> <span class="s">'John Stuart'</span><span class="p">,</span> <span class="s">'phone'</span><span class="p">:</span> <span class="p">[</span><span class="s">'440-926-2089'</span><span class="p">],</span> <span class="s">'email'</span><span class="p">:</span> <span class="p">[</span><span class="s">'jhon.stuart@pinecorp.com'</span><span class="p">,</span> <span class="s">'jstuart886@yahoo.com'</span><span class="p">],</span> <span class="s">'age'</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span> <span class="s">'profession'</span><span class="p">:</span> <span class="s">'Heat treating equipment setter'</span><span class="p">,</span> <span class="s">'bGroup'</span><span class="p">:</span> <span class="s">'A+'</span><span class="p">},</span>
+
+    <span class="s">'379-15-7321'</span><span class="p">:</span> <span class="p">{</span><span class="s">'name'</span><span class="p">:</span> <span class="s">'Margaret Robinson'</span><span class="p">,</span> <span class="s">'phone'</span><span class="p">:</span> <span class="p">[</span><span class="s">'248-363-7063'</span><span class="p">,</span> <span class="s">'248-364-7063'</span><span class="p">,</span> <span class="s">'248-148-9898'</span><span class="p">],</span> <span class="s">'email'</span><span class="p">:</span> <span class="p">[</span><span class="s">'jhon.stuart@pinecorp.com'</span><span class="p">,</span> <span class="s">'jstuart886@yahoo.com'</span><span class="p">],</span> <span class="s">'age'</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span> <span class="s">'profession'</span><span class="p">:</span> <span class="s">'Writer'</span><span class="p">,</span> <span class="s">'bGroup'</span><span class="p">:</span> <span class="s">'O+'</span><span class="p">},</span>
+
+    <span class="s">'263-49-7810'</span><span class="p">:</span> <span class="p">{</span><span class="s">'name'</span><span class="p">:</span> <span class="s">'Rachel Schneider'</span><span class="p">,</span> <span class="s">'phone'</span><span class="p">:</span> <span class="p">[</span><span class="s">'386-214-2160'</span><span class="p">],</span> <span class="s">'email'</span><span class="p">:</span> <span class="p">[</span><span class="s">'rschneider@osworld.com'</span><span class="p">,</span> <span class="s">'rschneider660@gmail.com'</span><span class="p">],</span> <span class="s">'age'</span><span class="p">:</span> <span class="mi">52</span><span class="p">,</span> <span class="s">'profession'</span><span class="p">:</span> <span class="s">'Computer Operator'</span><span class="p">,</span> <span class="s">'bGroup'</span><span class="p">:</span> <span class="s">'B+'</span><span class="p">},</span>
+
+    <span class="s">'572-25-2300'</span><span class="p">:</span> <span class="p">{</span><span class="s">'name'</span><span class="p">:</span> <span class="s">'Lee Vaughan'</span><span class="p">,</span> <span class="s">'phone'</span><span class="p">:</span> <span class="p">[</span><span class="s">'707-443-5231'</span><span class="p">,</span> <span class="s">'707-568-1279'</span><span class="p">],</span> <span class="s">'email'</span><span class="p">:</span> <span class="p">[</span><span class="s">'lvaughan@rediff.com'</span><span class="p">],</span> <span class="s">'age'</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span> <span class="s">'profession'</span><span class="p">:</span> <span class="s">'Structural engineer'</span><span class="p">,</span> <span class="s">'bGroup'</span><span class="p">:</span> <span class="s">'A+'</span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Persons with age &lt; 35 :</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'----------------------------------</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">ssn</span> <span class="ow">in</span> <span class="n">personDB</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">personDB</span><span class="p">[</span><span class="n">ssn</span><span class="p">][</span><span class="s">'age'</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">35</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"Social Security Number :"</span><span class="p">,</span> <span class="n">ssn</span><span class="p">)</span>
+        <span class="n">dictP</span> <span class="o">=</span> <span class="n">personDB</span><span class="p">[</span><span class="n">ssn</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">dictP</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">()</span>
+            <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">dictP</span><span class="p">[</span><span class="n">key</span><span class="p">]))</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">'list'</span><span class="p">)</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                <span class="k">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="s">': '</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">dictP</span><span class="p">[</span><span class="n">key</span><span class="p">]:</span>
+                    <span class="k">print</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="s">':'</span><span class="p">,</span> <span class="n">dictP</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'----------------------------------</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Persons with age &lt; 35 :
+
+----------------------------------
+
+Social Security Number : 497-20-3112
+
+name : Calvin Mercer
+
+phone : 
+330-751-3244
+330-707-3520
+
+email : 
+cmercer@hillstone.edu
+cavin1011@gmail.com
+
+age : 30
+
+profession : education
+
+bGroup : A-
+----------------------------------
+
+Social Security Number : 572-25-2300
+
+name : Lee Vaughan
+
+phone : 
+707-443-5231
+707-568-1279
+
+email : 
+lvaughan@rediff.com
+
+age : 24
+
+profession : Structural engineer
+
+bGroup : A+
+----------------------------------
+</pre></div>
+
+<hr />
+
 
 
     <div class="tags">
         
         <p style="display: inline;"><b>Tags: </b></p>
+        
+        
+        
+        <a href="tag_hashable.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">hashable</a>
+        
+        
+        
+        <a href="tag_hashmap.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">hashmap</a>
+        
+        
+        
+        <a href="tag_associative_array.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">associative_array</a>
+        
+        
+        
+        <a href="tag_key.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">key</a>
+        
+        
+        
+        <a href="tag_get().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">get()</a>
+        
+        
+        
+        <a href="tag_keys().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">keys()</a>
+        
+        
+        
+        <a href="tag_dict().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">dict()</a>
+        
+        
+        
+        <a href="tag_for-each.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">for-each</a>
+        
+        
+        
+        <a href="tag_items().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">items()</a>
+        
+        
+        
+        <a href="tag_len().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">len()</a>
+        
+        
+        
+        <a href="tag_pop().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">pop()</a>
+        
+        
+        
+        <a href="tag_popitem().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">popitem()</a>
+        
+        
+        
+        <a href="tag_update().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">update()</a>
+        
+        
+        
+        <a href="tag_copy().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">copy()</a>
+        
+        
+        
+        <a href="tag_deepcopy().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">deepcopy()</a>
+        
+        
+        
+        
+        
+        <a href="tag_fromkeys().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">fromkeys()</a>
+        
+        
+        
+        <a href="tag_dictionary_comprehension.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">dictionary_comprehension</a>
+        
+        
+        
+        <a href="tag_ordered_dictionary.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">ordered_dictionary</a>
+        
+        
+        
+        <a href="tag_default_dictionary.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">default_dictionary</a>
         
         
         
