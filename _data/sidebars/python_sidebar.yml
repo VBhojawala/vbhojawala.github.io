@@ -97,3 +97,6 @@ entries:
       - title: Dictionary
         url: /python_dictionary.html
         output: web    
+      - title: Counter
+        url: /python_counter.html
+        output: web  

@@ -9,8 +9,8 @@ prev_section:
 prev_section_title: 
 prev: python_set_frozenset.html
 prev_title: Set and FrozenSet
-next: 
-next_title: 
+next: python_counter.html
+next_title: Counter
 next_section: 
 next_section_title: 
 summary: Dictionary constructor methods, operators, dictionary comprehension, dictionary examples, ordered dictionary, default dictionary.
