@@ -334,3 +334,7 @@ allowed-tags:
   - dictionary_comprehension
   - ordered_dictionary
   - default_dictionary
+  - counter
+  - elements()
+  - most_common()
+  - subtract()

@@ -1,7 +1,7 @@
 ---
 title: Counter
 layout: tutorial
-tags: []
+tags: [counter, elements(), most_common(), update(), subtract(), operators]
 sidebar: python_sidebar
 permalink: python_counter.html
 folder: python
@@ -22,7 +22,7 @@ summary: Counter constructor, methods, operators.
 
 <div id="tut-content"> 
     <ul>
-        <li> It stores hashable value as keys and count as integer value which can be negative too. </li>
+        <li> It stores hashable value as keys and any comparable type as value which can be negative too. </li>
         <li> It is similar to multiset or bag. </li>
         <li> It does not preserves the order of element as per insertion order.</li>
         <li> There is no restriction on value type but value type must support addition, subtraction and comparision.</li>
@@ -177,6 +177,39 @@ print(c1)
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
 Counter({'y': 16, 'c': 9, 'b': 8, 'z': 7, 'a': 5, 'x': -2})
+</pre></div>
+
+<hr/>
+
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> Counter with different comparable types as value </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from decimal import Decimal
+from fractions import Fraction
+
+c1 = Counter(a=Decimal('7.66'), b=7.6, c=0.5, d=Fraction(1, 3))
+print(c1)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Counter({'a': Decimal('7.66'), 'b': 7.6, 'c': 0.5, 'd': Fraction(1, 3)})
 </pre></div>
 
 <hr/>
@@ -628,6 +661,8 @@ After  : Counter({'a': 5, 'b': 1, <div id="tut-highlight">'c': -4</div>})
 <p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
 {% highlight python %}
 
+from collections import Counter
+
 common = [attr for attr in (set(dir(Counter)) & set(dir(dict))) if not attr.startswith('__')]
 print('Attributes common between Counter and dict :', common)
 
@@ -668,6 +703,8 @@ Operator   |   Usage    |  Meaning
 <div id="{{ code_block_id }}" class="code-block">
 <p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
 {% highlight python %}
+
+from collections import Counter
 
 print('Addition')
 c1 = Counter(a=5, b=7, c=3, x=0)
@@ -745,6 +782,9 @@ c1 | c2 : Counter({'c': 7, 'a': 5, 'x': 5, 'b': 2})
 <div id="{{ code_block_id }}" class="code-block">
 <p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
 {% highlight python %}
+
+from collections import Counter
+
 
 def get_text():
     """

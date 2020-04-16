@@ -1,0 +1,8 @@
+---
+title: "subtract()"
+tagName: subtract()
+search: exclude
+permalink: tag_subtract().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}
