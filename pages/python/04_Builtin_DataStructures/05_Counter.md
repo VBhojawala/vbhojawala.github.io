@@ -9,8 +9,8 @@ prev_section:
 prev_section_title: 
 prev: python_dictionary.html
 prev_title: Dictionary
-next: 
-next_title: 
+next: python_chainmap.html
+next_title: ChainMap
 next_section: 
 next_section_title: 
 summary: Counter constructor, methods, operators.

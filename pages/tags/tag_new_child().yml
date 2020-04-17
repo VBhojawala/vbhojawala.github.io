@@ -1,0 +1,8 @@
+---
+title: "new child()"
+tagName: new_child()
+search: exclude
+permalink: tag_new_child().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

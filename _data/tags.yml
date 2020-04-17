@@ -338,3 +338,7 @@ allowed-tags:
   - elements()
   - most_common()
   - subtract()
+  - ChainMap
+  - maps
+  - parents
+  - new_child()

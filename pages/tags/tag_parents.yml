@@ -1,0 +1,8 @@
+---
+title: "parents"
+tagName: parents
+search: exclude
+permalink: tag_parents.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

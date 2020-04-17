@@ -99,4 +99,7 @@ entries:
         output: web    
       - title: Counter
         url: /python_counter.html
+        output: web
+      - title: ChainMap
+        url: /python_chainmap.html
         output: web  
