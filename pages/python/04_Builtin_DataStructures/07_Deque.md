@@ -1,7 +1,7 @@
 ---
 title: Deque
 layout: tutorial
-tags: []
+tags: [deque, len(), append(), appendleft(), pop(), popleft(), extend(), extendleft(), insert(), remove(), count(), index(), reverse(), rotate(), clear(), copy(), deepcopy()]
 sidebar: python_sidebar
 permalink: python_deque.html
 folder: python
@@ -13,7 +13,7 @@ next:
 next_title: 
 next_section: 
 next_section_title: 
-summary: 
+summary: Deque constructor, comparision with list and functions.
 ---
 
 ## Deque
@@ -24,6 +24,7 @@ summary:
         <li> It uses doubly linked list as internal data structure as compared to dynamic array used by list. </li>
         <li> It supports thread safe memory efficient append and pop of elements from both direction. </li>
         <li> deque guarantees O(1) performance cost where as list performs in O(n) for pop(0) and insert(0, v). </li>
+        <li> Random access and insertion and deletion from the middle of deque is expensive compare to list.</li>
     </ul> 
 </div>
 
@@ -274,6 +275,11 @@ TypeError: sequence index must be integer, not 'slice'</pre></div>
 
 <hr/>
 
+### Common Functionality with list
+
+{% include callout.html content=" For iteration, copy(), deepcopy() , membership operator, comparision operator, multiplication '*' and addition '+' operator it has same functionality as list." type="primary" %} 
+
+<hr/>
 
 ### Functions 
 
@@ -334,6 +340,39 @@ After  : deque([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
 
 <hr/>
 
+<div id="tut-content"> 
+    <ul>
+        <li> Appending element when length is equal to maxlen will remove left most element. </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from collections import deque
+dq = deque(range(1, 11), maxlen=10)
+
+print('Before :', dq)
+dq.append(11)
+print('After  :', dq)
+
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Before : deque([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], maxlen=10)
+After  : deque([2, 3, 4, 5, 6, 7, 8, 9, 10, 11], maxlen=10)
+</pre></div>
+
+<hr/>
+
 
 #### appendleft(e)
 
@@ -361,6 +400,39 @@ print('After  :', dq)
 <pre class="result-content">
 Before : deque([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 After  : deque([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+</pre></div>
+
+<hr/>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> appendleft() when length is equal to maxlen will remove rightmost element. </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from collections import deque
+dq = deque(range(1, 11), maxlen=10)
+
+print('Before :', dq)
+dq.appendleft(0)
+print('After  :', dq)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Before : deque([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], maxlen=10)
+After  : deque([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], maxlen=10)
 </pre></div>
 
 <hr/>
@@ -527,7 +599,7 @@ After  : deque([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 
 #### remove(e)
 
-<p> Removes an element from the list. In case of duplicate elements, it will remove only first occurrence of an element. </p>
+<p> Removes an element from the deque. In case of duplicate elements, it will remove only first occurrence of an element. </p>
 
 
 {% assign code_block = code_block | plus: 1 %}
@@ -591,9 +663,9 @@ ValueError: deque.remove(x): x not in deque</pre></div>
 
 <hr/>
 
-#### count()
+#### count(e)
 
-<p> Counts occurrences of given an element in queue. </p>
+<p> Counts occurrences of given an element in deque. </p>
 
 {% assign code_block = code_block | plus: 1 %}
 {% assign code_block_id = "code-block-" | append: code_block %}
@@ -656,7 +728,7 @@ index(5) : 4
 
 #### reverse()
 
-<p> Reverses the order of elements of queue.</p>
+<p> Reverses the order of elements of deque.</p>
 
 {% assign code_block = code_block | plus: 1 %}
 {% assign code_block_id = "code-block-" | append: code_block %}
@@ -759,5 +831,8 @@ After  : deque([])
 </pre></div>
 
 <hr/>
+
+
+
 
 {% include links.html %}

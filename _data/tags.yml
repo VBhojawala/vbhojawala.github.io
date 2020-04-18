@@ -342,3 +342,8 @@ allowed-tags:
   - maps
   - parents
   - new_child()
+  - deque
+  - appendleft()
+  - popleft()
+  - extendleft()
+  - rotate()

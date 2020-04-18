@@ -4,8 +4,8 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="keywords" content=",  ">
+<meta name="description" content="Deque constructor, comparision with list and functions.">
+<meta name="keywords" content="dequelen()append()appendleft()pop()popleft()extend()extendleft()insert()remove()count()index()reverse()rotate()clear()copy()deepcopy(),  ">
 <meta name="theme-color" content="#36362C">
 <link rel="icon" sizes="192x192" href="images/favicon.ico">
 <title>Deque | Asha Tutorials</title>
@@ -573,7 +573,9 @@
 
 <div class="post-content">
 
-   <!--  -->
+   <!-- 
+    <div class="summary">Deque constructor, comparision with list and functions.</div>
+    -->
 
     
     
@@ -615,6 +617,7 @@ $('#toc').on('click', 'a', function() {
         <li> It uses doubly linked list as internal data structure as compared to dynamic array used by list. </li>
         <li> It supports thread safe memory efficient append and pop of elements from both direction. </li>
         <li> deque guarantees O(1) performance cost where as list performs in O(n) for pop(0) and insert(0, v). </li>
+        <li> Random access and insertion and deletion from the middle of deque is expensive compare to list.</li>
     </ul> 
 </div>
 
@@ -803,6 +806,12 @@ TypeError: sequence index must be integer, not 'slice'</pre></div>
 
 <hr />
 
+<h3 id="common-functionality-with-list">Common Functionality with list</h3>
+
+<div class="bs-callout bs-callout-primary"> For iteration, copy(), deepcopy() , membership operator, comparision operator, multiplication ‘*’ and addition ‘+’ operator it has same functionality as list.</div>
+
+<hr />
+
 <h3 id="functions">Functions</h3>
 
 <h4 id="leniterable">len(iterable)</h4>
@@ -849,12 +858,38 @@ After  : deque([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
 
 <hr />
 
+<div id="tut-content"> 
+    <ul>
+        <li> Appending element when length is equal to maxlen will remove left most element. </li>
+    </ul> 
+</div>
+
+<div id="code-block-11" class="code-block">
+<p id="code-header-11" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-11", "code-header-11")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
+<span class="n">dq</span> <span class="o">=</span> <span class="n">deque</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">),</span> <span class="n">maxlen</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Before :'</span><span class="p">,</span> <span class="n">dq</span><span class="p">)</span>
+<span class="n">dq</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'After  :'</span><span class="p">,</span> <span class="n">dq</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Before : deque([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], maxlen=10)
+After  : deque([2, 3, 4, 5, 6, 7, 8, 9, 10, 11], maxlen=10)
+</pre></div>
+
+<hr />
+
 <h4 id="appendlefte">appendleft(e)</h4>
 
 <p> Appends an element 'e' to the beginning of the deque. </p>
 
-<div id="code-block-11" class="code-block">
-<p id="code-header-11" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-11", "code-header-11")</script>
+<div id="code-block-12" class="code-block">
+<p id="code-header-12" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-12", "code-header-12")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
 <span class="n">dq</span> <span class="o">=</span> <span class="n">deque</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">))</span>
@@ -873,12 +908,38 @@ After  : deque([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 
 <hr />
 
+<div id="tut-content"> 
+    <ul>
+        <li> appendleft() when length is equal to maxlen will remove rightmost element. </li>
+    </ul> 
+</div>
+
+<div id="code-block-13" class="code-block">
+<p id="code-header-13" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-13", "code-header-13")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
+<span class="n">dq</span> <span class="o">=</span> <span class="n">deque</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">),</span> <span class="n">maxlen</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Before :'</span><span class="p">,</span> <span class="n">dq</span><span class="p">)</span>
+<span class="n">dq</span><span class="o">.</span><span class="n">appendleft</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'After  :'</span><span class="p">,</span> <span class="n">dq</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Before : deque([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], maxlen=10)
+After  : deque([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], maxlen=10)
+</pre></div>
+
+<hr />
+
 <h4 id="pop">pop()</h4>
 
 <p> Removes and return, rightmost element from deque. </p>
 
-<div id="code-block-12" class="code-block">
-<p id="code-header-12" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-12", "code-header-12")</script>
+<div id="code-block-14" class="code-block">
+<p id="code-header-14" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-14", "code-header-14")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
 <span class="n">dq</span> <span class="o">=</span> <span class="n">deque</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">))</span>
@@ -902,8 +963,8 @@ After  : deque([1, 2, 3, 4, 5, 6, 7, 8, 9])
 
 <p> Removes and return, leftmost element from queue. </p>
 
-<div id="code-block-13" class="code-block">
-<p id="code-header-13" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-13", "code-header-13")</script>
+<div id="code-block-15" class="code-block">
+<p id="code-header-15" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-15", "code-header-15")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
 <span class="n">dq</span> <span class="o">=</span> <span class="n">deque</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">))</span>
@@ -927,8 +988,8 @@ After  : deque([2, 3, 4, 5, 6, 7, 8, 9, 10])
 
 <p> Adds elements of given iterable to the end of deque. </p>
 
-<div id="code-block-14" class="code-block">
-<p id="code-header-14" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-14", "code-header-14")</script>
+<div id="code-block-16" class="code-block">
+<p id="code-header-16" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-16", "code-header-16")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
 <span class="n">dq</span> <span class="o">=</span> <span class="n">deque</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">))</span>
@@ -951,8 +1012,8 @@ After  : deque([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15])
 
 <p> Adds each element of given iterable to the beginning of the deque using appendleft(). </p>
 
-<div id="code-block-15" class="code-block">
-<p id="code-header-15" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-15", "code-header-15")</script>
+<div id="code-block-17" class="code-block">
+<p id="code-header-17" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-17", "code-header-17")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
 <span class="n">dq</span> <span class="o">=</span> <span class="n">deque</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">))</span>
@@ -975,8 +1036,8 @@ After  : deque([-4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 
 <p> Inserts an element at given index. </p>
 
-<div id="code-block-16" class="code-block">
-<p id="code-header-16" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-16", "code-header-16")</script>
+<div id="code-block-18" class="code-block">
+<p id="code-header-18" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-18", "code-header-18")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
 <span class="n">dq</span> <span class="o">=</span> <span class="n">deque</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
@@ -997,10 +1058,10 @@ After  : deque([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 
 <h4 id="removee">remove(e)</h4>
 
-<p> Removes an element from the list. In case of duplicate elements, it will remove only first occurrence of an element. </p>
+<p> Removes an element from the deque. In case of duplicate elements, it will remove only first occurrence of an element. </p>
 
-<div id="code-block-17" class="code-block">
-<p id="code-header-17" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-17", "code-header-17")</script>
+<div id="code-block-19" class="code-block">
+<p id="code-header-19" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-19", "code-header-19")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
 <span class="n">dq</span> <span class="o">=</span> <span class="n">deque</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
@@ -1025,8 +1086,8 @@ After  : deque([1, 2, 3, 4, 6, 5, 7, 8, 9, 10])
     </ul> 
 </div>
 
-<div id="code-block-18" class="code-block">
-<p id="code-header-18" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-18", "code-header-18")</script>
+<div id="code-block-20" class="code-block">
+<p id="code-header-20" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-20", "code-header-20")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
 <span class="n">dq</span> <span class="o">=</span> <span class="n">deque</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
@@ -1046,12 +1107,12 @@ ValueError: deque.remove(x): x not in deque</pre></div>
 
 <hr />
 
-<h4 id="count">count()</h4>
+<h4 id="counte">count(e)</h4>
 
-<p> Counts occurrences of given an element in queue. </p>
+<p> Counts occurrences of given an element in deque. </p>
 
-<div id="code-block-19" class="code-block">
-<p id="code-header-19" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-19", "code-header-19")</script>
+<div id="code-block-21" class="code-block">
+<p id="code-header-21" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-21", "code-header-21")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
 <span class="n">dq</span> <span class="o">=</span> <span class="n">deque</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
@@ -1074,8 +1135,8 @@ count(5) :  2
 
 <p> Counts occurrences of given an element in queue. In case of duplicate elements it returns index of first element.</p>
 
-<div id="code-block-20" class="code-block">
-<p id="code-header-20" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-20", "code-header-20")</script>
+<div id="code-block-22" class="code-block">
+<p id="code-header-22" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-22", "code-header-22")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
 <span class="n">dq</span> <span class="o">=</span> <span class="n">deque</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
@@ -1096,10 +1157,10 @@ index(5) : 4
 
 <h4 id="reverse">reverse()</h4>
 
-<p> Reverses the order of elements of queue.</p>
+<p> Reverses the order of elements of deque.</p>
 
-<div id="code-block-21" class="code-block">
-<p id="code-header-21" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-21", "code-header-21")</script>
+<div id="code-block-23" class="code-block">
+<p id="code-header-23" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-23", "code-header-23")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
 <span class="n">dq</span> <span class="o">=</span> <span class="n">deque</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
@@ -1122,8 +1183,8 @@ After  : deque([10, 9, 8, 7, 5, 6, 5, 4, 3, 2, 1])
 
 <p> Rotates deque n step to right, if n is negative rotate n steps to left.</p>
 
-<div id="code-block-22" class="code-block">
-<p id="code-header-22" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-22", "code-header-22")</script>
+<div id="code-block-24" class="code-block">
+<p id="code-header-24" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-24", "code-header-24")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
 
@@ -1162,8 +1223,8 @@ After  : deque([4, 5, 6, 5, 7, 8, 9, 10, 1, 2, 3])
 
 <p> Clears all elements of deque. </p>
 
-<div id="code-block-23" class="code-block">
-<p id="code-header-23" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-23", "code-header-23")</script>
+<div id="code-block-25" class="code-block">
+<p id="code-header-25" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-25", "code-header-25")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
 
@@ -1187,6 +1248,74 @@ After  : deque([])
     <div class="tags">
         
         <p style="display: inline;"><b>Tags: </b></p>
+        
+        
+        
+        <a href="tag_deque.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">deque</a>
+        
+        
+        
+        <a href="tag_len().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">len()</a>
+        
+        
+        
+        <a href="tag_append().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">append()</a>
+        
+        
+        
+        <a href="tag_appendleft().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">appendleft()</a>
+        
+        
+        
+        <a href="tag_pop().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">pop()</a>
+        
+        
+        
+        <a href="tag_popleft().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">popleft()</a>
+        
+        
+        
+        <a href="tag_extend().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">extend()</a>
+        
+        
+        
+        <a href="tag_extendleft().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">extendleft()</a>
+        
+        
+        
+        <a href="tag_insert().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">insert()</a>
+        
+        
+        
+        <a href="tag_remove().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">remove()</a>
+        
+        
+        
+        <a href="tag_count().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">count()</a>
+        
+        
+        
+        <a href="tag_index().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">index()</a>
+        
+        
+        
+        <a href="tag_reverse().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">reverse()</a>
+        
+        
+        
+        <a href="tag_rotate().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">rotate()</a>
+        
+        
+        
+        <a href="tag_clear().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">clear()</a>
+        
+        
+        
+        <a href="tag_copy().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">copy()</a>
+        
+        
+        
+        <a href="tag_deepcopy().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">deepcopy()</a>
         
         
         

@@ -1,0 +1,8 @@
+---
+title: "popleft()"
+tagName: popleft()
+search: exclude
+permalink: tag_popleft().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

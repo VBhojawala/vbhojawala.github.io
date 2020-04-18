@@ -1,0 +1,8 @@
+---
+title: "deque"
+tagName: deque
+search: exclude
+permalink: tag_deque.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}
