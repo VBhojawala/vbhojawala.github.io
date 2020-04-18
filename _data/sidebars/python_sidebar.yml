@@ -103,3 +103,6 @@ entries:
       - title: ChainMap
         url: /python_chainmap.html
         output: web  
+      - title: Deque
+        url: /python_deque.html
+        output: web  

@@ -9,8 +9,8 @@ prev_section:
 prev_section_title: 
 prev: python_counter.html
 prev_title: Counter
-next: 
-next_title: 
+next: python_deque.html
+next_title: Deque
 next_section: 
 next_section_title: 
 summary: ChainMap constructor, iteration, attributes,  functions.
