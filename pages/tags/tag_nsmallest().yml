@@ -1,0 +1,8 @@
+---
+title: "nsmallest()"
+tagName: nsmallest()
+search: exclude
+permalink: tag_nsmallest().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

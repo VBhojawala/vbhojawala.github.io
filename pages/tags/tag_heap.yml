@@ -1,0 +1,8 @@
+---
+title: "heap"
+tagName: heap
+search: exclude
+permalink: tag_heap.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

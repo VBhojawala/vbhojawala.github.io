@@ -1,0 +1,8 @@
+---
+title: "heappush()"
+tagName: heappush()
+search: exclude
+permalink: tag_heappush().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

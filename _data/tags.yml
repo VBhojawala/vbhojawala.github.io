@@ -347,3 +347,16 @@ allowed-tags:
   - popleft()
   - extendleft()
   - rotate()
+  - heapq
+  - heap
+  - priority_queue
+  - min-heap
+  - binary_tree
+  - heapify()
+  - heappush()
+  - heappop()
+  - heappushpop()
+  - heapreplace()
+  - merge()
+  - nlargest()
+  - nsmallest()

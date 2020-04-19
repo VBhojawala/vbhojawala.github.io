@@ -1,0 +1,8 @@
+---
+title: "priority queue"
+tagName: priority_queue
+search: exclude
+permalink: tag_priority_queue.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

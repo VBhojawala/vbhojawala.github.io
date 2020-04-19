@@ -1,0 +1,8 @@
+---
+title: "heapq"
+tagName: heapq
+search: exclude
+permalink: tag_heapq.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

@@ -1,7 +1,7 @@
 ---
 title: heapq
 layout: tutorial
-tags: []
+tags: [heapq, heap, priority_queue, min-heap, binary_tree, heapify(), heappush(), heappop(), heappushpop(), heapreplace(), merge(), nlargest(), nsmallest()]
 sidebar: python_sidebar
 permalink: python_heapq.html
 folder: python
@@ -13,7 +13,7 @@ next:
 next_title: 
 next_section: 
 next_section_title: 
-summary: heapq
+summary: heapq algorithm (min-heap), binary tree, functions of heapq module.
 ---
 
 ## heapq
@@ -121,6 +121,10 @@ Before : [15, 2, 5, 11, 7, 3, 9, 1, 6, 8]
 After  : [1, 2, 3, 6, 7, 5, 9, 11, 15, 8]
 </pre></div>
 
+<div id="tut-img">
+    <img src="/images/tutorials/python/heapqex.png" class="tut-img" alt="heapify">
+</div>
+
 <hr/>
 
 
@@ -141,10 +145,15 @@ minHeap = []
 
 heappush(minHeap, 4)
 heappush(minHeap, 9)
-heappush(minHeap, 1)
+heappush(minHeap, 12)
+heappush(minHeap, 7)
+heappush(minHeap, 2)
+heappush(minHeap, 5)
+heappush(minHeap, 6)
+heappush(minHeap, 10)
+heappush(minHeap, 8)
 heappush(minHeap, 3)
 print(minHeap)
-
 
 
 {% endhighlight %}
@@ -152,8 +161,14 @@ print(minHeap)
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-[1, 3, 4, 9]
+[2, 3, 5, 8, 4, 12, 6, 10, 9, 7]
 </pre></div>
+
+
+<div id="tut-img">
+    <img src="/images/tutorials/python/heappush.png" class="tut-img" alt="heappush()">
+</div>
+
 
 <hr/>
 
@@ -188,6 +203,10 @@ heappop() : 1
 After  : [2, 6, 3, 8, 7, 5, 9, 11, 15]
 </pre></div>
 
+<div id="tut-img">
+    <img src="/images/tutorials/python/heappop.png" class="tut-img" alt="heappop()">
+</div>
+
 <hr/>
 
 
@@ -207,9 +226,8 @@ from heapq import heappushpop
 minHeap = [1, 2, 3, 6, 7, 5, 9, 11, 15, 8]
 
 print('Before :', minHeap)
-print('heappushpop() :', heappushpop(minHeap, 8))
+print('heappushpop() :', heappushpop(minHeap, 10))
 print('After  :', minHeap)
-
 
 {% endhighlight %}
 </div>
@@ -218,8 +236,12 @@ print('After  :', minHeap)
 <pre class="result-content">
 Before : [1, 2, 3, 6, 7, 5, 9, 11, 15, 8]
 heappushpop() : 1
-After  : [2, 6, 3, 8, 7, 5, 9, 11, 15, 8]
+After  : [2, 6, 3, 10, 7, 5, 9, 11, 15, 8]
 </pre></div>
+
+<div id="tut-img">
+    <img src="/images/tutorials/python/heappushpop.png" class="tut-img" alt="heappushpop()">
+</div>
 
 <hr/>
 
@@ -251,8 +273,12 @@ print('After  :', minHeap)
 <pre class="result-content">
 Before : [1, 2, 3, 6, 7, 5, 9, 11, 15, 8]
 heapreplace() : 1
-After  : [0, 2, 3, 6, 7, 5, 9, 11, 15, 
+After  : [0, 2, 3, 6, 7, 5, 9, 11, 15, 8]
 </pre></div>
+
+<div id="tut-img">
+    <img src="/images/tutorials/python/heapreplace.png" class="tut-img" alt="heappop()">
+</div>
 
 <hr/>
 

@@ -1,0 +1,8 @@
+---
+title: "heapreplace()"
+tagName: heapreplace()
+search: exclude
+permalink: tag_heapreplace().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

@@ -1,0 +1,8 @@
+---
+title: "binary tree"
+tagName: binary_tree
+search: exclude
+permalink: tag_binary_tree.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

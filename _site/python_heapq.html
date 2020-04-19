@@ -4,8 +4,8 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="heapq">
-<meta name="keywords" content=",  ">
+<meta name="description" content="heapq algorithm (min-heap), binary tree, functions of heapq module.">
+<meta name="keywords" content="heapqheappriority_queuemin-heapbinary_treeheapify()heappush()heappop()heappushpop()heapreplace()merge()nlargest()nsmallest(),  ">
 <meta name="theme-color" content="#36362C">
 <link rel="icon" sizes="192x192" href="images/favicon.ico">
 <title>heapq | Asha Tutorials</title>
@@ -581,7 +581,7 @@
 <div class="post-content">
 
    <!-- 
-    <div class="summary">heapq</div>
+    <div class="summary">heapq algorithm (min-heap), binary tree, functions of heapq module.</div>
     -->
 
     
@@ -727,6 +727,10 @@ Before : [15, 2, 5, 11, 7, 3, 9, 1, 6, 8]
 After  : [1, 2, 3, 6, 7, 5, 9, 11, 15, 8]
 </pre></div>
 
+<div id="tut-img">
+    <img src="/images/tutorials/python/heapqex.png" class="tut-img" alt="heapify" />
+</div>
+
 <hr />
 
 <h4 id="heappushheap-e">heappush(heap, e)</h4>
@@ -742,7 +746,13 @@ After  : [1, 2, 3, 6, 7, 5, 9, 11, 15, 8]
 
 <span class="n">heappush</span><span class="p">(</span><span class="n">minHeap</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 <span class="n">heappush</span><span class="p">(</span><span class="n">minHeap</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
-<span class="n">heappush</span><span class="p">(</span><span class="n">minHeap</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">heappush</span><span class="p">(</span><span class="n">minHeap</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+<span class="n">heappush</span><span class="p">(</span><span class="n">minHeap</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="n">heappush</span><span class="p">(</span><span class="n">minHeap</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">heappush</span><span class="p">(</span><span class="n">minHeap</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">heappush</span><span class="p">(</span><span class="n">minHeap</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">heappush</span><span class="p">(</span><span class="n">minHeap</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">heappush</span><span class="p">(</span><span class="n">minHeap</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
 <span class="n">heappush</span><span class="p">(</span><span class="n">minHeap</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">minHeap</span><span class="p">)</span></code></pre></figure>
 
@@ -750,8 +760,12 @@ After  : [1, 2, 3, 6, 7, 5, 9, 11, 15, 8]
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-[1, 3, 4, 9]
+[2, 3, 5, 8, 4, 12, 6, 10, 9, 7]
 </pre></div>
+
+<div id="tut-img">
+    <img src="/images/tutorials/python/heappush.png" class="tut-img" alt="heappush()" />
+</div>
 
 <hr />
 
@@ -779,6 +793,10 @@ heappop() : 1
 After  : [2, 6, 3, 8, 7, 5, 9, 11, 15]
 </pre></div>
 
+<div id="tut-img">
+    <img src="/images/tutorials/python/heappop.png" class="tut-img" alt="heappop()" />
+</div>
+
 <hr />
 
 <h4 id="heappushpopheaplist-e">heappushpop(heapList, e)</h4>
@@ -793,7 +811,7 @@ After  : [2, 6, 3, 8, 7, 5, 9, 11, 15]
 <span class="n">minHeap</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'Before :'</span><span class="p">,</span> <span class="n">minHeap</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'heappushpop() :'</span><span class="p">,</span> <span class="n">heappushpop</span><span class="p">(</span><span class="n">minHeap</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'heappushpop() :'</span><span class="p">,</span> <span class="n">heappushpop</span><span class="p">(</span><span class="n">minHeap</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'After  :'</span><span class="p">,</span> <span class="n">minHeap</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -802,8 +820,12 @@ After  : [2, 6, 3, 8, 7, 5, 9, 11, 15]
 <pre class="result-content">
 Before : [1, 2, 3, 6, 7, 5, 9, 11, 15, 8]
 heappushpop() : 1
-After  : [2, 6, 3, 8, 7, 5, 9, 11, 15, 8]
+After  : [2, 6, 3, 10, 7, 5, 9, 11, 15, 8]
 </pre></div>
+
+<div id="tut-img">
+    <img src="/images/tutorials/python/heappushpop.png" class="tut-img" alt="heappushpop()" />
+</div>
 
 <hr />
 
@@ -828,8 +850,12 @@ After  : [2, 6, 3, 8, 7, 5, 9, 11, 15, 8]
 <pre class="result-content">
 Before : [1, 2, 3, 6, 7, 5, 9, 11, 15, 8]
 heapreplace() : 1
-After  : [0, 2, 3, 6, 7, 5, 9, 11, 15, 
+After  : [0, 2, 3, 6, 7, 5, 9, 11, 15, 8]
 </pre></div>
+
+<div id="tut-img">
+    <img src="/images/tutorials/python/heapreplace.png" class="tut-img" alt="heappop()" />
+</div>
 
 <hr />
 
@@ -983,6 +1009,58 @@ Reverse merge() sorted list : ['Tulips', 'Rose', 'Peony', 'Lotus', 'Lily', 'Lave
     <div class="tags">
         
         <p style="display: inline;"><b>Tags: </b></p>
+        
+        
+        
+        <a href="tag_heapq.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">heapq</a>
+        
+        
+        
+        <a href="tag_heap.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">heap</a>
+        
+        
+        
+        <a href="tag_priority_queue.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">priority_queue</a>
+        
+        
+        
+        <a href="tag_min-heap.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">min-heap</a>
+        
+        
+        
+        <a href="tag_binary_tree.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">binary_tree</a>
+        
+        
+        
+        <a href="tag_heapify().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">heapify()</a>
+        
+        
+        
+        <a href="tag_heappush().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">heappush()</a>
+        
+        
+        
+        <a href="tag_heappop().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">heappop()</a>
+        
+        
+        
+        <a href="tag_heappushpop().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">heappushpop()</a>
+        
+        
+        
+        <a href="tag_heapreplace().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">heapreplace()</a>
+        
+        
+        
+        <a href="tag_merge().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">merge()</a>
+        
+        
+        
+        <a href="tag_nlargest().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">nlargest()</a>
+        
+        
+        
+        <a href="tag_nsmallest().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">nsmallest()</a>
         
         
         
