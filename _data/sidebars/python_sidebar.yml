@@ -106,3 +106,6 @@ entries:
       - title: Deque
         url: /python_deque.html
         output: web  
+      - title: heapq
+        url: /python_heapq.html
+        output: web  

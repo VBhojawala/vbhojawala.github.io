@@ -9,8 +9,8 @@ prev_section:
 prev_section_title: 
 prev: python_chainmap.html
 prev_title: ChainMap
-next: 
-next_title: 
+next: python_heapq.html
+next_title: heapq
 next_section: 
 next_section_title: 
 summary: Deque constructor, comparision with list and functions.

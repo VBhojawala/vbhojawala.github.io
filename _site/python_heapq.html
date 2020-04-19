@@ -4,11 +4,11 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="print() function and use cases, types of comments, python console as calculator.">
-<meta name="keywords" content="Hello_Worldcommentspython_console_calculator,  ">
+<meta name="description" content="heapq">
+<meta name="keywords" content=",  ">
 <meta name="theme-color" content="#36362C">
 <link rel="icon" sizes="192x192" href="images/favicon.ico">
-<title>Hello World! | Asha Tutorials</title>
+<title>heapq | Asha Tutorials</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -283,7 +283,7 @@
 
 
 
-  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:?subject=Asha Tutorials feedback&body=I have some feedback about the Hello World! page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:?subject=Asha Tutorials feedback&body=I have some feedback about the heapq page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
 
 </li>
 
@@ -335,7 +335,7 @@
                             searchInput: document.getElementById('search-input'),
                             resultsContainer: document.getElementById('results-container'),
                             dataSource: 'search.json',
-                            searchResultTemplate: '<li style="margin: 0px 0px;"><a href="{url}" title="Hello World!       " folder="python">{title} <sub>in {folder}</sub></a></li>',
+                            searchResultTemplate: '<li style="margin: 0px 0px;"><a href="{url}" title="heapq       " folder="python">{title} <sub>in {folder}</sub></a></li>',
                 noResultsText: '<li style="margin: 0px 0px;"><a href="#">No results found.</a></li>',
                         limit: 10,
                         fuzzy: true,
@@ -377,7 +377,7 @@
           
           
           
-          <li class="active"><a title="Hello World!" href="python_hello_world.html">Hello World!</a></li>
+          <li><a title="Hello World!" href="python_hello_world.html">Hello World!</a></li>
           
           
           
@@ -546,7 +546,7 @@
           
           
           
-          <li><a title="heapq" href="python_heapq.html">heapq</a></li>
+          <li class="active"><a title="heapq" href="python_heapq.html">heapq</a></li>
           
           
           
@@ -573,7 +573,7 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">Hello World!</h1>
+   <h1 class="post-title-main">heapq</h1>
 </div>
 
 
@@ -581,7 +581,7 @@
 <div class="post-content">
 
    <!-- 
-    <div class="summary">print() function and use cases, types of comments, python console as calculator.</div>
+    <div class="summary">heapq</div>
     -->
 
     
@@ -612,341 +612,368 @@ $('#toc').on('click', 'a', function() {
 
     <!-- 
 
-    <a target="_blank" rel="noopener" href="https://github.com/ashatutorials/pages/python/01_GettingStarted/01_Hello_Wrold.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+    <a target="_blank" rel="noopener" href="https://github.com/ashatutorials/pages/python/04_Builtin_DataStructures/08_Heap.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
 
      -->
 
-   <h2 id="print-function--prints-given-string-to-standard-output">print() function : Prints given string to standard output.</h2>
+   <h2 id="heapq">heapq</h2>
 
-<!-- Section 1.1 -->
+<p> An implementation of heap queue algorithm also known as priority queue. </p>
+
 <div id="tut-content"> 
     <ul>
-        <li> Write string inside single quotes ( ‘Hello World!’ )  or double quotes comma ( “Hello World!” )inside the print() function.</li>
+        <li> <strong> Heap : </strong> is a binary tree with where each parent node (Value or Priority) in the tree is less than it's child nodes (Value or Priority).</li>
+        <li> In python heap implementation is 'min-heap'. </li>
+        <li> It provides functions which takes list as parameter and perform operations on given list object. </li>
     </ul> 
 </div>
 
-<div class="bs-callout bs-callout-primary"><strong>Tip</strong> : In PyCharm select the line(s) and press : ‘ Alt + Shift + E ‘ to execute in console. </div>
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Example min-heap binary tree </strong> </li>
+    </ul> 
+</div>
+
+<div id="tut-img">
+    <img src="/images/tutorials/python/heapqex.png" class="tut-img" alt="heapq example" />
+</div>
+
+<hr />
+
+<h3 id="constructing-heap-binary-tree-from-list">Constructing heap (binary tree) from list</h3>
 
 <div id="code-block-1" class="code-block">
 <p id="code-header-1" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-1", "code-header-1")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">"Hello World!"</span><span class="p">)</span>
-
-<span class="k">print</span><span class="p">(</span><span class="s">'Hello World!'</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">minHeap</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span></code></pre></figure>
 
 </div>
 
-<div class="result"><p class="result-header"><b>Output</b></p>
-<pre class="result-content">
-Hello World!
-Hello World!
-</pre></div>
+<div id="tut-content"> 
+    <ul>
+        <li> If parent's index is i then its children will  2*i+1 , 2*i+2 for 0 based index. </li>
+        <li> <strong> Example : </strong> Element 6 is at index 3 so it's child will be the elements at index : 2*3+1 = 7 and 2*3+2 = 8 and elements are 11 and 15.</li>
+    </ul> 
+</div>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Slides</strong> </li>
+    </ul> 
+</div>
+
+<div id="tut-ppt">
+    <div class="embed-responsive embed-responsive-4by3">
+        <iframe class="embed-responsive-item" src="/docs/python/20_heapq.pdf" allowfullscreen=""></iframe>
+    </div>
+</div>
 
 <hr />
 
-<!-- Section 1.2 -->
-<div id="tut-content"> 
-    <ul>
-        <li> Using escape character \ to print ' (single quote) inside single quoted string and print " (double quotes) inside double quoted string. </li>
-    </ul> 
-</div>
+<h3 id="time-complexity">Time Complexity</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Operation</th>
+      <th style="text-align: center">Worst Case</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">Insertion</td>
+      <td style="text-align: center">O(log(n))</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Deletion</td>
+      <td style="text-align: center">O(log(n))</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">find-min</td>
+      <td style="text-align: center">O(1)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Sorting</td>
+      <td style="text-align: center">O(n*log(n))</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Searching</td>
+      <td style="text-align: center">O(n)</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="functions">Functions</h3>
+
+<h4 id="heapifyx">heapify(x)</h4>
+
+<p> Transform given list x in to a min-heap, in-place, in linear time. </p>
 
 <div id="code-block-2" class="code-block">
 <p id="code-header-2" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-2", "code-header-2")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">'It</span><span class="se">\'</span><span class="s">s sunny outside.'</span><span class="p">)</span>
-
-<span class="k">print</span><span class="p">(</span><span class="s">"Quoting inside </span><span class="se">\"</span><span class="s">Double quotes</span><span class="se">\"</span><span class="s">."</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">extList</span> <span class="o">=</span> <span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Before :'</span><span class="p">,</span> <span class="n">extList</span><span class="p">)</span>
+<span class="n">heapify</span><span class="p">(</span><span class="n">extList</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'After  :'</span><span class="p">,</span> <span class="n">extList</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-It's sunny outside.
-Quoting inside "Double quotes".
+Before : [15, 2, 5, 11, 7, 3, 9, 1, 6, 8]
+After  : [1, 2, 3, 6, 7, 5, 9, 11, 15, 8]
 </pre></div>
 
 <hr />
 
-<!-- Section 1.3 -->
-<div id="tut-content"> 
-    <ul>
-        <li> New line using '\n' . </li>
-    </ul> 
-</div>
+<h4 id="heappushheap-e">heappush(heap, e)</h4>
+
+<p> Adds an element to the heap maintaining heap property. </p>
 
 <div id="code-block-3" class="code-block">
 <p id="code-header-3" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-3", "code-header-3")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">"Today is Sunday.</span><span class="se">\n</span><span class="s">It's rainy outside."</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">heapq</span> <span class="kn">import</span> <span class="n">heappush</span>
+
+<span class="n">minHeap</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">heappush</span><span class="p">(</span><span class="n">minHeap</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">heappush</span><span class="p">(</span><span class="n">minHeap</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="n">heappush</span><span class="p">(</span><span class="n">minHeap</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">heappush</span><span class="p">(</span><span class="n">minHeap</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">minHeap</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-Today is Sunday.
-It's rainy outside.
+[1, 3, 4, 9]
 </pre></div>
 
 <hr />
 
-<!-- Section 1.4 -->
-<div id="tut-content"> 
-    <ul>
-        <li> Print without breaking it to new line. </li>
-    </ul> 
-</div>
+<h4 id="heappopheap">heappop(heap)</h4>
+
+<p> Remove and return smallest element from heap maintaining heap property. </p>
 
 <div id="code-block-4" class="code-block">
 <p id="code-header-4" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-4", "code-header-4")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">"Hello "</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">''</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"World!"</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">heapq</span> <span class="kn">import</span> <span class="n">heappop</span>
+
+<span class="n">minHeap</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Before :'</span><span class="p">,</span> <span class="n">minHeap</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'heappop() :'</span><span class="p">,</span> <span class="n">heappop</span><span class="p">(</span><span class="n">minHeap</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'After  :'</span><span class="p">,</span> <span class="n">minHeap</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-Hello World!
+Before : [1, 2, 3, 6, 7, 5, 9, 11, 15, 8]
+heappop() : 1
+After  : [2, 6, 3, 8, 7, 5, 9, 11, 15]
 </pre></div>
 
 <hr />
 
-<!-- Section 1.5 -->
-<div id="tut-content"> 
-    <ul>
-        <li> Using \ to continue in new line. </li>
-    </ul> 
-</div>
+<h4 id="heappushpopheaplist-e">heappushpop(heapList, e)</h4>
+
+<p> Pushes element 'e' to the heap and pop() the smallest element from the heap. It runs efficiently compare to heappush() executed followed by heappop(). </p>
 
 <div id="code-block-5" class="code-block">
 <p id="code-header-5" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-5", "code-header-5")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">'Hello </span><span class="se">\
-</span><span class="s">World!'</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">heapq</span> <span class="kn">import</span> <span class="n">heappushpop</span>
+
+<span class="n">minHeap</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Before :'</span><span class="p">,</span> <span class="n">minHeap</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'heappushpop() :'</span><span class="p">,</span> <span class="n">heappushpop</span><span class="p">(</span><span class="n">minHeap</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'After  :'</span><span class="p">,</span> <span class="n">minHeap</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-Hello World!
+Before : [1, 2, 3, 6, 7, 5, 9, 11, 15, 8]
+heappushpop() : 1
+After  : [2, 6, 3, 8, 7, 5, 9, 11, 15, 8]
 </pre></div>
 
 <hr />
 
-<!-- Section 1.6 -->
-<div id="tut-content"> 
-    <ul>
-        <li> Print string spanning multiple lines using triple quotes (Single or Double). </li>
-    </ul> 
-</div>
+<h4 id="heapreplaceheaplist-e">heapreplace(heapList, e)</h4>
+
+<p> Pops the smallest element and then pushes element 'e' to heap. It runs efficiently compare to  heappushpop() followed by heappush(). </p>
 
 <div id="code-block-6" class="code-block">
 <p id="code-header-6" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-6", "code-header-6")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">'''</span><span class="se">\
-</span><span class="s">Today is Sunday.
-It's rainy outside.
-Don't forget to take your umbrella.'''</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">heapq</span> <span class="kn">import</span> <span class="n">heapreplace</span>
+
+<span class="n">minHeap</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Before :'</span><span class="p">,</span> <span class="n">minHeap</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'heapreplace() :'</span><span class="p">,</span> <span class="n">heapreplace</span><span class="p">(</span><span class="n">minHeap</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'After  :'</span><span class="p">,</span> <span class="n">minHeap</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-Today is Sunday.
-It's rainy outside.
-Don't forget to take your umbrella.
+Before : [1, 2, 3, 6, 7, 5, 9, 11, 15, 8]
+heapreplace() : 1
+After  : [0, 2, 3, 6, 7, 5, 9, 11, 15, 
 </pre></div>
 
 <hr />
 
-<!-- Section 1.7 -->
+<h4 id="mergeiterables-keynone-reversefalse">merge(*iterables, key=None, reverse=False)</h4>
+
+<p> Returns generator function which returns single sorted elements from given multiple sorted iterables. </p>
+
 <div id="tut-content"> 
     <ul>
-        <li> <strong>Raw String</strong> : Interprets special characters as characters. </li>
+        <li> <strong> key and reverse :</strong> It has same meaning as explained in sorted(). merge() should given same key as provided in sorted. </li>
+        <li> <strong> reverse :</strong> If given True merges given iterable in reverse order. All given iterables must be in reverse sorted. </li>
     </ul> 
 </div>
 
 <div id="code-block-7" class="code-block">
 <p id="code-header-7" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-7", "code-header-7")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">r'Raw String : File Path C:\MyDir\PythonProg\newFolder'</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">heapq</span> <span class="kn">import</span> <span class="n">merge</span>
+
+<span class="n">f1</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
+<span class="n">f2</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Bougainvillea'</span><span class="p">,</span> <span class="s">'Calendula'</span><span class="p">,</span> <span class="s">'Dahlia'</span><span class="p">,</span> <span class="s">'Peony'</span><span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'merge() : '</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">merge</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">f2</span><span class="p">)))</span>
+
+<span class="n">optL</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">merge</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">f2</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">f1 :'</span><span class="p">,</span> <span class="n">f1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'f2 :'</span><span class="p">,</span> <span class="n">f2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">Sorted merged list : '</span><span class="p">,</span> <span class="n">optL</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-Raw String : File Path C:\MyDir\PythonProg\newFolder
+merge() :  &lt;class 'generator'&gt;
+
+f1 : ['Jasmine', 'Lavender', 'Lily', 'Lotus', 'Rose', 'Tulips']
+f2 : ['Bougainvillea', 'Calendula', 'Dahlia', 'Peony']
+
+Sorted merged list :  ['Bougainvillea', 'Calendula', 'Dahlia', 'Jasmine', 'Lavender', 'Lily', 'Lotus', 'Peony', 'Rose', 'Tulips']
 </pre></div>
 
 <hr />
 
-<!-- Section 1.8 -->
 <div id="tut-content"> 
     <ul>
-        <li> Printing multiple strings. </li>
+        <li> Merging using custom key used by sorted() </li>
     </ul> 
 </div>
 
 <div id="code-block-8" class="code-block">
 <p id="code-header-8" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-8", "code-header-8")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">'Hello,'</span><span class="p">,</span> <span class="s">'how'</span><span class="p">,</span> <span class="s">'are'</span><span class="p">,</span> <span class="s">'you?'</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">heapq</span> <span class="kn">import</span> <span class="n">merge</span>
+
+<span class="n">f1</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">([</span><span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">)</span>
+<span class="n">f2</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">([</span><span class="s">'Bougainvillea'</span><span class="p">,</span> <span class="s">'Calendula'</span><span class="p">,</span> <span class="s">'Dahlia'</span><span class="p">,</span> <span class="s">'Peony'</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'f1 :'</span><span class="p">,</span> <span class="n">f1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'f2 :'</span><span class="p">,</span> <span class="n">f2</span><span class="p">)</span>
+
+<span class="n">optL</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">merge</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">f2</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">Sorted merged list by len() : '</span><span class="p">,</span> <span class="n">optL</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-Hello, how are you?
+f1 : ['Lily', 'Rose', 'Lotus', 'Tulips', 'Jasmine', 'Lavender']
+f2 : ['Peony', 'Dahlia', 'Calendula', 'Bougainvillea']
+
+Sorted merged list by len() :  ['Lily', 'Rose', 'Lotus', 'Peony', 'Tulips', 'Dahlia', 'Jasmine', 'Lavender', 'Calendula', 'Bougainvillea']
 </pre></div>
 
 <hr />
 
-<!-- Section 1.9 -->
 <div id="tut-content"> 
     <ul>
-        <li> Changing the separator of strings. </li>
+        <li> Reverse merge : elements must be sorted in reverse order in each iterable </li>
     </ul> 
 </div>
 
 <div id="code-block-9" class="code-block">
 <p id="code-header-9" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-9", "code-header-9")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">'4417'</span><span class="p">,</span> <span class="s">'2323'</span><span class="p">,</span> <span class="s">'1224'</span><span class="p">,</span> <span class="s">'1123'</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">'-'</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">heapq</span> <span class="kn">import</span> <span class="n">merge</span>
+
+<span class="n">f1</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">([</span><span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">f2</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">([</span><span class="s">'Bougainvillea'</span><span class="p">,</span> <span class="s">'Calendula'</span><span class="p">,</span> <span class="s">'Dahlia'</span><span class="p">,</span> <span class="s">'Peony'</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'f1 :'</span><span class="p">,</span> <span class="n">f1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'f2 :'</span><span class="p">,</span> <span class="n">f2</span><span class="p">)</span>
+
+<span class="n">optL</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">merge</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">f2</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Reverse merge() sorted list :'</span><span class="p">,</span> <span class="n">optL</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-4417-2323-1224-1123
+f1 : ['Tulips', 'Rose', 'Lotus', 'Lily', 'Lavender', 'Jasmine']
+f2 : ['Peony', 'Dahlia', 'Calendula', 'Bougainvillea']
+Reverse merge() sorted list : ['Tulips', 'Rose', 'Peony', 'Lotus', 'Lily', 'Lavender', 'Jasmine', 'Dahlia', 'Calendula', 'Bougainvillea']
 </pre></div>
 
 <hr />
 
-<h2 id="comments-in-python">Comments in Python</h2>
+<h4 id="nlargestn-iterable-keynone">nlargest(n, iterable, key=None)</h4>
 
-<!-- Section 2.1 -->
-<div id="tut-content"> 
-    <ul>
-        <li> <strong>Single-line comment </strong>: starts with ' # '. </li>
-    </ul> 
-</div>
-
-<div class="bs-callout bs-callout-primary"><strong>Tip</strong> : In PyCharm use shortcut : ‘ Ctrl + / ‘  to comment or uncomment line(s). </div>
+<p> Returns list of n largest elements after sorting given iterable by key. Equivalent to sorted(iterable, key=key, reverse=True)[:n] </p>
 
 <div id="code-block-10" class="code-block">
 <p id="code-header-10" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-10", "code-header-10")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># This is Single Line comment</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">heapq</span> <span class="kn">import</span> <span class="n">nlargest</span>
 
-</div>
-
-<hr />
-
-<!-- Section 2.2 -->
-<div id="tut-content"> 
-    <ul>
-        <li> <strong>In-line comment </strong>: starts with ' # ' within line after python code. </li>
-    </ul> 
-</div>
-
-<div id="code-block-11" class="code-block">
-<p id="code-header-11" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-11", "code-header-11")</script>
-
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">'Hello World!'</span><span class="p">)</span>  <span class="c1"># Inline comment</span></code></pre></figure>
-
+<span class="n">n1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">nlargest</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">n1</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-Hello World!
+[15, 11, 9]
 </pre></div>
 
 <hr />
 
-<!-- Section 2.3 -->
-<div id="tut-content"> 
-    <ul>
-        <li> <strong>Multi-line comment </strong>: Wrapped with in triple quotes (same as multiline string) . It is considered as documentation string (Doc string) if it is given as first line of function or class. </li>
-    </ul> 
-</div>
+<h4 id="nsmallestn-iterable-key">nsmallest(n, iterable[, key])</h4>
 
-<div id="code-block-12" class="code-block">
-<p id="code-header-12" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-12", "code-header-12")</script>
+<p> Returns list of n smallest elements after sorting given iterable by key.Equivalent to sorted(iterable, key=key)[:n]. </p>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="s">'''
- This is Multi-line comment. 
- It becomes doc-string when it's first line of class or function.
-'''</span>
+<div id="code-block-11" class="code-block">
+<p id="code-header-11" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-11", "code-header-11")</script>
 
-<span class="c1"># OR
-</span>
-<span class="s">"""
- This is Multi-line comment. 
- It becomes doc-string when it's first line of class or function.
-"""</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">heapq</span> <span class="kn">import</span> <span class="n">nsmallest</span>
 
-</div>
-
-<hr />
-
-<!-- Section3 -->
-<h2 id="python-console-as-calculator">Python Console as Calculator</h2>
-
-<div id="tut-content"> 
-    <ul>
-        <li> Execute Following lines (One line at a time) inside python console. </li>
-    </ul> 
-</div>
-
-<div id="code-block-13" class="code-block">
-<p id="code-header-13" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-13", "code-header-13")</script>
-
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># Addition
-</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">2</span>
-
-<span class="c1"># Subtraction
-</span><span class="mi">56</span> <span class="o">-</span> <span class="mi">21</span>
-
-<span class="c1"># Multiplication
-</span><span class="mi">12</span> <span class="o">*</span> <span class="mi">8</span>
-
-<span class="c1"># Division (returns Float)
-</span><span class="mi">174</span> <span class="o">/</span> <span class="mi">12</span>
-
-<span class="c1"># floor division for Integer
-</span><span class="mi">174</span> <span class="o">//</span> <span class="mi">12</span>
-
-<span class="c1"># floor division for Float
-</span><span class="mi">12</span> <span class="o">//</span> <span class="mf">4.00</span>
-
-<span class="c1"># Remainder
-</span><span class="mi">100</span> <span class="o">%</span> <span class="mi">7</span>
-
-<span class="c1"># Exponential
-</span><span class="mi">2</span> <span class="o">**</span> <span class="mi">5</span></code></pre></figure>
+<span class="n">n1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">nsmallest</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">n1</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-&gt;&gt;&gt; 5 + 2
-7
-&gt;&gt;&gt; 56 - 21
-35
-&gt;&gt;&gt; 12 * 8
-96
-&gt;&gt;&gt; 174 / 12 
-14.5
-&gt;&gt;&gt; 174 // 12
-14
-&gt;&gt;&gt; 12 // 4.00
-3.0
-&gt;&gt;&gt; 100 % 7
-2
-&gt;&gt;&gt; 2 ** 5
-32
+[1, 2, 4]
 </pre></div>
 
 <hr />
@@ -956,18 +983,6 @@ Hello World!
     <div class="tags">
         
         <p style="display: inline;"><b>Tags: </b></p>
-        
-        
-        
-        <a href="tag_Hello_World.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">Hello_World</a>
-        
-        
-        
-        <a href="tag_comments.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">comments</a>
-        
-        
-        
-        <a href="tag_python_console_calculator.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">python_console_calculator</a>
         
         
         
@@ -993,21 +1008,14 @@ Hello World!
     
 
     
-        <a href="python_getting_started.html" >
+        <a href="python_deque.html" >
             <button type="button" class="btn btn-primary  "> 
                  <span class="fa fa-arrow-circle-left fa-lg"></span>  Previous  <br/>
-                 Getting Started 
+                 Deque 
             </button>
         </a>
     
 
-    
-        <a href="python_variables.html" >
-            <button type="button" class="btn btn-primary "> 
-                 Next <span class="fa fa-arrow-circle-right fa-lg"></span> <br/> 
-                 Python Variables
-            </button>
-        </a>
     
 
     

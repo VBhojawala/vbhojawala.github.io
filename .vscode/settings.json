@@ -3,6 +3,8 @@
         "behaviour",
         "fname",
         "hashable",
+        "heapify",
+        "heapq",
         "isidentifier",
         "kdenlive",
         "lname",
