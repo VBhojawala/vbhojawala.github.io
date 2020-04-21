@@ -1031,6 +1031,8 @@ print("Comparision of two different enum with same value :", ans)
 
 print('ResponseCode.OK + 202 :', ResponseCode.OK + 202)
 print('ResponseCode.OK - 101 :', ResponseCode.OK - 101)
+print('ResponseCode.OK * 101 :', ResponseCode.OK * 101)
+print('ResponseCode.OK / 101 :', ResponseCode.OK / 101)
 
 {% endhighlight %}
 </div>
@@ -1042,6 +1044,9 @@ ResponseCode.OK == 200 : True
 Comparision of two different enum with same value : True
 ResponseCode.OK + 202 : 402
 ResponseCode.OK - 101 : 99
+ResponseCode.OK * 101 : 20200
+ResponseCode.OK / 101 : 1.9801980198019802
+
 </pre></div>
 
 <hr/>
@@ -1104,8 +1109,7 @@ operator    |           meaning
      \|        |        binary OR
      ^        |        binary XOR
      ~        |        binary 1's complement
-     +        |        Adds value of enum
-     -        |        Subtracts value of enum
+
 
 {% assign code_block = code_block | plus: 1 %}
 {% assign code_block_id = "code-block-" | append: code_block %}
@@ -1143,9 +1147,11 @@ print('\nAddition and Subtraction with Values\n')
 print("Perm.R + Perm.W   :", Perm.R + Perm.W)
 print("Perm.RWX - Perm.W :", Perm.RWX - Perm.W)
 
-print('\nAddition and Subtraction with int\n')
+print('\noperations with int\n')
 print("Perm.R + 2 :", Perm.R + 2)
 print("Perm.RWX - 2 :", Perm.RWX - 2)
+print("Perm.RWX * 2 :", Perm.RWX * 2)
+print("Perm.RWX / 2 :", Perm.RWX / 2)
 
 print('\nMembership Operators :\n')
 print('Perm.RX in Perm.RWX :', Perm.RX in Perm.RWX)
@@ -1179,10 +1185,12 @@ Addition and Subtraction with Values
 Perm.R + Perm.W   : 6
 Perm.RWX - Perm.W : 5
 
-Addition and Subtraction with int
+operations with int
 
 Perm.R + 2 : 6
 Perm.RWX - 2 : 5
+Perm.RWX * 2 : 14
+Perm.RWX / 2 : 3.5
 
 Membership Operators :
 

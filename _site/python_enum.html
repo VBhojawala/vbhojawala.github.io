@@ -1431,7 +1431,9 @@ appStatus == 2 : False
 <span class="k">print</span><span class="p">(</span><span class="s">"Comparision of two different enum with same value :"</span><span class="p">,</span> <span class="n">ans</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'ResponseCode.OK + 202 :'</span><span class="p">,</span> <span class="n">ResponseCode</span><span class="o">.</span><span class="n">OK</span> <span class="o">+</span> <span class="mi">202</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'ResponseCode.OK - 101 :'</span><span class="p">,</span> <span class="n">ResponseCode</span><span class="o">.</span><span class="n">OK</span> <span class="o">-</span> <span class="mi">101</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">'ResponseCode.OK - 101 :'</span><span class="p">,</span> <span class="n">ResponseCode</span><span class="o">.</span><span class="n">OK</span> <span class="o">-</span> <span class="mi">101</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'ResponseCode.OK * 101 :'</span><span class="p">,</span> <span class="n">ResponseCode</span><span class="o">.</span><span class="n">OK</span> <span class="o">*</span> <span class="mi">101</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'ResponseCode.OK / 101 :'</span><span class="p">,</span> <span class="n">ResponseCode</span><span class="o">.</span><span class="n">OK</span> <span class="o">/</span> <span class="mi">101</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1442,6 +1444,9 @@ ResponseCode.OK == 200 : True
 Comparision of two different enum with same value : True
 ResponseCode.OK + 202 : 402
 ResponseCode.OK - 101 : 99
+ResponseCode.OK * 101 : 20200
+ResponseCode.OK / 101 : 1.9801980198019802
+
 </pre></div>
 
 <hr />
@@ -1512,14 +1517,6 @@ defaultdict(&lt;class 'list'&gt;, {&lt;ResponseCode.OK: 200&gt;: '192.168.1.101'
       <td style="text-align: center">~</td>
       <td style="text-align: left">binary 1’s complement</td>
     </tr>
-    <tr>
-      <td style="text-align: center">+</td>
-      <td style="text-align: left">Adds value of enum</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">-</td>
-      <td style="text-align: left">Subtracts value of enum</td>
-    </tr>
   </tbody>
 </table>
 
@@ -1555,9 +1552,11 @@ defaultdict(&lt;class 'list'&gt;, {&lt;ResponseCode.OK: 200&gt;: '192.168.1.101'
 <span class="k">print</span><span class="p">(</span><span class="s">"Perm.R + Perm.W   :"</span><span class="p">,</span> <span class="n">Perm</span><span class="o">.</span><span class="n">R</span> <span class="o">+</span> <span class="n">Perm</span><span class="o">.</span><span class="n">W</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">"Perm.RWX - Perm.W :"</span><span class="p">,</span> <span class="n">Perm</span><span class="o">.</span><span class="n">RWX</span> <span class="o">-</span> <span class="n">Perm</span><span class="o">.</span><span class="n">W</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">Addition and Subtraction with int</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">operations with int</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">"Perm.R + 2 :"</span><span class="p">,</span> <span class="n">Perm</span><span class="o">.</span><span class="n">R</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">"Perm.RWX - 2 :"</span><span class="p">,</span> <span class="n">Perm</span><span class="o">.</span><span class="n">RWX</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Perm.RWX * 2 :"</span><span class="p">,</span> <span class="n">Perm</span><span class="o">.</span><span class="n">RWX</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Perm.RWX / 2 :"</span><span class="p">,</span> <span class="n">Perm</span><span class="o">.</span><span class="n">RWX</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">Membership Operators :</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'Perm.RX in Perm.RWX :'</span><span class="p">,</span> <span class="n">Perm</span><span class="o">.</span><span class="n">RX</span> <span class="ow">in</span> <span class="n">Perm</span><span class="o">.</span><span class="n">RWX</span><span class="p">)</span>
@@ -1589,10 +1588,12 @@ Addition and Subtraction with Values
 Perm.R + Perm.W   : 6
 Perm.RWX - Perm.W : 5
 
-Addition and Subtraction with int
+operations with int
 
 Perm.R + 2 : 6
 Perm.RWX - 2 : 5
+Perm.RWX * 2 : 14
+Perm.RWX / 2 : 3.5
 
 Membership Operators :
 
