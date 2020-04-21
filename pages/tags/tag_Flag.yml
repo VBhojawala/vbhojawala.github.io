@@ -1,0 +1,8 @@
+---
+title: "Flag"
+tagName: Flag
+search: exclude
+permalink: tag_Flag.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

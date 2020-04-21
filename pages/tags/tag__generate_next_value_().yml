@@ -1,0 +1,8 @@
+---
+title: " generate next value ()"
+tagName: _generate_next_value_()
+search: exclude
+permalink: tag__generate_next_value_().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

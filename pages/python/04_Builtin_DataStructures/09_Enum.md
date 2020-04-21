@@ -1,7 +1,7 @@
 ---
 title: Enum
 layout: tutorial
-tags: []
+tags: [Enumeration, value, name, constant, for-each, unique, auto(), IntEnum, InFlag, Flag, _generate_next_value_()]
 sidebar: python_sidebar
 permalink: python_enum.html
 folder: python
@@ -13,7 +13,7 @@ next:
 next_title: 
 next_section: 
 next_section_title: 
-summary: heapq algorithm (min-heap), binary tree, functions of heapq module.
+summary: Enum class , constructor attributes, iterating enum, unique, IntEnum, InFlag, Flag.
 ---
 
 ## Enum
@@ -251,7 +251,7 @@ elements : [<Plan.DIAMOND: 1>, <Plan.PLATINUM: 2>, <Plan.GOLD: 3>, <Plan.SILVER:
 
 <div id="tut-content"> 
     <ul>
-        <li> Value of the enum can be anything like str, float etc. </li>
+        <li> Value of the enum can be anything like str, float, tuple etc. </li>
     </ul> 
 </div>
 
@@ -266,6 +266,9 @@ from enum import Enum
 CountryCode = Enum('CountryCode', {'US': 'United States', 'CA': 'Canada', 'NZ': 'New Zealand', 'FR': 'France'})
 print(f'elements : {list(CountryCode)}')
 
+CountryCode = Enum('CountryCode', {'US': (1, 'United States'), 'NZ': (64, 'New Zealand'), 'FR': (34, 'France')})
+print(f'\nelements : {list(CountryCode)}')
+
 
 {% endhighlight %}
 </div>
@@ -273,9 +276,43 @@ print(f'elements : {list(CountryCode)}')
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
 elements : [<CountryCode.US: 'United States'>, <CountryCode.CA: 'Canada'>, <CountryCode.NZ: 'New Zealand'>, <CountryCode.FR: 'France'>]
+
+elements : [<CountryCode.US: (1, 'United States')>, <CountryCode.NZ: (64, 'New Zealand')>, <CountryCode.FR: (34, 'France')>]
 </pre></div>
 
 <hr/>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> Pickle with type parameter </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from enum import Enum, IntEnum
+Plan = Enum('Plan', {'DIAMOND': 1, 'PLATINUM': 2, 'GOLD': 3, 'SILVER': 4}, type= IntEnum)
+print(f'elements : {list(Plan)}')
+print('Plan.DIAMOND == 1 :', Plan.DIAMOND == 1)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+elements : [<Plan.DIAMOND: 1>, <Plan.PLATINUM: 2>, <Plan.GOLD: 3>, <Plan.SILVER: 4>]
+Plan.DIAMOND == 1 : True
+</pre></div>
+
+<hr/>
+
 
 
 <div id="tut-content"> 

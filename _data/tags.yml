@@ -360,3 +360,13 @@ allowed-tags:
   - merge()
   - nlargest()
   - nsmallest()
+  - Enumeration
+  - value
+  - name
+  - constant
+  - unique
+  - auto()
+  - IntEnum
+  - InFlag
+  - Flag
+  - _generate_next_value_()

@@ -1,0 +1,8 @@
+---
+title: "constant"
+tagName: constant
+search: exclude
+permalink: tag_constant.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}
