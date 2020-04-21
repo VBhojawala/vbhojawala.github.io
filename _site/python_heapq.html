@@ -551,6 +551,13 @@
           
           
           
+          
+          
+          <li><a title="Enum" href="python_enum.html">Enum</a></li>
+          
+          
+          
+          
       </ul>
    </li>
      
@@ -1004,6 +1011,38 @@ Reverse merge() sorted list : ['Tulips', 'Rose', 'Peony', 'Lotus', 'Lily', 'Lave
 
 <hr />
 
+<h3 id="examples">Examples</h3>
+
+<h4 id="sorting-heap-of-lists">Sorting heap of lists</h4>
+
+<div id="code-block-12" class="code-block">
+<p id="code-header-12" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-12", "code-header-12")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">heapq</span> <span class="kn">import</span> <span class="n">heapify</span><span class="p">,</span> <span class="n">heappop</span>
+
+<span class="n">students</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">101</span><span class="p">,</span> <span class="s">'John'</span><span class="p">,</span> <span class="s">'O+'</span><span class="p">],</span> <span class="p">[</span><span class="mi">105</span><span class="p">,</span> <span class="s">'Victor'</span><span class="p">,</span> <span class="s">'A-'</span><span class="p">],</span> <span class="p">[</span><span class="mi">103</span><span class="p">,</span> <span class="s">'Kelly'</span><span class="p">,</span> <span class="s">'B+'</span><span class="p">],</span> <span class="p">[</span><span class="mi">102</span><span class="p">,</span> <span class="s">'Sam'</span><span class="p">,</span> <span class="s">'A+'</span><span class="p">],</span> <span class="p">[</span><span class="mi">104</span><span class="p">,</span> <span class="s">'Jane'</span><span class="p">,</span> <span class="s">'B+'</span><span class="p">]]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Before :'</span><span class="p">,</span> <span class="n">students</span><span class="p">)</span>
+
+<span class="n">heapify</span><span class="p">(</span><span class="n">students</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">heapify :'</span><span class="p">,</span> <span class="n">students</span><span class="p">)</span>
+
+<span class="n">students</span> <span class="o">=</span> <span class="p">[</span><span class="n">heappop</span><span class="p">(</span><span class="n">students</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">students</span><span class="p">))]</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">Sorted :'</span><span class="p">,</span> <span class="n">students</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Before : [[101, 'John', 'O+'], [105, 'Victor', 'A-'], [103, 'Kelly', 'B+'], [102, 'Sam', 'A+'], [104, 'Jane', 'B+']]
+
+heapify : [[101, 'John', 'O+'], [102, 'Sam', 'A+'], [103, 'Kelly', 'B+'], [105, 'Victor', 'A-'], [104, 'Jane', 'B+']]
+
+Sorted : [[101, 'John', 'O+'], [102, 'Sam', 'A+'], [103, 'Kelly', 'B+'], [104, 'Jane', 'B+'], [105, 'Victor', 'A-']]
+</pre></div>
+
+<hr />
+
 
 
     <div class="tags">
@@ -1094,6 +1133,13 @@ Reverse merge() sorted list : ['Tulips', 'Rose', 'Peony', 'Lotus', 'Lily', 'Lave
         </a>
     
 
+    
+        <a href="python_enum.html" >
+            <button type="button" class="btn btn-primary "> 
+                 Next <span class="fa fa-arrow-circle-right fa-lg"></span> <br/> 
+                 Enum
+            </button>
+        </a>
     
 
     

@@ -9,8 +9,8 @@ prev_section:
 prev_section_title: 
 prev: python_deque.html
 prev_title: Deque
-next: 
-next_title: 
+next: python_enum.html
+next_title: Enum
 next_section: 
 next_section_title: 
 summary: heapq algorithm (min-heap), binary tree, functions of heapq module.
@@ -459,6 +459,45 @@ print(nsmallest(3, n1))
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
 [1, 2, 4]
+</pre></div>
+
+<hr/>
+
+
+### Examples 
+
+#### Sorting heap of lists 
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from heapq import heapify, heappop
+
+students = [[101, 'John', 'O+'], [105, 'Victor', 'A-'], [103, 'Kelly', 'B+'], [102, 'Sam', 'A+'], [104, 'Jane', 'B+']]
+
+print('Before :', students)
+
+heapify(students)
+print('\nheapify :', students)
+
+students = [heappop(students) for i in range(len(students))]
+print('\nSorted :', students)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Before : [[101, 'John', 'O+'], [105, 'Victor', 'A-'], [103, 'Kelly', 'B+'], [102, 'Sam', 'A+'], [104, 'Jane', 'B+']]
+
+heapify : [[101, 'John', 'O+'], [102, 'Sam', 'A+'], [103, 'Kelly', 'B+'], [105, 'Victor', 'A-'], [104, 'Jane', 'B+']]
+
+Sorted : [[101, 'John', 'O+'], [102, 'Sam', 'A+'], [103, 'Kelly', 'B+'], [104, 'Jane', 'B+'], [105, 'Victor', 'A-']]
 </pre></div>
 
 <hr/>

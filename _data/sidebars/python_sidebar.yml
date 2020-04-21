@@ -108,4 +108,7 @@ entries:
         output: web  
       - title: heapq
         url: /python_heapq.html
-        output: web  
+        output: web
+      - title: Enum
+        url: /python_enum.html
+        output: web

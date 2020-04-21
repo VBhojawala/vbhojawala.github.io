@@ -1,0 +1,1735 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="heapq algorithm (min-heap), binary tree, functions of heapq module.">
+<meta name="keywords" content=",  ">
+<meta name="theme-color" content="#36362C">
+<link rel="icon" sizes="192x192" href="images/favicon.ico">
+<title>Enum | Asha Tutorials</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Raleway:600&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">  
+<link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet"> 
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="site" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        function copyHover(codeId, copyId){
+            $('#'+codeId).mouseenter(function() {
+                $('#'+copyId).show();
+            }).mouseleave(function() {
+                $('#'+copyId).hide();
+            });
+
+            $('#'+copyId).mouseenter(function() {
+                $('#'+copyId).show();
+            }).mouseleave(function() {
+                $('#'+copyId).hide();
+            });
+
+            $('#'+copyId).click(function(){
+                lines =document.getElementById(codeId).textContent.split('\n');
+                result= lines.slice(3, lines.length-1).join("\n");
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(result).select();
+                console.log($temp.val(result))
+                document.execCommand("copy");
+                $temp.remove();
+                $('#'+copyId).attr('data-original-title', 'Copied').tooltip('show');   
+                setTimeout(() => {
+                    $('#'+copyId).attr('data-original-title', 'Copy to ClipBoard').tooltip('show'); 
+                }, 10000);
+            });
+        }
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            if ($(window).width() <= 972) {
+                if (localStorage.getItem('last_visited') != null &&
+                    localStorage.getItem('navbar') == "show"){
+                    localStorage.setItem('navbar','hide')
+                    $("#tg-sb-sidebar").toggle();
+                    $("#tg-sb-content").toggleClass('col-md-9');
+                    $("#tg-sb-content").toggleClass('col-md-12');
+                    $("#tg-sb-icon-mobile").toggleClass('fa-toggle-on');
+                    $("#tg-sb-icon-mobile").toggleClass('fa-toggle-off');
+                }
+                else if(localStorage.getItem('navbar') == "hide"){
+                    $("#tg-sb-sidebar").toggle();
+                    $("#tg-sb-content").toggleClass('col-md-9');
+                    $("#tg-sb-content").toggleClass('col-md-12');
+                    $("#tg-sb-icon-mobile").toggleClass('fa-toggle-on');
+                    $("#tg-sb-icon-mobile").toggleClass('fa-toggle-off');
+                }
+            }
+            else{
+                if (localStorage.getItem('navbar') == "hide" ){
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+                }
+                else if(localStorage.navbar == "show" ){
+                }
+                else{
+                    localStorage.setItem('navbar','show')
+                }
+
+            }        
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+                if(localStorage.getItem('navbar') == "show"){
+                    localStorage.setItem('navbar','hide')
+                }
+                else{
+                    localStorage.setItem('navbar','show')
+                }
+            });
+            $("#tg-sb-link-mobile").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon-mobile").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon-mobile").toggleClass('fa-toggle-off');
+                if(localStorage.getItem('navbar') == "hide"){
+                    localStorage.setItem('navbar','show');
+                }
+                else{
+                    localStorage.setItem('navbar','hide')
+                }
+                if (localStorage.getItem('last_visited') == null ){
+                    localStorage.setItem('last_visited', new Date())
+                }
+
+            });
+        });
+    </script>
+   
+
+    <script>
+         $(document).ready(function() {
+            $('#searchModel').on('shown.bs.modal', function () {
+                $('#search-input').focus();
+            });  
+
+            function search_shortcut(e) {
+                if ( e.keyCode == 113) {
+                    document.getElementById('search-tool').click()
+                }
+            }
+            // register the handler 
+            document.addEventListener('keyup', search_shortcut, false);  
+    });
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            $(window).scroll(function(){
+                if($(this).scrollTop() > 50){
+                    $("#back-to-top").fadeIn(); 
+                }else{
+                    $("#back-to-top").fadeOut();
+                }
+            });
+            $("#back-to-top").click(function(){
+                document.activeElement.blur();
+                $('body,html').animate({scrollTop: 0}, 400);
+                return false;    
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html"><span class="projectTitle"> <img class="projectTitle " src="/images/company_logo_White.png"/></a>
+
+
+            <!--Mobile Search-->
+            <ul class="navbar-toggle mobile-toggle">
+                <!-- Search popup -->
+                    <a id="search-tool-mobile" href="#"  data-toggle="modal" data-target="#searchModel">
+                        <i class="fa fa-search"></i>
+                    </a>
+            </ul>    
+            <!--End Mobile Search-->
+
+            <ul id="mobile-nav" class="navbar-toggle mobile-toggle">
+                <a id="tg-sb-link-mobile" href="#"><i id="tg-sb-icon-mobile" class="fa fa-toggle-on"></i> Nav</a>
+            </ul>
+
+            
+            
+        </div>
+
+        
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li class="navbar-hide-nav"><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+
+
+
+                
+                
+                
+                <li class="active"><a href="python_getting_started.html">Python</a></li>
+                
+                
+                
+                <li><a href="news">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                
+                <!-- 
+			        <li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:?subject=Asha Tutorials feedback&body=I have some feedback about the Enum page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		         -->
+                <!--comment out this block if you want to hide search-->
+                <li>
+                            <!-- Search popup -->
+                    <a class="navbar-hide-nav" id="search-tool" href="#"  data-toggle="modal" data-target="#searchModel" data-toggle="tooltip" data-placement="bottom" title="Press F2 to Search">
+                        <i class="fa fa-search"></i>
+                    </a>
+                    
+         
+                
+            </li>
+            </ul>
+
+
+            
+        </div>
+        <!-- collapse Navbar -->
+        
+                   <!-- Modal -->
+                   <div class="modal fade nav" id="searchModel" tabindex="-1" role="dialog" aria-labelledby="searchModelLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                    <div class="modal-content results-model">
+                        <div class="modal-header">
+                            <div id="search-demo-container" class="search">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <i style="color: white;" class="fa fa-times" aria-hidden="true"></i>
+                                </button>
+                                <input type="text" class="form-control" id="search-input" placeholder="search..." autofocus>
+                            </div>
+
+                        </div>
+                        <div class="result-model">
+                            <ul class="search-result results-model" id="results-container"></ul>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <!-- End Search popup -->
+
+            </li>    
+
+
+                <script src="js/jekyll-search.js" type="text/javascript"></script>
+                <script type="text/javascript" >
+                        SimpleJekyllSearch.init({
+                            searchInput: document.getElementById('search-input'),
+                            resultsContainer: document.getElementById('results-container'),
+                            dataSource: 'search.json',
+                            searchResultTemplate: '<li style="margin: 0px 0px;"><a href="{url}" title="Enum       " folder="python">{title} <sub>in {folder}</sub></a></li>',
+                noResultsText: '<li style="margin: 0px 0px;"><a href="#">No results found.</a></li>',
+                        limit: 10,
+                        fuzzy: true,
+                })
+                </script>
+                <!--end search-->
+                
+
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle">Python </li>
+  
+  
+  
+  <li>
+      <a title="Getting Started" href="#">Getting Started</a>
+      <ul class="nav1">
+          
+          
+          
+          <li><a title="Getting started" href="python_getting_started.html">Getting started</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Hello World!" href="python_hello_world.html">Hello World!</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Variables" href="python_variables.html">Variables</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Data Types" href="#">Data Types</a>
+      <ul class="nav1">
+          
+          
+          
+          <li><a title="Decimal and Fraction" href="python_decimal_fraction.html">Decimal and Fraction</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="String" href="python_string.html">String</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Bytes and ByteArray" href="python_bytes_bytearray.html">Bytes and ByteArray</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="DateTime" href="python_date_time_datetime.html">DateTime</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Calendar" href="python_calendar.html">Calendar</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="ControlFlow and Looping" href="#">ControlFlow and Looping</a>
+      <ul class="nav1">
+          
+          
+          
+          <li><a title="Control Flow" href="python_control_flow.html">Control Flow</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="While Loop" href="python_while_loop.html">While Loop</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="For Loop" href="python_for_loop.html">For Loop</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Functions" href="#">Functions</a>
+      <ul class="nav1">
+          
+          
+          
+          <li><a title="Functions" href="python_functions.html">Functions</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Recursion" href="python_recursion.html">Recursion</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Builtin Data Structures" href="#">Builtin Data Structures</a>
+      <ul class="nav1">
+          
+          
+          
+          <li><a title="List" href="python_list.html">List</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tuple and NamedTuple" href="python_tuple_namedtuple.html">Tuple and NamedTuple</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Set and FrozenSet" href="python_set_frozenset.html">Set and FrozenSet</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Dictionary" href="python_dictionary.html">Dictionary</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Counter" href="python_counter.html">Counter</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="ChainMap" href="python_chainmap.html">ChainMap</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Deque" href="python_deque.html">Deque</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="heapq" href="python_heapq.html">heapq</a></li>
+          
+          
+          
+          
+          
+          
+          <li class="active"><a title="Enum" href="python_enum.html">Enum</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Enum</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   <!-- 
+    <div class="summary">heapq algorithm (min-heap), binary tree, functions of heapq module.</div>
+    -->
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    <!-- 
+
+    <a target="_blank" rel="noopener" href="https://github.com/ashatutorials/pages/python/04_Builtin_DataStructures/09_Enum.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+     -->
+
+   <h2 id="enum">Enum</h2>
+
+<p> <strong> Enumeration : </strong> is a set of symbols with constant value where symbols can be compared and iterated. </p>
+
+<h3 id="constructor">Constructor</h3>
+
+<h4 id="enumvaluenewenumname-names--module-qualname-type-start1">Enum(value=’NewEnumName’, names=&lt;…&gt;, *, module=’…’, qualname=’…’, type=<mixed-in class="">, start=1)</mixed-in></h4>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> value : </strong> Name of newly created subclass of Enum. </li>
+        <li> <strong> names : </strong> Names of symbol either provided in string or iterable. Iterator can also contain elements in (name, value) pair, where name must be a string and value can be of any type. </li>
+        <li> <strong> module : </strong> Takes name of module as argument which is used for pickling Enum. </li>
+        <li> <strong> qualname : </strong> Pickle protocol 4 and later relies on __qualname__ for finding class definition. </li>
+        <li> <strong> type : </strong> Takes Mix-in class as parameter. </li>
+        <li> <strong> start : </strong> Default value for Enumeration symbols by default begins with 1. If given value as parameter, default value of first symbol will be the given value. It gets incremented by 1 for next symbol. </li>
+    </ul> 
+</div>
+
+<div id="tut-content"> 
+    <ul>
+        <li> Enum with names as string containing symbols separated space. </li>
+    </ul> 
+</div>
+
+<div id="code-block-1" class="code-block">
+<p id="code-header-1" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-1", "code-header-1")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+
+<span class="n">Plan</span> <span class="o">=</span> <span class="n">Enum</span><span class="p">(</span><span class="s">'Plan'</span><span class="p">,</span> <span class="s">'DIAMOND PLATINUM GOLD SILVER'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Is Plan subclass of Enum ? :'</span><span class="p">,</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">Plan</span><span class="p">,</span> <span class="n">Enum</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Plan : {Plan}   type : {type(Plan)}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'elements : {list(Plan)}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Is Plan subclass of Enum ? : True
+Plan : &lt;enum 'Plan'&gt;   type : &lt;class 'enum.EnumMeta'&gt;
+elements : [&lt;Plan.DIAMOND: 1&gt;, &lt;Plan.PLATINUM: 2&gt;, &lt;Plan.GOLD: 3&gt;, &lt;Plan.SILVER: 4&gt;]
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> Enum with names as string containing symbols separated by comma. </li>
+    </ul> 
+</div>
+
+<div id="code-block-2" class="code-block">
+<p id="code-header-2" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-2", "code-header-2")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+
+<span class="n">Plan</span> <span class="o">=</span> <span class="n">Enum</span><span class="p">(</span><span class="s">'Plan'</span><span class="p">,</span> <span class="s">'DIAMOND,PLATINUM,GOLD,SILVER'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'elements : {list(Plan)}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+elements : [&lt;Plan.DIAMOND: 1&gt;, &lt;Plan.PLATINUM: 2&gt;, &lt;Plan.GOLD: 3&gt;, &lt;Plan.SILVER: 4&gt;]
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> Enum with names as string containing symbols separated by comma and space. </li>
+    </ul> 
+</div>
+
+<div id="code-block-3" class="code-block">
+<p id="code-header-3" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-3", "code-header-3")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+<span class="n">Plan</span> <span class="o">=</span> <span class="n">Enum</span><span class="p">(</span><span class="s">'Plan'</span><span class="p">,</span> <span class="s">'DIAMOND, PLATINUM, GOLD, SILVER'</span><span class="p">)</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">Plan</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+elements : [&lt;Plan.DIAMOND: 1&gt;, &lt;Plan.PLATINUM: 2&gt;, &lt;Plan.GOLD: 3&gt;, &lt;Plan.SILVER: 4&gt;]
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> Enum with start parameter. </li>
+    </ul> 
+</div>
+
+<div id="code-block-4" class="code-block">
+<p id="code-header-4" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-4", "code-header-4")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+<span class="n">Plan</span> <span class="o">=</span> <span class="n">Enum</span><span class="p">(</span><span class="s">'Plan'</span><span class="p">,</span> <span class="s">'DIAMOND,PLATINUM,GOLD,SILVER'</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">101</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'elements : {list(Plan)}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+elements : [&lt;Plan.DIAMOND: 101&gt;, &lt;Plan.PLATINUM: 102&gt;, &lt;Plan.GOLD: 103&gt;, &lt;Plan.SILVER: 104&gt;]
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> Enum with name given as iterator of (symbol, value) pair. </li>
+    </ul> 
+</div>
+
+<div id="code-block-5" class="code-block">
+<p id="code-header-5" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-5", "code-header-5")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+<span class="n">Plan</span> <span class="o">=</span> <span class="n">Enum</span><span class="p">(</span><span class="s">'Plan'</span><span class="p">,</span> <span class="p">((</span><span class="s">'DIAMOND'</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s">'PLATINUM'</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s">'GOLD'</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="s">'SILVER'</span><span class="p">,</span> <span class="mi">4</span><span class="p">)))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'elements : {list(Plan)}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+elements : [&lt;Plan.DIAMOND: 1&gt;, &lt;Plan.PLATINUM: 2&gt;, &lt;Plan.GOLD: 3&gt;, &lt;Plan.SILVER: 4&gt;]
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> Enum with name given as an iterator of key  and custom value pair</li>
+    </ul> 
+</div>
+
+<div id="code-block-6" class="code-block">
+<p id="code-header-6" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-6", "code-header-6")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+<span class="n">Plan</span> <span class="o">=</span> <span class="n">Enum</span><span class="p">(</span><span class="s">'Plan'</span><span class="p">,</span> <span class="p">((</span><span class="s">'DIAMOND'</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="s">'PLATINUM'</span><span class="p">,</span> <span class="mi">80</span><span class="p">),</span> <span class="p">(</span><span class="s">'GOLD'</span><span class="p">,</span> <span class="mi">60</span><span class="p">),</span> <span class="p">(</span><span class="s">'SILVER'</span><span class="p">,</span> <span class="mi">50</span><span class="p">)))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'elements : {list(Plan)}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+elements : [&lt;Plan.DIAMOND: 100&gt;, &lt;Plan.PLATINUM: 80&gt;, &lt;Plan.GOLD: 60&gt;, &lt;Plan.SILVER: 50&gt;]
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> Enum with name given as mapping. </li>
+    </ul> 
+</div>
+
+<div id="code-block-7" class="code-block">
+<p id="code-header-7" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-7", "code-header-7")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+<span class="n">Plan</span> <span class="o">=</span> <span class="n">Enum</span><span class="p">(</span><span class="s">'Plan'</span><span class="p">,</span> <span class="p">{</span><span class="s">'DIAMOND'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'PLATINUM'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'GOLD'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">'SILVER'</span><span class="p">:</span> <span class="mi">4</span><span class="p">})</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'elements : {list(Plan)}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+elements : [&lt;Plan.DIAMOND: 1&gt;, &lt;Plan.PLATINUM: 2&gt;, &lt;Plan.GOLD: 3&gt;, &lt;Plan.SILVER: 4&gt;]
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> Value of the enum can be anything like str, float etc. </li>
+    </ul> 
+</div>
+
+<div id="code-block-8" class="code-block">
+<p id="code-header-8" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-8", "code-header-8")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+<span class="n">CountryCode</span> <span class="o">=</span> <span class="n">Enum</span><span class="p">(</span><span class="s">'CountryCode'</span><span class="p">,</span> <span class="p">{</span><span class="s">'US'</span><span class="p">:</span> <span class="s">'United States'</span><span class="p">,</span> <span class="s">'CA'</span><span class="p">:</span> <span class="s">'Canada'</span><span class="p">,</span> <span class="s">'NZ'</span><span class="p">:</span> <span class="s">'New Zealand'</span><span class="p">,</span> <span class="s">'FR'</span><span class="p">:</span> <span class="s">'France'</span><span class="p">})</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'elements : {list(CountryCode)}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+elements : [&lt;CountryCode.US: 'United States'&gt;, &lt;CountryCode.CA: 'Canada'&gt;, &lt;CountryCode.NZ: 'New Zealand'&gt;, &lt;CountryCode.FR: 'France'&gt;]
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> For pickle use module attribute </li>
+    </ul> 
+</div>
+
+<div id="code-block-9" class="code-block">
+<p id="code-header-9" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-9", "code-header-9")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+<span class="n">Plan</span> <span class="o">=</span> <span class="n">Enum</span><span class="p">(</span><span class="s">'Plan'</span><span class="p">,</span> <span class="p">{</span><span class="s">'DIAMOND'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'PLATINUM'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'GOLD'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">'SILVER'</span><span class="p">:</span> <span class="mi">4</span><span class="p">},</span> <span class="n">module</span><span class="o">=</span> <span class="n">__name__</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'elements : {list(Plan)} Module : {Plan.__module__}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+It's sunny outside.
+Quoting inside "Double quotes".
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> qualname : </strong> Pickle protocol 4 and later relies on __qualname__ for finding class definition. </li>
+    </ul> 
+</div>
+
+<div id="code-block-10" class="code-block">
+<p id="code-header-10" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-10", "code-header-10")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+<span class="n">Plan</span> <span class="o">=</span> <span class="n">Enum</span><span class="p">(</span><span class="s">'Plan'</span><span class="p">,</span> <span class="p">{</span><span class="s">'DIAMOND'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'PLATINUM'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'GOLD'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">'SILVER'</span><span class="p">:</span> <span class="mi">4</span><span class="p">},</span> <span class="n">qualname</span><span class="o">=</span><span class="s">'Const.Plans'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'elements : {list(Plan)} qualname : {Plan.__qualname__}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+elements : [&lt;Plan.DIAMOND: 1&gt;, &lt;Plan.PLATINUM: 2&gt;, &lt;Plan.GOLD: 3&gt;, &lt;Plan.SILVER: 4&gt;] <div id="tut-highlight">qualname : Const.Plans</div>
+</pre></div>
+
+<hr />
+
+<h3 id="accessing-element">Accessing Element</h3>
+
+<h4 id="by-symbol">By Symbol</h4>
+
+<div id="code-block-11" class="code-block">
+<p id="code-header-11" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-11", "code-header-11")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+<span class="n">Plan</span> <span class="o">=</span> <span class="n">Enum</span><span class="p">(</span><span class="s">'Plan'</span><span class="p">,</span> <span class="p">{</span><span class="s">'DIAMOND'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'PLATINUM'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'GOLD'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">'SILVER'</span><span class="p">:</span> <span class="mi">4</span><span class="p">})</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'GOLD Plan : {Plan.GOLD}'</span><span class="p">)</span>
+<span class="c1"># or
+</span><span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'GOLD Plan : {Plan["GOLD"]}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+GOLD Plan : Plan.GOLD
+GOLD Plan : Plan.GOLD
+</pre></div>
+
+<hr />
+
+<h4 id="by-value">By Value</h4>
+
+<div id="code-block-12" class="code-block">
+<p id="code-header-12" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-12", "code-header-12")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+<span class="n">Plan</span> <span class="o">=</span> <span class="n">Enum</span><span class="p">(</span><span class="s">'Plan'</span><span class="p">,</span> <span class="p">{</span><span class="s">'DIAMOND'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'PLATINUM'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'GOLD'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">'SILVER'</span><span class="p">:</span> <span class="mi">4</span><span class="p">})</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Plan(1) : {Plan(1)}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Plan(1) : Plan.DIAMOND
+</pre></div>
+
+<hr />
+
+<h3 id="attributes-of-symbol">Attributes of Symbol</h3>
+
+<h4 id="value">value</h4>
+<p> Returns value of the particular symbol. </p>
+
+<div id="code-block-13" class="code-block">
+<p id="code-header-13" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-13", "code-header-13")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+<span class="n">Plan</span> <span class="o">=</span> <span class="n">Enum</span><span class="p">(</span><span class="s">'Plan'</span><span class="p">,</span> <span class="p">{</span><span class="s">'DIAMOND'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'PLATINUM'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'GOLD'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">'SILVER'</span><span class="p">:</span> <span class="mi">4</span><span class="p">})</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Value of DIAMOND :'</span><span class="p">,</span> <span class="n">Plan</span><span class="o">.</span><span class="n">DIAMOND</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Value of GOLD    :'</span><span class="p">,</span> <span class="n">Plan</span><span class="o">.</span><span class="n">GOLD</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Value of DIAMOND : 1
+Value of GOLD    : 3
+</pre></div>
+
+<hr />
+
+<h4 id="name">name</h4>
+<p> Returns name of the particular symbol. </p>
+
+<div id="code-block-14" class="code-block">
+<p id="code-header-14" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-14", "code-header-14")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+<span class="n">Plan</span> <span class="o">=</span> <span class="n">Enum</span><span class="p">(</span><span class="s">'Plan'</span><span class="p">,</span> <span class="p">{</span><span class="s">'DIAMOND'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'PLATINUM'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'GOLD'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">'SILVER'</span><span class="p">:</span> <span class="mi">4</span><span class="p">})</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Name of DIAMOND :'</span><span class="p">,</span> <span class="n">Plan</span><span class="o">.</span><span class="n">DIAMOND</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Name of GOLD    :'</span><span class="p">,</span> <span class="n">Plan</span><span class="o">.</span><span class="n">GOLD</span><span class="o">.</span><span class="n">name</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Name of DIAMOND : DIAMOND
+Name of GOLD    : GOLD
+</pre></div>
+
+<hr />
+
+<h3 id="iterating">Iterating</h3>
+
+<h4 id="for-each">for-each</h4>
+
+<div id="code-block-15" class="code-block">
+<p id="code-header-15" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-15", "code-header-15")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+<span class="n">Plan</span> <span class="o">=</span> <span class="n">Enum</span><span class="p">(</span><span class="s">'Plan'</span><span class="p">,</span> <span class="p">{</span><span class="s">'DIAMOND'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'PLATINUM'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'GOLD'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">'SILVER'</span><span class="p">:</span> <span class="mi">4</span><span class="p">})</span>
+
+<span class="k">for</span> <span class="n">level</span> <span class="ow">in</span> <span class="n">Plan</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'{level.name:&lt;9s} -&gt; {level.value}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+DIAMOND   -&gt; 1
+PLATINUM  -&gt; 2
+GOLD      -&gt; 3
+SILVER    -&gt; 4
+</pre></div>
+
+<hr />
+
+<h3 id="enum-as-key-of-dictionary">Enum as Key of dictionary</h3>
+
+<p> Enum symbols are hashable, which means it can be used as key of dictionary. </p>
+
+<div id="code-block-16" class="code-block">
+<p id="code-header-16" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-16", "code-header-16")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+
+<span class="n">Plan</span> <span class="o">=</span> <span class="n">Enum</span><span class="p">(</span><span class="s">'Plan'</span><span class="p">,</span> <span class="p">{</span><span class="s">'DIAMOND'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'PLATINUM'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'GOLD'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">'SILVER'</span><span class="p">:</span> <span class="mi">4</span><span class="p">})</span>
+
+<span class="n">customers</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+<span class="n">customers</span><span class="p">[</span><span class="n">Plan</span><span class="o">.</span><span class="n">DIAMOND</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">'ABC Inc'</span><span class="p">)</span>
+<span class="n">customers</span><span class="p">[</span><span class="n">Plan</span><span class="o">.</span><span class="n">GOLD</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">'IQ Corp'</span><span class="p">)</span>
+<span class="n">customers</span><span class="p">[</span><span class="n">Plan</span><span class="o">.</span><span class="n">DIAMOND</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">'Citrus Ltd'</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">customers</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">Accessing element using Enum Symbol :'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'customers[Plan(1)] :'</span><span class="p">,</span> <span class="n">customers</span><span class="p">[</span><span class="n">Plan</span><span class="p">(</span><span class="mi">1</span><span class="p">)])</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'customers[Plan.GOLD] :'</span><span class="p">,</span> <span class="n">customers</span><span class="p">[</span><span class="n">Plan</span><span class="o">.</span><span class="n">GOLD</span><span class="p">])</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+defaultdict(&lt;class 'list'&gt;, {&lt;Plan.DIAMOND: 1&gt;: ['ABC Inc', 'Citrus Ltd'], &lt;Plan.GOLD: 3&gt;: ['IQ Corp']})
+
+Accessing element using Enum Symbol :
+customers[Plan(1)] : ['ABC Inc', 'Citrus Ltd']
+customers[Plan.GOLD] : ['IQ Corp']
+</pre></div>
+
+<hr />
+
+<h3 id="extending-enum-class">Extending Enum Class</h3>
+
+<p> It is same as constructing Enum with Enum constructor but extending class provides extra flexibility.  </p>
+
+<div id="code-block-17" class="code-block">
+<p id="code-header-17" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-17", "code-header-17")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+
+
+<span class="k">class</span> <span class="nc">Plan</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="n">DIAMOND</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">PLATINUM</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">GOLD</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="n">SILVER</span> <span class="o">=</span> <span class="mi">4</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Elements '</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">Plan</span><span class="p">))</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'GOLD Plan :'</span><span class="p">,</span> <span class="n">Plan</span><span class="o">.</span><span class="n">GOLD</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Value of GOLD    :'</span><span class="p">,</span> <span class="n">Plan</span><span class="o">.</span><span class="n">GOLD</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Name of GOLD    :'</span><span class="p">,</span> <span class="n">Plan</span><span class="o">.</span><span class="n">GOLD</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">Iterating Enum :'</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">level</span> <span class="ow">in</span> <span class="n">Plan</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'{level.name:&lt;9s} -&gt; {level.value}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Elements  [&lt;Plan.DIAMOND: 1&gt;, &lt;Plan.PLATINUM: 2&gt;, &lt;Plan.GOLD: 3&gt;, &lt;Plan.SILVER: 4&gt;]
+GOLD Plan : Plan.GOLD
+Value of GOLD    : 3
+Name of GOLD    : GOLD
+
+Iterating Enum :
+DIAMOND   -&gt; 1
+PLATINUM  -&gt; 2
+GOLD      -&gt; 3
+SILVER    -&gt; 4
+</pre></div>
+
+<hr />
+
+<h3 id="enum-with-duplicate-values">Enum with duplicate values</h3>
+
+<div id="tut-content"> 
+    <ul>
+        <li> Enum Symbol name must be unique, else it will raise Error. </li>
+    </ul> 
+</div>
+
+<div id="code-block-18" class="code-block">
+<p id="code-header-18" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-18", "code-header-18")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+
+<span class="n">Status</span> <span class="o">=</span> <span class="n">Enum</span><span class="p">(</span><span class="s">'Status'</span><span class="p">,</span> <span class="p">((</span><span class="s">'NEW'</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s">'PROCESSING'</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s">'ASSIGNED'</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="s">'COMPLETED'</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="s">'ONHOLD'</span><span class="p">,</span> <span class="mi">11</span><span class="p">),</span>
+                         <span class="p">(</span><span class="s">'NEW'</span><span class="p">,</span> <span class="mi">31</span><span class="p">),</span> <span class="p">(</span><span class="s">'REJECTED'</span><span class="p">,</span> <span class="mi">21</span><span class="p">)))</span>
+
+<span class="c1"># OR
+</span>
+
+<span class="k">class</span> <span class="nc">Status</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="n">NEW</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">PROCESSING</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">ASSIGNED</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="n">COMPLETED</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="n">ONHOLD</span> <span class="o">=</span> <span class="mi">11</span>
+    <span class="n">NEW</span> <span class="o">=</span> <span class="mi">31</span>
+    <span class="n">REJECTED</span> <span class="o">=</span> <span class="mi">21</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre id="tut-output-error" class="result-content">Traceback (most recent call last):
+  File "&lt;&zwj;input&zwj;&gt;", line 3, in &lt;&zwj;module&zwj;&gt;
+  File "/usr/local/lib/python3.8/enum.py", line 306, in __call__
+    return cls._create_(value, names, module=module, qualname=qualname, type=type, start=start)
+  File "/usr/local/lib/python3.8/enum.py", line 415, in _create_
+    classdict[member_name] = member_value
+  File "/usr/local/lib/python3.8/enum.py", line 95, in __setitem__
+    raise TypeError('Attempted to reuse key: %r' % key)
+<div id="tut-highlight">TypeError: Attempted to reuse key: 'NEW'</div></pre>
+</div>
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> Enum can contain duplicate value , Symbol with duplicate value serves as an alias for symbol defined earlier. </li>
+    </ul> 
+</div>
+
+<div id="code-block-19" class="code-block">
+<p id="code-header-19" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-19", "code-header-19")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Status</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="n">NEW</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">PROCESSING</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">ASSIGNED</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="n">COMPLETED</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="n">ONHOLD</span> <span class="o">=</span> <span class="mi">11</span>
+    <span class="n">REQINFO</span> <span class="o">=</span> <span class="mi">11</span>
+    <span class="n">REJECTED</span> <span class="o">=</span> <span class="mi">21</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Status.REQINFO :'</span><span class="p">,</span> <span class="n">Status</span><span class="o">.</span><span class="n">REQINFO</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Status(11) :'</span><span class="p">,</span> <span class="n">Status</span><span class="p">(</span><span class="mi">11</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Status.REQINFO : Status.ONHOLD
+Status(11) : Status.ONHOLD
+</pre></div>
+
+<hr />
+
+<h3 id="ensuring-unique-values">Ensuring unique values</h3>
+
+<h4 id="unique">unique</h4>
+
+<p> <strong> @unique </strong>  decorator ensures Enum is created with unique value for each symbol. If Enum contains duplicate values, it will raise ValueError. </p>
+
+<div id="code-block-20" class="code-block">
+<p id="code-header-20" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-20", "code-header-20")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span><span class="p">,</span> <span class="n">unique</span>
+
+
+<span class="o">@</span><span class="n">unique</span>
+<span class="k">class</span> <span class="nc">Status</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="n">NEW</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">PROCESSING</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">ASSIGNED</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="n">COMPLETED</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="n">ONHOLD</span> <span class="o">=</span> <span class="mi">11</span>
+    <span class="n">REJECTED</span> <span class="o">=</span> <span class="mi">21</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="s">'elements :'</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">Status</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+elements : [&lt;Status.NEW: 1&gt;, &lt;Status.PROCESSING: 2&gt;, &lt;Status.ASSIGNED: 3&gt;, &lt;Status.COMPLETED: 4&gt;, &lt;Status.ONHOLD: 11&gt;, &lt;Status.REJECTED: 21&gt;]
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> with @unique decorator Enum contains duplicate values will raise ValueError. </li>
+    </ul> 
+</div>
+
+<div id="code-block-21" class="code-block">
+<p id="code-header-21" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-21", "code-header-21")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span><span class="p">,</span> <span class="n">unique</span>
+
+<span class="o">@</span><span class="n">unique</span>
+<span class="k">class</span> <span class="nc">Status</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="n">NEW</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">PROCESSING</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">ASSIGNED</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="n">COMPLETED</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="n">ONHOLD</span> <span class="o">=</span> <span class="mi">11</span>
+    <span class="n">REQINFO</span> <span class="o">=</span> <span class="mi">11</span>
+    <span class="n">REJECTED</span> <span class="o">=</span> <span class="mi">21</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre id="tut-output-error" class="result-content">Traceback (most recent call last):
+  File "&lt;&zwj;input&zwj;&gt;", line 4, in &lt;&zwj;module&zwj;&gt;
+  File "/usr/local/lib/python3.8/enum.py", line 860, in unique
+    raise ValueError('duplicate values found in %r: %s' %
+ValueError: duplicate values found in &lt;enum 'Status'&gt;: REQINFO -&gt; ONHOLD
+</pre></div>
+
+<hr />
+
+<h3 id="automatic-value-for-enum-sublcass">automatic value for Enum sublcass</h3>
+
+<h4 id="auto">auto()</h4>
+
+<p> Assigns automatic values to symbols of subclass of Enum beginning with 1. </p>
+
+<div id="code-block-22" class="code-block">
+<p id="code-header-22" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-22", "code-header-22")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span><span class="p">,</span> <span class="n">auto</span>
+
+
+<span class="k">class</span> <span class="nc">Status</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="n">NEW</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">PROCESSING</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">ASSIGNED</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">COMPLETED</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">ONHOLD</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">REJECTED</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Elements :'</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">Status</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Elements : [&lt;Status.NEW: 1&gt;, &lt;Status.PROCESSING: 2&gt;, &lt;Status.ASSIGNED: 3&gt;, &lt;Status.COMPLETED: 4&gt;, &lt;Status.ONHOLD: 5&gt;, &lt;Status.REJECTED: 6&gt;]
+</pre></div>
+
+<hr />
+
+<h4 id="custom-values-for-auto">custom values for auto()</h4>
+
+<p> <strong>  _generate_next_value_(name, start, count, last_values)  : </strong> function can be override, which is called when auto() is executed for each symbol. Value returned by function assigned to symbol. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> name : </strong>  Name of symbol. </li>
+        <li> <strong> start : </strong> Start value  by default it is set to 1. </li>
+        <li> <strong> count : </strong> Count value which begins from 0 and gets incremented by 1 at each call.</li>
+        <li> <strong> last_values : </strong> List containing values generated in previous calls </li>
+    </ul> 
+</div>
+
+<div id="tut-content"> 
+    <ul>
+        <li> Assigning Automatic value beginning form custom start. </li>
+    </ul> 
+</div>
+
+<div id="code-block-23" class="code-block">
+<p id="code-header-23" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-23", "code-header-23")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span><span class="p">,</span> <span class="n">auto</span>
+
+
+<span class="k">class</span> <span class="nc">Status</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">_generate_next_value_</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">count</span><span class="p">,</span> <span class="n">last_values</span><span class="o">=</span><span class="p">[]):</span>
+        <span class="n">start</span> <span class="o">=</span> <span class="mi">101</span>
+        <span class="k">return</span> <span class="n">start</span> <span class="o">+</span> <span class="n">count</span>
+
+    <span class="n">NEW</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">PROCESSING</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">ASSIGNED</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">COMPLETED</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">ONHOLD</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">REJECTED</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">Status</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+[&lt;Status.NEW: 101&gt;, &lt;Status.PROCESSING: 102&gt;, &lt;Status.ASSIGNED: 103&gt;, &lt;Status.COMPLETED: 104&gt;, &lt;Status.ONHOLD: 105&gt;, &lt;Status.REJECTED: 106&gt;]
+</pre></div>
+
+<hr />
+
+<h3 id="comparision-operators">Comparision Operators</h3>
+
+<h4 id="--">’ == ‘</h4>
+
+<p> Returns True if both enum symbols are same. </p>
+
+<h4 id="---1">’ != ‘</h4>
+
+<p> Returns True if both enum symbols are not same. </p>
+
+<div id="code-block-24" class="code-block">
+<p id="code-header-24" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-24", "code-header-24")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+
+
+<span class="k">class</span> <span class="nc">Status</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="n">NEW</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">PROCESSING</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">ASSIGNED</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="n">COMPLETED</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="n">ONHOLD</span> <span class="o">=</span> <span class="mi">11</span>
+    <span class="n">REQINFO</span> <span class="o">=</span> <span class="mi">11</span>
+    <span class="n">REJECTED</span> <span class="o">=</span> <span class="mi">21</span>
+
+
+<span class="n">appStatus</span> <span class="o">=</span> <span class="n">Status</span><span class="o">.</span><span class="n">PROCESSING</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Application status : '</span><span class="p">,</span> <span class="n">appStatus</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'appStatus == Status.PROCESSING :'</span><span class="p">,</span> <span class="n">appStatus</span> <span class="o">==</span> <span class="n">Status</span><span class="o">.</span><span class="n">PROCESSING</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'appStatus == Status.COMPLETED  :'</span><span class="p">,</span> <span class="n">appStatus</span> <span class="o">==</span> <span class="n">Status</span><span class="o">.</span><span class="n">COMPLETED</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'appStatus != Status.ONHOLD     :'</span><span class="p">,</span> <span class="n">appStatus</span> <span class="o">!=</span> <span class="n">Status</span><span class="o">.</span><span class="n">ONHOLD</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'appStatus != Status.PROCESSING :'</span><span class="p">,</span> <span class="n">appStatus</span> <span class="o">!=</span> <span class="n">Status</span><span class="o">.</span><span class="n">PROCESSING</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Application status :  Status.PROCESSING
+appStatus == Status.PROCESSING : True
+appStatus == Status.COMPLETED  : False
+appStatus != Status.ONHOLD     : True
+appStatus != Status.PROCESSING : False
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> Comparision with non enum value will always return False. But you can extract value from enum and then compare. </li>
+    </ul> 
+</div>
+
+<div id="code-block-25" class="code-block">
+<p id="code-header-25" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-25", "code-header-25")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+
+<span class="n">Status</span> <span class="o">=</span> <span class="n">Enum</span><span class="p">(</span><span class="s">"Status"</span><span class="p">,</span> <span class="p">((</span><span class="s">'NEW'</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s">'PROCESSING'</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s">'ASSIGNED'</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="s">'COMPLETED'</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="s">'ONHOLD'</span><span class="p">,</span> <span class="mi">11</span><span class="p">),</span> <span class="p">(</span><span class="s">'REQINFO'</span><span class="p">,</span> <span class="mi">11</span><span class="p">),</span> <span class="p">(</span><span class="s">'REJECTED'</span><span class="p">,</span> <span class="mi">21</span><span class="p">)))</span>
+
+<span class="n">appStatus</span> <span class="o">=</span> <span class="n">Status</span><span class="o">.</span><span class="n">PROCESSING</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"appStatus == 'PROCESSING' :"</span><span class="p">,</span> <span class="n">appStatus</span> <span class="o">==</span> <span class="s">'PROCESSING'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"appStatus == 2 :"</span><span class="p">,</span> <span class="n">appStatus</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"appStatus.name == 'PROCESSING' :"</span><span class="p">,</span> <span class="n">appStatus</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s">'PROCESSING'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"appStatus.value == 2 :"</span><span class="p">,</span> <span class="n">appStatus</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+appStatus == 'PROCESSING' : False
+appStatus == 2 : False
+<div id="tut-highlight">appStatus.name</div> == 'PROCESSING' : True
+<div id="tut-highlight">appStatus.value</div> == 2 : True
+
+</pre></div>
+
+<hr />
+
+<h3 id="intenum">IntEnum</h3>
+
+<p> Enum with int value and it's elements can be compared with int. </p>
+
+<div id="code-block-26" class="code-block">
+<p id="code-header-26" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-26", "code-header-26")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">IntEnum</span>
+
+
+<span class="k">class</span> <span class="nc">ResponseCode</span><span class="p">(</span><span class="n">IntEnum</span><span class="p">):</span>
+
+    <span class="n">OK</span> <span class="o">=</span> <span class="mi">200</span>
+    <span class="n">CREATED</span> <span class="o">=</span> <span class="mi">201</span>
+    <span class="n">ACCEPTED</span> <span class="o">=</span> <span class="mi">202</span>
+    <span class="n">BAD_REQUEST</span> <span class="o">=</span> <span class="mi">400</span>
+    <span class="n">UNAUTHORIZED</span> <span class="o">=</span> <span class="mi">401</span>
+    <span class="n">NOT_FOUND</span> <span class="o">=</span> <span class="mi">404</span>
+    <span class="n">INTERNAL_SERVER_ERROR</span> <span class="o">=</span> <span class="mi">500</span>
+    <span class="n">SERVICE_UNAVAILABLE</span> <span class="o">=</span> <span class="mi">503</span>
+
+
+<span class="k">class</span> <span class="nc">ApplicationCode</span><span class="p">(</span><span class="n">IntEnum</span><span class="p">):</span>
+    <span class="n">INTERNAL_PROCESSING_ERROR</span> <span class="o">=</span> <span class="mi">500</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="s">"ResponseCode.NOT_FOUND :"</span><span class="p">,</span> <span class="n">ResponseCode</span><span class="o">.</span><span class="n">NOT_FOUND</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"ResponseCode.OK == 200 :"</span><span class="p">,</span> <span class="n">ResponseCode</span><span class="o">.</span><span class="n">OK</span> <span class="o">==</span> <span class="mi">200</span><span class="p">)</span>
+
+<span class="n">ans</span> <span class="o">=</span> <span class="n">ResponseCode</span><span class="o">.</span><span class="n">INTERNAL_SERVER_ERROR</span> <span class="o">==</span> <span class="n">ApplicationCode</span><span class="o">.</span><span class="n">INTERNAL_PROCESSING_ERROR</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Comparision of two different enum with same value :"</span><span class="p">,</span> <span class="n">ans</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'ResponseCode.OK + 202 :'</span><span class="p">,</span> <span class="n">ResponseCode</span><span class="o">.</span><span class="n">OK</span> <span class="o">+</span> <span class="mi">202</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'ResponseCode.OK - 101 :'</span><span class="p">,</span> <span class="n">ResponseCode</span><span class="o">.</span><span class="n">OK</span> <span class="o">-</span> <span class="mi">101</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+ResponseCode.NOT_FOUND : ResponseCode.NOT_FOUND
+ResponseCode.OK == 200 : True
+Comparision of two different enum with same value : True
+ResponseCode.OK + 202 : 402
+ResponseCode.OK - 101 : 99
+</pre></div>
+
+<hr />
+
+<h4 id="using-intenum-as-key-of-dictionary">Using IntEnum as key of Dictionary</h4>
+
+<div id="code-block-27" class="code-block">
+<p id="code-header-27" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-27", "code-header-27")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">IntEnum</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+
+
+<span class="k">class</span> <span class="nc">ResponseCode</span><span class="p">(</span><span class="n">IntEnum</span><span class="p">):</span>
+
+    <span class="n">OK</span> <span class="o">=</span> <span class="mi">200</span>
+    <span class="n">CREATED</span> <span class="o">=</span> <span class="mi">201</span>
+    <span class="n">ACCEPTED</span> <span class="o">=</span> <span class="mi">202</span>
+    <span class="n">BAD_REQUEST</span> <span class="o">=</span> <span class="mi">400</span>
+    <span class="n">UNAUTHORIZED</span> <span class="o">=</span> <span class="mi">401</span>
+    <span class="n">NOT_FOUND</span> <span class="o">=</span> <span class="mi">404</span>
+    <span class="n">INTERNAL_SERVER_ERROR</span> <span class="o">=</span> <span class="mi">500</span>
+    <span class="n">SERVICE_UNAVAILABLE</span> <span class="o">=</span> <span class="mi">503</span>
+
+
+<span class="n">responseLog</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+
+<span class="n">responseLog</span><span class="p">[</span><span class="n">ResponseCode</span><span class="o">.</span><span class="n">OK</span><span class="p">]</span> <span class="o">=</span> <span class="s">'192.168.1.101'</span>
+<span class="n">responseLog</span><span class="p">[</span><span class="n">ResponseCode</span><span class="o">.</span><span class="n">NOT_FOUND</span><span class="p">]</span> <span class="o">=</span> <span class="s">'198.168.1.91'</span>
+<span class="n">responseLog</span><span class="p">[</span><span class="n">ResponseCode</span><span class="o">.</span><span class="n">SERVICE_UNAVAILABLE</span><span class="p">]</span> <span class="o">=</span> <span class="s">'172.102.1.1'</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">responseLog</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+defaultdict(&lt;class 'list'&gt;, {&lt;ResponseCode.OK: 200&gt;: '192.168.1.101', &lt;ResponseCode.NOT_FOUND: 404&gt;: '198.168.1.91', &lt;ResponseCode.SERVICE_UNAVAILABLE: 503&gt;: '172.102.1.1'})
+</pre></div>
+
+<hr />
+
+<h3 id="intflag">IntFlag</h3>
+
+<p> IntEnum plus bitwise operators(&amp;, |, ^, ~) </p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">operator</th>
+      <th style="text-align: left">meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">&amp;</td>
+      <td style="text-align: left">binary and</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">|</td>
+      <td style="text-align: left">binary OR</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">^</td>
+      <td style="text-align: left">binary XOR</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">~</td>
+      <td style="text-align: left">binary 1’s complement</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">+</td>
+      <td style="text-align: left">Adds value of enum</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">-</td>
+      <td style="text-align: left">Subtracts value of enum</td>
+    </tr>
+  </tbody>
+</table>
+
+<div id="code-block-28" class="code-block">
+<p id="code-header-28" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-28", "code-header-28")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">IntFlag</span>
+
+
+<span class="k">class</span> <span class="nc">Perm</span><span class="p">(</span><span class="n">IntFlag</span><span class="p">):</span>
+    <span class="n">R</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="n">W</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">RX</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="n">RWX</span> <span class="o">=</span> <span class="mi">7</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Bitwise Operators :</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Perm.R | Perm.X    :"</span><span class="p">,</span> <span class="n">Perm</span><span class="o">.</span><span class="n">R</span> <span class="o">|</span> <span class="n">Perm</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Perm.RWX &amp; Perm.RX :"</span><span class="p">,</span> <span class="n">Perm</span><span class="o">.</span><span class="n">RWX</span> <span class="o">&amp;</span> <span class="n">Perm</span><span class="o">.</span><span class="n">RX</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Perm.RWX ^ Perm.RX :"</span><span class="p">,</span> <span class="n">Perm</span><span class="o">.</span><span class="n">RWX</span> <span class="o">^</span> <span class="n">Perm</span><span class="o">.</span><span class="n">RX</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"~Perm.RX :"</span><span class="p">,</span> <span class="o">~</span><span class="n">Perm</span><span class="o">.</span><span class="n">RX</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">Bitwise Operators with int :</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"4 | Perm.X  :"</span><span class="p">,</span> <span class="mi">4</span> <span class="o">|</span> <span class="n">Perm</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"4 &amp; Perm.RX :"</span><span class="p">,</span> <span class="mi">4</span> <span class="o">&amp;</span> <span class="n">Perm</span><span class="o">.</span><span class="n">RX</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"7 ^ Perm.RX :"</span><span class="p">,</span> <span class="mi">7</span> <span class="o">^</span> <span class="n">Perm</span><span class="o">.</span><span class="n">RX</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">If no flags are set, it is evaluated as 0 :</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Perm.W &amp; Perm.X'</span><span class="p">,</span> <span class="n">Perm</span><span class="o">.</span><span class="n">W</span> <span class="o">&amp;</span> <span class="n">Perm</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">Addition and Subtraction with Values</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Perm.R + Perm.W   :"</span><span class="p">,</span> <span class="n">Perm</span><span class="o">.</span><span class="n">R</span> <span class="o">+</span> <span class="n">Perm</span><span class="o">.</span><span class="n">W</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Perm.RWX - Perm.W :"</span><span class="p">,</span> <span class="n">Perm</span><span class="o">.</span><span class="n">RWX</span> <span class="o">-</span> <span class="n">Perm</span><span class="o">.</span><span class="n">W</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">Addition and Subtraction with int</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Perm.R + 2 :"</span><span class="p">,</span> <span class="n">Perm</span><span class="o">.</span><span class="n">R</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Perm.RWX - 2 :"</span><span class="p">,</span> <span class="n">Perm</span><span class="o">.</span><span class="n">RWX</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">Membership Operators :</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Perm.RX in Perm.RWX :'</span><span class="p">,</span> <span class="n">Perm</span><span class="o">.</span><span class="n">RX</span> <span class="ow">in</span> <span class="n">Perm</span><span class="o">.</span><span class="n">RWX</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Perm.RX in Perm.W   :'</span><span class="p">,</span> <span class="n">Perm</span><span class="o">.</span><span class="n">RX</span> <span class="ow">in</span> <span class="n">Perm</span><span class="o">.</span><span class="n">W</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Bitwise Operators :
+
+Perm.R | Perm.X    : Perm.RX
+Perm.RWX &amp; Perm.RX : Perm.RX
+Perm.RWX ^ Perm.RX : Perm.W
+~Perm.RX : Perm.W
+
+Bitwise Operators with int :
+
+4 | Perm.X  : Perm.RX
+4 &amp; Perm.RX : Perm.R
+7 ^ Perm.RX : Perm.W
+
+If no flags are set, it is evaluated as 0 :
+
+Perm.W &amp; Perm.X Perm.0
+
+Addition and Subtraction with Values
+
+Perm.R + Perm.W   : 6
+Perm.RWX - Perm.W : 5
+
+Addition and Subtraction with int
+
+Perm.R + 2 : 6
+Perm.RWX - 2 : 5
+
+Membership Operators :
+
+Perm.RX in Perm.RWX : True
+Perm.RX in Perm.W   : False
+
+</pre></div>
+
+<hr />
+
+<h3 id="flag">Flag</h3>
+
+<p> Supports bitwise operators, but restrict operation with other values (like int) or other enums. It's recommended to use auto() as value.  </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> With auto() by default it assigns value in power of 2 (2^0 = 1, 2^1 = 2, 2^2 = 4). </li>
+    </ul> 
+</div>
+
+<div class="bs-callout bs-callout-primary"><strong>Note</strong> : Use of Enum and Flag is recommended. Use IntEnum and IntFlag only in case where Enum and Flag can not be used as they breaks semantics of enum.</div>
+
+<div id="code-block-29" class="code-block">
+<p id="code-header-29" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-29", "code-header-29")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Flag</span><span class="p">,</span> <span class="n">auto</span>
+
+
+<span class="k">class</span> <span class="nc">Perm</span><span class="p">(</span><span class="n">Flag</span><span class="p">):</span>
+    <span class="n">R</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">W</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">RX</span> <span class="o">=</span> <span class="n">R</span> <span class="o">|</span> <span class="n">X</span>
+    <span class="n">RWX</span> <span class="o">=</span> <span class="n">R</span> <span class="o">|</span> <span class="n">W</span> <span class="o">|</span> <span class="n">X</span>
+
+
+<span class="k">for</span> <span class="n">permission</span> <span class="ow">in</span> <span class="n">Perm</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Permission : {permission.name:&lt;3}  Value : {permission.value}'</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n\n</span><span class="s">Bitwise Operators :</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Perm.R | Perm.X    :"</span><span class="p">,</span> <span class="n">Perm</span><span class="o">.</span><span class="n">R</span> <span class="o">|</span> <span class="n">Perm</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Perm.RWX &amp; Perm.RX :"</span><span class="p">,</span> <span class="n">Perm</span><span class="o">.</span><span class="n">RWX</span> <span class="o">&amp;</span> <span class="n">Perm</span><span class="o">.</span><span class="n">RX</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Perm.RWX ^ Perm.RX :"</span><span class="p">,</span> <span class="n">Perm</span><span class="o">.</span><span class="n">RWX</span> <span class="o">^</span> <span class="n">Perm</span><span class="o">.</span><span class="n">RX</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"~Perm.RX :"</span><span class="p">,</span> <span class="o">~</span><span class="n">Perm</span><span class="o">.</span><span class="n">RX</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Permission : R    Value : 1
+Permission : W    Value : 2
+Permission : X    Value : 4
+Permission : RX   Value : 5
+Permission : RWX  Value : 7
+
+
+Bitwise Operators :
+
+Perm.R | Perm.X    : Perm.RX
+Perm.RWX &amp; Perm.RX : Perm.RX
+Perm.RWX ^ Perm.RX : Perm.W
+~Perm.RX : Perm.W
+
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> Performing operation with int will raise TypeError. </li>
+    </ul> 
+</div>
+
+<div id="code-block-30" class="code-block">
+<p id="code-header-30" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-30", "code-header-30")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Flag</span><span class="p">,</span> <span class="n">auto</span>
+
+
+<span class="k">class</span> <span class="nc">Perm</span><span class="p">(</span><span class="n">Flag</span><span class="p">):</span>
+    <span class="n">R</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">W</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">RX</span> <span class="o">=</span> <span class="n">R</span> <span class="o">|</span> <span class="n">X</span>
+    <span class="n">RWX</span> <span class="o">=</span> <span class="n">R</span> <span class="o">|</span> <span class="n">W</span> <span class="o">|</span> <span class="n">X</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="s">"Perm.R + 2 :"</span><span class="p">,</span> <span class="n">Perm</span><span class="o">.</span><span class="n">R</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre id="tut-output-error" class="result-content">Traceback (most recent call last):
+  File "&lt;&zwj;input&zwj;&gt;", line 12, in &lt;&zwj;module&zwj;&gt;
+TypeError: unsupported operand type(s) for +: 'Perm' and 'int'</pre></div>
+
+<hr />
+
+
+
+    <div class="tags">
+        
+        <p style="display: inline;"><b>Tags: </b></p>
+        
+        
+        
+    </div>
+
+<a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button">
+    <span class="fa fa-arrow-up" tabindex="-1"></span>
+</a>
+
+<!-- 
+<div id="commento"></div>
+<script src="https://cdn.commento.io/js/commento.js"></script>
+<noscript>Please enable JavaScript to load the comments.</noscript>
+
+ -->
+
+</div>
+
+<!-- <hr class="shaded"/> -->
+
+<div class="seriesContext" align="right">
+
+    
+
+    
+        <a href="python_heapq.html" >
+            <button type="button" class="btn btn-primary  "> 
+                 <span class="fa fa-arrow-circle-left fa-lg"></span>  Previous  <br/>
+                 heapq 
+            </button>
+        </a>
+    
+
+    
+
+    
+
+</div>
+
+
+<hr />
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+                    <p><img src="images/company_logo.png" alt="Company logo"/></p>
+               <p id='copyright'>&copy; 2020 Asha Tutorials.<br /> All rights reserved.</p> <br />
+ 
+<br/><br/><br/>
+
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+</html>
