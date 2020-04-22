@@ -9,8 +9,8 @@ prev_section:
 prev_section_title: 
 prev: python_heapq.html
 prev_title: heapq
-next: 
-next_title: 
+next: python_array.html
+next_title: Array
 next_section: 
 next_section_title: 
 summary: Enum class , constructor attributes, iterating enum, unique, IntEnum, InFlag, Flag.

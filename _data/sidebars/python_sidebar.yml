@@ -112,3 +112,6 @@ entries:
       - title: Enum
         url: /python_enum.html
         output: web
+      - title: Array
+        url: /python_array.html
+        output: web
