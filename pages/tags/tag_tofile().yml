@@ -1,0 +1,8 @@
+---
+title: "tofile()"
+tagName: tofile()
+search: exclude
+permalink: tag_tofile().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

@@ -370,3 +370,12 @@ allowed-tags:
   - InFlag
   - Flag
   - _generate_next_value_()
+  - Array
+  - tofile()
+  - tobytes()
+  - tolist()
+  - tofile()
+  - fromfile()
+  - fromlist()
+  - frombytes()
+  - itemsize

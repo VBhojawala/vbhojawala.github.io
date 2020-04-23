@@ -1,0 +1,8 @@
+---
+title: "tobytes()"
+tagName: tobytes()
+search: exclude
+permalink: tag_tobytes().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

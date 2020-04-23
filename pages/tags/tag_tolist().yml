@@ -1,0 +1,8 @@
+---
+title: "tolist()"
+tagName: tolist()
+search: exclude
+permalink: tag_tolist().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

@@ -1,7 +1,7 @@
 ---
 title: Array
 layout: tutorial
-tags: []
+tags: [Array, indexing, slicing, iterating, typecodes, len(), append(), insert(), extend(), pop(), remove(), count(), reverse(), tofile(), tobytes(), tolist(), fromfile(), fromlist(), frombytes(), itemsize]
 sidebar: python_sidebar
 permalink: python_array.html
 folder: python
@@ -13,7 +13,7 @@ next:
 next_title: 
 next_section: 
 next_section_title: 
-summary: 
+summary: Array element data types, indexing, slicing, iterating, functions and attributes.
 ---
 
 ## Array
@@ -188,6 +188,31 @@ print("After  :", intArray)
 <pre class="result-content">
 Before : array('i', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 After  : array('i', [7, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+</pre></div>
+
+<hr/>
+
+### Slicing
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import array
+intArray = array.array('i', range(11))
+print("intArray[4:8] :", intArray[4:8])
+
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+intArray[4:8] : array('i', [4, 5, 6, 7])
 </pre></div>
 
 <hr/>
@@ -658,9 +683,9 @@ b'\x01\x00\x00\x00\x02\x00\x00\x00\x03\x00\x00\x00\x04\x00\x00\x00\x05\x00\x00\x
 
 
 
-#### tobytes()
+#### tolist()
 
-<p> Converts an array object to bytes representation. </p>
+<p> Converts an array object to list representation. </p>
 
 
 {% assign code_block = code_block | plus: 1 %}
@@ -760,7 +785,7 @@ After  : array('i', [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 15, 16, 74])
 
 #### frombytes(s)
 
-<p> Appends elements from byte representation. </p>
+<p> Appends elements from byte representation to end of array. </p>
 
 
 {% assign code_block = code_block | plus: 1 %}

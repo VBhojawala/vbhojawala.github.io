@@ -1,0 +1,8 @@
+---
+title: "frombytes()"
+tagName: frombytes()
+search: exclude
+permalink: tag_frombytes().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

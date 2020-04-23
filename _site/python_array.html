@@ -4,8 +4,8 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="keywords" content=",  ">
+<meta name="description" content="Array element data types, indexing, slicing, iterating, functions and attributes.">
+<meta name="keywords" content="Arrayindexingslicingiteratingtypecodeslen()append()insert()extend()pop()remove()count()reverse()tofile()tobytes()tolist()fromfile()fromlist()frombytes()itemsize,  ">
 <meta name="theme-color" content="#36362C">
 <link rel="icon" sizes="192x192" href="images/favicon.ico">
 <title>Array | Asha Tutorials</title>
@@ -594,7 +594,9 @@
 
 <div class="post-content">
 
-   <!--  -->
+   <!-- 
+    <div class="summary">Array element data types, indexing, slicing, iterating, functions and attributes.</div>
+    -->
 
     
     
@@ -842,12 +844,30 @@ After  : array('i', [7, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 
 <hr />
 
+<h3 id="slicing">Slicing</h3>
+
+<div id="code-block-6" class="code-block">
+<p id="code-header-6" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-6", "code-header-6")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">array</span>
+<span class="n">intArray</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="s">'i'</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"intArray[4:8] :"</span><span class="p">,</span> <span class="n">intArray</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">8</span><span class="p">])</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+intArray[4:8] : array('i', [4, 5, 6, 7])
+</pre></div>
+
+<hr />
+
 <h3 id="iterating">Iterating</h3>
 
 <p> Iterating through the elements of array is same as explained in details in list. </p>
 
-<div id="code-block-6" class="code-block">
-<p id="code-header-6" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-6", "code-header-6")</script>
+<div id="code-block-7" class="code-block">
+<p id="code-header-7" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-7", "code-header-7")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">array</span>
 <span class="n">intArray</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="s">'i'</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">))</span>
@@ -880,8 +900,8 @@ After  : array('i', [7, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 
 <p> Returns number of elements inside given iterable. </p>
 
-<div id="code-block-7" class="code-block">
-<p id="code-header-7" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-7", "code-header-7")</script>
+<div id="code-block-8" class="code-block">
+<p id="code-header-8" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-8", "code-header-8")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">array</span>
 <span class="n">intArray</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="s">'i'</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">))</span>
@@ -901,8 +921,8 @@ Length : 11
 
 <p> Adds an element 'x' to the end of array. </p>
 
-<div id="code-block-8" class="code-block">
-<p id="code-header-8" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-8", "code-header-8")</script>
+<div id="code-block-9" class="code-block">
+<p id="code-header-9" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-9", "code-header-9")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">array</span>
 <span class="n">intArray</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="s">'i'</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">))</span>
@@ -925,8 +945,8 @@ After  : array('i', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
 
 <p> Inserts element ' x ' at index i. </p>
 
-<div id="code-block-9" class="code-block">
-<p id="code-header-9" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-9", "code-header-9")</script>
+<div id="code-block-10" class="code-block">
+<p id="code-header-10" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-10", "code-header-10")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">array</span>
 <span class="n">intArray</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="s">'i'</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">))</span>
@@ -949,8 +969,8 @@ After  : array('i', [0, 1, 2, 3, 4, 7, 5, 6, 7, 8, 9, 10])
 
 <p> Inserts element ' x ' at index i. </p>
 
-<div id="code-block-10" class="code-block">
-<p id="code-header-10" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-10", "code-header-10")</script>
+<div id="code-block-11" class="code-block">
+<p id="code-header-11" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-11", "code-header-11")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">array</span>
 <span class="n">intArray</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="s">'i'</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
@@ -973,8 +993,8 @@ After  : array('i', [0, 1, 2, 3, 4, 5, 6, 5, 7, 8, 5])
 
 <p> If optional argument 'i' is not given  removes and return last element. If ' i ' is given removes and return an element at index i. </p>
 
-<div id="code-block-11" class="code-block">
-<p id="code-header-11" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-11", "code-header-11")</script>
+<div id="code-block-12" class="code-block">
+<p id="code-header-12" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-12", "code-header-12")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">array</span>
 <span class="n">intArray</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="s">'i'</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">))</span>
@@ -1000,8 +1020,8 @@ After  : array('i', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
     </ul> 
 </div>
 
-<div id="code-block-12" class="code-block">
-<p id="code-header-12" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-12", "code-header-12")</script>
+<div id="code-block-13" class="code-block">
+<p id="code-header-13" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-13", "code-header-13")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">array</span>
 <span class="n">intArray</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="s">'i'</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">))</span>
@@ -1025,8 +1045,8 @@ After  : array('i', [0, 1, 2, 3, 4, 6, 7, 8, 9, 10])
 
 <p> Removes the first occurrence of element x from array. </p>
 
-<div id="code-block-13" class="code-block">
-<p id="code-header-13" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-13", "code-header-13")</script>
+<div id="code-block-14" class="code-block">
+<p id="code-header-14" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-14", "code-header-14")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">array</span>
 <span class="n">intArray</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="s">'i'</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">))</span>
@@ -1051,8 +1071,8 @@ After  : array('i', [0, 1, 2, 3, 4, 5, 6, 7, 8, 10])])
     </ul> 
 </div>
 
-<div id="code-block-14" class="code-block">
-<p id="code-header-14" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-14", "code-header-14")</script>
+<div id="code-block-15" class="code-block">
+<p id="code-header-15" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-15", "code-header-15")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">'It</span><span class="se">\'</span><span class="s">s sunny outside.'</span><span class="p">)</span></code></pre></figure>
 
@@ -1072,8 +1092,8 @@ Quoting inside "Double quotes".
     </ul> 
 </div>
 
-<div id="code-block-15" class="code-block">
-<p id="code-header-15" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-15", "code-header-15")</script>
+<div id="code-block-16" class="code-block">
+<p id="code-header-16" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-16", "code-header-16")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">array</span>
 <span class="n">intArray</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="s">'i'</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">))</span>
@@ -1097,8 +1117,8 @@ ValueError: array.remove(x): x not in array</pre></div>
 
 <p> Returns the number of occurrence of given element ' x ' in array. </p>
 
-<div id="code-block-16" class="code-block">
-<p id="code-header-16" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-16", "code-header-16")</script>
+<div id="code-block-17" class="code-block">
+<p id="code-header-17" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-17", "code-header-17")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">array</span>
 <span class="n">intArray</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="s">'i'</span><span class="p">,</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
@@ -1118,8 +1138,8 @@ count(5) : 3
 
 <p> Reverses the order of the items in array. </p>
 
-<div id="code-block-17" class="code-block">
-<p id="code-header-17" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-17", "code-header-17")</script>
+<div id="code-block-18" class="code-block">
+<p id="code-header-18" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-18", "code-header-18")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">array</span>
 <span class="n">intArray</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="s">'i'</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">))</span>
@@ -1142,8 +1162,8 @@ After  : array('i', [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0])
 
 <p> writes all elements to file 'f'. </p>
 
-<div id="code-block-18" class="code-block">
-<p id="code-header-18" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-18", "code-header-18")</script>
+<div id="code-block-19" class="code-block">
+<p id="code-header-19" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-19", "code-header-19")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">array</span>
 <span class="n">intArray</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="s">'i'</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">))</span>
@@ -1160,8 +1180,8 @@ After  : array('i', [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0])
 
 <p> Converts an array object to bytes representation. </p>
 
-<div id="code-block-19" class="code-block">
-<p id="code-header-19" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-19", "code-header-19")</script>
+<div id="code-block-20" class="code-block">
+<p id="code-header-20" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-20", "code-header-20")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">array</span>
 <span class="n">intArray</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="s">'i'</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">))</span>
@@ -1177,12 +1197,12 @@ b'\x01\x00\x00\x00\x02\x00\x00\x00\x03\x00\x00\x00\x04\x00\x00\x00\x05\x00\x00\x
 
 <hr />
 
-<h4 id="tobytes-1">tobytes()</h4>
+<h4 id="tolist">tolist()</h4>
 
-<p> Converts an array object to bytes representation. </p>
+<p> Converts an array object to list representation. </p>
 
-<div id="code-block-20" class="code-block">
-<p id="code-header-20" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-20", "code-header-20")</script>
+<div id="code-block-21" class="code-block">
+<p id="code-header-21" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-21", "code-header-21")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">array</span>
 <span class="n">intArray</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="s">'i'</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">))</span>
@@ -1204,8 +1224,8 @@ list  : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 <p> Reads n elements from the file and append them to the end of the array. </p>
 
-<div id="code-block-21" class="code-block">
-<p id="code-header-21" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-21", "code-header-21")</script>
+<div id="code-block-22" class="code-block">
+<p id="code-header-22" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-22", "code-header-22")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">array</span>
 
@@ -1232,8 +1252,8 @@ After  : array('i', [1, 2, 3, 4, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 
 <p> Appends all elements of given list to the end of the array. </p>
 
-<div id="code-block-22" class="code-block">
-<p id="code-header-22" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-22", "code-header-22")</script>
+<div id="code-block-23" class="code-block">
+<p id="code-header-23" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-23", "code-header-23")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">array</span>
 
@@ -1255,10 +1275,10 @@ After  : array('i', [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 15, 16, 74])
 
 <h4 id="frombytess">frombytes(s)</h4>
 
-<p> Appends elements from byte representation. </p>
+<p> Appends elements from byte representation to end of array. </p>
 
-<div id="code-block-23" class="code-block">
-<p id="code-header-23" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-23", "code-header-23")</script>
+<div id="code-block-24" class="code-block">
+<p id="code-header-24" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-24", "code-header-24")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">array</span>
 
@@ -1287,8 +1307,8 @@ After  : array('i', [1, 2, 3, 4, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 
 <p> Returns length of each item of array in bytes as per local machine's C implementation . </p>
 
-<div id="code-block-24" class="code-block">
-<p id="code-header-24" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-24", "code-header-24")</script>
+<div id="code-block-25" class="code-block">
+<p id="code-header-25" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-25", "code-header-25")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">array</span>
 
@@ -1310,6 +1330,82 @@ itemsize : 4
     <div class="tags">
         
         <p style="display: inline;"><b>Tags: </b></p>
+        
+        
+        
+        <a href="tag_Array.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">Array</a>
+        
+        
+        
+        <a href="tag_indexing.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">indexing</a>
+        
+        
+        
+        <a href="tag_slicing.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">slicing</a>
+        
+        
+        
+        
+        
+        
+        
+        <a href="tag_len().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">len()</a>
+        
+        
+        
+        <a href="tag_append().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">append()</a>
+        
+        
+        
+        <a href="tag_insert().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">insert()</a>
+        
+        
+        
+        <a href="tag_extend().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">extend()</a>
+        
+        
+        
+        <a href="tag_pop().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">pop()</a>
+        
+        
+        
+        <a href="tag_remove().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">remove()</a>
+        
+        
+        
+        <a href="tag_count().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">count()</a>
+        
+        
+        
+        <a href="tag_reverse().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">reverse()</a>
+        
+        
+        
+        <a href="tag_tofile().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">tofile()</a>
+        
+        
+        
+        <a href="tag_tobytes().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">tobytes()</a>
+        
+        
+        
+        <a href="tag_tolist().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">tolist()</a>
+        
+        
+        
+        <a href="tag_fromfile().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">fromfile()</a>
+        
+        
+        
+        <a href="tag_fromlist().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">fromlist()</a>
+        
+        
+        
+        <a href="tag_frombytes().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">frombytes()</a>
+        
+        
+        
+        <a href="tag_itemsize.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">itemsize</a>
         
         
         

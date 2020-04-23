@@ -1,0 +1,8 @@
+---
+title: "fromfile()"
+tagName: fromfile()
+search: exclude
+permalink: tag_fromfile().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

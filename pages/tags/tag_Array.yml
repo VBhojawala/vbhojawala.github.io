@@ -1,0 +1,8 @@
+---
+title: "Array"
+tagName: Array
+search: exclude
+permalink: tag_Array.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}
