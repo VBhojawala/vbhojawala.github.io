@@ -192,6 +192,45 @@ After  : array('i', [7, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 
 <hr/>
 
+### Iterating
+
+<p> Iterating through the elements of array is same as explained in details in list. </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import array
+intArray = array.array('i', range(11))
+
+for i in intArray:
+    print(i)
+
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></div>
+
+<hr/>
+
 
 ### Functions 
 
