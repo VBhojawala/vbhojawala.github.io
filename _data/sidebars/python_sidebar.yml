@@ -115,3 +115,9 @@ entries:
       - title: Array
         url: /python_array.html
         output: web
+      - title: Struct
+        url: /python_struct.html
+        output: web
+      - title: MemoryView
+        url: /python_memoryview.html
+        output: web

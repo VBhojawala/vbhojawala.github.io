@@ -1,0 +1,8 @@
+---
+title: "iter unpack()"
+tagName: iter_unpack()
+search: exclude
+permalink: tag_iter_unpack().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

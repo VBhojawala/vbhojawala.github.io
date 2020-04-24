@@ -9,8 +9,8 @@ prev_section:
 prev_section_title: 
 prev: python_enum.html
 prev_title: Enum
-next: 
-next_title: 
+next: python_struct.html
+next_title: Struct
 next_section: 
 next_section_title: 
 summary: Array element data types, indexing, slicing, iterating, functions and attributes.

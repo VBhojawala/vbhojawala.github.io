@@ -1,0 +1,8 @@
+---
+title: "size"
+tagName: size
+search: exclude
+permalink: tag_size.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

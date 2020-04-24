@@ -379,3 +379,12 @@ allowed-tags:
   - fromlist()
   - frombytes()
   - itemsize
+  - Struct
+  - calcsize()
+  - format
+  - size
+  - pack()
+  - pack_into()
+  - unpack()
+  - unpack_from()
+  - iter_unpack()

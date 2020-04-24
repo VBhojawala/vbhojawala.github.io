@@ -1,0 +1,8 @@
+---
+title: "Struct"
+tagName: Struct
+search: exclude
+permalink: tag_Struct.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

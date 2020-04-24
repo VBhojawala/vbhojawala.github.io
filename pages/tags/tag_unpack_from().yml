@@ -1,0 +1,8 @@
+---
+title: "unpack from()"
+tagName: unpack_from()
+search: exclude
+permalink: tag_unpack_from().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

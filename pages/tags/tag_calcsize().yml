@@ -1,0 +1,8 @@
+---
+title: "calcsize()"
+tagName: calcsize()
+search: exclude
+permalink: tag_calcsize().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}
