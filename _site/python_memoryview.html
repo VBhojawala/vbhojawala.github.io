@@ -642,7 +642,71 @@ $('#toc').on('click', 'a', function() {
 
      -->
 
-   
+   <h2 id="memoryview">MemoryView</h2>
+
+<p> Creating view on internal data of an object which supports buffer protocol without copying. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> bytes and bytearray are the builtin objects which supports buffer protocol. </li>
+        <li> <strong> element : </strong> is the atomic memory unit handled by the originating object obj. </li>
+    </ul> 
+</div>
+
+<h3 id="constructor">Constructor</h3>
+
+<p id="tut-cons"> memoryview(obj) </p>
+
+<p> Creates and returns memory view which references to 'obj'. </p>
+
+<div id="code-block-1" class="code-block">
+<p id="code-header-1" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-1", "code-header-1")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="n">b</span><span class="s">'Hello World!'</span>
+<span class="n">s1View</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'View Object : '</span><span class="p">,</span> <span class="n">s1View</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+View Object :  &lt;memory at 0x7f601c205100&gt;
+</pre></div>
+
+<hr />
+
+<h3 id="indexing-and-slicing">Indexing and Slicing</h3>
+
+<p> memoryview supports indexing and slicing same as explained in string section. </p>
+
+<div id="code-block-2" class="code-block">
+<p id="code-header-2" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-2", "code-header-2")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="n">b</span><span class="s">'Hello World!'</span>
+<span class="n">s1View</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+
+<span class="c1"># Indexing
+</span><span class="k">print</span><span class="p">(</span><span class="s">'s1View[0]  :'</span><span class="p">,</span> <span class="n">s1View</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'s1View[-3] :'</span><span class="p">,</span> <span class="n">s1View</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">])</span>
+
+<span class="c1"># Slicing
+</span><span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">s1View[6:12] :'</span><span class="p">,</span> <span class="n">s1View</span><span class="p">[</span><span class="mi">6</span><span class="p">:</span><span class="mi">12</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'bytes(s1View[6:12]) :'</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">s1View</span><span class="p">[</span><span class="mi">6</span><span class="p">:</span><span class="mi">12</span><span class="p">]))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+s1View[0]  : 72
+s1View[-3] : 108
+
+s1View[6:12] : &lt;memory at 0x7f601c204340&gt;
+bytes(s1View[6:12]) : b'World!'
+</pre></div>
+
+<hr />
+
 
 
     <div class="tags">
