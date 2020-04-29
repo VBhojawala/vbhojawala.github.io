@@ -644,7 +644,7 @@ $('#toc').on('click', 'a', function() {
 
    <h2 id="memoryview">MemoryView</h2>
 
-<p> Creating view on internal data of an object which supports buffer protocol without copying. </p>
+<p> Creating view on internal data of object without copying, object must supports buffer protocol. </p>
 
 <div id="tut-content"> 
     <ul>
@@ -1138,15 +1138,15 @@ nbytes : 20
 <span class="n">s1View</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
 <span class="n">s2View</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">'Bytes is readonly? :'</span><span class="p">,</span> <span class="n">s1View</span><span class="o">.</span><span class="n">readonly</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'ByteArray is readonly? :'</span><span class="p">,</span> <span class="n">s2View</span><span class="o">.</span><span class="n">readonly</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">'Bytes view is readonly? :'</span><span class="p">,</span> <span class="n">s1View</span><span class="o">.</span><span class="n">readonly</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'ByteArray view is readonly? :'</span><span class="p">,</span> <span class="n">s2View</span><span class="o">.</span><span class="n">readonly</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-Bytes is readonly? : True
-ByteArray is readonly? : False
+Bytes view is readonly? : True
+ByteArray view is readonly? : False
 </pre></div>
 
 <hr />
@@ -1201,6 +1201,29 @@ B
 
 <p> Returns integer n representing dimensions of an array. </p>
 
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">ndim</th>
+      <th style="text-align: left">length</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: left">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: left">number of elements in view</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">&gt;1</td>
+      <td style="text-align: left">length is equal to nested list representation of view.</td>
+    </tr>
+  </tbody>
+</table>
+
 <h4 id="shape">shape</h4>
 
 <p> Returns Tuple of integer representing shape of the memory for n dimensional array. </p>
@@ -1223,11 +1246,11 @@ B
 <span class="n">n1D</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="nb">buffer</span><span class="p">)</span>
 
 <span class="n">n2D</span> <span class="o">=</span> <span class="n">n1D</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="s">'i'</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
-<span class="n">n2D</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">"cast('i', shape=[3, 4]) :"</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">n2D</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'ndim       :'</span><span class="p">,</span> <span class="n">n2D</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'length     :'</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">n2D</span><span class="p">))</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'shape      :'</span><span class="p">,</span> <span class="n">n2D</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'strides    :'</span><span class="p">,</span> <span class="n">n2D</span><span class="o">.</span><span class="n">strides</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'contiguous :'</span><span class="p">,</span> <span class="n">n2D</span><span class="o">.</span><span class="n">contiguous</span><span class="p">)</span>
@@ -1238,6 +1261,7 @@ B
 <span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">cast('i', shape=[2, 2, 3]) :"</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">n3D</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'ndim       :'</span><span class="p">,</span> <span class="n">n3D</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'length     :'</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">n3D</span><span class="p">))</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'shape      :'</span><span class="p">,</span> <span class="n">n3D</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'strides    :'</span><span class="p">,</span> <span class="n">n3D</span><span class="o">.</span><span class="n">strides</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'contiguous :'</span><span class="p">,</span> <span class="n">n3D</span><span class="o">.</span><span class="n">contiguous</span><span class="p">)</span></code></pre></figure>
@@ -1249,6 +1273,7 @@ B
 cast('i', shape=[3, 4]) :
 [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]]
 ndim       : 2
+length     : 3
 shape      : (3, 4)
 strides    : (16, 4)
 contiguous : True
@@ -1256,6 +1281,7 @@ contiguous : True
 cast('i', shape=[2, 2, 3]) :
 [[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]]
 ndim       : 3
+length     : 2
 shape      : (2, 2, 3)
 strides    : (24, 12, 4)
 contiguous : True

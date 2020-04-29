@@ -19,7 +19,7 @@ summary:
 
 ## MemoryView
 
-<p> Creating view on internal data of an object which supports buffer protocol without copying. </p>
+<p> Creating view on internal data of object without copying, object must supports buffer protocol. </p>
 
 
 <div id="tut-content"> 
@@ -662,8 +662,8 @@ s2 = bytearray(b'Hello World!')
 s1View = memoryview(s1)
 s2View = memoryview(s2)
 
-print('Bytes is readonly? :', s1View.readonly)
-print('ByteArray is readonly? :', s2View.readonly)
+print('Bytes view is readonly? :', s1View.readonly)
+print('ByteArray view is readonly? :', s2View.readonly)
 
 
 {% endhighlight %}
@@ -671,8 +671,8 @@ print('ByteArray is readonly? :', s2View.readonly)
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-Bytes is readonly? : True
-ByteArray is readonly? : False
+Bytes view is readonly? : True
+ByteArray view is readonly? : False
 </pre></div>
 
 <hr/>
@@ -745,6 +745,11 @@ print(a2View.itemsize)
 
 <p> Returns integer n representing dimensions of an array. </p>
 
+ ndim  | length
+ :---: | :---
+  0    |   1
+ 1    | number of elements in view
+ >1   | length is equal to nested list representation of view.
 
 #### shape
 
@@ -775,11 +780,11 @@ buffer = struct.pack('12i', *range(1, 13))
 n1D = memoryview(buffer)
 
 n2D = n1D.cast('i', shape=[3, 4])
-n2D.tolist()
 
 print("cast('i', shape=[3, 4]) :")
 print(n2D.tolist())
 print('ndim       :', n2D.ndim)
+print('length     :', len(n2D))
 print('shape      :', n2D.shape)
 print('strides    :', n2D.strides)
 print('contiguous :', n2D.contiguous)
@@ -790,6 +795,7 @@ n3D.tolist()
 print("\ncast('i', shape=[2, 2, 3]) :")
 print(n3D.tolist())
 print('ndim       :', n3D.ndim)
+print('length     :', len(n3D))
 print('shape      :', n3D.shape)
 print('strides    :', n3D.strides)
 print('contiguous :', n3D.contiguous)
@@ -803,6 +809,7 @@ print('contiguous :', n3D.contiguous)
 cast('i', shape=[3, 4]) :
 [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]]
 ndim       : 2
+length     : 3
 shape      : (3, 4)
 strides    : (16, 4)
 contiguous : True
@@ -810,6 +817,7 @@ contiguous : True
 cast('i', shape=[2, 2, 3]) :
 [[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]]
 ndim       : 3
+length     : 2
 shape      : (2, 2, 3)
 strides    : (24, 12, 4)
 contiguous : True
