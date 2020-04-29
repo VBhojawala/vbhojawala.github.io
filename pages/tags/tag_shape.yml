@@ -1,0 +1,8 @@
+---
+title: "shape"
+tagName: shape
+search: exclude
+permalink: tag_shape.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

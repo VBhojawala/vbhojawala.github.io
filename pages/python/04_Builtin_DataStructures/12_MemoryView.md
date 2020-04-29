@@ -1,7 +1,7 @@
 ---
 title: MemoryView
 layout: tutorial
-tags: []
+tags: [MemoryView, readonly, tolist(), toreadonly(), tobytes(), hex(), release(), cast(), obj, nbytes, format, itemsize, ndim, shape, strides, contiguous, c_contiguous, f_contiguous]
 sidebar: python_sidebar
 permalink: python_memoryview.html
 folder: python
@@ -13,7 +13,7 @@ next:
 next_title: 
 next_section: 
 next_section_title: 
-summary: 
+summary:  Memoryview attributes and functions.
 ---
 
 
@@ -34,7 +34,7 @@ summary:
 
 <p id="tut-cons"> memoryview(obj) </p>
 
-<p> Creates and returns memory view which references to 'obj'. </p>
+<p> Creates and returns memory view which references to 'obj', which can be collected to a container or iterated over. </p>
 
 
 {% assign code_block = code_block | plus: 1 %}
@@ -49,13 +49,31 @@ s1View = memoryview(s1)
 
 print('View Object : ', s1View)
 
+print(tuple(s1View))
+
+for ch in s1View:
+    print(chr(ch))
+
 
 {% endhighlight %}
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-View Object :  <memory at 0x7f601c205100>
+View Object :  <memory at 0x7f59a21cb640>
+(72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100, 33)
+H
+e
+l
+l
+o
+ 
+W
+o
+r
+l
+d
+!
 </pre></div>
 
 <hr/>

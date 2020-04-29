@@ -1,0 +1,8 @@
+---
+title: "MemoryView"
+tagName: MemoryView
+search: exclude
+permalink: tag_MemoryView.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

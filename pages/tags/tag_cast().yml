@@ -1,0 +1,8 @@
+---
+title: "cast()"
+tagName: cast()
+search: exclude
+permalink: tag_cast().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

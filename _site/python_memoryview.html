@@ -4,8 +4,8 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="keywords" content=",  ">
+<meta name="description" content="Memoryview attributes and functions.">
+<meta name="keywords" content="MemoryViewreadonlytolist()toreadonly()tobytes()hex()release()cast()objnbytesformatitemsizendimshapestridescontiguousc_contiguousf_contiguous,  ">
 <meta name="theme-color" content="#36362C">
 <link rel="icon" sizes="192x192" href="images/favicon.ico">
 <title>MemoryView | Asha Tutorials</title>
@@ -608,7 +608,9 @@
 
 <div class="post-content">
 
-   <!--  -->
+   <!-- 
+    <div class="summary">Memoryview attributes and functions.</div>
+    -->
 
     
     
@@ -657,7 +659,7 @@ $('#toc').on('click', 'a', function() {
 
 <p id="tut-cons"> memoryview(obj) </p>
 
-<p> Creates and returns memory view which references to 'obj'. </p>
+<p> Creates and returns memory view which references to 'obj', which can be collected to a container or iterated over. </p>
 
 <div id="code-block-1" class="code-block">
 <p id="code-header-1" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-1", "code-header-1")</script>
@@ -665,13 +667,31 @@ $('#toc').on('click', 'a', function() {
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="n">b</span><span class="s">'Hello World!'</span>
 <span class="n">s1View</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">'View Object : '</span><span class="p">,</span> <span class="n">s1View</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">'View Object : '</span><span class="p">,</span> <span class="n">s1View</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">s1View</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">s1View</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="n">ch</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-View Object :  &lt;memory at 0x7f601c205100&gt;
+View Object :  &lt;memory at 0x7f59a21cb640&gt;
+(72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100, 33)
+H
+e
+l
+l
+o
+ 
+W
+o
+r
+l
+d
+!
 </pre></div>
 
 <hr />
@@ -1323,6 +1343,76 @@ f_contiguous : True
     <div class="tags">
         
         <p style="display: inline;"><b>Tags: </b></p>
+        
+        
+        
+        <a href="tag_MemoryView.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">MemoryView</a>
+        
+        
+        
+        <a href="tag_readonly.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">readonly</a>
+        
+        
+        
+        <a href="tag_tolist().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">tolist()</a>
+        
+        
+        
+        <a href="tag_toreadonly().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">toreadonly()</a>
+        
+        
+        
+        <a href="tag_tobytes().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">tobytes()</a>
+        
+        
+        
+        <a href="tag_hex().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">hex()</a>
+        
+        
+        
+        <a href="tag_release().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">release()</a>
+        
+        
+        
+        <a href="tag_cast().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">cast()</a>
+        
+        
+        
+        
+        
+        <a href="tag_nbytes.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">nbytes</a>
+        
+        
+        
+        <a href="tag_format.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">format</a>
+        
+        
+        
+        <a href="tag_itemsize.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">itemsize</a>
+        
+        
+        
+        <a href="tag_ndim.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">ndim</a>
+        
+        
+        
+        <a href="tag_shape.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">shape</a>
+        
+        
+        
+        <a href="tag_strides.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">strides</a>
+        
+        
+        
+        <a href="tag_contiguous.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">contiguous</a>
+        
+        
+        
+        <a href="tag_c_contiguous.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">c_contiguous</a>
+        
+        
+        
+        <a href="tag_f_contiguous.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">f_contiguous</a>
         
         
         

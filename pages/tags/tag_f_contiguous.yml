@@ -1,0 +1,8 @@
+---
+title: "f contiguous"
+tagName: f_contiguous
+search: exclude
+permalink: tag_f_contiguous.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

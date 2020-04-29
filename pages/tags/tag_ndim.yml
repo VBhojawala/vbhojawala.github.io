@@ -1,0 +1,8 @@
+---
+title: "ndim"
+tagName: ndim
+search: exclude
+permalink: tag_ndim.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

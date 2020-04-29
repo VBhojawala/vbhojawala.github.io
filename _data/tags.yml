@@ -388,3 +388,15 @@ allowed-tags:
   - unpack()
   - unpack_from()
   - iter_unpack()
+  - MemoryView
+  - readonly
+  - toreadonly()
+  - release()
+  - cast()
+  - nbytes
+  - ndim
+  - shape
+  - strides
+  - contiguous
+  - c_contiguous
+  - f_contiguous

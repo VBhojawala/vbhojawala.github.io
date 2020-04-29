@@ -1,0 +1,8 @@
+---
+title: "toreadonly()"
+tagName: toreadonly()
+search: exclude
+permalink: tag_toreadonly().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}
