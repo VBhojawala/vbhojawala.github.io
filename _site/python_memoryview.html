@@ -707,6 +707,591 @@ bytes(s1View[6:12]) : b'World!'
 
 <hr />
 
+<h3 id="memoryview-of-an-array">memoryview of an array</h3>
+
+<div id="code-block-3" class="code-block">
+<p id="code-header-3" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-3", "code-header-3")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">array</span>
+
+<span class="n">nums</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="s">'i'</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">))</span>
+<span class="n">numsView</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+
+<span class="c1"># Indexing
+</span><span class="k">print</span><span class="p">(</span><span class="s">'numsView[0]  :'</span><span class="p">,</span> <span class="n">numsView</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'numsView[-1] :'</span><span class="p">,</span> <span class="n">numsView</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="c1"># Slicing
+</span><span class="k">print</span><span class="p">(</span><span class="s">'numsView[3:6] :'</span><span class="p">,</span> <span class="n">numsView</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+numsView[0]  : 1
+numsView[-1] : 10
+numsView[3:6] : [4, 5, 6]
+
+</pre></div>
+
+<hr />
+
+<h3 id="modifying-object-through-memoryview">Modifying Object through memoryview</h3>
+
+<h4 id="readonly">readonly</h4>
+
+<p> An attribute of memoryview returns True if view is readonly. </p>
+
+<div id="code-block-4" class="code-block">
+<p id="code-header-4" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-4", "code-header-4")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="n">b</span><span class="s">'Hello World!'</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">b</span><span class="s">'Hello World!'</span><span class="p">)</span>
+
+<span class="n">s1View</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+<span class="n">s2View</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Bytes is readonly? :'</span><span class="p">,</span> <span class="n">s1View</span><span class="o">.</span><span class="n">readonly</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'ByteArray is readonly? :'</span><span class="p">,</span> <span class="n">s2View</span><span class="o">.</span><span class="n">readonly</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Bytes is readonly? : True
+ByteArray is readonly? : False
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> Modifying bytearray using memoryview </li>
+    </ul> 
+</div>
+
+<div id="code-block-5" class="code-block">
+<p id="code-header-5" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-5", "code-header-5")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s2</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">b</span><span class="s">'Hello World!'</span><span class="p">)</span>
+<span class="n">s2View</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Before :'</span><span class="p">,</span> <span class="n">s2</span><span class="p">)</span>
+<span class="n">s2View</span><span class="p">[</span><span class="mi">6</span><span class="p">:</span><span class="mi">12</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="s">'Python'</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'After  :'</span><span class="p">,</span> <span class="n">s2</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Before : bytearray(b'Hello World!')
+After  : bytearray(b'Hello Python')
+</pre></div>
+
+<hr />
+
+<h3 id="functions">Functions</h3>
+
+<h4 id="tolist">tolist()</h4>
+
+<p> Returns data in the buffer as a list of elements. </p>
+
+<div id="code-block-6" class="code-block">
+<p id="code-header-6" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-6", "code-header-6")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">nums</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="s">'i'</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">))</span>
+<span class="n">nView</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">nView</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+</pre></div>
+
+<hr />
+
+<h4 id="toreadonly">toreadonly()</h4>
+
+<p> Returns read-only version of memory view on writable object. </p>
+
+<div id="code-block-7" class="code-block">
+<p id="code-header-7" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-7", "code-header-7")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">b</span><span class="s">'Hello World!'</span><span class="p">)</span>
+<span class="n">s1View</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'s1View :'</span><span class="p">,</span> <span class="n">s1View</span><span class="o">.</span><span class="n">readonly</span><span class="p">)</span>
+
+<span class="n">s1ROView</span> <span class="o">=</span> <span class="n">s1View</span><span class="o">.</span><span class="n">toreadonly</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'s1ROView :'</span><span class="p">,</span> <span class="n">s1ROView</span><span class="o">.</span><span class="n">readonly</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+s1View : False
+s1ROView : True
+</pre></div>
+
+<hr />
+
+<h4 id="tobytesordernone">tobytes(order=None)</h4>
+
+<p> Returns data in the buffer as byte string. It is same as calling bytes(mview)</p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> order : </strong> can be {‘C’, ‘F’, ‘A’}. If given as 'C' or 'F' data of original array is converted in to C or Fortran order. If given 'A' for contiguous view returns exact copy of the physical memory.</li>
+    </ul> 
+</div>
+
+<div id="code-block-8" class="code-block">
+<p id="code-header-8" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-8", "code-header-8")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">array</span>
+
+<span class="n">nums</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="s">'i'</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">))</span>
+<span class="n">nView</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'tobytes() :'</span><span class="p">,</span> <span class="n">nView</span><span class="o">.</span><span class="n">tobytes</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'bytes()   :'</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">nums</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+tobytes() : b'\x01\x00\x00\x00\x02\x00\x00\x00\x03\x00\x00\x00\x04\x00\x00\x00\x05\x00\x00\x00\x06\x00\x00\x00\x07\x00\x00\x00\x08\x00\x00\x00\t\x00\x00\x00\n\x00\x00\x00'
+bytes()   : b'\x01\x00\x00\x00\x02\x00\x00\x00\x03\x00\x00\x00\x04\x00\x00\x00\x05\x00\x00\x00\x06\x00\x00\x00\x07\x00\x00\x00\x08\x00\x00\x00\t\x00\x00\x00\n\x00\x00\x00'
+</pre></div>
+
+<hr />
+
+<h4 id="hexsep-bytes_per_sep">hex([sep[, bytes_per_sep]])</h4>
+
+<p> Return a string object containing two hexadecimal digits for each byte in the buffer. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> sep : </strong> If given defines separator between bytes.</li>
+        <li> <strong> bytes_per_sep : </strong> Number of bytes per separator.</li>
+    </ul> 
+</div>
+
+<div id="code-block-9" class="code-block">
+<p id="code-header-9" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-9", "code-header-9")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="n">b</span><span class="s">'Hello World!'</span>
+<span class="n">s1View</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'hex()       :'</span><span class="p">,</span> <span class="n">s1View</span><span class="o">.</span><span class="nb">hex</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"hex(':')    :"</span><span class="p">,</span> <span class="n">s1View</span><span class="o">.</span><span class="nb">hex</span><span class="p">(</span><span class="s">':'</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"hex(':', 2) :"</span><span class="p">,</span> <span class="n">s1View</span><span class="o">.</span><span class="nb">hex</span><span class="p">(</span><span class="s">':'</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+hex()       : 48656c6c6f20576f726c6421
+hex(':')    : 48:65:6c:6c:6f:20:57:6f:72:6c:64:21
+hex(':', 2) : 4865:6c6c:6f20:576f:726c:6421
+</pre></div>
+
+<hr />
+
+<h4 id="release">release()</h4>
+
+<p> By default releases the underlying buffer exposed by the memoryview object. It can be customized to take special actions such as freeing dangling resources. For example bytearray temporally forbids resizing. </p>
+
+<div id="code-block-10" class="code-block">
+<p id="code-header-10" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-10", "code-header-10")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="n">b</span><span class="s">'Hello World!'</span>
+<span class="n">s1View</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+
+<span class="n">s1View</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'s1 :'</span><span class="p">,</span> <span class="n">s1</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">s1View</span><span class="p">[</span><span class="mi">6</span><span class="p">:</span><span class="mi">12</span><span class="p">])</span>  <span class="c1"># Access to view after release will raise error</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+s1 : b'Hello World!'
+</pre><pre id="tut-output-error" class="result-content">Traceback (most recent call last):
+  File "&lt;&zwj;input&zwj;&gt;", line 7, in &lt;&zwj;module&zwj;&gt;
+ValueError: operation forbidden on released memoryview object</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> memoryview supports context management protocol for release() </li>
+    </ul> 
+</div>
+
+<div id="code-block-11" class="code-block">
+<p id="code-header-11" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-11", "code-header-11")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="n">b</span><span class="s">'Hello World!'</span>
+<span class="k">with</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span> <span class="k">as</span> <span class="n">s1View</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="nb">bytes</span><span class="p">(</span><span class="n">s1View</span><span class="p">[</span><span class="mi">6</span><span class="p">:</span><span class="mi">12</span><span class="p">]))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+b'World!'
+</pre></div>
+
+<hr />
+
+<h4 id="castformat-shape">cast(format[, shape])</h4>
+
+<p> Casts a memoryview to a new format or shape and returns new memoryview but underlying buffer is not copied. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> format :  </strong> destination format can be one of ‘B’ (signed char), ‘b’ (unsigned char) or ‘c’ (char). </li>
+        <li> <strong> shape : </strong> byte_length//new_itemsize . Result view is one dimensional.</li>
+    </ul> 
+</div>
+
+<div id="tut-content"> 
+    <ul>
+        <li> Trying to modify single element without cast will raise error. </li>
+    </ul> 
+</div>
+
+<div id="code-block-12" class="code-block">
+<p id="code-header-12" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-12", "code-header-12")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">b</span><span class="s">'hello World!'</span><span class="p">)</span>
+<span class="n">s1View</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+
+<span class="n">s1View</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="s">'H'</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre id="tut-output-error" class="result-content">Traceback (most recent call last):
+  File "&lt;&zwj;input&zwj;&gt;", line 4, in &lt;&zwj;module&zwj;&gt;
+TypeError: memoryview: invalid type for format 'B'</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> Modifying single element with cast() </li>
+    </ul> 
+</div>
+
+<div id="code-block-13" class="code-block">
+<p id="code-header-13" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-13", "code-header-13")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">b</span><span class="s">'hello World!'</span><span class="p">)</span>
+<span class="n">s1View</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+<span class="n">s1ViewCast</span> <span class="o">=</span> <span class="n">s1View</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="s">'c'</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Before :'</span><span class="p">,</span> <span class="n">s1</span><span class="p">)</span>
+<span class="n">s1ViewCast</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="s">'H'</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'After :'</span><span class="p">,</span> <span class="n">s1</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Before : bytearray(b'hello World!')
+After : bytearray(b'Hello World!')
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Casting 1 dimensional integers to 2 dimensional and 3 dimensional shape </strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-14" class="code-block">
+<p id="code-header-14" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-14", "code-header-14")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">struct</span>
+
+<span class="nb">buffer</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s">'12i'</span><span class="p">,</span> <span class="o">*</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">))</span>
+
+<span class="n">n1D</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="nb">buffer</span><span class="p">)</span>
+
+<span class="n">n2D</span> <span class="o">=</span> <span class="n">n1D</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="s">'i'</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'shape=[3, 4]    :'</span><span class="p">,</span> <span class="n">n2D</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+
+<span class="n">n3D</span> <span class="o">=</span> <span class="n">n1D</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="s">'i'</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'shape=[2, 2, 3] :'</span><span class="p">,</span> <span class="n">n3D</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+
+<span class="n">n3D</span> <span class="o">=</span> <span class="n">n1D</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="s">'i'</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'shape=[2, 3, 2] :'</span><span class="p">,</span> <span class="n">n3D</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+shape=[3, 4]    : [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]]
+shape=[2, 2, 3] : [[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]]
+shape=[2, 3, 2] : [[[1, 2], [3, 4], [5, 6]], [[7, 8], [9, 10], [11, 12]]]
+</pre></div>
+
+<hr />
+
+<h3 id="attributes">Attributes</h3>
+
+<h4 id="obj">obj</h4>
+
+<p> Returns underlying object of memoryview. </p>
+
+<div id="code-block-15" class="code-block">
+<p id="code-header-15" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-15", "code-header-15")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">b</span><span class="s">'hello World!'</span><span class="p">)</span>
+<span class="n">s1View</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">s1View</span><span class="o">.</span><span class="n">obj</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+bytearray(b'hello World!')
+</pre></div>
+
+<hr />
+
+<h4 id="nbytes">nbytes</h4>
+
+<p> Returns amount of space in bytes that an array would use in a contiguous representation. nbytes is not necessarily required to be equal to len() object</p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Case 1 : </strong> where len(obj)  == nbytes </li>
+    </ul> 
+</div>
+
+<div id="code-block-16" class="code-block">
+<p id="code-header-16" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-16", "code-header-16")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">struct</span>
+
+<span class="nb">buffer</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s">'5i'</span><span class="p">,</span> <span class="o">*</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">b1View</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="nb">buffer</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'len :'</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">b1View</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'nbytes :'</span><span class="p">,</span> <span class="n">b1View</span><span class="o">.</span><span class="n">nbytes</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+len : 20
+nbytes : 20
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Case 2 : </strong> where len(obj)  != nbytes </li>
+    </ul> 
+</div>
+
+<div id="code-block-17" class="code-block">
+<p id="code-header-17" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-17", "code-header-17")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">array</span>
+
+<span class="n">array1</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="s">'i'</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">b2View</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">array1</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'len :'</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">b2View</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'nbytes :'</span><span class="p">,</span> <span class="n">b2View</span><span class="o">.</span><span class="n">nbytes</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+len : 5
+nbytes : 20
+</pre></div>
+
+<hr />
+
+<h4 id="readonly-1">readonly</h4>
+
+<p> returns True if view is readonly else returns False if view is writable. </p>
+
+<div id="code-block-18" class="code-block">
+<p id="code-header-18" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-18", "code-header-18")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="n">b</span><span class="s">'Hello World!'</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">b</span><span class="s">'Hello World!'</span><span class="p">)</span>
+
+<span class="n">s1View</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+<span class="n">s2View</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Bytes is readonly? :'</span><span class="p">,</span> <span class="n">s1View</span><span class="o">.</span><span class="n">readonly</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'ByteArray is readonly? :'</span><span class="p">,</span> <span class="n">s2View</span><span class="o">.</span><span class="n">readonly</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Bytes is readonly? : True
+ByteArray is readonly? : False
+</pre></div>
+
+<hr />
+
+<h4 id="format">format</h4>
+
+<p> Returns the format of underlying object. </p>
+
+<div id="code-block-19" class="code-block">
+<p id="code-header-19" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-19", "code-header-19")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">struct</span>
+
+<span class="n">s1</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s">'13si'</span><span class="p">,</span> <span class="n">b</span><span class="s">'Hello World!'</span><span class="p">,</span> <span class="mi">127</span><span class="p">)</span>
+<span class="n">s1View</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">s1View</span><span class="o">.</span><span class="nb">format</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+B
+</pre></div>
+
+<hr />
+
+<h4 id="itemsize">itemsize</h4>
+
+<p> Returns size in bytes of each element of memoryview. </p>
+
+<div id="code-block-20" class="code-block">
+<p id="code-header-20" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-20", "code-header-20")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">array</span>
+
+<span class="n">array2</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="s">'l'</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">a2View</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">array2</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">a2View</span><span class="o">.</span><span class="n">itemsize</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+8
+</pre></div>
+
+<hr />
+
+<h4 id="ndim">ndim</h4>
+
+<p> Returns integer n representing dimensions of an array. </p>
+
+<h4 id="shape">shape</h4>
+
+<p> Returns Tuple of integer representing shape of the memory for n dimensional array. </p>
+
+<h4 id="strides">strides</h4>
+
+<p> Returns a tuple of integers the length of ndim giving the size in bytes to access each for each dimension of the array. </p>
+
+<h4 id="contiguous">contiguous</h4>
+
+<p>  Returns True if memory is contiguous. </p>
+
+<div id="code-block-21" class="code-block">
+<p id="code-header-21" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-21", "code-header-21")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">struct</span>
+
+<span class="nb">buffer</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s">'12i'</span><span class="p">,</span> <span class="o">*</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">))</span>
+
+<span class="n">n1D</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="nb">buffer</span><span class="p">)</span>
+
+<span class="n">n2D</span> <span class="o">=</span> <span class="n">n1D</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="s">'i'</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="n">n2D</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"cast('i', shape=[3, 4]) :"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">n2D</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'ndim       :'</span><span class="p">,</span> <span class="n">n2D</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'shape      :'</span><span class="p">,</span> <span class="n">n2D</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'strides    :'</span><span class="p">,</span> <span class="n">n2D</span><span class="o">.</span><span class="n">strides</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'contiguous :'</span><span class="p">,</span> <span class="n">n2D</span><span class="o">.</span><span class="n">contiguous</span><span class="p">)</span>
+
+<span class="n">n3D</span> <span class="o">=</span> <span class="n">n1D</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="s">'i'</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">n3D</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">cast('i', shape=[2, 2, 3]) :"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">n3D</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'ndim       :'</span><span class="p">,</span> <span class="n">n3D</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'shape      :'</span><span class="p">,</span> <span class="n">n3D</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'strides    :'</span><span class="p">,</span> <span class="n">n3D</span><span class="o">.</span><span class="n">strides</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'contiguous :'</span><span class="p">,</span> <span class="n">n3D</span><span class="o">.</span><span class="n">contiguous</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+cast('i', shape=[3, 4]) :
+[[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]]
+ndim       : 2
+shape      : (3, 4)
+strides    : (16, 4)
+contiguous : True
+
+cast('i', shape=[2, 2, 3]) :
+[[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]]
+ndim       : 3
+shape      : (2, 2, 3)
+strides    : (24, 12, 4)
+contiguous : True
+</pre></div>
+
+<hr />
+
+<h4 id="c_contiguous">c_contiguous</h4>
+
+<p> Returns True if memory is C-contiguous. </p>
+
+<h4 id="f_contiguous">f_contiguous</h4>
+
+<p> Returns True if memory is Fortran contiguous. </p>
+
+<div id="code-block-22" class="code-block">
+<p id="code-header-22" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-22", "code-header-22")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">struct</span>
+
+<span class="nb">buffer</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s">'12i'</span><span class="p">,</span> <span class="o">*</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">))</span>
+<span class="n">n1D</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="nb">buffer</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'c_contiguous :'</span><span class="p">,</span> <span class="n">n1D</span><span class="o">.</span><span class="n">c_contiguous</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'f_contiguous :'</span><span class="p">,</span> <span class="n">n1D</span><span class="o">.</span><span class="n">f_contiguous</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+c_contiguous : True
+f_contiguous : True
+</pre></div>
+
+<hr />
+
 
 
     <div class="tags">
