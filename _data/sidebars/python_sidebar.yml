@@ -121,3 +121,11 @@ entries:
       - title: MemoryView
         url: /python_memoryview.html
         output: web
+
+  - title: Exception Handling
+    output: web
+    folderitems:
+      - title: Exception Handling
+        url: /python_exception_handling.html
+        output: web
+        type: homepage

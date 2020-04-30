@@ -11,8 +11,8 @@ prev: python_struct.html
 prev_title: Struct
 next: 
 next_title: 
-next_section: 
-next_section_title: 
+next_section: python_exception_handling.html
+next_section_title: Exception Handling
 summary:  Memoryview attributes and functions.
 ---
 
