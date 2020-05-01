@@ -18,4 +18,13 @@ summary:  Exceptions in python, try-catch, try-catch finally.
 
 ## Exceptions
 
+
+### Built-in Exceptions
+
+<div id="tut-img-full">
+    <img src="/images/tutorials/python/ExceptionHierarchy.png" class="tut-img" alt="Exception Hierarchy">
+</div>
+
+
+
 {% include links.html %}
