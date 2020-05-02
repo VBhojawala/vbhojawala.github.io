@@ -662,11 +662,660 @@ $('#toc').on('click', 'a', function() {
 
    <h2 id="exceptions">Exceptions</h2>
 
-<h3 id="built-in-exceptions">Built-in Exceptions</h3>
+<h3 id="exception-class-hierarchy">Exception class Hierarchy</h3>
 
 <div id="tut-img-full">
     <img src="/images/tutorials/python/ExceptionHierarchy.png" class="tut-img" alt="Exception Hierarchy" />
 </div>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> BaseException : </strong> is base class of all exception. Exception class inherits BaseException. </li>
+        <li> <strong> SystemExit : </strong> Raised while exiting Python shell using exit(),sys.exit() </li>
+        <li> <strong> KeyboardInterrupt : </strong> Raised when Ctrl + d is pressed. </li>
+        <li> <strong> GeneratorExit : </strong> Raised when a generator or coroutine is closed. </li>
+    </ul> 
+</div>
+
+<h3 id="most-common-exceptions">Most common exceptions</h3>
+
+<h4 id="zerodivisionerror">ZeroDivisionError</h4>
+
+<p> Raised when division with zero is performed. </p>
+
+<div id="code-block-1" class="code-block">
+<p id="code-header-1" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-1", "code-header-1")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre id="tut-output-error" class="result-content">Traceback (most recent call last):
+  File "&lt;&zwj;input&zwj;&gt;", line 1, in &lt;&zwj;module&zwj;&gt;
+ZeroDivisionError: division by zero</pre></div>
+
+<hr />
+
+<h4 id="attributeerror">AttributeError</h4>
+
+<p> Raised when access or modification on attribute which does not exists for an object.</p>
+
+<div id="code-block-2" class="code-block">
+<p id="code-header-2" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-2", "code-header-2")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">a</span> <span class="o">=</span> <span class="mf">121.12</span>
+<span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">'float'</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'It contains a float value!'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre id="tut-output-error" class="result-content">Traceback (most recent call last):
+  File "&lt;&zwj;input&zwj;&gt;", line 2, in &lt;&zwj;module&zwj;&gt;
+AttributeError: type object 'float' has no attribute 'find'</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Correct way</strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-3" class="code-block">
+<p id="code-header-3" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-3", "code-header-3")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">'float'</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'It contains a float value!'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+It contains a float value!
+</pre></div>
+
+<hr />
+
+<h4 id="indexerror">IndexError</h4>
+
+<p> Raised when accessing out of range index. </p>
+
+<div id="code-block-4" class="code-block">
+<p id="code-header-4" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-4", "code-header-4")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">listInt</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">listInt</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre id="tut-output-error" class="result-content">Traceback (most recent call last):
+  File "&lt;&zwj;input&zwj;&gt;", line 2, in &lt;&zwj;module&zwj;&gt;
+IndexError: list index out of range</pre></div>
+
+<hr />
+
+<h4 id="valueerror">ValueError</h4>
+
+<p> Raised when invalid value of correct data type is passed as argument. </p>
+
+<div id="code-block-5" class="code-block">
+<p id="code-header-5" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-5", "code-header-5")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="s">'a'</span><span class="p">,</span> <span class="s">'b'</span><span class="p">,</span> <span class="s">'c'</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">l</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s">'C'</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre id="tut-output-error" class="result-content">Traceback (most recent call last):
+  File "&lt;&zwj;input&zwj;&gt;", line 2, in &lt;&zwj;module&zwj;&gt;
+ValueError: 'C' is not in list</pre></div>
+
+<hr />
+
+<h4 id="keyerror">KeyError</h4>
+
+<p> Raised when given key is not found in dictionary. </p>
+
+<div id="code-block-6" class="code-block">
+<p id="code-header-6" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-6", "code-header-6")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">m</span> <span class="o">=</span> <span class="p">{</span><span class="s">'a'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'b'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'c'</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+<span class="k">print</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="s">'C'</span><span class="p">])</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre id="tut-output-error" class="result-content">Traceback (most recent call last):
+  File "&lt;&zwj;input&zwj;&gt;", line 2, in &lt;&zwj;module&zwj;&gt;
+KeyError: 'C'</pre></div>
+
+<hr />
+
+<h4 id="nameerror">NameError</h4>
+
+<p> Raised when local or global name not found. </p>
+
+<div id="code-block-7" class="code-block">
+<p id="code-header-7" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-7", "code-header-7")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre id="tut-output-error" class="result-content">Traceback (most recent call last):
+  File "&lt;&zwj;input&zwj;&gt;", line 1, in &lt;&zwj;module&zwj;&gt;
+NameError: name 'v' is not defined</pre></div>
+
+<hr />
+
+<h2 id="exception-handling">Exception Handling</h2>
+
+<h3 id="try-except">try-except</h3>
+
+<div id="code-block-8" class="code-block">
+<p id="code-header-8" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-8", "code-header-8")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+<span class="k">except</span> <span class="nb">ZeroDivisionError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Continuing program execution even after exception .......'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+ZeroDivisionError('division by zero')
+Continuing program execution even after exception .......
+</pre></div>
+
+<hr />
+
+<h3 id="scope-of-variables-defined-inside-try-except">Scope of variables defined inside try-except</h3>
+
+<p> Variable defined inside the try-except block is defined in it's enclosing scope. </p>
+
+<div id="code-block-9" class="code-block">
+<p id="code-header-9" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-9", "code-header-9")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">a</span> <span class="o">=</span> <span class="mi">190</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">150</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="mi">160</span>
+<span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'a :'</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'b :'</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">Locals :'</span><span class="p">,</span> <span class="nb">locals</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">Globals :'</span><span class="p">,</span> <span class="nb">globals</span><span class="p">())</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+a : 150
+b : 160
+Locals : {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': &lt;_frozen_importlib_external.SourceFileLoader object at 0x7fd1a75403d0&gt;,...........................
+'sys': &lt;module 'sys' (built-in)&gt;, <div id="tut-highlight">'a': 150, 'b': 160</div>}
+
+Globals : {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': &lt;_frozen_importlib_external.SourceFileLoader object at 0x7fd1a75403d0&gt;,...........................
+'sys': &lt;module 'sys' (built-in)&gt;, <div id="tut-highlight">'a': 150, 'b': 160</div>}
+</pre></div>
+
+<hr />
+
+<h3 id="catching-multiple-exceptions">Catching multiple exceptions</h3>
+
+<div id="code-block-10" class="code-block">
+<p id="code-header-10" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-10", "code-header-10")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">listInt</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">listInt</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="n">listInt</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">listInt</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="k">except</span> <span class="nb">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+<span class="k">except</span> <span class="nb">ZeroDivisionError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">e</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+ZeroDivisionError('division by zero')
+</pre></div>
+
+<hr />
+
+<h3 id="adding-default-exception-to-catch-unexpected-exception">Adding default exception to catch unexpected exception</h3>
+
+<div id="code-block-11" class="code-block">
+<p id="code-header-11" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-11", "code-header-11")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">listInt</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">listInt</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="n">listInt</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">listInt</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="k">except</span> <span class="nb">ZeroDivisionError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Can not divide number with Zero :'</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+<span class="k">except</span> <span class="nb">IndexError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Index in list is out of range :'</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+<span class="k">except</span> <span class="nb">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Enter Valid Numeric Value :'</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+<span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Catches Unexpected Exception not listed in any of above except block.'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Default  Exception Hit! :'</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">e</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Can not divide number with Zero : ZeroDivisionError('division by zero')
+</pre></div>
+
+<hr />
+
+<h3 id="grouping-multiple-exceptions">Grouping Multiple Exceptions</h3>
+
+<div id="code-block-12" class="code-block">
+<p id="code-header-12" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-12", "code-header-12")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">listInt</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">listInt</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="n">listInt</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">listInt</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="k">except</span> <span class="p">(</span><span class="nb">ZeroDivisionError</span><span class="p">,</span> <span class="nb">IndexError</span><span class="p">,</span> <span class="nb">ArithmeticError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Invalid Value Entered for Division operation :'</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+<span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Oops, Something went wrong :'</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">e</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Invalid Value Entered for Division operation : ZeroDivisionError('division by zero')
+</pre></div>
+
+<hr />
+
+<h3 id="try-except-else">try-except-else</h3>
+
+<p> else code block gets executed if no exception is raised inside try. </p>
+
+<div id="code-block-13" class="code-block">
+<p id="code-header-13" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-13", "code-header-13")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">listInt</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">listInt</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">listInt</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">listInt</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="k">except</span> <span class="p">(</span><span class="nb">ZeroDivisionError</span><span class="p">,</span> <span class="nb">IndexError</span><span class="p">,</span> <span class="nb">ArithmeticError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Invalid Value Entered for Division operation'</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+<span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Oops, Something went wrong.'</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Everything went right!'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Everything went right!
+</pre></div>
+
+<hr />
+
+<h3 id="raise">raise</h3>
+
+<p> <strong> raise : </strong> is used for raising the exception. </p>
+
+<div id="code-block-14" class="code-block">
+<p id="code-header-14" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-14", "code-header-14")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">valid_email</span><span class="p">(</span><span class="n">email</span><span class="o">=</span><span class="s">''</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">email</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">'@'</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="nb">ValueError</span><span class="p">(</span><span class="n">f</span><span class="s">'EmailId : "{email}" is invalid!'</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Email Id : "{email}" is valid.'</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">except</span> <span class="nb">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Exception :'</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># returns Tuple
+</span>        <span class="k">return</span> <span class="bp">False</span>
+
+
+<span class="n">email1</span> <span class="o">=</span> <span class="s">'valid.email@mailserver.com'</span>
+<span class="n">valid_email</span><span class="p">(</span><span class="n">email1</span><span class="p">)</span>
+
+<span class="n">email2</span> <span class="o">=</span> <span class="s">'yourmail.info'</span>
+<span class="n">valid_email</span><span class="p">(</span><span class="n">email2</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Email Id : "valid.email@mailserver.com" is valid.
+Exception : EmailId : "yourmail.info" is invalid!
+</pre></div>
+
+<hr />
+
+<h3 id="try-except-finally">try-except-finally</h3>
+
+<p> Code inside finally block  gets executed regardless of exception raised or not, caught by except or not.</p>
+
+<div id="code-block-15" class="code-block">
+<p id="code-header-15" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-15", "code-header-15")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">try</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Opening Connection to Main Server.'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Logging in'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Performing Operations'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Logging Out'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Closing connection'</span><span class="p">)</span>
+
+<span class="k">except</span> <span class="nb">ConnectionError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Connection did not established'</span><span class="p">)</span>
+<span class="k">except</span> <span class="nb">AttributeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Operation Attribute is undefined'</span><span class="p">)</span>
+
+<span class="k">finally</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'if connection is Still open, closing the connection.'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Opening Connection to Main Server.
+Logging in
+Performing Operations
+Logging Out
+Closing connection
+if connection is Still open, closing the connection.
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> try-except-finally with except catching exception.  </li>
+    </ul> 
+</div>
+
+<div id="code-block-16" class="code-block">
+<p id="code-header-16" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-16", "code-header-16")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">try</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Opening Connection to Main Server.'</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="nb">ConnectionError</span><span class="p">(</span><span class="s">'404 Server Error'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Logging in'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Performing Operations'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Logging Out'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Closing connection'</span><span class="p">)</span>
+
+<span class="k">except</span> <span class="nb">ConnectionError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Connection did not established :'</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+<span class="k">except</span> <span class="nb">AttributeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Operation Attribute is undefined'</span><span class="p">)</span>
+
+<span class="k">finally</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'if connection is Still open, closing the connection.'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Opening Connection to Main Server.
+Connection did not established : ConnectionError('404 Server Error')
+<div id="tut-highlight">if connection is Still open, closing the connection.</div>
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> try-except-finally with exception not caught by ant except. </li>
+    </ul> 
+</div>
+
+<div id="code-block-17" class="code-block">
+<p id="code-header-17" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-17", "code-header-17")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">try</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Opening Connection to Main Server.'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Logging in'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Performing Operations'</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="nb">RuntimeError</span><span class="p">(</span><span class="s">'Invalid Operation!'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Logging Out'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Closing connection'</span><span class="p">)</span>
+
+<span class="k">except</span> <span class="nb">ConnectionError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Connection did not established :'</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+<span class="k">except</span> <span class="nb">AttributeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Operation Atrribute is undefined'</span><span class="p">)</span>
+
+<span class="k">finally</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'if connection is Still open, closing the connection.'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Opening Connection to Main Server.
+Logging in
+Performing Operations
+<div id="tut-highlight">if connection is Still open, closing the connection.</div></pre><pre id="tut-output-error" class="result-content">Traceback (most recent call last):
+  File "&lt;&zwj;input&zwj;&gt;", line 5, in &lt;&zwj;module&zwj;&gt;
+RuntimeError: Invalid Operation!</pre></div>
+
+<hr />
+
+<h3 id="finally-with-return">finally with return</h3>
+
+<p> Finally block gets executed even when return is executed inside try. </p>
+
+<div id="code-block-18" class="code-block">
+<p id="code-header-18" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-18", "code-header-18")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">logs</span> <span class="o">=</span> <span class="p">[]</span>
+
+
+<span class="k">def</span> <span class="nf">valid_email</span><span class="p">(</span><span class="n">email</span><span class="o">=</span><span class="s">''</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">email</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">'@'</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="nb">ValueError</span><span class="p">(</span><span class="n">f</span><span class="s">'EmailId : "{email}" is invalid!'</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Email Id : "{email}" is valid.'</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">except</span> <span class="nb">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># returns Tuple
+</span>        <span class="k">return</span> <span class="bp">False</span>
+
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Logging emailId validated'</span><span class="p">,</span> <span class="n">email</span><span class="p">)</span>
+        <span class="n">logs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">email</span><span class="p">)</span>
+
+
+<span class="n">valid_email</span><span class="p">(</span><span class="s">'asdasd@ada.com'</span><span class="p">)</span>
+<span class="n">valid_email</span><span class="p">(</span><span class="s">'abc'</span><span class="p">)</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">Logs :'</span><span class="p">,</span> <span class="n">logs</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Email Id : "asdasd@ada.com" is valid.
+Logging emailId validated asdasd@ada.com
+EmailId : "abc" is invalid!
+Logging emailId validated abc
+
+Logs : ['asdasd@ada.com', 'abc']
+</pre></div>
+
+<hr />
+
+<h3 id="try-finally">try-finally</h3>
+
+<div id="code-block-19" class="code-block">
+<p id="code-header-19" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-19", "code-header-19")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">try</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Opening the connection...'</span><span class="p">)</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'closing the connection...'</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Statements after finally'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Opening the connection...
+closing the connection...
+Statements after finally
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> try-finally with exception. </li>
+    </ul> 
+</div>
+
+<div id="code-block-20" class="code-block">
+<p id="code-header-20" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-20", "code-header-20")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">try</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Opening the connection...'</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="nb">ConnectionError</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'closing the connection...'</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Statements after finally'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Opening the connection...
+closing the connection...
+</pre><pre id="tut-output-error" class="result-content">Traceback (most recent call last):
+  File "&lt;&zwj;input&zwj;&gt;", line 3, in &lt;&zwj;module&zwj;&gt;
+ConnectionError</pre></div>
+
+<hr />
+
+<h3 id="try-except-else-finally">try-except-else-finally</h3>
+
+<p> Order must be 'try-except-else-finally' when all used together. </p>
+
+<div id="code-block-21" class="code-block">
+<p id="code-header-21" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-21", "code-header-21")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">try</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Opening the connection...'</span><span class="p">)</span>
+<span class="k">except</span> <span class="nb">ConnectionError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Running connection diagnostics'</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Connected to server successfully :)'</span><span class="p">)</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'closing the connection...'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Opening the connection...
+Connected to server successfully :)
+closing the connection...
+</pre></div>
+
+<hr />
+
+<h3 id="re-raising-exception">Re-raising exception</h3>
+
+<h4 id="raise-1">raise</h4>
+<p> raise will re-raise the exception caught by except. </p>
+
+<p> Scope of the  exception variable remains inside the matching except statement. It can't be accessed outside of it, but it can be re- raise it to propagate beyond try block. </p>
+
+<div class="bs-callout bs-callout-primary"><strong>Note</strong> : Exception can only be caught only once by except , when re-raising exception it will not be caught by except block below it within same try block.</div>
+
+<div id="code-block-22" class="code-block">
+<p id="code-header-22" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-22", "code-header-22")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">try</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Opening the connection...'</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="nb">ConnectionError</span>
+<span class="k">except</span> <span class="nb">ConnectionError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Running connection diagnostics'</span><span class="p">)</span>
+    <span class="k">raise</span>  <span class="c1"># re-raising the exception
+</span><span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Connected to server successfully :)'</span><span class="p">)</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'closing the connection...'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Opening the connection...
+Running connection diagnostics
+closing the connection...
+</pre><pre id="tut-output-error" class="result-content">Traceback (most recent call last):
+  File "&lt;&zwj;input&zwj;&gt;", line 3, in &lt;&zwj;module&zwj;&gt;
+ConnectionError</pre></div>
+
+<hr />
+
+<h4 id="raise-from">raise-from</h4>
+
+<p> Raising different exception from except block. </p>
+
+<div id="code-block-23" class="code-block">
+<p id="code-header-23" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-23", "code-header-23")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">try</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Opening the connection...'</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="nb">ConnectionError</span>
+<span class="k">except</span> <span class="nb">ConnectionError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Running connection diagnostics'</span><span class="p">)</span>
+    <span class="c1"># After Diagnostic issuing more specific error
+</span>    <span class="k">raise</span> <span class="nb">ConnectionRefusedError</span> <span class="k">from</span> <span class="n">e</span>
+<span class="k">except</span> <span class="nb">BaseException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Generic error {e} occurred'</span><span class="p">)</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'closing the connection...'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Opening the connection...
+Running connection diagnostics
+closing the connection...
+</pre><pre id="tut-output-error" class="result-content">Traceback (most recent call last):
+  File "&lt;&zwj;input&zwj;&gt;", line 3, in &lt;&zwj;module&zwj;&gt;
+ConnectionError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "&lt;&zwj;input&zwj;&gt;", line 7, in &lt;&zwj;module&zwj;&gt;
+ConnectionRefusedError</pre></div>
+
+<hr />
 
 
 

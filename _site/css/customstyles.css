@@ -1582,4 +1582,6 @@ ul.mobile-toggle > a{
     max-width: unset;
     max-height: unset;
     border-radius: 3px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
