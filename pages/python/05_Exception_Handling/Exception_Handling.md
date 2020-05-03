@@ -859,4 +859,83 @@ ConnectionRefusedError</pre></div>
 
 <hr/>
 
+
+
+### Nested try-except
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+try:  # catches the exception thrown by the inner try block
+
+    try:  # contains code block that may produce exception
+        print('Opening the connection...')
+        raise ConnectionError
+    except ConnectionError as e:
+        print('Running connection diagnostics')
+        # After Diagnostic issuing more specific error
+        raise ConnectionRefusedError from e   
+    finally:
+        print('closing the connection...')
+
+except ConnectionRefusedError as e:
+    print('Notify system admin')
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Opening the connection...
+Running connection diagnostics
+closing the connection...
+Notify system admin
+</pre></div>
+
+<hr/>
+
+
+
+### Nested try-except with finally
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+try:
+    try:
+        con = 'Create a new connection'
+        print('Perform network operations..')
+        raise ConnectionError
+    except ConnectionError as e:
+        print('Handling Connection Error')
+        print('close the connection...')
+    finally:
+        print('If connection is still open close the connection')
+
+except OSError:
+    print('handling broader exception OSError which is super class of ConnectionError')
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Perform network operations..
+Handling Connection Error
+close the connection...
+If connection is still open close the connection
+</pre></div>
+
+<hr/>
+
 {% include links.html %}

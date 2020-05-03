@@ -1317,6 +1317,69 @@ ConnectionRefusedError</pre></div>
 
 <hr />
 
+<h3 id="nested-try-except">Nested try-except</h3>
+
+<div id="code-block-24" class="code-block">
+<p id="code-header-24" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-24", "code-header-24")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">try</span><span class="p">:</span>  <span class="c1"># catches the exception thrown by the inner try block
+</span>
+    <span class="k">try</span><span class="p">:</span>  <span class="c1"># contains code block that may produce exception
+</span>        <span class="k">print</span><span class="p">(</span><span class="s">'Opening the connection...'</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="nb">ConnectionError</span>
+    <span class="k">except</span> <span class="nb">ConnectionError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Running connection diagnostics'</span><span class="p">)</span>
+        <span class="c1"># After Diagnostic issuing more specific error
+</span>        <span class="k">raise</span> <span class="nb">ConnectionRefusedError</span> <span class="k">from</span> <span class="n">e</span>   
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'closing the connection...'</span><span class="p">)</span>
+
+<span class="k">except</span> <span class="nb">ConnectionRefusedError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Notify system admin'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Opening the connection...
+Running connection diagnostics
+closing the connection...
+Notify system admin
+</pre></div>
+
+<hr />
+
+<h3 id="nested-try-except-with-finally">Nested try-except with finally</h3>
+
+<div id="code-block-25" class="code-block">
+<p id="code-header-25" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-25", "code-header-25")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">try</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">con</span> <span class="o">=</span> <span class="s">'Create a new connection'</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Perform network operations..'</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="nb">ConnectionError</span>
+    <span class="k">except</span> <span class="nb">ConnectionError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Handling Connection Error'</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'close the connection...'</span><span class="p">)</span>
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'If connection is still open close the connection'</span><span class="p">)</span>
+
+<span class="k">except</span> <span class="nb">OSError</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'handling broader exception OSError which is super class of ConnectionError'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Perform network operations..
+Handling Connection Error
+close the connection...
+If connection is still open close the connection
+</pre></div>
+
+<hr />
+
 
 
     <div class="tags">
