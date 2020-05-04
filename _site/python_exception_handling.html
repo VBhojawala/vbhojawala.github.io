@@ -1380,6 +1380,146 @@ If connection is still open close the connection
 
 <hr />
 
+<h3 id="exception-chain">Exception Chain</h3>
+
+<p> When re-raising new exception or raising new exception from original exception following attributes are set. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> __context__ : </strong> Original exception set to context attribute which is shown in traceback.</li>
+        <li> <strong> __cause__ : </strong> Original exception set to cause attribute when using 'raise newEx from OriginalEx' which is used for debugging purpose. </li>
+        <li> <strong> __suppress_context__ : </strong>  Set to True if exception is chained using 'raise from'.</li>
+    </ul> 
+</div>
+
+<div class="bs-callout bs-callout-primary"><strong>Note</strong> : <strong>context</strong> (Original Exception) is shown in traceback when <strong>cause</strong>  is None and <strong>suppress_context</strong> is false and for chained exceptions (raise from) <strong>cause</strong> is always shown if present. </div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> When raising exception from except or finally , __context__ is set for original exception, __cause__ is set to none and __suppress_context__ is set to false. </li>
+        <li> Re-raising exception with raise shows traceback of chained exception because __cause__ = None and __suppress_context__ = False.</li>
+    </ul> 
+</div>
+
+<div id="code-block-26" class="code-block">
+<p id="code-header-26" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-26", "code-header-26")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">InvalidAccessError</span><span class="p">(</span><span class="nb">Exception</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="nb">AttributeError</span>
+    <span class="k">except</span> <span class="nb">AttributeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">InvalidAccessError</span><span class="p">(</span><span class="s">'Caution! Invalid access detected.'</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">InvalidAccessError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Cause : {e.__cause__!r}'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Context : {e.__context__!r}'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'suppress_context : {e.__suppress_context__}'</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="n">e</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Cause : None
+Context : AttributeError()
+suppress_context : False
+</pre><pre id="tut-output-error" class="result-content">Traceback (most recent call last):
+  File "&lt;&zwj;input&zwj;&gt;", line 6, in &lt;&zwj;module&zwj;&gt;
+AttributeError
+During handling of the above exception, another exception occurred:
+Traceback (most recent call last):
+  File "&lt;&zwj;input&zwj;&gt;", line 13, in &lt;&zwj;module&zwj;&gt;
+  File "&lt;&zwj;input&zwj;", line 8, in &lt;&zwj;module&zwj;&gt;
+InvalidAccessError: Caution! Invalid access detected.</pre></div>
+
+<hr />
+
+<!-- case : 2 -->
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> raise new_exception from original_exception : </strong> also shows shows traceback of chained exception but sets __suppress_context__ to True and  __cause__ to original_error. </li>
+    </ul> 
+</div>
+
+<div id="code-block-27" class="code-block">
+<p id="code-header-27" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-27", "code-header-27")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">InvalidAccessError</span><span class="p">(</span><span class="nb">Exception</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="nb">AttributeError</span>
+    <span class="k">except</span> <span class="nb">AttributeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">InvalidAccessError</span><span class="p">(</span><span class="s">'Caution! Invalid access detected.'</span><span class="p">)</span> <span class="k">from</span> <span class="n">e</span>
+<span class="k">except</span> <span class="n">InvalidAccessError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Cause : {e.__cause__!r}'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Context : {e.__context__!r}'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'suppress_context : {e.__suppress_context__}'</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="n">e</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Cause : AttributeError()
+Context : AttributeError()
+suppress_context : True
+</pre><pre id="tut-output-error" class="result-content">Traceback (most recent call last):
+  File "&lt;&zwj;input&zwj;&gt;", line 7, in &lt;&zwj;module&zwj;&gt;
+AttributeError
+The above exception was the direct cause of the following exception:
+Traceback (most recent call last):
+  File "&lt;&zwj;input&zwj;&gt;", line 14, in &lt;&zwj;module&zwj;&gt;
+  File "&lt;&zwj;input&zwj;&gt;", line 9, in &lt;&zwj;module&zwj;&gt;
+InvalidAccessError: Caution! Invalid access detected.</pre></div>
+
+<hr />
+
+<!-- case :3 -->
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> raise new_exception from None : </strong> sets __suppress_context__ to True and  __cause__ to None and shows traceback of only newly raised exception. </li>
+    </ul> 
+</div>
+
+<div id="code-block-28" class="code-block">
+<p id="code-header-28" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-28", "code-header-28")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">InvalidAccessError</span><span class="p">(</span><span class="nb">Exception</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="nb">AttributeError</span>
+    <span class="k">except</span> <span class="nb">AttributeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">InvalidAccessError</span><span class="p">(</span><span class="s">'Caution! Invalid access detected.'</span><span class="p">)</span> <span class="k">from</span> <span class="bp">None</span>
+<span class="k">except</span> <span class="n">InvalidAccessError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Cause : {e.__cause__!r}'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Context : {e.__context__!r}'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'suppress_context : {e.__suppress_context__}'</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="n">e</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Cause : None
+Context : AttributeError()
+suppress_context : True
+</pre><pre id="tut-output-error" class="result-content">Traceback (most recent call last):
+  File "&lt;&zwj;input&zwj;&gt;", line 14, in &lt;&zwj;module&zwj;&gt;
+  File "&lt;&zwj;input&zwj;&gt;", line 9, in &lt;&zwj;module&zwj;&gt;
+InvalidAccessError: Caution! Invalid access detected.</pre></div>
+
+<hr />
+
 
 
     <div class="tags">

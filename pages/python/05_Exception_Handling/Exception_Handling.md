@@ -938,4 +938,167 @@ If connection is still open close the connection
 
 <hr/>
 
+
+### Exception Chain
+
+<p> When re-raising new exception or raising new exception from original exception following attributes are set. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> __context__ : </strong> Original exception set to context attribute which is shown in traceback.</li>
+        <li> <strong> __cause__ : </strong> Original exception set to cause attribute when using 'raise newEx from OriginalEx' which is used for debugging purpose. </li>
+        <li> <strong> __suppress_context__ : </strong>  Set to True if exception is chained using 'raise from'.</li>
+    </ul> 
+</div>
+
+{% include callout.html content="**Note** : __context__ (Original Exception) is shown in traceback when __cause__  is None and __suppress_context__ is false and for chained exceptions (raise from) __cause__ is always shown if present. " type="primary" %} 
+
+
+<hr/>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> When raising exception from except or finally , __context__ is set for original exception, __cause__ is set to none and __suppress_context__ is set to false. </li>
+        <li> Re-raising exception with raise shows traceback of chained exception because __cause__ = None and __suppress_context__ = False.</li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+class InvalidAccessError(Exception):
+    pass
+
+try:
+    try:
+        raise AttributeError
+    except AttributeError as e:
+        raise InvalidAccessError('Caution! Invalid access detected.')
+except InvalidAccessError as e:
+    print(f'Cause : {e.__cause__!r}')
+    print(f'Context : {e.__context__!r}')
+    print(f'suppress_context : {e.__suppress_context__}')
+    raise e
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Cause : None
+Context : AttributeError()
+suppress_context : False
+</pre><pre id='tut-output-error' class="result-content">Traceback (most recent call last):
+  File "<&zwj;input&zwj;>", line 6, in <&zwj;module&zwj;>
+AttributeError
+During handling of the above exception, another exception occurred:
+Traceback (most recent call last):
+  File "<&zwj;input&zwj;>", line 13, in <&zwj;module&zwj;>
+  File "<&zwj;input&zwj;", line 8, in <&zwj;module&zwj;>
+InvalidAccessError: Caution! Invalid access detected.</pre></div>
+
+<hr/>
+
+
+<!-- case : 2 -->
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> raise new_exception from original_exception : </strong> also shows shows traceback of chained exception but sets __suppress_context__ to True and  __cause__ to original_error. </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+class InvalidAccessError(Exception):
+    pass
+
+
+try:
+    try:
+        raise AttributeError
+    except AttributeError as e:
+        raise InvalidAccessError('Caution! Invalid access detected.') from e
+except InvalidAccessError as e:
+    print(f'Cause : {e.__cause__!r}')
+    print(f'Context : {e.__context__!r}')
+    print(f'suppress_context : {e.__suppress_context__}')
+    raise e
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Cause : AttributeError()
+Context : AttributeError()
+suppress_context : True
+</pre><pre id='tut-output-error' class="result-content">Traceback (most recent call last):
+  File "<&zwj;input&zwj;>", line 7, in <&zwj;module&zwj;>
+AttributeError
+The above exception was the direct cause of the following exception:
+Traceback (most recent call last):
+  File "<&zwj;input&zwj;>", line 14, in <&zwj;module&zwj;>
+  File "<&zwj;input&zwj;>", line 9, in <&zwj;module&zwj;>
+InvalidAccessError: Caution! Invalid access detected.</pre></div>
+
+<hr/>
+
+
+<!-- case :3 -->
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> raise new_exception from None : </strong> sets __suppress_context__ to True and  __cause__ to None and shows traceback of only newly raised exception. </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+class InvalidAccessError(Exception):
+    pass
+
+
+try:
+    try:
+        raise AttributeError
+    except AttributeError as e:
+        raise InvalidAccessError('Caution! Invalid access detected.') from None
+except InvalidAccessError as e:
+    print(f'Cause : {e.__cause__!r}')
+    print(f'Context : {e.__context__!r}')
+    print(f'suppress_context : {e.__suppress_context__}')
+    raise e
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Cause : None
+Context : AttributeError()
+suppress_context : True
+</pre><pre id='tut-output-error' class="result-content">Traceback (most recent call last):
+  File "<&zwj;input&zwj;>", line 14, in <&zwj;module&zwj;>
+  File "<&zwj;input&zwj;>", line 9, in <&zwj;module&zwj;>
+InvalidAccessError: Caution! Invalid access detected.</pre></div>
+
+<hr/>
+
 {% include links.html %}
