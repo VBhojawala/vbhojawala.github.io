@@ -4,8 +4,8 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Exceptions in python, try-catch, try-catch finally.">
-<meta name="keywords" content=",  ">
+<meta name="description" content="Exceptions in python, Exception class hierarchy, try-catch, try-catch finally, nested try, raise, raise from, Chained Exceptions and attribute.">
+<meta name="keywords" content="ExceptionException_class_hierarchytry-excepttry-except-elsetry-finallytry-except-finallytry-except-else-finallynested_tryraiseraise-fromchained_exceptioncontextcausesuppress_context,  ">
 <meta name="theme-color" content="#36362C">
 <link rel="icon" sizes="192x192" href="images/favicon.ico">
 <title>Exception Handling | Asha Tutorials</title>
@@ -595,6 +595,13 @@
           
           
           
+          
+          
+          <li><a title="Traceback" href="python_traceback.html">Traceback</a></li>
+          
+          
+          
+          
       </ul>
    </li>
      
@@ -625,7 +632,7 @@
 <div class="post-content">
 
    <!-- 
-    <div class="summary">Exceptions in python, try-catch, try-catch finally.</div>
+    <div class="summary">Exceptions in python, Exception class hierarchy, try-catch, try-catch finally, nested try, raise, raise from, Chained Exceptions and attribute.</div>
     -->
 
     
@@ -656,11 +663,13 @@ $('#toc').on('click', 'a', function() {
 
     <!-- 
 
-    <a target="_blank" rel="noopener" href="https://github.com/ashatutorials/pages/python/05_Exception_Handling/Exception_Handling.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+    <a target="_blank" rel="noopener" href="https://github.com/ashatutorials/pages/python/05_Exception_Handling/01_Exception_Handling.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
 
      -->
 
    <h2 id="exceptions">Exceptions</h2>
+
+<p> Exception is raised when invalid operation is executed such as accessing index out of range, division by zero etc.If exception is not handled, program will terminate unexpectedly with Error message.</p>
 
 <h3 id="exception-class-hierarchy">Exception class Hierarchy</h3>
 
@@ -674,6 +683,8 @@ $('#toc').on('click', 'a', function() {
         <li> <strong> SystemExit : </strong> Raised while exiting Python shell using exit(),sys.exit() </li>
         <li> <strong> KeyboardInterrupt : </strong> Raised when Ctrl + d is pressed. </li>
         <li> <strong> GeneratorExit : </strong> Raised when a generator or coroutine is closed. </li>
+        <li> Exception raised of Exception class or any of it's subclass can be handled programmatically. Other exception such as SystemExit, GeneratorExit can not be handled programmatically. </li>
+
     </ul> 
 </div>
 
@@ -883,7 +894,7 @@ Globals : {'__name__': '__main__', '__doc__': None, '__package__': None, '__load
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">listInt</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
 <span class="k">try</span><span class="p">:</span>
     <span class="n">listInt</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="n">listInt</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">listInt</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="k">except</span> <span class="nb">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="k">except</span> <span class="nb">IndexError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
 <span class="k">except</span> <span class="nb">ZeroDivisionError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">e</span><span class="p">))</span></code></pre></figure>
@@ -1068,7 +1079,9 @@ if connection is Still open, closing the connection.
     <span class="k">print</span><span class="p">(</span><span class="s">'Operation Attribute is undefined'</span><span class="p">)</span>
 
 <span class="k">finally</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">'if connection is Still open, closing the connection.'</span><span class="p">)</span></code></pre></figure>
+    <span class="k">print</span><span class="p">(</span><span class="s">'if connection is Still open, closing the connection.'</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Statements After Try ..........'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1077,6 +1090,7 @@ if connection is Still open, closing the connection.
 Opening Connection to Main Server.
 Connection did not established : ConnectionError('404 Server Error')
 <div id="tut-highlight">if connection is Still open, closing the connection.</div>
+Statements After Try ..........
 </pre></div>
 
 <hr />
@@ -1101,10 +1115,12 @@ Connection did not established : ConnectionError('404 Server Error')
 <span class="k">except</span> <span class="nb">ConnectionError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="s">'Connection did not established :'</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
 <span class="k">except</span> <span class="nb">AttributeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">'Operation Atrribute is undefined'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Operation Attribute is undefined'</span><span class="p">)</span>
 
 <span class="k">finally</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">'if connection is Still open, closing the connection.'</span><span class="p">)</span></code></pre></figure>
+    <span class="k">print</span><span class="p">(</span><span class="s">'if connection is Still open, closing the connection.'</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Statements After Try ..........'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1528,6 +1544,62 @@ InvalidAccessError: Caution! Invalid access detected.</pre></div>
         
         
         
+        <a href="tag_Exception.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">Exception</a>
+        
+        
+        
+        <a href="tag_Exception_class_hierarchy.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">Exception_class_hierarchy</a>
+        
+        
+        
+        <a href="tag_try-except.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">try-except</a>
+        
+        
+        
+        <a href="tag_try-except-else.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">try-except-else</a>
+        
+        
+        
+        <a href="tag_try-finally.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">try-finally</a>
+        
+        
+        
+        <a href="tag_try-except-finally.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">try-except-finally</a>
+        
+        
+        
+        <a href="tag_try-except-else-finally.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">try-except-else-finally</a>
+        
+        
+        
+        <a href="tag_nested_try.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">nested_try</a>
+        
+        
+        
+        <a href="tag_raise.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">raise</a>
+        
+        
+        
+        <a href="tag_raise-from.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">raise-from</a>
+        
+        
+        
+        <a href="tag_chained_exception.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">chained_exception</a>
+        
+        
+        
+        <a href="tag_context.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">context</a>
+        
+        
+        
+        <a href="tag_cause.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">cause</a>
+        
+        
+        
+        <a href="tag_suppress_context.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">suppress_context</a>
+        
+        
+        
     </div>
 
 <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button">
@@ -1558,6 +1630,13 @@ InvalidAccessError: Caution! Invalid access detected.</pre></div>
 
     
 
+    
+        <a href="python_traceback.html" >
+            <button type="button" class="btn btn-primary "> 
+                 Next <span class="fa fa-arrow-circle-right fa-lg"></span> <br/> 
+                 Traceback
+            </button>
+        </a>
     
 
     

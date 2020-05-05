@@ -1,0 +1,8 @@
+---
+title: "try-except-else"
+tagName: try-except-else
+search: exclude
+permalink: tag_try-except-else.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

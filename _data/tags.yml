@@ -400,3 +400,16 @@ allowed-tags:
   - contiguous
   - c_contiguous
   - f_contiguous
+  - Exception
+  - Exception_class_hierarchy
+  - try-except
+  - try-except-else
+  - try-finally
+  - try-except-finally
+  - try-except-else-finally
+  - nested_try
+  - raise
+  - raise-from
+  - chained_exception
+  - cause
+  - suppress_context

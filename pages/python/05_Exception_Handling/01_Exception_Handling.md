@@ -1,7 +1,7 @@
 ---
 title: Exception Handling
 layout: tutorial
-tags: []
+tags: [Exception, Exception_class_hierarchy,  try-except, try-except-else, try-finally, try-except-finally,try-except-else-finally, nested_try, raise, raise-from, chained_exception, context, cause, suppress_context]
 sidebar: python_sidebar
 permalink: python_exception_handling.html
 folder: python
@@ -9,14 +9,16 @@ prev_section: python_list.html
 prev_section_title: Built-in DataStructures
 prev: 
 prev_title: 
-next: 
-next_title: 
+next: python_traceback.html
+next_title: Traceback
 next_section: 
 next_section_title: 
-summary:  Exceptions in python, try-catch, try-catch finally.
+summary:  Exceptions in python, Exception class hierarchy, try-catch, try-catch finally, nested try, raise, raise from, Chained Exceptions and attribute.
 ---
 
 ## Exceptions
+
+<p> Exception is raised when invalid operation is executed such as accessing index out of range, division by zero etc.If exception is not handled, program will terminate unexpectedly with Error message.</p>
 
 ### Exception class Hierarchy
 
@@ -31,6 +33,8 @@ summary:  Exceptions in python, try-catch, try-catch finally.
         <li> <strong> SystemExit : </strong> Raised while exiting Python shell using exit(),sys.exit() </li>
         <li> <strong> KeyboardInterrupt : </strong> Raised when Ctrl + d is pressed. </li>
         <li> <strong> GeneratorExit : </strong> Raised when a generator or coroutine is closed. </li>
+        <li> Exception raised of Exception class or any of it's subclass can be handled programmatically. Other exception such as SystemExit, GeneratorExit can not be handled programmatically. </li>
+
     </ul> 
 </div>
 
@@ -321,11 +325,10 @@ Globals : {'__name__': '__main__', '__doc__': None, '__package__': None, '__load
 listInt = [12, 0, 12]
 try:
     listInt[4] = listInt[0] / listInt[1]
-except ValueError as e:
+except IndexError as e:
     print(repr(e))
 except ZeroDivisionError as e:
     print(repr(e))
-
 
 {% endhighlight %}
 </div>
@@ -552,6 +555,8 @@ except AttributeError as e:
 finally:
     print('if connection is Still open, closing the connection.')
 
+print('Statements After Try ..........')
+
 
 
 
@@ -563,6 +568,7 @@ finally:
 Opening Connection to Main Server.
 Connection did not established : ConnectionError('404 Server Error')
 <div id="tut-highlight">if connection is Still open, closing the connection.</div>
+Statements After Try ..........
 </pre></div>
 
 <hr/>
@@ -593,10 +599,12 @@ try:
 except ConnectionError as e:
     print('Connection did not established :', repr(e))
 except AttributeError as e:
-    print('Operation Atrribute is undefined')
+    print('Operation Attribute is undefined')
 
 finally:
     print('if connection is Still open, closing the connection.')
+
+print('Statements After Try ..........')
 
 
 {% endhighlight %}

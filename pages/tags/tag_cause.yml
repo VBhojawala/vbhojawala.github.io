@@ -1,0 +1,8 @@
+---
+title: "cause"
+tagName: cause
+search: exclude
+permalink: tag_cause.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

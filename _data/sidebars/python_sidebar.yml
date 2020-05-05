@@ -129,3 +129,7 @@ entries:
         url: /python_exception_handling.html
         output: web
         type: homepage
+      - title: Traceback
+        url: /python_traceback.html
+        output: web
+        type: homepage
