@@ -4,8 +4,8 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="keywords" content=",  ">
+<meta name="description" content="Exception object's structure and traceback module functions.">
+<meta name="keywords" content="tracebacksystb_frameexc_info()exc_typeexc_valueexc_tracebackprint_tb()print_exception()format_exception()format_exception_only()print_exc()format_exc()print_last()print_stack()extract_tb()format_list()format_tb()extract_stack()format_stack()clear_frames(),  ">
 <meta name="theme-color" content="#36362C">
 <link rel="icon" sizes="192x192" href="images/favicon.ico">
 <title>Traceback | Asha Tutorials</title>
@@ -602,6 +602,13 @@
           
           
           
+          
+          
+          <li><a title="Warnings" href="python_warnings.html">Warnings</a></li>
+          
+          
+          
+          
       </ul>
    </li>
      
@@ -631,7 +638,9 @@
 
 <div class="post-content">
 
-   <!--  -->
+   <!-- 
+    <div class="summary">Exception object's structure and traceback module functions.</div>
+    -->
 
     
     
@@ -667,7 +676,13 @@ $('#toc').on('click', 'a', function() {
 
    <h2 id="traceback">Traceback</h2>
 
-<p> traceback module provides functions to extract, format and print traces of Python programs.Using traceback module traceback from exception can be printed same as printed by Python interpreter. </p>
+<p> Module provides functions to extract, format and print stack traces of Exception. Using traceback module traceback from exception can be printed same as printed by Python interpreter. </p>
+
+<h3 id="exception-objects-structure">Exception object’s structure</h3>
+
+<div id="tut-img">
+    <img src="/images/tutorials/python/ExceptionObjectStructure.gif" class="tut-img" alt="Exception object's structure" />
+</div>
 
 <div id="tut-content"> 
     <ul>
@@ -675,6 +690,42 @@ $('#toc').on('click', 'a', function() {
         <li> Python stores traceback object  in 'sys.last_traceback' variable which is returned as third item from sys.exec_info().</li>
     </ul> 
 </div>
+
+<div id="code-block-1" class="code-block">
+<p id="code-header-1" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-1", "code-header-1")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
+<span class="k">except</span> <span class="nb">ZeroDivisionError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Exception : {e.__class__}'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Value : {e.args[0]}'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Traceback : {e.__traceback__}  type : {type(e.__traceback__)}'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Frame     : {e.__traceback__.tb_frame}  type : {type(e.__traceback__.tb_frame)}'</span><span class="p">)</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">Using sys.exc_info() to extract info about last exception :'</span><span class="p">)</span>
+    <span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_value</span><span class="p">,</span> <span class="n">exc_traceback</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'exc_type : {exc_type}    type : {type(exc_type)}'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'exc_value : {exc_value}    type : {type(exc_value)}'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'exc_traceback : {exc_traceback}    type : {type(exc_traceback)}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Exception : &lt;class 'ZeroDivisionError'&gt;
+Value : division by zero
+Traceback : &lt;traceback object at 0x7fb19b1f05c0&gt;  type : &lt;class 'traceback'&gt;
+Frame     : &lt;frame at 0x7fb18c022a50, file '&lt;input&gt;', line 9, code &lt;module&gt;&gt;  type : &lt;class 'frame'&gt;
+
+Using sys.exc_info() to extract info about last exception :
+exc_type : &lt;class 'ZeroDivisionError'&gt;    type : &lt;class 'type'&gt;
+exc_value : division by zero    type : &lt;class 'ZeroDivisionError'&gt;
+exc_traceback : &lt;traceback object at 0x7fb19b1f05c0&gt;    type : &lt;class 'traceback'&gt;
+</pre></div>
+
+<hr />
 
 <h3 id="functions">Functions</h3>
 
@@ -689,8 +740,8 @@ $('#toc').on('click', 'a', function() {
     </ul> 
 </div>
 
-<div id="code-block-1" class="code-block">
-<p id="code-header-1" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-1", "code-header-1")</script>
+<div id="code-block-2" class="code-block">
+<p id="code-header-2" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-2", "code-header-2")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">traceback</span>
 <span class="kn">import</span> <span class="nn">sys</span>
@@ -721,8 +772,8 @@ Statements after Try ........
     </ul> 
 </div>
 
-<div id="code-block-2" class="code-block">
-<p id="code-header-2" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-2", "code-header-2")</script>
+<div id="code-block-3" class="code-block">
+<p id="code-header-3" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-3", "code-header-3")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">traceback</span>
 <span class="kn">import</span> <span class="nn">sys</span>
@@ -768,8 +819,8 @@ exc_type : &lt;class 'ZeroDivisionError'&gt;  |  exc_value : division by zero  |
     </ol>
 </div>
 
-<div id="code-block-3" class="code-block">
-<p id="code-header-3" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-3", "code-header-3")</script>
+<div id="code-block-4" class="code-block">
+<p id="code-header-4" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-4", "code-header-4")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">traceback</span>
 <span class="kn">import</span> <span class="nn">sys</span>
@@ -798,8 +849,8 @@ ZeroDivisionError: division by zero
     </ul> 
 </div>
 
-<div id="code-block-4" class="code-block">
-<p id="code-header-4" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-4", "code-header-4")</script>
+<div id="code-block-5" class="code-block">
+<p id="code-header-5" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-5", "code-header-5")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">traceback</span>
 <span class="kn">import</span> <span class="nn">sys</span>
@@ -826,13 +877,12 @@ SyntaxError: Missing parentheses in call to 'print'. Did you mean print("Hello W
 <div id="tut-content"> 
     <ul>
         <li> <strong> limit : </strong>  By default None prints all stack trace entries. If given positive number prints entries from starting from caller's frame up to given 'limit'. If given negative number prints last abs(limit) entries.</li>
-        <li> <strong> file : </strong> By default None redirects stack trace to std.err. If given file-like object it prints output to given file. </li>
         <li> <strong> chain : </strong> By default True prints __cause__ or __context__ attributes of the chained exceptions. </li>
     </ul> 
 </div>
 
-<div id="code-block-5" class="code-block">
-<p id="code-header-5" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-5", "code-header-5")</script>
+<div id="code-block-6" class="code-block">
+<p id="code-header-6" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-6", "code-header-6")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">traceback</span>
 <span class="kn">import</span> <span class="nn">sys</span>
@@ -855,8 +905,8 @@ SyntaxError: Missing parentheses in call to 'print'. Did you mean print("Hello W
 
 <p> Returns list of formatted string containing exception type and value from traceback. Normally returned list contains only single string, but for syntax error it contains several lines that displays detailed information about location in code where the syntax error occurred. </p>
 
-<div id="code-block-6" class="code-block">
-<p id="code-header-6" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-6", "code-header-6")</script>
+<div id="code-block-7" class="code-block">
+<p id="code-header-7" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-7", "code-header-7")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">traceback</span>
 <span class="kn">import</span> <span class="nn">sys</span>
@@ -888,8 +938,8 @@ SyntaxError: Missing parentheses in call to 'print'. Did you mean print("Hello W
 
 <p> It is a shorthand for print_exception(*sys.exc_info(), limit, file, chain). </p>
 
-<div id="code-block-7" class="code-block">
-<p id="code-header-7" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-7", "code-header-7")</script>
+<div id="code-block-8" class="code-block">
+<p id="code-header-8" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-8", "code-header-8")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">traceback</span>
 <span class="kn">import</span> <span class="nn">sys</span>
@@ -911,6 +961,39 @@ ZeroDivisionError: division by zero
 
 <hr />
 
+<h4 id="format_exclimitnone-chaintrue">format_exc(limit=None, chain=True)</h4>
+
+<p> Same as print_exc() but returns a string instead of printing to file. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> limit : </strong>  By default None prints all stack trace entries. If given positive number prints entries from starting from caller's frame up to given 'limit'. If given negative number prints last abs(limit) entries.</li>
+        <li> <strong> chain : </strong> By default True prints __cause__ or __context__ attributes of the chained exceptions. </li>
+    </ul> 
+</div>
+
+<div id="code-block-9" class="code-block">
+<p id="code-header-9" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-9", "code-header-9")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">traceback</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
+<span class="k">except</span> <span class="nb">ZeroDivisionError</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">format_exc</span><span class="p">())</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Traceback (most recent call last):
+  File "/home/asha/PycharmProjects/pythonEx/05_ExceptionHandling/progs/FormatExec.py", line 4, in &lt;module&gt;
+    1/0
+ZeroDivisionError: division by zero
+</pre></div>
+
+<hr />
+
 <h4 id="print_lastlimitnone-filenone-chaintrue">print_last(limit=None, file=None, chain=True)</h4>
 
 <div id="tut-content"> 
@@ -925,8 +1008,8 @@ ZeroDivisionError: division by zero
 
 <div class="bs-callout bs-callout-primary"><strong>Note</strong> : It only works after exception is reached to interactive prompt.</div>
 
-<div id="code-block-8" class="code-block">
-<p id="code-header-8" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-8", "code-header-8")</script>
+<div id="code-block-10" class="code-block">
+<p id="code-header-10" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-10", "code-header-10")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">traceback</span>
 <span class="kn">import</span> <span class="nn">sys</span>
@@ -956,14 +1039,14 @@ ZeroDivisionError: division by zero
 
 <div id="tut-content"> 
     <ul>
-        <li> <strong> limit : </strong> By default None prints all stack trace entries. If given positive number prints entries from starting from caller's frame up to given 'limit'.If given negative number prints last abs(limit) entries. </li>
         <li> <strong> f : </strong> Specifies an alternate stack frame to start. </li>
+        <li> <strong> limit : </strong> By default None prints all stack trace entries. If given positive number prints entries from starting from caller's frame up to given 'limit'.If given negative number prints last abs(limit) entries. </li>
         <li> <strong> file : </strong> By default None redirects stack trace to std.err. If given file-like object it prints output to give file. </li>
     </ul> 
 </div>
 
-<div id="code-block-9" class="code-block">
-<p id="code-header-9" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-9", "code-header-9")</script>
+<div id="code-block-11" class="code-block">
+<p id="code-header-11" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-11", "code-header-11")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">traceback</span>
 <span class="kn">import</span> <span class="nn">sys</span>
@@ -1000,8 +1083,8 @@ ZeroDivisionError: division by zero
     </ul> 
 </div>
 
-<div id="code-block-10" class="code-block">
-<p id="code-header-10" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-10", "code-header-10")</script>
+<div id="code-block-12" class="code-block">
+<p id="code-header-12" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-12", "code-header-12")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">traceback</span>
 <span class="kn">import</span> <span class="nn">sys</span>
@@ -1047,8 +1130,8 @@ func1() Started...
 
 <p> Returns list of string from list of Tuples or FrameSummary objects returned from extract_tb(). </p>
 
-<div id="code-block-11" class="code-block">
-<p id="code-header-11" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-11", "code-header-11")</script>
+<div id="code-block-13" class="code-block">
+<p id="code-header-13" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-13", "code-header-13")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">traceback</span>
 <span class="kn">import</span> <span class="nn">sys</span>
@@ -1090,8 +1173,14 @@ func1() Started...
 
 <p>  A shorthand for format_list(extract_tb(tb, limit)). </p>
 
-<div id="code-block-12" class="code-block">
-<p id="code-header-12" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-12", "code-header-12")</script>
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> limit : </strong>  By default None prints all stack trace entries. If given positive number prints entries from starting from caller's frame up to given 'limit'. If given negative number prints last abs(limit) entries.</li>
+    </ul> 
+</div>
+
+<div id="code-block-14" class="code-block">
+<p id="code-header-14" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-14", "code-header-14")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">traceback</span>
 <span class="kn">import</span> <span class="nn">sys</span>
@@ -1129,11 +1218,199 @@ func1() Started...
 
 <hr />
 
+<h4 id="extract_stackfnone-limitnone">extract_stack(f=None, limit=None)</h4>
+
+<p> Extract the raw traceback from the current stack frame and returns values as same format as extract_tb(). </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> f : </strong> Specifies an alternate stack frame to start. </li>
+        <li> <strong> limit : </strong> By default None prints all stack trace entries. If given positive number prints entries from starting from caller's frame up to given 'limit'.If given negative number prints last abs(limit) entries. </li>
+    </ul> 
+</div>
+
+<div id="code-block-15" class="code-block">
+<p id="code-header-15" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-15", "code-header-15")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">traceback</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+
+<span class="k">class</span> <span class="nc">InvalidAccessError</span><span class="p">(</span><span class="nb">Exception</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+
+<span class="k">def</span> <span class="nf">func1</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'func1() Started...'</span><span class="p">)</span>
+    <span class="n">func2</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'func1() Ended...'</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">func2</span><span class="p">():</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="nb">AttributeError</span>
+    <span class="k">except</span> <span class="nb">AttributeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">InvalidAccessError</span><span class="p">(</span><span class="s">'Caution! Invalid access detected.'</span><span class="p">)</span> <span class="k">from</span> <span class="bp">None</span>
+
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">func1</span><span class="p">()</span>
+<span class="k">except</span> <span class="n">InvalidAccessError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">extract_stack</span><span class="p">()))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+func1() Started...
+[&lt;FrameSummary file /home/asha/PycharmProjects/pythonEx/05_ExceptionHandling/progs/ExtractStack.py, line 25 in &lt;module&gt;&gt;]
+
+</pre></div>
+
+<hr />
+
+<h4 id="format_stackfnone-limitnone">format_stack(f=None, limit=None)</h4>
+
+<p> A shorthand for format_list(extract_stack(f, limit)). </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> f : </strong> Specifies an alternate stack frame to start. </li>
+        <li> <strong> limit : </strong> By default None prints all stack trace entries. If given positive number prints entries from starting from caller's frame up to given 'limit'.If given negative number prints last abs(limit) entries. </li>
+    </ul> 
+</div>
+
+<div id="code-block-16" class="code-block">
+<p id="code-header-16" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-16", "code-header-16")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">traceback</span>
+
+
+<span class="k">class</span> <span class="nc">InvalidAccessError</span><span class="p">(</span><span class="nb">Exception</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+
+<span class="k">def</span> <span class="nf">func1</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'func1() Started...'</span><span class="p">)</span>
+    <span class="n">func2</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'func1() Ended...'</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">func2</span><span class="p">():</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="nb">AttributeError</span>
+    <span class="k">except</span> <span class="nb">AttributeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">InvalidAccessError</span><span class="p">(</span><span class="s">'Caution! Invalid access detected.'</span><span class="p">)</span> <span class="k">from</span> <span class="bp">None</span>
+
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">func1</span><span class="p">()</span>
+<span class="k">except</span> <span class="n">InvalidAccessError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">format_stack</span><span class="p">())</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+func1() Started...
+['  File "/home/asha/PycharmProjects/pythonEx/05_ExceptionHandling/progs/FormatStack.py", line 24, in &lt;module&gt;\n    print(traceback.format_stack())\n']
+</pre></div>
+
+<hr />
+
+<h4 id="clear_framestb">clear_frames(tb)</h4>
+
+<p> Clears the local variables of all the stack frames in a traceback tb by calling the clear() method of each frame object. </p>
+
 
 
     <div class="tags">
         
         <p style="display: inline;"><b>Tags: </b></p>
+        
+        
+        
+        <a href="tag_traceback.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">traceback</a>
+        
+        
+        
+        <a href="tag_sys.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">sys</a>
+        
+        
+        
+        <a href="tag_tb_frame.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">tb_frame</a>
+        
+        
+        
+        <a href="tag_exc_info().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">exc_info()</a>
+        
+        
+        
+        <a href="tag_exc_type.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">exc_type</a>
+        
+        
+        
+        <a href="tag_exc_value.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">exc_value</a>
+        
+        
+        
+        <a href="tag_exc_traceback.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">exc_traceback</a>
+        
+        
+        
+        <a href="tag_print_tb().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">print_tb()</a>
+        
+        
+        
+        <a href="tag_print_exception().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">print_exception()</a>
+        
+        
+        
+        <a href="tag_format_exception().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">format_exception()</a>
+        
+        
+        
+        <a href="tag_format_exception_only().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">format_exception_only()</a>
+        
+        
+        
+        <a href="tag_print_exc().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">print_exc()</a>
+        
+        
+        
+        <a href="tag_format_exc().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">format_exc()</a>
+        
+        
+        
+        <a href="tag_print_last().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">print_last()</a>
+        
+        
+        
+        <a href="tag_print_stack().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">print_stack()</a>
+        
+        
+        
+        <a href="tag_extract_tb().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">extract_tb()</a>
+        
+        
+        
+        <a href="tag_format_list().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">format_list()</a>
+        
+        
+        
+        <a href="tag_format_tb().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">format_tb()</a>
+        
+        
+        
+        <a href="tag_extract_stack().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">extract_stack()</a>
+        
+        
+        
+        <a href="tag_format_stack().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">format_stack()</a>
+        
+        
+        
+        <a href="tag_clear_frames().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">clear_frames()</a>
         
         
         
@@ -1167,6 +1444,13 @@ func1() Started...
         </a>
     
 
+    
+        <a href="python_warnings.html" >
+            <button type="button" class="btn btn-primary "> 
+                 Next <span class="fa fa-arrow-circle-right fa-lg"></span> <br/> 
+                 Warnings
+            </button>
+        </a>
     
 
     

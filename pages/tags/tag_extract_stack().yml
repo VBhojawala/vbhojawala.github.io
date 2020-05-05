@@ -1,0 +1,8 @@
+---
+title: "extract stack()"
+tagName: extract_stack()
+search: exclude
+permalink: tag_extract_stack().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

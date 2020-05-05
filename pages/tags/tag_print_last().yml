@@ -1,0 +1,8 @@
+---
+title: "print last()"
+tagName: print_last()
+search: exclude
+permalink: tag_print_last().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

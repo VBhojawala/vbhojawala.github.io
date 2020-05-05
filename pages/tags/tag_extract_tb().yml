@@ -1,0 +1,8 @@
+---
+title: "extract tb()"
+tagName: extract_tb()
+search: exclude
+permalink: tag_extract_tb().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

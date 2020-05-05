@@ -1,7 +1,7 @@
 ---
 title: Traceback
 layout: tutorial
-tags: []
+tags: [traceback, sys,  tb_frame, exc_info(), exc_type, exc_value, exc_traceback, print_tb(), print_exception(), format_exception(), format_exception_only(), print_exc(), format_exc(), print_last(), print_stack(), extract_tb(), format_list(), format_tb(), extract_stack(), format_stack(), clear_frames()]
 sidebar: python_sidebar
 permalink: python_traceback.html
 folder: python
@@ -9,16 +9,24 @@ prev_section:
 prev_section_title: 
 prev: python_exception_handling.html
 prev_title: Exception Handling
-next: 
-next_title: 
+next: python_warnings.html
+next_title: Warnings
 next_section: 
 next_section_title: 
-summary: 
+summary: Exception object's structure and traceback module functions.
 ---
 
 ## Traceback
 
-<p> traceback module provides functions to extract, format and print traces of Python programs.Using traceback module traceback from exception can be printed same as printed by Python interpreter. </p>
+<p> Module provides functions to extract, format and print stack traces of Exception. Using traceback module traceback from exception can be printed same as printed by Python interpreter. </p>
+
+
+### Exception object's structure
+
+<div id="tut-img">
+    <img src="/images/tutorials/python/ExceptionObjectStructure.gif" class="tut-img" alt="Exception object's structure">
+</div>
+
 
 <div id="tut-content"> 
     <ul>
@@ -26,6 +34,49 @@ summary:
         <li> Python stores traceback object  in 'sys.last_traceback' variable which is returned as third item from sys.exec_info().</li>
     </ul> 
 </div>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import sys
+
+try:
+    1/0
+except ZeroDivisionError as e:
+    print(f'Exception : {e.__class__}')
+    print(f'Value : {e.args[0]}')
+    print(f'Traceback : {e.__traceback__}  type : {type(e.__traceback__)}')
+    print(f'Frame     : {e.__traceback__.tb_frame}  type : {type(e.__traceback__.tb_frame)}')
+
+    print('\nUsing sys.exc_info() to extract info about last exception :')
+    exc_type, exc_value, exc_traceback = sys.exc_info()
+    print(f'exc_type : {exc_type}    type : {type(exc_type)}')
+    print(f'exc_value : {exc_value}    type : {type(exc_value)}')
+    print(f'exc_traceback : {exc_traceback}    type : {type(exc_traceback)}')
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Exception : &lt;class 'ZeroDivisionError'>
+Value : division by zero
+Traceback : &lt;traceback object at 0x7fb19b1f05c0>  type : &lt;class 'traceback'>
+Frame     : &lt;frame at 0x7fb18c022a50, file '&lt;input>', line 9, code &lt;module>>  type : &lt;class 'frame'>
+
+Using sys.exc_info() to extract info about last exception :
+exc_type : &lt;class 'ZeroDivisionError'>    type : &lt;class 'type'>
+exc_value : division by zero    type : &lt;class 'ZeroDivisionError'>
+exc_traceback : &lt;traceback object at 0x7fb19b1f05c0>    type : &lt;class 'traceback'>
+</pre></div>
+
+<hr/>
 
 
 ### Functions 
@@ -213,7 +264,6 @@ SyntaxError: Missing parentheses in call to 'print'. Did you mean print("Hello W
 <div id="tut-content"> 
     <ul>
         <li> <strong> limit : </strong>  By default None prints all stack trace entries. If given positive number prints entries from starting from caller's frame up to given 'limit'. If given negative number prints last abs(limit) entries.</li>
-        <li> <strong> file : </strong> By default None redirects stack trace to std.err. If given file-like object it prints output to given file. </li>
         <li> <strong> chain : </strong> By default True prints __cause__ or __context__ attributes of the chained exceptions. </li>
     </ul> 
 </div>
@@ -323,6 +373,47 @@ ZeroDivisionError: division by zero
 <hr/>
 
 
+#### format_exc(limit=None, chain=True)
+
+<p> Same as print_exc() but returns a string instead of printing to file. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> limit : </strong>  By default None prints all stack trace entries. If given positive number prints entries from starting from caller's frame up to given 'limit'. If given negative number prints last abs(limit) entries.</li>
+        <li> <strong> chain : </strong> By default True prints __cause__ or __context__ attributes of the chained exceptions. </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import traceback
+
+try:
+    1/0
+except ZeroDivisionError:
+    print(traceback.format_exc())
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Traceback (most recent call last):
+  File "/home/asha/PycharmProjects/pythonEx/05_ExceptionHandling/progs/FormatExec.py", line 4, in &lt;module>
+    1/0
+ZeroDivisionError: division by zero
+</pre></div>
+
+<hr/>
+
+
+
 #### print_last(limit=None, file=None, chain=True)
 
 <div id="tut-content"> 
@@ -377,8 +468,8 @@ ZeroDivisionError: division by zero
 
 <div id="tut-content"> 
     <ul>
-        <li> <strong> limit : </strong> By default None prints all stack trace entries. If given positive number prints entries from starting from caller's frame up to given 'limit'.If given negative number prints last abs(limit) entries. </li>
         <li> <strong> f : </strong> Specifies an alternate stack frame to start. </li>
+        <li> <strong> limit : </strong> By default None prints all stack trace entries. If given positive number prints entries from starting from caller's frame up to given 'limit'.If given negative number prints last abs(limit) entries. </li>
         <li> <strong> file : </strong> By default None redirects stack trace to std.err. If given file-like object it prints output to give file. </li>
     </ul> 
 </div>
@@ -535,6 +626,12 @@ func1() Started...
 
 <p>  A shorthand for format_list(extract_tb(tb, limit)). </p>
 
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> limit : </strong>  By default None prints all stack trace entries. If given positive number prints entries from starting from caller's frame up to given 'limit'. If given negative number prints last abs(limit) entries.</li>
+    </ul> 
+</div>
+
 {% assign code_block = code_block | plus: 1 %}
 {% assign code_block_id = "code-block-" | append: code_block %}
 {% assign code_header_id = "code-header-" | append: code_block %}
@@ -582,6 +679,125 @@ func1() Started...
 <hr/>
 
 
+#### extract_stack(f=None, limit=None)
+
+<p> Extract the raw traceback from the current stack frame and returns values as same format as extract_tb(). </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> f : </strong> Specifies an alternate stack frame to start. </li>
+        <li> <strong> limit : </strong> By default None prints all stack trace entries. If given positive number prints entries from starting from caller's frame up to given 'limit'.If given negative number prints last abs(limit) entries. </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import traceback
+import sys
+
+
+class InvalidAccessError(Exception):
+    pass
+
+
+def func1():
+    print('func1() Started...')
+    func2()
+    print('func1() Ended...')
+
+
+def func2():
+    try:
+        raise AttributeError
+    except AttributeError as e:
+        raise InvalidAccessError('Caution! Invalid access detected.') from None
+
+
+try:
+    func1()
+except InvalidAccessError as e:
+    print(repr(traceback.extract_stack()))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+func1() Started...
+[&lt;FrameSummary file /home/asha/PycharmProjects/pythonEx/05_ExceptionHandling/progs/ExtractStack.py, line 25 in &lt;module>>]
+
+</pre></div>
+
+<hr/>
+
+
+#### format_stack(f=None, limit=None)
+
+<p> A shorthand for format_list(extract_stack(f, limit)). </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> f : </strong> Specifies an alternate stack frame to start. </li>
+        <li> <strong> limit : </strong> By default None prints all stack trace entries. If given positive number prints entries from starting from caller's frame up to given 'limit'.If given negative number prints last abs(limit) entries. </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import traceback
+
+
+class InvalidAccessError(Exception):
+    pass
+
+
+def func1():
+    print('func1() Started...')
+    func2()
+    print('func1() Ended...')
+
+
+def func2():
+    try:
+        raise AttributeError
+    except AttributeError as e:
+        raise InvalidAccessError('Caution! Invalid access detected.') from None
+
+
+try:
+    func1()
+except InvalidAccessError as e:
+    print(traceback.format_stack())
+
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+func1() Started...
+['  File "/home/asha/PycharmProjects/pythonEx/05_ExceptionHandling/progs/FormatStack.py", line 24, in &lt;module>\n    print(traceback.format_stack())\n']
+</pre></div>
+
+<hr/>
+
+
+
+#### clear_frames(tb)
+
+<p> Clears the local variables of all the stack frames in a traceback tb by calling the clear() method of each frame object. </p>
 
 
 {% include links.html %}

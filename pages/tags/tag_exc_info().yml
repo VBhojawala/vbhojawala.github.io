@@ -1,0 +1,8 @@
+---
+title: "exc info()"
+tagName: exc_info()
+search: exclude
+permalink: tag_exc_info().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

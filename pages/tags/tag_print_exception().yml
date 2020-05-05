@@ -1,0 +1,8 @@
+---
+title: "print exception()"
+tagName: print_exception()
+search: exclude
+permalink: tag_print_exception().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

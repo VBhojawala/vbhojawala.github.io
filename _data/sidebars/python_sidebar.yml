@@ -133,3 +133,7 @@ entries:
         url: /python_traceback.html
         output: web
         type: homepage
+      - title: Warnings
+        url: /python_warnings.html
+        output: web
+        type: homepage

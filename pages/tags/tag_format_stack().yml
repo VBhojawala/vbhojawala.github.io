@@ -1,0 +1,8 @@
+---
+title: "format stack()"
+tagName: format_stack()
+search: exclude
+permalink: tag_format_stack().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

@@ -1,0 +1,8 @@
+---
+title: "exc value"
+tagName: exc_value
+search: exclude
+permalink: tag_exc_value.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

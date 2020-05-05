@@ -1,0 +1,8 @@
+---
+title: "print stack()"
+tagName: print_stack()
+search: exclude
+permalink: tag_print_stack().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

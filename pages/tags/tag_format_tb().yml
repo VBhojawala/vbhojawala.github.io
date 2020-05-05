@@ -1,0 +1,8 @@
+---
+title: "format tb()"
+tagName: format_tb()
+search: exclude
+permalink: tag_format_tb().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

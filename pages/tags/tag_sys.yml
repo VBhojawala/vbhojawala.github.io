@@ -1,0 +1,8 @@
+---
+title: "sys"
+tagName: sys
+search: exclude
+permalink: tag_sys.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}
