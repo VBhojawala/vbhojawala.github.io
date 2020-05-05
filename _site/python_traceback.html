@@ -785,7 +785,7 @@ exc_type : &lt;class 'ZeroDivisionError'&gt;  |  exc_value : division by zero  |
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
 Traceback (most recent call last):
-  File "/home/asha/PycharmProjects/pythonEx/05_ExceptionHandling/progs/PrintException1.py", line 6, in lt;module&gt;
+  File "/home/asha/PycharmProjects/pythonEx/05_ExceptionHandling/progs/PrintException1.py", line 6, in &lt;module&gt;
     1/0
 ZeroDivisionError: division by zero
 </pre></div>
@@ -816,6 +816,316 @@ ZeroDivisionError: division by zero
     print "Hello World"
           ^
 SyntaxError: Missing parentheses in call to 'print'. Did you mean print("Hello World")?</pre></div>
+
+<hr />
+
+<h4 id="format_exceptionetype-value-tb-limitnone-chaintrue">format_exception(etype, value, tb, limit=None, chain=True)</h4>
+
+<p> Returns list of formatted strings, each string containing stack trace and the exception information. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> limit : </strong>  By default None prints all stack trace entries. If given positive number prints entries from starting from caller's frame up to given 'limit'. If given negative number prints last abs(limit) entries.</li>
+        <li> <strong> file : </strong> By default None redirects stack trace to std.err. If given file-like object it prints output to given file. </li>
+        <li> <strong> chain : </strong> By default True prints __cause__ or __context__ attributes of the chained exceptions. </li>
+    </ul> 
+</div>
+
+<div id="code-block-5" class="code-block">
+<p id="code-header-5" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-5", "code-header-5")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">traceback</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
+<span class="k">except</span> <span class="nb">ZeroDivisionError</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">format_exception</span><span class="p">(</span><span class="o">*</span><span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">())))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+['Traceback (most recent call last):\n', '  File "/home/asha/PycharmProjects/pythonEx/05_ExceptionHandling/progs/FormatException.py", line 5, in lt;module&gt;\n    1/0\n', 'ZeroDivisionError: division by zero\n']
+</pre></div>
+
+<hr />
+
+<h4 id="format_exception_onlyetype-value">format_exception_only(etype, value)</h4>
+
+<p> Returns list of formatted string containing exception type and value from traceback. Normally returned list contains only single string, but for syntax error it contains several lines that displays detailed information about location in code where the syntax error occurred. </p>
+
+<div id="code-block-6" class="code-block">
+<p id="code-header-6" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-6", "code-header-6")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">traceback</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
+<span class="k">except</span> <span class="nb">ZeroDivisionError</span><span class="p">:</span>
+    <span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_value</span><span class="p">,</span> <span class="n">exc_traceback</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">format_exception_only</span><span class="p">(</span><span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_value</span><span class="p">)))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+['ZeroDivisionError: division by zero\n']
+</pre></div>
+
+<hr />
+
+<h4 id="print_exclimitnone-filenone-chaintrue">print_exc(limit=None, file=None, chain=True)</h4>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> limit : </strong>  By default None prints all stack trace entries. If given positive number prints entries from starting from caller's frame up to given 'limit'. If given negative number prints last abs(limit) entries.</li>
+        <li> <strong> file : </strong> By default None redirects stack trace to std.err. If given file-like object it prints output to given file. </li>
+        <li> <strong> chain : </strong> By default True prints __cause__ or __context__ attributes of the chained exceptions. </li>
+    </ul> 
+</div>
+
+<p> It is a shorthand for print_exception(*sys.exc_info(), limit, file, chain). </p>
+
+<div id="code-block-7" class="code-block">
+<p id="code-header-7" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-7", "code-header-7")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">traceback</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
+<span class="k">except</span> <span class="nb">ZeroDivisionError</span><span class="p">:</span>
+    <span class="n">traceback</span><span class="o">.</span><span class="n">print_exc</span><span class="p">(</span><span class="nb">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Traceback (most recent call last):
+  File "/home/asha/PycharmProjects/pythonEx/05_ExceptionHandling/progs/PrintExec.py", line 5, in &lt;module&gt;
+    1/0
+ZeroDivisionError: division by zero
+</pre></div>
+
+<hr />
+
+<h4 id="print_lastlimitnone-filenone-chaintrue">print_last(limit=None, file=None, chain=True)</h4>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> limit : </strong>  By default None prints all stack trace entries. If given positive number prints entries from starting from caller's frame up to given 'limit'. If given negative number prints last abs(limit) entries.</li>
+        <li> <strong> file : </strong> By default None redirects stack trace to std.err. If given file-like object it prints output to given file. </li>
+        <li> <strong> chain : </strong> By default True prints __cause__ or __context__ attributes of the chained exceptions. </li>
+    </ul> 
+</div>
+
+<p> It is a shorthand for print_exception(sys.last_type, sys.last_value, sys.last_traceback,limit, file, chain). </p>
+
+<div class="bs-callout bs-callout-primary"><strong>Note</strong> : It only works after exception is reached to interactive prompt.</div>
+
+<div id="code-block-8" class="code-block">
+<p id="code-header-8" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-8", "code-header-8")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">traceback</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Run it after raising exception in console
+</span><span class="n">traceback</span><span class="o">.</span><span class="n">print_last</span><span class="p">(</span><span class="nb">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/code.py", line 90, in runcode
+    exec(code, self.locals)
+  File "&lt;input&gt;", line 5, in &lt;module&gt;
+ZeroDivisionError: division by zero
+</pre></div>
+
+<hr />
+
+<h4 id="print_stackfnone-limitnone-filenone">print_stack(f=None, limit=None, file=None)</h4>
+
+<p> Prints stack trace entries. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> limit : </strong> By default None prints all stack trace entries. If given positive number prints entries from starting from caller's frame up to given 'limit'.If given negative number prints last abs(limit) entries. </li>
+        <li> <strong> f : </strong> Specifies an alternate stack frame to start. </li>
+        <li> <strong> file : </strong> By default None redirects stack trace to std.err. If given file-like object it prints output to give file. </li>
+    </ul> 
+</div>
+
+<div id="code-block-9" class="code-block">
+<p id="code-header-9" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-9", "code-header-9")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">traceback</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+
+<span class="k">def</span> <span class="nf">division</span><span class="p">():</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
+    <span class="k">except</span> <span class="nb">ZeroDivisionError</span><span class="p">:</span>
+        <span class="n">traceback</span><span class="o">.</span><span class="n">print_stack</span><span class="p">(</span><span class="nb">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
+
+
+<span class="n">division</span><span class="p">()</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+ File "/home/asha/PycharmProjects/pythonEx/05_ExceptionHandling/progs/PrintStack.py", line 12, in &lt;module&gt;
+    division()
+  File "/home/asha/PycharmProjects/pythonEx/05_ExceptionHandling/progs/PrintStack.py", line 9, in division
+    traceback.print_stack(file=sys.stdout)
+</pre></div>
+
+<hr />
+
+<h4 id="extract_tbtb-limitnone">extract_tb(tb, limit=None)</h4>
+
+<p> Return a StackSummary object representing a list of FrameSummary object (“pre-processed” stack trace entries) extracted from the traceback object tb. It is used for custom formatting of stack traces. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> limit : </strong> By default None prints all stack trace entries. If given positive number prints entries from starting from caller's frame up to given 'limit'.If given negative number prints last abs(limit) entries. </li>
+    </ul> 
+</div>
+
+<div id="code-block-10" class="code-block">
+<p id="code-header-10" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-10", "code-header-10")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">traceback</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+
+<span class="k">class</span> <span class="nc">InvalidAccessError</span><span class="p">(</span><span class="nb">Exception</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+
+<span class="k">def</span> <span class="nf">func1</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'func1() Started...'</span><span class="p">)</span>
+    <span class="n">func2</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'func1() Ended...'</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">func2</span><span class="p">():</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="nb">AttributeError</span>
+    <span class="k">except</span> <span class="nb">AttributeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">InvalidAccessError</span><span class="p">(</span><span class="s">'Caution! Invalid access detected.'</span><span class="p">)</span> <span class="k">from</span> <span class="bp">None</span>
+
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">func1</span><span class="p">()</span>
+<span class="k">except</span> <span class="n">InvalidAccessError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">traceback</span><span class="o">.</span><span class="n">extract_tb</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()[</span><span class="mi">2</span><span class="p">]):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+func1() Started...
+&lt;FrameSummary file /home/asha/PycharmProjects/pythonEx/05_ExceptionHandling/progs/ExtractTB.py, line 23 in &lt;module&gt;&gt;
+&lt;FrameSummary file /home/asha/PycharmProjects/pythonEx/05_ExceptionHandling/progs/ExtractTB.py, line 11 in func1&gt;
+&lt;FrameSummary file /home/asha/PycharmProjects/pythonEx/05_ExceptionHandling/progs/ExtractTB.py, line 19 in func2&gt;
+
+</pre></div>
+
+<hr />
+
+<h4 id="format_listextracted_list">format_list(extracted_list)</h4>
+
+<p> Returns list of string from list of Tuples or FrameSummary objects returned from extract_tb(). </p>
+
+<div id="code-block-11" class="code-block">
+<p id="code-header-11" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-11", "code-header-11")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">traceback</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+
+<span class="k">class</span> <span class="nc">InvalidAccessError</span><span class="p">(</span><span class="nb">Exception</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+
+<span class="k">def</span> <span class="nf">func1</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'func1() Started...'</span><span class="p">)</span>
+    <span class="n">func2</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'func1() Ended...'</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">func2</span><span class="p">():</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="nb">AttributeError</span>
+    <span class="k">except</span> <span class="nb">AttributeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">InvalidAccessError</span><span class="p">(</span><span class="s">'Caution! Invalid access detected.'</span><span class="p">)</span> <span class="k">from</span> <span class="bp">None</span>
+
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">func1</span><span class="p">()</span>
+<span class="k">except</span> <span class="n">InvalidAccessError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">format_list</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">extract_tb</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()[</span><span class="mi">2</span><span class="p">])))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+func1() Started...
+['  File "/home/asha/PycharmProjects/pythonEx/05_ExceptionHandling/progs/ExtractTB2.py", line 23, in &lt;module&gt;\n    func1()\n', '  File "/home/asha/PycharmProjects/pythonEx/05_ExceptionHandling/progs/ExtractTB2.py", line 11, in func1\n    func2()\n', '  File "/home/asha/PycharmProjects/pythonEx/05_ExceptionHandling/progs/ExtractTB2.py", line 19, in func2\n    raise InvalidAccessError(\'Caution! Invalid access detected.\') from None\n']
+</pre></div>
+
+<hr />
+
+<h4 id="format_tbtb-limitnone">format_tb(tb, limit=None)</h4>
+
+<p>  A shorthand for format_list(extract_tb(tb, limit)). </p>
+
+<div id="code-block-12" class="code-block">
+<p id="code-header-12" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-12", "code-header-12")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">traceback</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+
+<span class="k">class</span> <span class="nc">InvalidAccessError</span><span class="p">(</span><span class="nb">Exception</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+
+<span class="k">def</span> <span class="nf">func1</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'func1() Started...'</span><span class="p">)</span>
+    <span class="n">func2</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'func1() Ended...'</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">func2</span><span class="p">():</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="nb">AttributeError</span>
+    <span class="k">except</span> <span class="nb">AttributeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">InvalidAccessError</span><span class="p">(</span><span class="s">'Caution! Invalid access detected.'</span><span class="p">)</span> <span class="k">from</span> <span class="bp">None</span>
+
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">func1</span><span class="p">()</span>
+<span class="k">except</span> <span class="n">InvalidAccessError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">format_tb</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()[</span><span class="mi">2</span><span class="p">]))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+func1() Started...
+['  File "/home/asha/PycharmProjects/pythonEx/05_ExceptionHandling/progs/FormatTB.py", line 23, in &lt;module&gt;\n    func1()\n', '  File "/home/asha/PycharmProjects/pythonEx/05_ExceptionHandling/progs/FormatTB.py", line 11, in func1\n    func2()\n', '  File "/home/asha/PycharmProjects/pythonEx/05_ExceptionHandling/progs/FormatTB.py", line 19, in func2\n    raise InvalidAccessError(\'Caution! Invalid access detected.\') from None\n']
+</pre></div>
 
 <hr />
 
