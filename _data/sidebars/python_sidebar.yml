@@ -128,12 +128,9 @@ entries:
       - title: Exception Handling
         url: /python_exception_handling.html
         output: web
-        type: homepage
       - title: Traceback
         url: /python_traceback.html
         output: web
-        type: homepage
       - title: Warnings
         url: /python_warnings.html
         output: web
-        type: homepage
