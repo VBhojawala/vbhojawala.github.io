@@ -207,4 +207,75 @@ After Warning
 
 <hr/>
 
+
+<div id="tut-content"> 
+    <ul>
+        <li> Same can be achieved using PYTHONWARNINGS environment variable </li>
+    </ul> 
+</div>
+
+
+<br/>
+
+
+<div class="result"><p class="result-header"><b>Terminal Execution</b></p>
+<pre class="result-content">
+(venv) [asha@Tutorials progs]$ <div id="tut-highlight">export PYTHONWARNINGS="error"</div>
+(venv) [asha@Tutorials progs]$ python WarningError.py
+Traceback (most recent call last):
+  File "WarningError.py", line 3, in &lt;module>
+    warn('Warning!')
+UserWarning: Warning!
+
+</pre></div>
+
+
+<br/>
+
+
+<div class="result"><p class="result-header"><b>Terminal Execution</b></p>
+<pre class="result-content">
+(venv) [asha@Tutorials progs]$ <div id="tut-highlight">export PYTHONWARNINGS="default"</div>
+(venv) [asha@Tutorials progs]$ python WarningError.py
+WarningError.py:3: UserWarning: Warning!
+  warn('Warning!')
+After Warning
+</pre></div>
+
+
+
+<br/>
+
+
+<div class="result"><p class="result-header"><b>Terminal Execution</b></p>
+<pre class="result-content">
+(venv) [asha@Tutorials progs]$ <div id="tut-highlight">export PYTHONWARNINGS="ignore"</div>
+(venv) [asha@Tutorials progs]$ python WarningError.py
+After Warning
+</pre></div>
+
+<hr/>
+
+<div id="tut-content"> 
+    <ul>
+        <li> PYTHONWARNINGS can also be set as following which will affect current process and it's sub process : </li>
+    </ul> 
+</div>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import os
+os.environ["PYTHONWARNINGS"] = 'ignore'
+
+
+{% endhighlight %}
+</div>
+
+
 {% include links.html %}

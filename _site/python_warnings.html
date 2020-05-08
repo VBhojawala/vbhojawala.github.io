@@ -853,6 +853,61 @@ After Warning
 
 <hr />
 
+<div id="tut-content"> 
+    <ul>
+        <li> Same can be achieved using PYTHONWARNINGS environment variable </li>
+    </ul> 
+</div>
+
+<p><br /></p>
+
+<div class="result"><p class="result-header"><b>Terminal Execution</b></p>
+<pre class="result-content">
+(venv) [asha@Tutorials progs]$ <div id="tut-highlight">export PYTHONWARNINGS="error"</div>
+(venv) [asha@Tutorials progs]$ python WarningError.py
+Traceback (most recent call last):
+  File "WarningError.py", line 3, in &lt;module&gt;
+    warn('Warning!')
+UserWarning: Warning!
+
+</pre></div>
+
+<p><br /></p>
+
+<div class="result"><p class="result-header"><b>Terminal Execution</b></p>
+<pre class="result-content">
+(venv) [asha@Tutorials progs]$ <div id="tut-highlight">export PYTHONWARNINGS="default"</div>
+(venv) [asha@Tutorials progs]$ python WarningError.py
+WarningError.py:3: UserWarning: Warning!
+  warn('Warning!')
+After Warning
+</pre></div>
+
+<p><br /></p>
+
+<div class="result"><p class="result-header"><b>Terminal Execution</b></p>
+<pre class="result-content">
+(venv) [asha@Tutorials progs]$ <div id="tut-highlight">export PYTHONWARNINGS="ignore"</div>
+(venv) [asha@Tutorials progs]$ python WarningError.py
+After Warning
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> PYTHONWARNINGS can also be set as following which will affect current process and it's sub process : </li>
+    </ul> 
+</div>
+
+<div id="code-block-4" class="code-block">
+<p id="code-header-4" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-4", "code-header-4")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s">"PYTHONWARNINGS"</span><span class="p">]</span> <span class="o">=</span> <span class="s">'ignore'</span></code></pre></figure>
+
+</div>
+
 
 
     <div class="tags">
