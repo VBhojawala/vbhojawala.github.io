@@ -1421,11 +1421,10 @@ ul.mobile-toggle > a{
     -webkit-border-radius: 4px 11px 4px 11px;
 }
 .result-header{
-    width:70px;
+    width:max-content;
     font-size: 14px;
     text-align: center;
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding : 3px 12px;
     margin-top:-23px;
     background:#5D917D;
     color: white;
@@ -1562,11 +1561,10 @@ ul.mobile-toggle > a{
     font-weight: bold;
 }
 #tut-highlight{
-    background-color: gold;
+    background-color: #b6d6ca;
     display: inline;
     border-radius: 6px;
 }
-
 .panel-body h4{
     font-style: normal;
     color: #36362C;

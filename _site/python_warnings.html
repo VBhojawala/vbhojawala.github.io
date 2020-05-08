@@ -763,7 +763,95 @@ $('#toc').on('click', 'a', function() {
 
 <p> The warnings filter determines whether warnings are ignored, displayed, or turned into errors. </p>
 
-<p> Format of warning message  : Tuple(action, message, category, module, lineno) </p>
+<p> Format of warning message  : </p>
+<p id="tut-cons"> Tuple(action, message, category, module, lineno) </p>
+
+<h4 id="action">action</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">value</th>
+      <th style="text-align: left">Disposition</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">‘default’</td>
+      <td style="text-align: left">prints first occurrences of matching warning message for each location (module + lineno)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">‘error’</td>
+      <td style="text-align: left">turns matching warning into exception</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">‘ignore’</td>
+      <td style="text-align: left">no print for matching warnings</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">‘always’</td>
+      <td style="text-align: left">always prints matching warning</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">‘module’</td>
+      <td style="text-align: left">print first occurrences of matching warning message for each module</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">‘once’</td>
+      <td style="text-align: left">prints first occurrence of matching warnings, regardless of location</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<p> <strong> Syntax :  </strong>  python -W &lt;action&gt; my_prog.py</p>
+<p> <strong> example :  </strong> python -W error my_prog.py</p>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> WarningError.py </p>
+
+<div id="code-block-3" class="code-block">
+<p id="code-header-3" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-3", "code-header-3")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">warnings</span> <span class="kn">import</span> <span class="n">warn</span>
+
+<span class="n">warn</span><span class="p">(</span><span class="s">'Warning!'</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'After Warning'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<p><br /></p>
+
+<div class="result"><p class="result-header"><b>Terminal Execution</b></p>
+<pre class="result-content">
+(venv) [asha@Tutorials progs]$ <div id="tut-highlight">python -W error WarningError.py</div>
+Traceback (most recent call last):
+  File "WarningError.py", line 3, in &lt;module&gt;
+    warn('Warning!')
+UserWarning: Warning!
+
+</pre></div>
+
+<p><br /></p>
+
+<div class="result"><p class="result-header"><b>Terminal Execution</b></p>
+<pre class="result-content">
+(venv) [asha@Tutorials progs]$ <div id="tut-highlight">python -W default WarningError.py </div>
+WarningError.py:3: UserWarning: Warning!
+  warn('Warning!')
+After Warning
+</pre></div>
+
+<p><br /></p>
+
+<div class="result"><p class="result-header"><b>Terminal Execution</b></p>
+<pre class="result-content">
+(venv) [asha@Tutorials progs]$ <div id="tut-highlight">python -W ignore WarningError.py </div>
+After Warning
+</pre></div>
+
+<hr />
 
 
 

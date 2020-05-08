@@ -131,7 +131,80 @@ UserAuth.user_auth('admin')
 
 <p> The warnings filter determines whether warnings are ignored, displayed, or turned into errors. </p>
 
-<p> Format of warning message  : Tuple(action, message, category, module, lineno) </p>
+<p> Format of warning message  : </p>
+<p id="tut-cons"> Tuple(action, message, category, module, lineno) </p>
 
+
+#### action
+
+ value    |      Disposition
+ :--- | :----
+ 'default'  |  prints first occurrences of matching warning message for each location (module + lineno)
+ 'error'    |  turns matching warning into exception
+ 'ignore'   |  no print for matching warnings
+ 'always'   |  always prints matching warning
+ 'module'   |  print first occurrences of matching warning message for each module
+ 'once'     |  prints first occurrence of matching warnings, regardless of location
+
+<br/>
+
+<p> <strong> Syntax :  </strong>  python -W &lt;action> my_prog.py</p>
+<p> <strong> example :  </strong> python -W error my_prog.py</p> 
+
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> WarningError.py </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from warnings import warn
+
+warn('Warning!')
+
+print('After Warning')
+
+
+
+{% endhighlight %}
+</div>
+
+<br/>
+
+<div class="result"><p class="result-header"><b>Terminal Execution</b></p>
+<pre class="result-content">
+(venv) [asha@Tutorials progs]$ <div id="tut-highlight">python -W error WarningError.py</div>
+Traceback (most recent call last):
+  File "WarningError.py", line 3, in &lt;module>
+    warn('Warning!')
+UserWarning: Warning!
+
+</pre></div>
+
+<br/>
+
+
+<div class="result"><p class="result-header"><b>Terminal Execution</b></p>
+<pre class="result-content">
+(venv) [asha@Tutorials progs]$ <div id="tut-highlight">python -W default WarningError.py </div>
+WarningError.py:3: UserWarning: Warning!
+  warn('Warning!')
+After Warning
+</pre></div>
+
+<br/>
+
+
+<div class="result"><p class="result-header"><b>Terminal Execution</b></p>
+<pre class="result-content">
+(venv) [asha@Tutorials progs]$ <div id="tut-highlight">python -W ignore WarningError.py </div>
+After Warning
+</pre></div>
+
+
+<hr/>
 
 {% include links.html %}
