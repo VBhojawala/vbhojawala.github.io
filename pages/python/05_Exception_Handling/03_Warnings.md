@@ -131,8 +131,8 @@ UserAuth.user_auth('admin')
 
 <p> The warnings filter determines whether warnings are ignored, displayed, or turned into errors. </p>
 
-<p> Format of warning message  : </p>
-<p id="tut-cons"> Tuple(action, message, category, module, lineno) </p>
+<p> Format of warning filter  : </p>
+<p id="tut-cons"> action:message:category:module:line </p>
 
 
 #### action
@@ -277,5 +277,241 @@ os.environ["PYTHONWARNINGS"] = 'ignore'
 {% endhighlight %}
 </div>
 
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> message : </strong> A string containing regular expression for matching warning message. Match is performed in case insensitive manner. </li>
+        <li> <strong> category : </strong> Warning base Class of which all subclasses are allowed. </li>
+        <li> <strong> module : </strong> String containing regular expression that module name must match. </li>
+        <li> <strong> lineno : </strong> int indicates line number at which warning is raised. </li>
+    </ul> 
+</div>
+
+
+<hr/>
+
+<p> Format of warning filter  : </p>
+<p id="tut-cons"> action:message:category:module:line </p>
+
+
+#### Default Warning filter of Python
+
+
+
+<div id="tut-content"> 
+    <ol>
+        <li> <strong> default::DeprecationWarning:__main__ </strong> </li>
+        <li> <strong> ignore::DeprecationWarning </strong> </li>
+        <li> <strong> ignore::PendingDeprecationWarning </strong> </li>
+        <li> <strong> ignore::ImportWarning </strong> </li>
+        <li> <strong> ignore::ResourceWarning</strong> </li>
+    </ol> 
+</div>
+
+
+#### Examples
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> error::ResourceWarning </strong> : converts ResourceWarning and it's subclass in to error.</li>
+        <li> <strong> ignore,default:::authmodule </strong> : ignore action for all warning, default action for authmodule Module. </li>
+        <li> <strong> ignore,default:::userauth[.*] </strong> : ignore action for all warning, default action for userauth Module and any subpackages of userauth. </li>
+    </ul> 
+</div>
+
+<hr/>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Example </strong> </li>
+    </ul> 
+</div>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> MultipleWarningFilter.py </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from warnings import warn
+from traceback import print_exc
+
+try:
+    warn('UserWarning!', category=UserWarning)
+except UserWarning:
+    print_exc()
+
+try:
+    warn('DeprecationWarning!', category=DeprecationWarning)
+except DeprecationWarning:
+    print_exc()
+
+try:
+    warn('ResourceWarning!', category=ResourceWarning)
+except ResourceWarning:
+    print_exc()
+
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Terminal Execution</b></p>
+<pre class="result-content">
+(venv) [asha@Tutorials progs]$ <div id="tut-highlight">python MultipleWarningFilter.py </div>
+MultipleWarningFilter.py:5: UserWarning: UserWarning!
+  warn('UserWarning!', category=UserWarning)
+MultipleWarningFilter.py:10: DeprecationWarning: DeprecationWarning!
+  warn('DeprecationWarning!', category=DeprecationWarning)
+</pre></div>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> It will show UserWarning as not filter is assigned handled by 'default' action. </li>
+        <li> It will show DeprecationWarning as it's run as __main__. </li>
+        <li>  It will ignore ResourceWarning as it is configured in filter to ignore ResourceWarning. </li>
+    </ul> 
+</div>
+
+<br/>
+
+
+<div class="result"><p class="result-header"><b>Terminal Execution</b></p>
+<pre class="result-content">
+(venv) [asha@Tutorials progs]$ <div id="tut-highlight">python -W"error::ResourceWarning" -W"ignore::DeprecationWarning:__main__" MultipleWarningFilter.py</div>
+MultipleWarningFilter.py:5: UserWarning: UserWarning!
+  warn('UserWarning!', category=UserWarning)
+Traceback (most recent call last):
+  File "MultipleWarningFilter.py", line 15, in &lt;module>
+    warn('ResourceWarning!', category=ResourceWarning)
+ResourceWarning: ResourceWarning!
+
+</pre></div>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> Show UserWarning as no filter is assigned handled by 'default' action. </li>
+        <li> It will convert ResourceWarning into error. </li>
+        <li> Ignore DeprecationWarning from __main__. </li>
+    </ul> 
+</div>
+
+
+<hr/>
+
+
+
+
+### Warning Filter
+
+#### filterwarnings(action, message='', category=Warning, module='', lineno=0, append=False)
+
+<p> Adds an entry to the front of the list of warning filters specification.</p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> When matching filter message starts from front and searches through list until match is found. If no match is found it uses 'default' action, else first matching filter from the front. </li>
+        <li> It only affects current process only. </li>
+    </ul> 
+</div>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> append : </strong> If given True, entry is appended at the end od the list. </li>
+    </ul> 
+</div>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from warnings import warn,filterwarnings
+from traceback import print_exc
+
+filterwarnings('error', category=ResourceWarning)
+filterwarnings('ignore', category=DeprecationWarning, module='__main__')
+
+try:
+    warn('UserWarning!', category=UserWarning)
+except UserWarning:
+    print_exc()
+
+try:
+    warn('DeprecationWarning!', category=DeprecationWarning)
+except DeprecationWarning:
+    print_exc()
+
+try:
+    warn('ResourceWarning!', category=ResourceWarning)
+except ResourceWarning:
+    print_exc()
+
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre id='tut-output-error' class="result-content">UserWarning: UserWarning!
+  warn('UserWarning!', category=UserWarning)
+Traceback (most recent call last):
+  File "/home/asha/PycharmProjects/pythonEx/05_ExceptionHandling/progs/MultipleWarningFilter2.py", line 18, in &lt;module>
+    warn('ResourceWarning!', category=ResourceWarning)
+ResourceWarning: ResourceWarning!</pre></div>
+
+<hr/>
+
+
+### User defined Warning Class
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from warnings import filterwarnings, warn
+
+
+class ZeroDivisionWarning (UserWarning):
+    pass
+
+
+filterwarnings('default', category=UserWarning)
+
+try:
+    result = 1 / 0
+except ZeroDivisionError as e:
+    warn('Illegal operation , division by zero was attempted. result is set to zero',
+         category=ZeroDivisionWarning)
+    result = 0
+
+print('Statements after ......')
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre id='tut-output-error' class="result-content">ZeroDivisionWarning: Illegal operation , division by zero was attempted. result is set to zero
+  warn('Illegal operation , division by zero was attempted. result is set to zero',
+  
+</pre>
+<pre class="result-content">
+Statements after ......
+</pre></div>
+
+<hr/>
 
 {% include links.html %}

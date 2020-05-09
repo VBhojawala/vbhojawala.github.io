@@ -763,8 +763,8 @@ $('#toc').on('click', 'a', function() {
 
 <p> The warnings filter determines whether warnings are ignored, displayed, or turned into errors. </p>
 
-<p> Format of warning message  : </p>
-<p id="tut-cons"> Tuple(action, message, category, module, lineno) </p>
+<p> Format of warning filter  : </p>
+<p id="tut-cons"> action:message:category:module:line </p>
 
 <h4 id="action">action</h4>
 
@@ -907,6 +907,207 @@ After Warning
 <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s">"PYTHONWARNINGS"</span><span class="p">]</span> <span class="o">=</span> <span class="s">'ignore'</span></code></pre></figure>
 
 </div>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> message : </strong> A string containing regular expression for matching warning message. Match is performed in case insensitive manner. </li>
+        <li> <strong> category : </strong> Warning base Class of which all subclasses are allowed. </li>
+        <li> <strong> module : </strong> String containing regular expression that module name must match. </li>
+        <li> <strong> lineno : </strong> int indicates line number at which warning is raised. </li>
+    </ul> 
+</div>
+
+<hr />
+
+<p> Format of warning filter  : </p>
+<p id="tut-cons"> action:message:category:module:line </p>
+
+<h4 id="default-warning-filter-of-python">Default Warning filter of Python</h4>
+
+<div id="tut-content"> 
+    <ol>
+        <li> <strong> default::DeprecationWarning:__main__ </strong> </li>
+        <li> <strong> ignore::DeprecationWarning </strong> </li>
+        <li> <strong> ignore::PendingDeprecationWarning </strong> </li>
+        <li> <strong> ignore::ImportWarning </strong> </li>
+        <li> <strong> ignore::ResourceWarning</strong> </li>
+    </ol> 
+</div>
+
+<h4 id="examples">Examples</h4>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> error::ResourceWarning </strong> : converts ResourceWarning and it's subclass in to error.</li>
+        <li> <strong> ignore,default:::authmodule </strong> : ignore action for all warning, default action for authmodule Module. </li>
+        <li> <strong> ignore,default:::userauth[.*] </strong> : ignore action for all warning, default action for userauth Module and any subpackages of userauth. </li>
+    </ul> 
+</div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Example </strong> </li>
+    </ul> 
+</div>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> MultipleWarningFilter.py </p>
+
+<div id="code-block-5" class="code-block">
+<p id="code-header-5" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-5", "code-header-5")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">warnings</span> <span class="kn">import</span> <span class="n">warn</span>
+<span class="kn">from</span> <span class="nn">traceback</span> <span class="kn">import</span> <span class="n">print_exc</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">warn</span><span class="p">(</span><span class="s">'UserWarning!'</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="nb">UserWarning</span><span class="p">)</span>
+<span class="k">except</span> <span class="nb">UserWarning</span><span class="p">:</span>
+    <span class="n">print_exc</span><span class="p">()</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">warn</span><span class="p">(</span><span class="s">'DeprecationWarning!'</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="nb">DeprecationWarning</span><span class="p">)</span>
+<span class="k">except</span> <span class="nb">DeprecationWarning</span><span class="p">:</span>
+    <span class="n">print_exc</span><span class="p">()</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">warn</span><span class="p">(</span><span class="s">'ResourceWarning!'</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="nb">ResourceWarning</span><span class="p">)</span>
+<span class="k">except</span> <span class="nb">ResourceWarning</span><span class="p">:</span>
+    <span class="n">print_exc</span><span class="p">()</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Terminal Execution</b></p>
+<pre class="result-content">
+(venv) [asha@Tutorials progs]$ <div id="tut-highlight">python MultipleWarningFilter.py </div>
+MultipleWarningFilter.py:5: UserWarning: UserWarning!
+  warn('UserWarning!', category=UserWarning)
+MultipleWarningFilter.py:10: DeprecationWarning: DeprecationWarning!
+  warn('DeprecationWarning!', category=DeprecationWarning)
+</pre></div>
+
+<div id="tut-content"> 
+    <ul>
+        <li> It will show UserWarning as not filter is assigned handled by 'default' action. </li>
+        <li> It will show DeprecationWarning as it's run as __main__. </li>
+        <li>  It will ignore ResourceWarning as it is configured in filter to ignore ResourceWarning. </li>
+    </ul> 
+</div>
+
+<p><br /></p>
+
+<div class="result"><p class="result-header"><b>Terminal Execution</b></p>
+<pre class="result-content">
+(venv) [asha@Tutorials progs]$ <div id="tut-highlight">python -W"error::ResourceWarning" -W"ignore::DeprecationWarning:__main__" MultipleWarningFilter.py</div>
+MultipleWarningFilter.py:5: UserWarning: UserWarning!
+  warn('UserWarning!', category=UserWarning)
+Traceback (most recent call last):
+  File "MultipleWarningFilter.py", line 15, in &lt;module&gt;
+    warn('ResourceWarning!', category=ResourceWarning)
+ResourceWarning: ResourceWarning!
+
+</pre></div>
+
+<div id="tut-content"> 
+    <ul>
+        <li> Show UserWarning as no filter is assigned handled by 'default' action. </li>
+        <li> It will convert ResourceWarning into error. </li>
+        <li> Ignore DeprecationWarning from __main__. </li>
+    </ul> 
+</div>
+
+<hr />
+
+<h3 id="warning-filter">Warning Filter</h3>
+
+<h4 id="filterwarningsaction-message-categorywarning-module-lineno0-appendfalse">filterwarnings(action, message=’’, category=Warning, module=’’, lineno=0, append=False)</h4>
+
+<p> Adds an entry to the front of the list of warning filters specification.</p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> When matching filter message starts from front and searches through list until match is found. If no match is found it uses 'default' action, else first matching filter from the front. </li>
+        <li> It only affects current process only. </li>
+    </ul> 
+</div>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> append : </strong> If given True, entry is appended at the end od the list. </li>
+    </ul> 
+</div>
+
+<div id="code-block-6" class="code-block">
+<p id="code-header-6" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-6", "code-header-6")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">warnings</span> <span class="kn">import</span> <span class="n">warn</span><span class="p">,</span><span class="n">filterwarnings</span>
+<span class="kn">from</span> <span class="nn">traceback</span> <span class="kn">import</span> <span class="n">print_exc</span>
+
+<span class="n">filterwarnings</span><span class="p">(</span><span class="s">'error'</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="nb">ResourceWarning</span><span class="p">)</span>
+<span class="n">filterwarnings</span><span class="p">(</span><span class="s">'ignore'</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="nb">DeprecationWarning</span><span class="p">,</span> <span class="n">module</span><span class="o">=</span><span class="s">'__main__'</span><span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">warn</span><span class="p">(</span><span class="s">'UserWarning!'</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="nb">UserWarning</span><span class="p">)</span>
+<span class="k">except</span> <span class="nb">UserWarning</span><span class="p">:</span>
+    <span class="n">print_exc</span><span class="p">()</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">warn</span><span class="p">(</span><span class="s">'DeprecationWarning!'</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="nb">DeprecationWarning</span><span class="p">)</span>
+<span class="k">except</span> <span class="nb">DeprecationWarning</span><span class="p">:</span>
+    <span class="n">print_exc</span><span class="p">()</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">warn</span><span class="p">(</span><span class="s">'ResourceWarning!'</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="nb">ResourceWarning</span><span class="p">)</span>
+<span class="k">except</span> <span class="nb">ResourceWarning</span><span class="p">:</span>
+    <span class="n">print_exc</span><span class="p">()</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre id="tut-output-error" class="result-content">UserWarning: UserWarning!
+  warn('UserWarning!', category=UserWarning)
+Traceback (most recent call last):
+  File "/home/asha/PycharmProjects/pythonEx/05_ExceptionHandling/progs/MultipleWarningFilter2.py", line 18, in &lt;module&gt;
+    warn('ResourceWarning!', category=ResourceWarning)
+ResourceWarning: ResourceWarning!</pre></div>
+
+<hr />
+
+<h3 id="user-defined-warning-class">User defined Warning Class</h3>
+
+<div id="code-block-7" class="code-block">
+<p id="code-header-7" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-7", "code-header-7")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">warnings</span> <span class="kn">import</span> <span class="n">filterwarnings</span><span class="p">,</span> <span class="n">warn</span>
+
+
+<span class="k">class</span> <span class="nc">ZeroDivisionWarning</span> <span class="p">(</span><span class="nb">UserWarning</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+
+<span class="n">filterwarnings</span><span class="p">(</span><span class="s">'default'</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="nb">UserWarning</span><span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">0</span>
+<span class="k">except</span> <span class="nb">ZeroDivisionError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="n">warn</span><span class="p">(</span><span class="s">'Illegal operation , division by zero was attempted. result is set to zero'</span><span class="p">,</span>
+         <span class="n">category</span><span class="o">=</span><span class="n">ZeroDivisionWarning</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Statements after ......'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre id="tut-output-error" class="result-content">ZeroDivisionWarning: Illegal operation , division by zero was attempted. result is set to zero
+  warn('Illegal operation , division by zero was attempted. result is set to zero',
+  
+</pre>
+<pre class="result-content">
+Statements after ......
+</pre></div>
+
+<hr />
 
 
 
