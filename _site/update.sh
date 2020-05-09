@@ -1,4 +1,5 @@
 git add .
 git status
-git commit -m "content update"
+read -p "Commit message: " message
+git commit -m "$message"
 git push
