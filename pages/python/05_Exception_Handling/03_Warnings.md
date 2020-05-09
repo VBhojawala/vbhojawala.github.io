@@ -506,12 +506,21 @@ print('Statements after ......')
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre id='tut-output-error' class="result-content">ZeroDivisionWarning: Illegal operation , division by zero was attempted. result is set to zero
   warn('Illegal operation , division by zero was attempted. result is set to zero',
-  
+
 </pre>
 <pre class="result-content">
 Statements after ......
 </pre></div>
 
 <hr/>
+
+
+### Functions
+
+#### formatwarning(message, category, filename, lineno, line=None)
+
+<p> Formats warning message and return formatted message in str.</p>
+
+
 
 {% include links.html %}

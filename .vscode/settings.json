@@ -3,6 +3,7 @@
         "behaviour",
         "filterwarnings",
         "fname",
+        "formatwarning",
         "hashable",
         "heapify",
         "heapq",
