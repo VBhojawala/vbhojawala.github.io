@@ -1115,6 +1115,216 @@ Statements after ......
 
 <p> Formats warning message and return formatted message in str.</p>
 
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> line : </strong> is line of source code to be included in the warning, if not given will read the line specified by filename and lineno. </li>
+    </ul> 
+</div>
+
+<hr />
+
+<h4 id="warn_explicitmessage-category-filename-lineno-modulenone-registrynone-module_globalsnone-sourcenone">warn_explicit(message, category, filename, lineno, module=None, registry=None, module_globals=None, source=None)</h4>
+
+<p> Low level functionality of warn(). It allows to pass parameters explicitly such as filename, lineno, registry and module_globals. </p>
+
+<hr />
+
+<h4 id="showwarningmessage-category-filename-lineno-filenone-linenone">showwarning(message, category, filename, lineno, file=None, line=None)</h4>
+
+<p> Writes a warning to file. By default it calls formatwarning(message, category, filename, lineno, line) and returned formatted string is written to sys.stderr. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> line : </strong> is a line of source code to be included in the warning message. If line is not given, formatwarning() will try to read the line specified by filename and lineno. </li>
+    </ul> 
+</div>
+
+<div id="code-block-8" class="code-block">
+<p id="code-header-8" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-8", "code-header-8")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># Default behaviour
+</span><span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">showwarning</span><span class="p">(</span><span class="s">'A UserWarning to file'</span><span class="p">,</span> <span class="nb">UserWarning</span><span class="p">,</span> <span class="s">'Warnings.py'</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre id="tut-output-error" class="result-content">Warnings.py:5: UserWarning: A UserWarning to file</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> Writing warning to file. </li>
+    </ul> 
+</div>
+
+<div id="code-block-9" class="code-block">
+<p id="code-header-9" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-9", "code-header-9")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">io</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+
+<span class="k">with</span> <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">()</span> <span class="k">as</span> <span class="n">file1</span><span class="p">:</span>
+    <span class="n">warnings</span><span class="o">.</span><span class="n">showwarning</span><span class="p">(</span><span class="s">'A UserWarning to file'</span><span class="p">,</span> <span class="nb">UserWarning</span><span class="p">,</span> <span class="s">'Warnings.py'</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">file1</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Content of file : {file1.getvalue()}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Content of file : Warnings.py:5: UserWarning: A UserWarning to file
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Customizing show warning :</strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-10" class="code-block">
+<p id="code-header-10" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-10", "code-header-10")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">custom_warning</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">category</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">lineno</span><span class="p">,</span> <span class="nb">file</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">line</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">warnings</span><span class="o">.</span><span class="n">formatwarning</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">category</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">lineno</span><span class="p">)</span>
+    <span class="c1"># Apply custom behavior
+</span>
+
+<span class="c1"># replace original function with custom callable
+</span><span class="n">warnings</span><span class="o">.</span><span class="n">showwarning</span> <span class="o">=</span> <span class="n">custom_warning</span></code></pre></figure>
+
+</div>
+
+<hr />
+
+<h4 id="filterwarningsaction-message-categorywarning-module-lineno0-appendfalse-1">filterwarnings(action, message=’’, category=Warning, module=’’, lineno=0, append=False)</h4>
+
+<p> Adds an entry to the front of the list of warning filters specification. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> append : </strong> If given True entry is appended at the end od the list. </li>
+    </ul> 
+</div>
+
+<div id="code-block-11" class="code-block">
+<p id="code-header-11" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-11", "code-header-11")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">import</span> <span class="nn">traceback</span>
+
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s">'ignore'</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s">'UserAuth.*'</span><span class="p">)</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s">'error'</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s">'App.*'</span><span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s">'UserAuth.protocol Warning'</span><span class="p">,</span> <span class="nb">UserWarning</span><span class="p">)</span>
+<span class="k">except</span> <span class="nb">UserWarning</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="n">traceback</span><span class="o">.</span><span class="n">print_exc</span><span class="p">()</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s">'App.Daemon.destroyed Warning'</span><span class="p">,</span> <span class="nb">UserWarning</span><span class="p">)</span>
+<span class="k">except</span> <span class="nb">UserWarning</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="n">traceback</span><span class="o">.</span><span class="n">print_exc</span><span class="p">()</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s">'UserAuth.SlowConnection Warning'</span><span class="p">,</span> <span class="nb">UserWarning</span><span class="p">)</span>
+<span class="k">except</span> <span class="nb">UserWarning</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="n">traceback</span><span class="o">.</span><span class="n">print_exc</span><span class="p">()</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s">'App.Analytics.crashed Warning'</span><span class="p">,</span> <span class="nb">UserWarning</span><span class="p">)</span>
+<span class="k">except</span> <span class="nb">UserWarning</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="n">traceback</span><span class="o">.</span><span class="n">print_exc</span><span class="p">()</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre id="tut-output-error" class="result-content">Traceback (most recent call last):
+  File "/home/asha/PycharmProjects/pythonEx/05_ExceptionHandling/progs/FilterWarning.py", line 14, in &lt;module&gt;
+    warnings.warn(<div id="tut-highlight">'App.Daemon.destroyed Warning'</div>, UserWarning)
+UserWarning: App.Daemon.destroyed Warning
+Traceback (most recent call last):
+  File "/home/asha/PycharmProjects/pythonEx/05_ExceptionHandling/progs/FilterWarning.py", line 24, in &lt;module&gt;
+    warnings.warn(<div id="tut-highlight">'App.Analytics.crashed Warning'</div>, UserWarning)
+UserWarning: App.Analytics.crashed Warning</pre></div>
+
+<hr />
+
+<h4 id="simplefilteraction-categorywarning-lineno0-appendfalse">simplefilter(action, category=Warning, lineno=0, append=False)</h4>
+
+<p> Insert a simple entry into the list of warnings filter specifications. It has same parameters meaning as filterwarnings() except regular expressions are not needed as filter, because filter always matches any message in message in any module as long as the category and line number match. </p>
+
+<hr />
+
+<h4 id="resetwarnings">resetwarnings()</h4>
+
+<p> Resets the warning filters set with filterwarnings(), simplefilter() and the filter set with commandline option -W. </p>
+
+<h3 id="contextmanager">ContextManager</h3>
+
+<h4 id="catch_warnings-recordfalse-modulenone">catch_warnings(*, record=False, module=None)</h4>
+
+<p> It copies the original warning filters at the beginning of with statement and restores when exiting the context. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> record : </strong> By default False context manager returns None on entry. If True a list is returned that is progressively populated with objects as seen by a custom showwarning() function. </li>
+        <li> <strong> module : </strong>For testing other modules in current module , it takes name of the module whose filters to be protected from modification inside context.</li>
+    </ul> 
+</div>
+
+<div class="bs-callout bs-callout-primary"><strong>Note</strong> : catch_warnings modifies global state of the application and it’s not thread safe. </div>
+
+<div id="code-block-12" class="code-block">
+<p id="code-header-12" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-12", "code-header-12")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">warnings</span> <span class="kn">import</span> <span class="n">warn</span><span class="p">,</span> <span class="n">catch_warnings</span><span class="p">,</span> <span class="n">filterwarnings</span><span class="p">,</span> <span class="n">showwarning</span>
+<span class="kn">from</span> <span class="nn">traceback</span> <span class="kn">import</span> <span class="n">print_exc</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">warn</span><span class="p">(</span><span class="s">'[Before] ResourceWarning from outside of Context Manager!'</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="nb">ResourceWarning</span><span class="p">)</span>
+<span class="k">except</span> <span class="nb">ResourceWarning</span><span class="p">:</span>
+    <span class="n">print_exc</span><span class="p">()</span>
+
+
+<span class="k">with</span> <span class="n">catch_warnings</span><span class="p">(</span><span class="n">record</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">cw</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'On Entry cw :'</span><span class="p">,</span> <span class="n">cw</span><span class="p">)</span>
+    <span class="n">filterwarnings</span><span class="p">(</span><span class="s">'error'</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="nb">ResourceWarning</span><span class="p">)</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">warn</span><span class="p">(</span><span class="s">'ResourceWarning from Inside of Context Manager!'</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="nb">ResourceWarning</span><span class="p">)</span>
+    <span class="k">except</span> <span class="nb">ResourceWarning</span><span class="p">:</span>
+        <span class="n">print_exc</span><span class="p">()</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">showwarning</span><span class="p">(</span><span class="s">'A UserWarning to file'</span><span class="p">,</span> <span class="nb">UserWarning</span><span class="p">,</span> <span class="s">'Warnings.py'</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="k">except</span> <span class="nb">UserWarning</span><span class="p">:</span>
+        <span class="n">print_exc</span><span class="p">()</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s">'On Exit cw :'</span><span class="p">,</span> <span class="n">cw</span><span class="p">)</span>
+
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">warn</span><span class="p">(</span><span class="s">' [After] ResourceWarning from outside of Context Manager!'</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="nb">ResourceWarning</span><span class="p">)</span>
+<span class="k">except</span> <span class="nb">ResourceWarning</span><span class="p">:</span>
+    <span class="n">print_exc</span><span class="p">()</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+On Entry cw : []
+On Exit cw : [&lt;warnings.WarningMessage object at 0x7f0a624b25e0&gt;]
+</pre>
+<pre id="tut-output-error" class="result-content">Traceback (most recent call last):
+  File "/home/asha/PycharmProjects/pythonEx/05_ExceptionHandling/progs/ContextManagerWarnings.py", line 14, in &lt;module&gt;
+    warn('ResourceWarning from Inside of Context Manager!', category=ResourceWarning)
+ResourceWarning: ResourceWarning from Inside of Context Manager!</pre></div>
+
+<hr />
+
 
 
     <div class="tags">

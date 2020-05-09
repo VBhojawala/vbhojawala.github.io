@@ -521,6 +521,256 @@ Statements after ......
 
 <p> Formats warning message and return formatted message in str.</p>
 
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> line : </strong> is line of source code to be included in the warning, if not given will read the line specified by filename and lineno. </li>
+    </ul> 
+</div>
+
+<hr/>
+
+
+#### warn_explicit(message, category, filename, lineno, module=None, registry=None, module_globals=None, source=None)
+
+<p> Low level functionality of warn(). It allows to pass parameters explicitly such as filename, lineno, registry and module_globals. </p>
+
+<hr/>
+
+#### showwarning(message, category, filename, lineno, file=None, line=None)
+
+<p> Writes a warning to file. By default it calls formatwarning(message, category, filename, lineno, line) and returned formatted string is written to sys.stderr. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> line : </strong> is a line of source code to be included in the warning message. If line is not given, formatwarning() will try to read the line specified by filename and lineno. </li>
+    </ul> 
+</div>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+# Default behaviour
+import warnings
+warnings.showwarning('A UserWarning to file', UserWarning, 'Warnings.py', 5)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre id='tut-output-error' class="result-content">Warnings.py:5: UserWarning: A UserWarning to file</pre></div>
+
+<hr/>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> Writing warning to file. </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import io
+import warnings
+
+with io.StringIO() as file1:
+    warnings.showwarning('A UserWarning to file', UserWarning, 'Warnings.py', 5, file1)
+    print(f'Content of file : {file1.getvalue()}')
+
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Content of file : Warnings.py:5: UserWarning: A UserWarning to file
+</pre></div>
+
+<hr/>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Customizing show warning :</strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+def custom_warning(message, category, filename, lineno, file=None, line=None):
+    result = warnings.formatwarning(message, category, filename, lineno)
+    # Apply custom behavior
+
+
+# replace original function with custom callable
+warnings.showwarning = custom_warning
+
+
+{% endhighlight %}
+</div>
+
+<hr/>
+
+
+#### filterwarnings(action, message='', category=Warning, module='', lineno=0, append=False)
+
+<p> Adds an entry to the front of the list of warning filters specification. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> append : </strong> If given True entry is appended at the end od the list. </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import warnings
+import traceback
+
+warnings.filterwarnings('ignore', message='UserAuth.*')
+warnings.filterwarnings('error', message='App.*')
+
+try:
+    warnings.warn('UserAuth.protocol Warning', UserWarning)
+except UserWarning as e:
+    traceback.print_exc()
+
+try:
+    warnings.warn('App.Daemon.destroyed Warning', UserWarning)
+except UserWarning as e:
+    traceback.print_exc()
+
+try:
+    warnings.warn('UserAuth.SlowConnection Warning', UserWarning)
+except UserWarning as e:
+    traceback.print_exc()
+
+try:
+    warnings.warn('App.Analytics.crashed Warning', UserWarning)
+except UserWarning as e:
+    traceback.print_exc()
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre id='tut-output-error' class="result-content">Traceback (most recent call last):
+  File "/home/asha/PycharmProjects/pythonEx/05_ExceptionHandling/progs/FilterWarning.py", line 14, in &lt;module>
+    warnings.warn(<div id="tut-highlight">'App.Daemon.destroyed Warning'</div>, UserWarning)
+UserWarning: App.Daemon.destroyed Warning
+Traceback (most recent call last):
+  File "/home/asha/PycharmProjects/pythonEx/05_ExceptionHandling/progs/FilterWarning.py", line 24, in &lt;module>
+    warnings.warn(<div id="tut-highlight">'App.Analytics.crashed Warning'</div>, UserWarning)
+UserWarning: App.Analytics.crashed Warning</pre></div>
+
+<hr/>
+
+
+#### simplefilter(action, category=Warning, lineno=0, append=False)
+
+<p> Insert a simple entry into the list of warnings filter specifications. It has same parameters meaning as filterwarnings() except regular expressions are not needed as filter, because filter always matches any message in message in any module as long as the category and line number match. </p>
+
+<hr/>
+ 
+#### resetwarnings()
+
+<p> Resets the warning filters set with filterwarnings(), simplefilter() and the filter set with commandline option -W. </p>
+
+
+### ContextManager
+
+#### catch_warnings(*, record=False, module=None) 
+
+<p> It copies the original warning filters at the beginning of with statement and restores when exiting the context. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> record : </strong> By default False context manager returns None on entry. If True a list is returned that is progressively populated with objects as seen by a custom showwarning() function. </li>
+        <li> <strong> module : </strong>For testing other modules in current module , it takes name of the module whose filters to be protected from modification inside context.</li>
+    </ul> 
+</div>
+
+
+{% include callout.html content="**Note** : catch_warnings modifies global state of the application and it's not thread safe. " type="primary" %} 
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from warnings import warn, catch_warnings, filterwarnings, showwarning
+from traceback import print_exc
+
+try:
+    warn('[Before] ResourceWarning from outside of Context Manager!', category=ResourceWarning)
+except ResourceWarning:
+    print_exc()
+
+
+with catch_warnings(record=True) as cw:
+    print('On Entry cw :', cw)
+    filterwarnings('error', category=ResourceWarning)
+
+    try:
+        warn('ResourceWarning from Inside of Context Manager!', category=ResourceWarning)
+    except ResourceWarning:
+        print_exc()
+
+    try:
+        showwarning('A UserWarning to file', UserWarning, 'Warnings.py', 5)
+    except UserWarning:
+        print_exc()
+
+    print('On Exit cw :', cw)
+
+
+try:
+    warn(' [After] ResourceWarning from outside of Context Manager!', category=ResourceWarning)
+except ResourceWarning:
+    print_exc()
+
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+On Entry cw : []
+On Exit cw : [&lt;warnings.WarningMessage object at 0x7f0a624b25e0>]
+</pre>
+<pre id='tut-output-error' class="result-content">Traceback (most recent call last):
+  File "/home/asha/PycharmProjects/pythonEx/05_ExceptionHandling/progs/ContextManagerWarnings.py", line 14, in &lt;module>
+    warn('ResourceWarning from Inside of Context Manager!', category=ResourceWarning)
+ResourceWarning: ResourceWarning from Inside of Context Manager!</pre></div>
+
+<hr/>
 
 
 {% include links.html %}
