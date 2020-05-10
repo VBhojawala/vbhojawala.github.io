@@ -11,8 +11,8 @@ prev: python_traceback.html
 prev_title: Traceback
 next: 
 next_title: 
-next_section: 
-next_section_title: 
+next_section: python_module_package_import.html
+next_section_title: Module, Package and Import
 summary: Warning class hierarchy, warning filters, functions, extending warning class, command-line syntax, context management.
 ---
 

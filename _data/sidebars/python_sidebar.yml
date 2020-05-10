@@ -134,3 +134,10 @@ entries:
       - title: Warnings
         url: /python_warnings.html
         output: web
+
+  - title: Module and Package
+    output: web
+    folderitems:
+      - title: Module, Package and Import
+        url: /python_module_package_import.html
+        output: web

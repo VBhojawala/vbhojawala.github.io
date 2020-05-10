@@ -4,11 +4,11 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="While loop, break, continue, while-else.">
-<meta name="keywords" content="while_loopbreakcontinuewhile-else,  ">
+<meta name="description" content="Module, Package, importing module package and functions.">
+<meta name="keywords" content=",  ">
 <meta name="theme-color" content="#36362C">
 <link rel="icon" sizes="192x192" href="images/favicon.ico">
-<title>While Loop | Asha Tutorials</title>
+<title>Module, Package and Import | Asha Tutorials</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -283,7 +283,7 @@
 
 
 
-  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:?subject=Asha Tutorials feedback&body=I have some feedback about the While Loop page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:?subject=Asha Tutorials feedback&body=I have some feedback about the Module, Package and Import page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
 
 </li>
 
@@ -335,7 +335,7 @@
                             searchInput: document.getElementById('search-input'),
                             resultsContainer: document.getElementById('results-container'),
                             dataSource: 'search.json',
-                            searchResultTemplate: '<li style="margin: 0px 0px;"><a href="{url}" title="While Loop       " folder="python">{title} <sub>in {folder}</sub></a></li>',
+                            searchResultTemplate: '<li style="margin: 0px 0px;"><a href="{url}" title="Module, Package and Import       " folder="python">{title} <sub>in {folder}</sub></a></li>',
                 noResultsText: '<li style="margin: 0px 0px;"><a href="#">No results found.</a></li>',
                         limit: 10,
                         fuzzy: true,
@@ -451,7 +451,7 @@
           
           
           
-          <li class="active"><a title="While Loop" href="python_while_loop.html">While Loop</a></li>
+          <li><a title="While Loop" href="python_while_loop.html">While Loop</a></li>
           
           
           
@@ -620,7 +620,7 @@
           
           
           
-          <li><a title="Module, Package and Import" href="python_module_package_import.html">Module, Package and Import</a></li>
+          <li class="active"><a title="Module, Package and Import" href="python_module_package_import.html">Module, Package and Import</a></li>
           
           
           
@@ -647,7 +647,7 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">While Loop</h1>
+   <h1 class="post-title-main">Module, Package and Import</h1>
 </div>
 
 
@@ -655,7 +655,7 @@
 <div class="post-content">
 
    <!-- 
-    <div class="summary">While loop, break, continue, while-else.</div>
+    <div class="summary">Module, Package, importing module package and functions.</div>
     -->
 
     
@@ -686,307 +686,237 @@ $('#toc').on('click', 'a', function() {
 
     <!-- 
 
-    <a target="_blank" rel="noopener" href="https://github.com/ashatutorials/pages/python/02_ControlFlow_Looping/02_While_Loop.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+    <a target="_blank" rel="noopener" href="https://github.com/ashatutorials/pages/python/06_Module_and_Package/01_Module_Package_Import.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
 
      -->
 
-   <h2 id="while-loop">while loop</h2>
+   <h2 id="module">Module</h2>
+
+<p> Module is the .py(Python) file containing Python definitions and statements. </p>
+
+<h2 id="package">Package</h2>
+
+<p> Package is collection of modules. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> In Python package is a directory(Folder) with modules(.py files) and __init__.py . __init__.py makes a directory into package (__init__ is mandatory upto python 3.3) and contents of __init__.py will get imported when importing package. </li>
+        <li> In Python there are two types of Packages : Regular packages and Namespace packages </li>
+    </ul> 
+    
+</div>
+
+<h3 id="regular-package">Regular package</h3>
+
+<div id="tut-content"> 
+    <ul>
+        <li> Up to python 3.2 package folder needs to have __init__.py file, which makes system directory in to package after registering path to sys.path. </li>
+        <li> Regular package still works same  way in python 3.3 and later. </li>
+    </ul> 
+</div>
+
+<h3 id="namespace-package">Namespace package</h3>
+
+<div id="tut-content"> 
+    <ul>
+        <li> from python 3.3 capability of package is extended and an alternative more flexible way of creating package added. </li>
+        <li> Namespace package does not require package directory to have __init__.py file. </li>
+        <li> Namespace package can span up to multiple directory(packages).</li>
+        <li> Namespace package still requires path to be registered to sys.path .</li>
+    </ul> 
+</div>
+
+<h3 id="adding-directory-path-to-syspath">Adding directory path to sys.path</h3>
+
+<h4 id="checking-current-paths">Checking current paths</h4>
 
 <div id="code-block-1" class="code-block">
 <p id="code-header-1" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-1", "code-header-1")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">p</span> <span class="o">=</span> <span class="mi">1</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">sys</span>
 
-<span class="k">while</span> <span class="n">p</span> <span class="o">&lt;</span> <span class="mi">11</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
-    <span class="n">p</span> <span class="o">+=</span> <span class="mi">1</span></code></pre></figure>
+
+<span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-
+/home/asha/Programs/pycharm/plugins/python-ce/helpers/pydev
+/home/asha/Programs/pycharm/plugins/python-ce/helpers/third_party/thriftpy
+/home/asha/Programs/pycharm/plugins/python-ce/helpers/pydev
+/usr/local/lib/python38.zip
+/usr/local/lib/python3.8
+/usr/local/lib/python3.8/lib-dynload
+/home/asha/PycharmProjects/pythonEx/venv/lib/python3.8/site-packages
+/home/asha/PycharmProjects/pythonEx/venv/lib/python3.8/site-packages/setuptools-40.8.0-py3.8.egg
+/home/asha/PycharmProjects/pythonEx/venv/lib/python3.8/site-packages/pip-19.0.3-py3.8.egg
+/home/asha/PycharmProjects/pythonEx
+/home/asha/PycharmProjects/pythonEx/05_ExceptionHandling/progs
+/home/asha/PycharmProjects/pythonEx/06_ModuleAndPackage
+/home/asha/PycharmProjects/pythonEx/06_ModuleAndPackage/namespace/package1
+/home/asha/PycharmProjects/pythonEx/06_ModuleAndPackage/namespace/package2
 </pre></div>
 
 <hr />
 
-<h2 id="break">break</h2>
-
-<p> Executed when end of loop condition satisfied, which exits the while loop. </p>
-
-<div id="tut-content"> 
-    <ul>
-        <li> <strong> Infinite while loop and break statement : </strong> </li>
-    </ul> 
-</div>
+<h4 id="adding-path-to-syspath">Adding path to sys.path</h4>
 
 <div id="code-block-2" class="code-block">
 <p id="code-header-2" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-2", "code-header-2")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
-    <span class="n">inpt</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">'Enter your Name [Press Enter to exit] -&gt;'</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">inpt</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Hi, {inpt}. Welcome to the world of Python.'</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">break</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">'&lt;PATH_TO_DIRECTORY&gt;'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
-<div class="result"><p class="result-header"><b>Output</b></p>
-<pre class="result-content">
-Enter your Name [Press Enter to exit] -&gt;&gt;? Vicky
-Hi, Vicky. Welcome to the world of Python.
-Enter your Name [Press Enter to exit] -&gt;&gt;? Mike
-Hi, Mike. Welcome to the world of Python.
-Enter your Name [Press Enter to exit] -&gt;&gt;? Kim
-Hi, Kim. Welcome to the world of Python.
-Enter your Name [Press Enter to exit] -&gt;&gt;? 
-
-</pre></div>
-
-<hr />
-
-<h2 id="continue">continue</h2>
-
-<p> Executed when exceptional condition satisfied , it skips remaining statements in current iteration and continue next iteration. </p>
+<h4 id="adding-path-using-pycharm">Adding path using PyCharm</h4>
 
 <div id="tut-content"> 
     <ul>
-        <li> <strong> Infinite loop with break and continue : </strong> </li>
+        <li> <strong> File -&gt; Settings -&gt; Project -&gt; Project Structure -&gt; Package -&gt; Source -&gt; Select Directory -&gt; Mark as Sources </strong> </li>
+        <div id="tut-img">
+            <img src="/images/tutorials/python/AddPathInPyCharm1.png" class="tut-img" alt="AddPathInPyCharm1" />
+        </div>
+        <p> OR </p>
+        <li> <strong> Right-Click on Folder in Project View -&gt; Mark Directory as -&gt; Sources root</strong> </li>
+        <div id="tut-img">
+            <img src="/images/tutorials/python/AddPathInPyCharm2.png" class="tut-img" alt="AddPathInPyCharm1" />
+        </div>
     </ul> 
 </div>
 
-<p> Following program prints number only if it is not divisible by 2,3,5 other wise ignore it, 0 to exit. </p>
+<h3 id="pycache"><strong>pycache</strong></h3>
+
+<div id="tut-content"> 
+    <ul>
+        <li> __pycache__ folder in your package  contains compiled version of each module. </li>
+        <li> It helps improve the loading time of  the module. when the code of the file is changed it automatically gets re-compiled.</li>
+    </ul> 
+</div>
+
+<div id="tut-content"> 
+    <ul>
+        <li> package with __pycache__  </li>
+        <div id="tut-img">
+            <img src="/images/tutorials/python/PyCache1.png" class="tut-img" alt="python logo" />
+        </div>
+        <li> Content of __pycache__ </li>
+        <div id="tut-img">
+            <img src="/images/tutorials/python/PyCache2.png" class="tut-img" alt="python logo" />
+        </div>
+    </ul> 
+</div>
+
+<h2 id="import">Import</h2>
+
+<h3 id="importing-module">Importing module</h3>
+
+<p id="tut-cons"> Syntax : import &lt;ModuleName&gt; </p>
 
 <div id="code-block-3" class="code-block">
 <p id="code-header-3" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-3", "code-header-3")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
-    <span class="n">inpt</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">'Enter a Number [Enter 0 to exit] -&gt;'</span><span class="p">))</span>
-    <span class="k">if</span> <span class="n">inpt</span><span class="p">:</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">inpt</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">inpt</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">inpt</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
-            <span class="k">continue</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Adding {inpt} to the list ....'</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">break</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">datetime</span></code></pre></figure>
 
 </div>
-
-<div class="result"><p class="result-header"><b>Output</b></p>
-<pre class="result-content">
-Enter a Number [Enter 0 to exit] -&gt;&gt;? 255
-Enter a Number [Enter 0 to exit] -&gt;&gt;? 1212
-Enter a Number [Enter 0 to exit] -&gt;&gt;? 541
-Adding 541 to the list ....
-Enter a Number [Enter 0 to exit] -&gt;&gt;? 97
-Adding 97 to the list ....
-Enter a Number [Enter 0 to exit] -&gt;&gt;? 665
-Enter a Number [Enter 0 to exit] -&gt;&gt;? 323
-Adding 323 to the list ....
-Enter a Number [Enter 0 to exit] -&gt;&gt;? 121
-Adding 121 to the list ....
-Enter a Number [Enter 0 to exit] -&gt;&gt;? 111
-Enter a Number [Enter 0 to exit] -&gt;&gt;? 1221
-Enter a Number [Enter 0 to exit] -&gt;&gt;? 123127
-Adding 123127 to the list ....
-Enter a Number [Enter 0 to exit] -&gt;&gt;? 0
-
-</pre></div>
 
 <hr />
 
-<h2 id="while-else">while-else</h2>
+<h3 id="importing-function-from-module">Importing function from module</h3>
 
-<div id="tut-content"> 
-    <ul>
-        <li> <strong> else : </strong> statements in else gets executed if break statement inside loop is not called. </li>
-    </ul> 
-</div>
+<p id="tut-cons"> Syntax : from &lt;ModuleName&gt; import &lt;function1&gt;, &lt;function2&gt; </p>
 
 <div id="code-block-4" class="code-block">
 <p id="code-header-4" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-4", "code-header-4")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
-
-<span class="k">while</span> <span class="n">x</span><span class="p">:</span>
-    <span class="n">x</span> <span class="o">-=</span> <span class="mi">1</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">'Conditional break'</span><span class="p">)</span>
-        <span class="k">break</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">'while loop exited normally'</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span></code></pre></figure>
 
 </div>
 
-<div class="result"><p class="result-header"><b>Output</b></p>
-<pre class="result-content">
-9
-8
-7
-6
-5
-4
-3
-2
-1
-0
-while loop exited normally
-</pre></div>
-
 <hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> Importing multiple functions </li>
+    </ul> 
+</div>
 
 <div id="code-block-5" class="code-block">
 <p id="code-header-5" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-5", "code-header-5")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
-
-<span class="k">while</span> <span class="n">x</span><span class="p">:</span>
-    <span class="n">x</span> <span class="o">-=</span> <span class="mi">1</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># changed
-</span>        <span class="k">print</span><span class="p">(</span><span class="s">'Conditional break'</span><span class="p">)</span>
-        <span class="k">break</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">'while loop exited normally'</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">timezone</span><span class="p">,</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span></code></pre></figure>
 
 </div>
 
-<div class="result"><p class="result-header"><b>Output</b></p>
-<pre class="result-content">
-9
-8
-7
-6
-5
-4
-3
-2
-1
-0
-Conditional break
-</pre></div>
-
 <hr />
-
-<h2 id="examples">Examples</h2>
 
 <div id="tut-content"> 
     <ul>
-        <li> <strong>Online order processing facility which ships the order until none is left</strong> </li>
+        <li> Importing all functions </li>
     </ul> 
 </div>
 
 <div id="code-block-6" class="code-block">
 <p id="code-header-6" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-6", "code-header-6")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">random</span>
-<span class="n">hasOrder</span> <span class="o">=</span> <span class="bp">True</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'Press &lt;Enter&gt; to exit</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
-<span class="k">while</span> <span class="n">hasOrder</span><span class="p">:</span>
-    <span class="n">order</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">'Enter the item name to be order'</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">order</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">'Finding '</span><span class="p">,</span> <span class="n">order</span><span class="p">,</span> <span class="s">' .......'</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">'Updating inventory ......'</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">'Printing shipping details '</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">'Packaging the order'</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">'Assign shipment to Courier services'</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Estimated delivery time --&gt; {random.randint(1, 5)} Days'</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">'----------------------------------------------------'</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">hasOrder</span> <span class="o">=</span> <span class="bp">False</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">'Shutting down ........'</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">'@@@@@@@@@@ Exit @@@@@@@@@@'</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="o">*</span></code></pre></figure>
 
 </div>
 
-<div class="result"><p class="result-header"><b>Output</b></p>
-<pre class="result-content">
-Press &lt;&zwj;Enter&zwj;&gt; to exit
-
-Enter the item name to be order&gt;? 16GB RAM
-Finding  16GB RAM  .......
-Updating inventory ......
-Printing shipping details 
-Packaging the order
-Assign shipment to Courier services
-Estimated delivery time --&gt; 2 Days
-----------------------------------------------------
-Enter the item name to be order&gt;? RTX 2080 SUPER
-Finding  RTX 2080 SUPER  .......
-Updating inventory ......
-Printing shipping details 
-Packaging the order
-Assign shipment to Courier services
-Estimated delivery time --&gt; 2 Days
-----------------------------------------------------
-Enter the item name to be order&gt;? RYZEN 3700H
-Finding  RYZEN 3700H  .......
-Updating inventory ......
-Printing shipping details 
-Packaging the order
-Assign shipment to Courier services
-Estimated delivery time --&gt; 2 Days
-----------------------------------------------------
-Enter the item name to be order&gt;? 650W Power Supply
-Finding  650W Power Supply  .......
-Updating inventory ......
-Printing shipping details 
-Packaging the order
-Assign shipment to Courier services
-Estimated delivery time --&gt; 4 Days
-----------------------------------------------------
-Enter the item name to be order&gt;? 
-Shutting down ........
-@@@@@@@@@@ Exit @@@@@@@@@@
-
-</pre></div>
-
 <hr />
+
+<h3 id="aliasing">Aliasing</h3>
+
+<p> When two modules have function with same name while importing them using aliasing we can assign different names to it. Using Aliasing long module name can also be shortened. </p>
+
+<p id="tut-cons"> syntax : <br /> import &lt;Module&gt; as &lt;Alias&gt; <br /> from &lt;Module&gt; import &lt;Function&gt; as &lt;Alias&gt;  </p>
 
 <div id="tut-content"> 
     <ul>
-        <li> <strong>Let python pick the number ball from box without removing randomly until it matches with given number.</strong> </li>
+        <li> Two module with same function name </li>
     </ul> 
 </div>
 
 <div id="code-block-7" class="code-block">
 <p id="code-header-7" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-7", "code-header-7")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">random</span>
-<span class="n">begin</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">'Enter starting range -&gt; '</span><span class="p">))</span>
-<span class="n">end</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">'Enter end range -&gt; '</span><span class="p">))</span>
-<span class="n">number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">'Enter no to be found -&gt; '</span><span class="p">))</span>
-
-<span class="n">found</span> <span class="o">=</span> <span class="bp">False</span>
-<span class="n">trial</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="k">while</span> <span class="ow">not</span> <span class="n">found</span><span class="p">:</span>
-    <span class="n">trial</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">begin</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="n">number</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Python found in {trial} trial(s)'</span><span class="p">)</span>
-        <span class="n">found</span> <span class="o">=</span> <span class="bp">True</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+<span class="kn">from</span> <span class="nn">cmath</span> <span class="kn">import</span> <span class="n">sqrt</span></code></pre></figure>
 
 </div>
 
-<div class="result"><p class="result-header"><b>Output</b></p>
-<pre class="result-content">
-Enter starting range -&gt; &gt;? 1
-Enter end range -&gt; &gt;? 100
-Enter no to be found -&gt; &gt;? 99
-Python found in 29 trial(s)
-</pre></div>
+<div id="tut-content"> 
+    <ul>
+        <li> Using aliasing to import them </li>
+    </ul> 
+</div>
+
+<div id="code-block-8" class="code-block">
+<p id="code-header-8" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-8", "code-header-8")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span> <span class="k">as</span> <span class="n">msqrt</span>
+<span class="kn">from</span> <span class="nn">cmath</span> <span class="kn">import</span> <span class="n">sqrt</span> <span class="k">as</span> <span class="n">cmsqrt</span></code></pre></figure>
+
+</div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> Aliasing module </li>
+    </ul> 
+</div>
+
+<div id="code-block-9" class="code-block">
+<p id="code-header-9" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-9", "code-header-9")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">traceback</span> <span class="k">as</span> <span class="n">tb</span>
+
+<span class="n">tb</span><span class="o">.</span><span class="n">print_exc</span><span class="p">()</span></code></pre></figure>
+
+</div>
 
 <hr />
 
@@ -995,22 +925,6 @@ Python found in 29 trial(s)
     <div class="tags">
         
         <p style="display: inline;"><b>Tags: </b></p>
-        
-        
-        
-        <a href="tag_while_loop.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">while_loop</a>
-        
-        
-        
-        <a href="tag_break.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">break</a>
-        
-        
-        
-        <a href="tag_continue.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">continue</a>
-        
-        
-        
-        <a href="tag_while-else.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">while-else</a>
         
         
         
@@ -1034,23 +948,16 @@ Python found in 29 trial(s)
 <div class="seriesContext" align="right">
 
     
-
-    
-        <a href="python_control_flow.html" >
-            <button type="button" class="btn btn-primary  "> 
-                 <span class="fa fa-arrow-circle-left fa-lg"></span>  Previous  <br/>
-                 Control Flow 
+        <a href="python_exception_handling.html" >
+            <button type="button" class="btn btn-success "> 
+                 <span class="fa fa-chevron-left fa-lg"></span> Previous Section <br/>
+                 Exception Handling  
             </button>
         </a>
     
 
     
-        <a href="python_for_loop.html" >
-            <button type="button" class="btn btn-primary "> 
-                 Next <span class="fa fa-arrow-circle-right fa-lg"></span> <br/> 
-                 For Loop
-            </button>
-        </a>
+
     
 
     
