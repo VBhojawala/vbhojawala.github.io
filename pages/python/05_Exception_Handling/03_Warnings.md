@@ -1,7 +1,7 @@
 ---
 title: Warnings
 layout: tutorial
-tags: []
+tags: [Warnings, Warning_class_hierarchy,  warn(), Warning_filters, filterwarnings(), Extending_Warning_class, formatwarning(), warn_explicit(), showwarning(), simple_filter(), resetwarnings(),  catch_warnings(), context_manager]
 sidebar: python_sidebar
 permalink: python_warnings.html
 folder: python
@@ -13,7 +13,7 @@ next:
 next_title: 
 next_section: 
 next_section_title: 
-summary: 
+summary: Warning class hierarchy, warning filters, functions, extending warning class, command-line syntax, context management.
 ---
 
 ## Warnings
@@ -127,7 +127,7 @@ UserAuth.user_auth('admin')
 <hr/>
 
 
-### Warnings Filter
+### Warning Filters
 
 <p> The warnings filter determines whether warnings are ignored, displayed, or turned into errors. </p>
 
@@ -407,7 +407,7 @@ ResourceWarning: ResourceWarning!
 
 
 
-### Warning Filter
+### Warning Filter Function
 
 #### filterwarnings(action, message='', category=Warning, module='', lineno=0, append=False)
 

@@ -434,3 +434,16 @@ allowed-tags:
   - extract_stack()
   - format_stack()
   - clear_frames()
+  - Warnings
+  - Warning_class_hierarchy
+  - warn()
+  - Warning_filters
+  - filterwarnings()
+  - Extending_Warning_class
+  - formatwarning()
+  - warn_explicit()
+  - showwarning()
+  - simple_filter()
+  - resetwarnings()
+  - catch_warnings()
+  - context_manager

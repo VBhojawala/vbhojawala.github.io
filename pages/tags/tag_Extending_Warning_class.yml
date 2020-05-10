@@ -1,0 +1,8 @@
+---
+title: "Extending Warning class"
+tagName: Extending_Warning_class
+search: exclude
+permalink: tag_Extending_Warning_class.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

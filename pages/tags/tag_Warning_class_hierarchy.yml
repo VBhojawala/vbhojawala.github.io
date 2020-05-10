@@ -1,0 +1,8 @@
+---
+title: "Warning class hierarchy"
+tagName: Warning_class_hierarchy
+search: exclude
+permalink: tag_Warning_class_hierarchy.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}
