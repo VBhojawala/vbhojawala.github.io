@@ -306,8 +306,57 @@ from datetime import datetime
 <hr/>
 
 
+### Importing all using wildcard ' * '
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> from &lt;PackageName> import * : </strong> Imports all Modules from given &lt;PackageName>. </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from datetime import *
+
+print(datetime.now())
+print(date.today())
+print(time(15, 12, 22))
+print(timedelta(15, 2))
 
 
+{% endhighlight %}
+</div>
+
+<br/>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> from &lt;ModuleName> import * : </strong>  Imports all functions and variables from given &lt;ModuleName>. </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from traceback import *
+
+print_exc()
+print_tb()
+print_stack()
+print_exception()
+
+
+{% endhighlight %}
+</div>
 
 
 ### Aliasing
@@ -442,12 +491,17 @@ from datetime import datetime as dt
     </ul> 
 </div>
 
+<div id="tut-content"> 
+    <ul>
+        <li> Project Structure  </li>
+    </ul> 
+</div>
 
 <div id="tut-img">
     <img src="/images/tutorials/python/ImportMDSameDir.png" class="tut-img" alt="python logo">
 </div>
 
-
+<br/>
 
 <p> <i class="fa fa-file-text" aria-hidden="true"></i> Module2.py </p>
 
@@ -509,20 +563,22 @@ Good Morning!
 
 
 
-<div id="tut-content"> 
-    <ul>
-        <li> Importing variable from the module [not a good design] </li>
-    </ul> 
-</div>
+### Importing variable from the module [not a good design]
 
 
 
 {% include callout.html content="**Caution** : If the same name variable already exist in current module it will override values! " type="primary" %} 
 
+<div id="tut-content"> 
+    <ul>
+        <li> Project Structure  </li>
+    </ul> 
+</div>
 <div id="tut-img">
     <img src="/images/tutorials/python/ImportMDSameDir.png" class="tut-img" alt="python logo">
 </div>
 
+<br/>
 
 <p> <i class="fa fa-file-text" aria-hidden="true"></i> Module2.py </p>
 
@@ -571,18 +627,22 @@ print(int1)
 
 
 
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Modifying and accessing Module's global variables [Bad Design!] </strong> </li>
+    </ul> 
+</div>
 
 
 <div id="tut-content"> 
     <ul>
-        <li> Modifying and accessing Module's global variables </li>
+        <li> Project Structure  </li>
     </ul> 
 </div>
-
 <div id="tut-img">
     <img src="/images/tutorials/python/ImportMDSameDir.png" class="tut-img" alt="ImportMDSameDir">
 </div>
-
+<br/>
 
 <p> <i class="fa fa-file-text" aria-hidden="true"></i> Module2.py </p>
 
@@ -647,13 +707,91 @@ list1 -> ['a', 'b', 'c', 'a', 'b', 'c']
 
 
 
+### Correct way of accessing module's Global variables 
+
+<div id="tut-content"> 
+    <ul>
+        <li> Project Structure  </li>
+    </ul> 
+</div>
+<div id="tut-img">
+    <img src="/images/tutorials/python/ImportMDSameDir.png" class="tut-img" alt="ImportMDSameDir">
+</div>
+<br/>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> Module2.py </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+int1 = 20
+
+list1 = []
+
+
+def print_int():
+    print(f'int1 -> {int1}')
+
+
+def print_list():
+    print(f'list1 -> {list1}')
+
+
+
+{% endhighlight %}
+</div>
+
+
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> ImportEx.py </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import Module2 as m1
+
+m1.int1 = 250
+m1.list1.extend(['a', 'b', 'c'])
+
+m1.print_int()
+m1.print_list()
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+int1 -> 250
+list1 -> ['a', 'b', 'c', 'a', 'b', 'c']
+</pre></div>
+
+<hr/>
+
+
+
 
 
 ### Importing User defined Package
 
+<div id="tut-content"> 
+    <ul>
+        <li> Project Structure  </li>
+    </ul> 
+</div>
 <div id="tut-img">
     <img src="/images/tutorials/python/ImportUDPackage.png" class="tut-img" alt="ImportUDPackage">
 </div>
+<br/>
 
 
 <p> <i class="fa fa-file-text" aria-hidden="true"></i> Module1.py </p>
@@ -737,9 +875,16 @@ Hello World from Module 1!
 </div>
 
 
+
+<div id="tut-content"> 
+    <ul>
+        <li> Project Structure  </li>
+    </ul> 
+</div>
 <div id="tut-img">
     <img src="/images/tutorials/python/ImportModuleWithExecutableCode.png" class="tut-img" alt="ImportModuleWithExecutableCode">
 </div>
+<br/>
 
 
 <p> <i class="fa fa-file-text" aria-hidden="true"></i> Module1.py </p>
@@ -790,6 +935,329 @@ Hello World from Module 1!
 Say Hello!
 </pre></div>
 
+
+<hr/>
+
+
+### Avoiding running executable code while importing
+
+<div id="tut-content"> 
+    <ul>
+        <li> put executable code inside   " if name == '__main__' " block which will only get executed when module is being run. </li>
+    </ul> 
+</div>
+
+<div id="tut-content"> 
+    <ul>
+        <li> Project Structure  </li>
+    </ul> 
+</div>
+<div id="tut-img">
+    <img src="/images/tutorials/python/ImportModuleWithExecutableCode.png" class="tut-img" alt="ImportModuleWithExecutableCode">
+</div>
+<br/>
+
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> Module1.py </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+
+def sayHello():
+    print('Hello World from Module 1!')
+
+
+# Executable code [we can write test cases here]
+if __name__ == '__main__':
+    msg = 'Say Hello!'
+    sayHello()
+    print(msg)
+
+
+
+{% endhighlight %}
+</div>
+
+
+
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> ImportEx.py </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from packageA.packageC import Module1
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+
+</pre></div>
+
+<hr/>
+
+
+### Controlling wildcard import with  \__init__.py
+
+<div id="tut-content"> 
+    <ul>
+        <li> __init__.py can have __all__ attribute which contains list of modules that should be automatically imported from wildcard * statement instead of importing all. </li>
+    </ul> 
+</div>
+
+<div id="tut-content"> 
+    <ul>
+        <li> Project Structure  </li>
+    </ul> 
+</div>
+<div id="tut-img">
+    <img src="/images/tutorials/python/WilCardControlWithAll.png" class="tut-img" alt="WilCardControlWithAll">
+</div>
+<br/>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> Module1.py </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+
+def sayHelloM1():
+    print('Hello World from Module 1!')
+
+
+{% endhighlight %}
+</div>
+
+<hr/>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> Module2.py </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+
+def sayHelloM2():
+    print('Hello World from Module 2!')
+
+
+{% endhighlight %}
+</div>
+
+<hr/>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> ModuleA.py </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+
+def sayHelloA():
+    print('Hello World from Module A!')
+
+
+{% endhighlight %}
+</div>
+
+
+<hr/>
+
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> ModuleB.py </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+
+def sayHelloB():
+    print('Hello World from Module B!')
+
+
+{% endhighlight %}
+</div>
+
+<hr/>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> __init__.py </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+
+__all__ = ['Module1', 'Module2']
+
+
+{% endhighlight %}
+</div>
+
+
+<hr/>
+
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> ImportEx.py </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from packageA.subPackageX import *
+
+Module1.sayHelloM1()
+Module2.sayHelloM2()
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Hello World from Module 1!
+Hello World from Module 2!
+</pre></div>
+
+
+{% include callout.html content="**Note** : Try to access ModuleA and ModuleB, they are not automatically imported. " type="primary" %} 
+
+
+<hr/>
+
+
+### Restricting wildcard import of function and variables from module using \__all__
+
+<div id="tut-content"> 
+    <ul>
+        <li> Module can have __all__ variable containing list of attributes to be imported when wildcard import is used. </li>
+    </ul> 
+</div>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> Project Structure  </li>
+    </ul> 
+</div>
+<div id="tut-img">
+    <img src="/images/tutorials/python/WildcardModuleImport.png" class="tut-img" alt="WildcardModuleImport">
+</div>
+
+<br/>
+
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> __init__.py </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+
+__all__ = ['x', 'z', 'get_x']
+
+x = 100
+_y = 150
+z = 30
+
+
+def get_x():
+    return x
+
+
+def __gety():
+    return _y
+
+
+
+{% endhighlight %}
+</div>
+
+
+<hr/>
+
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> ImportEx.py </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from packageB.module2 import *
+
+print(f'x : {x}  z : {z}')
+print('get_x() :', get_x())
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+x : 100  z : 30
+get_x() : 100
+</pre></div>
+
+{% include callout.html content="**Note** :  Variable _y and function __gety() will not be imported with wildcard import. " type="primary" %} 
+
+
+<hr/>
+
+
+
+### Relative imports
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> Project Structure  </li>
+    </ul> 
+</div>
+<div id="tut-img">
+    <img src="/images/tutorials/python/RelativeImport.png" class="tut-img" alt="RelativeImport">
+</div>
+
+<br/>
 
 
 {% include links.html %}
