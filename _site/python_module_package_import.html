@@ -787,6 +787,17 @@ $('#toc').on('click', 'a', function() {
     </ul> 
 </div>
 
+<h4 id="adding-path-using-environment-variable">Adding path using environment variable</h4>
+
+<p id="tut-cons"> Syntax : export PYTHONPATH = $PYTHONPATH:&lt;modulepath&gt; </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> &lt;modulepath&gt; needs to be replace with the path of your module </li>
+        <li> For windows user you can append module path to environment variable </li>
+    </ul> 
+</div>
+
 <h3 id="pycache"><strong>pycache</strong></h3>
 
 <div id="tut-content"> 
@@ -846,7 +857,7 @@ $('#toc').on('click', 'a', function() {
 <div id="code-block-5" class="code-block">
 <p id="code-header-5" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-5", "code-header-5")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">timezone</span><span class="p">,</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">log</span></code></pre></figure>
 
 </div>
 
@@ -867,11 +878,41 @@ $('#toc').on('click', 'a', function() {
 
 <hr />
 
+<h3 id="importing-package">Importing Package</h3>
+
+<p id="tut-cons"> import &lt;ModuleName&gt; </p>
+
+<div id="code-block-7" class="code-block">
+<p id="code-header-7" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-7", "code-header-7")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">datetime</span></code></pre></figure>
+
+</div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> import module from package </li>
+    </ul> 
+</div>
+
+<p id="tut-cons"> from &lt;PackageName&gt; import &lt;ModuleName&gt; </p>
+
+<div id="code-block-8" class="code-block">
+<p id="code-header-8" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-8", "code-header-8")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span></code></pre></figure>
+
+</div>
+
+<hr />
+
 <h3 id="aliasing">Aliasing</h3>
 
 <p> When two modules have function with same name while importing them using aliasing we can assign different names to it. Using Aliasing long module name can also be shortened. </p>
 
-<p id="tut-cons"> syntax : <br /> import &lt;Module&gt; as &lt;Alias&gt; <br /> from &lt;Module&gt; import &lt;Function&gt; as &lt;Alias&gt;  </p>
+<p id="tut-cons"> syntax : <br /> import &lt;Module&gt; as &lt;Alias&gt; <br /> from &lt;Module&gt; import &lt;Function&gt; as &lt;Alias&gt;  <br /> from &lt;Package&gt; import &lt;ModuleName&gt; as alias</p>
 
 <div id="tut-content"> 
     <ul>
@@ -879,8 +920,8 @@ $('#toc').on('click', 'a', function() {
     </ul> 
 </div>
 
-<div id="code-block-7" class="code-block">
-<p id="code-header-7" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-7", "code-header-7")</script>
+<div id="code-block-9" class="code-block">
+<p id="code-header-9" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-9", "code-header-9")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
 <span class="kn">from</span> <span class="nn">cmath</span> <span class="kn">import</span> <span class="n">sqrt</span></code></pre></figure>
@@ -893,8 +934,8 @@ $('#toc').on('click', 'a', function() {
     </ul> 
 </div>
 
-<div id="code-block-8" class="code-block">
-<p id="code-header-8" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-8", "code-header-8")</script>
+<div id="code-block-10" class="code-block">
+<p id="code-header-10" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-10", "code-header-10")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span> <span class="k">as</span> <span class="n">msqrt</span>
 <span class="kn">from</span> <span class="nn">cmath</span> <span class="kn">import</span> <span class="n">sqrt</span> <span class="k">as</span> <span class="n">cmsqrt</span></code></pre></figure>
@@ -909,16 +950,286 @@ $('#toc').on('click', 'a', function() {
     </ul> 
 </div>
 
-<div id="code-block-9" class="code-block">
-<p id="code-header-9" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-9", "code-header-9")</script>
+<div id="code-block-11" class="code-block">
+<p id="code-header-11" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-11", "code-header-11")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">traceback</span> <span class="k">as</span> <span class="n">tb</span>
-
-<span class="n">tb</span><span class="o">.</span><span class="n">print_exc</span><span class="p">()</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">traceback</span> <span class="k">as</span> <span class="n">tb</span></code></pre></figure>
 
 </div>
 
 <hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> Aliasing the Package </li>
+    </ul> 
+</div>
+
+<div id="code-block-12" class="code-block">
+<p id="code-header-12" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-12", "code-header-12")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="n">dt</span></code></pre></figure>
+
+</div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> Aliasing the Module from Package </li>
+    </ul> 
+</div>
+
+<div id="code-block-13" class="code-block">
+<p id="code-header-13" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-13", "code-header-13")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span></code></pre></figure>
+
+</div>
+
+<hr />
+
+<h3 id="importing-user-defined-module">Importing User defined module</h3>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> importing module which is in same directory as current module </strong> </li>
+    </ul> 
+</div>
+
+<div id="tut-img">
+    <img src="/images/tutorials/python/ImportMDSameDir.png" class="tut-img" alt="python logo" />
+</div>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> Module2.py </p>
+
+<div id="code-block-14" class="code-block">
+<p id="code-header-14" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-14", "code-header-14")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
+
+<span class="k">def</span> <span class="nf">greetings</span><span class="p">():</span>
+    <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+
+    <span class="n">current_hour</span> <span class="o">=</span> <span class="n">now</span><span class="o">.</span><span class="n">hour</span>
+
+    <span class="k">if</span> <span class="mi">5</span> <span class="o">&lt;=</span> <span class="n">current_hour</span> <span class="o">&lt;</span> <span class="mi">11</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"Good Morning!"</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="mi">11</span> <span class="o">&lt;=</span> <span class="n">current_hour</span> <span class="o">&lt;</span> <span class="mi">17</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"Good Afternoon!"</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"Good Evening!"</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> ImportEx.py </p>
+
+<div id="code-block-15" class="code-block">
+<p id="code-header-15" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-15", "code-header-15")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">Module2</span>
+
+<span class="n">Module2</span><span class="o">.</span><span class="n">greetings</span><span class="p">()</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Good Morning!
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> Importing variable from the module [not a good design] </li>
+    </ul> 
+</div>
+
+<div class="bs-callout bs-callout-primary"><strong>Caution</strong> : If the same name variable already exist in current module it will override values! </div>
+
+<div id="tut-img">
+    <img src="/images/tutorials/python/ImportMDSameDir.png" class="tut-img" alt="python logo" />
+</div>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> Module2.py </p>
+
+<div id="code-block-16" class="code-block">
+<p id="code-header-16" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-16", "code-header-16")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">int1</span> <span class="o">=</span> <span class="mi">20</span>
+
+<span class="n">list1</span> <span class="o">=</span> <span class="p">[]</span></code></pre></figure>
+
+</div>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> ImportEx.py </p>
+
+<div id="code-block-17" class="code-block">
+<p id="code-header-17" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-17", "code-header-17")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">Module2</span> <span class="kn">import</span> <span class="n">int1</span><span class="p">,</span> <span class="n">list1</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">int1</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+20
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> Modifying and accessing Module's global variables </li>
+    </ul> 
+</div>
+
+<div id="tut-img">
+    <img src="/images/tutorials/python/ImportMDSameDir.png" class="tut-img" alt="ImportMDSameDir" />
+</div>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> Module2.py </p>
+
+<div id="code-block-18" class="code-block">
+<p id="code-header-18" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-18", "code-header-18")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">int1</span> <span class="o">=</span> <span class="mi">20</span>
+
+<span class="n">list1</span> <span class="o">=</span> <span class="p">[]</span>
+
+
+<span class="k">def</span> <span class="nf">print_int</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'int1 -&gt; {int1}'</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">print_list</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'list1 -&gt; {list1}'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> ImportEx.py </p>
+
+<div id="code-block-19" class="code-block">
+<p id="code-header-19" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-19", "code-header-19")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">Module2</span> <span class="kn">import</span> <span class="n">int1</span><span class="p">,</span> <span class="n">list1</span><span class="p">,</span> <span class="n">print_int</span><span class="p">,</span> <span class="n">print_list</span>
+
+<span class="c1"># changing mutable and immutable variables of module
+</span><span class="n">int1</span> <span class="o">=</span> <span class="mi">99</span>
+<span class="n">list1</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s">'a'</span><span class="p">,</span> <span class="s">'b'</span><span class="p">,</span> <span class="s">'c'</span><span class="p">])</span>
+
+<span class="c1"># checking the value of variable in module
+</span><span class="n">print_int</span><span class="p">()</span>
+<span class="n">print_list</span><span class="p">()</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+int1 -&gt; 20
+list1 -&gt; ['a', 'b', 'c', 'a', 'b', 'c']
+</pre></div>
+
+<hr />
+
+<h3 id="importing-user-defined-package">Importing User defined Package</h3>
+
+<div id="tut-img">
+    <img src="/images/tutorials/python/ImportUDPackage.png" class="tut-img" alt="ImportUDPackage" />
+</div>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> Module1.py </p>
+
+<div id="code-block-20" class="code-block">
+<p id="code-header-20" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-20", "code-header-20")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">sayHello</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Hello World from Module 1!'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> ImportEx.py </p>
+
+<div id="code-block-21" class="code-block">
+<p id="code-header-21" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-21", "code-header-21")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">packageA</span> <span class="kn">import</span> <span class="n">Module1</span> <span class="k">as</span> <span class="n">m1</span>
+
+<span class="n">m1</span><span class="o">.</span><span class="n">sayHello</span><span class="p">()</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Hello World from Module 1!
+</pre></div>
+
+<p id="tut-cons"> OR </p>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> ImportEx.py </p>
+
+<div id="code-block-22" class="code-block">
+<p id="code-header-22" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-22", "code-header-22")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">packageA.Module1</span> <span class="kn">import</span> <span class="n">sayHello</span>
+
+<span class="n">sayHello</span><span class="p">()</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Hello World from Module 1!
+</pre></div>
+
+<hr />
+
+<h3 id="importing-module-with-executable-code">Importing module with executable code</h3>
+
+<div id="tut-content"> 
+    <ul>
+        <li> When importing Module first time only all the code executed once. If same import is run again even from different module, it will not execute code again because module is already loaded in memory. </li>
+    </ul> 
+</div>
+
+<div id="tut-img">
+    <img src="/images/tutorials/python/ImportModuleWithExecutableCode.png" class="tut-img" alt="ImportModuleWithExecutableCode" />
+</div>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> Module1.py </p>
+
+<div id="code-block-23" class="code-block">
+<p id="code-header-23" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-23", "code-header-23")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">sayHello</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Hello World from Module 1!'</span><span class="p">)</span>
+
+
+<span class="c1"># Executable code
+</span><span class="n">msg</span> <span class="o">=</span> <span class="s">'Say Hello!'</span>
+<span class="n">sayHello</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> ImportEx.py </p>
+
+<div id="code-block-24" class="code-block">
+<p id="code-header-24" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-24", "code-header-24")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">packageA.packageC</span> <span class="kn">import</span> <span class="n">Module1</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Hello World from Module 1!
+Say Hello!
+</pre></div>
 
 
 
