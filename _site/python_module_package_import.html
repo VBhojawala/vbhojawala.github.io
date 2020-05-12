@@ -1865,6 +1865,207 @@ Importing module s1!
 
 <hr />
 
+<h3 id="circular-import">Circular Import</h3>
+
+<h4 id="problem">Problem</h4>
+
+<div id="tut-content"> 
+    <ul>
+        <li> Project Structure  </li>
+    </ul> 
+</div>
+<div id="tut-img">
+    <img src="/images/tutorials/python/CircularImport.png" class="tut-img" alt="CircularImport" />
+</div>
+
+<p><br /></p>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> Foo.py </p>
+
+<div id="code-block-55" class="code-block">
+<p id="code-header-55" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-55", "code-header-55")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">circularImport.Bar</span> <span class="kn">import</span> <span class="n">bar</span>
+
+
+<span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Foo ........'</span><span class="p">)</span>
+    <span class="n">bar</span><span class="p">()</span></code></pre></figure>
+
+</div>
+
+<p><br /></p>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> Bar.py </p>
+
+<div id="code-block-56" class="code-block">
+<p id="code-header-56" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-56", "code-header-56")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">circularImport.Foo</span> <span class="kn">import</span> <span class="n">foo</span>
+
+
+<span class="k">def</span> <span class="nf">bar</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Bar'</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="n">foo</span><span class="p">()</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre id="tut-output-error" class="result-content">Traceback (most recent call last):
+  File "/home/asha/PycharmProjects/pythonEx/06_ModuleAndPackage/circularImport/Bar.py", line 1, in &lt;module&gt;
+    from circularImport.Foo import foo
+  File "/home/asha/PycharmProjects/pythonEx/06_ModuleAndPackage/circularImport/Foo.py", line 1, in &lt;module&gt;
+    from circularImport.Bar import bar
+  File "/home/asha/PycharmProjects/pythonEx/06_ModuleAndPackage/circularImport/Bar.py", line 1, in &lt;module&gt;
+    from circularImport.Foo import foo
+ImportError: cannot import name 'foo' from partially initialized module 'circularImport.Foo' <div id="tut-highlight">(most likely due to a circular import)</div> (/home/asha/PycharmProjects/pythonEx/06_ModuleAndPackage/circularImport/Foo.py)</pre></div>
+
+<hr />
+
+<h4 id="solution">Solution</h4>
+
+<div id="tut-content"> 
+    <ul>
+        <li> Project Structure  </li>
+    </ul> 
+</div>
+<div id="tut-img">
+    <img src="/images/tutorials/python/CircularImport2.png" class="tut-img" alt="CircularImport2" />
+</div>
+
+<p><br /></p>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> FooFix.py </p>
+
+<div id="code-block-57" class="code-block">
+<p id="code-header-57" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-57", "code-header-57")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">circularImportFix</span> <span class="kn">import</span> <span class="n">BarFix</span>
+
+
+<span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Foo ........'</span><span class="p">)</span>
+    <span class="n">BarFix</span><span class="o">.</span><span class="n">bar</span><span class="p">()</span></code></pre></figure>
+
+</div>
+
+<p><br /></p>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> BarFix.py </p>
+
+<div id="code-block-58" class="code-block">
+<p id="code-header-58" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-58", "code-header-58")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">circularImportFix</span> <span class="kn">import</span> <span class="n">FooFix</span>
+
+
+<span class="k">def</span> <span class="nf">bar</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Bar'</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="n">FooFix</span><span class="o">.</span><span class="n">foo</span><span class="p">()</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Foo ........
+Bar
+</pre></div>
+
+<hr />
+
+<h4 id="import-this">import this</h4>
+
+<p> Returns Zen of python </p>
+
+<div id="code-block-59" class="code-block">
+<p id="code-header-59" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-59", "code-header-59")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">this</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+
+</pre></div>
+
+<hr />
+
+<h3 id="importing-module-from-future--releases">Importing module from future  releases</h3>
+
+<p> Allows importing functionality from future releases to make current development compatible with new releases </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> __future__ import statement must appear as first statement in module. </li>
+        <li> Only docstring, blank line or comment is allowed before __future__ imports.</li>
+    </ul> 
+</div>
+
+<div id="code-block-60" class="code-block">
+<p id="code-header-60" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-60", "code-header-60")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># In python2 importing print function of python3
+</span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Python3 print function'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Python3 print function
+</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> List of available modules for import </li>
+    </ul> 
+</div>
+
+<div id="code-block-61" class="code-block">
+<p id="code-header-61" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-61", "code-header-61")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">__future__</span> <span class="k">as</span> <span class="n">future</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="n">future</span><span class="p">))</span>  </code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+['CO_FUTURE_ABSOLUTE_IMPORT', 'CO_FUTURE_DIVISION', 'CO_FUTURE_PRINT_FUNCTION', 'CO_FUTURE_UNICODE_LITERALS', 'CO_FUTURE_WITH_STATEMENT', 'CO_GENERATOR_ALLOWED', 'CO_NESTED', '_Feature', '__all__', '__builtins__', '__doc__', '__file__', '__name__', '__package__', <div id="tut-highlight">'absolute_import', 'all_feature_names', 'division', 'generators', 'nested_scopes', 'print_function', 'unicode_literals', 'with_statement'</div>]
+</pre></div>
+
+<hr />
+
 
 
     <div class="tags">

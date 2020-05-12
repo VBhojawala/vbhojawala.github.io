@@ -1678,4 +1678,267 @@ Importing module s1!
 
 
 
+### Circular Import
+
+
+#### Problem 
+
+<div id="tut-content"> 
+    <ul>
+        <li> Project Structure  </li>
+    </ul> 
+</div>
+<div id="tut-img">
+    <img src="/images/tutorials/python/CircularImport.png" class="tut-img" alt="CircularImport">
+</div>
+
+<br/>
+
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> Foo.py </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from circularImport.Bar import bar
+
+
+def foo():
+    print('Foo ........')
+    bar()
+
+{% endhighlight %}
+</div>
+
+<br/>
+
+
+
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> Bar.py </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from circularImport.Foo import foo
+
+
+def bar():
+    print('Bar')
+
+
+if __name__ == '__main__':
+    foo()
+
+
+
+{% endhighlight %}
+</div>
+
+
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre id='tut-output-error' class="result-content">Traceback (most recent call last):
+  File "/home/asha/PycharmProjects/pythonEx/06_ModuleAndPackage/circularImport/Bar.py", line 1, in &lt;module>
+    from circularImport.Foo import foo
+  File "/home/asha/PycharmProjects/pythonEx/06_ModuleAndPackage/circularImport/Foo.py", line 1, in &lt;module>
+    from circularImport.Bar import bar
+  File "/home/asha/PycharmProjects/pythonEx/06_ModuleAndPackage/circularImport/Bar.py", line 1, in &lt;module>
+    from circularImport.Foo import foo
+ImportError: cannot import name 'foo' from partially initialized module 'circularImport.Foo' <div id="tut-highlight">(most likely due to a circular import)</div> (/home/asha/PycharmProjects/pythonEx/06_ModuleAndPackage/circularImport/Foo.py)</pre></div>
+
+<hr/>
+
+
+#### Solution
+
+<div id="tut-content"> 
+    <ul>
+        <li> Project Structure  </li>
+    </ul> 
+</div>
+<div id="tut-img">
+    <img src="/images/tutorials/python/CircularImport2.png" class="tut-img" alt="CircularImport2">
+</div>
+
+<br/>
+
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> FooFix.py </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from circularImportFix import BarFix
+
+
+def foo():
+    print('Foo ........')
+    BarFix.bar()
+
+{% endhighlight %}
+</div>
+
+<br/>
+
+
+
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> BarFix.py </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from circularImportFix import FooFix
+
+
+def bar():
+    print('Bar')
+
+
+if __name__ == '__main__':
+    FooFix.foo()
+
+
+
+{% endhighlight %}
+</div>
+
+
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Foo ........
+Bar
+</pre></div>
+
+<hr/>
+
+
+
+#### import this
+
+<p> Returns Zen of python </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import this
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+
+</pre></div>
+
+<hr/>
+
+
+### Importing module from future  releases
+
+<p> Allows importing functionality from future releases to make current development compatible with new releases </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> __future__ import statement must appear as first statement in module. </li>
+        <li> Only docstring, blank line or comment is allowed before __future__ imports.</li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+# In python2 importing print function of python3
+from __future__ import print_function
+print('Python3 print function')
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Python3 print function
+</pre></div>
+
+<hr/>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> List of available modules for import </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import __future__ as future
+print(dir(future))  
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+['CO_FUTURE_ABSOLUTE_IMPORT', 'CO_FUTURE_DIVISION', 'CO_FUTURE_PRINT_FUNCTION', 'CO_FUTURE_UNICODE_LITERALS', 'CO_FUTURE_WITH_STATEMENT', 'CO_GENERATOR_ALLOWED', 'CO_NESTED', '_Feature', '__all__', '__builtins__', '__doc__', '__file__', '__name__', '__package__', <div id="tut-highlight">'absolute_import', 'all_feature_names', 'division', 'generators', 'nested_scopes', 'print_function', 'unicode_literals', 'with_statement'</div>]
+</pre></div>
+
+<hr/>
+
 {% include links.html %}
