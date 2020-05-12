@@ -1599,4 +1599,83 @@ Importing package S1.
 <hr/>
 
 
+
+#### Example 2
+
+<div id="tut-content"> 
+    <ul>
+        <li> Project Structure  </li>
+    </ul> 
+</div>
+<div id="tut-img">
+    <img src="/images/tutorials/python/RegularAndNameSpacePackage2.png" class="tut-img" alt="RegularAndNameSpacePackage1">
+</div>
+
+<br/>
+
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> pacMix2/s1.py </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+print('Importing module s1!')
+
+{% endhighlight %}
+</div>
+
+<br/>
+
+
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> pacMix2/s1/s1.py </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+print('Importing module s1 from Namespace package s1!')
+
+{% endhighlight %}
+</div>
+
+<br/>
+
+
+
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> ImportEx.py </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from pacMix2 import s1
+
+
+{% endhighlight %}
+</div>
+
+
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Importing module s1!
+</pre></div>
+
+<hr/>
+
+
+
 {% include links.html %}
