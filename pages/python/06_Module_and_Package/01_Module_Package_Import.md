@@ -132,6 +132,7 @@ sys.path.append('<PATH_TO_DIRECTORY>')
     </ul> 
 </div>
 
+<hr/>
 
 #### Adding path using environment variable
 
@@ -144,6 +145,7 @@ sys.path.append('<PATH_TO_DIRECTORY>')
     </ul> 
 </div>
 
+<hr/>
 
 ### __pycache__
 
@@ -168,7 +170,7 @@ sys.path.append('<PATH_TO_DIRECTORY>')
     </ul> 
 </div>
 
-
+<hr/>
 
 ## Import
 
@@ -208,7 +210,7 @@ from math import sqrt
 {% endhighlight %}
 </div>
 
-<hr/>
+<br/>
 
 
 
@@ -231,7 +233,7 @@ from math import sqrt, log
 </div>
 
 
-<hr/>
+<br/>
 
 
 
@@ -1246,7 +1248,13 @@ get_x() : 100
 
 ### Relative imports
 
+#### Importing module from same package as current module
 
+<p> " . " is used for referring to modules in same package as in current module. </p>
+
+#### Importing module from different package than current module is in at the same Package hierarchy level 
+
+<p> " .. " is used for going one step backward in hierarchy. </p>
 
 <div id="tut-content"> 
     <ul>
@@ -1258,6 +1266,337 @@ get_x() : 100
 </div>
 
 <br/>
+
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> Module3.py </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+
+def say_hello():
+    print('Hello World from Module 3!')
+
+
+{% endhighlight %}
+</div>
+
+
+
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> Module4.py </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+def say_hello():
+    print('Hello World from Module 4!')
+
+
+{% endhighlight %}
+</div>
+
+
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> RelativeImport.py </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from . import Module4
+
+Module4.sayHello()
+
+
+from ..packageB import Module3
+
+Module3.sayHello()
+
+
+{% endhighlight %}
+</div>
+
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> ImportEx.py </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from packageA.packageC import RelativeImport
+
+
+{% endhighlight %}
+</div>
+
+
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Hello World from Module 4!
+Hello World from Module 3!
+</pre></div>
+
+<hr/>
+
+
+
+
+### Namespace package spanning across multiple dictionary
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> Project Structure  </li>
+    </ul> 
+</div>
+<div id="tut-img">
+    <img src="/images/tutorials/python/NamespaceImportSpanningMultipleDir.png" class="tut-img" alt="NamespaceImportSpanningMultipleDir">
+</div>
+
+<br/>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> package1 and package2 both directory is have a folder 'sub' containing different module and package. </li>
+        <li> Add path of package1 and package2 to sys.path, now new namespace 'sub' is created which contains modules and package from both package1/sub and package2/sub. </li>
+    </ul> 
+</div>
+
+<hr/>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> Module1.py </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+print('Importing Module1 from namespace package1/sub/Module1')
+
+{% endhighlight %}
+</div>
+
+<br/>
+
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> Module2.py </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+print('Importing Module2 from namespace package2/sub/Module2')
+
+{% endhighlight %}
+</div>
+
+<br/>
+
+
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> Sub3.py </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+print('importing Module /package1/sub/ssub1/Sub3')
+
+{% endhighlight %}
+</div>
+
+<br/>
+
+
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> Sub4.py </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+print('importing Module /package2/sub/ssub2/Sub4')
+
+{% endhighlight %}
+</div>
+
+<br/>
+
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> ImportEx.py </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+# Importing Modules
+from sub import Module1, Module2
+
+# Importing Package
+from sub.ssub1 import Sub3
+from sub.ssub2 import Sub4
+
+
+{% endhighlight %}
+</div>
+
+
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Importing Module1 from namespace package1/sub/Module1
+Importing Module2 from namespace package2/sub/Module2
+importing Module /package1/sub/ssub1/Sub3
+importing Module /package2/sub/ssub2/Sub4
+</pre></div>
+
+<hr/>
+
+
+
+
+### Mixing Regular and Namespace package
+
+<p> When Regular and Namespace package are mixed following is the order of 'import s1': </p>
+
+<div id="tut-content"> 
+    <ol>    
+        <li> <strong> Regular Package : </strong> Directory 's1' with __init__.py, if found import the (regular) package. </li>
+        <li> <strong> Module : </strong> 's1.py', if found import module </li>
+        <li> <strong> Namespace Package : directory 's1' without __init_.py imported as (namespace) package if failed to find 1 and 2 in all paths in  sys.path. </strong> </li>
+    </ol>
+</div>
+
+
+#### Example 1
+
+<div id="tut-content"> 
+    <ul>
+        <li> Project Structure  </li>
+    </ul> 
+</div>
+<div id="tut-img">
+    <img src="/images/tutorials/python/RegularAndNameSpacePackage1.png" class="tut-img" alt="RegularAndNameSpacePackage1">
+</div>
+
+<br/>
+
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> pacMix/s1.py </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+print('Importing module s1!')
+
+{% endhighlight %}
+</div>
+
+<br/>
+
+
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> pacMix/s1/s1.py </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+print('Importing module s1 from Regular package s1!')
+
+{% endhighlight %}
+</div>
+
+<br/>
+
+
+
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> pacMix/s1/__init__.py </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+print('Importing package S1.')
+
+{% endhighlight %}
+</div>
+
+<br/>
+
+
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> ImportEx.py </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from pacMix import s1
+
+
+{% endhighlight %}
+</div>
+
+
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Importing package S1.
+</pre></div>
+
+<hr/>
 
 
 {% include links.html %}

@@ -787,6 +787,8 @@ $('#toc').on('click', 'a', function() {
     </ul> 
 </div>
 
+<hr />
+
 <h4 id="adding-path-using-environment-variable">Adding path using environment variable</h4>
 
 <p id="tut-cons"> Syntax : export PYTHONPATH = $PYTHONPATH:&lt;modulepath&gt; </p>
@@ -797,6 +799,8 @@ $('#toc').on('click', 'a', function() {
         <li> For windows user you can append module path to environment variable </li>
     </ul> 
 </div>
+
+<hr />
 
 <h3 id="pycache"><strong>pycache</strong></h3>
 
@@ -819,6 +823,8 @@ $('#toc').on('click', 'a', function() {
         </div>
     </ul> 
 </div>
+
+<hr />
 
 <h2 id="import">Import</h2>
 
@@ -846,7 +852,7 @@ $('#toc').on('click', 'a', function() {
 
 </div>
 
-<hr />
+<p><br /></p>
 
 <div id="tut-content"> 
     <ul>
@@ -861,7 +867,7 @@ $('#toc').on('click', 'a', function() {
 
 </div>
 
-<hr />
+<p><br /></p>
 
 <div id="tut-content"> 
     <ul>
@@ -1572,6 +1578,14 @@ get_x() : 100
 
 <h3 id="relative-imports">Relative imports</h3>
 
+<h4 id="importing-module-from-same-package-as-current-module">Importing module from same package as current module</h4>
+
+<p> " . " is used for referring to modules in same package as in current module. </p>
+
+<h4 id="importing-module-from-different-package-than-current-module-is-in-at-the-same-package-hierarchy-level">Importing module from different package than current module is in at the same Package hierarchy level</h4>
+
+<p> " .. " is used for going one step backward in hierarchy. </p>
+
 <div id="tut-content"> 
     <ul>
         <li> Project Structure  </li>
@@ -1582,6 +1596,223 @@ get_x() : 100
 </div>
 
 <p><br /></p>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> Module3.py </p>
+
+<div id="code-block-39" class="code-block">
+<p id="code-header-39" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-39", "code-header-39")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">say_hello</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Hello World from Module 3!'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> Module4.py </p>
+
+<div id="code-block-40" class="code-block">
+<p id="code-header-40" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-40", "code-header-40")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">say_hello</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Hello World from Module 4!'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> RelativeImport.py </p>
+
+<div id="code-block-41" class="code-block">
+<p id="code-header-41" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-41", "code-header-41")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">Module4</span>
+
+<span class="n">Module4</span><span class="o">.</span><span class="n">sayHello</span><span class="p">()</span>
+
+
+<span class="kn">from</span> <span class="nn">..packageB</span> <span class="kn">import</span> <span class="n">Module3</span>
+
+<span class="n">Module3</span><span class="o">.</span><span class="n">sayHello</span><span class="p">()</span></code></pre></figure>
+
+</div>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> ImportEx.py </p>
+
+<div id="code-block-42" class="code-block">
+<p id="code-header-42" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-42", "code-header-42")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">packageA.packageC</span> <span class="kn">import</span> <span class="n">RelativeImport</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Hello World from Module 4!
+Hello World from Module 3!
+</pre></div>
+
+<hr />
+
+<h3 id="namespace-package-spanning-across-multiple-dictionary">Namespace package spanning across multiple dictionary</h3>
+
+<div id="tut-content"> 
+    <ul>
+        <li> Project Structure  </li>
+    </ul> 
+</div>
+<div id="tut-img">
+    <img src="/images/tutorials/python/NamespaceImportSpanningMultipleDir.png" class="tut-img" alt="NamespaceImportSpanningMultipleDir" />
+</div>
+
+<p><br /></p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> package1 and package2 both directory is have a folder 'sub' containing different module and package. </li>
+        <li> Add path of package1 and package2 to sys.path, now new namespace 'sub' is created which contains modules and package from both package1/sub and package2/sub. </li>
+    </ul> 
+</div>
+
+<hr />
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> Module1.py </p>
+
+<div id="code-block-43" class="code-block">
+<p id="code-header-43" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-43", "code-header-43")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">'Importing Module1 from namespace package1/sub/Module1'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<p><br /></p>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> Module2.py </p>
+
+<div id="code-block-44" class="code-block">
+<p id="code-header-44" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-44", "code-header-44")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">'Importing Module2 from namespace package2/sub/Module2'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<p><br /></p>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> Sub3.py </p>
+
+<div id="code-block-45" class="code-block">
+<p id="code-header-45" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-45", "code-header-45")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">'importing Module /package1/sub/ssub1/Sub3'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<p><br /></p>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> Sub4.py </p>
+
+<div id="code-block-46" class="code-block">
+<p id="code-header-46" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-46", "code-header-46")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">'importing Module /package2/sub/ssub2/Sub4'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<p><br /></p>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> ImportEx.py </p>
+
+<div id="code-block-47" class="code-block">
+<p id="code-header-47" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-47", "code-header-47")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># Importing Modules
+</span><span class="kn">from</span> <span class="nn">sub</span> <span class="kn">import</span> <span class="n">Module1</span><span class="p">,</span> <span class="n">Module2</span>
+
+<span class="c1"># Importing Package
+</span><span class="kn">from</span> <span class="nn">sub.ssub1</span> <span class="kn">import</span> <span class="n">Sub3</span>
+<span class="kn">from</span> <span class="nn">sub.ssub2</span> <span class="kn">import</span> <span class="n">Sub4</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Importing Module1 from namespace package1/sub/Module1
+Importing Module2 from namespace package2/sub/Module2
+importing Module /package1/sub/ssub1/Sub3
+importing Module /package2/sub/ssub2/Sub4
+</pre></div>
+
+<hr />
+
+<h3 id="mixing-regular-and-namespace-package">Mixing Regular and Namespace package</h3>
+
+<p> When Regular and Namespace package are mixed following is the order of 'import s1': </p>
+
+<div id="tut-content"> 
+    <ol>    
+        <li> <strong> Regular Package : </strong> Directory 's1' with __init__.py, if found import the (regular) package. </li>
+        <li> <strong> Module : </strong> 's1.py', if found import module </li>
+        <li> <strong> Namespace Package : directory 's1' without __init_.py imported as (namespace) package if failed to find 1 and 2 in all paths in  sys.path. </strong> </li>
+    </ol>
+</div>
+
+<h4 id="example-1">Example 1</h4>
+
+<div id="tut-content"> 
+    <ul>
+        <li> Project Structure  </li>
+    </ul> 
+</div>
+<div id="tut-img">
+    <img src="/images/tutorials/python/RegularAndNameSpacePackage1.png" class="tut-img" alt="RegularAndNameSpacePackage1" />
+</div>
+
+<p><br /></p>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> pacMix/s1.py </p>
+
+<div id="code-block-48" class="code-block">
+<p id="code-header-48" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-48", "code-header-48")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">'Importing module s1!'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<p><br /></p>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> pacMix/s1/s1.py </p>
+
+<div id="code-block-49" class="code-block">
+<p id="code-header-49" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-49", "code-header-49")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">'Importing module s1 from Regular package s1!'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<p><br /></p>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> pacMix/s1/__init__.py </p>
+
+<div id="code-block-50" class="code-block">
+<p id="code-header-50" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-50", "code-header-50")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">'Importing package S1.'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<p><br /></p>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> ImportEx.py </p>
+
+<div id="code-block-51" class="code-block">
+<p id="code-header-51" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-51", "code-header-51")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">pacMix</span> <span class="kn">import</span> <span class="n">s1</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Importing package S1.
+</pre></div>
+
+<hr />
 
 
 
