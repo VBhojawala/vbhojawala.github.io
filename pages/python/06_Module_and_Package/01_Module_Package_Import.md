@@ -1,7 +1,7 @@
 ---
 title: Module, Package and Import
 layout: tutorial
-tags: []
+tags: [Module, Package,  import, Regular_Package, Namespace_Package, sys.path, PYTHONPATH, pycache, import_from, wildcard_import, Aliasing, user_defined_module, user_defined_package, init.py, restricting_wildcard_import, __all__, relative_import, Mixing_regular_namespace_package, circular_import,  __future__]
 sidebar: python_sidebar
 permalink: python_module_package_import.html
 folder: python
@@ -13,7 +13,7 @@ next:
 next_title: 
 next_section: 
 next_section_title: 
-summary: Module, Package, importing module package and functions.
+summary: Module, Package, importing module package and functions, regular and namespace package, sys.path, PYTHONPATH, pycache, wildcard import, aliasing, user defined package and modules, __init__.py, restricting wildcard imports, relative import, mixing regular and namespace package, circular import and __future__.
 ---
 
 
@@ -1165,6 +1165,7 @@ Hello World from Module 2!
 <div id="tut-content"> 
     <ul>
         <li> Module can have __all__ variable containing list of attributes to be imported when wildcard import is used. </li>
+        <li> Special variable and function (attribute and functions whose name begins with _ or __) are not imported when importing using wildcard import but they can be accessed using module import. </li>
     </ul> 
 </div>
 
@@ -1196,6 +1197,8 @@ __all__ = ['x', 'z', 'get_x']
 x = 100
 _y = 150
 z = 30
+a = 50
+b = 10
 
 
 def get_x():
@@ -1239,7 +1242,7 @@ x : 100  z : 30
 get_x() : 100
 </pre></div>
 
-{% include callout.html content="**Note** :  Variable _y and function __gety() will not be imported with wildcard import. " type="primary" %} 
+{% include callout.html content="**Note** :  Variable _y and function \__gety() will not be imported with wildcard import because they are special variable and function. Variable ' a ' and ' b ' will not be imported because it is not listed in \__all__ list. " type="primary" %} 
 
 
 <hr/>

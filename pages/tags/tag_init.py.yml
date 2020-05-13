@@ -1,0 +1,8 @@
+---
+title: "init.py"
+tagName: init.py
+search: exclude
+permalink: tag_init.py.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

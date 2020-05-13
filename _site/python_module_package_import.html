@@ -4,8 +4,8 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Module, Package, importing module package and functions.">
-<meta name="keywords" content=",  ">
+<meta name="description" content="Module, Package, importing module package and functions, regular and namespace package, sys.path, PYTHONPATH, pycache, wildcard import, aliasing, user define...">
+<meta name="keywords" content="ModulePackageimportRegular_PackageNamespace_Packagesys.pathPYTHONPATHpycacheimport_fromwildcard_importAliasinguser_defined_moduleuser_defined_packageinit.pyrestricting_wildcard_import__all__relative_importMixing_regular_namespace_packagecircular_import__future__,  ">
 <meta name="theme-color" content="#36362C">
 <link rel="icon" sizes="192x192" href="images/favicon.ico">
 <title>Module, Package and Import | Asha Tutorials</title>
@@ -655,7 +655,7 @@
 <div class="post-content">
 
    <!-- 
-    <div class="summary">Module, Package, importing module package and functions.</div>
+    <div class="summary">Module, Package, importing module package and functions, regular and namespace package, sys.path, PYTHONPATH, pycache, wildcard import, aliasing, user defined package and modules, __init__.py, restricting wildcard imports, relative import, mixing regular and namespace package, circular import and __future__.</div>
     -->
 
     
@@ -1517,6 +1517,7 @@ Hello World from Module 2!
 <div id="tut-content"> 
     <ul>
         <li> Module can have __all__ variable containing list of attributes to be imported when wildcard import is used. </li>
+        <li> Special variable and function (attribute and functions whose name begins with _ or __) are not imported when importing using wildcard import but they can be accessed using module import. </li>
     </ul> 
 </div>
 
@@ -1541,6 +1542,8 @@ Hello World from Module 2!
 <span class="n">x</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="n">_y</span> <span class="o">=</span> <span class="mi">150</span>
 <span class="n">z</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">10</span>
 
 
 <span class="k">def</span> <span class="nf">get_x</span><span class="p">():</span>
@@ -1572,7 +1575,7 @@ x : 100  z : 30
 get_x() : 100
 </pre></div>
 
-<div class="bs-callout bs-callout-primary"><strong>Note</strong> :  Variable _y and function __gety() will not be imported with wildcard import. </div>
+<div class="bs-callout bs-callout-primary"><strong>Note</strong> :  Variable _y and function __gety() will not be imported with wildcard import because they are special variable and function. Variable ‘ a ‘ and ‘ b ‘ will not be imported because it is not listed in __all__ list. </div>
 
 <hr />
 
@@ -2071,6 +2074,86 @@ Python3 print function
     <div class="tags">
         
         <p style="display: inline;"><b>Tags: </b></p>
+        
+        
+        
+        <a href="tag_Module.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">Module</a>
+        
+        
+        
+        <a href="tag_Package.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">Package</a>
+        
+        
+        
+        <a href="tag_import.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">import</a>
+        
+        
+        
+        <a href="tag_Regular_Package.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">Regular_Package</a>
+        
+        
+        
+        <a href="tag_Namespace_Package.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">Namespace_Package</a>
+        
+        
+        
+        <a href="tag_sys.path.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">sys.path</a>
+        
+        
+        
+        <a href="tag_PYTHONPATH.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">PYTHONPATH</a>
+        
+        
+        
+        <a href="tag_pycache.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">pycache</a>
+        
+        
+        
+        <a href="tag_import_from.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">import_from</a>
+        
+        
+        
+        <a href="tag_wildcard_import.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">wildcard_import</a>
+        
+        
+        
+        <a href="tag_Aliasing.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">Aliasing</a>
+        
+        
+        
+        <a href="tag_user_defined_module.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">user_defined_module</a>
+        
+        
+        
+        <a href="tag_user_defined_package.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">user_defined_package</a>
+        
+        
+        
+        <a href="tag_init.py.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">init.py</a>
+        
+        
+        
+        <a href="tag_restricting_wildcard_import.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">restricting_wildcard_import</a>
+        
+        
+        
+        <a href="tag___all__.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">__all__</a>
+        
+        
+        
+        <a href="tag_relative_import.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">relative_import</a>
+        
+        
+        
+        <a href="tag_Mixing_regular_namespace_package.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">Mixing_regular_namespace_package</a>
+        
+        
+        
+        <a href="tag_circular_import.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">circular_import</a>
+        
+        
+        
+        <a href="tag___future__.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">__future__</a>
         
         
         

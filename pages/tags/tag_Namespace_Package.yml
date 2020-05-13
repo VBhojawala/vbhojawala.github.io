@@ -1,0 +1,8 @@
+---
+title: "Namespace Package"
+tagName: Namespace_Package
+search: exclude
+permalink: tag_Namespace_Package.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

@@ -1,0 +1,8 @@
+---
+title: "wildcard import"
+tagName: wildcard_import
+search: exclude
+permalink: tag_wildcard_import.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

@@ -1,0 +1,8 @@
+---
+title: "Regular Package"
+tagName: Regular_Package
+search: exclude
+permalink: tag_Regular_Package.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

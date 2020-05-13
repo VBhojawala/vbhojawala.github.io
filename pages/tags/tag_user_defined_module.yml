@@ -1,0 +1,8 @@
+---
+title: "user defined module"
+tagName: user_defined_module
+search: exclude
+permalink: tag_user_defined_module.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}
