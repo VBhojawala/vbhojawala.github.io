@@ -76,6 +76,12 @@
   
   
   <url>
+    <loc>http://localhost:4000/python_logging.html</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>http://localhost:4000/python_variables.html</loc>
   </url>
   

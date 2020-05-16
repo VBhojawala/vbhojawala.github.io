@@ -9,8 +9,8 @@ prev_section: python_exception_handling.html
 prev_section_title: Exception Handling
 prev: 
 prev_title: 
-next: 
-next_title: 
+next: python_logging.html
+next_title: Logging
 next_section: 
 next_section_title: 
 summary: Module, Package, importing module package and functions, regular and namespace package, sys.path, PYTHONPATH, pycache, wildcard import, aliasing, user defined package and modules, __init__.py, restricting wildcard imports, relative import, mixing regular and namespace package, circular import and __future__.

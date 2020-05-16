@@ -141,3 +141,6 @@ entries:
       - title: Module, Package and Import
         url: /python_module_package_import.html
         output: web
+      - title: Logging
+        url: /python_logging.html
+        output: web
