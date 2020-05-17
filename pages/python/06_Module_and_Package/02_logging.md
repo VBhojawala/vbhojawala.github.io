@@ -199,6 +199,52 @@ asctime         | %(asctime)s         | current local time
  threadName      | %(threadName)s      | Thread name (if available).
 
 
+<hr/>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Logging to File </strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import logging
+logging.basicConfig(filename='myapp01.log', filemode='a+',   level=logging.INFO)
+logging.info('logging started  .......')
+
+
+# logging variable value
+a = 12
+msg = 'a String value'
+
+logging.info(f'variable a -> {a} and msg -> {msg}')
+
+
+
+{% endhighlight %}
+</div>
+
+
+
+
+
+{% include callout.html content="**Note** : File with name myapp01.log will be created in same directory of python file which contains above code because we have not given path in  'filename' argument. " type="primary" %} 
+
+<div class="result"><p class="result-header"><b>myapp01.log</b></p>
+<pre class="result-content">
+INFO:root:logging started  .......
+INFO:root:variable a -> 12 and msg -> a String value
+</pre></div>
+
+
+<hr/>
 
 
 {% include links.html %}
