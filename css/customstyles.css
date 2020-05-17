@@ -1583,11 +1583,12 @@ ul.mobile-toggle > a{
     padding-top: 20px;
     padding-bottom: 20px;
 }
-
 #tut-ol{
     margin-bottom: 10px;
 }
-
 p i.fa{
    color: #5D917D;
+}
+#tut-ol-padding{
+    padding-left: 15px;
 }

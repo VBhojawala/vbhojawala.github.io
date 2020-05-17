@@ -736,8 +736,6 @@ $('#toc').on('click', 'a', function() {
   </tbody>
 </table>
 
-<div class="bs-callout bs-callout-primary"><strong>Note</strong> : Default logging level is set to warning which means only message with warning or higher level (below of WARNING in above table) messages will appear. </div>
-
 <hr />
 
 <h3 id="logging-method-for-each-logging-level">Logging method for each logging level</h3>
@@ -769,6 +767,240 @@ $('#toc').on('click', 'a', function() {
     <tr>
       <td style="text-align: left">CRITICAL</td>
       <td style="text-align: left">critical(msg, *args, **kwargs)</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="bs-callout bs-callout-primary"><strong>Note</strong> : Default logging level is set to warning which means only message with warning or higher level (below level of WARNING in above table) messages will appear. </div>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Example </strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-1" class="code-block">
+<p id="code-header-1" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-1", "code-header-1")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s">'High workloads detected, response might be slow'</span><span class="p">)</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">'This will not be printed on console as the logging level is warning'</span><span class="p">)</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">'Error occurred!!!'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre id="tut-output-error" class="result-content">WARNING:root:High workloads detected, response might be slow
+ERROR:root:Error occurred!!!</pre></div>
+
+<hr />
+
+<p> Arguments : </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> msg : </strong> String message to be logged. </li>
+        <li> <strong> args : </strong> If given message string is formatted strings args contains positional values to be replaced. </li>
+        <li> <strong> kwargs : </strong> Following are the four arguments which can be passed as keyword arguments  </li>
+        <div id="tut-ol-padding">
+        <div id="tut-content"> 
+             <ol>    
+                <li> <strong> exc_info : </strong> By default it takes exception information from sys.exc_info(), it can also be given custom exception in the same format returned by sys.exc_info() which gets logged. </li>
+                <li> <strong> stack_info : </strong> By Default set to False. If given as True adds stack information  to logging message. It is not same as stack info from sys.exc_info(), it can be specified independently even when no exception is raised it print stack info in same format of Traceback.</li>
+                <li> <strong> stacklevel : </strong> By default set to 1, if given value &gt; 1 skips number of frames when computing line number.</li>
+                <li> <strong> extra : </strong> It is used for passing a dictionary which is used for populating __dict__ of the LogRecord.</li>
+            </ol>
+        </div> 
+        </div>
+    </ul> 
+</div>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Example with args</strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-2" class="code-block">
+<p id="code-header-2" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-2", "code-header-2")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="n">usage</span> <span class="o">=</span> <span class="mi">91</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s">'CPU usage is </span><span class="si">%</span><span class="s">d'</span><span class="p">,</span> <span class="n">usage</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre id="tut-output-error" class="result-content">WARNING:root:CPU usage is 91</pre></div>
+
+<hr />
+
+<h3 id="setting-log-level">Setting log level</h3>
+
+<h4 id="commandline">CommandLine</h4>
+
+<p> While running python program from command line following argument sets the log level. </p>
+
+<p id="tut-cons"> <strong> Syntax : </strong> --log=LEVEL </p>
+
+<div id="code-block-3" class="code-block">
+<p id="code-header-3" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-3", "code-header-3")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">--</span><span class="n">log</span><span class="o">=</span><span class="n">INFO</span></code></pre></figure>
+
+</div>
+
+<hr />
+
+<h4 id="basicconfigkwargs">basicConfig(**kwargs)</h4>
+
+<p> Sets basic configuration for logging. It must be configured before logging function such as logging.debug, logging.info etc. </p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">param</th>
+      <th style="text-align: left">Explanation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">filename</td>
+      <td style="text-align: left">name and path of the file name where logs to be stored</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">filemode</td>
+      <td style="text-align: left">mode in which file should be open default is ‘a’</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">format</td>
+      <td style="text-align: left">format the log using formatting options.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">datefmt</td>
+      <td style="text-align: left">date format same as datetime strftime() e.g. ‘%m/%d/%Y %I:%M:%S %p’</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">level</td>
+      <td style="text-align: left">level of logs such as DEBUG, INFO etc</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">style</td>
+      <td style="text-align: left">specify format in one of ‘%’, ‘{‘, or ‘$’. Default is ‘%’</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">stream</td>
+      <td style="text-align: left">stream handler to for log destination. filename must be blank if this is specified.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">handlers</td>
+      <td style="text-align: left">Iterable of Handlers to be added to root logger.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">force</td>
+      <td style="text-align: left">If True removes all existing handlers attached to root logger before carrying  out the configuration as specified by other arguments.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Formatting options for " format " argument</strong> </li>
+    </ul> 
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Attrib name</th>
+      <th style="text-align: left">format</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">asctime</td>
+      <td style="text-align: left">%(asctime)s</td>
+      <td>current local time</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">msecs</td>
+      <td style="text-align: left">%(msecs)d</td>
+      <td>Milliseconds of the time when log was created.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">relativeCreated</td>
+      <td style="text-align: left">%(relativeCreated)d</td>
+      <td>Milliseconds of time when LogRecord is created relative to the time when logging module is loaded.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">levelname</td>
+      <td style="text-align: left">%(levelname)s</td>
+      <td>logging level for the message (‘DEBUG’, ‘INFO’, ‘WARNING’,’ERROR’, ‘CRITICAL’).</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">levelno</td>
+      <td style="text-align: left">%(levelno)s</td>
+      <td>Numeric logging level for the message (DEBUG, INFO, WARNING ,ERROR, CRITICAL).</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">name</td>
+      <td style="text-align: left">%(name)s</td>
+      <td>name of the logger used to call.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">message</td>
+      <td style="text-align: left">%(message)s</td>
+      <td>string passed to logging function.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">pathname</td>
+      <td style="text-align: left">%(pathname)s</td>
+      <td>full path of the source file where logging was run.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">module</td>
+      <td style="text-align: left">%(module)s</td>
+      <td>module name of the source file where logging was run.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">filename</td>
+      <td style="text-align: left">%(filename)s</td>
+      <td>source file name where logging was run.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">funcName</td>
+      <td style="text-align: left">%(funcName)s</td>
+      <td>name of the function where logging was run.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">lineno</td>
+      <td style="text-align: left">%(lineno)d</td>
+      <td>line no in source code where logging call was run.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">process</td>
+      <td style="text-align: left">%(process)d</td>
+      <td>Process ID (if available).</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">processName</td>
+      <td style="text-align: left">%(processName)s</td>
+      <td>Process name (if available).</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thread</td>
+      <td style="text-align: left">%(thread)d</td>
+      <td>Thread ID (if available).</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">threadName</td>
+      <td style="text-align: left">%(threadName)s</td>
+      <td>Thread name (if available).</td>
     </tr>
   </tbody>
 </table>
