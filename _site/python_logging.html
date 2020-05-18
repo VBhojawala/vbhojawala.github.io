@@ -809,7 +809,7 @@ ERROR:root:Error occurred!!!</pre></div>
                 <li> <strong> exc_info : </strong> By default it takes exception information from sys.exc_info(), it can also be given custom exception in the same format returned by sys.exc_info() which gets logged. </li>
                 <li> <strong> stack_info : </strong> By Default set to False. If given as True adds stack information  to logging message. It is not same as stack info from sys.exc_info(), it can be specified independently even when no exception is raised it print stack info in same format of Traceback.</li>
                 <li> <strong> stacklevel : </strong> By default set to 1, if given value &gt; 1 skips number of frames when computing line number.</li>
-                <li> <strong> extra : </strong> It is used for passing a dictionary which is used for populating __dict__ of the LogRecord.</li>
+                <li> <strong> extra : </strong> Takes dictionary as argument. Given key-value is used for formatting log record.</li>
             </ol>
         </div> 
         </div>
@@ -1211,6 +1211,37 @@ INFO:root:variable a -&gt; 12 and msg -&gt; a String value
 
 <hr />
 
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Logging with 'extra' parameter </strong> </li>
+    </ul> 
+</div>
+
+<p> <strong> extra : </strong> parameter takes dictionary as value which can be used to set record factory's custom attribute. It becomes handy to log multi-threaded programs. </p>
+
+<div id="code-block-9" class="code-block">
+<p id="code-header-9" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-9", "code-header-9")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">'myapp02.log'</span><span class="p">,</span>
+                    <span class="nb">format</span><span class="o">=</span><span class="s">'</span><span class="si">%(asctime)</span><span class="s">s : </span><span class="si">%(levelname)</span><span class="s">s : </span><span class="si">%(levelno)</span><span class="s">s : </span><span class="si">%(name)</span><span class="s">s : </span><span class="si">%(machineID)</span><span class="s">s : </span><span class="si">%(message)</span><span class="s">s '</span><span class="p">,</span>
+                    <span class="n">datefmt</span><span class="o">=</span><span class="s">'</span><span class="si">%</span><span class="s">m/</span><span class="si">%</span><span class="s">d/</span><span class="si">%</span><span class="s">Y </span><span class="si">%</span><span class="s">I:</span><span class="si">%</span><span class="s">M:</span><span class="si">%</span><span class="s">S </span><span class="si">%</span><span class="s">p'</span><span class="p">,</span> <span class="n">filemode</span><span class="o">=</span><span class="s">'a+'</span><span class="p">,</span>   <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+
+<span class="n">dictionary</span> <span class="o">=</span> <span class="p">{</span><span class="s">'machineID'</span><span class="p">:</span> <span class="s">'AF145B56D'</span><span class="p">,</span> <span class="s">'requestID'</span><span class="p">:</span> <span class="s">'PQA125CB12VB3123'</span><span class="p">}</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">'Initiating session'</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="n">dictionary</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>myapp02.log</b></p>
+<pre class="result-content">
+05/18/2020 09:00:26 PM : INFO : 20 : root : AF145B56D : Initiating session 
+</pre></div>
+
+<div class="bs-callout bs-callout-primary"><strong>Note</strong> : While Logging with custom keys in formatter, dictionary must always contains key used in formatter. Otherwise formatter will raise error and message will not be logged.</div>
+
+<hr />
+
 <h3 id="functions-and-classes">Functions and Classes</h3>
 
 <h4 id="getloggernamenone">getLogger(name=None)</h4>
@@ -1278,8 +1309,8 @@ INFO:root:variable a -&gt; 12 and msg -&gt; a String value
     </ul> 
 </div>
 
-<div id="code-block-9" class="code-block">
-<p id="code-header-9" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-9", "code-header-9")</script>
+<div id="code-block-10" class="code-block">
+<p id="code-header-10" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-10", "code-header-10")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
 
@@ -1345,8 +1376,8 @@ INFO:root:variable a -&gt; 12 and msg -&gt; a String value
 
 <p> <i class="fa fa-file-text" aria-hidden="true"></i> ModuleA2.py </p>
 
-<div id="code-block-10" class="code-block">
-<p id="code-header-10" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-10", "code-header-10")</script>
+<div id="code-block-11" class="code-block">
+<p id="code-header-11" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-11", "code-header-11")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
@@ -1359,8 +1390,8 @@ INFO:root:variable a -&gt; 12 and msg -&gt; a String value
 
 <p> <i class="fa fa-file-text" aria-hidden="true"></i> ModuleB2.py </p>
 
-<div id="code-block-11" class="code-block">
-<p id="code-header-11" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-11", "code-header-11")</script>
+<div id="code-block-12" class="code-block">
+<p id="code-header-12" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-12", "code-header-12")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
@@ -1373,8 +1404,8 @@ INFO:root:variable a -&gt; 12 and msg -&gt; a String value
 
 <p> <i class="fa fa-file-text" aria-hidden="true"></i> LoggerHierarchy.py </p>
 
-<div id="code-block-12" class="code-block">
-<p id="code-header-12" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-12", "code-header-12")</script>
+<div id="code-block-13" class="code-block">
+<p id="code-header-13" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-13", "code-header-13")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
 
@@ -1409,8 +1440,8 @@ INFO:root:variable a -&gt; 12 and msg -&gt; a String value
 
 <p> Returns the level of logger object. By default level of root logger is set to WARNING (30) and for non root logger NOTSET (0).  </p>
 
-<div id="code-block-13" class="code-block">
-<p id="code-header-13" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-13", "code-header-13")</script>
+<div id="code-block-14" class="code-block">
+<p id="code-header-14" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-14", "code-header-14")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
 
@@ -1442,8 +1473,8 @@ Non-Root Logger level : 0
     </ul> 
 </div>
 
-<div id="code-block-14" class="code-block">
-<p id="code-header-14" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-14", "code-header-14")</script>
+<div id="code-block-15" class="code-block">
+<p id="code-header-15" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-15", "code-header-15")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
 
@@ -1472,8 +1503,8 @@ propagate : True
     </ul> 
 </div>
 
-<div id="code-block-15" class="code-block">
-<p id="code-header-15" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-15", "code-header-15")</script>
+<div id="code-block-16" class="code-block">
+<p id="code-header-16" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-16", "code-header-16")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
 
@@ -1538,8 +1569,8 @@ Non-Root Logger Effective level : 30
 
 <p> same as error(msg, *args, **kwargs) level but adds stack trace of error </p>
 
-<div id="code-block-16" class="code-block">
-<p id="code-header-16" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-16", "code-header-16")</script>
+<div id="code-block-17" class="code-block">
+<p id="code-header-17" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-17", "code-header-17")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
 
@@ -1600,18 +1631,16 @@ ZeroDivisionError: division by zero
   </tbody>
 </table>
 
-<div id="code-block-17" class="code-block">
-<p id="code-header-17" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-17", "code-header-17")</script>
+<div id="code-block-18" class="code-block">
+<p id="code-header-18" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-18", "code-header-18")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">'It</span><span class="se">\'</span><span class="s">s sunny outside.'</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">WARNING</span><span class="p">,</span> <span class="s">"Warning Message from log() method"</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
-<pre class="result-content">
-It's sunny outside.
-Quoting inside "Double quotes".
-</pre></div>
+<pre id="tut-output-error" class="result-content">WARNING:root:Warning Message from log() method</pre></div>
 
 <hr />
 
@@ -1660,8 +1689,14 @@ Quoting inside "Double quotes".
   </tbody>
 </table>
 
-<div id="code-block-18" class="code-block">
-<p id="code-header-18" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-18", "code-header-18")</script>
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Example </strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-19" class="code-block">
+<p id="code-header-19" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-19", "code-header-19")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
 
@@ -1683,6 +1718,70 @@ ERROR:root:Message with higher logger level than current level of logger.
 </pre></div>
 
 <hr />
+
+<h4 id="addhandlerhdlr">addHandler(hdlr)</h4>
+
+<p> Adds handler object to to logger. </p>
+
+<hr />
+
+<h4 id="removehandlerhdlr">removeHandler(hdlr)</h4>
+
+<p> Removes handler object from the logger. </p>
+<hr />
+
+<h4 id="addfilterfilter">addFilter(filter)</h4>
+
+<p>  Adds filter object to the logger. </p>
+<hr />
+
+<h4 id="removefilterfilter">removeFilter(filter)</h4>
+
+<p> Removes filter object from the logger </p>
+<hr />
+
+<h4 id="isenabledforlevel">isEnabledFor(level)</h4>
+
+<p> Returns True if given level of message will be processed. It first checks if level set by logging.disable(level) and then use getEffectiveLevel() to determine given level of message will be processed or not. </p>
+
+<hr />
+
+<h4 id="getchildsuffix">getChild(suffix)</h4>
+
+<p> Returns logger which is child of this logger with given suffix. </p>
+
+<p> For example logging.getLogger('packageA').getChild('ModuleA1') is same as logging.getLogger('packageA.ModuleA1') </p>
+
+<hr />
+
+<h4 id="handlerecord">handle(record)</h4>
+
+<p> Handles given record by passing it to all handlers of this logger and to all of its parent. It is used for processing records received from socket or locally created. </p>
+
+<hr />
+
+<h4 id="hashandlers">hasHandlers()</h4>
+
+<p> Returns True if this logger or any logger in it's hierarchy has any handler configured to it . </p>
+
+<hr />
+
+<h4 id="findcallerstack_infofalse-stacklevel1">findCaller(stack_info=False, stacklevel=1)</h4>
+
+<hr />
+
+<h4 id="disablelevelcritical">disable(level=CRITICAL)</h4>
+
+<p> Overriding log level for all loggers in the application. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> It is used for temporally changing the log level(disabling logs). </li>
+        <li> Default level value is CRITICAL.</li>
+        <li> It disables all log message of given level and all the levels which are having numeric value less than numeric value of level.</li>
+        <li> For example logging.disable(level=INFO) will disable all logs at level of INFO and also at the level of DEBUG because, DEBUG have numeric value &lt; INFO numeric value.</li>
+    </ul> 
+</div>
 
 
 

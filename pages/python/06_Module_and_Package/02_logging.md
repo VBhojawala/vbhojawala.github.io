@@ -94,7 +94,7 @@ ERROR:root:Error occurred!!!</pre></div>
                 <li> <strong> exc_info : </strong> By default it takes exception information from sys.exc_info(), it can also be given custom exception in the same format returned by sys.exc_info() which gets logged. </li>
                 <li> <strong> stack_info : </strong> By Default set to False. If given as True adds stack information  to logging message. It is not same as stack info from sys.exc_info(), it can be specified independently even when no exception is raised it print stack info in same format of Traceback.</li>
                 <li> <strong> stacklevel : </strong> By default set to 1, if given value > 1 skips number of frames when computing line number.</li>
-                <li> <strong> extra : </strong> It is used for passing a dictionary which is used for populating __dict__ of the LogRecord.</li>
+                <li> <strong> extra : </strong> Takes dictionary as argument. Given key-value is used for formatting log record.</li>
             </ol>
         </div> 
         </div>
@@ -423,6 +423,48 @@ print('Exiting main program')
 2020-05-17 18:58:40,027 Thread-4 16 Bytes Token generated [e2a3ba62c46ef848d8b2373ad48a5acc]
 2020-05-17 18:58:40,577 Thread-1 16 Bytes Token generated [85d962ffa3b0d6ba6322f65e46333934]
 </pre></div>
+
+<hr/>
+
+
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Logging with 'extra' parameter </strong> </li>
+    </ul> 
+</div>
+
+<p> <strong> extra : </strong> parameter takes dictionary as value which can be used to set record factory's custom attribute. It becomes handy to log multi-threaded programs. </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import logging
+
+logging.basicConfig(filename='myapp02.log',
+                    format='%(asctime)s : %(levelname)s : %(levelno)s : %(name)s : %(machineID)s : %(message)s ',
+                    datefmt='%m/%d/%Y %I:%M:%S %p', filemode='a+',   level=logging.INFO)
+
+dictionary = {'machineID': 'AF145B56D', 'requestID': 'PQA125CB12VB3123'}
+logging.info('Initiating session', extra=dictionary)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>myapp02.log</b></p>
+<pre class="result-content">
+05/18/2020 09:00:26 PM : INFO : 20 : root : AF145B56D : Initiating session 
+</pre></div>
+
+{% include callout.html content="**Note** : While Logging with custom keys in formatter, dictionary must always contains key used in formatter. Otherwise formatter will raise error and message will not be logged." type="primary" %} 
+
 
 <hr/>
 
@@ -859,17 +901,15 @@ ZeroDivisionError: division by zero
 <p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
 {% highlight python %}
 
-print('It\'s sunny outside.')
+import logging
+logging.log(logging.WARNING, "Warning Message from log() method")
 
 
 {% endhighlight %}
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
-<pre class="result-content">
-It's sunny outside.
-Quoting inside "Double quotes".
-</pre></div>
+<pre id='tut-output-error' class="result-content">WARNING:root:Warning Message from log() method</pre></div>
 
 <hr/>
 
@@ -896,6 +936,11 @@ Quoting inside "Double quotes".
  logging.ERROR    | 40
  logging.CRITICAL | 50
 
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Example </strong> </li>
+    </ul> 
+</div>
 
  {% assign code_block = code_block | plus: 1 %}
 {% assign code_block_id = "code-block-" | append: code_block %}
@@ -928,5 +973,80 @@ ERROR:root:Message with higher logger level than current level of logger.
 
 <hr/>
 
+
+#### addHandler(hdlr) 
+
+<p> Adds handler object to to logger. </p>
+
+<hr/>
+
+
+#### removeHandler(hdlr)
+
+<p> Removes handler object from the logger. </p>
+<hr/>
+
+
+#### addFilter(filter)
+
+<p>  Adds filter object to the logger. </p>
+<hr/>
+
+
+#### removeFilter(filter)
+
+<p> Removes filter object from the logger </p>
+<hr/>
+
+
+
+#### isEnabledFor(level)
+
+<p> Returns True if given level of message will be processed. It first checks if level set by logging.disable(level) and then use getEffectiveLevel() to determine given level of message will be processed or not. </p>
+
+<hr/>
+
+
+#### getChild(suffix)
+
+<p> Returns logger which is child of this logger with given suffix. </p>
+
+<p> For example logging.getLogger('packageA').getChild('ModuleA1') is same as logging.getLogger('packageA.ModuleA1') </p>
+
+<hr/>
+
+
+#### handle(record)
+
+<p> Handles given record by passing it to all handlers of this logger and to all of its parent. It is used for processing records received from socket or locally created. </p>
+
+<hr/>
+
+####  hasHandlers()
+
+
+<p> Returns True if this logger or any logger in it's hierarchy has any handler configured to it . </p>
+
+<hr/>
+
+
+#### findCaller(stack_info=False, stacklevel=1) 
+
+
+
+<hr/>
+
+#### disable(level=CRITICAL)
+
+<p> Overriding log level for all loggers in the application. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> It is used for temporally changing the log level(disabling logs). </li>
+        <li> Default level value is CRITICAL.</li>
+        <li> It disables all log message of given level and all the levels which are having numeric value less than numeric value of level.</li>
+        <li> For example logging.disable(level=INFO) will disable all logs at level of INFO and also at the level of DEBUG because, DEBUG have numeric value < INFO numeric value.</li>
+    </ul> 
+</div>
 
 {% include links.html %}
