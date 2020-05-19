@@ -580,6 +580,110 @@ logging.warning('High CPU usage ....')
 {% include callout.html content="**Note** : Multiple  LogRecordFactory can be chained as per application requirements as long as attribute names does not conflicts." type="primary" %} 
 
 
+#### disable(level=CRITICAL)
+
+<p> Overriding log level for all loggers in the application. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> It is used for temporally changing the log level(disabling logs). </li>
+        <li> Default level value is CRITICAL.</li>
+        <li> It disables all log message of given level and all the levels which are having numeric value less than numeric value of level.</li>
+        <li> For example logging.disable(level=INFO) will disable all logs at level of INFO and also at the level of DEBUG because, DEBUG have numeric value < INFO numeric value.</li>
+    </ul> 
+</div>
+
+
+<hr/>
+
+
+
+#### getLevelName(level) 
+
+<p> Returns numeric value for given log level and log level for given numeric log level. </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import logging
+
+print("getLevelName('INFO') :", logging.getLevelName('INFO'))
+print("getLevelName(40) :", logging.getLevelName(40))
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+getLevelName('INFO') : 20
+getLevelName(40) : ERROR
+</pre></div>
+
+<hr/>
+
+
+
+#### shutdown()
+
+<p> Informs logging system to perform orderly shutdown by flushing and closing all handlers. It is called on application exit. </p>
+
+<p> When logging module is imported this function is registered as the exit handler so no explicit call to this function is required. </p>
+
+<hr/>
+
+
+#### getLoggerClass()
+
+<p> Returns standard logger class or the last logger class passed using setLoggerClass(). It is called within new class definition to override default behaviour. </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+class MyLogger(logging.getLoggerClass()):
+    pass
+
+
+{% endhighlight %}
+</div>
+
+
+<br/>
+
+
+#### setLoggerClass(klass)
+
+<p> Sets the class for logging system to instantiate when creating logger.</p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> User defined Logger class must define __init__() method with a name argument and __init__() calls Logger.__init__(). </li>
+        <li> This function is typically called before any loggers are instantiated by application. </li>
+        <li> In Modules of application use logging.getLogger() to fetch the instance of logger.</li>
+    </ul> 
+</div>
+
+
+<hr/>
+
+
+#### makeLogRecord(attrdict)
+
+<p> Returns new LogRecord constructed from attrdict. </p>
+
+<p> It is used for constructing LogRecord from the pickled LogRecord sent over the socket. </p>
+
+<hr/>
+
 ## Logger Object 
 
 
@@ -1032,21 +1136,126 @@ ERROR:root:Message with higher logger level than current level of logger.
 
 #### findCaller(stack_info=False, stacklevel=1) 
 
+<p> Find and return caller's information in Tuple(filename,  line number, function name, stack information). </p>
 
-
-<hr/>
-
-#### disable(level=CRITICAL)
-
-<p> Overriding log level for all loggers in the application. </p>
 
 <div id="tut-content"> 
     <ul>
-        <li> It is used for temporally changing the log level(disabling logs). </li>
-        <li> Default level value is CRITICAL.</li>
-        <li> It disables all log message of given level and all the levels which are having numeric value less than numeric value of level.</li>
-        <li> For example logging.disable(level=INFO) will disable all logs at level of INFO and also at the level of DEBUG because, DEBUG have numeric value < INFO numeric value.</li>
+        <li> <strong> stack_info : </strong>  By default set to False returns None as stack information. If given True returns stack information of caller. </li>
+        <li> <strong> stacklevel :  </strong> Skips the given number of stack frames before determining values to be return. </li>
     </ul> 
 </div>
+
+<div id="tut-content"> 
+    <ul>
+        <li> Project Structure  </li>
+    </ul> 
+</div>
+
+<div id="tut-img">
+    <img src="/images/tutorials/python/moduleFindCaller.png" class="tut-img" alt="python logo">
+</div>
+
+<br/>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> ModuleA4.py </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import logging
+import secrets
+
+logger = logging.getLogger(__name__)
+
+
+def token_gen():
+    callerInfo = logger.findCaller(stack_info=True, stacklevel=1)
+    logger.debug(f'Caller info : {callerInfo}')
+
+    for i in range(5):
+        token = secrets.token_hex(16)
+        logger.debug(f'generated  16 Bytes Token  [{token}]')
+
+
+
+{% endhighlight %}
+</div>
+
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> LoggerFindCaller.py </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import logging
+from packageA1 import ModuleA4
+
+logger = logging.getLogger(__name__)
+
+
+def make_call():
+    logger.debug('Invoking make_call()')
+    ModuleA4.token_gen()
+
+
+
+{% endhighlight %}
+</div>
+
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> ModuleFindCaller.py </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import logging
+from appLogging import LoggerFindCaller
+
+logging.basicConfig(filename='myapp03.log', level=logging.DEBUG)
+
+rootLogger = logging.getLogger('ModuleFindCaller')
+rootLogger.debug('Logger Started')
+
+
+def find_caller_demo():
+    LoggerFindCaller.make_call()
+
+
+find_caller_demo()
+
+
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>myapp03.log</b></p>
+<pre class="result-content">
+DEBUG:ModuleFindCaller:Logger Started
+DEBUG:appLogging.LoggerFindCaller:Invoking make_call()
+DEBUG:packageA1.ModuleA4:Caller info : <div id="tut-highlight">('/home/asha/PycharmProjects/pythonEx/06_ModuleAndPackage/ModuleFindCaller.py', 11, 'find_caller_demo', 'Stack (most recent call last):\n  File "/home/asha/PycharmProjects/pythonEx/06_ModuleAndPackage/ModuleFindCaller.py", line 14, in &lt;module>\n    find_caller_demo()\n  File "/home/asha/PycharmProjects/pythonEx/06_ModuleAndPackage/ModuleFindCaller.py", line 11, in find_caller_demo\n    LoggerFindCaller.make_call()')</div>
+DEBUG:packageA1.ModuleA4:generated  16 Bytes Token  [e12174c4829f53858f7c9b6ea599e496]
+DEBUG:packageA1.ModuleA4:generated  16 Bytes Token  [e72b9dba78920f7418f1d94ce1b6f2d3]
+DEBUG:packageA1.ModuleA4:generated  16 Bytes Token  [991c0773772a3b32cb4069f59a037bf8]
+DEBUG:packageA1.ModuleA4:generated  16 Bytes Token  [57c4fff0fb94905c94c30797046757f0]
+DEBUG:packageA1.ModuleA4:generated  16 Bytes Token  [58e2c5b4fed90998f6d374be47345d81]
+
+</pre></div>
+
+<hr/>
+
 
 {% include links.html %}

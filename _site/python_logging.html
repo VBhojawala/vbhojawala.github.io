@@ -1340,6 +1340,87 @@ INFO:root:variable a -&gt; 12 and msg -&gt; a String value
 
 <div class="bs-callout bs-callout-primary"><strong>Note</strong> : Multiple  LogRecordFactory can be chained as per application requirements as long as attribute names does not conflicts.</div>
 
+<h4 id="disablelevelcritical">disable(level=CRITICAL)</h4>
+
+<p> Overriding log level for all loggers in the application. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> It is used for temporally changing the log level(disabling logs). </li>
+        <li> Default level value is CRITICAL.</li>
+        <li> It disables all log message of given level and all the levels which are having numeric value less than numeric value of level.</li>
+        <li> For example logging.disable(level=INFO) will disable all logs at level of INFO and also at the level of DEBUG because, DEBUG have numeric value &lt; INFO numeric value.</li>
+    </ul> 
+</div>
+
+<hr />
+
+<h4 id="getlevelnamelevel">getLevelName(level)</h4>
+
+<p> Returns numeric value for given log level and log level for given numeric log level. </p>
+
+<div id="code-block-11" class="code-block">
+<p id="code-header-11" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-11", "code-header-11")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"getLevelName('INFO') :"</span><span class="p">,</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLevelName</span><span class="p">(</span><span class="s">'INFO'</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"getLevelName(40) :"</span><span class="p">,</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLevelName</span><span class="p">(</span><span class="mi">40</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+getLevelName('INFO') : 20
+getLevelName(40) : ERROR
+</pre></div>
+
+<hr />
+
+<h4 id="shutdown">shutdown()</h4>
+
+<p> Informs logging system to perform orderly shutdown by flushing and closing all handlers. It is called on application exit. </p>
+
+<p> When logging module is imported this function is registered as the exit handler so no explicit call to this function is required. </p>
+
+<hr />
+
+<h4 id="getloggerclass">getLoggerClass()</h4>
+
+<p> Returns standard logger class or the last logger class passed using setLoggerClass(). It is called within new class definition to override default behaviour. </p>
+
+<div id="code-block-12" class="code-block">
+<p id="code-header-12" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-12", "code-header-12")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">MyLogger</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">getLoggerClass</span><span class="p">()):</span>
+    <span class="k">pass</span></code></pre></figure>
+
+</div>
+
+<p><br /></p>
+
+<h4 id="setloggerclassklass">setLoggerClass(klass)</h4>
+
+<p> Sets the class for logging system to instantiate when creating logger.</p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> User defined Logger class must define __init__() method with a name argument and __init__() calls Logger.__init__(). </li>
+        <li> This function is typically called before any loggers are instantiated by application. </li>
+        <li> In Modules of application use logging.getLogger() to fetch the instance of logger.</li>
+    </ul> 
+</div>
+
+<hr />
+
+<h4 id="makelogrecordattrdict">makeLogRecord(attrdict)</h4>
+
+<p> Returns new LogRecord constructed from attrdict. </p>
+
+<p> It is used for constructing LogRecord from the pickled LogRecord sent over the socket. </p>
+
+<hr />
+
 <h2 id="logger-object">Logger Object</h2>
 
 <h3 id="logging-hierarchy">Logging hierarchy</h3>
@@ -1376,8 +1457,8 @@ INFO:root:variable a -&gt; 12 and msg -&gt; a String value
 
 <p> <i class="fa fa-file-text" aria-hidden="true"></i> ModuleA2.py </p>
 
-<div id="code-block-11" class="code-block">
-<p id="code-header-11" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-11", "code-header-11")</script>
+<div id="code-block-13" class="code-block">
+<p id="code-header-13" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-13", "code-header-13")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
@@ -1390,8 +1471,8 @@ INFO:root:variable a -&gt; 12 and msg -&gt; a String value
 
 <p> <i class="fa fa-file-text" aria-hidden="true"></i> ModuleB2.py </p>
 
-<div id="code-block-12" class="code-block">
-<p id="code-header-12" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-12", "code-header-12")</script>
+<div id="code-block-14" class="code-block">
+<p id="code-header-14" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-14", "code-header-14")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
@@ -1404,8 +1485,8 @@ INFO:root:variable a -&gt; 12 and msg -&gt; a String value
 
 <p> <i class="fa fa-file-text" aria-hidden="true"></i> LoggerHierarchy.py </p>
 
-<div id="code-block-13" class="code-block">
-<p id="code-header-13" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-13", "code-header-13")</script>
+<div id="code-block-15" class="code-block">
+<p id="code-header-15" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-15", "code-header-15")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
 
@@ -1440,8 +1521,8 @@ INFO:root:variable a -&gt; 12 and msg -&gt; a String value
 
 <p> Returns the level of logger object. By default level of root logger is set to WARNING (30) and for non root logger NOTSET (0).  </p>
 
-<div id="code-block-14" class="code-block">
-<p id="code-header-14" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-14", "code-header-14")</script>
+<div id="code-block-16" class="code-block">
+<p id="code-header-16" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-16", "code-header-16")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
 
@@ -1473,8 +1554,8 @@ Non-Root Logger level : 0
     </ul> 
 </div>
 
-<div id="code-block-15" class="code-block">
-<p id="code-header-15" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-15", "code-header-15")</script>
+<div id="code-block-17" class="code-block">
+<p id="code-header-17" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-17", "code-header-17")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
 
@@ -1503,8 +1584,8 @@ propagate : True
     </ul> 
 </div>
 
-<div id="code-block-16" class="code-block">
-<p id="code-header-16" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-16", "code-header-16")</script>
+<div id="code-block-18" class="code-block">
+<p id="code-header-18" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-18", "code-header-18")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
 
@@ -1569,8 +1650,8 @@ Non-Root Logger Effective level : 30
 
 <p> same as error(msg, *args, **kwargs) level but adds stack trace of error </p>
 
-<div id="code-block-17" class="code-block">
-<p id="code-header-17" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-17", "code-header-17")</script>
+<div id="code-block-19" class="code-block">
+<p id="code-header-19" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-19", "code-header-19")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
 
@@ -1631,8 +1712,8 @@ ZeroDivisionError: division by zero
   </tbody>
 </table>
 
-<div id="code-block-18" class="code-block">
-<p id="code-header-18" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-18", "code-header-18")</script>
+<div id="code-block-20" class="code-block">
+<p id="code-header-20" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-20", "code-header-20")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
 <span class="n">logging</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">WARNING</span><span class="p">,</span> <span class="s">"Warning Message from log() method"</span><span class="p">)</span></code></pre></figure>
@@ -1695,8 +1776,8 @@ ZeroDivisionError: division by zero
     </ul> 
 </div>
 
-<div id="code-block-19" class="code-block">
-<p id="code-header-19" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-19", "code-header-19")</script>
+<div id="code-block-21" class="code-block">
+<p id="code-header-21" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-21", "code-header-21")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
 
@@ -1768,20 +1849,101 @@ ERROR:root:Message with higher logger level than current level of logger.
 
 <h4 id="findcallerstack_infofalse-stacklevel1">findCaller(stack_info=False, stacklevel=1)</h4>
 
-<hr />
-
-<h4 id="disablelevelcritical">disable(level=CRITICAL)</h4>
-
-<p> Overriding log level for all loggers in the application. </p>
+<p> Find and return caller's information in Tuple(filename,  line number, function name, stack information). </p>
 
 <div id="tut-content"> 
     <ul>
-        <li> It is used for temporally changing the log level(disabling logs). </li>
-        <li> Default level value is CRITICAL.</li>
-        <li> It disables all log message of given level and all the levels which are having numeric value less than numeric value of level.</li>
-        <li> For example logging.disable(level=INFO) will disable all logs at level of INFO and also at the level of DEBUG because, DEBUG have numeric value &lt; INFO numeric value.</li>
+        <li> <strong> stack_info : </strong>  By default set to False returns None as stack information. If given True returns stack information of caller. </li>
+        <li> <strong> stacklevel :  </strong> Skips the given number of stack frames before determining values to be return. </li>
     </ul> 
 </div>
+
+<div id="tut-content"> 
+    <ul>
+        <li> Project Structure  </li>
+    </ul> 
+</div>
+
+<div id="tut-img">
+    <img src="/images/tutorials/python/moduleFindCaller.png" class="tut-img" alt="python logo" />
+</div>
+
+<p><br /></p>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> ModuleA4.py </p>
+
+<div id="code-block-22" class="code-block">
+<p id="code-header-22" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-22", "code-header-22")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">secrets</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">token_gen</span><span class="p">():</span>
+    <span class="n">callerInfo</span> <span class="o">=</span> <span class="n">logger</span><span class="o">.</span><span class="n">findCaller</span><span class="p">(</span><span class="n">stack_info</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">f</span><span class="s">'Caller info : {callerInfo}'</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+        <span class="n">token</span> <span class="o">=</span> <span class="n">secrets</span><span class="o">.</span><span class="n">token_hex</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">f</span><span class="s">'generated  16 Bytes Token  [{token}]'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> LoggerFindCaller.py </p>
+
+<div id="code-block-23" class="code-block">
+<p id="code-header-23" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-23", "code-header-23")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">packageA1</span> <span class="kn">import</span> <span class="n">ModuleA4</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">make_call</span><span class="p">():</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">'Invoking make_call()'</span><span class="p">)</span>
+    <span class="n">ModuleA4</span><span class="o">.</span><span class="n">token_gen</span><span class="p">()</span></code></pre></figure>
+
+</div>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> ModuleFindCaller.py </p>
+
+<div id="code-block-24" class="code-block">
+<p id="code-header-24" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-24", "code-header-24")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">appLogging</span> <span class="kn">import</span> <span class="n">LoggerFindCaller</span>
+
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">'myapp03.log'</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+
+<span class="n">rootLogger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s">'ModuleFindCaller'</span><span class="p">)</span>
+<span class="n">rootLogger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">'Logger Started'</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">find_caller_demo</span><span class="p">():</span>
+    <span class="n">LoggerFindCaller</span><span class="o">.</span><span class="n">make_call</span><span class="p">()</span>
+
+
+<span class="n">find_caller_demo</span><span class="p">()</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>myapp03.log</b></p>
+<pre class="result-content">
+DEBUG:ModuleFindCaller:Logger Started
+DEBUG:appLogging.LoggerFindCaller:Invoking make_call()
+DEBUG:packageA1.ModuleA4:Caller info : <div id="tut-highlight">('/home/asha/PycharmProjects/pythonEx/06_ModuleAndPackage/ModuleFindCaller.py', 11, 'find_caller_demo', 'Stack (most recent call last):\n  File "/home/asha/PycharmProjects/pythonEx/06_ModuleAndPackage/ModuleFindCaller.py", line 14, in &lt;module&gt;\n    find_caller_demo()\n  File "/home/asha/PycharmProjects/pythonEx/06_ModuleAndPackage/ModuleFindCaller.py", line 11, in find_caller_demo\n    LoggerFindCaller.make_call()')</div>
+DEBUG:packageA1.ModuleA4:generated  16 Bytes Token  [e12174c4829f53858f7c9b6ea599e496]
+DEBUG:packageA1.ModuleA4:generated  16 Bytes Token  [e72b9dba78920f7418f1d94ce1b6f2d3]
+DEBUG:packageA1.ModuleA4:generated  16 Bytes Token  [991c0773772a3b32cb4069f59a037bf8]
+DEBUG:packageA1.ModuleA4:generated  16 Bytes Token  [57c4fff0fb94905c94c30797046757f0]
+DEBUG:packageA1.ModuleA4:generated  16 Bytes Token  [58e2c5b4fed90998f6d374be47345d81]
+
+</pre></div>
+
+<hr />
 
 
 
