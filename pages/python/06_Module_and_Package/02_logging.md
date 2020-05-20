@@ -1902,6 +1902,40 @@ getSubject(record) | defines subject for record, it can be override to return cu
 
 
 
+### NullHandler
+
+<p> Discards LogRecords sent to it. </p>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Constructor </strong> </li>
+    </ul> 
+</div>
+
+<p id="tut-cons"> NullHandler() </p>
+
+<p> Returns instance of  NullHandler which is a 'no-op' handler. </p>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Methods </strong> </li>
+    </ul> 
+</div>
+
+
+Method | Explanation
+:--- | :---
+emit(record) | it does nothing.
+handle(record) | it does nothing.
+createLock() | returns None for the lock, because no underlying I/O to which access needs to be serialized.
+
+
+<hr/>
+
+
+
 ### MemoryHandler
 
 <p> Buffers logging records in memory which can periodically be transferred to target handler. </p>
@@ -1919,6 +1953,334 @@ getSubject(record) | defines subject for record, it can be override to return cu
 <div id="tut-content"> 
     <ul>
         <li> <strong> capacity : </strong> defines maximum number of logging records to be buffered. </li>
+        <li> <strong> flushLevel : </strong> By default set to ERROR, flushes buffer when Error is raised. </li>
+        <li> <strong> target :  </strong> target handler to handler LogRecords when flush is executed. </li>
+        <li> <strong> flushOnClose : </strong> By default True flushes buffered LogRecords to target handler. </li>
+    </ul> 
+</div>
+
+
+<br/>
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Methods </strong> </li>
+    </ul> 
+</div>
+
+
+Method | Explanation
+:--- | :---
+shouldFlush(record) | returns True if buffer is holding maximum number of records. 
+flush() | Sends buffered record to target and clears the buffer if target exists.
+setTarget(target) | sets the target handler for this handler.
+emit(record) | Appends record to buffer.If shouldFlush() returns true, call flush() to process the buffer.
+close() | calls flush(), sets target to None and clears the buffer.
+
+
+
+<hr/>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Example </strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import logging
+from logging.handlers import MemoryHandler
+import secrets
+
+logger = logging.getLogger()
+logger.setLevel(logging.DEBUG)
+
+fileHandler = logging.FileHandler(filename='FileHandlerErrors.log', mode='a+')
+nullHandler = logging.NullHandler()
+memoryHndlr = MemoryHandler(capacity=15, target=nullHandler, flushOnClose=False)
+
+logger.addHandler(memoryHndlr)
+
+
+for i in range(5000):
+    token = secrets.token_hex(16)
+    logger.debug(f'generated  16 Bytes Token  [{token}]')
+
+
+
+try:
+    1/0
+except ZeroDivisionError:
+    memoryHndlr.setTarget(fileHandler)
+    logger.error('Division by zero attempted!')
+    memoryHndlr.setTarget(nullHandler)
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>FileHandlerErrors.log</b></p>
+<pre class="result-content">
+generated  16 Bytes Token  [52304d8b6c57e9d89870bc5dff633af8]
+generated  16 Bytes Token  [d8591fe81bf6f75d85dc0ebe10b10999]
+generated  16 Bytes Token  [575d1c06fe737578e06e28e1542dbb79]
+generated  16 Bytes Token  [a5bc2ccc214e725846fb76feb05343ad]
+generated  16 Bytes Token  [5ed652c71132ad641a4c976d90c7f24e]
+Division by zero attempted!
+</pre></div>
+
+<hr/>
+
+
+
+
+
+
+### WatchedFileHandler
+
+<p> Watches for the log file changes, if file is moved or removed it closes and reopens the file. It watches the file it is logging to, intended to use for Unix/Linux only. file change happens when UNIX programs such as newsyslog and logrotate performs log rotation. </p>
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Constructor</strong> </li>
+    </ul> 
+</div>
+
+<p id="tut-cons"> WatchedFileHandler(filename, mode='a', encoding=None, delay=False) </p>
+
+<p> Returns a new instance of the WatchedFileHandler class. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> filename : </strong> given filename is opened and used as stream for logging. </li>
+        <li> <strong> mode : </strong> Default 'a' is used if not given. </li>
+        <li> <strong> encoding : </strong> If given used as file encoding or system default encoding is used. </li>
+        <li> <strong> delay : </strong> Default False opens the file when creating a FileHandler instance, if True it delays file opening until first emit() is called.</li>
+    </ul> 
+</div>
+
+
+<br/>
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Methods </strong> </li>
+    </ul> 
+</div>
+
+
+Method | Explanation
+:--- | :---
+reopenIfNeeded() | Checks to see if file has changed. If changed existing stream is flushed and closed and re-opened again.
+emit(record) | outputs the record by calling first reopenIfNeeded().
+
+<hr/>
+
+
+
+### QueueHandler
+
+<p> A Multi threaded handler in which handler works on separate thread from the thread which performs logging. It improves response time for handlers which take more time to process such as SMTPHandlers.
+</p>
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Constructor</strong> </li>
+    </ul> 
+</div>
+
+<p id="tut-cons"> QueueHandler(queue) </p>
+
+<p> Returns a new instance of the QueueHandler class with The instance initialized with the queue to send messages to. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> queue : </strong> Can be any queue like object (SimpleQueue instance). </li>
+    </ul> 
+</div>
+
+
+<br/>
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Methods </strong> </li>
+    </ul> 
+</div>
+
+
+Method | Explanation
+:--- | :---
+emit(record) | Enqueue the result of preparing LogRecord. If the queue is full handleError() method is called to handle the error.
+prepare(record) | Prepares the record for queuing , object returned by this method is enqueued. <br/> It formats message, argument and exception information if present.<br/> It removes unpickleable items from the record. <br/>This method can be override for converting the record to a dict or JSON string or send a modified copy of record while leaving original copy intact.
+enqueue(record) | Enqueue the record on the queue using put_nowait(). Method can be customized as per requirement.
+
+
+<hr/>
+
+
+#### QueueListener
+
+
+<p> A Multi threaded handler in which handler works on separate thread from the thread which performs logging. It improves response time for handlers which take more time to process such as SMTPHandlers.
+</p>
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Constructor</strong> </li>
+    </ul> 
+</div>
+
+<p id="tut-cons"> QueueListener(queue, *handlers, respect_handler_level=False) </p>
+
+<p> Returns a new instance of the QueueListener class initialized with queue to send message to and list of handlers which handles entries placed on queue. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> queue : </strong> Can be any queue like object (SimpleQueue instance). </li>
+        <li> <strong> respect_handler_level : </strong> If passed True matches handler level with message level before passing message to handler. Default False will pass every message to each handler. </li>
+        <li> <strong> *handlers : </strong> handlers which handles the queue entries. </li>
+    </ul> 
+</div>
+
+<br/>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Methods </strong> </li>
+    </ul> 
+</div>
+
+
+Method | Explanation
+:--- | :---
+dequeue(block) | Dequeue a record and return it, optionally block argument. <br/> <strong>block : </strong> determines the get() call on queue is blocking or non-blocking. <br/> It uses get() method of queue which is by default blocking which can be override to customize behaviour.
+prepare(record) | Prepare a record for handling. <br/> By default it returns the record passed as it is.It can be override to manipulate the record before passing it to the handler.
+handle(record) | Handles the record. It loops through the handlers offering record to handler. It passes the same record returned from prepare().
+start() | Starts the listener which is a background thread to monitor queue for LogRecord to process.
+stop()  | Stops the listener. <br/> It asks the thread to stop and then wait for the thread to stop. <br/> If this method is not called before your application exits, there may be some record left on queue which will remain un-processed.
+enqueue_sentinel() | Writes a sentinel to the queue to tell the listener to quit. <br/> It uses put_nowait() by default.
+
+
+
+<br/>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from logging.handlers import QueueHandler, QueueListener
+import queue
+import logging
+import sys
+
+logQueue = queue.SimpleQueue()
+qHandler = QueueHandler(logQueue)
+
+handler = logging.StreamHandler(sys.stdout)  # Here StreamHandler can be replaced with SMTPHandler.
+listener = QueueListener(logQueue, handler)
+
+
+logger = logging.getLogger()
+logger.addHandler(qHandler)
+
+
+listener.start()
+
+logger.warning('=========     A message through queue     =========')
+logger.warning('+++++++++   Second message through queue   +++++++++ ')
+
+listener.stop()
+
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+=========     A message through queue     =========
++++++++++   Second message through queue   +++++++++ 
+</pre></div>
+
+<hr/>
+
+
+
+### SocketHandler
+
+<p> Sends logging output to network socket. </p>
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Constructor</strong> </li>
+    </ul> 
+</div>
+
+<p id="tut-cons"> SocketHandler(host, port) </p>
+
+<p> Returns new instance of SocketHandler class. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> host : </strong> Host address. </li>
+        <li> <strong> port : </strong> If specified as None uses Unix domain socket using value provided in host, otherwise TCP socket is used.</li>
+    </ul> 
+</div>
+
+<br/>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Methods </strong> </li>
+    </ul> 
+</div>
+
+
+Method | Explanation
+:--- | :---
+close() | Closes the socket.
+emit() | Pickles the record.\__dict__ and writes to socket in binary format.<br/> If error occurred in communication with socket , it drops packet silently. <br/> If connection lost previously it re-establishes the connection. <br/> At receiving end makeLogRecord() function is used for un-pickling the record.
+handleError() |  Handles error occurred while executing emit(). <br/> Mostly the cause of the error is a lost connection which can be handled by closing the socket which can be retry on next event.
+makeSocket() | Factory method which allows subclasses to define the precise type of socket. <br/> By default it creates a TCP socket (socket.SOCK_STREAM).
+makePickle(record) | pickles record.\__dict__  in binary format with prefix, and returns it ready for transmission across the socket.
+send(packet) | Send a pickled byte-string message to the socket. <br/> It allows partial send which can happen when network is busy.
+createSocket() | Tries to create the socket, on failure uses exponential back-off algorithm. <br/> On initial failure, the handler will drop the message it was trying to send. Subsequent message sent to same instance will wait until timeout expires. <br\> Default initial delay is 1 sec, after that on failure it doubles the delay until in reaches maximum 30 sec.
+createSocket() | Tries to create the socket, on failure uses exponential back-off algorithm. On initial failure, the handler will drop the message it was trying to send. Subsequent message sent to same instance will wait until timeout expires. <br/> Default initial delay is 1 sec, after that on failure it doubles the delay until in reaches maximum 30 sec.
+
+
+<p> <strong> Timeout behaviour can be controlled by using following attributes of handler : </strong> </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> retryStart : </strong> (initial delay) default 1.0 sec. </li>
+        <li> <strong> retryFactor : </strong> (multiplier) default is 2.0 sec. </li>
+        <li> <strong> retryMax : </strong> (maximum delay) default is 30.0 sec. </li>
     </ul> 
 </div>
 
