@@ -2234,8 +2234,6 @@ listener.stop()
 
 <p> Sends logging output to network socket. </p>
 
-
-
 <div id="tut-content"> 
     <ul>
         <li> <strong> Constructor</strong> </li>
@@ -2283,6 +2281,94 @@ createSocket() | Tries to create the socket, on failure uses exponential back-of
         <li> <strong> retryMax : </strong> (maximum delay) default is 30.0 sec. </li>
     </ul> 
 </div>
+
+<hr/>
+
+
+### DatagramHandler
+
+<p> Subclass of SocketHandler which sends logging messages over UDP sockets. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Constructor</strong> </li>
+    </ul> 
+</div>
+
+<p id="tut-cons"> DatagramHandler(host, port) </p>
+
+<p> Returns new instance of datagramHandler which communicates with remote machine with given host and port. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> host : </strong> Host address. </li>
+        <li> <strong> port : </strong> If port is specified as None Unix domain socket is created otherwise, a UDP socket is created.</li>
+    </ul> 
+</div>
+
+<br/>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Methods </strong> </li>
+    </ul> 
+</div>
+
+
+Method | Explanation
+:--- | :---
+emit() | Pickles the record.__dict__ and writes to the socket in binary.<br/>If there is an error with socket, drops package silently.<br/> To unpickle the record at receiving end into LogRecord use makeLogRecord() function.
+makeSocket() | Factory method of SocketHandler which is overridden to create UDP socket (socket.SOCK_DGRAM).
+send(s) | Send a pickled byte-string to a socket. Format of byte-string is same as SocketHandler.makePickle().
+
+
+<hr/>
+
+
+
+
+### HTTPHandler
+
+<p> Supports sending logging message to a web server using GET and POST method. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Constructor</strong> </li>
+    </ul> 
+</div>
+
+<p id="tut-cons"> HTTPHandler(host, url, method='GET', secure=False, credentials=None, context=None) </p>
+
+<p> Returns a new instance of the HTTPHandler class. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> host : </strong> Defined as host:port combination. </li>
+        <li> <strong> method :  </strong> Default 'GET' is used, it can be give as 'POST'.</li>
+        <li> <strong> secure : </strong> If set to 'True' HTTPS is used for secure connection. </li>
+        <li> <strong> credentials : </strong> If specified must be Tuple(userId, password) which will be used for authentication. </li>
+    </ul> 
+</div>
+
+<br/>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Methods </strong> </li>
+    </ul> 
+</div>
+
+
+Method | Explanation
+:--- | :---
+mapLogRecord(record) | Returns the dictionary based record which is sent to URL-encoded.<br/> Default implementation returns record.\__dict__.<br/> It can be override to send only subset of record.\__dict__ to web server.
+emit(record) | Sends the record to the Web server as a URL-encoded dictionary.
+
+
+{% include callout.html content="**Note** : setting formatter() for HTTPHandler() has no effect , for customization of record mapLogRecord() is needs to be override." type="primary" %} 
+
+<hr/>
+
 
 
 {% include links.html %}
