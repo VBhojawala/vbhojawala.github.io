@@ -3150,6 +3150,10 @@ logger.critical('critical message')
     </ul> 
 </div>
 
+<hr/>
+
+#### Dictionary confing using YAML
+
 <p> <i class="fa fa-file-text" aria-hidden="true"></i> logging.yml </p>
 
 {% assign code_block = code_block | plus: 1 %}
@@ -3157,7 +3161,7 @@ logger.critical('critical message')
 {% assign code_header_id = "code-header-" | append: code_block %}
 <div id="{{ code_block_id }}" class="code-block">
 <p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
-{% highlight python %}
+{% highlight yml %}
 
 version: 1
 formatters:
@@ -3184,7 +3188,7 @@ root:
 
 
 
-<p> <i class="fa fa-file-text" aria-hidden="true"></i> logging.yml </p>
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> DictConfigYAML.py </p>
 
 {% assign code_block = code_block | plus: 1 %}
 {% assign code_block_id = "code-block-" | append: code_block %}
@@ -3229,6 +3233,107 @@ logger.critical('critical message')
 
 <hr/>
 
+
+
+#### Dictionary confing using JSON
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> logging.json </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight json %}
+
+{
+  "logging": {
+
+    "version": 1,
+
+    "disable_existing_loggers": true,
+
+    "formatters": {
+      "simple": {
+        "format": "%(asctime)s : %(name)s : %(levelname)s : %(message)s"
+      }
+    },
+
+    "handlers":{
+      "console": {
+        "class": "logging.StreamHandler",
+        "level": "DEBUG",
+        "formatter": "simple",
+        "stream": "ext://sys.stdout"
+      }
+    },
+
+    "loggers": {
+      "module1": {
+        "level": "DEBUG",
+        "handlers": ["console"],
+        "propagate": false
+      }
+    },
+
+    "root": {
+       "level": "DEBUG",
+       "handlers": ["console"]
+    }
+
+  }
+  
+}
+
+{% endhighlight %}
+</div>
+
+
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> DictConfigJSON.py </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import logging
+from logging.config import dictConfig
+import os
+import json
+
+path = 'logging.json'
+if os.path.exists(path):
+    with open(path, 'r') as f:
+        config = json.load(f)
+    dictConfig(config["logging"])
+
+# create logger
+logger = logging.getLogger('module1')
+
+# 'application' code
+logger.debug('debug message')
+logger.info('info message')
+logger.warning('warn message')
+logger.error('error message')
+logger.critical('critical message')
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+2020-05-23 17:56:38,598 : module1 : DEBUG : debug message
+2020-05-23 17:56:38,598 : module1 : INFO : info message
+2020-05-23 17:56:38,598 : module1 : WARNING : warn message
+2020-05-23 17:56:38,599 : module1 : ERROR : error message
+2020-05-23 17:56:38,599 : module1 : CRITICAL : critical message
+</pre></div>
+
+<hr/>
 
 
 {% include links.html %}

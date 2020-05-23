@@ -4025,33 +4025,37 @@ threadName : MainThread</pre></div>
     </ul> 
 </div>
 
+<hr />
+
+<h4 id="dictionary-confing-using-yaml">Dictionary confing using YAML</h4>
+
 <p> <i class="fa fa-file-text" aria-hidden="true"></i> logging.yml </p>
 
 <div id="code-block-46" class="code-block">
 <p id="code-header-46" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-46", "code-header-46")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">version</span><span class="p">:</span> <span class="mi">1</span>
-<span class="n">formatters</span><span class="p">:</span>
-  <span class="n">simple</span><span class="p">:</span>
-    <span class="nb">format</span><span class="p">:</span> <span class="s">'</span><span class="si">%(asctime)</span><span class="s">s : </span><span class="si">%(name)</span><span class="s">s : </span><span class="si">%(levelname)</span><span class="s">s : </span><span class="si">%(message)</span><span class="s">s'</span>
-<span class="n">handlers</span><span class="p">:</span>
-  <span class="n">console</span><span class="p">:</span>
-    <span class="n">class</span><span class="p">:</span> <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span>
-    <span class="n">level</span><span class="p">:</span> <span class="n">DEBUG</span>
-    <span class="n">formatter</span><span class="p">:</span> <span class="n">simple</span>
-    <span class="n">stream</span><span class="p">:</span> <span class="n">ext</span><span class="p">:</span><span class="o">//</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span>
-<span class="n">loggers</span><span class="p">:</span>
-  <span class="n">module1</span><span class="p">:</span>
-    <span class="n">level</span><span class="p">:</span> <span class="n">DEBUG</span>
-    <span class="n">handlers</span><span class="p">:</span> <span class="p">[</span><span class="n">console</span><span class="p">]</span>
-    <span class="n">propagate</span><span class="p">:</span> <span class="n">no</span>
-<span class="n">root</span><span class="p">:</span>
-  <span class="n">level</span><span class="p">:</span> <span class="n">DEBUG</span>
-  <span class="n">handlers</span><span class="p">:</span> <span class="p">[</span><span class="n">console</span><span class="p">]</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-yml" data-lang="yml"><span class="na">version</span><span class="pi">:</span> <span class="m">1</span>
+<span class="na">formatters</span><span class="pi">:</span>
+  <span class="na">simple</span><span class="pi">:</span>
+    <span class="na">format</span><span class="pi">:</span> <span class="s1">'</span><span class="s">%(asctime)s</span><span class="nv"> </span><span class="s">:</span><span class="nv"> </span><span class="s">%(name)s</span><span class="nv"> </span><span class="s">:</span><span class="nv"> </span><span class="s">%(levelname)s</span><span class="nv"> </span><span class="s">:</span><span class="nv"> </span><span class="s">%(message)s'</span>
+<span class="na">handlers</span><span class="pi">:</span>
+  <span class="na">console</span><span class="pi">:</span>
+    <span class="na">class</span><span class="pi">:</span> <span class="s">logging.StreamHandler</span>
+    <span class="na">level</span><span class="pi">:</span> <span class="s">DEBUG</span>
+    <span class="na">formatter</span><span class="pi">:</span> <span class="s">simple</span>
+    <span class="na">stream</span><span class="pi">:</span> <span class="s">ext://sys.stdout</span>
+<span class="na">loggers</span><span class="pi">:</span>
+  <span class="na">module1</span><span class="pi">:</span>
+    <span class="na">level</span><span class="pi">:</span> <span class="s">DEBUG</span>
+    <span class="na">handlers</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">console</span><span class="pi">]</span>
+    <span class="na">propagate</span><span class="pi">:</span> <span class="s">no</span>
+<span class="na">root</span><span class="pi">:</span>
+  <span class="na">level</span><span class="pi">:</span> <span class="s">DEBUG</span>
+  <span class="na">handlers</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">console</span><span class="pi">]</span></code></pre></figure>
 
 </div>
 
-<p> <i class="fa fa-file-text" aria-hidden="true"></i> logging.yml </p>
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> DictConfigYAML.py </p>
 
 <div id="code-block-47" class="code-block">
 <p id="code-header-47" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-47", "code-header-47")</script>
@@ -4086,6 +4090,93 @@ threadName : MainThread</pre></div>
 2020-05-23 16:08:03,234 : module1 : WARNING : warn message
 2020-05-23 16:08:03,234 : module1 : ERROR : error message
 2020-05-23 16:08:03,234 : module1 : CRITICAL : critical message
+</pre></div>
+
+<hr />
+
+<h4 id="dictionary-confing-using-json">Dictionary confing using JSON</h4>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> logging.json </p>
+
+<div id="code-block-48" class="code-block">
+<p id="code-header-48" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-48", "code-header-48")</script>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nl">"logging"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+
+    </span><span class="nl">"disable_existing_loggers"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+
+    </span><span class="nl">"formatters"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"simple"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"%(asctime)s : %(name)s : %(levelname)s : %(message)s"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+
+    </span><span class="nl">"handlers"</span><span class="p">:{</span><span class="w">
+      </span><span class="nl">"console"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"class"</span><span class="p">:</span><span class="w"> </span><span class="s2">"logging.StreamHandler"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"level"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEBUG"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"formatter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"simple"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"stream"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ext://sys.stdout"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+
+    </span><span class="nl">"loggers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"module1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"level"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEBUG"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"handlers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"console"</span><span class="p">],</span><span class="w">
+        </span><span class="nl">"propagate"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+
+    </span><span class="nl">"root"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+       </span><span class="nl">"level"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEBUG"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"handlers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"console"</span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+
+  </span><span class="p">}</span><span class="w">
+  
+</span><span class="p">}</span></code></pre></figure>
+
+</div>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> DictConfigJSON.py </p>
+
+<div id="code-block-49" class="code-block">
+<p id="code-header-49" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-49", "code-header-49")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">logging.config</span> <span class="kn">import</span> <span class="n">dictConfig</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="n">path</span> <span class="o">=</span> <span class="s">'logging.json'</span>
+<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">config</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="n">dictConfig</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s">"logging"</span><span class="p">])</span>
+
+<span class="c1"># create logger
+</span><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s">'module1'</span><span class="p">)</span>
+
+<span class="c1"># 'application' code
+</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">'debug message'</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">'info message'</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s">'warn message'</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">'error message'</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="s">'critical message'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+2020-05-23 17:56:38,598 : module1 : DEBUG : debug message
+2020-05-23 17:56:38,598 : module1 : INFO : info message
+2020-05-23 17:56:38,598 : module1 : WARNING : warn message
+2020-05-23 17:56:38,599 : module1 : ERROR : error message
+2020-05-23 17:56:38,599 : module1 : CRITICAL : critical message
 </pre></div>
 
 <hr />
