@@ -3279,6 +3279,817 @@ Division by zero attempted!
 
 <hr />
 
+<h2 id="filters">Filters</h2>
+
+<p> Filters can be used by handlers and loggers for more specific filtering from filtering record based on log level. </p>
+
+<h3 id="filter-class">Filter class</h3>
+
+<p> Filtering log message based on logger hierarchy. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Constructor</strong> </li>
+    </ul> 
+</div>
+
+<p id="tut-cons"> Filter(name='') </p>
+
+<p> Returns an instance of the filter class. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> Base Filter class only allows events which are below the a certain point in the logger hierarchy. For e.g. A filter is initialized with 'A.B' will allow events logged by 'A.B.X', 'A.B.X.Y', 'A.B.Z' but not the 'A.P', 'B.Q'. </li>
+        <li> If initialized name with empty string all events are passed. </li>
+        <li> Filter attached to handler before an event is emitted by the handler. </li>
+        <li> Filter attached to logger before an event is logged using methods like info(), debug() etc.</li>
+    </ul> 
+</div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> Project Structure  </li>
+    </ul> 
+</div>
+<div id="tut-img">
+    <img src="/images/tutorials/python/LoggingWithFilters.png" class="tut-img" alt="python logo" />
+</div>
+
+<p><br /></p>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> ModuleA2.py </p>
+
+<div id="code-block-33" class="code-block">
+<p id="code-header-33" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-33", "code-header-33")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">hello_module</span><span class="p">():</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">'Message from packageA1 -&gt; ModuleA2'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> ModuleB2.py </p>
+
+<div id="code-block-34" class="code-block">
+<p id="code-header-34" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-34", "code-header-34")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">hello_module</span><span class="p">():</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">'Message from packageB1 -&gt; ModuleB2'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> ModuleM1.py </p>
+
+<div id="code-block-35" class="code-block">
+<p id="code-header-35" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-35", "code-header-35")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">hello_module</span><span class="p">():</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">'Message from ModuleM1.'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> LoggingWithFilter.py </p>
+
+<div id="code-block-36" class="code-block">
+<p id="code-header-36" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-36", "code-header-36")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="kn">from</span> <span class="nn">appLogging.packageA1</span> <span class="kn">import</span> <span class="n">ModuleA2</span>
+<span class="kn">from</span> <span class="nn">appLogging.packageB1</span> <span class="kn">import</span> <span class="n">ModuleB2</span>
+<span class="kn">from</span> <span class="nn">packageB</span> <span class="kn">import</span> <span class="n">ModuleM1</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">'Hierarchy 1 is created'</span><span class="p">)</span>
+
+<span class="c1"># adding Handler
+</span><span class="n">sh</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">(</span><span class="n">stream</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
+<span class="n">sh</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+
+
+<span class="c1"># adding filter
+</span><span class="n">onlyAppLogging</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">Filter</span><span class="p">(</span><span class="s">'appLogging'</span><span class="p">)</span>
+<span class="n">sh</span><span class="o">.</span><span class="n">addFilter</span><span class="p">(</span><span class="n">onlyAppLogging</span><span class="p">)</span>
+
+<span class="c1"># attaching handler
+</span><span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">sh</span><span class="p">)</span>
+
+
+<span class="c1"># Invoking functions
+</span><span class="n">ModuleA2</span><span class="o">.</span><span class="n">hello_module</span><span class="p">()</span>
+<span class="n">ModuleB2</span><span class="o">.</span><span class="n">hello_module</span><span class="p">()</span>
+<span class="n">ModuleM1</span><span class="o">.</span><span class="n">hello_module</span><span class="p">()</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Message from packageA1 -&gt; ModuleA2
+Message from packageB1 -&gt; ModuleB2
+</pre></div>
+
+<hr />
+
+<h3 id="filter-with-custom-business-logic">Filter with custom business logic</h3>
+
+<p> By creating subclass of logging.Filter class and overriding filter method, business logic to filter records can be customized. </p>
+
+<p> Customized filters can also be used fro : </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> Counting how many records were processed by a particular logger or handler. </li>
+        <li> Adding, changing or removing attributes in the LogRecord being processed. </li>
+    </ul> 
+</div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Syntax of filter method</strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-37" class="code-block">
+<p id="code-header-37" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-37", "code-header-37")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">logging</span> <span class="kn">import</span> <span class="n">LogRecord</span>
+
+
+<span class="k">def</span> <span class="nf">filter</span><span class="p">(</span><span class="n">record</span><span class="p">:</span> <span class="n">LogRecord</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">pass</span></code></pre></figure>
+
+</div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Attributes of LogRecord </strong> </li>
+    </ul> 
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Attribute</th>
+      <th style="text-align: left">Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">args</td>
+      <td style="text-align: left">Variable positional arguments passed to logging method which is used to format message</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">created</td>
+      <td style="text-align: left">Unix timestamp of when log record was created</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">exc_info</td>
+      <td style="text-align: left">Exception information pass in format of sys.exc_info()</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">exc_text</td>
+      <td style="text-align: left">Cached formatted exception</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">filename</td>
+      <td style="text-align: left">Name of file</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">funcName</td>
+      <td style="text-align: left">Function name</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">levelname</td>
+      <td style="text-align: left">Logging level name</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">levelno</td>
+      <td style="text-align: left">Logging level numeric</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">lineno</td>
+      <td style="text-align: left">Line number where logging method was invoked.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">module</td>
+      <td style="text-align: left">Module name</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">msecs</td>
+      <td style="text-align: left">Millisecond portion of time when log was created</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">msg</td>
+      <td style="text-align: left">message passed to logging method</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">name</td>
+      <td style="text-align: left">Name of the logger instance</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">pathname</td>
+      <td style="text-align: left">Full path name of source file</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">process</td>
+      <td style="text-align: left">Process ID of program</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">processName</td>
+      <td style="text-align: left">Name of Process</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">relativeCreated</td>
+      <td style="text-align: left">Milliseconds in time of when message logged relative to time when module was loaded.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">stack_info</td>
+      <td style="text-align: left">Stack information of call</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thread</td>
+      <td style="text-align: left">Thread id</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">threadName</td>
+      <td style="text-align: left">Thread name</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Filtering record based on message content</strong> </li>
+    </ul> 
+</div>
+
+<div id="code-block-38" class="code-block">
+<p id="code-header-38" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-38", "code-header-38")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">logging</span> <span class="kn">import</span> <span class="n">LogRecord</span>
+
+
+<span class="k">class</span> <span class="nc">CustomFilter</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">Filter</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">:</span> <span class="n">LogRecord</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+
+        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'</span><span class="se">\n</span><span class="s">{"*"*8} Filter received LogRecord : {"*"*8}</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="p">[</span><span class="n">a</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">record</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">a</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">'__'</span><span class="p">)]:</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'{attr} : {getattr(record, attr)}'</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="s">'Failure'</span> <span class="ow">in</span> <span class="n">record</span><span class="o">.</span><span class="n">msg</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="mi">0</span>
+
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s">'CustomFilterLogger'</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+
+<span class="c1"># Creating Handler
+</span><span class="n">sh</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">()</span>
+<span class="n">sh</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+
+<span class="c1"># Adding Filter
+</span><span class="n">cf</span> <span class="o">=</span> <span class="n">CustomFilter</span><span class="p">()</span>
+<span class="n">sh</span><span class="o">.</span><span class="n">addFilter</span><span class="p">(</span><span class="n">cf</span><span class="p">)</span>
+
+<span class="c1"># Adding formatter
+</span><span class="n">logFormat</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span><span class="s">'</span><span class="si">%(asctime)</span><span class="s">s : </span><span class="si">%(levelname)</span><span class="s">s : </span><span class="si">%(name)</span><span class="s">s : </span><span class="si">%(message)</span><span class="s">s'</span><span class="p">)</span>
+<span class="n">sh</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">logFormat</span><span class="p">)</span>
+
+<span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">sh</span><span class="p">)</span>
+
+
+<span class="c1"># Logging record
+</span><span class="k">def</span> <span class="nf">custom_filter_demo</span><span class="p">():</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="mi">1590</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">'Client connection Failure : </span><span class="si">%</span><span class="s">s'</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">stack_info</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="p">{</span><span class="s">'POD'</span><span class="p">:</span> <span class="s">'AACXXX'</span><span class="p">})</span>
+
+
+<span class="n">custom_filter_demo</span><span class="p">()</span>
+
+
+<span class="c1">#
+# Logging Exception
+</span><span class="k">def</span> <span class="nf">custom_filter_demo2</span><span class="p">():</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
+    <span class="k">except</span> <span class="nb">ZeroDivisionError</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s">'Divide by Zero attempted'</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">(),</span> <span class="n">stack_info</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+
+<span class="n">custom_filter_demo2</span><span class="p">()</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre id="tut-output-error" class="result-content">2020-05-23 09:46:02,122 : DEBUG : CustomFilterLogger : Client connection Failure : 1590
+Stack (most recent call last):
+  File "/home/asha/PycharmProjects/pythonEx/06_ModuleAndPackage/appLogging/LoggingWithContextFilter.py", line 48, in &lt;module&gt;
+    custom_filter_demo()
+  File "/home/asha/PycharmProjects/pythonEx/06_ModuleAndPackage/appLogging/LoggingWithContextFilter.py", line 45, in custom_filter_demo
+    logger.debug('Client connection Failure : %s', code, stack_info=True, extra={'POD': 'AACXXX'})
+</pre>
+<pre class="result-content">
+
+******** Filter received LogRecord : ********
+
+POD : AACXXX
+args : (1590,)
+created : 1590207362.1229954
+exc_info : None
+exc_text : None
+filename : LoggingWithContextFilter.py
+funcName : custom_filter_demo
+getMessage : &lt;bound method LogRecord.getMessage of &lt;LogRecord: CustomFilterLogger, 10, /home/asha/PycharmProjects/pythonEx/06_ModuleAndPackage/appLogging/LoggingWithContextFilter.py, 45, "Client connection Failure : %s"&gt;&gt;
+levelname : DEBUG
+levelno : 10
+lineno : 45
+module : LoggingWithContextFilter
+msecs : 122.99537658691406
+msg : Client connection Failure : %s
+name : CustomFilterLogger
+pathname : /home/asha/PycharmProjects/pythonEx/06_ModuleAndPackage/appLogging/LoggingWithContextFilter.py
+process : 5289
+processName : MainProcess
+relativeCreated : 3.4301280975341797
+stack_info : Stack (most recent call last):
+  File "/home/asha/PycharmProjects/pythonEx/06_ModuleAndPackage/appLogging/LoggingWithContextFilter.py", line 48, in &lt;module&gt;
+    custom_filter_demo()
+  File "/home/asha/PycharmProjects/pythonEx/06_ModuleAndPackage/appLogging/LoggingWithContextFilter.py", line 45, in custom_filter_demo
+    logger.debug('Client connection Failure : %s', code, stack_info=True, extra={'POD': 'AACXXX'})
+thread : 139877265205056
+threadName : MainThread
+
+******** Filter received LogRecord : ********
+
+args : ()
+created : 1590207362.1236613
+exc_info : (&lt;class 'ZeroDivisionError'&gt;, ZeroDivisionError('division by zero'), &lt;traceback object at 0x7f37b6611a00&gt;)
+exc_text : None
+filename : LoggingWithContextFilter.py
+funcName : custom_filter_demo2
+getMessage : &lt;bound method LogRecord.getMessage of &lt;LogRecord: CustomFilterLogger, 30, /home/asha/PycharmProjects/pythonEx/06_ModuleAndPackage/appLogging/LoggingWithContextFilter.py, 57, "Divide by Zero attempted"&gt;&gt;
+levelname : WARNING
+levelno : 30
+lineno : 57
+module : LoggingWithContextFilter
+msecs : 123.66127967834473
+msg : Divide by Zero attempted
+name : CustomFilterLogger
+pathname : /home/asha/PycharmProjects/pythonEx/06_ModuleAndPackage/appLogging/LoggingWithContextFilter.py
+process : 5289
+processName : MainProcess
+relativeCreated : 4.096031188964844
+stack_info : Stack (most recent call last):
+  File "/home/asha/PycharmProjects/pythonEx/06_ModuleAndPackage/appLogging/LoggingWithContextFilter.py", line 60, in &lt;module&gt;
+    custom_filter_demo2()
+  File "/home/asha/PycharmProjects/pythonEx/06_ModuleAndPackage/appLogging/LoggingWithContextFilter.py", line 57, in custom_filter_demo2
+    logger.warning('Divide by Zero attempted', exc_info=sys.exc_info(), stack_info=True)
+thread : 139877265205056
+threadName : MainThread</pre></div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Creating subclass of the filter is not required, any function ( callable) can be with same signature of filter method can be replaced on Filter object.</strong> </li>
+    </ul> 
+</div>
+
+<p> Replacing following code in above example produces same result. </p>
+
+<div id="code-block-39" class="code-block">
+<p id="code-header-39" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-39", "code-header-39")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">logging</span> <span class="kn">import</span> <span class="n">LogRecord</span><span class="p">,</span> <span class="n">Filter</span>
+
+<span class="k">def</span> <span class="nf">custom_filter</span><span class="p">(</span><span class="n">record</span><span class="p">:</span> <span class="n">LogRecord</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'</span><span class="se">\n</span><span class="s">{"*"*8} Filter received LogRecord : {"*"*8}</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="p">[</span><span class="n">a</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">record</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">a</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">'__'</span><span class="p">)]:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'{attr} : {getattr(record, attr)}'</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="s">'Failure'</span> <span class="ow">in</span> <span class="n">record</span><span class="o">.</span><span class="n">msg</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="mi">0</span>
+
+
+
+<span class="n">f1</span> <span class="o">=</span> <span class="n">Filter</span><span class="p">()</span>
+<span class="n">f1</span><span class="o">.</span><span class="nb">filter</span> <span class="o">=</span> <span class="n">custom_filter</span></code></pre></figure>
+
+</div>
+
+<hr />
+
+<h2 id="loggeradapter">LoggerAdapter</h2>
+
+<p> Adds contextual information to log message. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> To add contextual information Object of LoggerAdapter class can be wrapped around logger instance. </li>
+        <li> It has same logging methods (debug(), info() etc.) for logging as the logger object have. </li>
+        <li> LoggerAdapter's logging methods (debug(), info() etc.) delegates call to logger objects logging methods after invoking process() method. </li>
+    </ul> 
+</div>
+
+<p> Syntax of debug() logging method of LoggerAdapter class : </p>
+
+<div id="code-block-40" class="code-block">
+<p id="code-header-40" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-40", "code-header-40")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">debug</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">msg</span><span class="p">,</span> <span class="n">kwargs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">process</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div id="tut-content"> 
+    <ul>
+        <li>  By default process() method returns given argument as it is, but it can be override to get insert contextual information. </li>
+        <li> Inside process() method key-values of dictionary passed using 'extra' parameter is used for formatting custom message. </li>
+        <li> While invoking logging methods of LoggerAdapter class, it requires to pass dictionary object with set of key which is used to format custom message, but their values can vary. </li>
+    </ul> 
+</div>
+
+<hr />
+
+<div id="tut-content"> 
+    <ul>
+        <li> Example </li>
+    </ul> 
+</div>
+
+<div id="code-block-41" class="code-block">
+<p id="code-header-41" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-41", "code-header-41")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
+
+
+<span class="k">class</span> <span class="nc">MyAppLogAdapter</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">LoggerAdapter</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">f</span><span class="s">"[ {self.extra['clientId']} ]  {msg} "</span><span class="p">,</span> <span class="n">kwargs</span>
+
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s">'appLogginngAdapter'</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+
+<span class="c1"># adding Handler
+</span><span class="n">sh</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">()</span>
+<span class="n">sh</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+
+<span class="c1"># Adding formatter
+</span><span class="n">logFormat</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span><span class="s">'</span><span class="si">%(asctime)</span><span class="s">s : </span><span class="si">%(levelname)</span><span class="s">s : </span><span class="si">%(name)</span><span class="s">s : </span><span class="si">%(message)</span><span class="s">s'</span><span class="p">)</span>
+<span class="n">sh</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">logFormat</span><span class="p">)</span>
+
+<span class="c1"># adding handler to logger
+</span><span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">sh</span><span class="p">)</span>
+
+<span class="n">clientInfo</span> <span class="o">=</span> <span class="p">{</span><span class="s">'clientId'</span><span class="p">:</span> <span class="s">'1cv21vvc21vbctztxymn12pa'</span><span class="p">}</span>
+<span class="n">loggerAdapter</span> <span class="o">=</span> <span class="n">MyAppLogAdapter</span><span class="p">(</span><span class="n">logger</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="n">clientInfo</span><span class="p">)</span>
+
+<span class="n">loggerAdapter</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">'Login Attempted'</span><span class="p">)</span>
+
+<span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">'Normal Log message'</span><span class="p">)</span>
+
+<span class="n">clientInfo</span><span class="p">[</span><span class="s">'clientId'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'1z3x2c1as1ca21a5s4a21sxc'</span>
+<span class="n">loggerAdapter</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">'Login Attempted'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre id="tut-output-error" class="result-content">2020-05-23 13:57:44,518 : DEBUG : appLogginngAdapter : [ 1cv21vvc21vbctztxymn12pa ]  Login Attempted 
+2020-05-23 13:57:44,518 : DEBUG : appLogginngAdapter : Normal Log message
+2020-05-23 13:57:44,519 : DEBUG : appLogginngAdapter : [ 1z3x2c1as1ca21a5s4a21sxc ]  Login Attempted</pre></div>
+
+<hr />
+
+<h2 id="formatter">Formatter</h2>
+
+<p> Returns formatted string by replacing LogRecord object's attributes values with keys specified in log format. </p>
+
+<h3 id="formatter-class">Formatter class</h3>
+
+<p> When application requires special formatting, custom formatter object of Format class is created. </p>
+
+<h4 id="constructor-1">Constructor</h4>
+
+<p id="tut-cons"> Formatter(fmt=None, datefmt=None, style='%') </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> fmt : </strong> Default none uses raw message. Format can be specified using formatting params described in basicConfig(). </li>
+        <li> <strong> datefmt : </strong> If not given by default uses '%Y-%m-%d %H:%M:%S. It is same datetime format used with DateTime object. </li>
+        <li> <strong> style : </strong> Default is '%' and can be one of '%', '$' or '{'. <br />  <strong> '%'  : </strong> uses  %(&lt;dictionary key&gt;)s styled string substitution. <br /> <strong> '$' : </strong> uses  Template('$key').substitute(key=&lt;dictionary key&gt;) styled string substitution.<br /> <strong> '{' : </strong> uses  '{0}'.format(&lt;dictionary key&gt;) or '{&lt;dictionary key&gt;}' </li>
+    </ul> 
+</div>
+
+<h4 id="methods">Methods</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Method</th>
+      <th style="text-align: left">Exmplanation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">format(record)</td>
+      <td style="text-align: left">Returns log message in string by replacing LogRecord information with specified format.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">formatTime(record, datefmt=None)</td>
+      <td style="text-align: left">It is called from format() method which returns formatted time if format string contains ‘(asctime)’.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">formatException(exc_info)</td>
+      <td style="text-align: left">It’s called from format() when logging method with exception information is called. By default uses traceback.print_exception() to format exception.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">formatStack(stack_info)</td>
+      <td style="text-align: left">It’s called from format() when logging method with stack trace is called. By default formats the specified stack information returned by traceback.print_stack().</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="attributes-1">Attributes</h4>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>  converter : </strong> By default time.localtime() is used for creation of time for log record. It can have one of two values time.localtime() or time.gmtime(). </li>
+    </ul> 
+</div>
+
+<hr />
+
+<h4 id="example">Example</h4>
+
+<div id="code-block-42" class="code-block">
+<p id="code-header-42" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-42", "code-header-42")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+<span class="n">handler</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
+
+<span class="c1"># formatting using '{'
+</span><span class="n">cf</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span><span class="s">'{asctime} : {levelname} : {name} : {message}'</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s">'{'</span><span class="p">)</span>
+<span class="n">handler</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">cf</span><span class="p">)</span>
+
+<span class="c1"># Add handler
+</span><span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">handler</span><span class="p">)</span>
+
+<span class="n">applogger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s">'MyAppLogger'</span><span class="p">)</span>
+<span class="n">applogger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">"A message using { formatter  configuration."</span><span class="p">)</span>
+
+<span class="c1"># formatting using '$'
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span><span class="s">'$asctime : $levelname : $name : $message'</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s">'$'</span><span class="p">)</span>
+<span class="n">handler</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">converter</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">gmtime</span>
+
+<span class="n">applogger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">"A message using $ formatter  configuration."</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+2020-05-23 15:25:00,732 : DEBUG : MyAppLogger : A message using { formatter  configuration.
+2020-05-23 09:55:00,732 : DEBUG : MyAppLogger : A message using $ formatter  configuration.
+</pre></div>
+
+<hr />
+
+<h2 id="configuring-logging">Configuring Logging</h2>
+
+<h3 id="using-python-code">Using Python code</h3>
+
+<p> Creating logger, handler, formatter objects in python code and setting handler and formatter to logger object. </p>
+
+<div id="code-block-43" class="code-block">
+<p id="code-header-43" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-43", "code-header-43")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="c1"># create logger
+</span><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+
+<span class="c1"># create console handler and set level to debug
+</span><span class="n">ch</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
+<span class="n">ch</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">WARNING</span><span class="p">)</span>
+
+<span class="c1"># create formatter
+</span><span class="n">formatter</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span><span class="s">'</span><span class="si">%(asctime)</span><span class="s">s - </span><span class="si">%(name)</span><span class="s">s - </span><span class="si">%(levelname)</span><span class="s">s - </span><span class="si">%(message)</span><span class="s">s'</span><span class="p">)</span>
+
+<span class="c1"># add formatter to ch
+</span><span class="n">ch</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
+
+<span class="c1"># add ch to logger
+</span><span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span>
+
+<span class="c1"># 'application' code
+</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">'debug message'</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">'info message'</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s">'warn message'</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">'error message'</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="s">'critical message'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+2020-05-23 15:41:18,524 - __main__ - WARNING - warn message
+2020-05-23 15:41:18,524 - __main__ - ERROR - error message
+2020-05-23 15:41:18,524 - __main__ - CRITICAL - critical message
+</pre></div>
+
+<hr />
+
+<h3 id="using-loggingconfig-file">Using logging.config file</h3>
+
+<p> Create a logging.config file and reading it using logging.config.fileconfig() function.</p>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> logging.conf </p>
+
+<div id="code-block-44" class="code-block">
+<p id="code-header-44" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-44", "code-header-44")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="p">[</span><span class="n">loggers</span><span class="p">]</span>
+<span class="n">keys</span><span class="o">=</span><span class="n">root</span><span class="p">,</span><span class="n">module1</span>
+
+<span class="p">[</span><span class="n">handlers</span><span class="p">]</span>
+<span class="n">keys</span><span class="o">=</span><span class="n">consoleHandler</span>
+
+<span class="p">[</span><span class="n">formatters</span><span class="p">]</span>
+<span class="n">keys</span><span class="o">=</span><span class="n">simpleFormatter</span>
+
+<span class="p">[</span><span class="n">logger_root</span><span class="p">]</span>
+<span class="n">level</span><span class="o">=</span><span class="n">DEBUG</span>
+<span class="n">handlers</span><span class="o">=</span><span class="n">consoleHandler</span>
+
+<span class="p">[</span><span class="n">logger_module1</span><span class="p">]</span>
+<span class="n">level</span><span class="o">=</span><span class="n">DEBUG</span>
+<span class="n">handlers</span><span class="o">=</span><span class="n">consoleHandler</span>
+<span class="n">qualname</span><span class="o">=</span><span class="n">module1</span>
+<span class="n">propagate</span><span class="o">=</span><span class="mi">0</span>
+
+<span class="p">[</span><span class="n">handler_consoleHandler</span><span class="p">]</span>
+<span class="n">class</span><span class="o">=</span><span class="n">StreamHandler</span>
+<span class="n">level</span><span class="o">=</span><span class="n">DEBUG</span>
+<span class="n">formatter</span><span class="o">=</span><span class="n">simpleFormatter</span>
+<span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">,)</span>
+
+<span class="p">[</span><span class="n">formatter_simpleFormatter</span><span class="p">]</span>
+<span class="nb">format</span><span class="o">=%</span><span class="p">(</span><span class="n">asctime</span><span class="p">)</span><span class="n">s</span> <span class="o">-</span> <span class="o">%</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="n">s</span> <span class="o">-</span> <span class="o">%</span><span class="p">(</span><span class="n">levelname</span><span class="p">)</span><span class="n">s</span> <span class="o">-</span> <span class="o">%</span><span class="p">(</span><span class="n">message</span><span class="p">)</span><span class="n">s</span>
+<span class="n">qualname</span><span class="o">=</span> <span class="n">module1</span></code></pre></figure>
+
+</div>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> Module2.py </p>
+
+<div id="code-block-45" class="code-block">
+<p id="code-header-45" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-45", "code-header-45")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">logging.config</span> <span class="kn">import</span> <span class="n">fileConfig</span>
+
+<span class="n">fileConfig</span><span class="p">(</span><span class="s">'logging.conf'</span><span class="p">)</span>
+
+<span class="c1"># create logger
+</span><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s">'module1'</span><span class="p">)</span>
+
+<span class="c1"># 'application' code
+</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">'debug message'</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">'info message'</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s">'warn message'</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">'error message'</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="s">'critical message'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+2020-05-23 15:55:25,175 - module1 - DEBUG - debug message
+2020-05-23 15:55:25,176 - module1 - INFO - info message
+2020-05-23 15:55:25,176 - module1 - WARNING - warn message
+2020-05-23 15:55:25,176 - module1 - ERROR - error message
+2020-05-23 15:55:25,176 - module1 - CRITICAL - critical message
+</pre></div>
+
+<hr />
+
+<h3 id="using-dictionary-recommended">Using Dictionary [Recommended]</h3>
+
+<p> Create a dictionary of configuration and passing it to dictconfig() function.</p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> Configuration can be provided in YAML, JSON format or in python dictionary stored using pickle. </li>
+        <li> YAML is recommended and widely accepted for storing dictionary. </li>
+    </ul> 
+</div>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> logging.yml </p>
+
+<div id="code-block-46" class="code-block">
+<p id="code-header-46" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-46", "code-header-46")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">version</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">formatters</span><span class="p">:</span>
+  <span class="n">simple</span><span class="p">:</span>
+    <span class="nb">format</span><span class="p">:</span> <span class="s">'</span><span class="si">%(asctime)</span><span class="s">s : </span><span class="si">%(name)</span><span class="s">s : </span><span class="si">%(levelname)</span><span class="s">s : </span><span class="si">%(message)</span><span class="s">s'</span>
+<span class="n">handlers</span><span class="p">:</span>
+  <span class="n">console</span><span class="p">:</span>
+    <span class="n">class</span><span class="p">:</span> <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span>
+    <span class="n">level</span><span class="p">:</span> <span class="n">DEBUG</span>
+    <span class="n">formatter</span><span class="p">:</span> <span class="n">simple</span>
+    <span class="n">stream</span><span class="p">:</span> <span class="n">ext</span><span class="p">:</span><span class="o">//</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span>
+<span class="n">loggers</span><span class="p">:</span>
+  <span class="n">module1</span><span class="p">:</span>
+    <span class="n">level</span><span class="p">:</span> <span class="n">DEBUG</span>
+    <span class="n">handlers</span><span class="p">:</span> <span class="p">[</span><span class="n">console</span><span class="p">]</span>
+    <span class="n">propagate</span><span class="p">:</span> <span class="n">no</span>
+<span class="n">root</span><span class="p">:</span>
+  <span class="n">level</span><span class="p">:</span> <span class="n">DEBUG</span>
+  <span class="n">handlers</span><span class="p">:</span> <span class="p">[</span><span class="n">console</span><span class="p">]</span></code></pre></figure>
+
+</div>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> logging.yml </p>
+
+<div id="code-block-47" class="code-block">
+<p id="code-header-47" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-47", "code-header-47")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">logging.config</span> <span class="kn">import</span> <span class="n">dictConfig</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">yaml</span>    <span class="c1"># pip install pyyaml
+</span>
+<span class="n">path</span> <span class="o">=</span> <span class="s">'logging.yml'</span>
+<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s">'rt'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">config</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+    <span class="n">dictConfig</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+
+<span class="c1"># create logger
+</span><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s">'module1'</span><span class="p">)</span>
+
+<span class="c1"># 'application' code
+</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">'debug message'</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">'info message'</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s">'warn message'</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">'error message'</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="s">'critical message'</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+2020-05-23 16:08:03,234 : module1 : DEBUG : debug message
+2020-05-23 16:08:03,234 : module1 : INFO : info message
+2020-05-23 16:08:03,234 : module1 : WARNING : warn message
+2020-05-23 16:08:03,234 : module1 : ERROR : error message
+2020-05-23 16:08:03,234 : module1 : CRITICAL : critical message
+</pre></div>
+
+<hr />
+
 
 
     <div class="tags">

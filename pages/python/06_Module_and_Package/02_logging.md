@@ -2371,4 +2371,864 @@ emit(record) | Sends the record to the Web server as a URL-encoded dictionary.
 
 
 
+## Filters 
+
+<p> Filters can be used by handlers and loggers for more specific filtering from filtering record based on log level. </p>
+
+
+### Filter class
+
+<p> Filtering log message based on logger hierarchy. </p>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Constructor</strong> </li>
+    </ul> 
+</div>
+
+<p id="tut-cons"> Filter(name='') </p>
+
+<p> Returns an instance of the filter class. </p>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> Base Filter class only allows events which are below the a certain point in the logger hierarchy. For e.g. A filter is initialized with 'A.B' will allow events logged by 'A.B.X', 'A.B.X.Y', 'A.B.Z' but not the 'A.P', 'B.Q'. </li>
+        <li> If initialized name with empty string all events are passed. </li>
+        <li> Filter attached to handler before an event is emitted by the handler. </li>
+        <li> Filter attached to logger before an event is logged using methods like info(), debug() etc.</li>
+    </ul> 
+</div>
+
+
+<hr/>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> Project Structure  </li>
+    </ul> 
+</div>
+<div id="tut-img">
+    <img src="/images/tutorials/python/LoggingWithFilters.png" class="tut-img" alt="python logo">
+</div>
+
+<br/>
+
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> ModuleA2.py </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import logging
+logger = logging.getLogger(__name__)
+
+
+def hello_module():
+    logger.info('Message from packageA1 -> ModuleA2')
+
+
+
+{% endhighlight %}
+</div>
+
+
+
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> ModuleB2.py </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import logging
+logger = logging.getLogger(__name__)
+
+
+def hello_module():
+    logger.info('Message from packageB1 -> ModuleB2')
+
+
+{% endhighlight %}
+</div>
+
+
+
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> ModuleM1.py </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import logging
+logger = logging.getLogger(__name__)
+
+
+def hello_module():
+    logger.info('Message from ModuleM1.')
+
+{% endhighlight %}
+</div>
+
+
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> LoggingWithFilter.py </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import logging
+import sys
+
+from appLogging.packageA1 import ModuleA2
+from appLogging.packageB1 import ModuleB2
+from packageB import ModuleM1
+
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+
+logger.info('Hierarchy 1 is created')
+
+# adding Handler
+sh = logging.StreamHandler(stream=sys.stdout)
+sh.setLevel(logging.INFO)
+
+
+# adding filter
+onlyAppLogging = logging.Filter('appLogging')
+sh.addFilter(onlyAppLogging)
+
+# attaching handler
+logger.addHandler(sh)
+
+
+# Invoking functions
+ModuleA2.hello_module()
+ModuleB2.hello_module()
+ModuleM1.hello_module()
+
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Message from packageA1 -> ModuleA2
+Message from packageB1 -> ModuleB2
+</pre></div>
+
+<hr/>
+
+
+### Filter with custom business logic
+
+<p> By creating subclass of logging.Filter class and overriding filter method, business logic to filter records can be customized. </p>
+
+<p> Customized filters can also be used fro : </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> Counting how many records were processed by a particular logger or handler. </li>
+        <li> Adding, changing or removing attributes in the LogRecord being processed. </li>
+    </ul> 
+</div>
+
+<hr/>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Syntax of filter method</strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+from logging import LogRecord
+
+
+def filter(record: LogRecord) -> int:
+    pass
+
+{% endhighlight %}
+</div>
+
+<hr/>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Attributes of LogRecord </strong> </li>
+    </ul> 
+</div>
+
+Attribute          | Meaning
+:--- | :---
+args               | Variable positional arguments passed to logging method which is used to format message
+created            | Unix timestamp of when log record was created
+exc_info           | Exception information pass in format of sys.exc_info()
+exc_text           | Cached formatted exception
+filename           | Name of file
+funcName           | Function name
+levelname          | Logging level name
+levelno            | Logging level numeric
+lineno             | Line number where logging method was invoked.
+module             | Module name
+msecs              | Millisecond portion of time when log was created
+msg                | message passed to logging method
+name               | Name of the logger instance
+pathname           | Full path name of source file
+process            | Process ID of program
+processName        | Name of Process
+relativeCreated    | Milliseconds in time of when message logged relative to time when module was loaded.
+stack_info         | Stack information of call
+thread             | Thread id
+threadName         | Thread name
+
+<br/>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>Filtering record based on message content</strong> </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import logging
+import sys
+from logging import LogRecord
+
+
+class CustomFilter(logging.Filter):
+
+    def filter(self, record: LogRecord) -> int:
+
+        print(f'\n{"*"*8} Filter received LogRecord : {"*"*8}\n')
+
+        for attr in [a for a in dir(record) if not a.startswith('__')]:
+            print(f'{attr} : {getattr(record, attr)}')
+
+        if 'Failure' in record.msg:
+            return 1
+        return 0
+
+
+logger = logging.getLogger('CustomFilterLogger')
+logger.setLevel(logging.DEBUG)
+
+# Creating Handler
+sh = logging.StreamHandler()
+sh.setLevel(logging.DEBUG)
+
+# Adding Filter
+cf = CustomFilter()
+sh.addFilter(cf)
+
+# Adding formatter
+logFormat = logging.Formatter('%(asctime)s : %(levelname)s : %(name)s : %(message)s')
+sh.setFormatter(logFormat)
+
+logger.addHandler(sh)
+
+
+# Logging record
+def custom_filter_demo():
+    code = 1590
+    logger.debug('Client connection Failure : %s', code, stack_info=True, extra={'POD': 'AACXXX'})
+
+
+custom_filter_demo()
+
+
+#
+# Logging Exception
+def custom_filter_demo2():
+    try:
+        1/0
+    except ZeroDivisionError:
+        logger.warning('Divide by Zero attempted', exc_info=sys.exc_info(), stack_info=True)
+
+
+custom_filter_demo2()
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre id='tut-output-error' class="result-content">2020-05-23 09:46:02,122 : DEBUG : CustomFilterLogger : Client connection Failure : 1590
+Stack (most recent call last):
+  File "/home/asha/PycharmProjects/pythonEx/06_ModuleAndPackage/appLogging/LoggingWithContextFilter.py", line 48, in &lt;module>
+    custom_filter_demo()
+  File "/home/asha/PycharmProjects/pythonEx/06_ModuleAndPackage/appLogging/LoggingWithContextFilter.py", line 45, in custom_filter_demo
+    logger.debug('Client connection Failure : %s', code, stack_info=True, extra={'POD': 'AACXXX'})
+</pre>
+<pre class="result-content">
+
+******** Filter received LogRecord : ********
+
+POD : AACXXX
+args : (1590,)
+created : 1590207362.1229954
+exc_info : None
+exc_text : None
+filename : LoggingWithContextFilter.py
+funcName : custom_filter_demo
+getMessage : &lt;bound method LogRecord.getMessage of &lt;LogRecord: CustomFilterLogger, 10, /home/asha/PycharmProjects/pythonEx/06_ModuleAndPackage/appLogging/LoggingWithContextFilter.py, 45, "Client connection Failure : %s">>
+levelname : DEBUG
+levelno : 10
+lineno : 45
+module : LoggingWithContextFilter
+msecs : 122.99537658691406
+msg : Client connection Failure : %s
+name : CustomFilterLogger
+pathname : /home/asha/PycharmProjects/pythonEx/06_ModuleAndPackage/appLogging/LoggingWithContextFilter.py
+process : 5289
+processName : MainProcess
+relativeCreated : 3.4301280975341797
+stack_info : Stack (most recent call last):
+  File "/home/asha/PycharmProjects/pythonEx/06_ModuleAndPackage/appLogging/LoggingWithContextFilter.py", line 48, in &lt;module>
+    custom_filter_demo()
+  File "/home/asha/PycharmProjects/pythonEx/06_ModuleAndPackage/appLogging/LoggingWithContextFilter.py", line 45, in custom_filter_demo
+    logger.debug('Client connection Failure : %s', code, stack_info=True, extra={'POD': 'AACXXX'})
+thread : 139877265205056
+threadName : MainThread
+
+******** Filter received LogRecord : ********
+
+args : ()
+created : 1590207362.1236613
+exc_info : (&lt;class 'ZeroDivisionError'>, ZeroDivisionError('division by zero'), &lt;traceback object at 0x7f37b6611a00>)
+exc_text : None
+filename : LoggingWithContextFilter.py
+funcName : custom_filter_demo2
+getMessage : &lt;bound method LogRecord.getMessage of &lt;LogRecord: CustomFilterLogger, 30, /home/asha/PycharmProjects/pythonEx/06_ModuleAndPackage/appLogging/LoggingWithContextFilter.py, 57, "Divide by Zero attempted">>
+levelname : WARNING
+levelno : 30
+lineno : 57
+module : LoggingWithContextFilter
+msecs : 123.66127967834473
+msg : Divide by Zero attempted
+name : CustomFilterLogger
+pathname : /home/asha/PycharmProjects/pythonEx/06_ModuleAndPackage/appLogging/LoggingWithContextFilter.py
+process : 5289
+processName : MainProcess
+relativeCreated : 4.096031188964844
+stack_info : Stack (most recent call last):
+  File "/home/asha/PycharmProjects/pythonEx/06_ModuleAndPackage/appLogging/LoggingWithContextFilter.py", line 60, in &lt;module>
+    custom_filter_demo2()
+  File "/home/asha/PycharmProjects/pythonEx/06_ModuleAndPackage/appLogging/LoggingWithContextFilter.py", line 57, in custom_filter_demo2
+    logger.warning('Divide by Zero attempted', exc_info=sys.exc_info(), stack_info=True)
+thread : 139877265205056
+threadName : MainThread</pre></div>
+
+<hr/>
+
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> Creating subclass of the filter is not required, any function ( callable) can be with same signature of filter method can be replaced on Filter object.</strong> </li>
+    </ul> 
+</div>
+
+<p> Replacing following code in above example produces same result. </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import logging
+import sys
+from logging import LogRecord, Filter
+
+def custom_filter(record: LogRecord) -> int:
+
+    print(f'\n{"*"*8} Filter received LogRecord : {"*"*8}\n')
+
+    for attr in [a for a in dir(record) if not a.startswith('__')]:
+        print(f'{attr} : {getattr(record, attr)}')
+
+    if 'Failure' in record.msg:
+        return 1
+    return 0
+
+
+
+f1 = Filter()
+f1.filter = custom_filter
+
+
+{% endhighlight %}
+</div>
+
+
+<hr/>
+
+
+## LoggerAdapter
+
+<p> Adds contextual information to log message. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> To add contextual information Object of LoggerAdapter class can be wrapped around logger instance. </li>
+        <li> It has same logging methods (debug(), info() etc.) for logging as the logger object have. </li>
+        <li> LoggerAdapter's logging methods (debug(), info() etc.) delegates call to logger objects logging methods after invoking process() method. </li>
+    </ul> 
+</div>
+
+<p> Syntax of debug() logging method of LoggerAdapter class : </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+def debug(self, msg, /, *args, **kwargs):
+    msg, kwargs = self.process(msg, kwargs)
+    self.logger.debug(msg, *args, **kwargs)
+
+
+{% endhighlight %}
+</div>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li>  By default process() method returns given argument as it is, but it can be override to get insert contextual information. </li>
+        <li> Inside process() method key-values of dictionary passed using 'extra' parameter is used for formatting custom message. </li>
+        <li> While invoking logging methods of LoggerAdapter class, it requires to pass dictionary object with set of key which is used to format custom message, but their values can vary. </li>
+    </ul> 
+</div>
+
+
+<hr/>
+
+<div id="tut-content"> 
+    <ul>
+        <li> Example </li>
+    </ul> 
+</div>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import logging
+
+
+class MyAppLogAdapter(logging.LoggerAdapter):
+    def process(self, msg, kwargs):
+        return f"[ {self.extra['clientId']} ]  {msg} ", kwargs
+
+
+logger = logging.getLogger('appLogginngAdapter')
+logger.setLevel(logging.DEBUG)
+
+# adding Handler
+sh = logging.StreamHandler()
+sh.setLevel(logging.DEBUG)
+
+# Adding formatter
+logFormat = logging.Formatter('%(asctime)s : %(levelname)s : %(name)s : %(message)s')
+sh.setFormatter(logFormat)
+
+# adding handler to logger
+logger.addHandler(sh)
+
+clientInfo = {'clientId': '1cv21vvc21vbctztxymn12pa'}
+loggerAdapter = MyAppLogAdapter(logger, extra=clientInfo)
+
+loggerAdapter.debug('Login Attempted')
+
+logger.debug('Normal Log message')
+
+clientInfo['clientId'] = '1z3x2c1as1ca21a5s4a21sxc'
+loggerAdapter.debug('Login Attempted')
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre id='tut-output-error' class="result-content">2020-05-23 13:57:44,518 : DEBUG : appLogginngAdapter : [ 1cv21vvc21vbctztxymn12pa ]  Login Attempted 
+2020-05-23 13:57:44,518 : DEBUG : appLogginngAdapter : Normal Log message
+2020-05-23 13:57:44,519 : DEBUG : appLogginngAdapter : [ 1z3x2c1as1ca21a5s4a21sxc ]  Login Attempted</pre></div>
+
+<hr/>
+
+
+
+
+## Formatter
+
+<p> Returns formatted string by replacing LogRecord object's attributes values with keys specified in log format. </p>
+
+
+### Formatter class
+
+<p> When application requires special formatting, custom formatter object of Format class is created. </p>
+
+#### Constructor
+
+<p id="tut-cons"> Formatter(fmt=None, datefmt=None, style='%') </p>
+
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> fmt : </strong> Default none uses raw message. Format can be specified using formatting params described in basicConfig(). </li>
+        <li> <strong> datefmt : </strong> If not given by default uses '%Y-%m-%d %H:%M:%S. It is same datetime format used with DateTime object. </li>
+        <li> <strong> style : </strong> Default is '%' and can be one of '%', '$' or '{'. <br/>  <strong> '%'  : </strong> uses  %(&lt;dictionary key>)s styled string substitution. <br/> <strong> '$' : </strong> uses  Template('$key').substitute(key=&lt;dictionary key>) styled string substitution.<br/> <strong> '{' : </strong> uses  '{0}'.format(&lt;dictionary key>) or '{&lt;dictionary key>}' </li>
+    </ul> 
+</div>
+
+
+
+#### Methods
+
+
+Method  | Exmplanation
+:--- | :---
+format(record) | Returns log message in string by replacing LogRecord information with specified format.
+formatTime(record, datefmt=None) | It is called from format() method which returns formatted time if format string contains '(asctime)'.
+formatException(exc_info) | It's called from format() when logging method with exception information is called. By default uses traceback.print_exception() to format exception.
+formatStack(stack_info) | It's called from format() when logging method with stack trace is called. By default formats the specified stack information returned by traceback.print_stack().
+
+
+#### Attributes
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong>  converter : </strong> By default time.localtime() is used for creation of time for log record. It can have one of two values time.localtime() or time.gmtime(). </li>
+    </ul> 
+</div>
+
+
+<hr/>
+
+
+#### Example
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import logging
+import sys
+import time
+
+logger = logging.getLogger()
+logger.setLevel(logging.DEBUG)
+handler = logging.StreamHandler(sys.stdout)
+
+# formatting using '{'
+cf = logging.Formatter('{asctime} : {levelname} : {name} : {message}', style='{')
+handler.setFormatter(cf)
+
+# Add handler
+logger.addHandler(handler)
+
+applogger = logging.getLogger('MyAppLogger')
+applogger.debug("A message using { formatter  configuration.")
+
+# formatting using '$'
+df = logging.Formatter('$asctime : $levelname : $name : $message', style='$')
+handler.setFormatter(df)
+
+df.converter = time.gmtime
+
+applogger.debug("A message using $ formatter  configuration.")
+
+
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+2020-05-23 15:25:00,732 : DEBUG : MyAppLogger : A message using { formatter  configuration.
+2020-05-23 09:55:00,732 : DEBUG : MyAppLogger : A message using $ formatter  configuration.
+</pre></div>
+
+<hr/>
+
+
+
+## Configuring Logging
+
+
+### Using Python code
+
+<p> Creating logger, handler, formatter objects in python code and setting handler and formatter to logger object. </p>
+
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import logging
+import sys
+
+# create logger
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+
+# create console handler and set level to debug
+ch = logging.StreamHandler(sys.stdout)
+ch.setLevel(logging.WARNING)
+
+# create formatter
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+
+# add formatter to ch
+ch.setFormatter(formatter)
+
+# add ch to logger
+logger.addHandler(ch)
+
+# 'application' code
+logger.debug('debug message')
+logger.info('info message')
+logger.warning('warn message')
+logger.error('error message')
+logger.critical('critical message')
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+2020-05-23 15:41:18,524 - __main__ - WARNING - warn message
+2020-05-23 15:41:18,524 - __main__ - ERROR - error message
+2020-05-23 15:41:18,524 - __main__ - CRITICAL - critical message
+</pre></div>
+
+<hr/>
+
+
+
+
+### Using logging.config file 
+
+<p> Create a logging.config file and reading it using logging.config.fileconfig() function.</p>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> logging.conf </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+[loggers]
+keys=root,module1
+
+[handlers]
+keys=consoleHandler
+
+[formatters]
+keys=simpleFormatter
+
+[logger_root]
+level=DEBUG
+handlers=consoleHandler
+
+[logger_module1]
+level=DEBUG
+handlers=consoleHandler
+qualname=module1
+propagate=0
+
+[handler_consoleHandler]
+class=StreamHandler
+level=DEBUG
+formatter=simpleFormatter
+args=(sys.stdout,)
+
+[formatter_simpleFormatter]
+format=%(asctime)s - %(name)s - %(levelname)s - %(message)s
+qualname= module1
+
+{% endhighlight %}
+</div>
+
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> Module2.py </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import logging
+from logging.config import fileConfig
+
+fileConfig('logging.conf')
+
+# create logger
+logger = logging.getLogger('module1')
+
+# 'application' code
+logger.debug('debug message')
+logger.info('info message')
+logger.warning('warn message')
+logger.error('error message')
+logger.critical('critical message')
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+2020-05-23 15:55:25,175 - module1 - DEBUG - debug message
+2020-05-23 15:55:25,176 - module1 - INFO - info message
+2020-05-23 15:55:25,176 - module1 - WARNING - warn message
+2020-05-23 15:55:25,176 - module1 - ERROR - error message
+2020-05-23 15:55:25,176 - module1 - CRITICAL - critical message
+</pre></div>
+
+<hr/>
+
+
+### Using Dictionary [Recommended]
+
+<p> Create a dictionary of configuration and passing it to dictconfig() function.</p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> Configuration can be provided in YAML, JSON format or in python dictionary stored using pickle. </li>
+        <li> YAML is recommended and widely accepted for storing dictionary. </li>
+    </ul> 
+</div>
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> logging.yml </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+version: 1
+formatters:
+  simple:
+    format: '%(asctime)s : %(name)s : %(levelname)s : %(message)s'
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: simple
+    stream: ext://sys.stdout
+loggers:
+  module1:
+    level: DEBUG
+    handlers: [console]
+    propagate: no
+root:
+  level: DEBUG
+  handlers: [console]
+
+
+{% endhighlight %}
+</div>
+
+
+
+<p> <i class="fa fa-file-text" aria-hidden="true"></i> logging.yml </p>
+
+{% assign code_block = code_block | plus: 1 %}
+{% assign code_block_id = "code-block-" | append: code_block %}
+{% assign code_header_id = "code-header-" | append: code_block %}
+<div id="{{ code_block_id }}" class="code-block">
+<p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
+{% highlight python %}
+
+import logging
+from logging.config import dictConfig
+import os
+import yaml    # pip install pyyaml
+
+path = 'logging.yml'
+if os.path.exists(path):
+    with open(path, 'rt') as f:
+        config = yaml.safe_load(f.read())
+    dictConfig(config)
+
+# create logger
+logger = logging.getLogger('module1')
+
+# 'application' code
+logger.debug('debug message')
+logger.info('info message')
+logger.warning('warn message')
+logger.error('error message')
+logger.critical('critical message')
+
+
+{% endhighlight %}
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+2020-05-23 16:08:03,234 : module1 : DEBUG : debug message
+2020-05-23 16:08:03,234 : module1 : INFO : info message
+2020-05-23 16:08:03,234 : module1 : WARNING : warn message
+2020-05-23 16:08:03,234 : module1 : ERROR : error message
+2020-05-23 16:08:03,234 : module1 : CRITICAL : critical message
+</pre></div>
+
+<hr/>
+
+
+
 {% include links.html %}
