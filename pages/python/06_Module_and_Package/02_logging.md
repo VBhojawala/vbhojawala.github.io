@@ -469,6 +469,27 @@ logging.info('Initiating session', extra=dictionary)
 <hr/>
 
 
+### Logging Components
+
+<div id="tut-content"> 
+    <ol>    
+        <li>  <strong> Loggers : </strong> Provides an interface to application for logging. </li>
+        <li>  <strong> Handlers : </strong> Sends log record to a particular destination.</li>
+        <li>  <strong> Filter : </strong> Decides whether to process the given record or ignore it.</li>
+        <li>  <strong> Formatter : </strong>  Returns formatted log record. </li>
+    </ol>
+</div>
+
+<hr/>
+
+#### Object Composition
+<div id="tut-img">
+    <img src="/images/tutorials/python/LoggingHierarchy.png" class="tut-img" alt="python logo">
+</div>
+
+<hr/>
+
+
 ### Functions and Classes
 
 #### getLogger(name=None)
@@ -657,7 +678,7 @@ class MyLogger(logging.getLoggerClass()):
 </div>
 
 
-<br/>
+<hr/>
 
 
 #### setLoggerClass(klass)
