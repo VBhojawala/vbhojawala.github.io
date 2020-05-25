@@ -1,0 +1,8 @@
+---
+title: "basicConfig()"
+tagName: basicConfig()
+search: exclude
+permalink: tag_basicConfig().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

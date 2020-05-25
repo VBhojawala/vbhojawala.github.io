@@ -1,0 +1,8 @@
+---
+title: "LogRecord"
+tagName: LogRecord
+search: exclude
+permalink: tag_LogRecord.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

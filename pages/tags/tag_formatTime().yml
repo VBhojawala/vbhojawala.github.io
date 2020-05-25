@@ -1,0 +1,8 @@
+---
+title: "formatTime()"
+tagName: formatTime()
+search: exclude
+permalink: tag_formatTime().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

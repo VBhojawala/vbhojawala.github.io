@@ -1,0 +1,8 @@
+---
+title: "setLogRecordFactory()"
+tagName: setLogRecordFactory()
+search: exclude
+permalink: tag_setLogRecordFactory().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

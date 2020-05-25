@@ -1,0 +1,8 @@
+---
+title: "Configuring Logging"
+tagName: Configuring_Logging
+search: exclude
+permalink: tag_Configuring_Logging.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

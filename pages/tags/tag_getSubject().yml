@@ -1,0 +1,8 @@
+---
+title: "getSubject()"
+tagName: getSubject()
+search: exclude
+permalink: tag_getSubject().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

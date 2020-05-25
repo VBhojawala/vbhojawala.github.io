@@ -1,0 +1,8 @@
+---
+title: "enqueue sentinel()"
+tagName: enqueue_sentinel()
+search: exclude
+permalink: tag_enqueue_sentinel().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

@@ -1,0 +1,8 @@
+---
+title: "info()"
+tagName: info()
+search: exclude
+permalink: tag_info().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

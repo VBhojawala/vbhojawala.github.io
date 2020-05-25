@@ -1,0 +1,8 @@
+---
+title: "disable()"
+tagName: disable()
+search: exclude
+permalink: tag_disable().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

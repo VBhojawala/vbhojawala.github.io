@@ -1,0 +1,8 @@
+---
+title: "makeLogRecord()"
+tagName: makeLogRecord()
+search: exclude
+permalink: tag_makeLogRecord().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

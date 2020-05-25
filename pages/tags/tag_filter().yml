@@ -1,0 +1,8 @@
+---
+title: "filter()"
+tagName: filter()
+search: exclude
+permalink: tag_filter().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

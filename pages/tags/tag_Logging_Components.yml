@@ -1,0 +1,8 @@
+---
+title: "Logging Components"
+tagName: Logging_Components
+search: exclude
+permalink: tag_Logging_Components.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

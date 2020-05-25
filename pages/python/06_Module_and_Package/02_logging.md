@@ -1,7 +1,7 @@
 ---
 title: Logging
 layout: tutorial
-tags: []
+tags: [Logging, Logging_levels, debug(), info(), warning(), error(), critical(), basicConfig(), Logging_Components, Logger, Handler, Filter,Formatter, getLogger(), LogRecord, getMessage(), getLogRecordFactory(), setLogRecordFactory(), disable(), getLevelName(), shutdown(), getLoggerClass(), setLoggerClass(), makeLogRecord(), Logging_Hierarchy, getEffectiveLevel(), NOTSET, setlevel(), addHandler(), removeHandler(), addFilter(), removeFilter(), isEnabledFor(), getChild(), handle(), hasHandlers(), findCaller(), createLock(), acquire(), release(), setFormatter(), filter(), flush(), close(), handle(), format(), emit(), handleError(), StreamHandler, FileHandler, RotatingFileHandler, TimedRotatingFileHandler, SMTPHandler, MemoryHandler, NullHandler, WatchedFileHandler, QueueHandler, HTTPHandler, DatagramHandler, SocketHandler, SysLogHandler, NTEventLogHandler, setStream(), doRollover(), getSubject(), shouldFlush(), flush(), setTarget(), reopenIfNeeded(), prepare(), enqueue(), dequeue(), start(), stop(), enqueue_sentinel(), makeSocket(), makePickle(), send(), createSocket(), mapLogRecord(), LoggerAdapter, formatTime(), formatException(), formatStack(), Configuring_Logging, fileConfig(), dictConfig(), YAML, JSON, logging.config]
 sidebar: python_sidebar
 permalink: python_logging.html
 folder: python
@@ -13,13 +13,21 @@ next:
 next_title: 
 next_section: 
 next_section_title: 
-summary: Logging functions.
+summary: Logging module functions, logging components, Logger, Handler, Filter, Formatter,LoggerAdapter, logging configuration.
 ---
 
 
 ## Logging
 
 <p> Module provides functions and classes for logging an event.  </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> Logging is done to keep record of events which occurred while running the application. </li>
+        <li> When application runs into trouble logs are checked first in order to identify the problem. </li>
+        <li> When debugging application logs are used to identify problems. </li>
+    </ul> 
+</div>
 
 ### Levels of logging 
 
@@ -29,7 +37,7 @@ summary: Logging functions.
  :--- | :---
  DEBUG | Very detailed information how your function or program works.When resolving issue other programmer should be able to understand internal working. e.g. value of each variable in each iteration
  INFO | Confirmation log which indicates program is behaving as expected. e.g. method started with params, ended successfully with params
- WARNING | Indication of unexpected event occurred such as high work load which can cause problems.But program is working as expected. Or Invalid login attempts made to the application.
+ WARNING | Indication of unexpected event occurred such as high work load which can cause problems.But program is working as expected. e.g. Invalid login attempts made to the application.
  ERROR | Due to certain problem some functionality is not performing as expected. e.g. standard errors
  CRITICAL | Due to serious problem program is not able to run.
 
@@ -1284,7 +1292,7 @@ DEBUG:packageA1.ModuleA4:generated  16 Bytes Token  [58e2c5b4fed90998f6d374be473
 
 ## Handler Class
 
-<p> Handles the log message and dispatches to target specified by handler. Logger object can be added zero or more handler object using addHandler() method.</p>
+<p> Handles the log message and dispatches it to specified target. Logger object can be added zero or more handler object using addHandler() method.</p>
 
 
 ### Constructor
@@ -1322,6 +1330,7 @@ print(hobj)
 &lt;Handler (DEBUG)>
 </pre></div>
 
+{% include callout.html content="**Note** : Handler class serves as the base class for other handler classes and object of Handler class are not created directly. " type="primary" %} 
 
 <hr/>
 
@@ -2289,8 +2298,7 @@ handleError() |  Handles error occurred while executing emit(). <br/> Mostly the
 makeSocket() | Factory method which allows subclasses to define the precise type of socket. <br/> By default it creates a TCP socket (socket.SOCK_STREAM).
 makePickle(record) | pickles record.\__dict__  in binary format with prefix, and returns it ready for transmission across the socket.
 send(packet) | Send a pickled byte-string message to the socket. <br/> It allows partial send which can happen when network is busy.
-createSocket() | Tries to create the socket, on failure uses exponential back-off algorithm. <br/> On initial failure, the handler will drop the message it was trying to send. Subsequent message sent to same instance will wait until timeout expires. <br\> Default initial delay is 1 sec, after that on failure it doubles the delay until in reaches maximum 30 sec.
-createSocket() | Tries to create the socket, on failure uses exponential back-off algorithm. On initial failure, the handler will drop the message it was trying to send. Subsequent message sent to same instance will wait until timeout expires. <br/> Default initial delay is 1 sec, after that on failure it doubles the delay until in reaches maximum 30 sec.
+createSocket() | Tries to create the socket, on failure uses exponential back-off algorithm.<br/> On initial failure, the handler will drop the message it was trying to send. Subsequent message sent to same instance will wait until timeout expires. <br/> Default initial delay is 1 sec, after that on failure it doubles the delay until in reaches maximum 30 sec.
 
 
 <p> <strong> Timeout behaviour can be controlled by using following attributes of handler : </strong> </p>
@@ -2525,7 +2533,6 @@ from packageB import ModuleM1
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
-logger.info('Hierarchy 1 is created')
 
 # adding Handler
 sh = logging.StreamHandler(stream=sys.stdout)
@@ -2539,6 +2546,7 @@ sh.addFilter(onlyAppLogging)
 # attaching handler
 logger.addHandler(sh)
 
+logger.info('Hierarchy 1 is created')
 
 # Invoking functions
 ModuleA2.hello_module()

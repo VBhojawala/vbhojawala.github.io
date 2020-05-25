@@ -4,8 +4,8 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Logging functions.">
-<meta name="keywords" content=",  ">
+<meta name="description" content="Logging module functions, logging components, Logger, Handler, Filter, Formatter,LoggerAdapter, logging configuration.">
+<meta name="keywords" content="LoggingLogging_levelsdebug()info()warning()error()critical()basicConfig()Logging_ComponentsLoggerHandlerFilterFormattergetLogger()LogRecordgetMessage()getLogRecordFactory()setLogRecordFactory()disable()getLevelName()shutdown()getLoggerClass()setLoggerClass()makeLogRecord()Logging_HierarchygetEffectiveLevel()NOTSETsetlevel()addHandler()removeHandler()addFilter()removeFilter()isEnabledFor()getChild()handle()hasHandlers()findCaller()createLock()acquire()release()setFormatter()filter()flush()close()handle()format()emit()handleError()StreamHandlerFileHandlerRotatingFileHandlerTimedRotatingFileHandlerSMTPHandlerMemoryHandlerNullHandlerWatchedFileHandlerQueueHandlerHTTPHandlerDatagramHandlerSocketHandlerSysLogHandlerNTEventLogHandlersetStream()doRollover()getSubject()shouldFlush()flush()setTarget()reopenIfNeeded()prepare()enqueue()dequeue()start()stop()enqueue_sentinel()makeSocket()makePickle()send()createSocket()mapLogRecord()LoggerAdapterformatTime()formatException()formatStack()Configuring_LoggingfileConfig()dictConfig()YAMLJSONlogging.config,  ">
 <meta name="theme-color" content="#36362C">
 <link rel="icon" sizes="192x192" href="images/favicon.ico">
 <title>Logging | Asha Tutorials</title>
@@ -662,7 +662,7 @@
 <div class="post-content">
 
    <!-- 
-    <div class="summary">Logging functions.</div>
+    <div class="summary">Logging module functions, logging components, Logger, Handler, Filter, Formatter,LoggerAdapter, logging configuration.</div>
     -->
 
     
@@ -701,6 +701,14 @@ $('#toc').on('click', 'a', function() {
 
 <p> Module provides functions and classes for logging an event.  </p>
 
+<div id="tut-content"> 
+    <ul>
+        <li> Logging is done to keep record of events which occurred while running the application. </li>
+        <li> When application runs into trouble logs are checked first in order to identify the problem. </li>
+        <li> When debugging application logs are used to identify problems. </li>
+    </ul> 
+</div>
+
 <h3 id="levels-of-logging">Levels of logging</h3>
 
 <p> Levels of logging in order of increasing level </p>
@@ -723,7 +731,7 @@ $('#toc').on('click', 'a', function() {
     </tr>
     <tr>
       <td style="text-align: left">WARNING</td>
-      <td style="text-align: left">Indication of unexpected event occurred such as high work load which can cause problems.But program is working as expected. Or Invalid login attempts made to the application.</td>
+      <td style="text-align: left">Indication of unexpected event occurred such as high work load which can cause problems.But program is working as expected. e.g. Invalid login attempts made to the application.</td>
     </tr>
     <tr>
       <td style="text-align: left">ERROR</td>
@@ -1967,7 +1975,7 @@ DEBUG:packageA1.ModuleA4:generated  16 Bytes Token  [58e2c5b4fed90998f6d374be473
 
 <h2 id="handler-class">Handler Class</h2>
 
-<p> Handles the log message and dispatches to target specified by handler. Logger object can be added zero or more handler object using addHandler() method.</p>
+<p> Handles the log message and dispatches it to specified target. Logger object can be added zero or more handler object using addHandler() method.</p>
 
 <h3 id="constructor">Constructor</h3>
 
@@ -1996,6 +2004,8 @@ DEBUG:packageA1.ModuleA4:generated  16 Bytes Token  [58e2c5b4fed90998f6d374be473
 <pre class="result-content">
 &lt;Handler (DEBUG)&gt;
 </pre></div>
+
+<div class="bs-callout bs-callout-primary"><strong>Note</strong> : Handler class serves as the base class for other handler classes and object of Handler class are not created directly. </div>
 
 <hr />
 
@@ -3170,11 +3180,7 @@ Division by zero attempted!
     </tr>
     <tr>
       <td style="text-align: left">createSocket()</td>
-      <td style="text-align: left">Tries to create the socket, on failure uses exponential back-off algorithm. <br /> On initial failure, the handler will drop the message it was trying to send. Subsequent message sent to same instance will wait until timeout expires. &lt;br&gt; Default initial delay is 1 sec, after that on failure it doubles the delay until in reaches maximum 30 sec.</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">createSocket()</td>
-      <td style="text-align: left">Tries to create the socket, on failure uses exponential back-off algorithm. On initial failure, the handler will drop the message it was trying to send. Subsequent message sent to same instance will wait until timeout expires. <br /> Default initial delay is 1 sec, after that on failure it doubles the delay until in reaches maximum 30 sec.</td>
+      <td style="text-align: left">Tries to create the socket, on failure uses exponential back-off algorithm.<br /> On initial failure, the handler will drop the message it was trying to send. Subsequent message sent to same instance will wait until timeout expires. <br /> Default initial delay is 1 sec, after that on failure it doubles the delay until in reaches maximum 30 sec.</td>
     </tr>
   </tbody>
 </table>
@@ -3396,7 +3402,6 @@ Division by zero attempted!
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span>
 <span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
 
-<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">'Hierarchy 1 is created'</span><span class="p">)</span>
 
 <span class="c1"># adding Handler
 </span><span class="n">sh</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">(</span><span class="n">stream</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
@@ -3410,6 +3415,7 @@ Division by zero attempted!
 <span class="c1"># attaching handler
 </span><span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">sh</span><span class="p">)</span>
 
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">'Hierarchy 1 is created'</span><span class="p">)</span>
 
 <span class="c1"># Invoking functions
 </span><span class="n">ModuleA2</span><span class="o">.</span><span class="n">hello_module</span><span class="p">()</span>
@@ -4206,6 +4212,342 @@ threadName : MainThread</pre></div>
     <div class="tags">
         
         <p style="display: inline;"><b>Tags: </b></p>
+        
+        
+        
+        <a href="tag_Logging.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">Logging</a>
+        
+        
+        
+        <a href="tag_Logging_levels.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">Logging_levels</a>
+        
+        
+        
+        <a href="tag_debug().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">debug()</a>
+        
+        
+        
+        <a href="tag_info().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">info()</a>
+        
+        
+        
+        <a href="tag_warning().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">warning()</a>
+        
+        
+        
+        <a href="tag_error().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">error()</a>
+        
+        
+        
+        <a href="tag_critical().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">critical()</a>
+        
+        
+        
+        <a href="tag_basicConfig().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">basicConfig()</a>
+        
+        
+        
+        <a href="tag_Logging_Components.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">Logging_Components</a>
+        
+        
+        
+        <a href="tag_Logger.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">Logger</a>
+        
+        
+        
+        <a href="tag_Handler.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">Handler</a>
+        
+        
+        
+        <a href="tag_Filter.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">Filter</a>
+        
+        
+        
+        <a href="tag_Formatter.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">Formatter</a>
+        
+        
+        
+        <a href="tag_getLogger().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">getLogger()</a>
+        
+        
+        
+        <a href="tag_LogRecord.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">LogRecord</a>
+        
+        
+        
+        <a href="tag_getMessage().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">getMessage()</a>
+        
+        
+        
+        <a href="tag_getLogRecordFactory().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">getLogRecordFactory()</a>
+        
+        
+        
+        <a href="tag_setLogRecordFactory().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">setLogRecordFactory()</a>
+        
+        
+        
+        <a href="tag_disable().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">disable()</a>
+        
+        
+        
+        <a href="tag_getLevelName().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">getLevelName()</a>
+        
+        
+        
+        <a href="tag_shutdown().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">shutdown()</a>
+        
+        
+        
+        <a href="tag_getLoggerClass().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">getLoggerClass()</a>
+        
+        
+        
+        <a href="tag_setLoggerClass().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">setLoggerClass()</a>
+        
+        
+        
+        <a href="tag_makeLogRecord().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">makeLogRecord()</a>
+        
+        
+        
+        <a href="tag_Logging_Hierarchy.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">Logging_Hierarchy</a>
+        
+        
+        
+        <a href="tag_getEffectiveLevel().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">getEffectiveLevel()</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a href="tag_getChild().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">getChild()</a>
+        
+        
+        
+        <a href="tag_handle().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">handle()</a>
+        
+        
+        
+        <a href="tag_hasHandlers().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">hasHandlers()</a>
+        
+        
+        
+        <a href="tag_findCaller().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">findCaller()</a>
+        
+        
+        
+        <a href="tag_createLock().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">createLock()</a>
+        
+        
+        
+        <a href="tag_acquire().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">acquire()</a>
+        
+        
+        
+        <a href="tag_release().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">release()</a>
+        
+        
+        
+        
+        
+        
+        
+        <a href="tag_flush().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">flush()</a>
+        
+        
+        
+        
+        
+        <a href="tag_handle().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">handle()</a>
+        
+        
+        
+        <a href="tag_format().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">format()</a>
+        
+        
+        
+        
+        
+        
+        
+        <a href="tag_StreamHandler.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">StreamHandler</a>
+        
+        
+        
+        <a href="tag_FileHandler.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">FileHandler</a>
+        
+        
+        
+        <a href="tag_RotatingFileHandler.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">RotatingFileHandler</a>
+        
+        
+        
+        <a href="tag_TimedRotatingFileHandler.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">TimedRotatingFileHandler</a>
+        
+        
+        
+        <a href="tag_SMTPHandler.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">SMTPHandler</a>
+        
+        
+        
+        <a href="tag_MemoryHandler.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">MemoryHandler</a>
+        
+        
+        
+        <a href="tag_NullHandler.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">NullHandler</a>
+        
+        
+        
+        <a href="tag_WatchedFileHandler.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">WatchedFileHandler</a>
+        
+        
+        
+        <a href="tag_QueueHandler.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">QueueHandler</a>
+        
+        
+        
+        <a href="tag_HTTPHandler.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">HTTPHandler</a>
+        
+        
+        
+        <a href="tag_DatagramHandler.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">DatagramHandler</a>
+        
+        
+        
+        <a href="tag_SocketHandler.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">SocketHandler</a>
+        
+        
+        
+        <a href="tag_SysLogHandler.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">SysLogHandler</a>
+        
+        
+        
+        <a href="tag_NTEventLogHandler.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">NTEventLogHandler</a>
+        
+        
+        
+        <a href="tag_setStream().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">setStream()</a>
+        
+        
+        
+        <a href="tag_doRollover().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">doRollover()</a>
+        
+        
+        
+        <a href="tag_getSubject().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">getSubject()</a>
+        
+        
+        
+        <a href="tag_shouldFlush().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">shouldFlush()</a>
+        
+        
+        
+        <a href="tag_flush().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">flush()</a>
+        
+        
+        
+        <a href="tag_setTarget().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">setTarget()</a>
+        
+        
+        
+        <a href="tag_reopenIfNeeded().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">reopenIfNeeded()</a>
+        
+        
+        
+        <a href="tag_prepare().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">prepare()</a>
+        
+        
+        
+        <a href="tag_enqueue().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">enqueue()</a>
+        
+        
+        
+        <a href="tag_dequeue().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">dequeue()</a>
+        
+        
+        
+        <a href="tag_start().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">start()</a>
+        
+        
+        
+        <a href="tag_stop().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">stop()</a>
+        
+        
+        
+        <a href="tag_enqueue_sentinel().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">enqueue_sentinel()</a>
+        
+        
+        
+        <a href="tag_makeSocket().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">makeSocket()</a>
+        
+        
+        
+        <a href="tag_makePickle().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">makePickle()</a>
+        
+        
+        
+        <a href="tag_send().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">send()</a>
+        
+        
+        
+        <a href="tag_createSocket().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">createSocket()</a>
+        
+        
+        
+        <a href="tag_mapLogRecord().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">mapLogRecord()</a>
+        
+        
+        
+        <a href="tag_LoggerAdapter.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">LoggerAdapter</a>
+        
+        
+        
+        <a href="tag_formatTime().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">formatTime()</a>
+        
+        
+        
+        <a href="tag_formatException().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">formatException()</a>
+        
+        
+        
+        <a href="tag_formatStack().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">formatStack()</a>
+        
+        
+        
+        <a href="tag_Configuring_Logging.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">Configuring_Logging</a>
+        
+        
+        
+        <a href="tag_fileConfig().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">fileConfig()</a>
+        
+        
+        
+        <a href="tag_dictConfig().html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">dictConfig()</a>
+        
+        
+        
+        <a href="tag_YAML.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">YAML</a>
+        
+        
+        
+        <a href="tag_JSON.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">JSON</a>
+        
+        
+        
+        <a href="tag_logging.config.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">logging.config</a>
         
         
         

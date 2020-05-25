@@ -1,0 +1,8 @@
+---
+title: "FileHandler"
+tagName: FileHandler
+search: exclude
+permalink: tag_FileHandler.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

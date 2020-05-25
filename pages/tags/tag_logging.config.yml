@@ -1,0 +1,8 @@
+---
+title: "logging.config"
+tagName: logging.config
+search: exclude
+permalink: tag_logging.config.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

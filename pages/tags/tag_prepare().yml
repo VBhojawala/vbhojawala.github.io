@@ -1,0 +1,8 @@
+---
+title: "prepare()"
+tagName: prepare()
+search: exclude
+permalink: tag_prepare().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

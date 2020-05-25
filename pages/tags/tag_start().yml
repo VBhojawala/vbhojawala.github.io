@@ -1,0 +1,8 @@
+---
+title: "start()"
+tagName: start()
+search: exclude
+permalink: tag_start().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

@@ -1,0 +1,8 @@
+---
+title: "debug()"
+tagName: debug()
+search: exclude
+permalink: tag_debug().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

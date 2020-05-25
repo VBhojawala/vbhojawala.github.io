@@ -1,0 +1,8 @@
+---
+title: "dequeue()"
+tagName: dequeue()
+search: exclude
+permalink: tag_dequeue().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

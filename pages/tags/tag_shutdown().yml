@@ -1,0 +1,8 @@
+---
+title: "shutdown()"
+tagName: shutdown()
+search: exclude
+permalink: tag_shutdown().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

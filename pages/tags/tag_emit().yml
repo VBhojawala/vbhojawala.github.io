@@ -1,0 +1,8 @@
+---
+title: "emit()"
+tagName: emit()
+search: exclude
+permalink: tag_emit().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

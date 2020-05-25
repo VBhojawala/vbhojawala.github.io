@@ -1,0 +1,8 @@
+---
+title: "YAML"
+tagName: YAML
+search: exclude
+permalink: tag_YAML.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

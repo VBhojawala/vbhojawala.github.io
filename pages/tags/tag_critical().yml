@@ -1,0 +1,8 @@
+---
+title: "critical()"
+tagName: critical()
+search: exclude
+permalink: tag_critical().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

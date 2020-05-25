@@ -1,0 +1,8 @@
+---
+title: "acquire()"
+tagName: acquire()
+search: exclude
+permalink: tag_acquire().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

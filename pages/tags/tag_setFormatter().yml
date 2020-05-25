@@ -1,0 +1,8 @@
+---
+title: "setFormatter()"
+tagName: setFormatter()
+search: exclude
+permalink: tag_setFormatter().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

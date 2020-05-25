@@ -1,0 +1,8 @@
+---
+title: "getChild()"
+tagName: getChild()
+search: exclude
+permalink: tag_getChild().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

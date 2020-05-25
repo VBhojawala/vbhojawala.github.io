@@ -1,0 +1,8 @@
+---
+title: "fileConfig()"
+tagName: fileConfig()
+search: exclude
+permalink: tag_fileConfig().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

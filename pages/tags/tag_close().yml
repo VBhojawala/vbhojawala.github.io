@@ -1,0 +1,8 @@
+---
+title: "close()"
+tagName: close()
+search: exclude
+permalink: tag_close().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

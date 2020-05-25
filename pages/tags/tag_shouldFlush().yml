@@ -1,0 +1,8 @@
+---
+title: "shouldFlush()"
+tagName: shouldFlush()
+search: exclude
+permalink: tag_shouldFlush().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

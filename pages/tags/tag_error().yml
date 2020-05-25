@@ -1,0 +1,8 @@
+---
+title: "error()"
+tagName: error()
+search: exclude
+permalink: tag_error().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

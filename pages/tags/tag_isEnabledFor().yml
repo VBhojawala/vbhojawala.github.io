@@ -1,0 +1,8 @@
+---
+title: "isEnabledFor()"
+tagName: isEnabledFor()
+search: exclude
+permalink: tag_isEnabledFor().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

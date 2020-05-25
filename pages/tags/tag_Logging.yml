@@ -1,0 +1,8 @@
+---
+title: "Logging"
+tagName: Logging
+search: exclude
+permalink: tag_Logging.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

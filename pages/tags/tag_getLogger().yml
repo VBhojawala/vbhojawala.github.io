@@ -1,0 +1,8 @@
+---
+title: "getLogger()"
+tagName: getLogger()
+search: exclude
+permalink: tag_getLogger().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}
