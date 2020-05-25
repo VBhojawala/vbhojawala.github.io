@@ -4,11 +4,11 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="While loop, break, continue, while-else.">
-<meta name="keywords" content="while_loopbreakcontinuewhile-else,  ">
+<meta name="description" content="Builtin modules math, random and statistics.">
+<meta name="keywords" content=",  ">
 <meta name="theme-color" content="#36362C">
 <link rel="icon" sizes="192x192" href="images/favicon.ico">
-<title>While Loop | Asha Tutorials</title>
+<title>Builtin Modules | Asha Tutorials</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -283,7 +283,7 @@
 
 
 
-  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:?subject=Asha Tutorials feedback&body=I have some feedback about the While Loop page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:?subject=Asha Tutorials feedback&body=I have some feedback about the Builtin Modules page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
 
 </li>
 
@@ -335,7 +335,7 @@
                             searchInput: document.getElementById('search-input'),
                             resultsContainer: document.getElementById('results-container'),
                             dataSource: 'search.json',
-                            searchResultTemplate: '<li style="margin: 0px 0px;"><a href="{url}" title="While Loop       " folder="python">{title} <sub>in {folder}</sub></a></li>',
+                            searchResultTemplate: '<li style="margin: 0px 0px;"><a href="{url}" title="Builtin Modules       " folder="python">{title} <sub>in {folder}</sub></a></li>',
                 noResultsText: '<li style="margin: 0px 0px;"><a href="#">No results found.</a></li>',
                         limit: 10,
                         fuzzy: true,
@@ -451,7 +451,7 @@
           
           
           
-          <li class="active"><a title="While Loop" href="python_while_loop.html">While Loop</a></li>
+          <li><a title="While Loop" href="python_while_loop.html">While Loop</a></li>
           
           
           
@@ -634,7 +634,7 @@
           
           
           
-          <li><a title="Builtin Modules" href="python_builtin_modules.html">Builtin Modules</a></li>
+          <li class="active"><a title="Builtin Modules" href="python_builtin_modules.html">Builtin Modules</a></li>
           
           
           
@@ -661,7 +661,7 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">While Loop</h1>
+   <h1 class="post-title-main">Builtin Modules</h1>
 </div>
 
 
@@ -669,7 +669,7 @@
 <div class="post-content">
 
    <!-- 
-    <div class="summary">While loop, break, continue, while-else.</div>
+    <div class="summary">Builtin modules math, random and statistics.</div>
     -->
 
     
@@ -700,307 +700,452 @@ $('#toc').on('click', 'a', function() {
 
     <!-- 
 
-    <a target="_blank" rel="noopener" href="https://github.com/ashatutorials/pages/python/02_ControlFlow_Looping/02_While_Loop.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+    <a target="_blank" rel="noopener" href="https://github.com/ashatutorials/pages/python/06_Module_and_Package/03_BuiltinModules.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
 
      -->
 
-   <h2 id="while-loop">while loop</h2>
+   <h2 id="math">math</h2>
+
+<p> math module provides mathematical functions. </p>
+
+<h3 id="constants">Constants</h3>
+
+<h4 id="nan">nan</h4>
+
+<p> Not a Number. </p>
 
 <div id="code-block-1" class="code-block">
 <p id="code-header-1" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-1", "code-header-1")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">p</span> <span class="o">=</span> <span class="mi">1</span>
-
-<span class="k">while</span> <span class="n">p</span> <span class="o">&lt;</span> <span class="mi">11</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
-    <span class="n">p</span> <span class="o">+=</span> <span class="mi">1</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">math</span>
+<span class="k">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-
+nan
 </pre></div>
 
 <hr />
 
-<h2 id="break">break</h2>
+<h4 id="inf">inf</h4>
 
-<p> Executed when end of loop condition satisfied, which exits the while loop. </p>
-
-<div id="tut-content"> 
-    <ul>
-        <li> <strong> Infinite while loop and break statement : </strong> </li>
-    </ul> 
-</div>
+<p> Positive infinity. </p>
 
 <div id="code-block-2" class="code-block">
 <p id="code-header-2" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-2", "code-header-2")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
-    <span class="n">inpt</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">'Enter your Name [Press Enter to exit] -&gt;'</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">inpt</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Hi, {inpt}. Welcome to the world of Python.'</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">break</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">math</span>
+<span class="k">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">inf</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-Enter your Name [Press Enter to exit] -&gt;&gt;? Vicky
-Hi, Vicky. Welcome to the world of Python.
-Enter your Name [Press Enter to exit] -&gt;&gt;? Mike
-Hi, Mike. Welcome to the world of Python.
-Enter your Name [Press Enter to exit] -&gt;&gt;? Kim
-Hi, Kim. Welcome to the world of Python.
-Enter your Name [Press Enter to exit] -&gt;&gt;? 
-
+inf
 </pre></div>
 
 <hr />
 
-<h2 id="continue">continue</h2>
+<h4 id="pi">pi</h4>
 
-<p> Executed when exceptional condition satisfied , it skips remaining statements in current iteration and continue next iteration. </p>
-
-<div id="tut-content"> 
-    <ul>
-        <li> <strong> Infinite loop with break and continue : </strong> </li>
-    </ul> 
-</div>
-
-<p> Following program prints number only if it is not divisible by 2,3,5 other wise ignore it, 0 to exit. </p>
+<p> pi constant value. </p>
 
 <div id="code-block-3" class="code-block">
 <p id="code-header-3" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-3", "code-header-3")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
-    <span class="n">inpt</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">'Enter a Number [Enter 0 to exit] -&gt;'</span><span class="p">))</span>
-    <span class="k">if</span> <span class="n">inpt</span><span class="p">:</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">inpt</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">inpt</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">inpt</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
-            <span class="k">continue</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Adding {inpt} to the list ....'</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">break</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">math</span>
+<span class="k">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-Enter a Number [Enter 0 to exit] -&gt;&gt;? 255
-Enter a Number [Enter 0 to exit] -&gt;&gt;? 1212
-Enter a Number [Enter 0 to exit] -&gt;&gt;? 541
-Adding 541 to the list ....
-Enter a Number [Enter 0 to exit] -&gt;&gt;? 97
-Adding 97 to the list ....
-Enter a Number [Enter 0 to exit] -&gt;&gt;? 665
-Enter a Number [Enter 0 to exit] -&gt;&gt;? 323
-Adding 323 to the list ....
-Enter a Number [Enter 0 to exit] -&gt;&gt;? 121
-Adding 121 to the list ....
-Enter a Number [Enter 0 to exit] -&gt;&gt;? 111
-Enter a Number [Enter 0 to exit] -&gt;&gt;? 1221
-Enter a Number [Enter 0 to exit] -&gt;&gt;? 123127
-Adding 123127 to the list ....
-Enter a Number [Enter 0 to exit] -&gt;&gt;? 0
-
+3.141592653589793
 </pre></div>
 
 <hr />
 
-<h2 id="while-else">while-else</h2>
+<h4 id="e">e</h4>
 
-<div id="tut-content"> 
-    <ul>
-        <li> <strong> else : </strong> statements in else gets executed if break statement inside loop is not called. </li>
-    </ul> 
-</div>
+<p> Constant value of e. </p>
 
 <div id="code-block-4" class="code-block">
 <p id="code-header-4" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-4", "code-header-4")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
-
-<span class="k">while</span> <span class="n">x</span><span class="p">:</span>
-    <span class="n">x</span> <span class="o">-=</span> <span class="mi">1</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">'Conditional break'</span><span class="p">)</span>
-        <span class="k">break</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">'while loop exited normally'</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">math</span>
+<span class="k">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">e</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-9
-8
-7
-6
-5
-4
-3
-2
-1
-0
-while loop exited normally
+2.718281828459045
 </pre></div>
 
 <hr />
+
+<h3 id="functions">Functions</h3>
+
+<h4 id="floorx">floor(x)</h4>
+
+<p> Return floor value of x. </p>
 
 <div id="code-block-5" class="code-block">
 <p id="code-header-5" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-5", "code-header-5")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">math</span>
 
-<span class="k">while</span> <span class="n">x</span><span class="p">:</span>
-    <span class="n">x</span> <span class="o">-=</span> <span class="mi">1</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># changed
-</span>        <span class="k">print</span><span class="p">(</span><span class="s">'Conditional break'</span><span class="p">)</span>
-        <span class="k">break</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">'while loop exited normally'</span><span class="p">)</span></code></pre></figure>
+<span class="n">f</span> <span class="o">=</span> <span class="mf">29.8</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'floor(29.8) :'</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">f</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-9
-8
-7
-6
-5
-4
-3
-2
-1
-0
-Conditional break
+floor(29.8) : 29
 </pre></div>
 
 <hr />
 
-<h2 id="examples">Examples</h2>
+<h4 id="ceilx">ceil(x)</h4>
 
-<div id="tut-content"> 
-    <ul>
-        <li> <strong>Online order processing facility which ships the order until none is left</strong> </li>
-    </ul> 
-</div>
+<p> Returns ceiling value of x. </p>
 
 <div id="code-block-6" class="code-block">
 <p id="code-header-6" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-6", "code-header-6")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">random</span>
-<span class="n">hasOrder</span> <span class="o">=</span> <span class="bp">True</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'Press &lt;Enter&gt; to exit</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
-<span class="k">while</span> <span class="n">hasOrder</span><span class="p">:</span>
-    <span class="n">order</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">'Enter the item name to be order'</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">order</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">'Finding '</span><span class="p">,</span> <span class="n">order</span><span class="p">,</span> <span class="s">' .......'</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">'Updating inventory ......'</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">'Printing shipping details '</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">'Packaging the order'</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">'Assign shipment to Courier services'</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Estimated delivery time --&gt; {random.randint(1, 5)} Days'</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">'----------------------------------------------------'</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">hasOrder</span> <span class="o">=</span> <span class="bp">False</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">'Shutting down ........'</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">'@@@@@@@@@@ Exit @@@@@@@@@@'</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="mf">29.4</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Ceiling(29.4) :'</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">f</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-Press &lt;&zwj;Enter&zwj;&gt; to exit
-
-Enter the item name to be order&gt;? 16GB RAM
-Finding  16GB RAM  .......
-Updating inventory ......
-Printing shipping details 
-Packaging the order
-Assign shipment to Courier services
-Estimated delivery time --&gt; 2 Days
-----------------------------------------------------
-Enter the item name to be order&gt;? RTX 2080 SUPER
-Finding  RTX 2080 SUPER  .......
-Updating inventory ......
-Printing shipping details 
-Packaging the order
-Assign shipment to Courier services
-Estimated delivery time --&gt; 2 Days
-----------------------------------------------------
-Enter the item name to be order&gt;? RYZEN 3700H
-Finding  RYZEN 3700H  .......
-Updating inventory ......
-Printing shipping details 
-Packaging the order
-Assign shipment to Courier services
-Estimated delivery time --&gt; 2 Days
-----------------------------------------------------
-Enter the item name to be order&gt;? 650W Power Supply
-Finding  650W Power Supply  .......
-Updating inventory ......
-Printing shipping details 
-Packaging the order
-Assign shipment to Courier services
-Estimated delivery time --&gt; 4 Days
-----------------------------------------------------
-Enter the item name to be order&gt;? 
-Shutting down ........
-@@@@@@@@@@ Exit @@@@@@@@@@
-
+Ceiling(29.4) : 30
 </pre></div>
 
 <hr />
 
-<div id="tut-content"> 
-    <ul>
-        <li> <strong>Let python pick the number ball from box without removing randomly until it matches with given number.</strong> </li>
-    </ul> 
-</div>
+<h4 id="factorialx">factorial(x)</h4>
+
+<p> Returns factorial of x. </p>
 
 <div id="code-block-7" class="code-block">
 <p id="code-header-7" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-7", "code-header-7")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">random</span>
-<span class="n">begin</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">'Enter starting range -&gt; '</span><span class="p">))</span>
-<span class="n">end</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">'Enter end range -&gt; '</span><span class="p">))</span>
-<span class="n">number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">'Enter no to be found -&gt; '</span><span class="p">))</span>
-
-<span class="n">found</span> <span class="o">=</span> <span class="bp">False</span>
-<span class="n">trial</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="k">while</span> <span class="ow">not</span> <span class="n">found</span><span class="p">:</span>
-    <span class="n">trial</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">begin</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="n">number</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Python found in {trial} trial(s)'</span><span class="p">)</span>
-        <span class="n">found</span> <span class="o">=</span> <span class="bp">True</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">math</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Factorial of 5 :"</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-Enter starting range -&gt; &gt;? 1
-Enter end range -&gt; &gt;? 100
-Enter no to be found -&gt; &gt;? 99
-Python found in 29 trial(s)
+Factorial of 5 : 120
 </pre></div>
+
+<hr />
+
+<h4 id="sqrtx">sqrt(x)</h4>
+
+<p> Returns square root of x. </p>
+
+<div id="code-block-8" class="code-block">
+<p id="code-header-8" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-8", "code-header-8")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">math</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Square root of 25 :"</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">25</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Square root of 25 : 5.0
+</pre></div>
+
+<hr />
+
+<h4 id="fabsx">fabs(x)</h4>
+
+<p> Returns an absolute value of float x. </p>
+
+<div id="code-block-9" class="code-block">
+<p id="code-header-9" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-9", "code-header-9")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">math</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Absolute value of Float(-78.15) :"</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">fabs</span><span class="p">(</span><span class="o">-</span><span class="mf">78.15</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Absolute value of Float(-78.15) : 78.15
+</pre></div>
+
+<hr />
+
+<h4 id="copysignxy">copysign(x,y)</h4>
+
+<p> Returns float with absolute value of x and copies sign of y. </p>
+
+<div id="code-block-10" class="code-block">
+<p id="code-header-10" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-10", "code-header-10")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"copysign(-155.8, 77) :"</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">copysign</span><span class="p">(</span><span class="o">-</span><span class="mf">155.8</span><span class="p">,</span> <span class="mi">77</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"copysign(15.4, -77)  :"</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">copysign</span><span class="p">(</span><span class="mf">15.4</span><span class="p">,</span> <span class="o">-</span><span class="mi">77</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"copysign(55, 155)  :"</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">copysign</span><span class="p">(</span><span class="mi">55</span><span class="p">,</span> <span class="mi">155</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+copysign(-155.8, 77) : 155.8
+copysign(15.4, -77)  : -15.4
+copysign(55, 155)  : 55.0
+</pre></div>
+
+<hr />
+
+<h4 id="fmodx-y">fmod(x, y)</h4>
+
+<p> Return the result of modulus operation on float value with precision. </p>
+
+<div class="bs-callout bs-callout-primary"><strong>Note</strong> : Use x % y for integer and fmod(x, y) for float. </div>
+
+<div id="code-block-11" class="code-block">
+<p id="code-header-11" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-11", "code-header-11")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">math</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"fmod(15.00, 4.78) :"</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">fmod</span><span class="p">(</span><span class="mf">15.00</span><span class="p">,</span> <span class="mf">4.78</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+fmod(15.00, 4.78) : 0.6599999999999993
+</pre></div>
+
+<hr />
+
+<h4 id="fsumiterable">fsum(iterable)</h4>
+
+<p> Calculate and returns sum of float iterable preserving the precision. </p>
+
+<div id="code-block-12" class="code-block">
+<p id="code-header-12" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-12", "code-header-12")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">fIter</span> <span class="o">=</span> <span class="p">[</span><span class="mf">12.845</span><span class="p">,</span> <span class="mf">45.1244</span><span class="p">,</span> <span class="mf">15.55</span><span class="p">,</span> <span class="mf">45.56</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"fsum() :"</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">fsum</span><span class="p">(</span><span class="n">fIter</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+fsum() : 119.0794
+</pre></div>
+
+<hr />
+
+<h4 id="gcda-b">gcd(a, b)</h4>
+
+<p> Returns greatest common divisor of integer a and b. </p>
+
+<div id="code-block-13" class="code-block">
+<p id="code-header-13" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-13", "code-header-13")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">math</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"gcd(1521, 1176) :"</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">gcd</span><span class="p">(</span><span class="mi">1521</span><span class="p">,</span> <span class="mi">1176</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+gcd(1521, 1176) : 3
+</pre></div>
+
+<hr />
+
+<h4 id="isinfx">isinf(x)</h4>
+
+<p> Returns True if x is positive or negative infinity. </p>
+
+<div id="code-block-14" class="code-block">
+<p id="code-header-14" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-14", "code-header-14")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">inf</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"isinf(x) :"</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">isinf</span><span class="p">(</span><span class="n">x</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+isinf(x) : True
+</pre></div>
+
+<hr />
+
+<h4 id="isfinitex">isfinite(x)</h4>
+
+<p> Returns True if x is not  a positive or negative infinity. </p>
+
+<div id="code-block-15" class="code-block">
+<p id="code-header-15" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-15", "code-header-15")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">math</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mf">99.56</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"isfinite(x) :"</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">x</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+isfinite(x) : True
+</pre></div>
+
+<hr />
+
+<h4 id="isnanx">isnan(x)</h4>
+
+<p> Returns True if x is Not a number. </p>
+
+<div id="code-block-16" class="code-block">
+<p id="code-header-16" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-16", "code-header-16")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">math</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">nan</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"isnan(x) :"</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">x</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+isnan(x) : True
+</pre></div>
+
+<hr />
+
+<h4 id="frexpx">frexp(x)</h4>
+
+<p> Returns (mantissa, exponent) such that x = mentissa * (2 ** e) from a float value. </p>
+
+<div id="code-block-17" class="code-block">
+<p id="code-header-17" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-17", "code-header-17")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">math</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"frexp(12.454) :"</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">frexp</span><span class="p">(</span><span class="mf">12.454</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+frexp(12.454) : (0.778375, 4)
+</pre></div>
+
+<hr />
+
+<h4 id="ldexpx-i">ldexp(x, i)</h4>
+
+<p> Returns x * (2**i). </p>
+
+<div id="code-block-18" class="code-block">
+<p id="code-header-18" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-18", "code-header-18")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">math</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"ldexp(5, 2) :"</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">ldexp</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+ldexp(5, 2) : 20.0
+</pre></div>
+
+<hr />
+
+<h4 id="powx-y">pow(x, y)</h4>
+
+<p> Same as x ** y but for float values. </p>
+
+<div id="code-block-19" class="code-block">
+<p id="code-header-19" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-19", "code-header-19")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">math</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"pow(2.5, 5.6) :"</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="nb">pow</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">5.6</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+pow(2.5, 5.6) : 169.22481522342434
+</pre></div>
+
+<hr />
+
+<h4 id="truncx">trunc(x)</h4>
+
+<p> Returns integer value from float truncating value after '.' . </p>
+
+<div id="code-block-20" class="code-block">
+<p id="code-header-20" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-20", "code-header-20")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"trunc(12.45) :"</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">trunc</span><span class="p">(</span><span class="mf">12.45</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"trunc(12.45) :"</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">trunc</span><span class="p">(</span><span class="mf">12.95</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+trunc(12.45) : 12
+trunc(12.45) : 12
+</pre></div>
+
+<hr />
+
+<h4 id="more">More</h4>
+
+<p> math module has also functions for following : </p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">math functions</th>
+      <th style="text-align: left">link</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">log</td>
+      <td style="text-align: left"><a href="http://bit.ly/2WnX3dL" target="_blank">Link</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">trigonometric</td>
+      <td style="text-align: left"><a href="http://bit.ly/2WqPUcE" target="_blank">Link</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">angular conversion</td>
+      <td style="text-align: left"><a href="http://bit.ly/31nJIG0" target="_blank">Link</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">hyperbolic</td>
+      <td style="text-align: left"><a href="http://bit.ly/2MRBXoT" target="_blank">Link</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">special functions</td>
+      <td style="text-align: left"><a href="http://bit.ly/2K7BA77" target="_blank">Link</a></td>
+    </tr>
+  </tbody>
+</table>
 
 <hr />
 
@@ -1009,22 +1154,6 @@ Python found in 29 trial(s)
     <div class="tags">
         
         <p style="display: inline;"><b>Tags: </b></p>
-        
-        
-        
-        <a href="tag_while_loop.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">while_loop</a>
-        
-        
-        
-        <a href="tag_break.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">break</a>
-        
-        
-        
-        <a href="tag_continue.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">continue</a>
-        
-        
-        
-        <a href="tag_while-else.html" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">while-else</a>
         
         
         
@@ -1050,21 +1179,14 @@ Python found in 29 trial(s)
     
 
     
-        <a href="python_control_flow.html" >
+        <a href="python_logging.html" >
             <button type="button" class="btn btn-primary  "> 
                  <span class="fa fa-arrow-circle-left fa-lg"></span>  Previous  <br/>
-                 Control Flow 
+                 Logging 
             </button>
         </a>
     
 
-    
-        <a href="python_for_loop.html" >
-            <button type="button" class="btn btn-primary "> 
-                 Next <span class="fa fa-arrow-circle-right fa-lg"></span> <br/> 
-                 For Loop
-            </button>
-        </a>
     
 
     

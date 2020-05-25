@@ -9,8 +9,8 @@ prev_section:
 prev_section_title: 
 prev: python_module_package_import.html
 prev_title: Module, Package and Import
-next: 
-next_title: 
+next: python_builtin_modules.html
+next_title: Builtin Modules
 next_section: 
 next_section_title: 
 summary: Logging module functions, logging components, Logger, Handler, Filter, Formatter,LoggerAdapter, logging configuration.

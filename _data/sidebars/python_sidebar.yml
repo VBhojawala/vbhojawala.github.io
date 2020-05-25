@@ -144,3 +144,6 @@ entries:
       - title: Logging
         url: /python_logging.html
         output: web
+      - title: Builtin Modules
+        url: /python_builtin_modules.html
+        output: web
