@@ -1149,6 +1149,591 @@ trunc(12.45) : 12
 
 <hr />
 
+<h2 id="random">random</h2>
+
+<p> module implements pseudo-random number generators. </p>
+
+<h3 id="functions-for-integer">functions for Integer</h3>
+
+<h4 id="randinta-b">randint(a, b)</h4>
+
+<p> Returns random integer between a and b. </p>
+
+<div id="code-block-21" class="code-block">
+<p id="code-header-21" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-21", "code-header-21")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">random</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"randint(1, 100) :"</span><span class="p">,</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+randint(1, 100) : 26
+</pre></div>
+
+<hr />
+
+<h4 id="randrangestop">randrange(stop)</h4>
+
+<p> Returns random int in the range from 0 up to stop. </p>
+
+<div id="code-block-22" class="code-block">
+<p id="code-header-22" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-22", "code-header-22")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">random</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"randrange(50) :"</span><span class="p">,</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">50</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+randrange(50) : 28
+</pre></div>
+
+<hr />
+
+<h4 id="randrangestart-stop-step">randrange(start, stop[, step])</h4>
+
+<p> Returns random integer between start and stop with optional argument step. </p>
+
+<div id="code-block-23" class="code-block">
+<p id="code-header-23" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-23", "code-header-23")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">random</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"randrange(10, 20) :"</span><span class="p">,</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+randrange(10, 20) : 19
+</pre></div>
+
+<hr />
+
+<div id="code-block-24" class="code-block">
+<p id="code-header-24" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-24", "code-header-24")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">random</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"randrange(5, 500, 5) :"</span><span class="p">,</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+randrange(5, 500, 5) : 360
+</pre></div>
+
+<div class="bs-callout bs-callout-primary"><strong>Note</strong> : randint(a, b) is an alias for randrange (a, b+1). which means internally randint() calls randrange(). </div>
+
+<hr />
+
+<h3 id="functions-for-sequence">Functions for sequence</h3>
+
+<h4 id="choiceseq">choice(seq)</h4>
+
+<p> Returns random int in the range from 0 up to stop. </p>
+
+<div id="code-block-25" class="code-block">
+<p id="code-header-25" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-25", "code-header-25")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Red'</span><span class="p">,</span> <span class="s">'Green'</span><span class="p">,</span> <span class="s">'Blue'</span><span class="p">,</span> <span class="s">'Pink'</span><span class="p">,</span> <span class="s">'White'</span><span class="p">,</span> <span class="s">'Yellow'</span><span class="p">]</span>
+
+<span class="n">rc</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"choice(colors) :"</span><span class="p">,</span> <span class="n">rc</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+choice(colors) : White
+</pre></div>
+
+<hr />
+
+<h4 id="shufflex-random">shuffle(x[, random])</h4>
+
+<p>  Shuffles sequence x in place. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> random : </strong> Takes 0 argument random function which return float in range [0.0, 1.0]. By default it is set to random.random(). </li>
+    </ul> 
+</div>
+
+<div id="code-block-26" class="code-block">
+<p id="code-header-26" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-26", "code-header-26")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Red'</span><span class="p">,</span> <span class="s">'Green'</span><span class="p">,</span> <span class="s">'Blue'</span><span class="p">,</span> <span class="s">'Pink'</span><span class="p">,</span> <span class="s">'White'</span><span class="p">,</span> <span class="s">'Yellow'</span><span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"Before :"</span><span class="p">,</span> <span class="n">colors</span><span class="p">)</span>
+<span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"After :"</span><span class="p">,</span> <span class="n">colors</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Before : ['Red', 'Green', 'Blue', 'Pink', 'White', 'Yellow']
+After : ['White', 'Blue', 'Pink', 'Green', 'Red', 'Yellow']
+</pre></div>
+
+<p><br /></p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> shuffle() does not work on immutable data types, because in performs inplace shuffle. </li>
+    </ul> 
+</div>
+
+<div id="code-block-27" class="code-block">
+<p id="code-header-27" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-27", "code-header-27")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">(</span><span class="s">'Red'</span><span class="p">,</span> <span class="s">'Green'</span><span class="p">,</span> <span class="s">'Blue'</span><span class="p">,</span> <span class="s">'Pink'</span><span class="p">,</span> <span class="s">'White'</span><span class="p">,</span> <span class="s">'Yellow'</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"Before :"</span><span class="p">,</span> <span class="n">colors</span><span class="p">)</span>
+<span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+Before : ('Red', 'Green', 'Blue', 'Pink', 'White', 'Yellow')
+</pre><pre id="tut-output-error" class="result-content">Traceback (most recent call last):
+  File "&lt;input&gt;", line 5, in &lt;module&gt;
+  File "/usr/local/lib/python3.8/random.py", line 307, in shuffle
+    x[i], x[j] = x[j], x[i]
+TypeError: 'tuple' object does not support item assignment</pre></div>
+
+<hr />
+
+<h4 id="sampleseq-k">sample(seq, k)</h4>
+
+<p> Returns list of  k 'unique' random elements from the sequence. Original sequence remains unmodified. </p>
+
+<div id="code-block-28" class="code-block">
+<p id="code-header-28" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-28", "code-header-28")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Red'</span><span class="p">,</span> <span class="s">'Green'</span><span class="p">,</span> <span class="s">'Blue'</span><span class="p">,</span> <span class="s">'Pink'</span><span class="p">,</span> <span class="s">'White'</span><span class="p">,</span> <span class="s">'Yellow'</span><span class="p">]</span>
+<span class="n">twoclr</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">colors</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"sample(colors, 2) :"</span><span class="p">,</span> <span class="n">twoclr</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+sample(colors, 2) : ['Blue', 'Red']
+</pre></div>
+
+<p><br /></p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> This works on immutable because it returns list and don't modify the original sequence. </li>
+    </ul> 
+</div>
+
+<div id="code-block-29" class="code-block">
+<p id="code-header-29" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-29", "code-header-29")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">colors</span> <span class="o">=</span> <span class="p">(</span><span class="s">'Red'</span><span class="p">,</span> <span class="s">'Green'</span><span class="p">,</span> <span class="s">'Blue'</span><span class="p">,</span> <span class="s">'Pink'</span><span class="p">,</span> <span class="s">'White'</span><span class="p">,</span> <span class="s">'Yellow'</span><span class="p">)</span>
+<span class="n">twoclr</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">colors</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"sample(colors, 2) :"</span><span class="p">,</span> <span class="n">twoclr</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+sample(colors, 2) : ['Red', 'Yellow']
+</pre></div>
+
+<p><br /></p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> Shuffling the immutable using sample(): </li>
+    </ul> 
+</div>
+
+<div id="code-block-30" class="code-block">
+<p id="code-header-30" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-30", "code-header-30")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">colors</span> <span class="o">=</span> <span class="p">(</span><span class="s">'Red'</span><span class="p">,</span> <span class="s">'Green'</span><span class="p">,</span> <span class="s">'Blue'</span><span class="p">,</span> <span class="s">'Pink'</span><span class="p">,</span> <span class="s">'White'</span><span class="p">,</span> <span class="s">'Yellow'</span><span class="p">)</span>
+<span class="n">twoclr</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">colors</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">colors</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">twoclr</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+['Yellow', 'Red', 'Green', 'White', 'Blue', 'Pink']
+</pre></div>
+
+<hr />
+
+<h4 id="choices-population-weightsnone--cum_weightsnone-k1">choices (population, weights=None, *, cum_weights=None, k=1)</h4>
+
+<p> Returns list containing k random elements from population with replacement(Element might repeat). </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> population : </strong> Iterable of items from which choices to be made.  </li>
+        <li> <strong> weights : </strong> Defines weight for each items for getting chosen by random function. </li>
+        <li> <strong> cum_weights : </strong> accepts cumulative weights. Internally relative weights are converted to cumulative weights. </li>
+        <li> <strong> k :</strong> Number of elements to be chosen from given population. </li>
+    </ul> 
+</div>
+
+<p><br /></p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> If 'weights' are not defined each item has equal weight for selection. </li>
+    </ul> 
+</div>
+
+<div id="code-block-31" class="code-block">
+<p id="code-header-31" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-31", "code-header-31")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">colors</span> <span class="o">=</span> <span class="p">(</span><span class="s">'Red'</span><span class="p">,</span> <span class="s">'Green'</span><span class="p">,</span> <span class="s">'Blue'</span><span class="p">,</span> <span class="s">'Pink'</span><span class="p">,</span> <span class="s">'White'</span><span class="p">,</span> <span class="s">'Yellow'</span><span class="p">)</span>
+<span class="n">weights</span> <span class="o">=</span> <span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">threeclrs</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choices</span><span class="p">(</span><span class="n">colors</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"choices(colors, weights=weights, k=3) :"</span><span class="p">,</span> <span class="n">threeclrs</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+choices(colors, k=3) : ['Pink', 'Green', 'Green']
+</pre></div>
+
+<p><br /></p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> Passing relative weights </li>
+    </ul> 
+</div>
+
+<div id="code-block-32" class="code-block">
+<p id="code-header-32" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-32", "code-header-32")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">colors</span> <span class="o">=</span> <span class="p">(</span><span class="s">'Red'</span><span class="p">,</span> <span class="s">'Green'</span><span class="p">,</span> <span class="s">'Blue'</span><span class="p">,</span> <span class="s">'Pink'</span><span class="p">,</span> <span class="s">'White'</span><span class="p">,</span> <span class="s">'Yellow'</span><span class="p">)</span>
+<span class="n">weights</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+<span class="n">threeclrs</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choices</span><span class="p">(</span><span class="n">colors</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'choices(colors, weights=weights, k=3) :'</span><span class="p">,</span> <span class="n">threeclrs</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+choices(colors, weights=weights, k=3) : ['Pink', 'Red', 'Yellow']
+</pre></div>
+
+<p><br /></p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> Passing cumulative weights  </li>
+    </ul> 
+</div>
+
+<div id="code-block-33" class="code-block">
+<p id="code-header-33" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-33", "code-header-33")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">colors</span> <span class="o">=</span> <span class="p">(</span><span class="s">'Red'</span><span class="p">,</span> <span class="s">'Green'</span><span class="p">,</span> <span class="s">'Blue'</span><span class="p">,</span> <span class="s">'Pink'</span><span class="p">,</span> <span class="s">'White'</span><span class="p">,</span> <span class="s">'Yellow'</span><span class="p">)</span>
+<span class="n">cWeights</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">55</span><span class="p">)</span>
+<span class="n">threeclrs</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choices</span><span class="p">(</span><span class="n">colors</span><span class="p">,</span> <span class="n">cum_weights</span><span class="o">=</span><span class="n">cWeights</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'choices(colors, cum_weights=cWeights, k=3) :'</span><span class="p">,</span> <span class="n">threeclrs</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+choices(colors, cum_weights=cWeights, k=3) : ['Blue', 'Green', 'Blue']
+</pre></div>
+
+<hr />
+
+<h3 id="functions-for-real-values">Functions for real values</h3>
+
+<h4 id="random-1">random()</h4>
+
+<p> Returns random float between 0.0 and 1.0 </p>
+
+<div id="code-block-34" class="code-block">
+<p id="code-header-34" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-34", "code-header-34")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">random</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'random() :'</span><span class="p">,</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">())</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+random() : 0.16482303440503665
+</pre></div>
+
+<hr />
+
+<h4 id="uniforma-b">uniform(a, b)</h4>
+
+<p> Returns random float n such that (a &lt;= n &lt;= b). </p>
+
+<div id="code-block-35" class="code-block">
+<p id="code-header-35" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-35", "code-header-35")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">random</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'uniform(1.0, 2.0) :'</span><span class="p">,</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+uniform(1.0, 2.0) : 1.9590486556572975
+</pre></div>
+
+<hr />
+
+<h3 id="managing-random">Managing random</h3>
+
+<h4 id="seedanone-version2">seed(a=None, version=2)</h4>
+
+<p> Initialises random number generator. </p>
+
+<div id="tut-content"> 
+    <ul>
+        <li> <strong> a : </strong> Default value 2 converts bytes, str and bytearray to int taking all of its bits in consideration. </li>
+        <li> <strong> version : </strong> Value 1 algorithm for str and bytes generates narrower range of seeds. </li>
+    </ul> 
+</div>
+
+<div id="code-block-36" class="code-block">
+<p id="code-header-36" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-36", "code-header-36")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">urandom</span><span class="p">(</span><span class="mi">64</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<hr />
+
+<h4 id="getstate">getstate()</h4>
+
+<p> Returns object which captures current internal state of the generator. Returned object can be used to restore state. </p>
+
+<div id="code-block-37" class="code-block">
+<p id="code-header-37" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-37", "code-header-37")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">curState</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">getstate</span><span class="p">()</span></code></pre></figure>
+
+</div>
+
+<hr />
+
+<h4 id="getstate-1">getstate()</h4>
+
+<p> Restore the state which is acquired earlier by getstate(). </p>
+
+<div id="code-block-38" class="code-block">
+<p id="code-header-38" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-38", "code-header-38")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">curState</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">getstate</span><span class="p">()</span>
+<span class="n">random</span><span class="o">.</span><span class="n">setstate</span><span class="p">(</span><span class="n">curState</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<hr />
+
+<h4 id="getrandbitsk">getrandbits(k)</h4>
+
+<p> Returns python integer with k random bits. It enables randrange() to handle arbitrarily large ranges. </p>
+
+<div id="code-block-39" class="code-block">
+<p id="code-header-39" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-39", "code-header-39")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">random</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'getrandbits(15) :'</span><span class="p">,</span> <span class="n">random</span><span class="o">.</span><span class="n">getrandbits</span><span class="p">(</span><span class="mi">15</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+getrandbits(15) : 31357
+</pre></div>
+
+<hr />
+
+<h3 id="random-number-generator">Random number generator</h3>
+
+<h4 id="randomseed">Random([seed])</h4>
+
+<p> Default pseudo-random number generator used by the random module. </p>
+
+<hr />
+
+<h4 id="systemrandomseed">SystemRandom([seed])</h4>
+
+<p>  Uses the os.urandom() function for generating random numbers from sources provided by the operating system. suited for cryptographic use. </p>
+
+<div id="code-block-40" class="code-block">
+<p id="code-header-40" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-40", "code-header-40")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">SystemRandom</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'random() :'</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">random</span><span class="p">())</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+random() : 0.9067554473557309
+</pre></div>
+
+<hr />
+
+<h2 id="statistics-module">statistics module</h2>
+
+<h3 id="meansequence">mean(sequence)</h3>
+
+<p> Samples arithmetic mean of sequence. </p>
+
+<div id="code-block-41" class="code-block">
+<p id="code-header-41" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-41", "code-header-41")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">statistics</span>
+<span class="kn">from</span> <span class="nn">fractions</span> <span class="kn">import</span> <span class="n">Fraction</span> <span class="k">as</span> <span class="n">F</span>
+<span class="kn">from</span> <span class="nn">decimal</span> <span class="kn">import</span> <span class="n">Decimal</span> <span class="k">as</span> <span class="n">D</span>
+
+<span class="n">intSeq</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">19</span><span class="p">]</span>
+<span class="n">frcSeq</span> <span class="o">=</span> <span class="p">[</span><span class="n">F</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">F</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">F</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="n">F</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">17</span><span class="p">)]</span>
+<span class="n">dclSeq</span> <span class="o">=</span> <span class="p">[</span><span class="n">D</span><span class="p">(</span><span class="s">'2.6'</span><span class="p">),</span> <span class="n">D</span><span class="p">(</span><span class="s">'6.5'</span><span class="p">),</span> <span class="n">D</span><span class="p">(</span><span class="s">'7.6'</span><span class="p">),</span> <span class="n">D</span><span class="p">(</span><span class="s">'3.8'</span><span class="p">),</span> <span class="n">D</span><span class="p">(</span><span class="s">'5.9'</span><span class="p">)]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'mean(intSeq) :'</span><span class="p">,</span> <span class="n">statistics</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">intSeq</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'mean(frcSeq) :'</span><span class="p">,</span> <span class="n">statistics</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">frcSeq</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'mean(dclSeq) :'</span><span class="p">,</span> <span class="n">statistics</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dclSeq</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+mean(intSeq) : 43.30769230769231
+mean(frcSeq) : 2019/3808
+mean(dclSeq) : 5.28
+</pre></div>
+
+<hr />
+
+<h3 id="median_lowdata">median_low(data)</h3>
+
+<p> Returns the low median of numeric data. </p>
+
+<div id="code-block-42" class="code-block">
+<p id="code-header-42" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-42", "code-header-42")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">statistics</span>
+
+<span class="n">intSeq</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">19</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'median_low(intSeq) :'</span><span class="p">,</span> <span class="n">statistics</span><span class="o">.</span><span class="n">median_low</span><span class="p">(</span><span class="n">intSeq</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+median_low(intSeq) : 45
+</pre></div>
+
+<hr />
+
+<h3 id="median_highdata">median_high(data)</h3>
+
+<p> Return the high median of data. </p>
+
+<div id="code-block-43" class="code-block">
+<p id="code-header-43" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-43", "code-header-43")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">statistics</span>
+
+<span class="n">intSeq</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">19</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'median_high(intSeq) :'</span><span class="p">,</span> <span class="n">statistics</span><span class="o">.</span><span class="n">median_high</span><span class="p">(</span><span class="n">intSeq</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+median_high(intSeq) : 455
+</pre></div>
+
+<hr />
+
+<h3 id="modedata">mode(data)</h3>
+
+<p> Return the single most common data point from discrete or nominal data. </p>
+
+<div id="code-block-44" class="code-block">
+<p id="code-header-44" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-44", "code-header-44")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">statistics</span>
+
+<span class="n">dctSeq</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2.8</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">2.7</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">2.6</span><span class="p">,</span> <span class="mf">2.7</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'mode(dctSeq) :'</span><span class="p">,</span> <span class="n">statistics</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="n">dctSeq</span><span class="p">))</span>
+
+<span class="n">strSeq</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Red'</span><span class="p">,</span> <span class="s">'Blue'</span><span class="p">,</span> <span class="s">'Green'</span><span class="p">,</span> <span class="s">'Red'</span><span class="p">,</span> <span class="s">'Blue'</span><span class="p">,</span> <span class="s">'Green'</span><span class="p">,</span> <span class="s">'Blue'</span><span class="p">,</span> <span class="s">'Red'</span><span class="p">,</span> <span class="s">'Blue'</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'mode(strSeq) :'</span><span class="p">,</span> <span class="n">statistics</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="n">strSeq</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+mode(dctSeq) : 2.5
+mode(strSeq) : Blue
+</pre></div>
+
+<hr />
+
+<h3 id="stdevdata-xbarnone">stdev(data, xbar=None)</h3>
+
+<p> Returns standard deviation. </p>
+
+<div id="code-block-45" class="code-block">
+<p id="code-header-45" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-45", "code-header-45")</script>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">statistics</span>
+
+<span class="n">fseq</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2.8</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">2.7</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">2.6</span><span class="p">,</span> <span class="mf">2.7</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'stdev(fseq, xbar=0.25) :'</span><span class="p">,</span> <span class="n">statistics</span><span class="o">.</span><span class="n">stdev</span><span class="p">(</span><span class="n">fseq</span><span class="p">,</span> <span class="n">xbar</span><span class="o">=</span><span class="mf">0.25</span><span class="p">))</span></code></pre></figure>
+
+</div>
+
+<div class="result"><p class="result-header"><b>Output</b></p>
+<pre class="result-content">
+stdev(fseq, xbar=0.25) : 0.3917198545446026
+</pre></div>
+
+<hr />
+
 
 
     <div class="tags">
