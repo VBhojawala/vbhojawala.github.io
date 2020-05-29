@@ -1,0 +1,8 @@
+---
+title: "nan"
+tagName: nan
+search: exclude
+permalink: tag_nan.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

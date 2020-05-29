@@ -1,0 +1,8 @@
+---
+title: "fsum()"
+tagName: fsum()
+search: exclude
+permalink: tag_fsum().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

@@ -1,0 +1,8 @@
+---
+title: "median high()"
+tagName: median_high()
+search: exclude
+permalink: tag_median_high().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

@@ -1,0 +1,8 @@
+---
+title: "fmod()"
+tagName: fmod()
+search: exclude
+permalink: tag_fmod().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

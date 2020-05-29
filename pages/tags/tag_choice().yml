@@ -1,0 +1,8 @@
+---
+title: "choice()"
+tagName: choice()
+search: exclude
+permalink: tag_choice().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

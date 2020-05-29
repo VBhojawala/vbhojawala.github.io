@@ -1,0 +1,8 @@
+---
+title: "isinf()"
+tagName: isinf()
+search: exclude
+permalink: tag_isinf().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

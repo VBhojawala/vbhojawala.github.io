@@ -1,0 +1,8 @@
+---
+title: "randint()"
+tagName: randint()
+search: exclude
+permalink: tag_randint().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

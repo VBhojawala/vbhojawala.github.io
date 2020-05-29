@@ -1,0 +1,8 @@
+---
+title: "randrange()"
+tagName: randrange()
+search: exclude
+permalink: tag_randrange().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

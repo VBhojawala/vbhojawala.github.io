@@ -1,0 +1,8 @@
+---
+title: "fabs()"
+tagName: fabs()
+search: exclude
+permalink: tag_fabs().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

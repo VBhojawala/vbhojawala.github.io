@@ -1,0 +1,8 @@
+---
+title: "copysign()"
+tagName: copysign()
+search: exclude
+permalink: tag_copysign().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

@@ -1,0 +1,8 @@
+---
+title: "SystemRandom()"
+tagName: SystemRandom()
+search: exclude
+permalink: tag_SystemRandom().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

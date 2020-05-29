@@ -1,0 +1,8 @@
+---
+title: "getrandbits()"
+tagName: getrandbits()
+search: exclude
+permalink: tag_getrandbits().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

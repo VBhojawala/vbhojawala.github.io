@@ -1,0 +1,8 @@
+---
+title: "factorial()"
+tagName: factorial()
+search: exclude
+permalink: tag_factorial().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

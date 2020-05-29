@@ -1,0 +1,8 @@
+---
+title: "mean()"
+tagName: mean()
+search: exclude
+permalink: tag_mean().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

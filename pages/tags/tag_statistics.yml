@@ -1,0 +1,8 @@
+---
+title: "statistics"
+tagName: statistics
+search: exclude
+permalink: tag_statistics.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

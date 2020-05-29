@@ -1,0 +1,8 @@
+---
+title: "random()"
+tagName: random()
+search: exclude
+permalink: tag_random().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

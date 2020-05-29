@@ -1,0 +1,8 @@
+---
+title: "stdev()"
+tagName: stdev()
+search: exclude
+permalink: tag_stdev().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

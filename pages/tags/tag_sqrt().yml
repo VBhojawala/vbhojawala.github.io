@@ -1,0 +1,8 @@
+---
+title: "sqrt()"
+tagName: sqrt()
+search: exclude
+permalink: tag_sqrt().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

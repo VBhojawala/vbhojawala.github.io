@@ -1,0 +1,8 @@
+---
+title: "seed()"
+tagName: seed()
+search: exclude
+permalink: tag_seed().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

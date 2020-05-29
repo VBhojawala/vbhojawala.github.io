@@ -1,0 +1,8 @@
+---
+title: "isfinite()"
+tagName: isfinite()
+search: exclude
+permalink: tag_isfinite().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

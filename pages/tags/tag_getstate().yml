@@ -1,0 +1,8 @@
+---
+title: "getstate()"
+tagName: getstate()
+search: exclude
+permalink: tag_getstate().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

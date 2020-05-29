@@ -1,0 +1,8 @@
+---
+title: "pi"
+tagName: pi
+search: exclude
+permalink: tag_pi.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

@@ -541,3 +541,44 @@ allowed-tags:
   - YAML
   - JSON
   - logging.config
+  - nan
+  - inf
+  - pi
+  - e
+  - floor()
+  - ceil()
+  - factorial()
+  - sqrt()
+  - fabs()
+  - copysign()
+  - fmod()
+  - fsum()
+  - gcd()
+  - isinf()
+  - isfinite()
+  - isnan()
+  - frexp()
+  - ldexp()
+  - pow()
+  - trunc()
+  - random
+  - randint()
+  - randrange()
+  - choice()
+  - shuffle()
+  - sample()
+  - choices()
+  - random()
+  - uniform()
+  - seed()
+  - getstate()
+  - setstate()
+  - getrandbits()
+  - Random()
+  - SystemRandom()
+  - statistics
+  - mean()
+  - median_low()
+  - median_high()
+  - mode()
+  - stdev()
