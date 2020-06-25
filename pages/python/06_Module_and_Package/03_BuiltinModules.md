@@ -565,7 +565,7 @@ pow(2.5, 5.6) : 169.22481522342434
 import math
 
 print("trunc(12.45) :", math.trunc(12.45))
-print("trunc(12.45) :", math.trunc(12.95))
+print("trunc(12.95) :", math.trunc(12.95))
 
 {% endhighlight %}
 </div>
@@ -573,7 +573,7 @@ print("trunc(12.45) :", math.trunc(12.95))
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
 trunc(12.45) : 12
-trunc(12.45) : 12
+trunc(12.95) : 12
 </pre></div>
 
 <hr/>

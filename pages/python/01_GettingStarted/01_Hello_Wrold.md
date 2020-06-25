@@ -5,8 +5,8 @@ tags: [Hello_World, comments, python_console_calculator]
 sidebar: python_sidebar
 permalink: python_hello_world.html
 folder: python
-prev: python_getting_started.html
-prev_title: Getting Started
+prev: python_install_python_pycharm.html
+prev_title: Install Python and Pycharm
 next: python_variables.html
 next_title: Python Variables
 summary: print() function and use cases, types of comments, python console as calculator. 

@@ -3,6 +3,7 @@
         "attrdict",
         "behaviour",
         "copysign",
+        "dunder",
         "fabs",
         "filemode",
         "filterwarnings",

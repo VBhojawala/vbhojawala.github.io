@@ -24,6 +24,14 @@ $ learn kdenlive video editing
 
 
 
+############## OOP INDEX #######################
+
+
+1. Class and Object
+2. Intercepting Attribute access
+3. Dunder
+
+
 
 
  ***************************  DONE  ************************************

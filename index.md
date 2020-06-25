@@ -74,7 +74,7 @@ summary:
     </div>
 
     <div class="col-md-3 col-sm-6">
-        <a href='python_getting_started.html'> <div class="panel panel-default text-center">
+        <a href='python_install_python_pycharm.html'> <div class="panel panel-default text-center">
             <div class="panel-heading">
                 {% include image.html file="/tutorials/python/Python-logo-color.png" alt="Python" %}
             </div>

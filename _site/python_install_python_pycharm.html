@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<meta name="theme-color" content="#36362C">
+<link rel="icon" sizes="192x192" href="images/favicon.ico">
+<title>Install Python and Pycharm | Asha Tutorials</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Raleway:600&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">  
+<link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet"> 
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="site" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        function copyHover(codeId, copyId){
+            $('#'+codeId).mouseenter(function() {
+                $('#'+copyId).show();
+            }).mouseleave(function() {
+                $('#'+copyId).hide();
+            });
+
+            $('#'+copyId).mouseenter(function() {
+                $('#'+copyId).show();
+            }).mouseleave(function() {
+                $('#'+copyId).hide();
+            });
+
+            $('#'+copyId).click(function(){
+                lines =document.getElementById(codeId).textContent.split('\n');
+                result= lines.slice(3, lines.length-1).join("\n");
+                var $temp = $("<textarea>");
+                $("body").append($temp);
+                $temp.val(result).select();
+                console.log($temp.val(result))
+                document.execCommand("copy");
+                $temp.remove();
+                $('#'+copyId).attr('data-original-title', 'Copied').tooltip('show');   
+                setTimeout(() => {
+                    $('#'+copyId).attr('data-original-title', 'Copy to ClipBoard').tooltip('show'); 
+                }, 10000);
+            });
+        }
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            if ($(window).width() <= 972) {
+                if (localStorage.getItem('last_visited') != null &&
+                    localStorage.getItem('navbar') == "show"){
+                    localStorage.setItem('navbar','hide')
+                    $("#tg-sb-sidebar").toggle();
+                    $("#tg-sb-content").toggleClass('col-md-9');
+                    $("#tg-sb-content").toggleClass('col-md-12');
+                    $("#tg-sb-icon-mobile").toggleClass('fa-toggle-on');
+                    $("#tg-sb-icon-mobile").toggleClass('fa-toggle-off');
+                }
+                else if(localStorage.getItem('navbar') == "hide"){
+                    $("#tg-sb-sidebar").toggle();
+                    $("#tg-sb-content").toggleClass('col-md-9');
+                    $("#tg-sb-content").toggleClass('col-md-12');
+                    $("#tg-sb-icon-mobile").toggleClass('fa-toggle-on');
+                    $("#tg-sb-icon-mobile").toggleClass('fa-toggle-off');
+                }
+            }
+            else{
+                if (localStorage.getItem('navbar') == "hide" ){
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+                }
+                else if(localStorage.navbar == "show" ){
+                }
+                else{
+                    localStorage.setItem('navbar','show')
+                }
+
+            }        
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+                if(localStorage.getItem('navbar') == "show"){
+                    localStorage.setItem('navbar','hide')
+                }
+                else{
+                    localStorage.setItem('navbar','show')
+                }
+            });
+            $("#tg-sb-link-mobile").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon-mobile").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon-mobile").toggleClass('fa-toggle-off');
+                if(localStorage.getItem('navbar') == "hide"){
+                    localStorage.setItem('navbar','show');
+                }
+                else{
+                    localStorage.setItem('navbar','hide')
+                }
+                if (localStorage.getItem('last_visited') == null ){
+                    localStorage.setItem('last_visited', new Date())
+                }
+
+            });
+        });
+    </script>
+   
+
+    <script>
+         $(document).ready(function() {
+            $('#searchModel').on('shown.bs.modal', function () {
+                $('#search-input').focus();
+            });  
+
+            function search_shortcut(e) {
+                if ( e.keyCode == 113) {
+                    document.getElementById('search-tool').click()
+                }
+            }
+            // register the handler 
+            document.addEventListener('keyup', search_shortcut, false);  
+    });
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            $(window).scroll(function(){
+                if($(this).scrollTop() > 50){
+                    $("#back-to-top").fadeIn(); 
+                }else{
+                    $("#back-to-top").fadeOut();
+                }
+            });
+            $("#back-to-top").click(function(){
+                document.activeElement.blur();
+                $('body,html').animate({scrollTop: 0}, 400);
+                return false;    
+            });
+        });
+    </script>
+    
+    <!-- Include the standard DataTables bits -->
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.js"></script>
+    <!-- First, this walks through the tables that occur between ...-begin
+         and ...-end and add the "datatable" class to them.
+         Then it invokes DataTable's standard initializer
+         Credit here: http://www.beardedhacker.com/blog/2015/08/28/add-class-attribute-to-markdown-table/
+      -->
+    <script>
+      $(document).ready(function(){
+          $('div.datatable-begin').nextUntil('div.datatable-end', 'table').addClass('display');
+          $('table.display').DataTable( {
+              paging: true,
+              stateSave: true,
+              searching: true
+          });
+       });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html"><span class="projectTitle"> <img class="projectTitle " src="/images/company_logo_White.png"/></a>
+
+
+            <!--Mobile Search-->
+            <ul class="navbar-toggle mobile-toggle">
+                <!-- Search popup -->
+                    <a id="search-tool-mobile" href="#"  data-toggle="modal" data-target="#searchModel">
+                        <i class="fa fa-search"></i>
+                    </a>
+            </ul>    
+            <!--End Mobile Search-->
+
+            <ul id="mobile-nav" class="navbar-toggle mobile-toggle">
+                <a id="tg-sb-link-mobile" href="#"><i id="tg-sb-icon-mobile" class="fa fa-toggle-on"></i> Nav</a>
+            </ul>
+
+            
+            
+        </div>
+
+        
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li class="navbar-hide-nav"><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+
+
+
+                
+                
+                
+                <li class="active"><a href="python_install_python_pycharm.html">Python</a></li>
+                
+                
+                
+                <li><a href="news">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                
+                <!-- 
+			        <li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:?subject=Asha Tutorials feedback&body=I have some feedback about the Install Python and Pycharm page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		         -->
+                <!--comment out this block if you want to hide search-->
+                <li>
+                            <!-- Search popup -->
+                    <a class="navbar-hide-nav" id="search-tool" href="#"  data-toggle="modal" data-target="#searchModel" data-toggle="tooltip" data-placement="bottom" title="Press F2 to Search">
+                        <i class="fa fa-search"></i>
+                    </a>
+                    
+         
+                
+            </li>
+            </ul>
+
+
+            
+        </div>
+        <!-- collapse Navbar -->
+        
+                   <!-- Modal -->
+                   <div class="modal fade nav" id="searchModel" tabindex="-1" role="dialog" aria-labelledby="searchModelLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                    <div class="modal-content results-model">
+                        <div class="modal-header">
+                            <div id="search-demo-container" class="search">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <i style="color: white;" class="fa fa-times" aria-hidden="true"></i>
+                                </button>
+                                <input type="text" class="form-control" id="search-input" placeholder="search..." autofocus>
+                            </div>
+
+                        </div>
+                        <div class="result-model">
+                            <ul class="search-result results-model" id="results-container"></ul>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <!-- End Search popup -->
+
+            </li>    
+
+
+                <script src="js/jekyll-search.js" type="text/javascript"></script>
+                <script type="text/javascript" >
+                        SimpleJekyllSearch.init({
+                            searchInput: document.getElementById('search-input'),
+                            resultsContainer: document.getElementById('results-container'),
+                            dataSource: 'search.json',
+                            searchResultTemplate: '<li style="margin: 0px 0px;"><a href="{url}" title="Install Python and Pycharm       " folder="python">{title} <sub>in {folder}</sub></a></li>',
+                noResultsText: '<li style="margin: 0px 0px;"><a href="#">No results found.</a></li>',
+                        limit: 10,
+                        fuzzy: true,
+                })
+                </script>
+                <!--end search-->
+                
+
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle">Python </li>
+  
+  
+  
+  <li>
+      <a title="Getting Started" href="#">Getting Started</a>
+      <ul class="nav1">
+          
+          
+          
+          <li class="active"><a title="Install Python and Pycharm" href="python_install_python_pycharm.html">Install Python and Pycharm</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Hello World!" href="python_hello_world.html">Hello World!</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Variables" href="python_variables.html">Variables</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Data Types" href="#">Data Types</a>
+      <ul class="nav1">
+          
+          
+          
+          <li><a title="Decimal and Fraction" href="python_decimal_fraction.html">Decimal and Fraction</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="String" href="python_string.html">String</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Bytes and ByteArray" href="python_bytes_bytearray.html">Bytes and ByteArray</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="DateTime" href="python_date_time_datetime.html">DateTime</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Calendar" href="python_calendar.html">Calendar</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="ControlFlow and Looping" href="#">ControlFlow and Looping</a>
+      <ul class="nav1">
+          
+          
+          
+          <li><a title="Control Flow" href="python_control_flow.html">Control Flow</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="While Loop" href="python_while_loop.html">While Loop</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="For Loop" href="python_for_loop.html">For Loop</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Functions" href="#">Functions</a>
+      <ul class="nav1">
+          
+          
+          
+          <li><a title="Functions" href="python_functions.html">Functions</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Recursion" href="python_recursion.html">Recursion</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Builtin Data Structures" href="#">Builtin Data Structures</a>
+      <ul class="nav1">
+          
+          
+          
+          <li><a title="List" href="python_list.html">List</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tuple and NamedTuple" href="python_tuple_namedtuple.html">Tuple and NamedTuple</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Set and FrozenSet" href="python_set_frozenset.html">Set and FrozenSet</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Dictionary" href="python_dictionary.html">Dictionary</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Counter" href="python_counter.html">Counter</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="ChainMap" href="python_chainmap.html">ChainMap</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Deque" href="python_deque.html">Deque</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="heapq" href="python_heapq.html">heapq</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Enum" href="python_enum.html">Enum</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Array" href="python_array.html">Array</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Struct" href="python_struct.html">Struct</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="MemoryView" href="python_memoryview.html">MemoryView</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Exception Handling" href="#">Exception Handling</a>
+      <ul class="nav1">
+          
+          
+          
+          <li><a title="Exception Handling" href="python_exception_handling.html">Exception Handling</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Traceback" href="python_traceback.html">Traceback</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Warnings" href="python_warnings.html">Warnings</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Module and Package" href="#">Module and Package</a>
+      <ul class="nav1">
+          
+          
+          
+          <li><a title="Module, Package and Import" href="python_module_package_import.html">Module, Package and Import</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Logging" href="python_logging.html">Logging</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Builtin Modules" href="python_builtin_modules.html">Builtin Modules</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Install Python and Pycharm</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   <!--  -->
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    <!-- 
+
+    <a target="_blank" rel="noopener" href="https://github.com/ashatutorials/pages/python/01_GettingStarted/00_Install_Python.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+     -->
+
+   <h2 id="install-python">Install Python</h2>
+
+<ul id="profileTabs" class="nav-tab-profile ">
+    <li class="active"><a href="#Linux" data-toggle="tab">Linux</a></li>
+    <li><a href="#Windows" data-toggle="tab">Windows</a></li>
+    <li><a href="#Mac" data-toggle="tab">Mac</a></li>
+</ul>
+
+<div class="tab-content">
+<div role="tabpanel" class="tab-pane active" id="Linux">
+    <h3>Linux (Ubuntu)</h3>
+
+<div id="tut-content"> 
+    <ol>
+        <li> Checking Python 3 version  </li>
+        <div id="tut-img">
+            <img src="/images/tutorials/python/python_version_linux.png" class="tut-img" alt="python version linux" />
+        </div> <br />
+        
+        <li> Install required tools for Python  </li>
+        
+        
+        
+        <div id="code-block-1" class="code-block">
+        <p id="code-header-1" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-1", "code-header-1")</script>
+        
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"> <span class="nb">sudo </span>apt-get <span class="nb">install </span>zlib1g-dev libssl-dev libffi-dev </code></pre></figure>
+
+        </div>
+
+        <li> Checking Python Versions  </li>
+        
+        <a href="https://www.python.org/ftp/python/" target="_blank">python.org/ftp/python/</a>
+
+        <div id="tut-img">
+            <img src="/images/tutorials/python/python_linux_site1.png" class="tut-img" alt="python_linux_site1" />
+        </div>
+        <div id="tut-img">
+            <img src="/images/tutorials/python/python_linux_site2.png" class="tut-img" alt="python_linux_site2" />
+        </div> <br />
+
+        <li> Execute following command with target Python version  </li>
+        
+        
+        
+        <div id="code-block-2" class="code-block">
+        <p id="code-header-2" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-2", "code-header-2")</script>
+        
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nb">cd</span> /opt
+<span class="nb">sudo </span>wget https://www.python.org/ftp/python/3.8.3/Python-3.8.3.tgz
+<span class="nb">sudo tar</span> <span class="nt">-xzf</span> Python-3.8.3.tgz
+<span class="nb">cd </span>Python-3.8.3
+<span class="nb">sudo</span> ./configure <span class="nt">--enable-optimizations</span>
+<span class="nb">sudo </span>make altinstall
+<span class="nb">cd</span> ..
+<span class="nb">sudo rm </span>Python-3.8.3.tgz 
+        </code></pre></figure>
+
+        </div>
+
+        <li> Verifying installation and locate python interpreter path  </li>
+        <div id="tut-img">
+            <img src="/images/tutorials/python/python_linux_verify.png" class="tut-img" alt="python_linux_verify" />
+        </div> <br />
+    </ol> 
+</div>
+
+</div>
+
+<div role="tabpanel" class="tab-pane" id="Windows">
+    <h3>Windows</h3>
+    <div id="tut-content"> 
+    <ol>    
+        <li> Go to python for Windows download website  </li>
+        <a href="https://www.python.org/downloads/windows/" target="_blank">python.org/downloads/windows/</a> <br /> <br />
+
+        <li> Select the Python version to be installed</li>
+        <div id="tut-img">
+            <img src="/images/tutorials/python/python_windows_site1.png" class="tut-img" alt="python_windows_site1" />
+        </div> <br />
+
+        <li> Scroll down and download the installer file</li>
+        <div id="tut-img">
+            <img src="/images/tutorials/python/python_windows_site2.png" class="tut-img" alt="python_windows_site2" />
+        </div> <br />
+
+        <li> Open the Installer and check 'Select Add Python X.X to PATH'</li>
+        <div id="tut-img">
+            <img src="/images/tutorials/python/python_windows_installer.png" class="tut-img" alt="python_windows_installer" />
+        </div> <br />
+
+        <div id="tut-img">
+            <img src="/images/tutorials/python/python_windows_complete.png" class="tut-img" alt="python_windows_complete" />
+        </div> <br />
+
+        <li> Checking Python version and python interpreter path </li>
+        <div id="tut-img">
+            <img src="/images/tutorials/python/python_windows_check.png" class="tut-img" alt="python_windows_check" />
+        </div> <br />
+
+    </ol>
+    </div>
+</div>
+
+
+<div role="tabpanel" class="tab-pane" id="Mac">
+    <h3>Mac</h3>
+    <div id="tut-content"> 
+    <ol>    
+        <li> Go to python for MacOs download website  </li>
+        <a href="https://www.python.org/downloads/mac-osx/" target="_blank">www.python.org/downloads/mac-osx/</a> <br /> <br />
+
+        <li> Select the Python version to be installed</li>
+        <div id="tut-img">
+            <img src="/images/tutorials/python/python_mac_website1.png" class="tut-img" alt="python_mac_website1" />
+        </div> <br />
+
+        <li> Scroll Down the page, download and start the python installer</li>
+        <div id="tut-img">
+            <img src="/images/tutorials/python/python_mac_website2.png" class="tut-img" alt="python_mac_website1" />
+        </div> <br />
+
+        <li> Complete the setup and install certificates </li>
+        <div id="tut-img">
+            <img src="/images/tutorials/python/python_mac_setup.png" class="tut-img" alt="python_mac_setup" />
+        </div> <br />
+
+        <li> Double click on install certificate file </li>
+        <div id="tut-img">
+            <img src="/images/tutorials/python/python_mac_install_certi.png" class="tut-img" alt="python_mac_install_certificate" />
+        </div> <br />
+
+        <li> Verifying installation and checking interpreter path </li>
+        <div id="tut-img">
+            <img src="/images/tutorials/python/python_mac_verify.png" class="tut-img" alt="python_mac_verify" />
+        </div> <br />
+
+        <li> Alternate path : Interpreter path ‘usr/local/bin/pythonX.X’ can also be used alternatively. </li>
+        <div id="tut-img">
+            <img src="/images/tutorials/python/python_mac_alternate.png" class="tut-img" alt="python_mac_alternate" />
+        </div> <br />
+
+    </ol>
+</div>
+
+</div>
+</div>
+
+<h2 id="install-pycharm">Install PyCharm</h2>
+
+<div id="tut-content"> 
+    <ol>    
+        <li> Go to PyCharm download site </li>
+        <a href="https://www.jetbrains.com/pycharm/download/" target="_blank">jetbrains.com/pycharm/download/</a> <br /> <br />
+
+        <li> Download the Community Edition </li>
+        <div id="tut-img">
+            <img src="/images/tutorials/python/pycharm_download _site1.png" class="tut-img" alt="pycharm_download _site1" />
+        </div> <br />
+
+        <li> Download and install the PyCharm </li>
+        <div id="tut-img">
+            <img src="/images/tutorials/python/pycharm_download _site2.png" class="tut-img" alt="pycharm_download _site2" />
+        </div> <br />
+
+    </ol>
+</div>
+
+
+    <div class="tags">
+        
+    </div>
+
+<a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button">
+    <span class="fa fa-arrow-up" tabindex="-1"></span>
+</a>
+
+<!-- 
+<div id="commento"></div>
+<script src="https://cdn.commento.io/js/commento.js"></script>
+<noscript>Please enable JavaScript to load the comments.</noscript>
+
+ -->
+
+</div>
+
+<!-- <hr class="shaded"/> -->
+
+<div class="seriesContext" align="right">
+
+    
+
+    
+
+    
+        <a href="python_hello_world.html" >
+            <button type="button" class="btn btn-primary "> 
+                 Next <span class="fa fa-arrow-circle-right fa-lg"></span> <br/> 
+                 Hello World!
+            </button>
+        </a>
+    
+
+    
+
+</div>
+
+
+<hr />
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+                    <p><img src="images/company_logo.png" alt="Company logo"/></p>
+               <p id='copyright'>&copy; 2020 Asha Tutorials.<br /> All rights reserved.</p> <br />
+ 
+<br/><br/><br/>
+
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+</html>
