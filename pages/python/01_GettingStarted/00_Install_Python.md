@@ -172,13 +172,62 @@ sudo rm Python-3.8.3.tgz
 
         <li> Download the Community Edition </li>
         <div id="tut-img">
-            <img src="/images/tutorials/python/pycharm_download _site1.png" class="tut-img" alt="pycharm_download _site1">
+            <img src="/images/tutorials/python/pycharm_download_site1.png" class="tut-img" alt="pycharm_download_site1">
         </div> <br/>
 
         <li> Download and install the PyCharm </li>
         <div id="tut-img">
-            <img src="/images/tutorials/python/pycharm_download _site2.png" class="tut-img" alt="pycharm_download _site2">
+            <img src="/images/tutorials/python/pycharm_download_site2.png" class="tut-img" alt="pycharm_download_site2">
         </div> <br/>
+
+        <li> Open Pycharm and click on Create New Project </li>
+        <div id="tut-img">
+            <img src="/images/tutorials/python/pycharm_welcome.png" class="tut-img" alt="pycharm_welcome">
+        </div> <br/>
+
+
+        <li> Give the name of New Project </li>
+        <div id="tut-img">
+            <img src="/images/tutorials/python/pycharm_project_name.png" class="tut-img" alt="pycharm_project_name">
+        </div> <br/>
+
+        <li> Select Auto detected Python Interpreter for Virtual Environment </li>
+        <div id="tut-img">
+            <img src="/images/tutorials/python/pycharm_select_python_interpreter.png" class="tut-img" alt="pycharm_select_python_interpreter">
+        </div> <br/>
+
+        <p>  Or Manually selecting Python Interpreter for Virtual Environment  </p>
+        <div id="tut-img">
+            <img src="/images/tutorials/python/pycharm_python_interpreter1.png" class="tut-img" alt="pycharm_python_interpreter1">
+        </div> <br/>
+        <div id="tut-img">
+            <img src="/images/tutorials/python/pycharm_python_interpreter2.png" class="tut-img" alt="pycharm_python_interpreter2">
+        </div> <br/>
+
+
+        <li> Click on Create  </li>
+        <div id="tut-img">
+            <img src="/images/tutorials/python/pycharm_create_project_env.png" class="tut-img" alt="pycharm_create_project_env">
+        </div> <br/>
+
+
+        <li> Creating new Python file  </li>
+        <div id="tut-img">
+            <img src="/images/tutorials/python/pycharm_new_python_file.png" class="tut-img" alt="pycharm_new_python_file">
+        </div> <br/>
+
+        <li> Giving file name  </li>
+        <div id="tut-img">
+            <img src="/images/tutorials/python/pycharm_new_filename.png" class="tut-img" alt="pycharm_new_filename">
+        </div> <br/>
+
+        <li> write print() statement and Execute it in console using  shortcut : Alt + Shift + E   </li>
+        <div id="tut-img">
+            <img src="/images/tutorials/python/pycharm_execute_print.png" class="tut-img" alt="pycharm_execute_print">
+        </div> <br/>
+
+
+
 
     </ol>
 </div>
