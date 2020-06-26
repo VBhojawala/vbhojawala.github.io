@@ -172,10 +172,8 @@ sudo rm Python-3.8.3.tgz
 
 <div id="tut-content"> 
     <ol>    
-        <li> Go to PyCharm download site </li>
+        <li> Go to PyCharm download site and Download the Community Edition </li>
         <a href="https://www.jetbrains.com/pycharm/download/" target="_blank">jetbrains.com/pycharm/download/</a> <br/> <br/>
-
-        <li> Download the Community Edition </li>
         <div id="tut-img">
             <img src="/images/tutorials/python/pycharm_download_site1.png" class="tut-img" alt="pycharm_download_site1">
         </div> <br/>
