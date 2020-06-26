@@ -46,7 +46,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="site" href="http://localhost:4000/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="vbhojawala.github.io" href="http://localhost:4000/feed.xml">
 
     <script>
         $(document).ready(function() {
@@ -722,7 +722,7 @@ $('#toc').on('click', 'a', function() {
 <p id="code-header-1" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-1", "code-header-1")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">vSet</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'vSet : {vSet}  Type : {type(vSet)}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'vSet : </span><span class="si">{</span><span class="n">vSet</span><span class="si">}</span><span class="s">  Type : </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">vSet</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -745,12 +745,12 @@ vSet : set()  Type : &lt;class 'set'&gt;
 <p id="code-header-2" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-2", "code-header-2")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowerSet</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">}</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'flowerSet : {flowerSet}  Type : {type(flowerSet)}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'flowerSet : </span><span class="si">{</span><span class="n">flowerSet</span><span class="si">}</span><span class="s">  Type : </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">flowerSet</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
 
 <span class="c1"># OR  set(iterable) : Iterable can be list, set or any object which supports iterator protocol.
 </span>
 <span class="n">flowerSet</span> <span class="o">=</span> <span class="nb">set</span><span class="p">((</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'flowerSet : {flowerSet}  Type : {type(flowerSet)}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'flowerSet : </span><span class="si">{</span><span class="n">flowerSet</span><span class="si">}</span><span class="s">  Type : </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">flowerSet</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -885,17 +885,17 @@ TypeError: unhashable type: 'list'</pre></div>
 <span class="kn">from</span> <span class="nn">fractions</span> <span class="kn">import</span> <span class="n">Fraction</span>
 <span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
 
-<span class="n">s1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span> <span class="s">'Hello Set'</span><span class="p">,</span> <span class="n">b</span><span class="s">'Hello World'</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)}</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'s1 : {s1}'</span><span class="p">)</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span> <span class="s">'Hello Set'</span><span class="p">,</span> <span class="s">b'Hello World'</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)}</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f's1 : </span><span class="si">{</span><span class="n">s1</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
 
 
 <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="n">time</span>
 <span class="n">s2</span> <span class="o">=</span> <span class="p">{</span><span class="n">date</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">13</span><span class="p">),</span> <span class="n">time</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">55</span><span class="p">),</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">55</span><span class="p">)}</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'s2 : {s2}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f's2 : </span><span class="si">{</span><span class="n">s2</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
 
 
 <span class="n">s3</span> <span class="o">=</span> <span class="p">{</span><span class="n">Decimal</span><span class="p">(</span><span class="s">'12.50'</span><span class="p">),</span> <span class="n">Fraction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">Enum</span><span class="p">(</span><span class="s">'Plan'</span><span class="p">,</span> <span class="s">'DIAMOND PLATINUM GOLD SILVER'</span><span class="p">),</span> <span class="nb">frozenset</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">))}</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'s3 : {s3}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f's3 : </span><span class="si">{</span><span class="n">s3</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -950,12 +950,12 @@ Lavender
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowerSet</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">}</span>
 
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">flower</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">flowerSet</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'{i}. {flower}'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">f'</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s">. </span><span class="si">{</span><span class="n">flower</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">Enumerate with start = 1</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">flower</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">flowerSet</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'{i}. {flower}'</span><span class="p">)</span></code></pre></figure>
+    <span class="k">print</span><span class="p">(</span><span class="s">f'</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s">. </span><span class="si">{</span><span class="n">flower</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1012,7 +1012,7 @@ Length :  6
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowerSet</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">}</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'Before :'</span><span class="p">,</span> <span class="n">flowerSet</span><span class="p">)</span>
-<span class="n">flowerSet</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">'Orchids'</span><span class="p">)</span>
+<span class="n">flowerSet</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s">'Orchids'</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'After  :'</span><span class="p">,</span> <span class="n">flowerSet</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -1036,7 +1036,7 @@ After  : {'Rose', 'Tulips', 'Jasmine', 'Lotus', 'Orchids', 'Lavender', 'Lily'}
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowerSet</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">}</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'Before :'</span><span class="p">,</span> <span class="n">flowerSet</span><span class="p">)</span>
-<span class="n">flowerSet</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">'Lily'</span><span class="p">)</span>
+<span class="n">flowerSet</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s">'Lily'</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'After  :'</span><span class="p">,</span> <span class="n">flowerSet</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -1059,7 +1059,7 @@ After  : {'Rose', 'Tulips', 'Jasmine', 'Lotus', 'Lavender', 'Lily'}
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowerSet</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">}</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'Before :'</span><span class="p">,</span> <span class="n">flowerSet</span><span class="p">)</span>
-<span class="n">flowerSet</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s">'Lotus'</span><span class="p">)</span>
+<span class="n">flowerSet</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span><span class="s">'Lotus'</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'After  :'</span><span class="p">,</span> <span class="n">flowerSet</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -1082,7 +1082,7 @@ After  : {'Rose', 'Tulips', 'Jasmine', 'Lavender', 'Lily'}
 <p id="code-header-12" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-12", "code-header-12")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowerSet</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">}</span>
-<span class="n">flowerSet</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s">'Peony'</span><span class="p">)</span></code></pre></figure>
+<span class="n">flowerSet</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span><span class="s">'Peony'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1104,10 +1104,10 @@ KeyError: 'Peony'</pre>
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowerSet</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">}</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">"Before discard('Jasmine') :"</span><span class="p">,</span> <span class="n">flowerSet</span><span class="p">)</span>
-<span class="n">flowerSet</span><span class="o">.</span><span class="n">discard</span><span class="p">(</span><span class="s">'Jasmine'</span><span class="p">)</span>
+<span class="n">flowerSet</span><span class="p">.</span><span class="n">discard</span><span class="p">(</span><span class="s">'Jasmine'</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">"After  discard('Jasmine') :"</span><span class="p">,</span> <span class="n">flowerSet</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">"Before discard('Peony')   :"</span><span class="p">,</span> <span class="n">flowerSet</span><span class="p">)</span>
-<span class="n">flowerSet</span><span class="o">.</span><span class="n">discard</span><span class="p">(</span><span class="s">'Peony'</span><span class="p">)</span>
+<span class="n">flowerSet</span><span class="p">.</span><span class="n">discard</span><span class="p">(</span><span class="s">'Peony'</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">"After  discard('Peony')   :"</span><span class="p">,</span> <span class="n">flowerSet</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -1131,11 +1131,11 @@ After  discard('Peony')   : {'Rose', 'Tulips', 'Lotus', 'Lavender', 'Lily'}
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowerSet</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">}</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'Before pop : '</span><span class="p">,</span> <span class="n">flowerSet</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Popped     : {flowerSet.pop()}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'Popped     : </span><span class="si">{</span><span class="n">flowerSet</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'After  pop : '</span><span class="p">,</span> <span class="n">flowerSet</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">Before pop : '</span><span class="p">,</span> <span class="n">flowerSet</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Popped     : {flowerSet.pop()}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'Popped     : </span><span class="si">{</span><span class="n">flowerSet</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'After  pop : '</span><span class="p">,</span> <span class="n">flowerSet</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -1164,7 +1164,7 @@ After  pop :  {'Lotus', 'Tulips', 'Lavender', 'Rose'}
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowerSet</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">}</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'Before clear() : '</span><span class="p">,</span> <span class="n">flowerSet</span><span class="p">)</span>
-<span class="n">flowerSet</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="n">flowerSet</span><span class="p">.</span><span class="n">clear</span><span class="p">()</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'After  clear() : '</span><span class="p">,</span> <span class="n">flowerSet</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -1186,7 +1186,7 @@ After  clear() :  set()
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowerSet</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">}</span>
 
-<span class="n">copySet</span> <span class="o">=</span> <span class="n">flowerSet</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">copySet</span> <span class="o">=</span> <span class="n">flowerSet</span><span class="p">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'flowerSet :'</span><span class="p">,</span> <span class="n">flowerSet</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'copySet   :'</span><span class="p">,</span> <span class="n">copySet</span><span class="p">)</span></code></pre></figure>
 
@@ -1211,8 +1211,8 @@ copySet   : {'Lavender', 'Tulips', 'Rose', 'Lily', 'Jasmine', 'Lotus'}
 <span class="n">moreFlowers</span> <span class="o">=</span> <span class="p">(</span><span class="s">'Calendula'</span><span class="p">,</span> <span class="s">'Bougainvillea'</span><span class="p">,</span> <span class="s">'Peony'</span><span class="p">,</span> <span class="s">'Dahlia'</span><span class="p">)</span>
 
 
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Before update : </span><span class="se">\n</span><span class="s"> flowerset : {flowerSet} </span><span class="se">\n</span><span class="s"> moreFlowers : {moreFlowers}'</span><span class="p">)</span>
-<span class="n">flowerSet</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">moreFlowers</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'Before update : </span><span class="se">\n</span><span class="s"> flowerset : </span><span class="si">{</span><span class="n">flowerSet</span><span class="si">}</span><span class="s"> </span><span class="se">\n</span><span class="s"> moreFlowers : </span><span class="si">{</span><span class="n">moreFlowers</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="n">flowerSet</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="n">moreFlowers</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'flowerset After update() : '</span><span class="p">,</span> <span class="n">flowerSet</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -1237,8 +1237,8 @@ flowerset After update() :  {'Tulips', 'Lily', 'Peony', 'Dahlia', 'Lotus', 'Rose
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowerSet</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">}</span>
 <span class="n">flowers2</span> <span class="o">=</span> <span class="p">(</span><span class="s">'Tulips'</span><span class="p">,</span> <span class="s">'Calendula'</span><span class="p">,</span> <span class="s">'Bougainvillea'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Peony'</span><span class="p">,</span> <span class="s">'Dahlia'</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Before intersection_update() : </span><span class="se">\n</span><span class="s">flowerset : {flowerSet} </span><span class="se">\n</span><span class="s">flowers2 : {flowers2}'</span><span class="p">)</span>
-<span class="n">flowerSet</span><span class="o">.</span><span class="n">intersection_update</span><span class="p">(</span><span class="n">flowers2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'Before intersection_update() : </span><span class="se">\n</span><span class="s">flowerset : </span><span class="si">{</span><span class="n">flowerSet</span><span class="si">}</span><span class="s"> </span><span class="se">\n</span><span class="s">flowers2 : </span><span class="si">{</span><span class="n">flowers2</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="n">flowerSet</span><span class="p">.</span><span class="n">intersection_update</span><span class="p">(</span><span class="n">flowers2</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'flowerset After intersection_update() : '</span><span class="p">,</span> <span class="n">flowerSet</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -1263,8 +1263,8 @@ flowerset After intersection_update() :  {'Tulips', 'Lily'}
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowerSet</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">}</span>
 <span class="n">flowers2</span> <span class="o">=</span> <span class="p">(</span><span class="s">'Tulips'</span><span class="p">,</span> <span class="s">'Calendula'</span><span class="p">,</span> <span class="s">'Bougainvillea'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Peony'</span><span class="p">,</span> <span class="s">'Dahlia'</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Before difference_update() : </span><span class="se">\n</span><span class="s">flowerset : {flowerSet} </span><span class="se">\n</span><span class="s">flowers2 : {flowers2}'</span><span class="p">)</span>
-<span class="n">flowerSet</span><span class="o">.</span><span class="n">difference_update</span><span class="p">(</span><span class="n">flowers2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'Before difference_update() : </span><span class="se">\n</span><span class="s">flowerset : </span><span class="si">{</span><span class="n">flowerSet</span><span class="si">}</span><span class="s"> </span><span class="se">\n</span><span class="s">flowers2 : </span><span class="si">{</span><span class="n">flowers2</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="n">flowerSet</span><span class="p">.</span><span class="n">difference_update</span><span class="p">(</span><span class="n">flowers2</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'flowerSet After difference_update() : '</span><span class="p">,</span> <span class="n">flowerSet</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -1290,8 +1290,8 @@ flowerSet After difference_update() :  {'Lotus', 'Rose', 'Jasmine', 'Lavender'}
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowerSet</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">}</span>
 <span class="n">flowers2</span> <span class="o">=</span> <span class="p">(</span><span class="s">'Tulips'</span><span class="p">,</span> <span class="s">'Calendula'</span><span class="p">,</span> <span class="s">'Bougainvillea'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Peony'</span><span class="p">,</span> <span class="s">'Dahlia'</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Before symmetric_difference_update() : </span><span class="se">\n</span><span class="s">flowerset : {flowerSet} </span><span class="se">\n</span><span class="s">flowers2 : {flowers2}'</span><span class="p">)</span>
-<span class="n">flowerSet</span><span class="o">.</span><span class="n">symmetric_difference_update</span><span class="p">(</span><span class="n">flowers2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'Before symmetric_difference_update() : </span><span class="se">\n</span><span class="s">flowerset : </span><span class="si">{</span><span class="n">flowerSet</span><span class="si">}</span><span class="s"> </span><span class="se">\n</span><span class="s">flowers2 : </span><span class="si">{</span><span class="n">flowers2</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="n">flowerSet</span><span class="p">.</span><span class="n">symmetric_difference_update</span><span class="p">(</span><span class="n">flowers2</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'flowerSet After symmetric_difference_update() : '</span><span class="p">,</span> <span class="n">flowerSet</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -1317,7 +1317,7 @@ flowerSet After symmetric_difference_update() :  {'Dahlia', 'Lotus', 'Rose', 'Ja
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowerSet1</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">}</span>
 <span class="n">flowerSet2</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">}</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">flowerSet1</span><span class="o">.</span><span class="n">issuperset</span><span class="p">(</span><span class="n">flowerSet2</span><span class="p">))</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="n">flowerSet1</span><span class="p">.</span><span class="n">issuperset</span><span class="p">(</span><span class="n">flowerSet2</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
@@ -1337,7 +1337,7 @@ True
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowerSet1</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">}</span>
 <span class="n">flowerSet2</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">}</span>
-<span class="k">print</span><span class="p">(</span><span class="n">flowerSet2</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">flowerSet1</span><span class="p">))</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="n">flowerSet2</span><span class="p">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">flowerSet1</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
@@ -1483,15 +1483,15 @@ set1 is not set3 : False
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">set1</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">}</span>
 <span class="n">set2</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Tulips'</span><span class="p">,</span> <span class="s">'Calendula'</span><span class="p">,</span> <span class="s">'Bougainvillea'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Peony'</span><span class="p">,</span> <span class="s">'Dahlia'</span><span class="p">}</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'set1 : {set1} </span><span class="se">\n</span><span class="s">set2 : {set2}'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'</span><span class="se">\n</span><span class="s">Union : {set1 | set2}'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'</span><span class="se">\n</span><span class="s">Intersection : {set1 &amp; set2}'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'</span><span class="se">\n</span><span class="s">Difference : {set1 - set2}'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'</span><span class="se">\n</span><span class="s">Symmetric difference : {set1 ^ set2}'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'</span><span class="se">\n</span><span class="s">Superset : {set1  &gt; set2}'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'</span><span class="se">\n</span><span class="s">Subset : {set1  &lt; set2}'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'</span><span class="se">\n</span><span class="s">Equality : {set1  == set2}'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'</span><span class="se">\n</span><span class="s">not equals : {set1  != set2}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'set1 : </span><span class="si">{</span><span class="n">set1</span><span class="si">}</span><span class="s"> </span><span class="se">\n</span><span class="s">set2 : </span><span class="si">{</span><span class="n">set2</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'</span><span class="se">\n</span><span class="s">Union : </span><span class="si">{</span><span class="n">set1</span> <span class="o">|</span> <span class="n">set2</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'</span><span class="se">\n</span><span class="s">Intersection : </span><span class="si">{</span><span class="n">set1</span> <span class="o">&amp;</span> <span class="n">set2</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'</span><span class="se">\n</span><span class="s">Difference : </span><span class="si">{</span><span class="n">set1</span> <span class="o">-</span> <span class="n">set2</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'</span><span class="se">\n</span><span class="s">Symmetric difference : </span><span class="si">{</span><span class="n">set1</span> <span class="o">^</span> <span class="n">set2</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'</span><span class="se">\n</span><span class="s">Superset : </span><span class="si">{</span><span class="n">set1</span>  <span class="o">&gt;</span> <span class="n">set2</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'</span><span class="se">\n</span><span class="s">Subset : </span><span class="si">{</span><span class="n">set1</span>  <span class="o">&lt;</span> <span class="n">set2</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'</span><span class="se">\n</span><span class="s">Equality : </span><span class="si">{</span><span class="n">set1</span>  <span class="o">==</span> <span class="n">set2</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'</span><span class="se">\n</span><span class="s">not equals : </span><span class="si">{</span><span class="n">set1</span>  <span class="o">!=</span> <span class="n">set2</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1552,7 +1552,7 @@ not equals : True
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="s">'5a'</span><span class="p">,</span> <span class="s">'68'</span><span class="p">,</span> <span class="s">'89'</span><span class="p">,</span> <span class="s">'5D'</span><span class="p">,</span> <span class="s">'7Z'</span><span class="p">,</span> <span class="s">'53'</span><span class="p">,</span> <span class="s">'T9'</span><span class="p">,</span> <span class="s">'48'</span><span class="p">]</span>
 
-<span class="n">numSet</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">l1</span> <span class="k">if</span> <span class="n">i</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">()}</span>
+<span class="n">numSet</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">l1</span> <span class="k">if</span> <span class="n">i</span><span class="p">.</span><span class="n">isnumeric</span><span class="p">()}</span>
 <span class="k">print</span><span class="p">(</span><span class="n">numSet</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -1582,8 +1582,8 @@ not equals : True
     <span class="nb">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">r'./04_Builtin_DataStructures/Docs/AliceInWonderland.txt'</span><span class="p">,</span> <span class="s">'r'</span><span class="p">)</span>
     <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">file</span><span class="p">:</span>
-        <span class="n">result</span> <span class="o">+=</span> <span class="p">[</span><span class="n">word</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s">' .-()</span><span class="se">\'</span><span class="s">"!?_[]`’“;”,:‘'</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()]</span>
-    <span class="nb">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="n">result</span> <span class="o">+=</span> <span class="p">[</span><span class="n">word</span><span class="p">.</span><span class="n">strip</span><span class="p">().</span><span class="n">strip</span><span class="p">(</span><span class="s">' .-()</span><span class="se">\'</span><span class="s">"!?_[]`’“;”,:‘'</span><span class="p">).</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">line</span><span class="p">.</span><span class="n">split</span><span class="p">()]</span>
+    <span class="nb">file</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">result</span>
 
 
@@ -1646,9 +1646,9 @@ frozenset({'Tulips', 'Lily', 'Lotus', 'Lavender', 'Rose', 'Jasmine'})
 <div id="code-block-30" class="code-block">
 <p id="code-header-30" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-30", "code-header-30")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">'Methods of frozenset :'</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">attr</span> <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="nb">frozenset</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">attr</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">'__'</span><span class="p">)))</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">'Methods of frozenset :'</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">attr</span> <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="nb">frozenset</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">attr</span><span class="p">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">'__'</span><span class="p">)))</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'Methods of set not available in frozenset :'</span><span class="p">,</span>
-      <span class="nb">tuple</span><span class="p">(</span><span class="n">attr</span> <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="nb">set</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">set</span><span class="p">))</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">frozenset</span><span class="p">))</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">attr</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">'__'</span><span class="p">)))</span></code></pre></figure>
+      <span class="nb">tuple</span><span class="p">(</span><span class="n">attr</span> <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="nb">set</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">set</span><span class="p">))</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">frozenset</span><span class="p">))</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">attr</span><span class="p">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">'__'</span><span class="p">)))</span></code></pre></figure>
 
 </div>
 
@@ -1671,7 +1671,7 @@ Methods of set not available in frozen set : ('discard', 'clear', 'update', 'add
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowerSet</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">}</span>
 <span class="n">flowerSetRO</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">(</span><span class="n">flowerSet</span><span class="p">)</span>
-<span class="n">flowerSetRO</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">'Sunflower'</span><span class="p">)</span></code></pre></figure>
+<span class="n">flowerSetRO</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s">'Sunflower'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1693,10 +1693,10 @@ AttributeError: 'frozenset' object has no attribute 'add'</pre></div>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowerSet</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">}</span>
 <span class="n">flowerSetRO</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">(</span><span class="n">flowerSet</span><span class="p">)</span>
-<span class="n">flowerSet</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">'Sunflower'</span><span class="p">)</span>
+<span class="n">flowerSet</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s">'Sunflower'</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'flowerset   : {flowerSet}'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'flowersetRO : {flowerSetRO}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'flowerset   : </span><span class="si">{</span><span class="n">flowerSet</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'flowersetRO : </span><span class="si">{</span><span class="n">flowerSetRO</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 

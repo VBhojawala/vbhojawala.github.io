@@ -46,7 +46,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="site" href="http://localhost:4000/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="vbhojawala.github.io" href="http://localhost:4000/feed.xml">
 
     <script>
         $(document).ready(function() {
@@ -724,7 +724,7 @@ $('#toc').on('click', 'a', function() {
 <div id="code-block-1" class="code-block">
 <p id="code-header-1" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-1", "code-header-1")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="n">b</span><span class="s">'Hello World!'</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="s">b'Hello World!'</span>
 <span class="n">s1View</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'View Object : '</span><span class="p">,</span> <span class="n">s1View</span><span class="p">)</span>
@@ -763,7 +763,7 @@ d
 <div id="code-block-2" class="code-block">
 <p id="code-header-2" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-2", "code-header-2")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="n">b</span><span class="s">'Hello World!'</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="s">b'Hello World!'</span>
 <span class="n">s1View</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
 
 <span class="c1"># Indexing
@@ -794,7 +794,7 @@ bytes(s1View[6:12]) : b'World!'
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">array</span>
 
-<span class="n">nums</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="s">'i'</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">))</span>
+<span class="n">nums</span> <span class="o">=</span> <span class="n">array</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="s">'i'</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">))</span>
 <span class="n">numsView</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
 
 <span class="c1"># Indexing
@@ -802,7 +802,7 @@ bytes(s1View[6:12]) : b'World!'
 <span class="k">print</span><span class="p">(</span><span class="s">'numsView[-1] :'</span><span class="p">,</span> <span class="n">numsView</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 
 <span class="c1"># Slicing
-</span><span class="k">print</span><span class="p">(</span><span class="s">'numsView[3:6] :'</span><span class="p">,</span> <span class="n">numsView</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span></code></pre></figure>
+</span><span class="k">print</span><span class="p">(</span><span class="s">'numsView[3:6] :'</span><span class="p">,</span> <span class="n">numsView</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">6</span><span class="p">].</span><span class="n">tolist</span><span class="p">())</span></code></pre></figure>
 
 </div>
 
@@ -825,14 +825,14 @@ numsView[3:6] : [4, 5, 6]
 <div id="code-block-4" class="code-block">
 <p id="code-header-4" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-4", "code-header-4")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="n">b</span><span class="s">'Hello World!'</span>
-<span class="n">s2</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">b</span><span class="s">'Hello World!'</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="s">b'Hello World!'</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="s">b'Hello World!'</span><span class="p">)</span>
 
 <span class="n">s1View</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
 <span class="n">s2View</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">'Bytes is readonly? :'</span><span class="p">,</span> <span class="n">s1View</span><span class="o">.</span><span class="n">readonly</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'ByteArray is readonly? :'</span><span class="p">,</span> <span class="n">s2View</span><span class="o">.</span><span class="n">readonly</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">'Bytes is readonly? :'</span><span class="p">,</span> <span class="n">s1View</span><span class="p">.</span><span class="n">readonly</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'ByteArray is readonly? :'</span><span class="p">,</span> <span class="n">s2View</span><span class="p">.</span><span class="n">readonly</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -853,11 +853,11 @@ ByteArray is readonly? : False
 <div id="code-block-5" class="code-block">
 <p id="code-header-5" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-5", "code-header-5")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s2</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">b</span><span class="s">'Hello World!'</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s2</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="s">b'Hello World!'</span><span class="p">)</span>
 <span class="n">s2View</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'Before :'</span><span class="p">,</span> <span class="n">s2</span><span class="p">)</span>
-<span class="n">s2View</span><span class="p">[</span><span class="mi">6</span><span class="p">:</span><span class="mi">12</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="s">'Python'</span>
+<span class="n">s2View</span><span class="p">[</span><span class="mi">6</span><span class="p">:</span><span class="mi">12</span><span class="p">]</span> <span class="o">=</span> <span class="s">b'Python'</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'After  :'</span><span class="p">,</span> <span class="n">s2</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -879,10 +879,10 @@ After  : bytearray(b'Hello Python')
 <div id="code-block-6" class="code-block">
 <p id="code-header-6" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-6", "code-header-6")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">nums</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="s">'i'</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">))</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">nums</span> <span class="o">=</span> <span class="n">array</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="s">'i'</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">))</span>
 <span class="n">nView</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">nView</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="n">nView</span><span class="p">.</span><span class="n">tolist</span><span class="p">())</span></code></pre></figure>
 
 </div>
 
@@ -900,12 +900,12 @@ After  : bytearray(b'Hello Python')
 <div id="code-block-7" class="code-block">
 <p id="code-header-7" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-7", "code-header-7")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">b</span><span class="s">'Hello World!'</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="s">b'Hello World!'</span><span class="p">)</span>
 <span class="n">s1View</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'s1View :'</span><span class="p">,</span> <span class="n">s1View</span><span class="o">.</span><span class="n">readonly</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'s1View :'</span><span class="p">,</span> <span class="n">s1View</span><span class="p">.</span><span class="n">readonly</span><span class="p">)</span>
 
-<span class="n">s1ROView</span> <span class="o">=</span> <span class="n">s1View</span><span class="o">.</span><span class="n">toreadonly</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'s1ROView :'</span><span class="p">,</span> <span class="n">s1ROView</span><span class="o">.</span><span class="n">readonly</span><span class="p">)</span></code></pre></figure>
+<span class="n">s1ROView</span> <span class="o">=</span> <span class="n">s1View</span><span class="p">.</span><span class="n">toreadonly</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'s1ROView :'</span><span class="p">,</span> <span class="n">s1ROView</span><span class="p">.</span><span class="n">readonly</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -932,10 +932,10 @@ s1ROView : True
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">array</span>
 
-<span class="n">nums</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="s">'i'</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">))</span>
+<span class="n">nums</span> <span class="o">=</span> <span class="n">array</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="s">'i'</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">))</span>
 <span class="n">nView</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">'tobytes() :'</span><span class="p">,</span> <span class="n">nView</span><span class="o">.</span><span class="n">tobytes</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'tobytes() :'</span><span class="p">,</span> <span class="n">nView</span><span class="p">.</span><span class="n">tobytes</span><span class="p">())</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'bytes()   :'</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">nums</span><span class="p">))</span></code></pre></figure>
 
 </div>
@@ -962,12 +962,12 @@ bytes()   : b'\x01\x00\x00\x00\x02\x00\x00\x00\x03\x00\x00\x00\x04\x00\x00\x00\x
 <div id="code-block-9" class="code-block">
 <p id="code-header-9" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-9", "code-header-9")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="n">b</span><span class="s">'Hello World!'</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="s">b'Hello World!'</span>
 <span class="n">s1View</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">'hex()       :'</span><span class="p">,</span> <span class="n">s1View</span><span class="o">.</span><span class="nb">hex</span><span class="p">())</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"hex(':')    :"</span><span class="p">,</span> <span class="n">s1View</span><span class="o">.</span><span class="nb">hex</span><span class="p">(</span><span class="s">':'</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"hex(':', 2) :"</span><span class="p">,</span> <span class="n">s1View</span><span class="o">.</span><span class="nb">hex</span><span class="p">(</span><span class="s">':'</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">'hex()       :'</span><span class="p">,</span> <span class="n">s1View</span><span class="p">.</span><span class="nb">hex</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"hex(':')    :"</span><span class="p">,</span> <span class="n">s1View</span><span class="p">.</span><span class="nb">hex</span><span class="p">(</span><span class="s">':'</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"hex(':', 2) :"</span><span class="p">,</span> <span class="n">s1View</span><span class="p">.</span><span class="nb">hex</span><span class="p">(</span><span class="s">':'</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
@@ -987,10 +987,10 @@ hex(':', 2) : 4865:6c6c:6f20:576f:726c:6421
 <div id="code-block-10" class="code-block">
 <p id="code-header-10" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-10", "code-header-10")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="n">b</span><span class="s">'Hello World!'</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="s">b'Hello World!'</span>
 <span class="n">s1View</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
 
-<span class="n">s1View</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+<span class="n">s1View</span><span class="p">.</span><span class="n">release</span><span class="p">()</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'s1 :'</span><span class="p">,</span> <span class="n">s1</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">s1View</span><span class="p">[</span><span class="mi">6</span><span class="p">:</span><span class="mi">12</span><span class="p">])</span>  <span class="c1"># Access to view after release will raise error</span></code></pre></figure>
@@ -1015,7 +1015,7 @@ ValueError: operation forbidden on released memoryview object</pre></div>
 <div id="code-block-11" class="code-block">
 <p id="code-header-11" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-11", "code-header-11")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="n">b</span><span class="s">'Hello World!'</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="s">b'Hello World!'</span>
 <span class="k">with</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span> <span class="k">as</span> <span class="n">s1View</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="nb">bytes</span><span class="p">(</span><span class="n">s1View</span><span class="p">[</span><span class="mi">6</span><span class="p">:</span><span class="mi">12</span><span class="p">]))</span></code></pre></figure>
 
@@ -1048,10 +1048,10 @@ b'World!'
 <div id="code-block-12" class="code-block">
 <p id="code-header-12" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-12", "code-header-12")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">b</span><span class="s">'hello World!'</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="s">b'hello World!'</span><span class="p">)</span>
 <span class="n">s1View</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
 
-<span class="n">s1View</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="s">'H'</span></code></pre></figure>
+<span class="n">s1View</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s">b'H'</span></code></pre></figure>
 
 </div>
 
@@ -1071,12 +1071,12 @@ TypeError: memoryview: invalid type for format 'B'</pre></div>
 <div id="code-block-13" class="code-block">
 <p id="code-header-13" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-13", "code-header-13")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">b</span><span class="s">'hello World!'</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="s">b'hello World!'</span><span class="p">)</span>
 <span class="n">s1View</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
-<span class="n">s1ViewCast</span> <span class="o">=</span> <span class="n">s1View</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="s">'c'</span><span class="p">)</span>
+<span class="n">s1ViewCast</span> <span class="o">=</span> <span class="n">s1View</span><span class="p">.</span><span class="n">cast</span><span class="p">(</span><span class="s">'c'</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'Before :'</span><span class="p">,</span> <span class="n">s1</span><span class="p">)</span>
-<span class="n">s1ViewCast</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="s">'H'</span>
+<span class="n">s1ViewCast</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s">b'H'</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'After :'</span><span class="p">,</span> <span class="n">s1</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -1100,18 +1100,18 @@ After : bytearray(b'Hello World!')
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">struct</span>
 
-<span class="nb">buffer</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s">'12i'</span><span class="p">,</span> <span class="o">*</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">))</span>
+<span class="nb">buffer</span> <span class="o">=</span> <span class="n">struct</span><span class="p">.</span><span class="n">pack</span><span class="p">(</span><span class="s">'12i'</span><span class="p">,</span> <span class="o">*</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">))</span>
 
 <span class="n">n1D</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="nb">buffer</span><span class="p">)</span>
 
-<span class="n">n2D</span> <span class="o">=</span> <span class="n">n1D</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="s">'i'</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'shape=[3, 4]    :'</span><span class="p">,</span> <span class="n">n2D</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+<span class="n">n2D</span> <span class="o">=</span> <span class="n">n1D</span><span class="p">.</span><span class="n">cast</span><span class="p">(</span><span class="s">'i'</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'shape=[3, 4]    :'</span><span class="p">,</span> <span class="n">n2D</span><span class="p">.</span><span class="n">tolist</span><span class="p">())</span>
 
-<span class="n">n3D</span> <span class="o">=</span> <span class="n">n1D</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="s">'i'</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'shape=[2, 2, 3] :'</span><span class="p">,</span> <span class="n">n3D</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+<span class="n">n3D</span> <span class="o">=</span> <span class="n">n1D</span><span class="p">.</span><span class="n">cast</span><span class="p">(</span><span class="s">'i'</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'shape=[2, 2, 3] :'</span><span class="p">,</span> <span class="n">n3D</span><span class="p">.</span><span class="n">tolist</span><span class="p">())</span>
 
-<span class="n">n3D</span> <span class="o">=</span> <span class="n">n1D</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="s">'i'</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'shape=[2, 3, 2] :'</span><span class="p">,</span> <span class="n">n3D</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span></code></pre></figure>
+<span class="n">n3D</span> <span class="o">=</span> <span class="n">n1D</span><span class="p">.</span><span class="n">cast</span><span class="p">(</span><span class="s">'i'</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'shape=[2, 3, 2] :'</span><span class="p">,</span> <span class="n">n3D</span><span class="p">.</span><span class="n">tolist</span><span class="p">())</span></code></pre></figure>
 
 </div>
 
@@ -1133,10 +1133,10 @@ shape=[2, 3, 2] : [[[1, 2], [3, 4], [5, 6]], [[7, 8], [9, 10], [11, 12]]]
 <div id="code-block-15" class="code-block">
 <p id="code-header-15" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-15", "code-header-15")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">b</span><span class="s">'hello World!'</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="s">b'hello World!'</span><span class="p">)</span>
 <span class="n">s1View</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">s1View</span><span class="o">.</span><span class="n">obj</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="n">s1View</span><span class="p">.</span><span class="n">obj</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1162,11 +1162,11 @@ bytearray(b'hello World!')
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">struct</span>
 
-<span class="nb">buffer</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s">'5i'</span><span class="p">,</span> <span class="o">*</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="nb">buffer</span> <span class="o">=</span> <span class="n">struct</span><span class="p">.</span><span class="n">pack</span><span class="p">(</span><span class="s">'5i'</span><span class="p">,</span> <span class="o">*</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 <span class="n">b1View</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="nb">buffer</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'len :'</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">b1View</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'nbytes :'</span><span class="p">,</span> <span class="n">b1View</span><span class="o">.</span><span class="n">nbytes</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">'nbytes :'</span><span class="p">,</span> <span class="n">b1View</span><span class="p">.</span><span class="n">nbytes</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1189,11 +1189,11 @@ nbytes : 20
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">array</span>
 
-<span class="n">array1</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="s">'i'</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">array1</span> <span class="o">=</span> <span class="n">array</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="s">'i'</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 <span class="n">b2View</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">array1</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'len :'</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">b2View</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'nbytes :'</span><span class="p">,</span> <span class="n">b2View</span><span class="o">.</span><span class="n">nbytes</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">'nbytes :'</span><span class="p">,</span> <span class="n">b2View</span><span class="p">.</span><span class="n">nbytes</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1212,14 +1212,14 @@ nbytes : 20
 <div id="code-block-18" class="code-block">
 <p id="code-header-18" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-18", "code-header-18")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="n">b</span><span class="s">'Hello World!'</span>
-<span class="n">s2</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">b</span><span class="s">'Hello World!'</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="s">b'Hello World!'</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="s">b'Hello World!'</span><span class="p">)</span>
 
 <span class="n">s1View</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
 <span class="n">s2View</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">'Bytes view is readonly? :'</span><span class="p">,</span> <span class="n">s1View</span><span class="o">.</span><span class="n">readonly</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'ByteArray view is readonly? :'</span><span class="p">,</span> <span class="n">s2View</span><span class="o">.</span><span class="n">readonly</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">'Bytes view is readonly? :'</span><span class="p">,</span> <span class="n">s1View</span><span class="p">.</span><span class="n">readonly</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'ByteArray view is readonly? :'</span><span class="p">,</span> <span class="n">s2View</span><span class="p">.</span><span class="n">readonly</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1240,10 +1240,10 @@ ByteArray view is readonly? : False
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">struct</span>
 
-<span class="n">s1</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s">'13si'</span><span class="p">,</span> <span class="n">b</span><span class="s">'Hello World!'</span><span class="p">,</span> <span class="mi">127</span><span class="p">)</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="n">struct</span><span class="p">.</span><span class="n">pack</span><span class="p">(</span><span class="s">'13si'</span><span class="p">,</span> <span class="s">b'Hello World!'</span><span class="p">,</span> <span class="mi">127</span><span class="p">)</span>
 <span class="n">s1View</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">s1View</span><span class="o">.</span><span class="nb">format</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="n">s1View</span><span class="p">.</span><span class="nb">format</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1263,10 +1263,10 @@ B
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">array</span>
 
-<span class="n">array2</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="s">'l'</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">array2</span> <span class="o">=</span> <span class="n">array</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="s">'l'</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 <span class="n">a2View</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">array2</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">a2View</span><span class="o">.</span><span class="n">itemsize</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="n">a2View</span><span class="p">.</span><span class="n">itemsize</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1321,30 +1321,30 @@ B
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">struct</span>
 
-<span class="nb">buffer</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s">'12i'</span><span class="p">,</span> <span class="o">*</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">))</span>
+<span class="nb">buffer</span> <span class="o">=</span> <span class="n">struct</span><span class="p">.</span><span class="n">pack</span><span class="p">(</span><span class="s">'12i'</span><span class="p">,</span> <span class="o">*</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">))</span>
 
 <span class="n">n1D</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="nb">buffer</span><span class="p">)</span>
 
-<span class="n">n2D</span> <span class="o">=</span> <span class="n">n1D</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="s">'i'</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="n">n2D</span> <span class="o">=</span> <span class="n">n1D</span><span class="p">.</span><span class="n">cast</span><span class="p">(</span><span class="s">'i'</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">"cast('i', shape=[3, 4]) :"</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">n2D</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'ndim       :'</span><span class="p">,</span> <span class="n">n2D</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">n2D</span><span class="p">.</span><span class="n">tolist</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'ndim       :'</span><span class="p">,</span> <span class="n">n2D</span><span class="p">.</span><span class="n">ndim</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'length     :'</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">n2D</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'shape      :'</span><span class="p">,</span> <span class="n">n2D</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'strides    :'</span><span class="p">,</span> <span class="n">n2D</span><span class="o">.</span><span class="n">strides</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'contiguous :'</span><span class="p">,</span> <span class="n">n2D</span><span class="o">.</span><span class="n">contiguous</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'shape      :'</span><span class="p">,</span> <span class="n">n2D</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'strides    :'</span><span class="p">,</span> <span class="n">n2D</span><span class="p">.</span><span class="n">strides</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'contiguous :'</span><span class="p">,</span> <span class="n">n2D</span><span class="p">.</span><span class="n">contiguous</span><span class="p">)</span>
 
-<span class="n">n3D</span> <span class="o">=</span> <span class="n">n1D</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="s">'i'</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
-<span class="n">n3D</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">n3D</span> <span class="o">=</span> <span class="n">n1D</span><span class="p">.</span><span class="n">cast</span><span class="p">(</span><span class="s">'i'</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">n3D</span><span class="p">.</span><span class="n">tolist</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">cast('i', shape=[2, 2, 3]) :"</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">n3D</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'ndim       :'</span><span class="p">,</span> <span class="n">n3D</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">n3D</span><span class="p">.</span><span class="n">tolist</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'ndim       :'</span><span class="p">,</span> <span class="n">n3D</span><span class="p">.</span><span class="n">ndim</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'length     :'</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">n3D</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'shape      :'</span><span class="p">,</span> <span class="n">n3D</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'strides    :'</span><span class="p">,</span> <span class="n">n3D</span><span class="o">.</span><span class="n">strides</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'contiguous :'</span><span class="p">,</span> <span class="n">n3D</span><span class="o">.</span><span class="n">contiguous</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">'shape      :'</span><span class="p">,</span> <span class="n">n3D</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'strides    :'</span><span class="p">,</span> <span class="n">n3D</span><span class="p">.</span><span class="n">strides</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'contiguous :'</span><span class="p">,</span> <span class="n">n3D</span><span class="p">.</span><span class="n">contiguous</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1382,11 +1382,11 @@ contiguous : True
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">struct</span>
 
-<span class="nb">buffer</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s">'12i'</span><span class="p">,</span> <span class="o">*</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">))</span>
+<span class="nb">buffer</span> <span class="o">=</span> <span class="n">struct</span><span class="p">.</span><span class="n">pack</span><span class="p">(</span><span class="s">'12i'</span><span class="p">,</span> <span class="o">*</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">))</span>
 <span class="n">n1D</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="nb">buffer</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">'c_contiguous :'</span><span class="p">,</span> <span class="n">n1D</span><span class="o">.</span><span class="n">c_contiguous</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'f_contiguous :'</span><span class="p">,</span> <span class="n">n1D</span><span class="o">.</span><span class="n">f_contiguous</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">'c_contiguous :'</span><span class="p">,</span> <span class="n">n1D</span><span class="p">.</span><span class="n">c_contiguous</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'f_contiguous :'</span><span class="p">,</span> <span class="n">n1D</span><span class="p">.</span><span class="n">f_contiguous</span><span class="p">)</span></code></pre></figure>
 
 </div>
 

@@ -46,7 +46,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="site" href="http://localhost:4000/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="vbhojawala.github.io" href="http://localhost:4000/feed.xml">
 
     <script>
         $(document).ready(function() {
@@ -947,7 +947,7 @@ $('#toc').on('click', 'a', function() {
 <p id="code-header-1" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-1", "code-header-1")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">struct</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"calcsize('i13sf') :"</span><span class="p">,</span> <span class="n">struct</span><span class="o">.</span><span class="n">calcsize</span><span class="p">(</span><span class="s">'i13sf'</span><span class="p">))</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">"calcsize('i13sf') :"</span><span class="p">,</span> <span class="n">struct</span><span class="p">.</span><span class="n">calcsize</span><span class="p">(</span><span class="s">'i13sf'</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
@@ -969,10 +969,10 @@ calcsize('i13sf') : 24
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">struct</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">"calcsize('13si') :"</span><span class="p">,</span> <span class="n">struct</span><span class="o">.</span><span class="n">calcsize</span><span class="p">(</span><span class="s">'13si'</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s">'13si'</span><span class="p">,</span> <span class="n">b</span><span class="s">'Hello World!'</span><span class="p">,</span> <span class="mi">127</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"calcsize('i13s') :"</span><span class="p">,</span> <span class="n">struct</span><span class="o">.</span><span class="n">calcsize</span><span class="p">(</span><span class="s">'i13s'</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s">'i13s'</span><span class="p">,</span> <span class="mi">127</span><span class="p">,</span> <span class="n">b</span><span class="s">'Hello World!'</span><span class="p">))</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">"calcsize('13si') :"</span><span class="p">,</span> <span class="n">struct</span><span class="p">.</span><span class="n">calcsize</span><span class="p">(</span><span class="s">'13si'</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">struct</span><span class="p">.</span><span class="n">pack</span><span class="p">(</span><span class="s">'13si'</span><span class="p">,</span> <span class="s">b'Hello World!'</span><span class="p">,</span> <span class="mi">127</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"calcsize('i13s') :"</span><span class="p">,</span> <span class="n">struct</span><span class="p">.</span><span class="n">calcsize</span><span class="p">(</span><span class="s">'i13s'</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">struct</span><span class="p">.</span><span class="n">pack</span><span class="p">(</span><span class="s">'i13s'</span><span class="p">,</span> <span class="mi">127</span><span class="p">,</span> <span class="s">b'Hello World!'</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
@@ -1013,8 +1013,8 @@ b'\x7f\x00\x00\x00Hello World!\x00'
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">struct</span> <span class="kn">import</span> <span class="n">Struct</span>
 
 <span class="n">struct1</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">(</span><span class="s">'@i13sf'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'Format :'</span><span class="p">,</span> <span class="n">struct1</span><span class="o">.</span><span class="nb">format</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'Size   :'</span><span class="p">,</span> <span class="n">struct1</span><span class="o">.</span><span class="n">size</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">'Format :'</span><span class="p">,</span> <span class="n">struct1</span><span class="p">.</span><span class="nb">format</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Size   :'</span><span class="p">,</span> <span class="n">struct1</span><span class="p">.</span><span class="n">size</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1044,8 +1044,8 @@ Size   : 24
             <span class="p">}</span>
 
 <span class="k">for</span> <span class="n">formatting</span> <span class="ow">in</span> <span class="n">byteOrder</span><span class="p">:</span>
-    <span class="n">sendBytes</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">byteOrder</span><span class="p">[</span><span class="n">formatting</span><span class="p">],</span> <span class="mi">127</span><span class="p">,</span> <span class="n">b</span><span class="s">'Hello World!'</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">"{formatting} ['{byteOrder[formatting]}'] ==&gt; {sendBytes}"</span><span class="p">)</span></code></pre></figure>
+    <span class="n">sendBytes</span> <span class="o">=</span> <span class="n">struct</span><span class="p">.</span><span class="n">pack</span><span class="p">(</span><span class="n">byteOrder</span><span class="p">[</span><span class="n">formatting</span><span class="p">],</span> <span class="mi">127</span><span class="p">,</span> <span class="s">b'Hello World!'</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">f"</span><span class="si">{</span><span class="n">formatting</span><span class="si">}</span><span class="s"> ['</span><span class="si">{</span><span class="n">byteOrder</span><span class="p">[</span><span class="n">formatting</span><span class="p">]</span><span class="si">}</span><span class="s">'] ==&gt; </span><span class="si">{</span><span class="n">sendBytes</span><span class="si">}</span><span class="s">"</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1071,8 +1071,8 @@ big-endian ['&gt;i13sf'] ==&gt; b'\x00\x00\x00\x7fHello World!\x00@H\xf5\xc3'
 <span class="n">struct1</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">(</span><span class="s">'@i13sf'</span><span class="p">)</span>
 <span class="nb">buffer</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="mi">56</span><span class="p">)</span>
 
-<span class="n">struct1</span><span class="o">.</span><span class="n">pack_into</span><span class="p">(</span><span class="nb">buffer</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">129</span><span class="p">,</span> <span class="n">b</span><span class="s">'Hello Struct!'</span><span class="p">,</span> <span class="mf">4.69</span><span class="p">)</span>
-<span class="n">struct1</span><span class="o">.</span><span class="n">pack_into</span><span class="p">(</span><span class="nb">buffer</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="n">b</span><span class="s">'Hello Python!'</span><span class="p">,</span> <span class="mf">3.28</span><span class="p">)</span>
+<span class="n">struct1</span><span class="p">.</span><span class="n">pack_into</span><span class="p">(</span><span class="nb">buffer</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">129</span><span class="p">,</span> <span class="s">b'Hello Struct!'</span><span class="p">,</span> <span class="mf">4.69</span><span class="p">)</span>
+<span class="n">struct1</span><span class="p">.</span><span class="n">pack_into</span><span class="p">(</span><span class="nb">buffer</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="s">b'Hello Python!'</span><span class="p">,</span> <span class="mf">3.28</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'Buffer :'</span><span class="p">,</span> <span class="nb">buffer</span><span class="p">)</span></code></pre></figure>
 
@@ -1095,9 +1095,9 @@ Buffer : bytearray(b'\x81\x00\x00\x00Hello Struct!\x00\x00\x00{\x14\x96@\x82\x00
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">struct</span> <span class="kn">import</span> <span class="n">Struct</span>
 
 <span class="n">struct1</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">(</span><span class="s">'@i13sf'</span><span class="p">)</span>
-<span class="n">sendBytes</span> <span class="o">=</span> <span class="n">b</span><span class="s">'</span><span class="se">\x7f\x00\x00\x00</span><span class="s">Hello Struct!</span><span class="se">\x00\x00\x00\xc3\xf5</span><span class="s">H@'</span>
+<span class="n">sendBytes</span> <span class="o">=</span> <span class="s">b'</span><span class="se">\x7f\x00\x00\x00</span><span class="s">Hello Struct!</span><span class="se">\x00\x00\x00\xc3\xf5</span><span class="s">H@'</span>
 
-<span class="n">originalObj</span> <span class="o">=</span> <span class="n">struct1</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="n">sendBytes</span><span class="p">)</span>
+<span class="n">originalObj</span> <span class="o">=</span> <span class="n">struct1</span><span class="p">.</span><span class="n">unpack</span><span class="p">(</span><span class="n">sendBytes</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">originalObj</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -1119,9 +1119,9 @@ Buffer : bytearray(b'\x81\x00\x00\x00Hello Struct!\x00\x00\x00{\x14\x96@\x82\x00
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">struct</span> <span class="kn">import</span> <span class="n">Struct</span>
 
 <span class="n">struct1</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">(</span><span class="s">'@i13sf'</span><span class="p">)</span>
-<span class="n">sendBytes</span> <span class="o">=</span> <span class="n">b</span><span class="s">'</span><span class="se">\x7f\x00\x00\x00</span><span class="s">Hello Struct!</span><span class="se">\x00\x00\x00\xc3\xf5</span><span class="s">H@</span><span class="se">\x80\x00\x00\x00</span><span class="s">Hello Python!</span><span class="se">\x00\x00\x00\x85\xeb</span><span class="s">Q@'</span>
+<span class="n">sendBytes</span> <span class="o">=</span> <span class="s">b'</span><span class="se">\x7f\x00\x00\x00</span><span class="s">Hello Struct!</span><span class="se">\x00\x00\x00\xc3\xf5</span><span class="s">H@</span><span class="se">\x80\x00\x00\x00</span><span class="s">Hello Python!</span><span class="se">\x00\x00\x00\x85\xeb</span><span class="s">Q@'</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">struct1</span><span class="o">.</span><span class="n">unpack_from</span><span class="p">(</span><span class="n">sendBytes</span><span class="p">,</span> <span class="mi">24</span><span class="p">))</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="n">struct1</span><span class="p">.</span><span class="n">unpack_from</span><span class="p">(</span><span class="n">sendBytes</span><span class="p">,</span> <span class="mi">24</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
@@ -1143,8 +1143,8 @@ Object type : &lt;unpack_iterator object at 0x7faa5029acc0&gt;
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">struct</span> <span class="kn">import</span> <span class="n">Struct</span>
 
 <span class="n">struct1</span> <span class="o">=</span> <span class="n">Struct</span><span class="p">(</span><span class="s">'@i13sf'</span><span class="p">)</span>
-<span class="n">sendBytes</span> <span class="o">=</span> <span class="n">b</span><span class="s">'</span><span class="se">\x7f\x00\x00\x00</span><span class="s">Hello Struct!</span><span class="se">\x00\x00\x00\xc3\xf5</span><span class="s">H@</span><span class="se">\x80\x00\x00\x00</span><span class="s">Hello Python!</span><span class="se">\x00\x00\x00\x85\xeb</span><span class="s">Q@'</span>
-<span class="n">originalIter</span> <span class="o">=</span> <span class="n">struct1</span><span class="o">.</span><span class="n">iter_unpack</span><span class="p">(</span><span class="n">sendBytes</span><span class="p">)</span>
+<span class="n">sendBytes</span> <span class="o">=</span> <span class="s">b'</span><span class="se">\x7f\x00\x00\x00</span><span class="s">Hello Struct!</span><span class="se">\x00\x00\x00\xc3\xf5</span><span class="s">H@</span><span class="se">\x80\x00\x00\x00</span><span class="s">Hello Python!</span><span class="se">\x00\x00\x00\x85\xeb</span><span class="s">Q@'</span>
+<span class="n">originalIter</span> <span class="o">=</span> <span class="n">struct1</span><span class="p">.</span><span class="n">iter_unpack</span><span class="p">(</span><span class="n">sendBytes</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'Object type :'</span><span class="p">,</span> <span class="n">originalIter</span><span class="p">)</span>
 

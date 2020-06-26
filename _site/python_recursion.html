@@ -46,7 +46,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="site" href="http://localhost:4000/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="vbhojawala.github.io" href="http://localhost:4000/feed.xml">
 
     <script>
         $(document).ready(function() {
@@ -938,7 +938,7 @@ Ended recurring -&gt; 5
     <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">n</span>
 
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'fib({n}) : Calling fib({n-1}) and fib({n-2})'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">f'fib(</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s">) : Calling fib(</span><span class="si">{</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="si">}</span><span class="s">) and fib(</span><span class="si">{</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="si">}</span><span class="s">)'</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
 
 
@@ -1017,12 +1017,12 @@ fib(2) : Calling fib(1) and fib(0)
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">binary_search</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
 
     <span class="k">if</span> <span class="n">end</span> <span class="o">&lt;</span> <span class="n">start</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">f</span><span class="s">'No Such element {value} exists in list'</span>
+        <span class="k">return</span> <span class="s">f'No Such element </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s"> exists in list'</span>
 
     <span class="n">mid</span> <span class="o">=</span> <span class="n">start</span> <span class="o">+</span> <span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
 
     <span class="k">if</span> <span class="n">seq</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">==</span> <span class="n">value</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">f</span><span class="s">'Element {value} found at position {mid}'</span>
+        <span class="k">return</span> <span class="s">f'Element </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s"> found at position </span><span class="si">{</span><span class="n">mid</span><span class="si">}</span><span class="s">'</span>
     <span class="k">elif</span> <span class="n">seq</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">value</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">binary_search</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
@@ -1061,13 +1061,13 @@ Element 74 found at position 8
         <span class="n">mid</span> <span class="o">=</span> <span class="n">start</span> <span class="o">+</span> <span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
 
         <span class="k">if</span> <span class="n">seq</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">==</span> <span class="n">value</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">f</span><span class="s">'Element {value} found at position {mid}'</span>
+            <span class="k">return</span> <span class="s">f'Element </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s"> found at position </span><span class="si">{</span><span class="n">mid</span><span class="si">}</span><span class="s">'</span>
         <span class="k">elif</span> <span class="n">seq</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">value</span><span class="p">:</span>
             <span class="n">end</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">start</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span>
 
-    <span class="k">return</span> <span class="n">f</span><span class="s">'No Such element {value} exists in list'</span>
+    <span class="k">return</span> <span class="s">f'No Such element </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s"> exists in list'</span>
 
 
 <span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="mi">69</span><span class="p">,</span> <span class="mi">74</span><span class="p">,</span> <span class="mi">85</span><span class="p">]</span>

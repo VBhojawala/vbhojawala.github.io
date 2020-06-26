@@ -46,7 +46,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="site" href="http://localhost:4000/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="vbhojawala.github.io" href="http://localhost:4000/feed.xml">
 
     <script>
         $(document).ready(function() {
@@ -775,13 +775,13 @@ $('#toc').on('click', 'a', function() {
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">calendar</span> <span class="k">as</span> <span class="n">cal</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'SUNDAY : {cal.SUNDAY}  MONDAY : {cal.MONDAY}  TUESDAY : {cal.TUESDAY}'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'WEDNESDAY : {cal.WEDNESDAY}  THURSDAY : {cal.THURSDAY}  FRIDAY : {cal.FRIDAY}'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'SATURDAY : {cal.SATURDAY}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'SUNDAY : </span><span class="si">{</span><span class="n">cal</span><span class="p">.</span><span class="n">SUNDAY</span><span class="si">}</span><span class="s">  MONDAY : </span><span class="si">{</span><span class="n">cal</span><span class="p">.</span><span class="n">MONDAY</span><span class="si">}</span><span class="s">  TUESDAY : </span><span class="si">{</span><span class="n">cal</span><span class="p">.</span><span class="n">TUESDAY</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'WEDNESDAY : </span><span class="si">{</span><span class="n">cal</span><span class="p">.</span><span class="n">WEDNESDAY</span><span class="si">}</span><span class="s">  THURSDAY : </span><span class="si">{</span><span class="n">cal</span><span class="p">.</span><span class="n">THURSDAY</span><span class="si">}</span><span class="s">  FRIDAY : </span><span class="si">{</span><span class="n">cal</span><span class="p">.</span><span class="n">FRIDAY</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'SATURDAY : </span><span class="si">{</span><span class="n">cal</span><span class="p">.</span><span class="n">SATURDAY</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'January : {cal.January}  February : {cal.February} '</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'January : </span><span class="si">{</span><span class="n">cal</span><span class="p">.</span><span class="n">January</span><span class="si">}</span><span class="s">  February : </span><span class="si">{</span><span class="n">cal</span><span class="p">.</span><span class="n">February</span><span class="si">}</span><span class="s"> '</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'mdays : {cal.mdays}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'mdays : </span><span class="si">{</span><span class="n">cal</span><span class="p">.</span><span class="n">mdays</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -806,7 +806,7 @@ mdays : [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 <p id="code-header-2" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-2", "code-header-2")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">calendar</span> <span class="k">as</span> <span class="n">cal</span>
-<span class="k">print</span><span class="p">(</span><span class="n">cal</span><span class="o">.</span><span class="n">firstweekday</span><span class="p">())</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="n">cal</span><span class="p">.</span><span class="n">firstweekday</span><span class="p">())</span></code></pre></figure>
 
 </div>
 
@@ -825,13 +825,13 @@ mdays : [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 <p id="code-header-3" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-3", "code-header-3")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">calendar</span> <span class="k">as</span> <span class="n">cal</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'Before setting:'</span><span class="p">,</span> <span class="n">cal</span><span class="o">.</span><span class="n">firstweekday</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Before setting:'</span><span class="p">,</span> <span class="n">cal</span><span class="p">.</span><span class="n">firstweekday</span><span class="p">())</span>
 
-<span class="n">cal</span><span class="o">.</span><span class="n">setfirstweekday</span><span class="p">(</span><span class="n">cal</span><span class="o">.</span><span class="n">SUNDAY</span><span class="p">)</span>
+<span class="n">cal</span><span class="p">.</span><span class="n">setfirstweekday</span><span class="p">(</span><span class="n">cal</span><span class="p">.</span><span class="n">SUNDAY</span><span class="p">)</span>
 <span class="c1"># or
-</span><span class="n">cal</span><span class="o">.</span><span class="n">setfirstweekday</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+</span><span class="n">cal</span><span class="p">.</span><span class="n">setfirstweekday</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">'After setting:'</span><span class="p">,</span> <span class="n">cal</span><span class="o">.</span><span class="n">firstweekday</span><span class="p">())</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">'After setting:'</span><span class="p">,</span> <span class="n">cal</span><span class="p">.</span><span class="n">firstweekday</span><span class="p">())</span></code></pre></figure>
 
 </div>
 
@@ -851,8 +851,8 @@ After setting: 6
 <p id="code-header-4" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-4", "code-header-4")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">calendar</span> <span class="k">as</span> <span class="n">cal</span>
-<span class="k">print</span><span class="p">(</span><span class="n">cal</span><span class="o">.</span><span class="n">isleap</span><span class="p">(</span><span class="mi">2020</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">cal</span><span class="o">.</span><span class="n">isleap</span><span class="p">(</span><span class="mi">2021</span><span class="p">))</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="n">cal</span><span class="p">.</span><span class="n">isleap</span><span class="p">(</span><span class="mi">2020</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">cal</span><span class="p">.</span><span class="n">isleap</span><span class="p">(</span><span class="mi">2021</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
@@ -872,7 +872,7 @@ False
 <p id="code-header-5" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-5", "code-header-5")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">calendar</span> <span class="k">as</span> <span class="n">cal</span>
-<span class="k">print</span><span class="p">(</span><span class="n">cal</span><span class="o">.</span><span class="n">leapdays</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">2020</span><span class="p">))</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="n">cal</span><span class="p">.</span><span class="n">leapdays</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">2020</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
@@ -891,8 +891,8 @@ False
 <p id="code-header-6" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-6", "code-header-6")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">calendar</span> <span class="k">as</span> <span class="n">cal</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'Sunday -&gt;'</span><span class="p">,</span> <span class="n">cal</span><span class="o">.</span><span class="n">weekday</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">22</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'Monday -&gt;'</span><span class="p">,</span> <span class="n">cal</span><span class="o">.</span><span class="n">weekday</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">23</span><span class="p">))</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">'Sunday -&gt;'</span><span class="p">,</span> <span class="n">cal</span><span class="p">.</span><span class="n">weekday</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">22</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Monday -&gt;'</span><span class="p">,</span> <span class="n">cal</span><span class="p">.</span><span class="n">weekday</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">23</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
@@ -912,8 +912,8 @@ Monday -&gt; 0
 <p id="code-header-7" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-7", "code-header-7")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">calendar</span> <span class="k">as</span> <span class="n">cal</span>
-<span class="k">print</span><span class="p">(</span><span class="n">cal</span><span class="o">.</span><span class="n">weekheader</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">cal</span><span class="o">.</span><span class="n">weekheader</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="n">cal</span><span class="p">.</span><span class="n">weekheader</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">cal</span><span class="p">.</span><span class="n">weekheader</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
@@ -934,7 +934,7 @@ Mon Tue Wed Thu Fri Sat Sun
 <p id="code-header-8" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-8", "code-header-8")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">calendar</span> <span class="k">as</span> <span class="n">cal</span>
-<span class="k">print</span><span class="p">(</span><span class="n">cal</span><span class="o">.</span><span class="n">monthrange</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="n">cal</span><span class="p">.</span><span class="n">monthrange</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
@@ -953,7 +953,7 @@ Mon Tue Wed Thu Fri Sat Sun
 <p id="code-header-9" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-9", "code-header-9")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">calendar</span> <span class="k">as</span> <span class="n">cal</span>
-<span class="k">print</span><span class="p">(</span><span class="n">cal</span><span class="o">.</span><span class="n">monthcalendar</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="n">cal</span><span class="p">.</span><span class="n">monthcalendar</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
@@ -980,10 +980,10 @@ Mon Tue Wed Thu Fri Sat Sun
 <p id="code-header-10" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-10", "code-header-10")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">calendar</span> <span class="k">as</span> <span class="n">cal</span>
-<span class="k">print</span><span class="p">(</span><span class="n">cal</span><span class="o">.</span><span class="n">calendar</span><span class="p">(</span><span class="mi">2020</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">cal</span><span class="p">.</span><span class="n">calendar</span><span class="p">(</span><span class="mi">2020</span><span class="p">))</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'</span><span class="se">\n</span><span class="s">{"-------------"*5}</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">cal</span><span class="o">.</span><span class="n">calendar</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'</span><span class="se">\n</span><span class="si">{</span><span class="s">"-------------"</span><span class="o">*</span><span class="mi">5</span><span class="si">}</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">cal</span><span class="p">.</span><span class="n">calendar</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
@@ -1108,8 +1108,8 @@ Mo Tu We Th Fr Sa Su  Mo Tu We Th Fr Sa Su  Mo Tu We Th Fr Sa Su
 <p id="code-header-11" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-11", "code-header-11")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">calendar</span> <span class="k">as</span> <span class="n">cal</span>
-<span class="k">print</span><span class="p">(</span><span class="n">cal</span><span class="o">.</span><span class="n">month</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">cal</span><span class="o">.</span><span class="n">month</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="n">cal</span><span class="p">.</span><span class="n">month</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">cal</span><span class="p">.</span><span class="n">month</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
@@ -1155,7 +1155,7 @@ Mo Tu We Th Fr Sa Su
 <p id="code-header-12" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-12", "code-header-12")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">calendar</span> <span class="k">as</span> <span class="n">cal</span>
-<span class="k">print</span><span class="p">(</span><span class="n">cal</span><span class="o">.</span><span class="n">weekday</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="n">cal</span><span class="p">.</span><span class="n">weekday</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
@@ -1183,11 +1183,11 @@ Mo Tu We Th Fr Sa Su
 <p id="code-header-13" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-13", "code-header-13")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">calendar</span> <span class="k">as</span> <span class="n">cal</span>
-<span class="n">cal</span><span class="o">.</span><span class="n">prcal</span><span class="p">(</span><span class="mi">2020</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'</span><span class="se">\n</span><span class="s">{"-------------"*5}</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
-<span class="n">cal</span><span class="o">.</span><span class="n">prcal</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'</span><span class="se">\n</span><span class="s">{"-------------"*5}</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
-<span class="n">cal</span><span class="o">.</span><span class="n">prcal</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span></code></pre></figure>
+<span class="n">cal</span><span class="p">.</span><span class="n">prcal</span><span class="p">(</span><span class="mi">2020</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'</span><span class="se">\n</span><span class="si">{</span><span class="s">"-------------"</span><span class="o">*</span><span class="mi">5</span><span class="si">}</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+<span class="n">cal</span><span class="p">.</span><span class="n">prcal</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'</span><span class="se">\n</span><span class="si">{</span><span class="s">"-------------"</span><span class="o">*</span><span class="mi">5</span><span class="si">}</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+<span class="n">cal</span><span class="p">.</span><span class="n">prcal</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1266,9 +1266,9 @@ Sun Mon Tue Wed Thu Fri Sat
 <p id="code-header-14" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-14", "code-header-14")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">calendar</span> <span class="k">as</span> <span class="n">cal</span>
-<span class="n">cal</span><span class="o">.</span><span class="n">prmonth</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'</span><span class="se">\n</span><span class="s">{"-------------"*5}</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
-<span class="n">cal</span><span class="o">.</span><span class="n">prmonth</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span></code></pre></figure>
+<span class="n">cal</span><span class="p">.</span><span class="n">prmonth</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'</span><span class="se">\n</span><span class="si">{</span><span class="s">"-------------"</span><span class="o">*</span><span class="mi">5</span><span class="si">}</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+<span class="n">cal</span><span class="p">.</span><span class="n">prmonth</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1313,8 +1313,8 @@ Sun Mon Tue Wed Thu Fri Sat
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">calendar</span> <span class="k">as</span> <span class="n">cal</span>
 <span class="kn">import</span> <span class="nn">time</span>
 
-<span class="n">epochNow</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="n">timestamp</span> <span class="o">=</span> <span class="n">cal</span><span class="o">.</span><span class="n">timegm</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">gmtime</span><span class="p">(</span><span class="n">epochNow</span><span class="p">))</span>
+<span class="n">epochNow</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">timestamp</span> <span class="o">=</span> <span class="n">cal</span><span class="p">.</span><span class="n">timegm</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">gmtime</span><span class="p">(</span><span class="n">epochNow</span><span class="p">))</span>
 <span class="k">print</span><span class="p">(</span><span class="n">epochNow</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">timestamp</span><span class="p">)</span></code></pre></figure>
 
@@ -1368,7 +1368,7 @@ Sun Mon Tue Wed Thu Fri Sat
 <span class="n">calD</span> <span class="o">=</span> <span class="n">Calendar</span><span class="p">()</span>
 <span class="n">cal1</span> <span class="o">=</span> <span class="n">Calendar</span><span class="p">(</span><span class="n">firstweekday</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'firstweekday : {calD.firstweekday}  firstweekday : {cal1.firstweekday}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'firstweekday : </span><span class="si">{</span><span class="n">calD</span><span class="p">.</span><span class="n">firstweekday</span><span class="si">}</span><span class="s">  firstweekday : </span><span class="si">{</span><span class="n">cal1</span><span class="p">.</span><span class="n">firstweekday</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1393,8 +1393,8 @@ firstweekday : 0  firstweekday : 6
 <span class="n">calD</span> <span class="o">=</span> <span class="n">Calendar</span><span class="p">()</span>
 <span class="n">cal1</span> <span class="o">=</span> <span class="n">Calendar</span><span class="p">(</span><span class="n">firstweekday</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">calD</span><span class="o">.</span><span class="n">getfirstweekday</span><span class="p">())</span>
-<span class="k">print</span><span class="p">(</span><span class="n">cal1</span><span class="o">.</span><span class="n">getfirstweekday</span><span class="p">())</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="n">calD</span><span class="p">.</span><span class="n">getfirstweekday</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="n">cal1</span><span class="p">.</span><span class="n">getfirstweekday</span><span class="p">())</span></code></pre></figure>
 
 </div>
 
@@ -1418,13 +1418,13 @@ firstweekday : 0  firstweekday : 6
 
 <span class="n">calD</span> <span class="o">=</span> <span class="n">Calendar</span><span class="p">()</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">'Before setting :'</span><span class="p">,</span> <span class="n">calD</span><span class="o">.</span><span class="n">getfirstweekday</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Before setting :'</span><span class="p">,</span> <span class="n">calD</span><span class="p">.</span><span class="n">getfirstweekday</span><span class="p">())</span>
 
-<span class="n">calD</span><span class="o">.</span><span class="n">setfirstweekday</span><span class="p">(</span><span class="n">cal</span><span class="o">.</span><span class="n">SUNDAY</span><span class="p">)</span>
+<span class="n">calD</span><span class="p">.</span><span class="n">setfirstweekday</span><span class="p">(</span><span class="n">cal</span><span class="p">.</span><span class="n">SUNDAY</span><span class="p">)</span>
 <span class="c1"># or
-</span><span class="n">calD</span><span class="o">.</span><span class="n">setfirstweekday</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+</span><span class="n">calD</span><span class="p">.</span><span class="n">setfirstweekday</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">'After setting :'</span><span class="p">,</span> <span class="n">calD</span><span class="o">.</span><span class="n">getfirstweekday</span><span class="p">())</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">'After setting :'</span><span class="p">,</span> <span class="n">calD</span><span class="p">.</span><span class="n">getfirstweekday</span><span class="p">())</span></code></pre></figure>
 
 </div>
 
@@ -1449,11 +1449,11 @@ After setting : 6
 <span class="n">cal1</span> <span class="o">=</span> <span class="n">Calendar</span><span class="p">(</span><span class="n">firstweekday</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'Default Calendar'</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">day</span> <span class="ow">in</span> <span class="n">calD</span><span class="o">.</span><span class="n">iterweekdays</span><span class="p">():</span>
+<span class="k">for</span> <span class="n">day</span> <span class="ow">in</span> <span class="n">calD</span><span class="p">.</span><span class="n">iterweekdays</span><span class="p">():</span>
     <span class="k">print</span><span class="p">(</span><span class="n">day</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">Sunday as first Day of week'</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">day</span> <span class="ow">in</span> <span class="n">cal1</span><span class="o">.</span><span class="n">iterweekdays</span><span class="p">():</span>
+<span class="k">for</span> <span class="n">day</span> <span class="ow">in</span> <span class="n">cal1</span><span class="p">.</span><span class="n">iterweekdays</span><span class="p">():</span>
     <span class="k">print</span><span class="p">(</span><span class="n">day</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -1491,7 +1491,7 @@ Sunday as first Day of week
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">calendar</span> <span class="kn">import</span> <span class="n">Calendar</span>
 <span class="n">cal1</span> <span class="o">=</span> <span class="n">Calendar</span><span class="p">(</span><span class="n">firstweekday</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">day</span> <span class="ow">in</span> <span class="n">cal1</span><span class="o">.</span><span class="n">itermonthdates</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">day</span> <span class="ow">in</span> <span class="n">cal1</span><span class="p">.</span><span class="n">itermonthdates</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
     <span class="k">print</span><span class="p">(</span><span class="n">day</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">day</span><span class="p">))</span></code></pre></figure>
 
 </div>
@@ -1548,7 +1548,7 @@ Sunday as first Day of week
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">calendar</span> <span class="kn">import</span> <span class="n">Calendar</span>
 <span class="n">cal1</span> <span class="o">=</span> <span class="n">Calendar</span><span class="p">(</span><span class="n">firstweekday</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">day</span> <span class="ow">in</span> <span class="n">cal1</span><span class="o">.</span><span class="n">itermonthdays</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">day</span> <span class="ow">in</span> <span class="n">cal1</span><span class="p">.</span><span class="n">itermonthdays</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
     <span class="k">print</span><span class="p">(</span><span class="n">day</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">day</span><span class="p">))</span></code></pre></figure>
 
 </div>
@@ -1605,7 +1605,7 @@ Sunday as first Day of week
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">calendar</span> <span class="kn">import</span> <span class="n">Calendar</span>
 <span class="n">cal1</span> <span class="o">=</span> <span class="n">Calendar</span><span class="p">(</span><span class="n">firstweekday</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">day</span> <span class="ow">in</span> <span class="n">cal1</span><span class="o">.</span><span class="n">itermonthdays2</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">day</span> <span class="ow">in</span> <span class="n">cal1</span><span class="p">.</span><span class="n">itermonthdays2</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
     <span class="k">print</span><span class="p">(</span><span class="n">day</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">day</span><span class="p">))</span></code></pre></figure>
 
 </div>
@@ -1663,7 +1663,7 @@ Sunday as first Day of week
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">calendar</span> <span class="kn">import</span> <span class="n">Calendar</span>
 <span class="n">cal1</span> <span class="o">=</span> <span class="n">Calendar</span><span class="p">(</span><span class="n">firstweekday</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">day</span> <span class="ow">in</span> <span class="n">cal1</span><span class="o">.</span><span class="n">itermonthdays3</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">day</span> <span class="ow">in</span> <span class="n">cal1</span><span class="p">.</span><span class="n">itermonthdays3</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
     <span class="k">print</span><span class="p">(</span><span class="n">day</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">day</span><span class="p">))</span></code></pre></figure>
 
 </div>
@@ -1720,7 +1720,7 @@ Sunday as first Day of week
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">calendar</span> <span class="kn">import</span> <span class="n">Calendar</span>
 <span class="n">cal1</span> <span class="o">=</span> <span class="n">Calendar</span><span class="p">(</span><span class="n">firstweekday</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">day</span> <span class="ow">in</span> <span class="n">cal1</span><span class="o">.</span><span class="n">itermonthdays4</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">day</span> <span class="ow">in</span> <span class="n">cal1</span><span class="p">.</span><span class="n">itermonthdays4</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
     <span class="k">print</span><span class="p">(</span><span class="n">day</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">day</span><span class="p">))</span></code></pre></figure>
 
 </div>
@@ -1777,7 +1777,7 @@ Sunday as first Day of week
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">calendar</span> <span class="kn">import</span> <span class="n">Calendar</span>
 <span class="n">cal1</span> <span class="o">=</span> <span class="n">Calendar</span><span class="p">(</span><span class="n">firstweekday</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">week</span> <span class="ow">in</span> <span class="n">cal1</span><span class="o">.</span><span class="n">monthdatescalendar</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">week</span> <span class="ow">in</span> <span class="n">cal1</span><span class="p">.</span><span class="n">monthdatescalendar</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
     <span class="k">print</span><span class="p">(</span><span class="n">week</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">week</span><span class="p">))</span></code></pre></figure>
 
 </div>
@@ -1804,7 +1804,7 @@ Sunday as first Day of week
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">calendar</span> <span class="kn">import</span> <span class="n">Calendar</span>
 <span class="n">cal1</span> <span class="o">=</span> <span class="n">Calendar</span><span class="p">(</span><span class="n">firstweekday</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">week</span> <span class="ow">in</span> <span class="n">cal1</span><span class="o">.</span><span class="n">monthdays2calendar</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">week</span> <span class="ow">in</span> <span class="n">cal1</span><span class="p">.</span><span class="n">monthdays2calendar</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
     <span class="k">print</span><span class="p">(</span><span class="n">week</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">week</span><span class="p">))</span></code></pre></figure>
 
 </div>
@@ -1831,7 +1831,7 @@ Sunday as first Day of week
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">calendar</span> <span class="kn">import</span> <span class="n">Calendar</span>
 <span class="n">cal1</span> <span class="o">=</span> <span class="n">Calendar</span><span class="p">(</span><span class="n">firstweekday</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">week</span> <span class="ow">in</span> <span class="n">cal1</span><span class="o">.</span><span class="n">monthdayscalendar</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">week</span> <span class="ow">in</span> <span class="n">cal1</span><span class="p">.</span><span class="n">monthdayscalendar</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
     <span class="k">print</span><span class="p">(</span><span class="n">week</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">week</span><span class="p">))</span></code></pre></figure>
 
 </div>
@@ -1858,7 +1858,7 @@ Sunday as first Day of week
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">calendar</span> <span class="kn">import</span> <span class="n">Calendar</span>
 <span class="n">cal1</span> <span class="o">=</span> <span class="n">Calendar</span><span class="p">(</span><span class="n">firstweekday</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">cal1</span><span class="o">.</span><span class="n">yeardatescalendar</span><span class="p">(</span><span class="mi">2020</span><span class="p">))</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="n">cal1</span><span class="p">.</span><span class="n">yeardatescalendar</span><span class="p">(</span><span class="mi">2020</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
@@ -1883,7 +1883,7 @@ Sunday as first Day of week
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">calendar</span> <span class="kn">import</span> <span class="n">Calendar</span>
 <span class="n">cal1</span> <span class="o">=</span> <span class="n">Calendar</span><span class="p">(</span><span class="n">firstweekday</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">cal1</span><span class="o">.</span><span class="n">yeardatescalendar</span><span class="p">(</span><span class="mi">2020</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">cal1</span><span class="p">.</span><span class="n">yeardatescalendar</span><span class="p">(</span><span class="mi">2020</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">month</span> <span class="ow">in</span> <span class="n">year</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">week</span> <span class="ow">in</span> <span class="n">month</span><span class="p">:</span>
             <span class="k">print</span><span class="p">(</span><span class="n">week</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">week</span><span class="p">))</span></code></pre></figure>
@@ -1918,7 +1918,7 @@ Sunday as first Day of week
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">calendar</span> <span class="kn">import</span> <span class="n">Calendar</span>
 <span class="n">cal1</span> <span class="o">=</span> <span class="n">Calendar</span><span class="p">(</span><span class="n">firstweekday</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">cal1</span><span class="o">.</span><span class="n">yeardatescalendar</span><span class="p">(</span><span class="mi">2020</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">cal1</span><span class="p">.</span><span class="n">yeardatescalendar</span><span class="p">(</span><span class="mi">2020</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">month</span> <span class="ow">in</span> <span class="n">year</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">week</span> <span class="ow">in</span> <span class="n">month</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">day</span> <span class="ow">in</span> <span class="n">week</span><span class="p">:</span>
@@ -1959,7 +1959,7 @@ Sunday as first Day of week
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">calendar</span> <span class="kn">import</span> <span class="n">Calendar</span>
 <span class="n">cal1</span> <span class="o">=</span> <span class="n">Calendar</span><span class="p">(</span><span class="n">firstweekday</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">cal1</span><span class="o">.</span><span class="n">yeardatescalendar</span><span class="p">(</span><span class="mi">2020</span><span class="p">))</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="n">cal1</span><span class="p">.</span><span class="n">yeardatescalendar</span><span class="p">(</span><span class="mi">2020</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
@@ -1984,7 +1984,7 @@ Sunday as first Day of week
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">calendar</span> <span class="kn">import</span> <span class="n">Calendar</span>
 <span class="n">cal1</span> <span class="o">=</span> <span class="n">Calendar</span><span class="p">(</span><span class="n">firstweekday</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">cal1</span><span class="o">.</span><span class="n">yeardayscalendar</span><span class="p">(</span><span class="mi">2020</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">cal1</span><span class="p">.</span><span class="n">yeardayscalendar</span><span class="p">(</span><span class="mi">2020</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">month</span> <span class="ow">in</span> <span class="n">year</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">week</span> <span class="ow">in</span> <span class="n">month</span><span class="p">:</span>
             <span class="k">print</span><span class="p">(</span><span class="n">week</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">week</span><span class="p">))</span></code></pre></figure>
@@ -2027,7 +2027,7 @@ Sunday as first Day of week
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">calendar</span> <span class="kn">import</span> <span class="n">Calendar</span>
 <span class="n">cal1</span> <span class="o">=</span> <span class="n">Calendar</span><span class="p">(</span><span class="n">firstweekday</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">cal1</span><span class="o">.</span><span class="n">yeardayscalendar</span><span class="p">(</span><span class="mi">2020</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">cal1</span><span class="p">.</span><span class="n">yeardayscalendar</span><span class="p">(</span><span class="mi">2020</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">month</span> <span class="ow">in</span> <span class="n">year</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">week</span> <span class="ow">in</span> <span class="n">month</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">day</span> <span class="ow">in</span> <span class="n">week</span><span class="p">:</span>
@@ -2075,7 +2075,7 @@ Sunday as first Day of week
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">calendar</span> <span class="kn">import</span> <span class="n">Calendar</span>
 <span class="n">cal1</span> <span class="o">=</span> <span class="n">Calendar</span><span class="p">(</span><span class="n">firstweekday</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">cal1</span><span class="o">.</span><span class="n">yeardatescalendar</span><span class="p">(</span><span class="mi">2020</span><span class="p">))</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="n">cal1</span><span class="p">.</span><span class="n">yeardatescalendar</span><span class="p">(</span><span class="mi">2020</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
@@ -2100,7 +2100,7 @@ Sunday as first Day of week
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">calendar</span> <span class="kn">import</span> <span class="n">Calendar</span>
 <span class="n">cal1</span> <span class="o">=</span> <span class="n">Calendar</span><span class="p">(</span><span class="n">firstweekday</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">cal1</span><span class="o">.</span><span class="n">yeardays2calendar</span><span class="p">(</span><span class="mi">2020</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">cal1</span><span class="p">.</span><span class="n">yeardays2calendar</span><span class="p">(</span><span class="mi">2020</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">month</span> <span class="ow">in</span> <span class="n">year</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">week</span> <span class="ow">in</span> <span class="n">month</span><span class="p">:</span>
             <span class="k">print</span><span class="p">(</span><span class="n">week</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">week</span><span class="p">))</span></code></pre></figure>
@@ -2149,7 +2149,7 @@ Sunday as first Day of week
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">calendar</span> <span class="kn">import</span> <span class="n">Calendar</span>
 <span class="n">cal1</span> <span class="o">=</span> <span class="n">Calendar</span><span class="p">(</span><span class="n">firstweekday</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">cal1</span><span class="o">.</span><span class="n">yeardays2calendar</span><span class="p">(</span><span class="mi">2020</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">cal1</span><span class="p">.</span><span class="n">yeardays2calendar</span><span class="p">(</span><span class="mi">2020</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">month</span> <span class="ow">in</span> <span class="n">year</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">week</span> <span class="ow">in</span> <span class="n">month</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">day</span> <span class="ow">in</span> <span class="n">week</span><span class="p">:</span>
@@ -2284,10 +2284,10 @@ set()
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">calendar</span> <span class="kn">import</span> <span class="n">TextCalendar</span>
 
 <span class="n">txtCalD</span> <span class="o">=</span> <span class="n">TextCalendar</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">txtCalD</span><span class="o">.</span><span class="n">formatmonth</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">txtCalD</span><span class="p">.</span><span class="n">formatmonth</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 
 <span class="n">txtCalS</span> <span class="o">=</span> <span class="n">TextCalendar</span><span class="p">(</span><span class="n">firstweekday</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">txtCalS</span><span class="o">.</span><span class="n">formatmonth</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="n">txtCalS</span><span class="p">.</span><span class="n">formatmonth</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
@@ -2326,8 +2326,8 @@ Su Mo Tu We Th Fr Sa
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">calendar</span> <span class="kn">import</span> <span class="n">TextCalendar</span>
 <span class="n">txtCal</span> <span class="o">=</span> <span class="n">TextCalendar</span><span class="p">(</span><span class="n">firstweekday</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">txtCal</span><span class="o">.</span><span class="n">formatmonth</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">txtCal</span><span class="o">.</span><span class="n">formatmonth</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="n">txtCal</span><span class="p">.</span><span class="n">formatmonth</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">txtCal</span><span class="p">.</span><span class="n">formatmonth</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
@@ -2383,7 +2383,7 @@ Sun Mon Tue Wed Thu Fri Sat
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">calendar</span> <span class="kn">import</span> <span class="n">TextCalendar</span>
 <span class="n">txtCal</span> <span class="o">=</span> <span class="n">TextCalendar</span><span class="p">(</span><span class="n">firstweekday</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">txtCal</span><span class="o">.</span><span class="n">formatyear</span><span class="p">(</span><span class="mi">2020</span><span class="p">))</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="n">txtCal</span><span class="p">.</span><span class="n">formatyear</span><span class="p">(</span><span class="mi">2020</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
@@ -2415,8 +2415,8 @@ Su Mo Tu We Th Fr Sa      Su Mo Tu We Th Fr Sa      Su Mo Tu We Th Fr Sa
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">calendar</span> <span class="kn">import</span> <span class="n">TextCalendar</span>
 <span class="n">txtCal</span> <span class="o">=</span> <span class="n">TextCalendar</span><span class="p">(</span><span class="n">firstweekday</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">txtCal</span><span class="o">.</span><span class="n">formatyear</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">txtCal</span><span class="o">.</span><span class="n">formatyear</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="n">txtCal</span><span class="p">.</span><span class="n">formatyear</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">txtCal</span><span class="p">.</span><span class="n">formatyear</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
@@ -2491,7 +2491,7 @@ Sun Mon Tue Wed Thu Fri Sat          Sun Mon Tue Wed Thu Fri Sat
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">calendar</span> <span class="kn">import</span> <span class="n">TextCalendar</span>
 <span class="n">txtCal</span> <span class="o">=</span> <span class="n">TextCalendar</span><span class="p">(</span><span class="n">firstweekday</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 
-<span class="n">txtCal</span><span class="o">.</span><span class="n">pryear</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span></code></pre></figure>
+<span class="n">txtCal</span><span class="p">.</span><span class="n">pryear</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -2531,7 +2531,7 @@ Sun Mon Tue Wed Thu Fri Sat
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">calendar</span> <span class="kn">import</span> <span class="n">TextCalendar</span>
 <span class="n">txtCal</span> <span class="o">=</span> <span class="n">TextCalendar</span><span class="p">(</span><span class="n">firstweekday</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 
-<span class="n">txtCal</span><span class="o">.</span><span class="n">prmonth</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span></code></pre></figure>
+<span class="n">txtCal</span><span class="p">.</span><span class="n">prmonth</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -2560,8 +2560,8 @@ Su Mo Tu We Th Fr Sa
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">calendar</span> <span class="kn">import</span> <span class="n">TextCalendar</span>
 <span class="n">txtCal</span> <span class="o">=</span> <span class="n">TextCalendar</span><span class="p">(</span><span class="n">firstweekday</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 
-<span class="n">txtCal</span><span class="o">.</span><span class="n">prweek</span><span class="p">([(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)],</span> <span class="mi">3</span><span class="p">)</span>
-<span class="n">txtCal</span><span class="o">.</span><span class="n">prweek</span><span class="p">([(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">5</span><span class="p">)],</span> <span class="mi">3</span><span class="p">)</span></code></pre></figure>
+<span class="n">txtCal</span><span class="p">.</span><span class="n">prweek</span><span class="p">([(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)],</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">txtCal</span><span class="p">.</span><span class="n">prweek</span><span class="p">([(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">5</span><span class="p">)],</span> <span class="mi">3</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -2584,10 +2584,10 @@ Su Mo Tu We Th Fr Sa
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">calendar</span> <span class="kn">import</span> <span class="n">TextCalendar</span>
 <span class="n">txtCal</span> <span class="o">=</span> <span class="n">TextCalendar</span><span class="p">(</span><span class="n">firstweekday</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">txtCal</span><span class="o">.</span><span class="n">yeardays2calendar</span><span class="p">(</span><span class="mi">2020</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">txtCal</span><span class="p">.</span><span class="n">yeardays2calendar</span><span class="p">(</span><span class="mi">2020</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">month</span> <span class="ow">in</span> <span class="n">year</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">week</span> <span class="ow">in</span> <span class="n">month</span><span class="p">:</span>
-            <span class="n">txtCal</span><span class="o">.</span><span class="n">prweek</span><span class="p">(</span><span class="n">week</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span></code></pre></figure>
+            <span class="n">txtCal</span><span class="p">.</span><span class="n">prweek</span><span class="p">(</span><span class="n">week</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -2608,9 +2608,9 @@ Su Mo Tu We Th Fr Sa
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">calendar</span> <span class="kn">import</span> <span class="n">TextCalendar</span>
 <span class="n">txtCal</span> <span class="o">=</span> <span class="n">TextCalendar</span><span class="p">(</span><span class="n">firstweekday</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">txtCal</span><span class="o">.</span><span class="n">formatweekheader</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">txtCal</span><span class="o">.</span><span class="n">formatweekheader</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">txtCal</span><span class="o">.</span><span class="n">formatweekheader</span><span class="p">(</span><span class="mi">9</span><span class="p">))</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="n">txtCal</span><span class="p">.</span><span class="n">formatweekheader</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">txtCal</span><span class="p">.</span><span class="n">formatweekheader</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">txtCal</span><span class="p">.</span><span class="n">formatweekheader</span><span class="p">(</span><span class="mi">9</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
@@ -2633,8 +2633,8 @@ Su Mo Tu We Th Fr Sa
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">calendar</span> <span class="kn">import</span> <span class="n">TextCalendar</span>
 <span class="n">txtCal</span> <span class="o">=</span> <span class="n">TextCalendar</span><span class="p">(</span><span class="n">firstweekday</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">txtCal</span><span class="o">.</span><span class="n">formatweek</span><span class="p">([(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)],</span> <span class="mi">3</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">txtCal</span><span class="o">.</span><span class="n">formatweek</span><span class="p">([(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">5</span><span class="p">)],</span> <span class="mi">3</span><span class="p">))</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="n">txtCal</span><span class="p">.</span><span class="n">formatweek</span><span class="p">([(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)],</span> <span class="mi">3</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">txtCal</span><span class="p">.</span><span class="n">formatweek</span><span class="p">([(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">5</span><span class="p">)],</span> <span class="mi">3</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
@@ -2657,9 +2657,9 @@ Su Mo Tu We Th Fr Sa
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">calendar</span> <span class="kn">import</span> <span class="n">TextCalendar</span>
 <span class="n">txtCal</span> <span class="o">=</span> <span class="n">TextCalendar</span><span class="p">(</span><span class="n">firstweekday</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">txtCal</span><span class="o">.</span><span class="n">formatday</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s">''</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">txtCal</span><span class="o">.</span><span class="n">formatday</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s">''</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">txtCal</span><span class="o">.</span><span class="n">formatday</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s">''</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="n">txtCal</span><span class="p">.</span><span class="n">formatday</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s">''</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">txtCal</span><span class="p">.</span><span class="n">formatday</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s">''</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">txtCal</span><span class="p">.</span><span class="n">formatday</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s">''</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -2680,9 +2680,9 @@ Su Mo Tu We Th Fr Sa
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">calendar</span> <span class="kn">import</span> <span class="n">TextCalendar</span>
 <span class="n">txtCal</span> <span class="o">=</span> <span class="n">TextCalendar</span><span class="p">(</span><span class="n">firstweekday</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">txtCal</span><span class="o">.</span><span class="n">formatweekday</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">txtCal</span><span class="o">.</span><span class="n">formatweekday</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">txtCal</span><span class="o">.</span><span class="n">formatweekday</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">))</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="n">txtCal</span><span class="p">.</span><span class="n">formatweekday</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">txtCal</span><span class="p">.</span><span class="n">formatweekday</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">txtCal</span><span class="p">.</span><span class="n">formatweekday</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
@@ -2711,8 +2711,8 @@ Su
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">calendar</span> <span class="kn">import</span> <span class="n">TextCalendar</span>
 <span class="n">txtCal</span> <span class="o">=</span> <span class="n">TextCalendar</span><span class="p">(</span><span class="n">firstweekday</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">txtCal</span><span class="o">.</span><span class="n">formatmonthname</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">txtCal</span><span class="o">.</span><span class="n">formatmonthname</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">withyear</span><span class="o">=</span><span class="bp">False</span><span class="p">))</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="n">txtCal</span><span class="p">.</span><span class="n">formatmonthname</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">txtCal</span><span class="p">.</span><span class="n">formatmonthname</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">withyear</span><span class="o">=</span><span class="bp">False</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
@@ -2813,11 +2813,11 @@ set()
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">calendar</span> <span class="kn">import</span> <span class="n">LocaleTextCalendar</span>
 
 <span class="n">enCal</span> <span class="o">=</span> <span class="n">LocaleTextCalendar</span><span class="p">(</span><span class="n">locale</span><span class="o">=</span><span class="s">'en_US.utf8'</span><span class="p">)</span>
-<span class="n">enCal</span><span class="o">.</span><span class="n">prmonth</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+<span class="n">enCal</span><span class="p">.</span><span class="n">prmonth</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
 
 <span class="n">frCal</span> <span class="o">=</span> <span class="n">LocaleTextCalendar</span><span class="p">(</span><span class="n">locale</span><span class="o">=</span><span class="s">'fr_FR.iso88591'</span><span class="p">)</span>
 <span class="k">print</span><span class="p">()</span>
-<span class="n">frCal</span><span class="o">.</span><span class="n">prmonth</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span></code></pre></figure>
+<span class="n">frCal</span><span class="p">.</span><span class="n">prmonth</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span></code></pre></figure>
 
 </div>
 

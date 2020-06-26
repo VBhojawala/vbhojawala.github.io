@@ -46,7 +46,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="site" href="http://localhost:4000/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="vbhojawala.github.io" href="http://localhost:4000/feed.xml">
 
     <script>
         $(document).ready(function() {
@@ -1147,12 +1147,12 @@ Flower list is empty!
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">flowers</span><span class="p">)):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'{i}. {flowers[i]}'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">f'</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s">. </span><span class="si">{</span><span class="n">flowers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">Printing number starting with 1</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">flowers</span><span class="p">)):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'{i+1}. {flowers[i]}'</span><span class="p">)</span></code></pre></figure>
+    <span class="k">print</span><span class="p">(</span><span class="s">f'</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s">. </span><span class="si">{</span><span class="n">flowers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1193,13 +1193,13 @@ Printing number starting with 1
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
 
 <span class="k">for</span> <span class="n">count</span><span class="p">,</span> <span class="n">element</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">flowers</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'{count}. {element}'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">f'</span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s">. </span><span class="si">{</span><span class="n">element</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
 
 
 <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">Printing number starting with 1</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">count</span><span class="p">,</span> <span class="n">element</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">flowers</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'{count}. {element}'</span><span class="p">)</span></code></pre></figure>
+    <span class="k">print</span><span class="p">(</span><span class="s">f'</span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s">. </span><span class="si">{</span><span class="n">element</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1277,7 +1277,7 @@ Dahlia
 <span class="n">prices</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 
 <span class="k">for</span> <span class="n">flower</span><span class="p">,</span> <span class="n">price</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">flowers</span><span class="p">,</span> <span class="n">prices</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Price of {flower} is $ {price}'</span><span class="p">)</span></code></pre></figure>
+    <span class="k">print</span><span class="p">(</span><span class="s">f'Price of </span><span class="si">{</span><span class="n">flower</span><span class="si">}</span><span class="s"> is $ </span><span class="si">{</span><span class="n">price</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1325,7 +1325,7 @@ Price of Tulips is $ 3
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">storageUnit</span> <span class="o">=</span> <span class="p">[</span><span class="mi">15421</span><span class="p">,</span> <span class="mf">1244.00</span><span class="p">,</span> <span class="s">'Strings'</span><span class="p">,</span> <span class="bp">True</span><span class="p">]</span>
 
 <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">storageUnit</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'{item} : {type(item)}'</span><span class="p">)</span></code></pre></figure>
+    <span class="k">print</span><span class="p">(</span><span class="s">f'</span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="s"> : </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">item</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1402,7 +1402,7 @@ ValueError: too many values to unpack (expected 3)</pre></div>
 
 <span class="n">top1</span><span class="p">,</span> <span class="n">top2</span><span class="p">,</span> <span class="n">top3</span><span class="p">,</span> <span class="o">*</span><span class="n">rest</span> <span class="o">=</span> <span class="n">marks</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Top1 : {top1}   Top2 : {top2}   Top3 : {top3}   rest : {rest}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'Top1 : </span><span class="si">{</span><span class="n">top1</span><span class="si">}</span><span class="s">   Top2 : </span><span class="si">{</span><span class="n">top2</span><span class="si">}</span><span class="s">   Top3 : </span><span class="si">{</span><span class="n">top3</span><span class="si">}</span><span class="s">   rest : </span><span class="si">{</span><span class="n">rest</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1425,7 +1425,7 @@ Top1 : 97   Top2 : 91   Top3 : 84   rest : [78, 71, 66, 65, 59, 55, 54, 45, 35]
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">marks</span> <span class="o">=</span> <span class="p">[</span><span class="mi">97</span><span class="p">,</span> <span class="mi">91</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">71</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">35</span><span class="p">]</span>
 
 <span class="o">*</span><span class="n">rest</span><span class="p">,</span> <span class="n">low2</span><span class="p">,</span> <span class="n">low1</span> <span class="o">=</span> <span class="n">marks</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'low1 : {low1}   low2 : {low2}  rest : {rest}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'low1 : </span><span class="si">{</span><span class="n">low1</span><span class="si">}</span><span class="s">   low2 : </span><span class="si">{</span><span class="n">low2</span><span class="si">}</span><span class="s">  rest : </span><span class="si">{</span><span class="n">rest</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1448,7 +1448,7 @@ low1 : 35   low2 : 45  rest : [97, 91, 84, 78, 71, 66, 65, 59, 55, 54]
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">marks</span> <span class="o">=</span> <span class="p">[</span><span class="mi">97</span><span class="p">,</span> <span class="mi">91</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">71</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">35</span><span class="p">]</span>
 
 <span class="n">high</span><span class="p">,</span> <span class="o">*</span><span class="n">rest</span><span class="p">,</span> <span class="n">low</span> <span class="o">=</span> <span class="n">marks</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'highest : {high}  lowest : {low}  rest : {rest}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'highest : </span><span class="si">{</span><span class="n">high</span><span class="si">}</span><span class="s">  lowest : </span><span class="si">{</span><span class="n">low</span><span class="si">}</span><span class="s">  rest : </span><span class="si">{</span><span class="n">rest</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1509,7 +1509,7 @@ highest : 97  lowest : 35  rest : [91, 84, 78, 71, 66, 65, 59, 55, 54, 45]
 <p id="code-header-31" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-31", "code-header-31")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">print_todolist</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="n">arg3</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Arg1: {arg1}  Arg2: {arg2} Arg3: {arg3}'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">f'Arg1: </span><span class="si">{</span><span class="n">arg1</span><span class="si">}</span><span class="s">  Arg2: </span><span class="si">{</span><span class="n">arg2</span><span class="si">}</span><span class="s"> Arg3: </span><span class="si">{</span><span class="n">arg3</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
 
 
 <span class="n">todoList</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Learn Python'</span><span class="p">,</span> <span class="s">'Practice HandsOn'</span><span class="p">,</span> <span class="s">'Work on live project'</span><span class="p">]</span>
@@ -1774,7 +1774,7 @@ mat2[0][1][2] :  4
 <p id="code-header-42" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-42", "code-header-42")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">todoList</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Learn Python'</span><span class="p">,</span> <span class="s">'Practice HandsOn'</span><span class="p">,</span> <span class="s">'Work on live project'</span><span class="p">]</span>
-<span class="n">todoListUpper</span> <span class="o">=</span> <span class="p">[</span><span class="n">todo</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="k">for</span> <span class="n">todo</span> <span class="ow">in</span> <span class="n">todoList</span><span class="p">]</span>
+<span class="n">todoListUpper</span> <span class="o">=</span> <span class="p">[</span><span class="n">todo</span><span class="p">.</span><span class="n">upper</span><span class="p">()</span> <span class="k">for</span> <span class="n">todo</span> <span class="ow">in</span> <span class="n">todoList</span><span class="p">]</span>
 <span class="k">print</span><span class="p">(</span><span class="n">todoListUpper</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -1848,7 +1848,7 @@ intList   : [12, 23, 43, 63, 87]
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'flowers before :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span>
-<span class="n">flowers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">'Aster'</span><span class="p">)</span>
+<span class="n">flowers</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">'Aster'</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'flowers after :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -1871,7 +1871,7 @@ flowers after : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips', 'Aste
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'flowers before :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span>
-<span class="n">flowers</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">'Orchids'</span><span class="p">)</span>
+<span class="n">flowers</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">'Orchids'</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'flowers after :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -1920,7 +1920,7 @@ flowers after : ['Lotus', 'Lily', 'Calendula', 'Bougainvillea', 'Peony', 'Dahlia
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'flowers before :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span>
-<span class="n">flowers</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s">'Jasmine'</span><span class="p">)</span>
+<span class="n">flowers</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span><span class="s">'Jasmine'</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'flowers after :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -1943,7 +1943,7 @@ flowers after : ['Lotus', 'Lily', 'Rose', 'Lavender', 'Tulips']
 <p id="code-header-49" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-49", "code-header-49")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
-<span class="n">flowers</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s">'Aster'</span><span class="p">)</span></code></pre></figure>
+<span class="n">flowers</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span><span class="s">'Aster'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1965,7 +1965,7 @@ ValueError: list.remove(x): x not in list</pre></div>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">]</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'flowers before :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span>
-<span class="n">flowers</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s">'Lily'</span><span class="p">)</span>
+<span class="n">flowers</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span><span class="s">'Lily'</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'flowers after :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -2059,7 +2059,7 @@ flowers after : ['Lotus', 'Rose', 'Lavender', 'Tulips']
 <p id="code-header-54" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-54", "code-header-54")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">]</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"'Lily' count is :"</span><span class="p">,</span> <span class="n">flowers</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s">'Lily'</span><span class="p">))</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">"'Lily' count is :"</span><span class="p">,</span> <span class="n">flowers</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="s">'Lily'</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
@@ -2080,7 +2080,7 @@ flowers after : ['Lotus', 'Rose', 'Lavender', 'Tulips']
 <p id="code-header-55" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-55", "code-header-55")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">]</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"'Poppy' count is :"</span><span class="p">,</span> <span class="n">flowers</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s">'Poppy'</span><span class="p">))</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">"'Poppy' count is :"</span><span class="p">,</span> <span class="n">flowers</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="s">'Poppy'</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
@@ -2102,7 +2102,7 @@ flowers after : ['Lotus', 'Rose', 'Lavender', 'Tulips']
 <span class="n">moreFlowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Calendula'</span><span class="p">,</span> <span class="s">'Bougainvillea'</span><span class="p">,</span> <span class="s">'Peony'</span><span class="p">,</span> <span class="s">'Dahlia'</span><span class="p">]</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'flowers before :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">flowers</span><span class="p">))</span>
-<span class="n">flowers</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">moreFlowers</span><span class="p">)</span>
+<span class="n">flowers</span><span class="p">.</span><span class="n">extend</span><span class="p">(</span><span class="n">moreFlowers</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'flowers after :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">flowers</span><span class="p">))</span></code></pre></figure>
 
 </div>
@@ -2179,7 +2179,7 @@ flowers after : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips', 'Cale
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
 
 <span class="n">copyFlowers</span> <span class="o">=</span> <span class="n">flowers</span>
-<span class="n">flowers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">'Sunflower'</span><span class="p">)</span>
+<span class="n">flowers</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">'Sunflower'</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'flowers'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">flowers</span><span class="p">))</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'copyFlowers'</span><span class="p">,</span> <span class="n">copyFlowers</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">copyFlowers</span><span class="p">))</span></code></pre></figure>
@@ -2204,7 +2204,7 @@ copyFlowers ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips', 'Sunflowe
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'flowers before :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'Element popped -&gt; '</span><span class="p">,</span> <span class="n">flowers</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Element popped -&gt; '</span><span class="p">,</span> <span class="n">flowers</span><span class="p">.</span><span class="n">pop</span><span class="p">())</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'flowers after :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -2230,11 +2230,11 @@ flowers after : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender']
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'flowers before :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'flowers.pop(0) -&gt; '</span><span class="p">,</span> <span class="n">flowers</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'flowers.pop(0) -&gt; '</span><span class="p">,</span> <span class="n">flowers</span><span class="p">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'flowers after :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n\n</span><span class="s">flowers before :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'flowers.pop(3) -&gt; '</span><span class="p">,</span> <span class="n">flowers</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'flowers.pop(3) -&gt; '</span><span class="p">,</span> <span class="n">flowers</span><span class="p">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'flowers after :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -2262,11 +2262,11 @@ flowers after : ['Lily', 'Jasmine', 'Rose', 'Tulips']
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
 <span class="k">print</span><span class="p">(</span><span class="n">flowers</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"index('Lily') :"</span><span class="p">,</span> <span class="n">flowers</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s">'Lily'</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"index('Lily') :"</span><span class="p">,</span> <span class="n">flowers</span><span class="p">.</span><span class="n">index</span><span class="p">(</span><span class="s">'Lily'</span><span class="p">))</span>
 
 <span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
 <span class="k">print</span><span class="p">(</span><span class="n">flowers</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"index('Lily') :"</span><span class="p">,</span> <span class="n">flowers</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s">'Lily'</span><span class="p">))</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">"index('Lily') :"</span><span class="p">,</span> <span class="n">flowers</span><span class="p">.</span><span class="n">index</span><span class="p">(</span><span class="s">'Lily'</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
@@ -2291,7 +2291,7 @@ index('Lily') : 1
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
 <span class="k">print</span><span class="p">(</span><span class="n">flowers</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"index('Rose') :"</span><span class="p">,</span> <span class="n">flowers</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s">'Rose'</span><span class="p">))</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">"index('Rose') :"</span><span class="p">,</span> <span class="n">flowers</span><span class="p">.</span><span class="n">index</span><span class="p">(</span><span class="s">'Rose'</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
@@ -2320,7 +2320,7 @@ ValueError: 'Rose' is not in list</pre></div>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'Default :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span>
-<span class="n">flowers</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="n">flowers</span><span class="p">.</span><span class="n">sort</span><span class="p">()</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'Sorted  :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -2344,7 +2344,7 @@ Sorted  : ['Jasmine', 'Lavender', 'Lily', 'Lotus', 'Rose', 'Tulips']
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'Default        :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span>
-<span class="n">flowers</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">)</span>
+<span class="n">flowers</span><span class="p">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'Sorted by len  :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -2368,7 +2368,7 @@ Sorted by len  : ['Lily', 'Rose', 'Lotus', 'Tulips', 'Jasmine', 'Lavender']
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'tulips'</span><span class="p">,</span><span class="s">'lily'</span><span class="p">]</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'Default :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span>
-<span class="n">flowers</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="nb">str</span><span class="o">.</span><span class="n">lower</span><span class="p">)</span>
+<span class="n">flowers</span><span class="p">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="nb">str</span><span class="p">.</span><span class="n">lower</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'Sorted case insensitive :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -2392,7 +2392,7 @@ Sorted case insensitive : ['jasmine', 'Lavender', 'Lily', 'lily', 'Lotus', 'Rose
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'Default :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span>
-<span class="n">flowers</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">flowers</span><span class="p">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'Reverse Sorted  :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -2417,7 +2417,7 @@ Reverse Sorted  : ['Tulips', 'Rose', 'Lotus', 'Lily', 'Lavender', 'Jasmine']
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">pointList</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">45</span><span class="p">,</span> <span class="mi">12</span><span class="p">],</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">22</span><span class="p">],</span> <span class="p">[</span><span class="mi">47</span><span class="p">,</span> <span class="mi">25</span><span class="p">],</span> <span class="p">[</span><span class="mi">23</span><span class="p">,</span> <span class="mi">10</span><span class="p">]]</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'Default :'</span><span class="p">,</span> <span class="n">pointList</span><span class="p">)</span>
-<span class="n">pointList</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="n">pointList</span><span class="p">.</span><span class="n">sort</span><span class="p">()</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'Sorted  :'</span><span class="p">,</span> <span class="n">pointList</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -2446,7 +2446,7 @@ Sorted  : [[12, 22], [23, 10], [45, 12], [47, 25]]
 </span><span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">itemgetter</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'Default :'</span><span class="p">,</span> <span class="n">studentList</span><span class="p">)</span>
-<span class="n">studentList</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">studentList</span><span class="p">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'Sorted  :'</span><span class="p">,</span> <span class="n">studentList</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -2476,7 +2476,7 @@ Sorted  : [['John', 101, 'O+'], ['Sam', 102, 'A+'], ['Kelly', 103, 'B+'], ['Jane
 
 
 <span class="k">print</span><span class="p">(</span><span class="s">'Default :'</span><span class="p">,</span> <span class="n">studentList</span><span class="p">)</span>
-<span class="n">studentList</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">by_roll_no</span><span class="p">)</span>
+<span class="n">studentList</span><span class="p">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">by_roll_no</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'Sorted  :'</span><span class="p">,</span> <span class="n">studentList</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -2515,9 +2515,9 @@ Sorted  : [['John', 101, 'O+'], ['Sam', 102, 'A+'], ['Kelly', 103, 'B+'], ['Jane
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
 
-<span class="n">copyFlowers</span> <span class="o">=</span> <span class="n">flowers</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">copyFlowers</span> <span class="o">=</span> <span class="n">flowers</span><span class="p">.</span><span class="n">copy</span><span class="p">()</span>
 
-<span class="n">flowers</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s">'Lotus'</span><span class="p">)</span>
+<span class="n">flowers</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span><span class="s">'Lotus'</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'flowers :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'copyFlowers :'</span><span class="p">,</span> <span class="n">copyFlowers</span><span class="p">)</span></code></pre></figure>
@@ -2549,11 +2549,11 @@ copyFlowers : ['Lotus', 'Lily', 'Jasmine', 'Rose', 'Lavender', 'Tulips']
 <span class="n">flowersList</span> <span class="o">=</span> <span class="p">[</span><span class="n">flowers</span><span class="p">,</span> <span class="n">moreFlowers</span><span class="p">,</span> <span class="n">someMoreFlowers</span><span class="p">]</span>
 
 
-<span class="n">copyFlowerList</span> <span class="o">=</span> <span class="n">flowersList</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">copyFlowerList</span> <span class="o">=</span> <span class="n">flowersList</span><span class="p">.</span><span class="n">copy</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'Original List Before Removal --&gt; '</span><span class="p">,</span> <span class="n">flowersList</span><span class="p">)</span>
 
-<span class="n">copyFlowerList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s">'Rose'</span><span class="p">)</span>
+<span class="n">copyFlowerList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">remove</span><span class="p">(</span><span class="s">'Rose'</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'Original List After Removal --&gt; '</span><span class="p">,</span> <span class="n">flowersList</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'Copy List After Removal --&gt; '</span><span class="p">,</span> <span class="n">copyFlowerList</span><span class="p">)</span></code></pre></figure>
@@ -2605,11 +2605,11 @@ Copy List After Removal --&gt;  [['Lotus', 'Lily', 'Jasmine', 'Lavender', 'Tulip
 <span class="n">flowersList</span> <span class="o">=</span> <span class="p">[</span><span class="n">flowers</span><span class="p">,</span> <span class="n">moreFlowers</span><span class="p">,</span> <span class="n">someMoreFlowers</span><span class="p">]</span>
 
 
-<span class="n">copyFlowerList</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">flowersList</span><span class="p">)</span>
+<span class="n">copyFlowerList</span> <span class="o">=</span> <span class="n">copy</span><span class="p">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">flowersList</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'Original List Before Removal --&gt; '</span><span class="p">,</span> <span class="n">flowersList</span><span class="p">)</span>
 
-<span class="n">copyFlowerList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s">'Rose'</span><span class="p">)</span>
+<span class="n">copyFlowerList</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">remove</span><span class="p">(</span><span class="s">'Rose'</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'Original List After Removal --&gt; '</span><span class="p">,</span> <span class="n">flowersList</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'Copy List After Removal --&gt; '</span><span class="p">,</span> <span class="n">copyFlowerList</span><span class="p">)</span></code></pre></figure>
@@ -2635,7 +2635,7 @@ Copy List After Removal --&gt;  [['Lotus', 'Lily', 'Jasmine', 'Lavender', 'Tulip
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'Original list :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span>
-<span class="n">flowers</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="n">flowers</span><span class="p">.</span><span class="n">reverse</span><span class="p">()</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'Reversed list :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -2684,7 +2684,7 @@ Reversed list : ['Tulips', 'Lavender', 'Rose', 'Jasmine', 'Lily', 'Lotus']
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'Original list :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span>
 
-<span class="n">flowers</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="n">flowers</span><span class="p">.</span><span class="n">clear</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'Cleared list :'</span><span class="p">,</span> <span class="n">flowers</span><span class="p">)</span></code></pre></figure>
 
@@ -2736,7 +2736,7 @@ Cleared list : []
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">]</span>
 <span class="n">ch</span> <span class="o">=</span> <span class="s">','</span>
 
-<span class="n">flowersString</span> <span class="o">=</span> <span class="n">ch</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">flowers</span><span class="p">)</span>
+<span class="n">flowersString</span> <span class="o">=</span> <span class="n">ch</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">flowers</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">flowersString</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -2764,7 +2764,7 @@ Lotus,Lily,Jasmine,Rose,Lavender,Tulips
 <p id="code-header-80" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-80", "code-header-80")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowersString</span> <span class="o">=</span> <span class="s">'Lotus,Lily,Jasmine,Rose,Lavender,Tulips'</span>
-<span class="n">flowerList</span> <span class="o">=</span> <span class="n">flowersString</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">','</span><span class="p">)</span>
+<span class="n">flowerList</span> <span class="o">=</span> <span class="n">flowersString</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s">','</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">flowerList</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -2966,7 +2966,7 @@ numbers after : [12, 45, 25, 65, 84, 73, 49, 18, 54, 37, 52]
 
 <span class="k">def</span> <span class="nf">add_flower</span><span class="p">(</span><span class="n">flowertoadd</span><span class="o">=</span><span class="s">''</span><span class="p">,</span> <span class="n">flist</span><span class="o">=</span><span class="p">[]):</span>
     <span class="s">""" adds supplied flower to given list"""</span>
-    <span class="n">flist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">flowertoadd</span><span class="p">)</span>
+    <span class="n">flist</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">flowertoadd</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">flist</span>
 
 
@@ -3372,13 +3372,13 @@ all(l2) : False
 
 <span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">]</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">'Insertion position for 15 : '</span><span class="p">,</span> <span class="n">bisect</span><span class="o">.</span><span class="n">bisect_left</span><span class="p">(</span><span class="n">l1</span><span class="p">,</span> <span class="mi">15</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Insertion position for 15 : '</span><span class="p">,</span> <span class="n">bisect</span><span class="p">.</span><span class="n">bisect_left</span><span class="p">(</span><span class="n">l1</span><span class="p">,</span> <span class="mi">15</span><span class="p">))</span>
 
 <span class="c1"># inserting element
 </span><span class="k">print</span><span class="p">(</span><span class="s">'Inserting element at position returned by bisect :'</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'Before :'</span><span class="p">,</span> <span class="n">l1</span><span class="p">)</span>
-<span class="n">l1</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">bisect</span><span class="o">.</span><span class="n">bisect_left</span><span class="p">(</span><span class="n">l1</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">l1</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">bisect</span><span class="p">.</span><span class="n">bisect_left</span><span class="p">(</span><span class="n">l1</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="mi">15</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'After :'</span><span class="p">,</span> <span class="n">l1</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -3403,8 +3403,8 @@ After : [5, 8, 11, 15, 17, 19]
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">]</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">l1</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'bisect_left(15) :'</span><span class="p">,</span> <span class="n">bisect</span><span class="o">.</span><span class="n">bisect_left</span><span class="p">(</span><span class="n">l1</span><span class="p">,</span> <span class="mi">15</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'bisect_right(15) :'</span><span class="p">,</span> <span class="n">bisect</span><span class="o">.</span><span class="n">bisect_right</span><span class="p">(</span><span class="n">l1</span><span class="p">,</span> <span class="mi">15</span><span class="p">))</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">'bisect_left(15) :'</span><span class="p">,</span> <span class="n">bisect</span><span class="p">.</span><span class="n">bisect_left</span><span class="p">(</span><span class="n">l1</span><span class="p">,</span> <span class="mi">15</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'bisect_right(15) :'</span><span class="p">,</span> <span class="n">bisect</span><span class="p">.</span><span class="n">bisect_right</span><span class="p">(</span><span class="n">l1</span><span class="p">,</span> <span class="mi">15</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
@@ -3427,7 +3427,7 @@ bisect_right(15) : 4
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">]</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'Before :'</span><span class="p">,</span> <span class="n">l1</span><span class="p">)</span>
-<span class="n">bisect</span><span class="o">.</span><span class="n">insort_left</span><span class="p">(</span><span class="n">l1</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">bisect</span><span class="p">.</span><span class="n">insort_left</span><span class="p">(</span><span class="n">l1</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'After :'</span><span class="p">,</span> <span class="n">l1</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -3450,7 +3450,7 @@ After : [5, 8, 11, 16, 17, 19]
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">]</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'Before :'</span><span class="p">,</span> <span class="n">l1</span><span class="p">)</span>
-<span class="n">bisect</span><span class="o">.</span><span class="n">insort_right</span><span class="p">(</span><span class="n">l1</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">bisect</span><span class="p">.</span><span class="n">insort_right</span><span class="p">(</span><span class="n">l1</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'After :'</span><span class="p">,</span> <span class="n">l1</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -3474,7 +3474,7 @@ After : [5, 8, 11, 16, 17, 19]
 <div id="code-block-104" class="code-block">
 <p id="code-header-104" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-104", "code-header-104")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">byteStr</span> <span class="o">=</span> <span class="n">b</span><span class="s">'Hello World!'</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">byteStr</span> <span class="o">=</span> <span class="s">b'Hello World!'</span>
 <span class="n">list1</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">byteStr</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span></code></pre></figure>
 
@@ -3502,11 +3502,11 @@ After : [5, 8, 11, 16, 17, 19]
 
 
 <span class="k">def</span> <span class="nf">push</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">stack</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">pop</span><span class="p">():</span>
-    <span class="k">return</span> <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">stack</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span>
 
 
 <span class="k">print</span><span class="p">(</span><span class="n">stack</span><span class="p">)</span>
@@ -3546,11 +3546,11 @@ Stack after pop() [4, 7, 2, 5]
 
 
 <span class="k">def</span> <span class="nf">enqueue</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">queue</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">queue</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">dequeue</span><span class="p">():</span>
-    <span class="k">return</span> <span class="n">queue</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">queue</span><span class="p">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
 
 <span class="k">print</span><span class="p">(</span><span class="n">queue</span><span class="p">)</span>

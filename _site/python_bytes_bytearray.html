@@ -46,7 +46,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="site" href="http://localhost:4000/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="vbhojawala.github.io" href="http://localhost:4000/feed.xml">
 
     <script>
         $(document).ready(function() {
@@ -796,13 +796,13 @@ chr(122) : z
 <p id="code-header-4" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-4", "code-header-4")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="s">'Hello World!'</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'ASCII :'</span><span class="p">,</span> <span class="n">s1</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'ASCII'</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'UTF-8 :'</span><span class="p">,</span> <span class="n">s1</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'UTF-8'</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'ASCII :'</span><span class="p">,</span> <span class="n">s1</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'ASCII'</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'UTF-8 :'</span><span class="p">,</span> <span class="n">s1</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'UTF-8'</span><span class="p">))</span>
 
 <span class="n">uniStr</span> <span class="o">=</span> <span class="s">'</span><span class="se">\xdc\xf1</span><span class="s">'</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="o">+</span><span class="n">uniStr</span><span class="p">)</span>
 
-<span class="n">sBytes</span> <span class="o">=</span> <span class="n">uniStr</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">)</span>
+<span class="n">sBytes</span> <span class="o">=</span> <span class="n">uniStr</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'sBytes :'</span><span class="p">,</span> <span class="n">sBytes</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'type(sBytes) :'</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">sBytes</span><span class="p">))</span></code></pre></figure>
 
@@ -826,8 +826,8 @@ type(sBytes) : &lt;class 'bytes'&gt;
 <div id="code-block-5" class="code-block">
 <p id="code-header-5" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-5", "code-header-5")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">sBytes</span> <span class="o">=</span> <span class="n">b</span><span class="s">'</span><span class="se">\xc3\x9c\xc3\xb1</span><span class="s">'</span>
-<span class="n">uStr</span> <span class="o">=</span> <span class="n">sBytes</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">sBytes</span> <span class="o">=</span> <span class="s">b'</span><span class="se">\xc3\x9c\xc3\xb1</span><span class="s">'</span>
+<span class="n">uStr</span> <span class="o">=</span> <span class="n">sBytes</span><span class="p">.</span><span class="n">decode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'Original String :'</span><span class="p">,</span> <span class="n">uStr</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'Type of object :'</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">uStr</span><span class="p">))</span></code></pre></figure>
 
@@ -848,8 +848,8 @@ Type of object : &lt;class 'str'&gt;
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">uniStr</span> <span class="o">=</span> <span class="s">'café'</span>
 <span class="k">for</span> <span class="n">encoding</span> <span class="ow">in</span> <span class="p">[</span><span class="s">'latin_1'</span><span class="p">,</span> <span class="s">'utf_8'</span><span class="p">,</span> <span class="s">'utf_16'</span><span class="p">,</span> <span class="s">'utf_32'</span><span class="p">]:</span>
-    <span class="n">sBytes</span> <span class="o">=</span> <span class="n">uniStr</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">encoding</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'{encoding:&lt;10}{sBytes}'</span><span class="p">)</span></code></pre></figure>
+    <span class="n">sBytes</span> <span class="o">=</span> <span class="n">uniStr</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="n">encoding</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">f'</span><span class="si">{</span><span class="n">encoding</span><span class="p">:</span><span class="o">&lt;</span><span class="mi">10</span><span class="si">}{</span><span class="n">sBytes</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -910,13 +910,13 @@ b'abc'
 <div id="code-block-8" class="code-block">
 <p id="code-header-8" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-8", "code-header-8")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">byteObj</span> <span class="o">=</span> <span class="n">b</span><span class="s">'This is stored as bytes each character represented as 8-bits(1 Byte in 0-255 integer code)'</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">byteObj</span> <span class="o">=</span> <span class="s">b'This is stored as bytes each character represented as 8-bits(1 Byte in 0-255 integer code)'</span>
 
 <span class="c1"># or
-</span><span class="n">byteObj2</span> <span class="o">=</span> <span class="n">b</span><span class="s">"abc"</span>
+</span><span class="n">byteObj2</span> <span class="o">=</span> <span class="s">b"abc"</span>
 
 <span class="c1"># or multi line as string
-</span><span class="n">byteObj3</span> <span class="o">=</span> <span class="n">b</span><span class="s">""" abc
+</span><span class="n">byteObj3</span> <span class="o">=</span> <span class="s">b""" abc
 pqr
 xyz
 """</span>
@@ -975,10 +975,10 @@ Bytes methods which are not available with string object :
 <div id="code-block-10" class="code-block">
 <p id="code-header-10" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-10", "code-header-10")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">b1</span> <span class="o">=</span> <span class="n">b</span><span class="s">'Hello World!'</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'b1.hex()       :'</span><span class="p">,</span> <span class="n">b1</span><span class="o">.</span><span class="nb">hex</span><span class="p">())</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"b1.hex(':')    :"</span><span class="p">,</span> <span class="n">b1</span><span class="o">.</span><span class="nb">hex</span><span class="p">(</span><span class="s">':'</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"b1.hex(':', 5) :"</span><span class="p">,</span> <span class="n">b1</span><span class="o">.</span><span class="nb">hex</span><span class="p">(</span><span class="s">':'</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">b1</span> <span class="o">=</span> <span class="s">b'Hello World!'</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'b1.hex()       :'</span><span class="p">,</span> <span class="n">b1</span><span class="p">.</span><span class="nb">hex</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"b1.hex(':')    :"</span><span class="p">,</span> <span class="n">b1</span><span class="p">.</span><span class="nb">hex</span><span class="p">(</span><span class="s">':'</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"b1.hex(':', 5) :"</span><span class="p">,</span> <span class="n">b1</span><span class="p">.</span><span class="nb">hex</span><span class="p">(</span><span class="s">':'</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
@@ -999,7 +999,7 @@ b1.hex(':', 5) : 4865:6c6c6f2057:6f726c6421
 <p id="code-header-11" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-11", "code-header-11")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">h1</span> <span class="o">=</span> <span class="s">'48656c6c6f20576f726c6421'</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="n">h1</span><span class="p">))</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="nb">bytes</span><span class="p">.</span><span class="n">fromhex</span><span class="p">(</span><span class="n">h1</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
@@ -1017,9 +1017,9 @@ b'Hello World!'
 <div id="code-block-12" class="code-block">
 <p id="code-header-12" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-12", "code-header-12")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">greetings</span> <span class="o">=</span> <span class="s">'Have a nice'</span> <span class="o">+</span> <span class="n">b</span><span class="s">'Day!'</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">greetings</span> <span class="o">=</span> <span class="s">'Have a nice'</span> <span class="o">+</span> <span class="s">b'Day!'</span>
 
-<span class="n">greetings</span> <span class="o">=</span> <span class="n">b</span><span class="s">'Have a nice'</span> <span class="o">+</span> <span class="n">b</span><span class="s">'Day!'</span>
+<span class="n">greetings</span> <span class="o">=</span> <span class="s">b'Have a nice'</span> <span class="o">+</span> <span class="s">b'Day!'</span>
 <span class="k">print</span><span class="p">(</span><span class="n">greetings</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -1073,7 +1073,7 @@ bytearray(b'caf\xc3\xa9').
 <div id="code-block-14" class="code-block">
 <p id="code-header-14" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-14", "code-header-14")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">barray</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">b</span><span class="s">'Hello World!'</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">barray</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="s">b'Hello World!'</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">barray</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -1097,7 +1097,7 @@ bytearray(b'Hello World!')
 <p id="code-header-15" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-15", "code-header-15")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">barray</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="s">'hello bytes!'</span><span class="p">,</span> <span class="s">'ascii'</span><span class="p">)</span>
-<span class="n">barray</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="s">'H'</span>      <span class="c1"># this gives you an error
+<span class="n">barray</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s">b'H'</span>      <span class="c1"># this gives you an error
 </span>
 <span class="n">barray</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="s">'hello bytes!'</span><span class="p">,</span> <span class="s">'ascii'</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">barray</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">barray</span><span class="p">))</span>
@@ -1128,10 +1128,10 @@ bytearray(b'Hello bytes!') 140388614772848
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">barray</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="s">'hello bytes!'</span><span class="p">,</span> <span class="s">'ascii'</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">barray</span><span class="p">)</span>
 
-<span class="n">barray</span><span class="p">[</span><span class="mi">11</span><span class="p">:]</span> <span class="o">=</span> <span class="n">b</span><span class="s">'array'</span>
+<span class="n">barray</span><span class="p">[</span><span class="mi">11</span><span class="p">:]</span> <span class="o">=</span> <span class="s">b'array'</span>
 <span class="k">print</span><span class="p">(</span><span class="n">barray</span><span class="p">)</span>
 
-<span class="n">barray</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="s">'H'</span>  <span class="c1"># Replacing single character using slice
+<span class="n">barray</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s">b'H'</span>  <span class="c1"># Replacing single character using slice
 </span><span class="k">print</span><span class="p">(</span><span class="n">barray</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -1158,11 +1158,11 @@ bytearray(b'Hello bytesarray')
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s">'String Functions which are not available with bytearray object :'</span><span class="p">)</span>
 <span class="n">diff</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">str</span><span class="p">))</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">bytearray</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">diff</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">s</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">'__'</span><span class="p">)))</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">diff</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">s</span><span class="p">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">'__'</span><span class="p">)))</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">bytearray Functions which are not available with string object :'</span><span class="p">)</span>
 <span class="n">diff</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">bytearray</span><span class="p">))</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">str</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">diff</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">s</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">'__'</span><span class="p">)))</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">diff</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">s</span><span class="p">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">'__'</span><span class="p">)))</span></code></pre></figure>
 
 </div>
 
@@ -1184,10 +1184,10 @@ bytearray Functions which are not available with string object :
 <div id="code-block-18" class="code-block">
 <p id="code-header-18" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-18", "code-header-18")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">barray</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">b</span><span class="s">'Hello World'</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">barray</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="s">b'Hello World'</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">barray</span><span class="p">)</span>
 
-<span class="n">barray</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="s">'.'</span><span class="p">))</span>
+<span class="n">barray</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="s">'.'</span><span class="p">))</span>
 <span class="k">print</span><span class="p">(</span><span class="n">barray</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -1207,10 +1207,10 @@ bytearray(b'Hello World.')
 <div id="code-block-19" class="code-block">
 <p id="code-header-19" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-19", "code-header-19")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">barray</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">b</span><span class="s">'Hello World'</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">barray</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="s">b'Hello World'</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">barray</span><span class="p">)</span>
 
-<span class="n">barray</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="n">barray</span><span class="p">.</span><span class="n">clear</span><span class="p">()</span>
 <span class="k">print</span><span class="p">(</span><span class="n">barray</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -1236,12 +1236,12 @@ bytearray(b'')
 <div id="code-block-20" class="code-block">
 <p id="code-header-20" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-20", "code-header-20")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">barray</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">b</span><span class="s">'Hello World'</span><span class="p">)</span>
-<span class="n">bcopy</span> <span class="o">=</span> <span class="n">barray</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">barray</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="s">b'Hello World'</span><span class="p">)</span>
+<span class="n">bcopy</span> <span class="o">=</span> <span class="n">barray</span><span class="p">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'barray :'</span><span class="p">,</span> <span class="n">barray</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'bcopy  :'</span><span class="p">,</span> <span class="n">bcopy</span><span class="p">)</span>
 
-<span class="n">bcopy</span><span class="p">[</span><span class="mi">0</span><span class="p">:]</span> <span class="o">=</span> <span class="n">b</span><span class="s">'Hello Byte Array copy'</span>
+<span class="n">bcopy</span><span class="p">[</span><span class="mi">0</span><span class="p">:]</span> <span class="o">=</span> <span class="s">b'Hello Byte Array copy'</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'barray :'</span><span class="p">,</span> <span class="n">barray</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'bcopy  :'</span><span class="p">,</span> <span class="n">bcopy</span><span class="p">)</span></code></pre></figure>
 
@@ -1268,11 +1268,11 @@ bcopy  : bytearray(b'Hello Byte Array copy')
 <span class="n">ba2</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="s">' World!'</span><span class="p">,</span> <span class="s">'UTF-8'</span><span class="p">)</span>
 
 <span class="c1"># Extending bytearray
-</span><span class="n">ba1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">ba2</span><span class="p">)</span>
+</span><span class="n">ba1</span><span class="p">.</span><span class="n">extend</span><span class="p">(</span><span class="n">ba2</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">ba1</span><span class="p">)</span>
 
 <span class="c1"># Extending Byte object
-</span><span class="n">ba1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">b</span><span class="s">'New Bytes'</span><span class="p">)</span>
+</span><span class="n">ba1</span><span class="p">.</span><span class="n">extend</span><span class="p">(</span><span class="s">b'New Bytes'</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">ba1</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -1292,8 +1292,8 @@ bytearray(b'Hello World!New Bytes')
 <div id="code-block-22" class="code-block">
 <p id="code-header-22" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-22", "code-header-22")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">barray</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">b</span><span class="s">'Helo World!'</span><span class="p">)</span>
-<span class="n">barray</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="nb">ord</span><span class="p">(</span><span class="s">'l'</span><span class="p">))</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">barray</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="s">b'Helo World!'</span><span class="p">)</span>
+<span class="n">barray</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="nb">ord</span><span class="p">(</span><span class="s">'l'</span><span class="p">))</span>
 <span class="k">print</span><span class="p">(</span><span class="n">barray</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -1312,10 +1312,10 @@ bytearray(b'Hello World!')
 <div id="code-block-23" class="code-block">
 <p id="code-header-23" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-23", "code-header-23")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">barray</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">b</span><span class="s">'Hello World!'</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">barray</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="s">b'Hello World!'</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">barray</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">'Popped :'</span><span class="p">,</span> <span class="nb">chr</span><span class="p">(</span><span class="n">barray</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">6</span><span class="p">)))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Popped :'</span><span class="p">,</span> <span class="nb">chr</span><span class="p">(</span><span class="n">barray</span><span class="p">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">6</span><span class="p">)))</span>
 <span class="k">print</span><span class="p">(</span><span class="n">barray</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -1338,10 +1338,10 @@ bytearray(b'Hello orld!')
 <div id="code-block-24" class="code-block">
 <p id="code-header-24" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-24", "code-header-24")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">barray</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">b</span><span class="s">'Hello World!'</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">barray</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="s">b'Hello World!'</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">barray</span><span class="p">)</span>
 
-<span class="n">ch</span> <span class="o">=</span> <span class="nb">chr</span><span class="p">(</span><span class="n">barray</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
+<span class="n">ch</span> <span class="o">=</span> <span class="nb">chr</span><span class="p">(</span><span class="n">barray</span><span class="p">.</span><span class="n">pop</span><span class="p">())</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'Popped :'</span><span class="p">,</span> <span class="n">ch</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">barray</span><span class="p">)</span></code></pre></figure>
@@ -1371,13 +1371,13 @@ bytearray(b'Hello World')
 <div id="code-block-25" class="code-block">
 <p id="code-header-25" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-25", "code-header-25")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">barray</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">b</span><span class="s">'Hello World!'</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">barray</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="s">b'Hello World!'</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">barray</span><span class="p">)</span>
-<span class="n">barray</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="s">'W'</span><span class="p">))</span>
+<span class="n">barray</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="s">'W'</span><span class="p">))</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">barray</span><span class="p">)</span>
-<span class="n">barray</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="s">'W'</span><span class="p">))</span>  <span class="c1"># This will raise ValueError</span></code></pre></figure>
+<span class="n">barray</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="s">'W'</span><span class="p">))</span>  <span class="c1"># This will raise ValueError</span></code></pre></figure>
 
 </div>
 
@@ -1402,9 +1402,9 @@ ValueError: value not found in bytearray</pre>
 <div id="code-block-26" class="code-block">
 <p id="code-header-26" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-26", "code-header-26")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">barray</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">b</span><span class="s">'Hello World!'</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">barray</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="s">b'Hello World!'</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">barray</span><span class="p">)</span>
-<span class="n">barray</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="n">barray</span><span class="p">.</span><span class="n">reverse</span><span class="p">()</span>
 <span class="k">print</span><span class="p">(</span><span class="n">barray</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -1431,10 +1431,10 @@ bytearray(b'!dlroW olleH')
 <div id="code-block-27" class="code-block">
 <p id="code-header-27" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-27", "code-header-27")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">barray</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">b</span><span class="s">'Hello World!'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'barray.hex()       :'</span><span class="p">,</span> <span class="n">barray</span><span class="o">.</span><span class="nb">hex</span><span class="p">())</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"barray.hex(':')    :"</span><span class="p">,</span> <span class="n">barray</span><span class="o">.</span><span class="nb">hex</span><span class="p">(</span><span class="s">':'</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"barray.hex(':', 5) :"</span><span class="p">,</span> <span class="n">barray</span><span class="o">.</span><span class="nb">hex</span><span class="p">(</span><span class="s">':'</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">barray</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="s">b'Hello World!'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'barray.hex()       :'</span><span class="p">,</span> <span class="n">barray</span><span class="p">.</span><span class="nb">hex</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"barray.hex(':')    :"</span><span class="p">,</span> <span class="n">barray</span><span class="p">.</span><span class="nb">hex</span><span class="p">(</span><span class="s">':'</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"barray.hex(':', 5) :"</span><span class="p">,</span> <span class="n">barray</span><span class="p">.</span><span class="nb">hex</span><span class="p">(</span><span class="s">':'</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
@@ -1456,7 +1456,7 @@ barray.hex(':', 5) : 4865:6c6c6f2057:6f726c6421
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">barray</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="s">'Hello World!'</span><span class="p">,</span> <span class="s">'UTF-8'</span><span class="p">)</span>
 
-<span class="n">strObj</span> <span class="o">=</span> <span class="n">barray</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">'UTF-8'</span><span class="p">)</span>
+<span class="n">strObj</span> <span class="o">=</span> <span class="n">barray</span><span class="p">.</span><span class="n">decode</span><span class="p">(</span><span class="s">'UTF-8'</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">strObj</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">strObj</span><span class="p">))</span></code></pre></figure>
 
@@ -1476,7 +1476,7 @@ Hello World! &lt;class 'str'&gt;
 <div id="code-block-29" class="code-block">
 <p id="code-header-29" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-29", "code-header-29")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="nb">bytearray</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="s">'48656c6c6f20576f726c6421'</span><span class="p">))</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="nb">bytearray</span><span class="p">.</span><span class="n">fromhex</span><span class="p">(</span><span class="s">'48656c6c6f20576f726c6421'</span><span class="p">))</span></code></pre></figure>
 
 </div>
 

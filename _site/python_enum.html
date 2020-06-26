@@ -46,7 +46,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="site" href="http://localhost:4000/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="vbhojawala.github.io" href="http://localhost:4000/feed.xml">
 
     <script>
         $(document).ready(function() {
@@ -736,8 +736,8 @@ $('#toc').on('click', 'a', function() {
 
 <span class="n">Plan</span> <span class="o">=</span> <span class="n">Enum</span><span class="p">(</span><span class="s">'Plan'</span><span class="p">,</span> <span class="s">'DIAMOND PLATINUM GOLD SILVER'</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'Is Plan subclass of Enum ? :'</span><span class="p">,</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">Plan</span><span class="p">,</span> <span class="n">Enum</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Plan : {Plan}   type : {type(Plan)}'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'elements : {list(Plan)}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'Plan : </span><span class="si">{</span><span class="n">Plan</span><span class="si">}</span><span class="s">   type : </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">Plan</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'elements : </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">Plan</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -762,7 +762,7 @@ elements : [&lt;Plan.DIAMOND: 1&gt;, &lt;Plan.PLATINUM: 2&gt;, &lt;Plan.GOLD: 3&
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
 
 <span class="n">Plan</span> <span class="o">=</span> <span class="n">Enum</span><span class="p">(</span><span class="s">'Plan'</span><span class="p">,</span> <span class="s">'DIAMOND,PLATINUM,GOLD,SILVER'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'elements : {list(Plan)}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'elements : </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">Plan</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -806,7 +806,7 @@ elements : [&lt;Plan.DIAMOND: 1&gt;, &lt;Plan.PLATINUM: 2&gt;, &lt;Plan.GOLD: 3&
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
 <span class="n">Plan</span> <span class="o">=</span> <span class="n">Enum</span><span class="p">(</span><span class="s">'Plan'</span><span class="p">,</span> <span class="s">'DIAMOND,PLATINUM,GOLD,SILVER'</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">101</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'elements : {list(Plan)}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'elements : </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">Plan</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -828,7 +828,7 @@ elements : [&lt;Plan.DIAMOND: 101&gt;, &lt;Plan.PLATINUM: 102&gt;, &lt;Plan.GOLD
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
 <span class="n">Plan</span> <span class="o">=</span> <span class="n">Enum</span><span class="p">(</span><span class="s">'Plan'</span><span class="p">,</span> <span class="p">((</span><span class="s">'DIAMOND'</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s">'PLATINUM'</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s">'GOLD'</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="s">'SILVER'</span><span class="p">,</span> <span class="mi">4</span><span class="p">)))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'elements : {list(Plan)}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'elements : </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">Plan</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -850,7 +850,7 @@ elements : [&lt;Plan.DIAMOND: 1&gt;, &lt;Plan.PLATINUM: 2&gt;, &lt;Plan.GOLD: 3&
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
 <span class="n">Plan</span> <span class="o">=</span> <span class="n">Enum</span><span class="p">(</span><span class="s">'Plan'</span><span class="p">,</span> <span class="p">((</span><span class="s">'DIAMOND'</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="s">'PLATINUM'</span><span class="p">,</span> <span class="mi">80</span><span class="p">),</span> <span class="p">(</span><span class="s">'GOLD'</span><span class="p">,</span> <span class="mi">60</span><span class="p">),</span> <span class="p">(</span><span class="s">'SILVER'</span><span class="p">,</span> <span class="mi">50</span><span class="p">)))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'elements : {list(Plan)}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'elements : </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">Plan</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -872,7 +872,7 @@ elements : [&lt;Plan.DIAMOND: 100&gt;, &lt;Plan.PLATINUM: 80&gt;, &lt;Plan.GOLD:
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
 <span class="n">Plan</span> <span class="o">=</span> <span class="n">Enum</span><span class="p">(</span><span class="s">'Plan'</span><span class="p">,</span> <span class="p">{</span><span class="s">'DIAMOND'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'PLATINUM'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'GOLD'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">'SILVER'</span><span class="p">:</span> <span class="mi">4</span><span class="p">})</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'elements : {list(Plan)}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'elements : </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">Plan</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -894,10 +894,10 @@ elements : [&lt;Plan.DIAMOND: 1&gt;, &lt;Plan.PLATINUM: 2&gt;, &lt;Plan.GOLD: 3&
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
 <span class="n">CountryCode</span> <span class="o">=</span> <span class="n">Enum</span><span class="p">(</span><span class="s">'CountryCode'</span><span class="p">,</span> <span class="p">{</span><span class="s">'US'</span><span class="p">:</span> <span class="s">'United States'</span><span class="p">,</span> <span class="s">'CA'</span><span class="p">:</span> <span class="s">'Canada'</span><span class="p">,</span> <span class="s">'NZ'</span><span class="p">:</span> <span class="s">'New Zealand'</span><span class="p">,</span> <span class="s">'FR'</span><span class="p">:</span> <span class="s">'France'</span><span class="p">})</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'elements : {list(CountryCode)}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'elements : </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">CountryCode</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
 
 <span class="n">CountryCode</span> <span class="o">=</span> <span class="n">Enum</span><span class="p">(</span><span class="s">'CountryCode'</span><span class="p">,</span> <span class="p">{</span><span class="s">'US'</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">'United States'</span><span class="p">),</span> <span class="s">'NZ'</span><span class="p">:</span> <span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="s">'New Zealand'</span><span class="p">),</span> <span class="s">'FR'</span><span class="p">:</span> <span class="p">(</span><span class="mi">34</span><span class="p">,</span> <span class="s">'France'</span><span class="p">)})</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'</span><span class="se">\n</span><span class="s">elements : {list(CountryCode)}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'</span><span class="se">\n</span><span class="s">elements : </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">CountryCode</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -921,8 +921,8 @@ elements : [&lt;CountryCode.US: (1, 'United States')&gt;, &lt;CountryCode.NZ: (6
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span><span class="p">,</span> <span class="n">IntEnum</span>
 <span class="n">Plan</span> <span class="o">=</span> <span class="n">Enum</span><span class="p">(</span><span class="s">'Plan'</span><span class="p">,</span> <span class="p">{</span><span class="s">'DIAMOND'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'PLATINUM'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'GOLD'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">'SILVER'</span><span class="p">:</span> <span class="mi">4</span><span class="p">},</span> <span class="nb">type</span><span class="o">=</span> <span class="n">IntEnum</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'elements : {list(Plan)}'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'Plan.DIAMOND == 1 :'</span><span class="p">,</span> <span class="n">Plan</span><span class="o">.</span><span class="n">DIAMOND</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'elements : </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">Plan</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Plan.DIAMOND == 1 :'</span><span class="p">,</span> <span class="n">Plan</span><span class="p">.</span><span class="n">DIAMOND</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -945,7 +945,7 @@ Plan.DIAMOND == 1 : True
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
 <span class="n">Plan</span> <span class="o">=</span> <span class="n">Enum</span><span class="p">(</span><span class="s">'Plan'</span><span class="p">,</span> <span class="p">{</span><span class="s">'DIAMOND'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'PLATINUM'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'GOLD'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">'SILVER'</span><span class="p">:</span> <span class="mi">4</span><span class="p">},</span> <span class="n">module</span><span class="o">=</span> <span class="n">__name__</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'elements : {list(Plan)} Module : {Plan.__module__}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'elements : </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">Plan</span><span class="p">)</span><span class="si">}</span><span class="s"> Module : </span><span class="si">{</span><span class="n">Plan</span><span class="p">.</span><span class="n">__module__</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -968,7 +968,7 @@ Quoting inside "Double quotes".
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
 <span class="n">Plan</span> <span class="o">=</span> <span class="n">Enum</span><span class="p">(</span><span class="s">'Plan'</span><span class="p">,</span> <span class="p">{</span><span class="s">'DIAMOND'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'PLATINUM'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'GOLD'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">'SILVER'</span><span class="p">:</span> <span class="mi">4</span><span class="p">},</span> <span class="n">qualname</span><span class="o">=</span><span class="s">'Const.Plans'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'elements : {list(Plan)} qualname : {Plan.__qualname__}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'elements : </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">Plan</span><span class="p">)</span><span class="si">}</span><span class="s"> qualname : </span><span class="si">{</span><span class="n">Plan</span><span class="p">.</span><span class="n">__qualname__</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -989,9 +989,9 @@ elements : [&lt;Plan.DIAMOND: 1&gt;, &lt;Plan.PLATINUM: 2&gt;, &lt;Plan.GOLD: 3&
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
 <span class="n">Plan</span> <span class="o">=</span> <span class="n">Enum</span><span class="p">(</span><span class="s">'Plan'</span><span class="p">,</span> <span class="p">{</span><span class="s">'DIAMOND'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'PLATINUM'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'GOLD'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">'SILVER'</span><span class="p">:</span> <span class="mi">4</span><span class="p">})</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'GOLD Plan : {Plan.GOLD}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'GOLD Plan : </span><span class="si">{</span><span class="n">Plan</span><span class="p">.</span><span class="n">GOLD</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
 <span class="c1"># or
-</span><span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'GOLD Plan : {Plan["GOLD"]}'</span><span class="p">)</span></code></pre></figure>
+</span><span class="k">print</span><span class="p">(</span><span class="s">f'GOLD Plan : </span><span class="si">{</span><span class="n">Plan</span><span class="p">[</span><span class="s">"GOLD"</span><span class="p">]</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1011,7 +1011,7 @@ GOLD Plan : Plan.GOLD
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
 <span class="n">Plan</span> <span class="o">=</span> <span class="n">Enum</span><span class="p">(</span><span class="s">'Plan'</span><span class="p">,</span> <span class="p">{</span><span class="s">'DIAMOND'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'PLATINUM'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'GOLD'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">'SILVER'</span><span class="p">:</span> <span class="mi">4</span><span class="p">})</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Plan(1) : {Plan(1)}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'Plan(1) : </span><span class="si">{</span><span class="n">Plan</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1033,8 +1033,8 @@ Plan(1) : Plan.DIAMOND
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
 <span class="n">Plan</span> <span class="o">=</span> <span class="n">Enum</span><span class="p">(</span><span class="s">'Plan'</span><span class="p">,</span> <span class="p">{</span><span class="s">'DIAMOND'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'PLATINUM'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'GOLD'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">'SILVER'</span><span class="p">:</span> <span class="mi">4</span><span class="p">})</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">'Value of DIAMOND :'</span><span class="p">,</span> <span class="n">Plan</span><span class="o">.</span><span class="n">DIAMOND</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'Value of GOLD    :'</span><span class="p">,</span> <span class="n">Plan</span><span class="o">.</span><span class="n">GOLD</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">'Value of DIAMOND :'</span><span class="p">,</span> <span class="n">Plan</span><span class="p">.</span><span class="n">DIAMOND</span><span class="p">.</span><span class="n">value</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Value of GOLD    :'</span><span class="p">,</span> <span class="n">Plan</span><span class="p">.</span><span class="n">GOLD</span><span class="p">.</span><span class="n">value</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1055,8 +1055,8 @@ Value of GOLD    : 3
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
 <span class="n">Plan</span> <span class="o">=</span> <span class="n">Enum</span><span class="p">(</span><span class="s">'Plan'</span><span class="p">,</span> <span class="p">{</span><span class="s">'DIAMOND'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'PLATINUM'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'GOLD'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">'SILVER'</span><span class="p">:</span> <span class="mi">4</span><span class="p">})</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">'Name of DIAMOND :'</span><span class="p">,</span> <span class="n">Plan</span><span class="o">.</span><span class="n">DIAMOND</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'Name of GOLD    :'</span><span class="p">,</span> <span class="n">Plan</span><span class="o">.</span><span class="n">GOLD</span><span class="o">.</span><span class="n">name</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">'Name of DIAMOND :'</span><span class="p">,</span> <span class="n">Plan</span><span class="p">.</span><span class="n">DIAMOND</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Name of GOLD    :'</span><span class="p">,</span> <span class="n">Plan</span><span class="p">.</span><span class="n">GOLD</span><span class="p">.</span><span class="n">name</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1079,7 +1079,7 @@ Name of GOLD    : GOLD
 <span class="n">Plan</span> <span class="o">=</span> <span class="n">Enum</span><span class="p">(</span><span class="s">'Plan'</span><span class="p">,</span> <span class="p">{</span><span class="s">'DIAMOND'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'PLATINUM'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'GOLD'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">'SILVER'</span><span class="p">:</span> <span class="mi">4</span><span class="p">})</span>
 
 <span class="k">for</span> <span class="n">level</span> <span class="ow">in</span> <span class="n">Plan</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'{level.name:&lt;9s} -&gt; {level.value}'</span><span class="p">)</span></code></pre></figure>
+    <span class="k">print</span><span class="p">(</span><span class="s">f'</span><span class="si">{</span><span class="n">level</span><span class="p">.</span><span class="n">name</span><span class="p">:</span><span class="o">&lt;</span><span class="mi">9</span><span class="n">s</span><span class="si">}</span><span class="s"> -&gt; </span><span class="si">{</span><span class="n">level</span><span class="p">.</span><span class="n">value</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1105,15 +1105,15 @@ SILVER    -&gt; 4
 <span class="n">Plan</span> <span class="o">=</span> <span class="n">Enum</span><span class="p">(</span><span class="s">'Plan'</span><span class="p">,</span> <span class="p">{</span><span class="s">'DIAMOND'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'PLATINUM'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'GOLD'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">'SILVER'</span><span class="p">:</span> <span class="mi">4</span><span class="p">})</span>
 
 <span class="n">customers</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
-<span class="n">customers</span><span class="p">[</span><span class="n">Plan</span><span class="o">.</span><span class="n">DIAMOND</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">'ABC Inc'</span><span class="p">)</span>
-<span class="n">customers</span><span class="p">[</span><span class="n">Plan</span><span class="o">.</span><span class="n">GOLD</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">'IQ Corp'</span><span class="p">)</span>
-<span class="n">customers</span><span class="p">[</span><span class="n">Plan</span><span class="o">.</span><span class="n">DIAMOND</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">'Citrus Ltd'</span><span class="p">)</span>
+<span class="n">customers</span><span class="p">[</span><span class="n">Plan</span><span class="p">.</span><span class="n">DIAMOND</span><span class="p">].</span><span class="n">append</span><span class="p">(</span><span class="s">'ABC Inc'</span><span class="p">)</span>
+<span class="n">customers</span><span class="p">[</span><span class="n">Plan</span><span class="p">.</span><span class="n">GOLD</span><span class="p">].</span><span class="n">append</span><span class="p">(</span><span class="s">'IQ Corp'</span><span class="p">)</span>
+<span class="n">customers</span><span class="p">[</span><span class="n">Plan</span><span class="p">.</span><span class="n">DIAMOND</span><span class="p">].</span><span class="n">append</span><span class="p">(</span><span class="s">'Citrus Ltd'</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">customers</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">Accessing element using Enum Symbol :'</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'customers[Plan(1)] :'</span><span class="p">,</span> <span class="n">customers</span><span class="p">[</span><span class="n">Plan</span><span class="p">(</span><span class="mi">1</span><span class="p">)])</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'customers[Plan.GOLD] :'</span><span class="p">,</span> <span class="n">customers</span><span class="p">[</span><span class="n">Plan</span><span class="o">.</span><span class="n">GOLD</span><span class="p">])</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">'customers[Plan.GOLD] :'</span><span class="p">,</span> <span class="n">customers</span><span class="p">[</span><span class="n">Plan</span><span class="p">.</span><span class="n">GOLD</span><span class="p">])</span></code></pre></figure>
 
 </div>
 
@@ -1147,14 +1147,14 @@ customers[Plan.GOLD] : ['IQ Corp']
 
 <span class="k">print</span><span class="p">(</span><span class="s">'Elements '</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">Plan</span><span class="p">))</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'GOLD Plan :'</span><span class="p">,</span> <span class="n">Plan</span><span class="o">.</span><span class="n">GOLD</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'GOLD Plan :'</span><span class="p">,</span> <span class="n">Plan</span><span class="p">.</span><span class="n">GOLD</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">'Value of GOLD    :'</span><span class="p">,</span> <span class="n">Plan</span><span class="o">.</span><span class="n">GOLD</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'Name of GOLD    :'</span><span class="p">,</span> <span class="n">Plan</span><span class="o">.</span><span class="n">GOLD</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Value of GOLD    :'</span><span class="p">,</span> <span class="n">Plan</span><span class="p">.</span><span class="n">GOLD</span><span class="p">.</span><span class="n">value</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Name of GOLD    :'</span><span class="p">,</span> <span class="n">Plan</span><span class="p">.</span><span class="n">GOLD</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">Iterating Enum :'</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">level</span> <span class="ow">in</span> <span class="n">Plan</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'{level.name:&lt;9s} -&gt; {level.value}'</span><span class="p">)</span></code></pre></figure>
+    <span class="k">print</span><span class="p">(</span><span class="s">f'</span><span class="si">{</span><span class="n">level</span><span class="p">.</span><span class="n">name</span><span class="p">:</span><span class="o">&lt;</span><span class="mi">9</span><span class="n">s</span><span class="si">}</span><span class="s"> -&gt; </span><span class="si">{</span><span class="n">level</span><span class="p">.</span><span class="n">value</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1236,7 +1236,7 @@ SILVER    -&gt; 4
     <span class="n">REJECTED</span> <span class="o">=</span> <span class="mi">21</span>
 
 
-<span class="k">print</span><span class="p">(</span><span class="s">'Status.REQINFO :'</span><span class="p">,</span> <span class="n">Status</span><span class="o">.</span><span class="n">REQINFO</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Status.REQINFO :'</span><span class="p">,</span> <span class="n">Status</span><span class="p">.</span><span class="n">REQINFO</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'Status(11) :'</span><span class="p">,</span> <span class="n">Status</span><span class="p">(</span><span class="mi">11</span><span class="p">))</span></code></pre></figure>
 
 </div>
@@ -1422,14 +1422,14 @@ Elements : [&lt;Status.NEW: 1&gt;, &lt;Status.PROCESSING: 2&gt;, &lt;Status.ASSI
     <span class="n">REJECTED</span> <span class="o">=</span> <span class="mi">21</span>
 
 
-<span class="n">appStatus</span> <span class="o">=</span> <span class="n">Status</span><span class="o">.</span><span class="n">PROCESSING</span>
+<span class="n">appStatus</span> <span class="o">=</span> <span class="n">Status</span><span class="p">.</span><span class="n">PROCESSING</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'Application status : '</span><span class="p">,</span> <span class="n">appStatus</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">'appStatus == Status.PROCESSING :'</span><span class="p">,</span> <span class="n">appStatus</span> <span class="o">==</span> <span class="n">Status</span><span class="o">.</span><span class="n">PROCESSING</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'appStatus == Status.COMPLETED  :'</span><span class="p">,</span> <span class="n">appStatus</span> <span class="o">==</span> <span class="n">Status</span><span class="o">.</span><span class="n">COMPLETED</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'appStatus == Status.PROCESSING :'</span><span class="p">,</span> <span class="n">appStatus</span> <span class="o">==</span> <span class="n">Status</span><span class="p">.</span><span class="n">PROCESSING</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'appStatus == Status.COMPLETED  :'</span><span class="p">,</span> <span class="n">appStatus</span> <span class="o">==</span> <span class="n">Status</span><span class="p">.</span><span class="n">COMPLETED</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">'appStatus != Status.ONHOLD     :'</span><span class="p">,</span> <span class="n">appStatus</span> <span class="o">!=</span> <span class="n">Status</span><span class="o">.</span><span class="n">ONHOLD</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'appStatus != Status.PROCESSING :'</span><span class="p">,</span> <span class="n">appStatus</span> <span class="o">!=</span> <span class="n">Status</span><span class="o">.</span><span class="n">PROCESSING</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">'appStatus != Status.ONHOLD     :'</span><span class="p">,</span> <span class="n">appStatus</span> <span class="o">!=</span> <span class="n">Status</span><span class="p">.</span><span class="n">ONHOLD</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'appStatus != Status.PROCESSING :'</span><span class="p">,</span> <span class="n">appStatus</span> <span class="o">!=</span> <span class="n">Status</span><span class="p">.</span><span class="n">PROCESSING</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1457,13 +1457,13 @@ appStatus != Status.PROCESSING : False
 
 <span class="n">Status</span> <span class="o">=</span> <span class="n">Enum</span><span class="p">(</span><span class="s">"Status"</span><span class="p">,</span> <span class="p">((</span><span class="s">'NEW'</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s">'PROCESSING'</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s">'ASSIGNED'</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="s">'COMPLETED'</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="s">'ONHOLD'</span><span class="p">,</span> <span class="mi">11</span><span class="p">),</span> <span class="p">(</span><span class="s">'REQINFO'</span><span class="p">,</span> <span class="mi">11</span><span class="p">),</span> <span class="p">(</span><span class="s">'REJECTED'</span><span class="p">,</span> <span class="mi">21</span><span class="p">)))</span>
 
-<span class="n">appStatus</span> <span class="o">=</span> <span class="n">Status</span><span class="o">.</span><span class="n">PROCESSING</span>
+<span class="n">appStatus</span> <span class="o">=</span> <span class="n">Status</span><span class="p">.</span><span class="n">PROCESSING</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">"appStatus == 'PROCESSING' :"</span><span class="p">,</span> <span class="n">appStatus</span> <span class="o">==</span> <span class="s">'PROCESSING'</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">"appStatus == 2 :"</span><span class="p">,</span> <span class="n">appStatus</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">"appStatus.name == 'PROCESSING' :"</span><span class="p">,</span> <span class="n">appStatus</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s">'PROCESSING'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"appStatus.value == 2 :"</span><span class="p">,</span> <span class="n">appStatus</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">"appStatus.name == 'PROCESSING' :"</span><span class="p">,</span> <span class="n">appStatus</span><span class="p">.</span><span class="n">name</span> <span class="o">==</span> <span class="s">'PROCESSING'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"appStatus.value == 2 :"</span><span class="p">,</span> <span class="n">appStatus</span><span class="p">.</span><span class="n">value</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1504,17 +1504,17 @@ appStatus == 2 : False
     <span class="n">INTERNAL_PROCESSING_ERROR</span> <span class="o">=</span> <span class="mi">500</span>
 
 
-<span class="k">print</span><span class="p">(</span><span class="s">"ResponseCode.NOT_FOUND :"</span><span class="p">,</span> <span class="n">ResponseCode</span><span class="o">.</span><span class="n">NOT_FOUND</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"ResponseCode.NOT_FOUND :"</span><span class="p">,</span> <span class="n">ResponseCode</span><span class="p">.</span><span class="n">NOT_FOUND</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">"ResponseCode.OK == 200 :"</span><span class="p">,</span> <span class="n">ResponseCode</span><span class="o">.</span><span class="n">OK</span> <span class="o">==</span> <span class="mi">200</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"ResponseCode.OK == 200 :"</span><span class="p">,</span> <span class="n">ResponseCode</span><span class="p">.</span><span class="n">OK</span> <span class="o">==</span> <span class="mi">200</span><span class="p">)</span>
 
-<span class="n">ans</span> <span class="o">=</span> <span class="n">ResponseCode</span><span class="o">.</span><span class="n">INTERNAL_SERVER_ERROR</span> <span class="o">==</span> <span class="n">ApplicationCode</span><span class="o">.</span><span class="n">INTERNAL_PROCESSING_ERROR</span>
+<span class="n">ans</span> <span class="o">=</span> <span class="n">ResponseCode</span><span class="p">.</span><span class="n">INTERNAL_SERVER_ERROR</span> <span class="o">==</span> <span class="n">ApplicationCode</span><span class="p">.</span><span class="n">INTERNAL_PROCESSING_ERROR</span>
 <span class="k">print</span><span class="p">(</span><span class="s">"Comparision of two different enum with same value :"</span><span class="p">,</span> <span class="n">ans</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">'ResponseCode.OK + 202 :'</span><span class="p">,</span> <span class="n">ResponseCode</span><span class="o">.</span><span class="n">OK</span> <span class="o">+</span> <span class="mi">202</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'ResponseCode.OK - 101 :'</span><span class="p">,</span> <span class="n">ResponseCode</span><span class="o">.</span><span class="n">OK</span> <span class="o">-</span> <span class="mi">101</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'ResponseCode.OK * 101 :'</span><span class="p">,</span> <span class="n">ResponseCode</span><span class="o">.</span><span class="n">OK</span> <span class="o">*</span> <span class="mi">101</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'ResponseCode.OK / 101 :'</span><span class="p">,</span> <span class="n">ResponseCode</span><span class="o">.</span><span class="n">OK</span> <span class="o">/</span> <span class="mi">101</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">'ResponseCode.OK + 202 :'</span><span class="p">,</span> <span class="n">ResponseCode</span><span class="p">.</span><span class="n">OK</span> <span class="o">+</span> <span class="mi">202</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'ResponseCode.OK - 101 :'</span><span class="p">,</span> <span class="n">ResponseCode</span><span class="p">.</span><span class="n">OK</span> <span class="o">-</span> <span class="mi">101</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'ResponseCode.OK * 101 :'</span><span class="p">,</span> <span class="n">ResponseCode</span><span class="p">.</span><span class="n">OK</span> <span class="o">*</span> <span class="mi">101</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'ResponseCode.OK / 101 :'</span><span class="p">,</span> <span class="n">ResponseCode</span><span class="p">.</span><span class="n">OK</span> <span class="o">/</span> <span class="mi">101</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1555,9 +1555,9 @@ ResponseCode.OK / 101 : 1.9801980198019802
 
 <span class="n">responseLog</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
 
-<span class="n">responseLog</span><span class="p">[</span><span class="n">ResponseCode</span><span class="o">.</span><span class="n">OK</span><span class="p">]</span> <span class="o">=</span> <span class="s">'192.168.1.101'</span>
-<span class="n">responseLog</span><span class="p">[</span><span class="n">ResponseCode</span><span class="o">.</span><span class="n">NOT_FOUND</span><span class="p">]</span> <span class="o">=</span> <span class="s">'198.168.1.91'</span>
-<span class="n">responseLog</span><span class="p">[</span><span class="n">ResponseCode</span><span class="o">.</span><span class="n">SERVICE_UNAVAILABLE</span><span class="p">]</span> <span class="o">=</span> <span class="s">'172.102.1.1'</span>
+<span class="n">responseLog</span><span class="p">[</span><span class="n">ResponseCode</span><span class="p">.</span><span class="n">OK</span><span class="p">]</span> <span class="o">=</span> <span class="s">'192.168.1.101'</span>
+<span class="n">responseLog</span><span class="p">[</span><span class="n">ResponseCode</span><span class="p">.</span><span class="n">NOT_FOUND</span><span class="p">]</span> <span class="o">=</span> <span class="s">'198.168.1.91'</span>
+<span class="n">responseLog</span><span class="p">[</span><span class="n">ResponseCode</span><span class="p">.</span><span class="n">SERVICE_UNAVAILABLE</span><span class="p">]</span> <span class="o">=</span> <span class="s">'172.102.1.1'</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">responseLog</span><span class="p">)</span></code></pre></figure>
 
@@ -1616,32 +1616,32 @@ defaultdict(&lt;class 'list'&gt;, {&lt;ResponseCode.OK: 200&gt;: '192.168.1.101'
 
 
 <span class="k">print</span><span class="p">(</span><span class="s">'Bitwise Operators :</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"Perm.R | Perm.X    :"</span><span class="p">,</span> <span class="n">Perm</span><span class="o">.</span><span class="n">R</span> <span class="o">|</span> <span class="n">Perm</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"Perm.RWX &amp; Perm.RX :"</span><span class="p">,</span> <span class="n">Perm</span><span class="o">.</span><span class="n">RWX</span> <span class="o">&amp;</span> <span class="n">Perm</span><span class="o">.</span><span class="n">RX</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"Perm.RWX ^ Perm.RX :"</span><span class="p">,</span> <span class="n">Perm</span><span class="o">.</span><span class="n">RWX</span> <span class="o">^</span> <span class="n">Perm</span><span class="o">.</span><span class="n">RX</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"~Perm.RX :"</span><span class="p">,</span> <span class="o">~</span><span class="n">Perm</span><span class="o">.</span><span class="n">RX</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Perm.R | Perm.X    :"</span><span class="p">,</span> <span class="n">Perm</span><span class="p">.</span><span class="n">R</span> <span class="o">|</span> <span class="n">Perm</span><span class="p">.</span><span class="n">X</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Perm.RWX &amp; Perm.RX :"</span><span class="p">,</span> <span class="n">Perm</span><span class="p">.</span><span class="n">RWX</span> <span class="o">&amp;</span> <span class="n">Perm</span><span class="p">.</span><span class="n">RX</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Perm.RWX ^ Perm.RX :"</span><span class="p">,</span> <span class="n">Perm</span><span class="p">.</span><span class="n">RWX</span> <span class="o">^</span> <span class="n">Perm</span><span class="p">.</span><span class="n">RX</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"~Perm.RX :"</span><span class="p">,</span> <span class="o">~</span><span class="n">Perm</span><span class="p">.</span><span class="n">RX</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">Bitwise Operators with int :</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"4 | Perm.X  :"</span><span class="p">,</span> <span class="mi">4</span> <span class="o">|</span> <span class="n">Perm</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"4 &amp; Perm.RX :"</span><span class="p">,</span> <span class="mi">4</span> <span class="o">&amp;</span> <span class="n">Perm</span><span class="o">.</span><span class="n">RX</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"7 ^ Perm.RX :"</span><span class="p">,</span> <span class="mi">7</span> <span class="o">^</span> <span class="n">Perm</span><span class="o">.</span><span class="n">RX</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"4 | Perm.X  :"</span><span class="p">,</span> <span class="mi">4</span> <span class="o">|</span> <span class="n">Perm</span><span class="p">.</span><span class="n">X</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"4 &amp; Perm.RX :"</span><span class="p">,</span> <span class="mi">4</span> <span class="o">&amp;</span> <span class="n">Perm</span><span class="p">.</span><span class="n">RX</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"7 ^ Perm.RX :"</span><span class="p">,</span> <span class="mi">7</span> <span class="o">^</span> <span class="n">Perm</span><span class="p">.</span><span class="n">RX</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">If no flags are set, it is evaluated as 0 :</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'Perm.W &amp; Perm.X'</span><span class="p">,</span> <span class="n">Perm</span><span class="o">.</span><span class="n">W</span> <span class="o">&amp;</span> <span class="n">Perm</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Perm.W &amp; Perm.X'</span><span class="p">,</span> <span class="n">Perm</span><span class="p">.</span><span class="n">W</span> <span class="o">&amp;</span> <span class="n">Perm</span><span class="p">.</span><span class="n">X</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">Addition and Subtraction with Values</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"Perm.R + Perm.W   :"</span><span class="p">,</span> <span class="n">Perm</span><span class="o">.</span><span class="n">R</span> <span class="o">+</span> <span class="n">Perm</span><span class="o">.</span><span class="n">W</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"Perm.RWX - Perm.W :"</span><span class="p">,</span> <span class="n">Perm</span><span class="o">.</span><span class="n">RWX</span> <span class="o">-</span> <span class="n">Perm</span><span class="o">.</span><span class="n">W</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Perm.R + Perm.W   :"</span><span class="p">,</span> <span class="n">Perm</span><span class="p">.</span><span class="n">R</span> <span class="o">+</span> <span class="n">Perm</span><span class="p">.</span><span class="n">W</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Perm.RWX - Perm.W :"</span><span class="p">,</span> <span class="n">Perm</span><span class="p">.</span><span class="n">RWX</span> <span class="o">-</span> <span class="n">Perm</span><span class="p">.</span><span class="n">W</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">operations with int</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"Perm.R + 2 :"</span><span class="p">,</span> <span class="n">Perm</span><span class="o">.</span><span class="n">R</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"Perm.RWX - 2 :"</span><span class="p">,</span> <span class="n">Perm</span><span class="o">.</span><span class="n">RWX</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"Perm.RWX * 2 :"</span><span class="p">,</span> <span class="n">Perm</span><span class="o">.</span><span class="n">RWX</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"Perm.RWX / 2 :"</span><span class="p">,</span> <span class="n">Perm</span><span class="o">.</span><span class="n">RWX</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Perm.R + 2 :"</span><span class="p">,</span> <span class="n">Perm</span><span class="p">.</span><span class="n">R</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Perm.RWX - 2 :"</span><span class="p">,</span> <span class="n">Perm</span><span class="p">.</span><span class="n">RWX</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Perm.RWX * 2 :"</span><span class="p">,</span> <span class="n">Perm</span><span class="p">.</span><span class="n">RWX</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Perm.RWX / 2 :"</span><span class="p">,</span> <span class="n">Perm</span><span class="p">.</span><span class="n">RWX</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">Membership Operators :</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'Perm.RX in Perm.RWX :'</span><span class="p">,</span> <span class="n">Perm</span><span class="o">.</span><span class="n">RX</span> <span class="ow">in</span> <span class="n">Perm</span><span class="o">.</span><span class="n">RWX</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'Perm.RX in Perm.W   :'</span><span class="p">,</span> <span class="n">Perm</span><span class="o">.</span><span class="n">RX</span> <span class="ow">in</span> <span class="n">Perm</span><span class="o">.</span><span class="n">W</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">'Perm.RX in Perm.RWX :'</span><span class="p">,</span> <span class="n">Perm</span><span class="p">.</span><span class="n">RX</span> <span class="ow">in</span> <span class="n">Perm</span><span class="p">.</span><span class="n">RWX</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Perm.RX in Perm.W   :'</span><span class="p">,</span> <span class="n">Perm</span><span class="p">.</span><span class="n">RX</span> <span class="ow">in</span> <span class="n">Perm</span><span class="p">.</span><span class="n">W</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1712,13 +1712,13 @@ Perm.RX in Perm.W   : False
 
 
 <span class="k">for</span> <span class="n">permission</span> <span class="ow">in</span> <span class="n">Perm</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Permission : {permission.name:&lt;3}  Value : {permission.value}'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">f'Permission : </span><span class="si">{</span><span class="n">permission</span><span class="p">.</span><span class="n">name</span><span class="p">:</span><span class="o">&lt;</span><span class="mi">3</span><span class="si">}</span><span class="s">  Value : </span><span class="si">{</span><span class="n">permission</span><span class="p">.</span><span class="n">value</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n\n</span><span class="s">Bitwise Operators :</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"Perm.R | Perm.X    :"</span><span class="p">,</span> <span class="n">Perm</span><span class="o">.</span><span class="n">R</span> <span class="o">|</span> <span class="n">Perm</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"Perm.RWX &amp; Perm.RX :"</span><span class="p">,</span> <span class="n">Perm</span><span class="o">.</span><span class="n">RWX</span> <span class="o">&amp;</span> <span class="n">Perm</span><span class="o">.</span><span class="n">RX</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"Perm.RWX ^ Perm.RX :"</span><span class="p">,</span> <span class="n">Perm</span><span class="o">.</span><span class="n">RWX</span> <span class="o">^</span> <span class="n">Perm</span><span class="o">.</span><span class="n">RX</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"~Perm.RX :"</span><span class="p">,</span> <span class="o">~</span><span class="n">Perm</span><span class="o">.</span><span class="n">RX</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">"Perm.R | Perm.X    :"</span><span class="p">,</span> <span class="n">Perm</span><span class="p">.</span><span class="n">R</span> <span class="o">|</span> <span class="n">Perm</span><span class="p">.</span><span class="n">X</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Perm.RWX &amp; Perm.RX :"</span><span class="p">,</span> <span class="n">Perm</span><span class="p">.</span><span class="n">RWX</span> <span class="o">&amp;</span> <span class="n">Perm</span><span class="p">.</span><span class="n">RX</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Perm.RWX ^ Perm.RX :"</span><span class="p">,</span> <span class="n">Perm</span><span class="p">.</span><span class="n">RWX</span> <span class="o">^</span> <span class="n">Perm</span><span class="p">.</span><span class="n">RX</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"~Perm.RX :"</span><span class="p">,</span> <span class="o">~</span><span class="n">Perm</span><span class="p">.</span><span class="n">RX</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1762,7 +1762,7 @@ Perm.RWX ^ Perm.RX : Perm.W
     <span class="n">RWX</span> <span class="o">=</span> <span class="n">R</span> <span class="o">|</span> <span class="n">W</span> <span class="o">|</span> <span class="n">X</span>
 
 
-<span class="k">print</span><span class="p">(</span><span class="s">"Perm.R + 2 :"</span><span class="p">,</span> <span class="n">Perm</span><span class="o">.</span><span class="n">R</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">"Perm.R + 2 :"</span><span class="p">,</span> <span class="n">Perm</span><span class="p">.</span><span class="n">R</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span></code></pre></figure>
 
 </div>
 

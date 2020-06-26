@@ -46,7 +46,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="site" href="http://localhost:4000/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="vbhojawala.github.io" href="http://localhost:4000/feed.xml">
 
     <script>
         $(document).ready(function() {
@@ -761,7 +761,7 @@ $('#toc').on('click', 'a', function() {
 
 
 <span class="k">def</span> <span class="nf">user_auth</span><span class="p">(</span><span class="n">user</span><span class="p">):</span>
-    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s">'Deprecated auth protocol'</span><span class="p">,</span> <span class="nb">UserWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span></code></pre></figure>
+    <span class="n">warnings</span><span class="p">.</span><span class="n">warn</span><span class="p">(</span><span class="s">'Deprecated auth protocol'</span><span class="p">,</span> <span class="nb">UserWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -774,7 +774,7 @@ $('#toc').on('click', 'a', function() {
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">UserAuth</span>
 
-<span class="n">UserAuth</span><span class="o">.</span><span class="n">user_auth</span><span class="p">(</span><span class="s">'admin'</span><span class="p">)</span></code></pre></figure>
+<span class="n">UserAuth</span><span class="p">.</span><span class="n">user_auth</span><span class="p">(</span><span class="s">'admin'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -936,7 +936,7 @@ After Warning
 <p id="code-header-4" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-4", "code-header-4")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">os</span>
-<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s">"PYTHONWARNINGS"</span><span class="p">]</span> <span class="o">=</span> <span class="s">'ignore'</span></code></pre></figure>
+<span class="n">os</span><span class="p">.</span><span class="n">environ</span><span class="p">[</span><span class="s">"PYTHONWARNINGS"</span><span class="p">]</span> <span class="o">=</span> <span class="s">'ignore'</span></code></pre></figure>
 
 </div>
 
@@ -1176,7 +1176,7 @@ Statements after ......
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># Default behaviour
 </span><span class="kn">import</span> <span class="nn">warnings</span>
-<span class="n">warnings</span><span class="o">.</span><span class="n">showwarning</span><span class="p">(</span><span class="s">'A UserWarning to file'</span><span class="p">,</span> <span class="nb">UserWarning</span><span class="p">,</span> <span class="s">'Warnings.py'</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span></code></pre></figure>
+<span class="n">warnings</span><span class="p">.</span><span class="n">showwarning</span><span class="p">(</span><span class="s">'A UserWarning to file'</span><span class="p">,</span> <span class="nb">UserWarning</span><span class="p">,</span> <span class="s">'Warnings.py'</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1197,9 +1197,9 @@ Statements after ......
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">io</span>
 <span class="kn">import</span> <span class="nn">warnings</span>
 
-<span class="k">with</span> <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">()</span> <span class="k">as</span> <span class="n">file1</span><span class="p">:</span>
-    <span class="n">warnings</span><span class="o">.</span><span class="n">showwarning</span><span class="p">(</span><span class="s">'A UserWarning to file'</span><span class="p">,</span> <span class="nb">UserWarning</span><span class="p">,</span> <span class="s">'Warnings.py'</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">file1</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Content of file : {file1.getvalue()}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">with</span> <span class="n">io</span><span class="p">.</span><span class="n">StringIO</span><span class="p">()</span> <span class="k">as</span> <span class="n">file1</span><span class="p">:</span>
+    <span class="n">warnings</span><span class="p">.</span><span class="n">showwarning</span><span class="p">(</span><span class="s">'A UserWarning to file'</span><span class="p">,</span> <span class="nb">UserWarning</span><span class="p">,</span> <span class="s">'Warnings.py'</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">file1</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">f'Content of file : </span><span class="si">{</span><span class="n">file1</span><span class="p">.</span><span class="n">getvalue</span><span class="p">()</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1220,12 +1220,12 @@ Content of file : Warnings.py:5: UserWarning: A UserWarning to file
 <p id="code-header-10" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-10", "code-header-10")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">custom_warning</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">category</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">lineno</span><span class="p">,</span> <span class="nb">file</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">line</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">warnings</span><span class="o">.</span><span class="n">formatwarning</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">category</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">lineno</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">warnings</span><span class="p">.</span><span class="n">formatwarning</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">category</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">lineno</span><span class="p">)</span>
     <span class="c1"># Apply custom behavior
 </span>
 
 <span class="c1"># replace original function with custom callable
-</span><span class="n">warnings</span><span class="o">.</span><span class="n">showwarning</span> <span class="o">=</span> <span class="n">custom_warning</span></code></pre></figure>
+</span><span class="n">warnings</span><span class="p">.</span><span class="n">showwarning</span> <span class="o">=</span> <span class="n">custom_warning</span></code></pre></figure>
 
 </div>
 
@@ -1247,28 +1247,28 @@ Content of file : Warnings.py:5: UserWarning: A UserWarning to file
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">warnings</span>
 <span class="kn">import</span> <span class="nn">traceback</span>
 
-<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s">'ignore'</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s">'UserAuth.*'</span><span class="p">)</span>
-<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s">'error'</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s">'App.*'</span><span class="p">)</span>
+<span class="n">warnings</span><span class="p">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s">'ignore'</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s">'UserAuth.*'</span><span class="p">)</span>
+<span class="n">warnings</span><span class="p">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s">'error'</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s">'App.*'</span><span class="p">)</span>
 
 <span class="k">try</span><span class="p">:</span>
-    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s">'UserAuth.protocol Warning'</span><span class="p">,</span> <span class="nb">UserWarning</span><span class="p">)</span>
+    <span class="n">warnings</span><span class="p">.</span><span class="n">warn</span><span class="p">(</span><span class="s">'UserAuth.protocol Warning'</span><span class="p">,</span> <span class="nb">UserWarning</span><span class="p">)</span>
 <span class="k">except</span> <span class="nb">UserWarning</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="n">traceback</span><span class="o">.</span><span class="n">print_exc</span><span class="p">()</span>
+    <span class="n">traceback</span><span class="p">.</span><span class="n">print_exc</span><span class="p">()</span>
 
 <span class="k">try</span><span class="p">:</span>
-    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s">'App.Daemon.destroyed Warning'</span><span class="p">,</span> <span class="nb">UserWarning</span><span class="p">)</span>
+    <span class="n">warnings</span><span class="p">.</span><span class="n">warn</span><span class="p">(</span><span class="s">'App.Daemon.destroyed Warning'</span><span class="p">,</span> <span class="nb">UserWarning</span><span class="p">)</span>
 <span class="k">except</span> <span class="nb">UserWarning</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="n">traceback</span><span class="o">.</span><span class="n">print_exc</span><span class="p">()</span>
+    <span class="n">traceback</span><span class="p">.</span><span class="n">print_exc</span><span class="p">()</span>
 
 <span class="k">try</span><span class="p">:</span>
-    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s">'UserAuth.SlowConnection Warning'</span><span class="p">,</span> <span class="nb">UserWarning</span><span class="p">)</span>
+    <span class="n">warnings</span><span class="p">.</span><span class="n">warn</span><span class="p">(</span><span class="s">'UserAuth.SlowConnection Warning'</span><span class="p">,</span> <span class="nb">UserWarning</span><span class="p">)</span>
 <span class="k">except</span> <span class="nb">UserWarning</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="n">traceback</span><span class="o">.</span><span class="n">print_exc</span><span class="p">()</span>
+    <span class="n">traceback</span><span class="p">.</span><span class="n">print_exc</span><span class="p">()</span>
 
 <span class="k">try</span><span class="p">:</span>
-    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s">'App.Analytics.crashed Warning'</span><span class="p">,</span> <span class="nb">UserWarning</span><span class="p">)</span>
+    <span class="n">warnings</span><span class="p">.</span><span class="n">warn</span><span class="p">(</span><span class="s">'App.Analytics.crashed Warning'</span><span class="p">,</span> <span class="nb">UserWarning</span><span class="p">)</span>
 <span class="k">except</span> <span class="nb">UserWarning</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="n">traceback</span><span class="o">.</span><span class="n">print_exc</span><span class="p">()</span></code></pre></figure>
+    <span class="n">traceback</span><span class="p">.</span><span class="n">print_exc</span><span class="p">()</span></code></pre></figure>
 
 </div>
 

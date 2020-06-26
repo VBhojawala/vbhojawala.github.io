@@ -46,7 +46,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="site" href="http://localhost:4000/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="vbhojawala.github.io" href="http://localhost:4000/feed.xml">
 
     <script>
         $(document).ready(function() {
@@ -774,11 +774,11 @@ ChainMap({'Object1': 1231354587198, 'Object3': 18485412310201, 'Object9': 197465
 
 <span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">memoryManager['Object1'] :"</span><span class="p">,</span> <span class="n">memoryManager</span><span class="p">[</span><span class="s">'Object1'</span><span class="p">])</span>
 <span class="c1"># Or
-</span><span class="k">print</span><span class="p">(</span><span class="s">"memoryManager.get('Object1') :"</span><span class="p">,</span> <span class="n">memoryManager</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'Object1'</span><span class="p">))</span>
+</span><span class="k">print</span><span class="p">(</span><span class="s">"memoryManager.get('Object1') :"</span><span class="p">,</span> <span class="n">memoryManager</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'Object1'</span><span class="p">))</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">'Object5 :'</span><span class="p">,</span> <span class="n">memoryManager</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'Object5'</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'Object8 :'</span><span class="p">,</span> <span class="n">memoryManager</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'Object8'</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'Object9 :'</span><span class="p">,</span> <span class="n">memoryManager</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'Object9'</span><span class="p">))</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">'Object5 :'</span><span class="p">,</span> <span class="n">memoryManager</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'Object5'</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Object8 :'</span><span class="p">,</span> <span class="n">memoryManager</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'Object8'</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Object9 :'</span><span class="p">,</span> <span class="n">memoryManager</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'Object9'</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
@@ -848,9 +848,9 @@ KeyError: 'Object10'</pre></div>
 
 <span class="n">memoryManager</span> <span class="o">=</span> <span class="n">ChainMap</span><span class="p">(</span><span class="n">cache</span><span class="p">,</span> <span class="n">ram</span><span class="p">,</span> <span class="n">ssd</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">"memoryManager.get('Object10') :"</span><span class="p">,</span> <span class="n">memoryManager</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'Object10'</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"memoryManager.get('Object10') :"</span><span class="p">,</span> <span class="n">memoryManager</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'Object10'</span><span class="p">))</span>
 <span class="k">print</span><span class="p">(</span><span class="s">"memoryManager.get('Object10', 'Element not Found!') :"</span><span class="p">,</span>
-      <span class="n">memoryManager</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'Object10'</span><span class="p">,</span> <span class="s">'Element not Found!'</span><span class="p">))</span></code></pre></figure>
+      <span class="n">memoryManager</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'Object10'</span><span class="p">,</span> <span class="s">'Element not Found!'</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
@@ -1118,11 +1118,11 @@ KeyError: "Key not found in the first mapping: 'Object2'"</pre></div>
 
 <span class="n">memoryManager</span> <span class="o">=</span> <span class="n">ChainMap</span><span class="p">(</span><span class="n">cache</span><span class="p">,</span> <span class="n">ram</span><span class="p">,</span> <span class="n">ssd</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">'maps :'</span><span class="p">,</span> <span class="n">memoryManager</span><span class="o">.</span><span class="n">maps</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'maps :'</span><span class="p">,</span> <span class="n">memoryManager</span><span class="p">.</span><span class="n">maps</span><span class="p">)</span>
 
 <span class="c1"># getting particular mapping
-</span><span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">1st dict (Cache) :'</span><span class="p">,</span> <span class="n">memoryManager</span><span class="o">.</span><span class="n">maps</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'last dict (SSD)  :'</span><span class="p">,</span> <span class="n">memoryManager</span><span class="o">.</span><span class="n">maps</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span></code></pre></figure>
+</span><span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">1st dict (Cache) :'</span><span class="p">,</span> <span class="n">memoryManager</span><span class="p">.</span><span class="n">maps</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'last dict (SSD)  :'</span><span class="p">,</span> <span class="n">memoryManager</span><span class="p">.</span><span class="n">maps</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span></code></pre></figure>
 
 </div>
 
@@ -1155,16 +1155,16 @@ last dict (SSD)  : {'Object1': 3979877787878, 'Object2': 3897987454654, 'Object3
 
 <span class="n">memoryManager</span> <span class="o">=</span> <span class="n">ChainMap</span><span class="p">(</span><span class="n">cache</span><span class="p">,</span> <span class="n">ram</span><span class="p">,</span> <span class="n">ssd</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">maps[0] Before :'</span><span class="p">,</span> <span class="n">memoryManager</span><span class="o">.</span><span class="n">maps</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">maps[0] Before :'</span><span class="p">,</span> <span class="n">memoryManager</span><span class="p">.</span><span class="n">maps</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 
 <span class="n">updatedCache</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Object3'</span><span class="p">:</span> <span class="mi">18485412310201</span><span class="p">,</span> <span class="s">'Object5'</span><span class="p">:</span> <span class="mi">1897987977987</span><span class="p">,</span> <span class="s">'Object6'</span><span class="p">:</span> <span class="mi">187977898797</span><span class="p">}</span>
-<span class="n">memoryManager</span><span class="o">.</span><span class="n">maps</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">updatedCache</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'maps[0] After  :'</span><span class="p">,</span> <span class="n">memoryManager</span><span class="o">.</span><span class="n">maps</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">memoryManager</span><span class="p">.</span><span class="n">maps</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">updatedCache</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'maps[0] After  :'</span><span class="p">,</span> <span class="n">memoryManager</span><span class="p">.</span><span class="n">maps</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 
 <span class="c1"># modifying mapping
-</span><span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">maps[1] Before :'</span><span class="p">,</span> <span class="n">memoryManager</span><span class="o">.</span><span class="n">maps</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">memoryManager</span><span class="o">.</span><span class="n">maps</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s">'Object4'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1114540212122</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'maps[1] After :'</span><span class="p">,</span> <span class="n">memoryManager</span><span class="o">.</span><span class="n">maps</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span></code></pre></figure>
+</span><span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">maps[1] Before :'</span><span class="p">,</span> <span class="n">memoryManager</span><span class="p">.</span><span class="n">maps</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">memoryManager</span><span class="p">.</span><span class="n">maps</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s">'Object4'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1114540212122</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'maps[1] After :'</span><span class="p">,</span> <span class="n">memoryManager</span><span class="p">.</span><span class="n">maps</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span></code></pre></figure>
 
 </div>
 
@@ -1197,7 +1197,7 @@ maps[1] After : {'Object2': 223456455647901, 'Object3': 29871354982132, 'Object5
 <span class="n">memoryManager</span> <span class="o">=</span> <span class="n">ChainMap</span><span class="p">(</span><span class="n">cache</span><span class="p">,</span> <span class="n">ram</span><span class="p">,</span> <span class="n">ssd</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'memoryManager :'</span><span class="p">,</span> <span class="n">memoryManager</span><span class="p">)</span>
-<span class="n">parentMemManager</span> <span class="o">=</span> <span class="n">memoryManager</span><span class="o">.</span><span class="n">parents</span>
+<span class="n">parentMemManager</span> <span class="o">=</span> <span class="n">memoryManager</span><span class="p">.</span><span class="n">parents</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">parentMemManager :'</span><span class="p">,</span> <span class="n">parentMemManager</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -1227,7 +1227,7 @@ parentMemManager : ChainMap({'Object2': 223456455647901, 'Object3': 298713549821
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">ChainMap</span>
 
-<span class="n">common</span> <span class="o">=</span> <span class="p">[</span><span class="n">attr</span> <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="n">ChainMap</span><span class="p">))</span> <span class="o">&amp;</span> <span class="nb">set</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">dict</span><span class="p">)))</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">attr</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">'__'</span><span class="p">)]</span>
+<span class="n">common</span> <span class="o">=</span> <span class="p">[</span><span class="n">attr</span> <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="n">ChainMap</span><span class="p">))</span> <span class="o">&amp;</span> <span class="nb">set</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">dict</span><span class="p">)))</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">attr</span><span class="p">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">'__'</span><span class="p">)]</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'Functions common between ChainMap and dict :'</span><span class="p">,</span> <span class="n">common</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -1259,11 +1259,11 @@ Functions common between ChainMap and dict : ['pop', 'values', 'setdefault', 'up
 <span class="k">print</span><span class="p">(</span><span class="s">'ChainMap :'</span><span class="p">,</span> <span class="n">memoryManager</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">Iterating :'</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">memoryManager</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">memoryManager</span><span class="p">.</span><span class="n">items</span><span class="p">():</span>
     <span class="k">print</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">Collecting :'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'Items : '</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">memoryManager</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">'Items : '</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">memoryManager</span><span class="p">.</span><span class="n">items</span><span class="p">()))</span></code></pre></figure>
 
 </div>
 
@@ -1308,9 +1308,9 @@ Items :  (('Object1', 1231354587198), ('Object2', 223456455647901), ('Object3', 
 
 <span class="n">memoryManager</span> <span class="o">=</span> <span class="n">ChainMap</span><span class="p">(</span><span class="n">cache</span><span class="p">,</span> <span class="n">ram</span><span class="p">,</span> <span class="n">ssd</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">'Before :'</span><span class="p">,</span> <span class="n">memoryManager</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">pop('Object1') :"</span><span class="p">,</span> <span class="n">memoryManager</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">'Object1'</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">After :'</span><span class="p">,</span> <span class="n">memoryManager</span><span class="o">.</span><span class="n">items</span><span class="p">())</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">'Before :'</span><span class="p">,</span> <span class="n">memoryManager</span><span class="p">.</span><span class="n">items</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">pop('Object1') :"</span><span class="p">,</span> <span class="n">memoryManager</span><span class="p">.</span><span class="n">pop</span><span class="p">(</span><span class="s">'Object1'</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">After :'</span><span class="p">,</span> <span class="n">memoryManager</span><span class="p">.</span><span class="n">items</span><span class="p">())</span></code></pre></figure>
 
 </div>
 
@@ -1344,9 +1344,9 @@ After : ItemsView(ChainMap({'Object3': 18485412310201, 'Object9': 1974654212721}
 
 <span class="n">memoryManager</span> <span class="o">=</span> <span class="n">ChainMap</span><span class="p">(</span><span class="n">cache</span><span class="p">,</span> <span class="n">ram</span><span class="p">,</span> <span class="n">ssd</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">'Before :'</span><span class="p">,</span> <span class="n">memoryManager</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
-<span class="n">memoryManager</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">'Object2'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'Before :'</span><span class="p">,</span> <span class="n">memoryManager</span><span class="o">.</span><span class="n">items</span><span class="p">())</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">'Before :'</span><span class="p">,</span> <span class="n">memoryManager</span><span class="p">.</span><span class="n">items</span><span class="p">())</span>
+<span class="n">memoryManager</span><span class="p">.</span><span class="n">pop</span><span class="p">(</span><span class="s">'Object2'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Before :'</span><span class="p">,</span> <span class="n">memoryManager</span><span class="p">.</span><span class="n">items</span><span class="p">())</span></code></pre></figure>
 
 </div>
 
@@ -1388,9 +1388,9 @@ KeyError: "Key not found in the first mapping: 'Object2'"
 
 <span class="n">memoryManager</span> <span class="o">=</span> <span class="n">ChainMap</span><span class="p">(</span><span class="n">cache</span><span class="p">,</span> <span class="n">ram</span><span class="p">,</span> <span class="n">ssd</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">'Before :'</span><span class="p">,</span> <span class="n">memoryManager</span><span class="o">.</span><span class="n">maps</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'pop("Object2") :'</span><span class="p">,</span> <span class="n">memoryManager</span><span class="o">.</span><span class="n">maps</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">'Object2'</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'Before :'</span><span class="p">,</span> <span class="n">memoryManager</span><span class="o">.</span><span class="n">maps</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">'Before :'</span><span class="p">,</span> <span class="n">memoryManager</span><span class="p">.</span><span class="n">maps</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'pop("Object2") :'</span><span class="p">,</span> <span class="n">memoryManager</span><span class="p">.</span><span class="n">maps</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">pop</span><span class="p">(</span><span class="s">'Object2'</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Before :'</span><span class="p">,</span> <span class="n">memoryManager</span><span class="p">.</span><span class="n">maps</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span></code></pre></figure>
 
 </div>
 
@@ -1424,7 +1424,7 @@ Before : {'Object3': 29871354982132, 'Object5': 2021701102121}
 
 
 <span class="n">l1Cache</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Object1'</span><span class="p">:</span> <span class="mi">10000215445</span><span class="p">,</span> <span class="s">'Object5'</span><span class="p">:</span> <span class="mi">100012154544</span><span class="p">}</span>
-<span class="n">newmemManager</span> <span class="o">=</span> <span class="n">memoryManager</span><span class="o">.</span><span class="n">new_child</span><span class="p">(</span><span class="n">l1Cache</span><span class="p">)</span>
+<span class="n">newmemManager</span> <span class="o">=</span> <span class="n">memoryManager</span><span class="p">.</span><span class="n">new_child</span><span class="p">(</span><span class="n">l1Cache</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">newmemManager :'</span><span class="p">,</span> <span class="n">newmemManager</span><span class="p">)</span></code></pre></figure>
 

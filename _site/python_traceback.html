@@ -46,7 +46,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="site" href="http://localhost:4000/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="vbhojawala.github.io" href="http://localhost:4000/feed.xml">
 
     <script>
         $(document).ready(function() {
@@ -729,16 +729,16 @@ $('#toc').on('click', 'a', function() {
 <span class="k">try</span><span class="p">:</span>
     <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
 <span class="k">except</span> <span class="nb">ZeroDivisionError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Exception : {e.__class__}'</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Value : {e.args[0]}'</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Traceback : {e.__traceback__}  type : {type(e.__traceback__)}'</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Frame     : {e.__traceback__.tb_frame}  type : {type(e.__traceback__.tb_frame)}'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">f'Exception : </span><span class="si">{</span><span class="n">e</span><span class="p">.</span><span class="n">__class__</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">f'Value : </span><span class="si">{</span><span class="n">e</span><span class="p">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">f'Traceback : </span><span class="si">{</span><span class="n">e</span><span class="p">.</span><span class="n">__traceback__</span><span class="si">}</span><span class="s">  type : </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">__traceback__</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">f'Frame     : </span><span class="si">{</span><span class="n">e</span><span class="p">.</span><span class="n">__traceback__</span><span class="p">.</span><span class="n">tb_frame</span><span class="si">}</span><span class="s">  type : </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">__traceback__</span><span class="p">.</span><span class="n">tb_frame</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
 
     <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">Using sys.exc_info() to extract info about last exception :'</span><span class="p">)</span>
-    <span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_value</span><span class="p">,</span> <span class="n">exc_traceback</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'exc_type : {exc_type}    type : {type(exc_type)}'</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'exc_value : {exc_value}    type : {type(exc_value)}'</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'exc_traceback : {exc_traceback}    type : {type(exc_traceback)}'</span><span class="p">)</span></code></pre></figure>
+    <span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_value</span><span class="p">,</span> <span class="n">exc_traceback</span> <span class="o">=</span> <span class="n">sys</span><span class="p">.</span><span class="n">exc_info</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">f'exc_type : </span><span class="si">{</span><span class="n">exc_type</span><span class="si">}</span><span class="s">    type : </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">exc_type</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">f'exc_value : </span><span class="si">{</span><span class="n">exc_value</span><span class="si">}</span><span class="s">    type : </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">exc_value</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">f'exc_traceback : </span><span class="si">{</span><span class="n">exc_traceback</span><span class="si">}</span><span class="s">    type : </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">exc_traceback</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -779,8 +779,8 @@ exc_traceback : &lt;traceback object at 0x7fb19b1f05c0&gt;    type : &lt;class '
 <span class="k">try</span><span class="p">:</span>
     <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
 <span class="k">except</span> <span class="nb">ZeroDivisionError</span><span class="p">:</span>
-    <span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_value</span><span class="p">,</span> <span class="n">exc_traceback</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()</span>
-    <span class="n">traceback</span><span class="o">.</span><span class="n">print_tb</span><span class="p">(</span><span class="n">exc_traceback</span><span class="p">)</span>
+    <span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_value</span><span class="p">,</span> <span class="n">exc_traceback</span> <span class="o">=</span> <span class="n">sys</span><span class="p">.</span><span class="n">exc_info</span><span class="p">()</span>
+    <span class="n">traceback</span><span class="p">.</span><span class="n">print_tb</span><span class="p">(</span><span class="n">exc_traceback</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'Statements after Try ........'</span><span class="p">)</span></code></pre></figure>
 
@@ -811,8 +811,8 @@ Statements after Try ........
 <span class="k">try</span><span class="p">:</span>
     <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
 <span class="k">except</span> <span class="nb">ZeroDivisionError</span><span class="p">:</span>
-    <span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_value</span><span class="p">,</span> <span class="n">exc_traceback</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()</span>
-    <span class="n">traceback</span><span class="o">.</span><span class="n">print_tb</span><span class="p">(</span><span class="n">exc_traceback</span><span class="p">,</span> <span class="nb">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span></code></pre></figure>
+    <span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_value</span><span class="p">,</span> <span class="n">exc_traceback</span> <span class="o">=</span> <span class="n">sys</span><span class="p">.</span><span class="n">exc_info</span><span class="p">()</span>
+    <span class="n">traceback</span><span class="p">.</span><span class="n">print_tb</span><span class="p">(</span><span class="n">exc_traceback</span><span class="p">,</span> <span class="nb">file</span><span class="o">=</span><span class="n">sys</span><span class="p">.</span><span class="n">stdout</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -858,8 +858,8 @@ exc_type : &lt;class 'ZeroDivisionError'&gt;  |  exc_value : division by zero  |
 <span class="k">try</span><span class="p">:</span>
     <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
 <span class="k">except</span> <span class="nb">ZeroDivisionError</span><span class="p">:</span>
-    <span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_value</span><span class="p">,</span> <span class="n">exc_traceback</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()</span>
-    <span class="n">traceback</span><span class="o">.</span><span class="n">print_exception</span><span class="p">(</span><span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_value</span><span class="p">,</span> <span class="n">exc_traceback</span><span class="p">,</span> <span class="nb">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span></code></pre></figure>
+    <span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_value</span><span class="p">,</span> <span class="n">exc_traceback</span> <span class="o">=</span> <span class="n">sys</span><span class="p">.</span><span class="n">exc_info</span><span class="p">()</span>
+    <span class="n">traceback</span><span class="p">.</span><span class="n">print_exception</span><span class="p">(</span><span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_value</span><span class="p">,</span> <span class="n">exc_traceback</span><span class="p">,</span> <span class="nb">file</span><span class="o">=</span><span class="n">sys</span><span class="p">.</span><span class="n">stdout</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -888,8 +888,8 @@ ZeroDivisionError: division by zero
 <span class="k">try</span><span class="p">:</span>
     <span class="k">print</span> <span class="s">"Hello World"</span>
 <span class="k">except</span> <span class="nb">ZeroDivisionError</span><span class="p">:</span>
-    <span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_value</span><span class="p">,</span> <span class="n">exc_traceback</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()</span>
-    <span class="n">traceback</span><span class="o">.</span><span class="n">print_exception</span><span class="p">(</span><span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_value</span><span class="p">,</span> <span class="n">exc_traceback</span><span class="p">,</span> <span class="nb">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span></code></pre></figure>
+    <span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_value</span><span class="p">,</span> <span class="n">exc_traceback</span> <span class="o">=</span> <span class="n">sys</span><span class="p">.</span><span class="n">exc_info</span><span class="p">()</span>
+    <span class="n">traceback</span><span class="p">.</span><span class="n">print_exception</span><span class="p">(</span><span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_value</span><span class="p">,</span> <span class="n">exc_traceback</span><span class="p">,</span> <span class="nb">file</span><span class="o">=</span><span class="n">sys</span><span class="p">.</span><span class="n">stdout</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -920,7 +920,7 @@ SyntaxError: Missing parentheses in call to 'print'. Did you mean print("Hello W
 <span class="k">try</span><span class="p">:</span>
     <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
 <span class="k">except</span> <span class="nb">ZeroDivisionError</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">format_exception</span><span class="p">(</span><span class="o">*</span><span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">())))</span></code></pre></figure>
+    <span class="k">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">traceback</span><span class="p">.</span><span class="n">format_exception</span><span class="p">(</span><span class="o">*</span><span class="n">sys</span><span class="p">.</span><span class="n">exc_info</span><span class="p">())))</span></code></pre></figure>
 
 </div>
 
@@ -944,8 +944,8 @@ SyntaxError: Missing parentheses in call to 'print'. Did you mean print("Hello W
 <span class="k">try</span><span class="p">:</span>
     <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
 <span class="k">except</span> <span class="nb">ZeroDivisionError</span><span class="p">:</span>
-    <span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_value</span><span class="p">,</span> <span class="n">exc_traceback</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()</span>
-    <span class="k">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">format_exception_only</span><span class="p">(</span><span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_value</span><span class="p">)))</span></code></pre></figure>
+    <span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_value</span><span class="p">,</span> <span class="n">exc_traceback</span> <span class="o">=</span> <span class="n">sys</span><span class="p">.</span><span class="n">exc_info</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">traceback</span><span class="p">.</span><span class="n">format_exception_only</span><span class="p">(</span><span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_value</span><span class="p">)))</span></code></pre></figure>
 
 </div>
 
@@ -977,7 +977,7 @@ SyntaxError: Missing parentheses in call to 'print'. Did you mean print("Hello W
 <span class="k">try</span><span class="p">:</span>
     <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
 <span class="k">except</span> <span class="nb">ZeroDivisionError</span><span class="p">:</span>
-    <span class="n">traceback</span><span class="o">.</span><span class="n">print_exc</span><span class="p">(</span><span class="nb">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span></code></pre></figure>
+    <span class="n">traceback</span><span class="p">.</span><span class="n">print_exc</span><span class="p">(</span><span class="nb">file</span><span class="o">=</span><span class="n">sys</span><span class="p">.</span><span class="n">stdout</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1010,7 +1010,7 @@ ZeroDivisionError: division by zero
 <span class="k">try</span><span class="p">:</span>
     <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
 <span class="k">except</span> <span class="nb">ZeroDivisionError</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">format_exc</span><span class="p">())</span></code></pre></figure>
+    <span class="k">print</span><span class="p">(</span><span class="n">traceback</span><span class="p">.</span><span class="n">format_exc</span><span class="p">())</span></code></pre></figure>
 
 </div>
 
@@ -1048,7 +1048,7 @@ ZeroDivisionError: division by zero
 <span class="k">print</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="c1"># Run it after raising exception in console
-</span><span class="n">traceback</span><span class="o">.</span><span class="n">print_last</span><span class="p">(</span><span class="nb">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span></code></pre></figure>
+</span><span class="n">traceback</span><span class="p">.</span><span class="n">print_last</span><span class="p">(</span><span class="nb">file</span><span class="o">=</span><span class="n">sys</span><span class="p">.</span><span class="n">stdout</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1086,7 +1086,7 @@ ZeroDivisionError: division by zero
     <span class="k">try</span><span class="p">:</span>
         <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
     <span class="k">except</span> <span class="nb">ZeroDivisionError</span><span class="p">:</span>
-        <span class="n">traceback</span><span class="o">.</span><span class="n">print_stack</span><span class="p">(</span><span class="nb">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
+        <span class="n">traceback</span><span class="p">.</span><span class="n">print_stack</span><span class="p">(</span><span class="nb">file</span><span class="o">=</span><span class="n">sys</span><span class="p">.</span><span class="n">stdout</span><span class="p">)</span>
 
 
 <span class="n">division</span><span class="p">()</span></code></pre></figure>
@@ -1140,7 +1140,7 @@ ZeroDivisionError: division by zero
 <span class="k">try</span><span class="p">:</span>
     <span class="n">func1</span><span class="p">()</span>
 <span class="k">except</span> <span class="n">InvalidAccessError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">traceback</span><span class="o">.</span><span class="n">extract_tb</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()[</span><span class="mi">2</span><span class="p">]):</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">traceback</span><span class="p">.</span><span class="n">extract_tb</span><span class="p">(</span><span class="n">sys</span><span class="p">.</span><span class="n">exc_info</span><span class="p">()[</span><span class="mi">2</span><span class="p">]):</span>
         <span class="k">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -1187,7 +1187,7 @@ func1() Started...
 <span class="k">try</span><span class="p">:</span>
     <span class="n">func1</span><span class="p">()</span>
 <span class="k">except</span> <span class="n">InvalidAccessError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">format_list</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">extract_tb</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()[</span><span class="mi">2</span><span class="p">])))</span></code></pre></figure>
+    <span class="k">print</span><span class="p">(</span><span class="n">traceback</span><span class="p">.</span><span class="n">format_list</span><span class="p">(</span><span class="n">traceback</span><span class="p">.</span><span class="n">extract_tb</span><span class="p">(</span><span class="n">sys</span><span class="p">.</span><span class="n">exc_info</span><span class="p">()[</span><span class="mi">2</span><span class="p">])))</span></code></pre></figure>
 
 </div>
 
@@ -1236,7 +1236,7 @@ func1() Started...
 <span class="k">try</span><span class="p">:</span>
     <span class="n">func1</span><span class="p">()</span>
 <span class="k">except</span> <span class="n">InvalidAccessError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">format_tb</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()[</span><span class="mi">2</span><span class="p">]))</span></code></pre></figure>
+    <span class="k">print</span><span class="p">(</span><span class="n">traceback</span><span class="p">.</span><span class="n">format_tb</span><span class="p">(</span><span class="n">sys</span><span class="p">.</span><span class="n">exc_info</span><span class="p">()[</span><span class="mi">2</span><span class="p">]))</span></code></pre></figure>
 
 </div>
 
@@ -1286,7 +1286,7 @@ func1() Started...
 <span class="k">try</span><span class="p">:</span>
     <span class="n">func1</span><span class="p">()</span>
 <span class="k">except</span> <span class="n">InvalidAccessError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">extract_stack</span><span class="p">()))</span></code></pre></figure>
+    <span class="k">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">traceback</span><span class="p">.</span><span class="n">extract_stack</span><span class="p">()))</span></code></pre></figure>
 
 </div>
 
@@ -1336,7 +1336,7 @@ func1() Started...
 <span class="k">try</span><span class="p">:</span>
     <span class="n">func1</span><span class="p">()</span>
 <span class="k">except</span> <span class="n">InvalidAccessError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">format_stack</span><span class="p">())</span></code></pre></figure>
+    <span class="k">print</span><span class="p">(</span><span class="n">traceback</span><span class="p">.</span><span class="n">format_stack</span><span class="p">())</span></code></pre></figure>
 
 </div>
 

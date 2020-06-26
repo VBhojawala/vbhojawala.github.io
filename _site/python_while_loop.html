@@ -46,7 +46,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="site" href="http://localhost:4000/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="vbhojawala.github.io" href="http://localhost:4000/feed.xml">
 
     <script>
         $(document).ready(function() {
@@ -750,7 +750,7 @@ $('#toc').on('click', 'a', function() {
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
     <span class="n">inpt</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">'Enter your Name [Press Enter to exit] -&gt;'</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">inpt</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Hi, {inpt}. Welcome to the world of Python.'</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">f'Hi, </span><span class="si">{</span><span class="n">inpt</span><span class="si">}</span><span class="s">. Welcome to the world of Python.'</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">break</span></code></pre></figure>
 
@@ -790,7 +790,7 @@ Enter your Name [Press Enter to exit] -&gt;&gt;?
     <span class="k">if</span> <span class="n">inpt</span><span class="p">:</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">inpt</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">inpt</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">inpt</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
             <span class="k">continue</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Adding {inpt} to the list ....'</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">f'Adding </span><span class="si">{</span><span class="n">inpt</span><span class="si">}</span><span class="s"> to the list ....'</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">break</span></code></pre></figure>
 
@@ -915,7 +915,7 @@ Conditional break
         <span class="k">print</span><span class="p">(</span><span class="s">'Printing shipping details '</span><span class="p">)</span>
         <span class="k">print</span><span class="p">(</span><span class="s">'Packaging the order'</span><span class="p">)</span>
         <span class="k">print</span><span class="p">(</span><span class="s">'Assign shipment to Courier services'</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Estimated delivery time --&gt; {random.randint(1, 5)} Days'</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">f'Estimated delivery time --&gt; </span><span class="si">{</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span><span class="si">}</span><span class="s"> Days'</span><span class="p">)</span>
         <span class="k">print</span><span class="p">(</span><span class="s">'----------------------------------------------------'</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">hasOrder</span> <span class="o">=</span> <span class="bp">False</span>
@@ -987,9 +987,9 @@ Shutting down ........
 
 <span class="k">while</span> <span class="ow">not</span> <span class="n">found</span><span class="p">:</span>
     <span class="n">trial</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">begin</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="n">begin</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="n">number</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Python found in {trial} trial(s)'</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">f'Python found in </span><span class="si">{</span><span class="n">trial</span><span class="si">}</span><span class="s"> trial(s)'</span><span class="p">)</span>
         <span class="n">found</span> <span class="o">=</span> <span class="bp">True</span></code></pre></figure>
 
 </div>

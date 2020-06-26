@@ -46,7 +46,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="site" href="http://localhost:4000/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="vbhojawala.github.io" href="http://localhost:4000/feed.xml">
 
     <script>
         $(document).ready(function() {
@@ -799,9 +799,9 @@ $('#toc').on('click', 'a', function() {
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
 
-<span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s">'High workloads detected, response might be slow'</span><span class="p">)</span>
-<span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">'This will not be printed on console as the logging level is warning'</span><span class="p">)</span>
-<span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">'Error occurred!!!'</span><span class="p">)</span></code></pre></figure>
+<span class="n">logging</span><span class="p">.</span><span class="n">warning</span><span class="p">(</span><span class="s">'High workloads detected, response might be slow'</span><span class="p">)</span>
+<span class="n">logging</span><span class="p">.</span><span class="n">debug</span><span class="p">(</span><span class="s">'This will not be printed on console as the logging level is warning'</span><span class="p">)</span>
+<span class="n">logging</span><span class="p">.</span><span class="n">error</span><span class="p">(</span><span class="s">'Error occurred!!!'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -843,7 +843,7 @@ ERROR:root:Error occurred!!!</pre></div>
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
 
 <span class="n">usage</span> <span class="o">=</span> <span class="mi">91</span>
-<span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s">'CPU usage is </span><span class="si">%</span><span class="s">d'</span><span class="p">,</span> <span class="n">usage</span><span class="p">)</span></code></pre></figure>
+<span class="n">logging</span><span class="p">.</span><span class="n">warning</span><span class="p">(</span><span class="s">'CPU usage is %d'</span><span class="p">,</span> <span class="n">usage</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1068,12 +1068,12 @@ ERROR:root:Error occurred!!!</pre></div>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">"logging.NOTSET   :"</span><span class="p">,</span> <span class="n">logging</span><span class="o">.</span><span class="n">NOTSET</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"logging.DEBUG    :"</span><span class="p">,</span> <span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"logging.INFO     :"</span><span class="p">,</span> <span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"logging.WARNING  :"</span><span class="p">,</span> <span class="n">logging</span><span class="o">.</span><span class="n">WARNING</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"logging.ERROR    :"</span><span class="p">,</span> <span class="n">logging</span><span class="o">.</span><span class="n">ERROR</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"logging.CRITICAL :"</span><span class="p">,</span> <span class="n">logging</span><span class="o">.</span><span class="n">CRITICAL</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">"logging.NOTSET   :"</span><span class="p">,</span> <span class="n">logging</span><span class="p">.</span><span class="n">NOTSET</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"logging.DEBUG    :"</span><span class="p">,</span> <span class="n">logging</span><span class="p">.</span><span class="n">DEBUG</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"logging.INFO     :"</span><span class="p">,</span> <span class="n">logging</span><span class="p">.</span><span class="n">INFO</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"logging.WARNING  :"</span><span class="p">,</span> <span class="n">logging</span><span class="p">.</span><span class="n">WARNING</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"logging.ERROR    :"</span><span class="p">,</span> <span class="n">logging</span><span class="p">.</span><span class="n">ERROR</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"logging.CRITICAL :"</span><span class="p">,</span> <span class="n">logging</span><span class="p">.</span><span class="n">CRITICAL</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1102,8 +1102,8 @@ logging.CRITICAL : 50
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
 
-<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
-<span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">'Info logged successfully'</span><span class="p">)</span></code></pre></figure>
+<span class="n">logging</span><span class="p">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="p">.</span><span class="n">INFO</span><span class="p">)</span>
+<span class="n">logging</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s">'Info logged successfully'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1122,15 +1122,15 @@ logging.CRITICAL : 50
 <p id="code-header-6" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-6", "code-header-6")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
-<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">'myapp01.log'</span><span class="p">,</span> <span class="n">filemode</span><span class="o">=</span><span class="s">'a+'</span><span class="p">,</span>   <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
-<span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">'logging started  .......'</span><span class="p">)</span>
+<span class="n">logging</span><span class="p">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">'myapp01.log'</span><span class="p">,</span> <span class="n">filemode</span><span class="o">=</span><span class="s">'a+'</span><span class="p">,</span>   <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="p">.</span><span class="n">INFO</span><span class="p">)</span>
+<span class="n">logging</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s">'logging started  .......'</span><span class="p">)</span>
 
 
 <span class="c1"># logging variable value
 </span><span class="n">a</span> <span class="o">=</span> <span class="mi">12</span>
 <span class="n">msg</span> <span class="o">=</span> <span class="s">'a String value'</span>
 
-<span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">f</span><span class="s">'variable a -&gt; {a} and msg -&gt; {msg}'</span><span class="p">)</span></code></pre></figure>
+<span class="n">logging</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s">f'variable a -&gt; </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s"> and msg -&gt; </span><span class="si">{</span><span class="n">msg</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1154,10 +1154,10 @@ INFO:root:variable a -&gt; 12 and msg -&gt; a String value
 <p id="code-header-7" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-7", "code-header-7")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
-<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">'myapp02.log'</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s">'</span><span class="si">%(asctime)</span><span class="s">s : </span><span class="si">%(levelname)</span><span class="s">s : </span><span class="si">%(module)</span><span class="s">s : </span><span class="si">%(message)</span><span class="s">s'</span><span class="p">,</span>
-                    <span class="n">datefmt</span><span class="o">=</span><span class="s">'</span><span class="si">%</span><span class="s">m/</span><span class="si">%</span><span class="s">d/</span><span class="si">%</span><span class="s">Y </span><span class="si">%</span><span class="s">I:</span><span class="si">%</span><span class="s">M:</span><span class="si">%</span><span class="s">S </span><span class="si">%</span><span class="s">p'</span><span class="p">,</span> <span class="n">filemode</span><span class="o">=</span><span class="s">'a+'</span><span class="p">,</span>   <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+<span class="n">logging</span><span class="p">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">'myapp02.log'</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s">'%(asctime)s : %(levelname)s : %(module)s : %(message)s'</span><span class="p">,</span>
+                    <span class="n">datefmt</span><span class="o">=</span><span class="s">'%m/%d/%Y %I:%M:%S %p'</span><span class="p">,</span> <span class="n">filemode</span><span class="o">=</span><span class="s">'a+'</span><span class="p">,</span>   <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="p">.</span><span class="n">INFO</span><span class="p">)</span>
 
-<span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">'logging started  .......'</span><span class="p">)</span></code></pre></figure>
+<span class="n">logging</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s">'logging started  .......'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1186,23 +1186,23 @@ INFO:root:variable a -&gt; 12 and msg -&gt; a String value
 
 <span class="k">def</span> <span class="nf">token_gen</span><span class="p">(</span><span class="n">nbytes</span><span class="p">,</span> <span class="n">ntoken</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ntoken</span><span class="p">):</span>
-        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">))</span>
-        <span class="n">token</span> <span class="o">=</span> <span class="n">secrets</span><span class="o">.</span><span class="n">token_hex</span><span class="p">(</span><span class="n">nbytes</span><span class="p">)</span>
-        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">f</span><span class="s">'{nbytes} Bytes Token generated [{token}]'</span><span class="p">)</span>
+        <span class="n">time</span><span class="p">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">random</span><span class="p">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">))</span>
+        <span class="n">token</span> <span class="o">=</span> <span class="n">secrets</span><span class="p">.</span><span class="n">token_hex</span><span class="p">(</span><span class="n">nbytes</span><span class="p">)</span>
+        <span class="n">logging</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s">f'</span><span class="si">{</span><span class="n">nbytes</span><span class="si">}</span><span class="s"> Bytes Token generated [</span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s">]'</span><span class="p">)</span>
 
 
-<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">'myapp03.log'</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s">'</span><span class="si">%(asctime)</span><span class="s">s </span><span class="si">%(threadName)</span><span class="s">s </span><span class="si">%(message)</span><span class="s">s'</span><span class="p">)</span>
+<span class="n">logging</span><span class="p">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">'myapp03.log'</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="p">.</span><span class="n">INFO</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s">'%(asctime)s %(threadName)s %(message)s'</span><span class="p">)</span>
 
 <span class="n">threads</span> <span class="o">=</span> <span class="p">[]</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
-    <span class="n">thread</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">token_gen</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
-    <span class="n">thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-    <span class="n">threads</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">thread</span><span class="p">)</span>
+    <span class="n">thread</span> <span class="o">=</span> <span class="n">threading</span><span class="p">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">token_gen</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+    <span class="n">thread</span><span class="p">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="n">threads</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">thread</span><span class="p">)</span>
 
 
 <span class="k">for</span> <span class="n">thread</span> <span class="ow">in</span> <span class="n">threads</span><span class="p">:</span>
-    <span class="n">thread</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+    <span class="n">thread</span><span class="p">.</span><span class="n">join</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'Exiting main program'</span><span class="p">)</span></code></pre></figure>
 
@@ -1239,12 +1239,12 @@ INFO:root:variable a -&gt; 12 and msg -&gt; a String value
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
 
-<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">'myapp02.log'</span><span class="p">,</span>
-                    <span class="nb">format</span><span class="o">=</span><span class="s">'</span><span class="si">%(asctime)</span><span class="s">s : </span><span class="si">%(levelname)</span><span class="s">s : </span><span class="si">%(levelno)</span><span class="s">s : </span><span class="si">%(name)</span><span class="s">s : </span><span class="si">%(machineID)</span><span class="s">s : </span><span class="si">%(message)</span><span class="s">s '</span><span class="p">,</span>
-                    <span class="n">datefmt</span><span class="o">=</span><span class="s">'</span><span class="si">%</span><span class="s">m/</span><span class="si">%</span><span class="s">d/</span><span class="si">%</span><span class="s">Y </span><span class="si">%</span><span class="s">I:</span><span class="si">%</span><span class="s">M:</span><span class="si">%</span><span class="s">S </span><span class="si">%</span><span class="s">p'</span><span class="p">,</span> <span class="n">filemode</span><span class="o">=</span><span class="s">'a+'</span><span class="p">,</span>   <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+<span class="n">logging</span><span class="p">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">'myapp02.log'</span><span class="p">,</span>
+                    <span class="nb">format</span><span class="o">=</span><span class="s">'%(asctime)s : %(levelname)s : %(levelno)s : %(name)s : %(machineID)s : %(message)s '</span><span class="p">,</span>
+                    <span class="n">datefmt</span><span class="o">=</span><span class="s">'%m/%d/%Y %I:%M:%S %p'</span><span class="p">,</span> <span class="n">filemode</span><span class="o">=</span><span class="s">'a+'</span><span class="p">,</span>   <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="p">.</span><span class="n">INFO</span><span class="p">)</span>
 
 <span class="n">dictionary</span> <span class="o">=</span> <span class="p">{</span><span class="s">'machineID'</span><span class="p">:</span> <span class="s">'AF145B56D'</span><span class="p">,</span> <span class="s">'requestID'</span><span class="p">:</span> <span class="s">'PQA125CB12VB3123'</span><span class="p">}</span>
-<span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">'Initiating session'</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="n">dictionary</span><span class="p">)</span></code></pre></figure>
+<span class="n">logging</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s">'Initiating session'</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="n">dictionary</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1349,22 +1349,22 @@ INFO:root:variable a -&gt; 12 and msg -&gt; a String value
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
 
-<span class="n">old_factory</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogRecordFactory</span><span class="p">()</span>
+<span class="n">old_factory</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">getLogRecordFactory</span><span class="p">()</span>
 
 
 <span class="k">def</span> <span class="nf">record_factory</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="n">record</span> <span class="o">=</span> <span class="n">old_factory</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-    <span class="n">record</span><span class="o">.</span><span class="n">pod</span> <span class="o">=</span> <span class="s">'POD_ANXZ1'</span>
+    <span class="n">record</span><span class="p">.</span><span class="n">pod</span> <span class="o">=</span> <span class="s">'POD_ANXZ1'</span>
     <span class="k">return</span> <span class="n">record</span>
 
 
-<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s">'</span><span class="si">%(asctime)</span><span class="s">s :  </span><span class="si">%(pod)</span><span class="s">s : </span><span class="si">%(levelname)</span><span class="s">s : </span><span class="si">%(module)</span><span class="s">s : </span><span class="si">%(message)</span><span class="s">s'</span><span class="p">,</span>
-                    <span class="n">datefmt</span><span class="o">=</span><span class="s">'</span><span class="si">%</span><span class="s">m/</span><span class="si">%</span><span class="s">d/</span><span class="si">%</span><span class="s">Y </span><span class="si">%</span><span class="s">I:</span><span class="si">%</span><span class="s">M:</span><span class="si">%</span><span class="s">S </span><span class="si">%</span><span class="s">p'</span><span class="p">,</span> <span class="n">filemode</span><span class="o">=</span><span class="s">'a+'</span><span class="p">,</span>   <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+<span class="n">logging</span><span class="p">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s">'%(asctime)s :  %(pod)s : %(levelname)s : %(module)s : %(message)s'</span><span class="p">,</span>
+                    <span class="n">datefmt</span><span class="o">=</span><span class="s">'%m/%d/%Y %I:%M:%S %p'</span><span class="p">,</span> <span class="n">filemode</span><span class="o">=</span><span class="s">'a+'</span><span class="p">,</span>   <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="p">.</span><span class="n">INFO</span><span class="p">)</span>
 
-<span class="n">logging</span><span class="o">.</span><span class="n">setLogRecordFactory</span><span class="p">(</span><span class="n">record_factory</span><span class="p">)</span>
+<span class="n">logging</span><span class="p">.</span><span class="n">setLogRecordFactory</span><span class="p">(</span><span class="n">record_factory</span><span class="p">)</span>
 
 
-<span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s">'High CPU usage ....'</span><span class="p">)</span></code></pre></figure>
+<span class="n">logging</span><span class="p">.</span><span class="n">warning</span><span class="p">(</span><span class="s">'High CPU usage ....'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1399,8 +1399,8 @@ INFO:root:variable a -&gt; 12 and msg -&gt; a String value
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">"getLevelName('INFO') :"</span><span class="p">,</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLevelName</span><span class="p">(</span><span class="s">'INFO'</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"getLevelName(40) :"</span><span class="p">,</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLevelName</span><span class="p">(</span><span class="mi">40</span><span class="p">))</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">"getLevelName('INFO') :"</span><span class="p">,</span> <span class="n">logging</span><span class="p">.</span><span class="n">getLevelName</span><span class="p">(</span><span class="s">'INFO'</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"getLevelName(40) :"</span><span class="p">,</span> <span class="n">logging</span><span class="p">.</span><span class="n">getLevelName</span><span class="p">(</span><span class="mi">40</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
@@ -1427,7 +1427,7 @@ getLevelName(40) : ERROR
 <div id="code-block-12" class="code-block">
 <p id="code-header-12" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-12", "code-header-12")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">MyLogger</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">getLoggerClass</span><span class="p">()):</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">MyLogger</span><span class="p">(</span><span class="n">logging</span><span class="p">.</span><span class="n">getLoggerClass</span><span class="p">()):</span>
     <span class="k">pass</span></code></pre></figure>
 
 </div>
@@ -1496,11 +1496,11 @@ getLevelName(40) : ERROR
 <p id="code-header-13" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-13", "code-header-13")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
-<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">hello_module</span><span class="p">():</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">'Message from packageA1 -&gt; ModuleA2'</span><span class="p">)</span></code></pre></figure>
+    <span class="n">logger</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s">'Message from packageA1 -&gt; ModuleA2'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1510,11 +1510,11 @@ getLevelName(40) : ERROR
 <p id="code-header-14" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-14", "code-header-14")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
-<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">hello_module</span><span class="p">():</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">'Message from packageB1 -&gt; ModuleB2'</span><span class="p">)</span></code></pre></figure>
+    <span class="n">logger</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s">'Message from packageB1 -&gt; ModuleB2'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1525,19 +1525,19 @@ getLevelName(40) : ERROR
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
 
-<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">'MyApplicationHierarchy.log'</span><span class="p">,</span>
-                    <span class="nb">format</span><span class="o">=</span><span class="s">'</span><span class="si">%(asctime)</span><span class="s">s : </span><span class="si">%(levelname)</span><span class="s">s : </span><span class="si">%(levelno)</span><span class="s">s : </span><span class="si">%(name)</span><span class="s">s : </span><span class="si">%(message)</span><span class="s">s'</span><span class="p">,</span>
-                    <span class="n">datefmt</span><span class="o">=</span><span class="s">'</span><span class="si">%</span><span class="s">m/</span><span class="si">%</span><span class="s">d/</span><span class="si">%</span><span class="s">Y </span><span class="si">%</span><span class="s">I:</span><span class="si">%</span><span class="s">M:</span><span class="si">%</span><span class="s">S </span><span class="si">%</span><span class="s">p'</span><span class="p">,</span> <span class="n">filemode</span><span class="o">=</span><span class="s">'a+'</span><span class="p">,</span>   <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+<span class="n">logging</span><span class="p">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">'MyApplicationHierarchy.log'</span><span class="p">,</span>
+                    <span class="nb">format</span><span class="o">=</span><span class="s">'%(asctime)s : %(levelname)s : %(levelno)s : %(name)s : %(message)s'</span><span class="p">,</span>
+                    <span class="n">datefmt</span><span class="o">=</span><span class="s">'%m/%d/%Y %I:%M:%S %p'</span><span class="p">,</span> <span class="n">filemode</span><span class="o">=</span><span class="s">'a+'</span><span class="p">,</span>   <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="p">.</span><span class="n">INFO</span><span class="p">)</span>
 
-<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">getLogger</span><span class="p">()</span>
 
-<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">'Hierarchy 1 is created'</span><span class="p">)</span> 
+<span class="n">logger</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s">'Hierarchy 1 is created'</span><span class="p">)</span> 
 
 <span class="kn">from</span> <span class="nn">packageA1</span> <span class="kn">import</span> <span class="n">ModuleA2</span>
 <span class="kn">from</span> <span class="nn">packageB1</span> <span class="kn">import</span> <span class="n">ModuleB2</span>
 
-<span class="n">ModuleA2</span><span class="o">.</span><span class="n">hello_module</span><span class="p">()</span>
-<span class="n">ModuleB2</span><span class="o">.</span><span class="n">hello_module</span><span class="p">()</span></code></pre></figure>
+<span class="n">ModuleA2</span><span class="p">.</span><span class="n">hello_module</span><span class="p">()</span>
+<span class="n">ModuleB2</span><span class="p">.</span><span class="n">hello_module</span><span class="p">()</span></code></pre></figure>
 
 </div>
 
@@ -1561,11 +1561,11 @@ getLevelName(40) : ERROR
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
 
-<span class="n">rootLogger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span>
-<span class="n">nonRootLogger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<span class="n">rootLogger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">getLogger</span><span class="p">()</span>
+<span class="n">nonRootLogger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">'Root Logger level :'</span><span class="p">,</span> <span class="n">rootLogger</span><span class="o">.</span><span class="n">level</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'Non-Root Logger level :'</span><span class="p">,</span> <span class="n">nonRootLogger</span><span class="o">.</span><span class="n">level</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">'Root Logger level :'</span><span class="p">,</span> <span class="n">rootLogger</span><span class="p">.</span><span class="n">level</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Non-Root Logger level :'</span><span class="p">,</span> <span class="n">nonRootLogger</span><span class="p">.</span><span class="n">level</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1594,8 +1594,8 @@ Non-Root Logger level : 0
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
 
-<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"propagate :"</span><span class="p">,</span> <span class="n">logger</span><span class="o">.</span><span class="n">propagate</span><span class="p">)</span></code></pre></figure>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">getLogger</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"propagate :"</span><span class="p">,</span> <span class="n">logger</span><span class="p">.</span><span class="n">propagate</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1624,13 +1624,13 @@ propagate : True
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
 
-<span class="n">rootLogger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span>
-<span class="n">nonRootLogger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<span class="n">rootLogger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">getLogger</span><span class="p">()</span>
+<span class="n">nonRootLogger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">'Root Logger level :'</span><span class="p">,</span> <span class="n">rootLogger</span><span class="o">.</span><span class="n">level</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'Root Logger Effective level :'</span><span class="p">,</span> <span class="n">rootLogger</span><span class="o">.</span><span class="n">getEffectiveLevel</span><span class="p">())</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'Non-Root Logger level :'</span><span class="p">,</span> <span class="n">nonRootLogger</span><span class="o">.</span><span class="n">level</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'Non-Root Logger Effective level :'</span><span class="p">,</span> <span class="n">nonRootLogger</span><span class="o">.</span><span class="n">getEffectiveLevel</span><span class="p">())</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">'Root Logger level :'</span><span class="p">,</span> <span class="n">rootLogger</span><span class="p">.</span><span class="n">level</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Root Logger Effective level :'</span><span class="p">,</span> <span class="n">rootLogger</span><span class="p">.</span><span class="n">getEffectiveLevel</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Non-Root Logger level :'</span><span class="p">,</span> <span class="n">nonRootLogger</span><span class="p">.</span><span class="n">level</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Non-Root Logger Effective level :'</span><span class="p">,</span> <span class="n">nonRootLogger</span><span class="p">.</span><span class="n">getEffectiveLevel</span><span class="p">())</span></code></pre></figure>
 
 </div>
 
@@ -1690,12 +1690,12 @@ Non-Root Logger Effective level : 30
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
 
-<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">'MyApplicationException.log'</span><span class="p">)</span>
+<span class="n">logging</span><span class="p">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">'MyApplicationException.log'</span><span class="p">)</span>
 
 <span class="k">try</span><span class="p">:</span>
     <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
 <span class="k">except</span> <span class="nb">ZeroDivisionError</span><span class="p">:</span>
-    <span class="n">logging</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s">"Division by Zero is performed"</span><span class="p">)</span></code></pre></figure>
+    <span class="n">logging</span><span class="p">.</span><span class="n">exception</span><span class="p">(</span><span class="s">"Division by Zero is performed"</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1751,7 +1751,7 @@ ZeroDivisionError: division by zero
 <p id="code-header-20" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-20", "code-header-20")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
-<span class="n">logging</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">WARNING</span><span class="p">,</span> <span class="s">"Warning Message from log() method"</span><span class="p">)</span></code></pre></figure>
+<span class="n">logging</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">logging</span><span class="p">.</span><span class="n">WARNING</span><span class="p">,</span> <span class="s">"Warning Message from log() method"</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1816,14 +1816,14 @@ ZeroDivisionError: division by zero
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
 
-<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+<span class="n">logging</span><span class="p">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="p">.</span><span class="n">INFO</span><span class="p">)</span>
 
-<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">getLogger</span><span class="p">()</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="p">.</span><span class="n">INFO</span><span class="p">)</span>
 
-<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">'Message with same logger level as current level of logger.'</span><span class="p">)</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">'Message with higher logger level than current level of logger.'</span><span class="p">)</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">'Message with lower logger level than current level of logger.'</span><span class="p">)</span></code></pre></figure>
+<span class="n">logger</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s">'Message with same logger level as current level of logger.'</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">error</span><span class="p">(</span><span class="s">'Message with higher logger level than current level of logger.'</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">debug</span><span class="p">(</span><span class="s">'Message with lower logger level than current level of logger.'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1913,16 +1913,16 @@ ERROR:root:Message with higher logger level than current level of logger.
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
 <span class="kn">import</span> <span class="nn">secrets</span>
 
-<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">token_gen</span><span class="p">():</span>
-    <span class="n">callerInfo</span> <span class="o">=</span> <span class="n">logger</span><span class="o">.</span><span class="n">findCaller</span><span class="p">(</span><span class="n">stack_info</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">f</span><span class="s">'Caller info : {callerInfo}'</span><span class="p">)</span>
+    <span class="n">callerInfo</span> <span class="o">=</span> <span class="n">logger</span><span class="p">.</span><span class="n">findCaller</span><span class="p">(</span><span class="n">stack_info</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">logger</span><span class="p">.</span><span class="n">debug</span><span class="p">(</span><span class="s">f'Caller info : </span><span class="si">{</span><span class="n">callerInfo</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
 
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-        <span class="n">token</span> <span class="o">=</span> <span class="n">secrets</span><span class="o">.</span><span class="n">token_hex</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
-        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">f</span><span class="s">'generated  16 Bytes Token  [{token}]'</span><span class="p">)</span></code></pre></figure>
+        <span class="n">token</span> <span class="o">=</span> <span class="n">secrets</span><span class="p">.</span><span class="n">token_hex</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
+        <span class="n">logger</span><span class="p">.</span><span class="n">debug</span><span class="p">(</span><span class="s">f'generated  16 Bytes Token  [</span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s">]'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1934,12 +1934,12 @@ ERROR:root:Message with higher logger level than current level of logger.
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
 <span class="kn">from</span> <span class="nn">packageA1</span> <span class="kn">import</span> <span class="n">ModuleA4</span>
 
-<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">make_call</span><span class="p">():</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">'Invoking make_call()'</span><span class="p">)</span>
-    <span class="n">ModuleA4</span><span class="o">.</span><span class="n">token_gen</span><span class="p">()</span></code></pre></figure>
+    <span class="n">logger</span><span class="p">.</span><span class="n">debug</span><span class="p">(</span><span class="s">'Invoking make_call()'</span><span class="p">)</span>
+    <span class="n">ModuleA4</span><span class="p">.</span><span class="n">token_gen</span><span class="p">()</span></code></pre></figure>
 
 </div>
 
@@ -1951,14 +1951,14 @@ ERROR:root:Message with higher logger level than current level of logger.
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
 <span class="kn">from</span> <span class="nn">appLogging</span> <span class="kn">import</span> <span class="n">LoggerFindCaller</span>
 
-<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">'myapp03.log'</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+<span class="n">logging</span><span class="p">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">'myapp03.log'</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="p">.</span><span class="n">DEBUG</span><span class="p">)</span>
 
-<span class="n">rootLogger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s">'ModuleFindCaller'</span><span class="p">)</span>
-<span class="n">rootLogger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">'Logger Started'</span><span class="p">)</span>
+<span class="n">rootLogger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s">'ModuleFindCaller'</span><span class="p">)</span>
+<span class="n">rootLogger</span><span class="p">.</span><span class="n">debug</span><span class="p">(</span><span class="s">'Logger Started'</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">find_caller_demo</span><span class="p">():</span>
-    <span class="n">LoggerFindCaller</span><span class="o">.</span><span class="n">make_call</span><span class="p">()</span>
+    <span class="n">LoggerFindCaller</span><span class="p">.</span><span class="n">make_call</span><span class="p">()</span>
 
 
 <span class="n">find_caller_demo</span><span class="p">()</span></code></pre></figure>
@@ -2098,7 +2098,7 @@ DEBUG:packageA1.ModuleA4:generated  16 Bytes Token  [58e2c5b4fed90998f6d374be473
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
 
-<span class="n">logging</span><span class="o">.</span><span class="n">raiseExceptions</span> <span class="o">=</span> <span class="bp">False</span></code></pre></figure>
+<span class="n">logging</span><span class="p">.</span><span class="n">raiseExceptions</span> <span class="o">=</span> <span class="bp">False</span></code></pre></figure>
 
 </div>
 
@@ -2261,16 +2261,16 @@ DEBUG:packageA1.ModuleA4:generated  16 Bytes Token  [58e2c5b4fed90998f6d374be473
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 
-<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
-<span class="n">streamHndlr</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">streamHndlr</span><span class="p">)</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">getLogger</span><span class="p">()</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="p">.</span><span class="n">INFO</span><span class="p">)</span>
+<span class="n">streamHndlr</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">StreamHandler</span><span class="p">(</span><span class="n">sys</span><span class="p">.</span><span class="n">stdout</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">streamHndlr</span><span class="p">)</span>
 
-<span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s">'High CPU usage ......'</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">warning</span><span class="p">(</span><span class="s">'High CPU usage ......'</span><span class="p">)</span>
 
-<span class="n">streamHndlr</span><span class="o">.</span><span class="n">setStream</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+<span class="n">streamHndlr</span><span class="p">.</span><span class="n">setStream</span><span class="p">(</span><span class="n">sys</span><span class="p">.</span><span class="n">stderr</span><span class="p">)</span>
 
-<span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s">'High CPU usage ......'</span><span class="p">)</span></code></pre></figure>
+<span class="n">logger</span><span class="p">.</span><span class="n">warning</span><span class="p">(</span><span class="s">'High CPU usage ......'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -2343,13 +2343,13 @@ DEBUG:packageA1.ModuleA4:generated  16 Bytes Token  [58e2c5b4fed90998f6d374be473
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
 
-<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">getLogger</span><span class="p">()</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="p">.</span><span class="n">INFO</span><span class="p">)</span>
 
-<span class="n">fileHndlr</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">FileHandler</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">'FileHandler.log'</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s">'a+'</span><span class="p">)</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">fileHndlr</span><span class="p">)</span>
+<span class="n">fileHndlr</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">FileHandler</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">'FileHandler.log'</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s">'a+'</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">fileHndlr</span><span class="p">)</span>
 
-<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">'FileHandler started ......'</span><span class="p">)</span></code></pre></figure>
+<span class="n">logger</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s">'FileHandler started ......'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -2429,16 +2429,16 @@ FileHandler started ......
 <span class="kn">from</span> <span class="nn">logging.handlers</span> <span class="kn">import</span> <span class="n">RotatingFileHandler</span>
 <span class="kn">import</span> <span class="nn">secrets</span>
 
-<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">getLogger</span><span class="p">()</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="p">.</span><span class="n">DEBUG</span><span class="p">)</span>
 
 
 <span class="n">rotatingFH</span> <span class="o">=</span> <span class="n">RotatingFileHandler</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">"./rotatingLogs/Applog"</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s">'a'</span><span class="p">,</span> <span class="n">maxBytes</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">backupCount</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">rotatingFH</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">rotatingFH</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">500</span><span class="p">):</span>
-    <span class="n">token</span> <span class="o">=</span> <span class="n">secrets</span><span class="o">.</span><span class="n">token_hex</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">f</span><span class="s">'generated  16 Bytes Token  [{token}]'</span><span class="p">)</span></code></pre></figure>
+    <span class="n">token</span> <span class="o">=</span> <span class="n">secrets</span><span class="p">.</span><span class="n">token_hex</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
+    <span class="n">logger</span><span class="p">.</span><span class="n">debug</span><span class="p">(</span><span class="s">f'generated  16 Bytes Token  [</span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s">]'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -2621,17 +2621,17 @@ generated  16 Bytes Token  [6d874a5e998d615564831ec67f442ac6]
 <span class="kn">import</span> <span class="nn">random</span>
 <span class="kn">import</span> <span class="nn">time</span>
 
-<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">getLogger</span><span class="p">()</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="p">.</span><span class="n">DEBUG</span><span class="p">)</span>
 
 
 <span class="n">timedrotateFH</span> <span class="o">=</span> <span class="n">TimedRotatingFileHandler</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">"./timedRotatingLogs/Applog"</span><span class="p">,</span> <span class="n">when</span><span class="o">=</span><span class="s">'S'</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">backupCount</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">timedrotateFH</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">timedrotateFH</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">45</span><span class="p">):</span>
-    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">))</span>
-    <span class="n">token</span> <span class="o">=</span> <span class="n">secrets</span><span class="o">.</span><span class="n">token_hex</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">f</span><span class="s">'generated  16 Bytes Token  [{token}]'</span><span class="p">)</span></code></pre></figure>
+    <span class="n">time</span><span class="p">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">random</span><span class="p">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">))</span>
+    <span class="n">token</span> <span class="o">=</span> <span class="n">secrets</span><span class="p">.</span><span class="n">token_hex</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
+    <span class="n">logger</span><span class="p">.</span><span class="n">debug</span><span class="p">(</span><span class="s">f'generated  16 Bytes Token  [</span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s">]'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -2877,28 +2877,28 @@ generated  16 Bytes Token  [68023ffbb6c8a7c7ce2c4333b70d232f]
 <span class="kn">from</span> <span class="nn">logging.handlers</span> <span class="kn">import</span> <span class="n">MemoryHandler</span>
 <span class="kn">import</span> <span class="nn">secrets</span>
 
-<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">getLogger</span><span class="p">()</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="p">.</span><span class="n">DEBUG</span><span class="p">)</span>
 
-<span class="n">fileHandler</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">FileHandler</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">'FileHandlerErrors.log'</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s">'a+'</span><span class="p">)</span>
-<span class="n">nullHandler</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">NullHandler</span><span class="p">()</span>
+<span class="n">fileHandler</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">FileHandler</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">'FileHandlerErrors.log'</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s">'a+'</span><span class="p">)</span>
+<span class="n">nullHandler</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">NullHandler</span><span class="p">()</span>
 <span class="n">memoryHndlr</span> <span class="o">=</span> <span class="n">MemoryHandler</span><span class="p">(</span><span class="n">capacity</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="n">nullHandler</span><span class="p">,</span> <span class="n">flushOnClose</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 
-<span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">memoryHndlr</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">memoryHndlr</span><span class="p">)</span>
 
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5000</span><span class="p">):</span>
-    <span class="n">token</span> <span class="o">=</span> <span class="n">secrets</span><span class="o">.</span><span class="n">token_hex</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">f</span><span class="s">'generated  16 Bytes Token  [{token}]'</span><span class="p">)</span>
+    <span class="n">token</span> <span class="o">=</span> <span class="n">secrets</span><span class="p">.</span><span class="n">token_hex</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
+    <span class="n">logger</span><span class="p">.</span><span class="n">debug</span><span class="p">(</span><span class="s">f'generated  16 Bytes Token  [</span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s">]'</span><span class="p">)</span>
 
 
 
 <span class="k">try</span><span class="p">:</span>
     <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
 <span class="k">except</span> <span class="nb">ZeroDivisionError</span><span class="p">:</span>
-    <span class="n">memoryHndlr</span><span class="o">.</span><span class="n">setTarget</span><span class="p">(</span><span class="n">fileHandler</span><span class="p">)</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">'Division by zero attempted!'</span><span class="p">)</span>
-    <span class="n">memoryHndlr</span><span class="o">.</span><span class="n">setTarget</span><span class="p">(</span><span class="n">nullHandler</span><span class="p">)</span></code></pre></figure>
+    <span class="n">memoryHndlr</span><span class="p">.</span><span class="n">setTarget</span><span class="p">(</span><span class="n">fileHandler</span><span class="p">)</span>
+    <span class="n">logger</span><span class="p">.</span><span class="n">error</span><span class="p">(</span><span class="s">'Division by zero attempted!'</span><span class="p">)</span>
+    <span class="n">memoryHndlr</span><span class="p">.</span><span class="n">setTarget</span><span class="p">(</span><span class="n">nullHandler</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -3096,23 +3096,23 @@ Division by zero attempted!
 <span class="kn">import</span> <span class="nn">logging</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 
-<span class="n">logQueue</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">SimpleQueue</span><span class="p">()</span>
+<span class="n">logQueue</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="n">SimpleQueue</span><span class="p">()</span>
 <span class="n">qHandler</span> <span class="o">=</span> <span class="n">QueueHandler</span><span class="p">(</span><span class="n">logQueue</span><span class="p">)</span>
 
-<span class="n">handler</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>  <span class="c1"># Here StreamHandler can be replaced with SMTPHandler.
+<span class="n">handler</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">StreamHandler</span><span class="p">(</span><span class="n">sys</span><span class="p">.</span><span class="n">stdout</span><span class="p">)</span>  <span class="c1"># Here StreamHandler can be replaced with SMTPHandler.
 </span><span class="n">listener</span> <span class="o">=</span> <span class="n">QueueListener</span><span class="p">(</span><span class="n">logQueue</span><span class="p">,</span> <span class="n">handler</span><span class="p">)</span>
 
 
-<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">qHandler</span><span class="p">)</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">getLogger</span><span class="p">()</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">qHandler</span><span class="p">)</span>
 
 
-<span class="n">listener</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="n">listener</span><span class="p">.</span><span class="n">start</span><span class="p">()</span>
 
-<span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s">'=========     A message through queue     ========='</span><span class="p">)</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s">'+++++++++   Second message through queue   +++++++++ '</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">warning</span><span class="p">(</span><span class="s">'=========     A message through queue     ========='</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">warning</span><span class="p">(</span><span class="s">'+++++++++   Second message through queue   +++++++++ '</span><span class="p">)</span>
 
-<span class="n">listener</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span></code></pre></figure>
+<span class="n">listener</span><span class="p">.</span><span class="n">stop</span><span class="p">()</span></code></pre></figure>
 
 </div>
 
@@ -3358,11 +3358,11 @@ Division by zero attempted!
 <p id="code-header-33" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-33", "code-header-33")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
-<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">hello_module</span><span class="p">():</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">'Message from packageA1 -&gt; ModuleA2'</span><span class="p">)</span></code></pre></figure>
+    <span class="n">logger</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s">'Message from packageA1 -&gt; ModuleA2'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -3372,11 +3372,11 @@ Division by zero attempted!
 <p id="code-header-34" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-34", "code-header-34")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
-<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">hello_module</span><span class="p">():</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">'Message from packageB1 -&gt; ModuleB2'</span><span class="p">)</span></code></pre></figure>
+    <span class="n">logger</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s">'Message from packageB1 -&gt; ModuleB2'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -3386,11 +3386,11 @@ Division by zero attempted!
 <p id="code-header-35" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-35", "code-header-35")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
-<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">hello_module</span><span class="p">():</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">'Message from ModuleM1.'</span><span class="p">)</span></code></pre></figure>
+    <span class="n">logger</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s">'Message from ModuleM1.'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -3406,28 +3406,28 @@ Division by zero attempted!
 <span class="kn">from</span> <span class="nn">appLogging.packageB1</span> <span class="kn">import</span> <span class="n">ModuleB2</span>
 <span class="kn">from</span> <span class="nn">packageB</span> <span class="kn">import</span> <span class="n">ModuleM1</span>
 
-<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">getLogger</span><span class="p">()</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="p">.</span><span class="n">INFO</span><span class="p">)</span>
 
 
 <span class="c1"># adding Handler
-</span><span class="n">sh</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">(</span><span class="n">stream</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
-<span class="n">sh</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+</span><span class="n">sh</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">StreamHandler</span><span class="p">(</span><span class="n">stream</span><span class="o">=</span><span class="n">sys</span><span class="p">.</span><span class="n">stdout</span><span class="p">)</span>
+<span class="n">sh</span><span class="p">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="p">.</span><span class="n">INFO</span><span class="p">)</span>
 
 
 <span class="c1"># adding filter
-</span><span class="n">onlyAppLogging</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">Filter</span><span class="p">(</span><span class="s">'appLogging'</span><span class="p">)</span>
-<span class="n">sh</span><span class="o">.</span><span class="n">addFilter</span><span class="p">(</span><span class="n">onlyAppLogging</span><span class="p">)</span>
+</span><span class="n">onlyAppLogging</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">Filter</span><span class="p">(</span><span class="s">'appLogging'</span><span class="p">)</span>
+<span class="n">sh</span><span class="p">.</span><span class="n">addFilter</span><span class="p">(</span><span class="n">onlyAppLogging</span><span class="p">)</span>
 
 <span class="c1"># attaching handler
-</span><span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">sh</span><span class="p">)</span>
+</span><span class="n">logger</span><span class="p">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">sh</span><span class="p">)</span>
 
-<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">'Hierarchy 1 is created'</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s">'Hierarchy 1 is created'</span><span class="p">)</span>
 
 <span class="c1"># Invoking functions
-</span><span class="n">ModuleA2</span><span class="o">.</span><span class="n">hello_module</span><span class="p">()</span>
-<span class="n">ModuleB2</span><span class="o">.</span><span class="n">hello_module</span><span class="p">()</span>
-<span class="n">ModuleM1</span><span class="o">.</span><span class="n">hello_module</span><span class="p">()</span></code></pre></figure>
+</span><span class="n">ModuleA2</span><span class="p">.</span><span class="n">hello_module</span><span class="p">()</span>
+<span class="n">ModuleB2</span><span class="p">.</span><span class="n">hello_module</span><span class="p">()</span>
+<span class="n">ModuleM1</span><span class="p">.</span><span class="n">hello_module</span><span class="p">()</span></code></pre></figure>
 
 </div>
 
@@ -3586,42 +3586,42 @@ Message from packageB1 -&gt; ModuleB2
 <span class="kn">from</span> <span class="nn">logging</span> <span class="kn">import</span> <span class="n">LogRecord</span>
 
 
-<span class="k">class</span> <span class="nc">CustomFilter</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">Filter</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">CustomFilter</span><span class="p">(</span><span class="n">logging</span><span class="p">.</span><span class="n">Filter</span><span class="p">):</span>
 
     <span class="k">def</span> <span class="nf">filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">:</span> <span class="n">LogRecord</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 
-        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'</span><span class="se">\n</span><span class="s">{"*"*8} Filter received LogRecord : {"*"*8}</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">f'</span><span class="se">\n</span><span class="si">{</span><span class="s">"*"</span><span class="o">*</span><span class="mi">8</span><span class="si">}</span><span class="s"> Filter received LogRecord : </span><span class="si">{</span><span class="s">"*"</span><span class="o">*</span><span class="mi">8</span><span class="si">}</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
 
-        <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="p">[</span><span class="n">a</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">record</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">a</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">'__'</span><span class="p">)]:</span>
-            <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'{attr} : {getattr(record, attr)}'</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="p">[</span><span class="n">a</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">record</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">a</span><span class="p">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">'__'</span><span class="p">)]:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">f'</span><span class="si">{</span><span class="n">attr</span><span class="si">}</span><span class="s"> : </span><span class="si">{</span><span class="nb">getattr</span><span class="p">(</span><span class="n">record</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="s">'Failure'</span> <span class="ow">in</span> <span class="n">record</span><span class="o">.</span><span class="n">msg</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s">'Failure'</span> <span class="ow">in</span> <span class="n">record</span><span class="p">.</span><span class="n">msg</span><span class="p">:</span>
             <span class="k">return</span> <span class="mi">1</span>
         <span class="k">return</span> <span class="mi">0</span>
 
 
-<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s">'CustomFilterLogger'</span><span class="p">)</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s">'CustomFilterLogger'</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="p">.</span><span class="n">DEBUG</span><span class="p">)</span>
 
 <span class="c1"># Creating Handler
-</span><span class="n">sh</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">()</span>
-<span class="n">sh</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+</span><span class="n">sh</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">StreamHandler</span><span class="p">()</span>
+<span class="n">sh</span><span class="p">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="p">.</span><span class="n">DEBUG</span><span class="p">)</span>
 
 <span class="c1"># Adding Filter
 </span><span class="n">cf</span> <span class="o">=</span> <span class="n">CustomFilter</span><span class="p">()</span>
-<span class="n">sh</span><span class="o">.</span><span class="n">addFilter</span><span class="p">(</span><span class="n">cf</span><span class="p">)</span>
+<span class="n">sh</span><span class="p">.</span><span class="n">addFilter</span><span class="p">(</span><span class="n">cf</span><span class="p">)</span>
 
 <span class="c1"># Adding formatter
-</span><span class="n">logFormat</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span><span class="s">'</span><span class="si">%(asctime)</span><span class="s">s : </span><span class="si">%(levelname)</span><span class="s">s : </span><span class="si">%(name)</span><span class="s">s : </span><span class="si">%(message)</span><span class="s">s'</span><span class="p">)</span>
-<span class="n">sh</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">logFormat</span><span class="p">)</span>
+</span><span class="n">logFormat</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">Formatter</span><span class="p">(</span><span class="s">'%(asctime)s : %(levelname)s : %(name)s : %(message)s'</span><span class="p">)</span>
+<span class="n">sh</span><span class="p">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">logFormat</span><span class="p">)</span>
 
-<span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">sh</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">sh</span><span class="p">)</span>
 
 
 <span class="c1"># Logging record
 </span><span class="k">def</span> <span class="nf">custom_filter_demo</span><span class="p">():</span>
     <span class="n">code</span> <span class="o">=</span> <span class="mi">1590</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">'Client connection Failure : </span><span class="si">%</span><span class="s">s'</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">stack_info</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="p">{</span><span class="s">'POD'</span><span class="p">:</span> <span class="s">'AACXXX'</span><span class="p">})</span>
+    <span class="n">logger</span><span class="p">.</span><span class="n">debug</span><span class="p">(</span><span class="s">'Client connection Failure : %s'</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">stack_info</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="p">{</span><span class="s">'POD'</span><span class="p">:</span> <span class="s">'AACXXX'</span><span class="p">})</span>
 
 
 <span class="n">custom_filter_demo</span><span class="p">()</span>
@@ -3633,7 +3633,7 @@ Message from packageB1 -&gt; ModuleB2
     <span class="k">try</span><span class="p">:</span>
         <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
     <span class="k">except</span> <span class="nb">ZeroDivisionError</span><span class="p">:</span>
-        <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s">'Divide by Zero attempted'</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">(),</span> <span class="n">stack_info</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="n">logger</span><span class="p">.</span><span class="n">warning</span><span class="p">(</span><span class="s">'Divide by Zero attempted'</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="n">sys</span><span class="p">.</span><span class="n">exc_info</span><span class="p">(),</span> <span class="n">stack_info</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
 
 <span class="n">custom_filter_demo2</span><span class="p">()</span></code></pre></figure>
@@ -3726,19 +3726,19 @@ threadName : MainThread</pre></div>
 
 <span class="k">def</span> <span class="nf">custom_filter</span><span class="p">(</span><span class="n">record</span><span class="p">:</span> <span class="n">LogRecord</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'</span><span class="se">\n</span><span class="s">{"*"*8} Filter received LogRecord : {"*"*8}</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">f'</span><span class="se">\n</span><span class="si">{</span><span class="s">"*"</span><span class="o">*</span><span class="mi">8</span><span class="si">}</span><span class="s"> Filter received LogRecord : </span><span class="si">{</span><span class="s">"*"</span><span class="o">*</span><span class="mi">8</span><span class="si">}</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
 
-    <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="p">[</span><span class="n">a</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">record</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">a</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">'__'</span><span class="p">)]:</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'{attr} : {getattr(record, attr)}'</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="p">[</span><span class="n">a</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">record</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">a</span><span class="p">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">'__'</span><span class="p">)]:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">f'</span><span class="si">{</span><span class="n">attr</span><span class="si">}</span><span class="s"> : </span><span class="si">{</span><span class="nb">getattr</span><span class="p">(</span><span class="n">record</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
 
-    <span class="k">if</span> <span class="s">'Failure'</span> <span class="ow">in</span> <span class="n">record</span><span class="o">.</span><span class="n">msg</span><span class="p">:</span>
+    <span class="k">if</span> <span class="s">'Failure'</span> <span class="ow">in</span> <span class="n">record</span><span class="p">.</span><span class="n">msg</span><span class="p">:</span>
         <span class="k">return</span> <span class="mi">1</span>
     <span class="k">return</span> <span class="mi">0</span>
 
 
 
 <span class="n">f1</span> <span class="o">=</span> <span class="n">Filter</span><span class="p">()</span>
-<span class="n">f1</span><span class="o">.</span><span class="nb">filter</span> <span class="o">=</span> <span class="n">custom_filter</span></code></pre></figure>
+<span class="n">f1</span><span class="p">.</span><span class="nb">filter</span> <span class="o">=</span> <span class="n">custom_filter</span></code></pre></figure>
 
 </div>
 
@@ -3762,8 +3762,8 @@ threadName : MainThread</pre></div>
 <p id="code-header-40" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-40", "code-header-40")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">debug</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="n">msg</span><span class="p">,</span> <span class="n">kwargs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">process</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code></pre></figure>
+    <span class="n">msg</span><span class="p">,</span> <span class="n">kwargs</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">process</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+    <span class="bp">self</span><span class="p">.</span><span class="n">logger</span><span class="p">.</span><span class="n">debug</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -3789,34 +3789,34 @@ threadName : MainThread</pre></div>
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">logging</span>
 
 
-<span class="k">class</span> <span class="nc">MyAppLogAdapter</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">LoggerAdapter</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">MyAppLogAdapter</span><span class="p">(</span><span class="n">logging</span><span class="p">.</span><span class="n">LoggerAdapter</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">f</span><span class="s">"[ {self.extra['clientId']} ]  {msg} "</span><span class="p">,</span> <span class="n">kwargs</span>
+        <span class="k">return</span> <span class="s">f"[ </span><span class="si">{</span><span class="bp">self</span><span class="p">.</span><span class="n">extra</span><span class="p">[</span><span class="s">'clientId'</span><span class="p">]</span><span class="si">}</span><span class="s"> ]  </span><span class="si">{</span><span class="n">msg</span><span class="si">}</span><span class="s"> "</span><span class="p">,</span> <span class="n">kwargs</span>
 
 
-<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s">'appLogginngAdapter'</span><span class="p">)</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s">'appLogginngAdapter'</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="p">.</span><span class="n">DEBUG</span><span class="p">)</span>
 
 <span class="c1"># adding Handler
-</span><span class="n">sh</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">()</span>
-<span class="n">sh</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+</span><span class="n">sh</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">StreamHandler</span><span class="p">()</span>
+<span class="n">sh</span><span class="p">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="p">.</span><span class="n">DEBUG</span><span class="p">)</span>
 
 <span class="c1"># Adding formatter
-</span><span class="n">logFormat</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span><span class="s">'</span><span class="si">%(asctime)</span><span class="s">s : </span><span class="si">%(levelname)</span><span class="s">s : </span><span class="si">%(name)</span><span class="s">s : </span><span class="si">%(message)</span><span class="s">s'</span><span class="p">)</span>
-<span class="n">sh</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">logFormat</span><span class="p">)</span>
+</span><span class="n">logFormat</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">Formatter</span><span class="p">(</span><span class="s">'%(asctime)s : %(levelname)s : %(name)s : %(message)s'</span><span class="p">)</span>
+<span class="n">sh</span><span class="p">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">logFormat</span><span class="p">)</span>
 
 <span class="c1"># adding handler to logger
-</span><span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">sh</span><span class="p">)</span>
+</span><span class="n">logger</span><span class="p">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">sh</span><span class="p">)</span>
 
 <span class="n">clientInfo</span> <span class="o">=</span> <span class="p">{</span><span class="s">'clientId'</span><span class="p">:</span> <span class="s">'1cv21vvc21vbctztxymn12pa'</span><span class="p">}</span>
 <span class="n">loggerAdapter</span> <span class="o">=</span> <span class="n">MyAppLogAdapter</span><span class="p">(</span><span class="n">logger</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="n">clientInfo</span><span class="p">)</span>
 
-<span class="n">loggerAdapter</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">'Login Attempted'</span><span class="p">)</span>
+<span class="n">loggerAdapter</span><span class="p">.</span><span class="n">debug</span><span class="p">(</span><span class="s">'Login Attempted'</span><span class="p">)</span>
 
-<span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">'Normal Log message'</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">debug</span><span class="p">(</span><span class="s">'Normal Log message'</span><span class="p">)</span>
 
 <span class="n">clientInfo</span><span class="p">[</span><span class="s">'clientId'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'1z3x2c1as1ca21a5s4a21sxc'</span>
-<span class="n">loggerAdapter</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">'Login Attempted'</span><span class="p">)</span></code></pre></figure>
+<span class="n">loggerAdapter</span><span class="p">.</span><span class="n">debug</span><span class="p">(</span><span class="s">'Login Attempted'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -3895,27 +3895,27 @@ threadName : MainThread</pre></div>
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">import</span> <span class="nn">time</span>
 
-<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
-<span class="n">handler</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">getLogger</span><span class="p">()</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="p">.</span><span class="n">DEBUG</span><span class="p">)</span>
+<span class="n">handler</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">StreamHandler</span><span class="p">(</span><span class="n">sys</span><span class="p">.</span><span class="n">stdout</span><span class="p">)</span>
 
 <span class="c1"># formatting using '{'
-</span><span class="n">cf</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span><span class="s">'{asctime} : {levelname} : {name} : {message}'</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s">'{'</span><span class="p">)</span>
-<span class="n">handler</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">cf</span><span class="p">)</span>
+</span><span class="n">cf</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">Formatter</span><span class="p">(</span><span class="s">'{asctime} : {levelname} : {name} : {message}'</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s">'{'</span><span class="p">)</span>
+<span class="n">handler</span><span class="p">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">cf</span><span class="p">)</span>
 
 <span class="c1"># Add handler
-</span><span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">handler</span><span class="p">)</span>
+</span><span class="n">logger</span><span class="p">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">handler</span><span class="p">)</span>
 
-<span class="n">applogger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s">'MyAppLogger'</span><span class="p">)</span>
-<span class="n">applogger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">"A message using { formatter  configuration."</span><span class="p">)</span>
+<span class="n">applogger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s">'MyAppLogger'</span><span class="p">)</span>
+<span class="n">applogger</span><span class="p">.</span><span class="n">debug</span><span class="p">(</span><span class="s">"A message using { formatter  configuration."</span><span class="p">)</span>
 
 <span class="c1"># formatting using '$'
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span><span class="s">'$asctime : $levelname : $name : $message'</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s">'$'</span><span class="p">)</span>
-<span class="n">handler</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">Formatter</span><span class="p">(</span><span class="s">'$asctime : $levelname : $name : $message'</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s">'$'</span><span class="p">)</span>
+<span class="n">handler</span><span class="p">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 
-<span class="n">df</span><span class="o">.</span><span class="n">converter</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">gmtime</span>
+<span class="n">df</span><span class="p">.</span><span class="n">converter</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">gmtime</span>
 
-<span class="n">applogger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">"A message using $ formatter  configuration."</span><span class="p">)</span></code></pre></figure>
+<span class="n">applogger</span><span class="p">.</span><span class="n">debug</span><span class="p">(</span><span class="s">"A message using $ formatter  configuration."</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -3940,28 +3940,28 @@ threadName : MainThread</pre></div>
 <span class="kn">import</span> <span class="nn">sys</span>
 
 <span class="c1"># create logger
-</span><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+</span><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="p">.</span><span class="n">DEBUG</span><span class="p">)</span>
 
 <span class="c1"># create console handler and set level to debug
-</span><span class="n">ch</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
-<span class="n">ch</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">WARNING</span><span class="p">)</span>
+</span><span class="n">ch</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">StreamHandler</span><span class="p">(</span><span class="n">sys</span><span class="p">.</span><span class="n">stdout</span><span class="p">)</span>
+<span class="n">ch</span><span class="p">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="p">.</span><span class="n">WARNING</span><span class="p">)</span>
 
 <span class="c1"># create formatter
-</span><span class="n">formatter</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span><span class="s">'</span><span class="si">%(asctime)</span><span class="s">s - </span><span class="si">%(name)</span><span class="s">s - </span><span class="si">%(levelname)</span><span class="s">s - </span><span class="si">%(message)</span><span class="s">s'</span><span class="p">)</span>
+</span><span class="n">formatter</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">Formatter</span><span class="p">(</span><span class="s">'%(asctime)s - %(name)s - %(levelname)s - %(message)s'</span><span class="p">)</span>
 
 <span class="c1"># add formatter to ch
-</span><span class="n">ch</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
+</span><span class="n">ch</span><span class="p">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
 
 <span class="c1"># add ch to logger
-</span><span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span>
+</span><span class="n">logger</span><span class="p">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span>
 
 <span class="c1"># 'application' code
-</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">'debug message'</span><span class="p">)</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">'info message'</span><span class="p">)</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s">'warn message'</span><span class="p">)</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">'error message'</span><span class="p">)</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="s">'critical message'</span><span class="p">)</span></code></pre></figure>
+</span><span class="n">logger</span><span class="p">.</span><span class="n">debug</span><span class="p">(</span><span class="s">'debug message'</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s">'info message'</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">warning</span><span class="p">(</span><span class="s">'warn message'</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">error</span><span class="p">(</span><span class="s">'error message'</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">critical</span><span class="p">(</span><span class="s">'critical message'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -4006,7 +4006,7 @@ threadName : MainThread</pre></div>
 <span class="n">class</span><span class="o">=</span><span class="n">StreamHandler</span>
 <span class="n">level</span><span class="o">=</span><span class="n">DEBUG</span>
 <span class="n">formatter</span><span class="o">=</span><span class="n">simpleFormatter</span>
-<span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">,)</span>
+<span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">sys</span><span class="p">.</span><span class="n">stdout</span><span class="p">,)</span>
 
 <span class="p">[</span><span class="n">formatter_simpleFormatter</span><span class="p">]</span>
 <span class="nb">format</span><span class="o">=%</span><span class="p">(</span><span class="n">asctime</span><span class="p">)</span><span class="n">s</span> <span class="o">-</span> <span class="o">%</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="n">s</span> <span class="o">-</span> <span class="o">%</span><span class="p">(</span><span class="n">levelname</span><span class="p">)</span><span class="n">s</span> <span class="o">-</span> <span class="o">%</span><span class="p">(</span><span class="n">message</span><span class="p">)</span><span class="n">s</span>
@@ -4025,14 +4025,14 @@ threadName : MainThread</pre></div>
 <span class="n">fileConfig</span><span class="p">(</span><span class="s">'logging.conf'</span><span class="p">)</span>
 
 <span class="c1"># create logger
-</span><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s">'module1'</span><span class="p">)</span>
+</span><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s">'module1'</span><span class="p">)</span>
 
 <span class="c1"># 'application' code
-</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">'debug message'</span><span class="p">)</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">'info message'</span><span class="p">)</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s">'warn message'</span><span class="p">)</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">'error message'</span><span class="p">)</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="s">'critical message'</span><span class="p">)</span></code></pre></figure>
+</span><span class="n">logger</span><span class="p">.</span><span class="n">debug</span><span class="p">(</span><span class="s">'debug message'</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s">'info message'</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">warning</span><span class="p">(</span><span class="s">'warn message'</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">error</span><span class="p">(</span><span class="s">'error message'</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">critical</span><span class="p">(</span><span class="s">'critical message'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -4099,20 +4099,20 @@ threadName : MainThread</pre></div>
 <span class="kn">import</span> <span class="nn">yaml</span>    <span class="c1"># pip install pyyaml
 </span>
 <span class="n">path</span> <span class="o">=</span> <span class="s">'logging.yml'</span>
-<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+<span class="k">if</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s">'rt'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">config</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+        <span class="n">config</span> <span class="o">=</span> <span class="n">yaml</span><span class="p">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">f</span><span class="p">.</span><span class="n">read</span><span class="p">())</span>
     <span class="n">dictConfig</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
 
 <span class="c1"># create logger
-</span><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s">'module1'</span><span class="p">)</span>
+</span><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s">'module1'</span><span class="p">)</span>
 
 <span class="c1"># 'application' code
-</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">'debug message'</span><span class="p">)</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">'info message'</span><span class="p">)</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s">'warn message'</span><span class="p">)</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">'error message'</span><span class="p">)</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="s">'critical message'</span><span class="p">)</span></code></pre></figure>
+</span><span class="n">logger</span><span class="p">.</span><span class="n">debug</span><span class="p">(</span><span class="s">'debug message'</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s">'info message'</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">warning</span><span class="p">(</span><span class="s">'warn message'</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">error</span><span class="p">(</span><span class="s">'error message'</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">critical</span><span class="p">(</span><span class="s">'critical message'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -4186,20 +4186,20 @@ threadName : MainThread</pre></div>
 <span class="kn">import</span> <span class="nn">json</span>
 
 <span class="n">path</span> <span class="o">=</span> <span class="s">'logging.json'</span>
-<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+<span class="k">if</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">config</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+        <span class="n">config</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
     <span class="n">dictConfig</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s">"logging"</span><span class="p">])</span>
 
 <span class="c1"># create logger
-</span><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s">'module1'</span><span class="p">)</span>
+</span><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s">'module1'</span><span class="p">)</span>
 
 <span class="c1"># 'application' code
-</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">'debug message'</span><span class="p">)</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">'info message'</span><span class="p">)</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s">'warn message'</span><span class="p">)</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">'error message'</span><span class="p">)</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="s">'critical message'</span><span class="p">)</span></code></pre></figure>
+</span><span class="n">logger</span><span class="p">.</span><span class="n">debug</span><span class="p">(</span><span class="s">'debug message'</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="s">'info message'</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">warning</span><span class="p">(</span><span class="s">'warn message'</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">error</span><span class="p">(</span><span class="s">'error message'</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">critical</span><span class="p">(</span><span class="s">'critical message'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 

@@ -46,7 +46,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="site" href="http://localhost:4000/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="vbhojawala.github.io" href="http://localhost:4000/feed.xml">
 
     <script>
         $(document).ready(function() {
@@ -728,7 +728,7 @@ $('#toc').on('click', 'a', function() {
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">name</span> <span class="o">=</span> <span class="p">[</span><span class="s">'John'</span><span class="p">,</span> <span class="s">'Victor'</span><span class="p">,</span> <span class="s">'Kelly'</span><span class="p">,</span> <span class="s">'Sam'</span><span class="p">,</span> <span class="s">'Jane'</span><span class="p">]</span>
 <span class="n">phone</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9978412287</span><span class="p">,</span> <span class="mi">7852122123</span><span class="p">,</span> <span class="mi">8845454454</span><span class="p">,</span> <span class="mi">7665415445</span><span class="p">,</span> <span class="mi">7984546721</span><span class="p">]</span>
 
-<span class="n">index</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s">'Kelly'</span><span class="p">)</span>
+<span class="n">index</span> <span class="o">=</span> <span class="n">name</span><span class="p">.</span><span class="n">index</span><span class="p">(</span><span class="s">'Kelly'</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'Kelly</span><span class="se">\'</span><span class="s">s Phone Number is -&gt;'</span><span class="p">,</span> <span class="n">phone</span><span class="p">[</span><span class="n">index</span><span class="p">])</span></code></pre></figure>
 
 </div>
@@ -756,11 +756,11 @@ Kelly's Phone Number is -&gt; 8845454454
 <p id="code-header-2" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-2", "code-header-2")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">phnDir</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'phnDir : {phnDir}  Type : {type(phnDir)} '</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'phnDir : </span><span class="si">{</span><span class="n">phnDir</span><span class="si">}</span><span class="s">  Type : </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">phnDir</span><span class="p">)</span><span class="si">}</span><span class="s"> '</span><span class="p">)</span>
 
 <span class="c1"># or
 </span><span class="n">phnDir</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'phnDir : {phnDir}  Type : {type(phnDir)} '</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'phnDir : </span><span class="si">{</span><span class="n">phnDir</span><span class="si">}</span><span class="s">  Type : </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">phnDir</span><span class="p">)</span><span class="si">}</span><span class="s"> '</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -784,11 +784,11 @@ phnDir : {}  Type : &lt;class 'dict'&gt;
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># with mapping
 </span><span class="n">phnDir</span> <span class="o">=</span> <span class="p">{</span><span class="s">'John'</span><span class="p">:</span> <span class="mi">9978412287</span><span class="p">,</span> <span class="s">'Victor'</span><span class="p">:</span> <span class="mi">7852122123</span><span class="p">,</span> <span class="s">'Kelly'</span><span class="p">:</span> <span class="mi">8845454454</span><span class="p">,</span> <span class="s">'Sam'</span><span class="p">:</span> <span class="mi">7665415445</span><span class="p">,</span> <span class="s">'Jane'</span><span class="p">:</span> <span class="mi">7984546721</span><span class="p">,</span> <span class="s">'Emily'</span><span class="p">:</span> <span class="bp">None</span><span class="p">}</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'phnDir : {phnDir}  Type : {type(phnDir)} '</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'phnDir : </span><span class="si">{</span><span class="n">phnDir</span><span class="si">}</span><span class="s">  Type : </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">phnDir</span><span class="p">)</span><span class="si">}</span><span class="s"> '</span><span class="p">)</span>
 
 <span class="c1"># with keyword arguments
 </span><span class="n">phnDir</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">John</span><span class="o">=</span><span class="mi">9978412287</span><span class="p">,</span> <span class="n">Victor</span><span class="o">=</span><span class="mi">7852122123</span><span class="p">,</span> <span class="n">Kelly</span><span class="o">=</span><span class="mi">8845454454</span><span class="p">,</span> <span class="n">Sam</span><span class="o">=</span><span class="mi">7665415445</span><span class="p">,</span> <span class="n">Jane</span><span class="o">=</span><span class="mi">7984546721</span><span class="p">,</span> <span class="n">Emily</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'phnDir : {phnDir}  Type : {type(phnDir)} '</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'phnDir : </span><span class="si">{</span><span class="n">phnDir</span><span class="si">}</span><span class="s">  Type : </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">phnDir</span><span class="p">)</span><span class="si">}</span><span class="s"> '</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -811,11 +811,11 @@ phnDir : {'John': 9978412287, 'Victor': 7852122123, 'Kelly': 8845454454, 'Sam': 
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">phnBook</span> <span class="o">=</span> <span class="p">((</span><span class="s">'John'</span><span class="p">,</span> <span class="mi">9978412287</span><span class="p">),</span> <span class="p">(</span><span class="s">'Victor'</span><span class="p">,</span> <span class="mi">7852122123</span><span class="p">),</span> <span class="p">(</span><span class="s">'Sam'</span><span class="p">,</span> <span class="mi">8845454454</span><span class="p">),</span> <span class="p">(</span><span class="s">'Jane'</span><span class="p">,</span> <span class="mi">7984546721</span><span class="p">))</span>
 <span class="n">phnDir</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">phnBook</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'phnDir : {phnDir}  Type : {type(phnDir)} '</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'phnDir : </span><span class="si">{</span><span class="n">phnDir</span><span class="si">}</span><span class="s">  Type : </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">phnDir</span><span class="p">)</span><span class="si">}</span><span class="s"> '</span><span class="p">)</span>
 
 <span class="n">phnBook</span> <span class="o">=</span> <span class="p">([</span><span class="s">'John'</span><span class="p">,</span> <span class="mi">9978412287</span><span class="p">],</span> <span class="p">[</span><span class="s">'Victor'</span><span class="p">,</span> <span class="mi">7852122123</span><span class="p">],</span> <span class="p">[</span><span class="s">'Sam'</span><span class="p">,</span> <span class="mi">8845454454</span><span class="p">],</span> <span class="p">[</span><span class="s">'Jane'</span><span class="p">,</span> <span class="mi">7984546721</span><span class="p">])</span>
 <span class="n">phnDir</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">phnBook</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'phnDir : {phnDir}  Type : {type(phnDir)} '</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'phnDir : </span><span class="si">{</span><span class="n">phnDir</span><span class="si">}</span><span class="s">  Type : </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">phnDir</span><span class="p">)</span><span class="si">}</span><span class="s"> '</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -891,9 +891,9 @@ phnDir : {'John': 9978412287, 'Victor': 7852122123, 'Sam': 8845454454, 'Jane': 7
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">phnDir</span> <span class="o">=</span> <span class="p">{</span><span class="s">'John'</span><span class="p">:</span> <span class="mi">9978412287</span><span class="p">,</span> <span class="s">'Victor'</span><span class="p">:</span> <span class="mi">7852122123</span><span class="p">,</span> <span class="s">'Kelly'</span><span class="p">:</span> <span class="mi">8845454454</span><span class="p">,</span>
           <span class="s">'Sam'</span><span class="p">:</span> <span class="mi">7665415445</span><span class="p">,</span> <span class="s">'Jane'</span><span class="p">:</span> <span class="mi">7984546721</span><span class="p">,</span> <span class="s">'Emily'</span><span class="p">:</span> <span class="bp">None</span><span class="p">}</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">"Kelly's Phone number : {phnDir['Kelly']}"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f"Kelly's Phone number : </span><span class="si">{</span><span class="n">phnDir</span><span class="p">[</span><span class="s">'Kelly'</span><span class="p">]</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
 <span class="c1"># or
-</span><span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">"Kelly's Phone number : {phnDir.get('Kelly')}"</span><span class="p">)</span></code></pre></figure>
+</span><span class="k">print</span><span class="p">(</span><span class="s">f"Kelly's Phone number : </span><span class="si">{</span><span class="n">phnDir</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'Kelly'</span><span class="p">)</span><span class="si">}</span><span class="s">"</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -940,10 +940,10 @@ KeyError: 'Vicky'</pre></div>
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">phnDir</span> <span class="o">=</span> <span class="p">{</span><span class="s">'John'</span><span class="p">:</span> <span class="mi">9978412287</span><span class="p">,</span> <span class="s">'Victor'</span><span class="p">:</span> <span class="mi">7852122123</span><span class="p">,</span> <span class="s">'Kelly'</span><span class="p">:</span> <span class="mi">8845454454</span><span class="p">,</span>
           <span class="s">'Sam'</span><span class="p">:</span> <span class="mi">7665415445</span><span class="p">,</span> <span class="s">'Jane'</span><span class="p">:</span> <span class="mi">7984546721</span><span class="p">,</span> <span class="s">'Emily'</span><span class="p">:</span> <span class="bp">None</span><span class="p">}</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">'Vicky :'</span><span class="p">,</span> <span class="n">phnDir</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'Vicky'</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Vicky :'</span><span class="p">,</span> <span class="n">phnDir</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'Vicky'</span><span class="p">))</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">'Vicky :'</span><span class="p">,</span> <span class="n">phnDir</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'Vicky'</span><span class="p">,</span> <span class="s">'Oops, did not find any matching name.'</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'Jane :'</span><span class="p">,</span> <span class="n">phnDir</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'Jane'</span><span class="p">,</span> <span class="s">'Oops, did not find any matching name.'</span><span class="p">))</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">'Vicky :'</span><span class="p">,</span> <span class="n">phnDir</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'Vicky'</span><span class="p">,</span> <span class="s">'Oops, did not find any matching name.'</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Jane :'</span><span class="p">,</span> <span class="n">phnDir</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'Jane'</span><span class="p">,</span> <span class="s">'Oops, did not find any matching name.'</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
@@ -964,9 +964,9 @@ Jane : 7984546721
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">phnDir</span> <span class="o">=</span> <span class="p">{</span><span class="s">'John'</span><span class="p">:</span> <span class="mi">9978412287</span><span class="p">,</span> <span class="s">'Victor'</span><span class="p">:</span> <span class="mi">7852122123</span><span class="p">,</span> <span class="s">'Kelly'</span><span class="p">:</span> <span class="mi">8845454454</span><span class="p">,</span>
           <span class="s">'Sam'</span><span class="p">:</span> <span class="mi">7665415445</span><span class="p">,</span> <span class="s">'Jane'</span><span class="p">:</span> <span class="mi">7984546721</span><span class="p">,</span> <span class="s">'Emily'</span><span class="p">:</span> <span class="bp">None</span><span class="p">}</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Before : {phnDir}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'Before : </span><span class="si">{</span><span class="n">phnDir</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
 <span class="n">phnDir</span><span class="p">[</span><span class="s">'Vicky'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">7845178945</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'After  : {phnDir}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'After  : </span><span class="si">{</span><span class="n">phnDir</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -990,9 +990,9 @@ After  : {'John': 9978412287, 'Victor': 7852122123, 'Kelly': 8845454454, 'Sam': 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">phnDir</span> <span class="o">=</span> <span class="p">{</span><span class="s">'John'</span><span class="p">:</span> <span class="mi">9978412287</span><span class="p">,</span> <span class="s">'Victor'</span><span class="p">:</span> <span class="mi">7852122123</span><span class="p">,</span> <span class="s">'Kelly'</span><span class="p">:</span> <span class="mi">8845454454</span><span class="p">,</span>
           <span class="s">'Sam'</span><span class="p">:</span> <span class="mi">7665415445</span><span class="p">,</span> <span class="s">'Jane'</span><span class="p">:</span> <span class="mi">7984546721</span><span class="p">,</span> <span class="s">'Emily'</span><span class="p">:</span> <span class="bp">None</span><span class="p">}</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Before : {phnDir}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'Before : </span><span class="si">{</span><span class="n">phnDir</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
 <span class="n">phnDir</span><span class="p">[</span><span class="s">'Emily'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">7845178945</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'After  : {phnDir}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'After  : </span><span class="si">{</span><span class="n">phnDir</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1017,9 +1017,9 @@ After  : {'John': 9978412287, 'Victor': 7852122123, 'Kelly': 8845454454, 'Sam': 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">phnDir</span> <span class="o">=</span> <span class="p">{</span><span class="s">'John'</span><span class="p">:</span> <span class="mi">9978412287</span><span class="p">,</span> <span class="s">'Victor'</span><span class="p">:</span> <span class="mi">7852122123</span><span class="p">,</span> <span class="s">'Kelly'</span><span class="p">:</span> <span class="mi">8845454454</span><span class="p">,</span>
           <span class="s">'Sam'</span><span class="p">:</span> <span class="mi">7665415445</span><span class="p">,</span> <span class="s">'Jane'</span><span class="p">:</span> <span class="mi">7984546721</span><span class="p">,</span> <span class="s">'Emily'</span><span class="p">:</span> <span class="bp">None</span><span class="p">}</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Before : {phnDir}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'Before : </span><span class="si">{</span><span class="n">phnDir</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
 <span class="k">del</span> <span class="n">phnDir</span><span class="p">[</span><span class="s">'Sam'</span><span class="p">]</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'After  : {phnDir}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'After  : </span><span class="si">{</span><span class="n">phnDir</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1043,9 +1043,9 @@ After  : {'John': 9978412287, 'Victor': 7852122123, 'Kelly': 8845454454, 'Jane':
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">phnDir</span> <span class="o">=</span> <span class="p">{</span><span class="s">'John'</span><span class="p">:</span> <span class="mi">9978412287</span><span class="p">,</span> <span class="s">'Victor'</span><span class="p">:</span> <span class="mi">7852122123</span><span class="p">,</span> <span class="s">'Kelly'</span><span class="p">:</span> <span class="mi">8845454454</span><span class="p">,</span>
           <span class="s">'Sam'</span><span class="p">:</span> <span class="mi">7665415445</span><span class="p">,</span> <span class="s">'Jane'</span><span class="p">:</span> <span class="mi">7984546721</span><span class="p">,</span> <span class="s">'Emily'</span><span class="p">:</span> <span class="bp">None</span><span class="p">}</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Before : {phnDir}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'Before : </span><span class="si">{</span><span class="n">phnDir</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
 <span class="k">del</span> <span class="n">phnDir</span><span class="p">[</span><span class="s">'Vicky'</span><span class="p">]</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'After  : {phnDir}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'After  : </span><span class="si">{</span><span class="n">phnDir</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1071,7 +1071,7 @@ KeyError: 'Vicky'
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">phnDir</span> <span class="o">=</span> <span class="p">{</span><span class="s">'John'</span><span class="p">:</span> <span class="mi">9978412287</span><span class="p">,</span> <span class="s">'Victor'</span><span class="p">:</span> <span class="mi">7852122123</span><span class="p">,</span> <span class="s">'Kelly'</span><span class="p">:</span> <span class="mi">8845454454</span><span class="p">,</span>
           <span class="s">'Sam'</span><span class="p">:</span> <span class="mi">7665415445</span><span class="p">,</span> <span class="s">'Jane'</span><span class="p">:</span> <span class="mi">7984546721</span><span class="p">,</span> <span class="s">'Emily'</span><span class="p">:</span> <span class="bp">None</span><span class="p">}</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">phnDir</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="nb">type</span><span class="p">(</span><span class="n">phnDir</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="n">phnDir</span><span class="p">.</span><span class="n">keys</span><span class="p">(),</span> <span class="nb">type</span><span class="p">(</span><span class="n">phnDir</span><span class="p">.</span><span class="n">keys</span><span class="p">()))</span></code></pre></figure>
 
 </div>
 
@@ -1094,9 +1094,9 @@ dict_keys(['John', 'Victor', 'Kelly', 'Sam', 'Jane', 'Emily']) &lt;class 'dict_k
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">phnDir</span> <span class="o">=</span> <span class="p">{</span><span class="s">'John'</span><span class="p">:</span> <span class="mi">9978412287</span><span class="p">,</span> <span class="s">'Victor'</span><span class="p">:</span> <span class="mi">7852122123</span><span class="p">,</span> <span class="s">'Kelly'</span><span class="p">:</span> <span class="mi">8845454454</span><span class="p">,</span>
           <span class="s">'Sam'</span><span class="p">:</span> <span class="mi">7665415445</span><span class="p">,</span> <span class="s">'Jane'</span><span class="p">:</span> <span class="mi">7984546721</span><span class="p">,</span> <span class="s">'Emily'</span><span class="p">:</span> <span class="bp">None</span><span class="p">}</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">'Keys : '</span><span class="p">,</span> <span class="n">phnDir</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'Union :'</span><span class="p">,</span> <span class="n">phnDir</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="o">|</span> <span class="p">{</span><span class="s">'Nicky'</span><span class="p">,</span> <span class="s">'Den'</span><span class="p">})</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'Intersection :'</span><span class="p">,</span> <span class="n">phnDir</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="o">&amp;</span> <span class="p">{</span><span class="s">'Nicky'</span><span class="p">,</span> <span class="s">'Den'</span><span class="p">,</span> <span class="s">'John'</span><span class="p">})</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">'Keys : '</span><span class="p">,</span> <span class="n">phnDir</span><span class="p">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Union :'</span><span class="p">,</span> <span class="n">phnDir</span><span class="p">.</span><span class="n">keys</span><span class="p">()</span> <span class="o">|</span> <span class="p">{</span><span class="s">'Nicky'</span><span class="p">,</span> <span class="s">'Den'</span><span class="p">})</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Intersection :'</span><span class="p">,</span> <span class="n">phnDir</span><span class="p">.</span><span class="n">keys</span><span class="p">()</span> <span class="o">&amp;</span> <span class="p">{</span><span class="s">'Nicky'</span><span class="p">,</span> <span class="s">'Den'</span><span class="p">,</span> <span class="s">'John'</span><span class="p">})</span></code></pre></figure>
 
 </div>
 
@@ -1117,9 +1117,9 @@ Intersection : {'John'}
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">phnDir</span> <span class="o">=</span> <span class="p">{</span><span class="s">'John'</span><span class="p">:</span> <span class="mi">9978412287</span><span class="p">,</span> <span class="s">'Victor'</span><span class="p">:</span> <span class="mi">7852122123</span><span class="p">,</span> <span class="s">'Kelly'</span><span class="p">:</span> <span class="mi">8845454454</span><span class="p">,</span>
           <span class="s">'Sam'</span><span class="p">:</span> <span class="mi">7665415445</span><span class="p">,</span> <span class="s">'Jane'</span><span class="p">:</span> <span class="mi">7984546721</span><span class="p">,</span> <span class="s">'Emily'</span><span class="p">:</span> <span class="bp">None</span><span class="p">}</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'List : {list(phnDir.keys())}'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Tuple : {tuple(phnDir.keys())}'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Set : {set(phnDir.keys())}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'List : </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">phnDir</span><span class="p">.</span><span class="n">keys</span><span class="p">())</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'Tuple : </span><span class="si">{</span><span class="nb">tuple</span><span class="p">(</span><span class="n">phnDir</span><span class="p">.</span><span class="n">keys</span><span class="p">())</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'Set : </span><span class="si">{</span><span class="nb">set</span><span class="p">(</span><span class="n">phnDir</span><span class="p">.</span><span class="n">keys</span><span class="p">())</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1144,7 +1144,7 @@ Set : {'Sam', 'Jane', 'Emily', 'Kelly', 'Victor', 'John'}
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">phnDir</span> <span class="o">=</span> <span class="p">{</span><span class="s">'John'</span><span class="p">:</span> <span class="mi">9978412287</span><span class="p">,</span> <span class="s">'Victor'</span><span class="p">:</span> <span class="mi">7852122123</span><span class="p">,</span> <span class="s">'Kelly'</span><span class="p">:</span> <span class="mi">8845454454</span><span class="p">,</span>
           <span class="s">'Sam'</span><span class="p">:</span> <span class="mi">7665415445</span><span class="p">,</span> <span class="s">'Jane'</span><span class="p">:</span> <span class="mi">7984546721</span><span class="p">,</span> <span class="s">'Emily'</span><span class="p">:</span> <span class="bp">None</span><span class="p">}</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Values : {phnDir.values()}  Type {type(phnDir.values())}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'Values : </span><span class="si">{</span><span class="n">phnDir</span><span class="p">.</span><span class="n">values</span><span class="p">()</span><span class="si">}</span><span class="s">  Type </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">phnDir</span><span class="p">.</span><span class="n">values</span><span class="p">())</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1163,9 +1163,9 @@ Values : dict_values([9978412287, 7852122123, 8845454454, 7665415445, 7984546721
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">phnDir</span> <span class="o">=</span> <span class="p">{</span><span class="s">'John'</span><span class="p">:</span> <span class="mi">9978412287</span><span class="p">,</span> <span class="s">'Victor'</span><span class="p">:</span> <span class="mi">7852122123</span><span class="p">,</span> <span class="s">'Kelly'</span><span class="p">:</span> <span class="mi">8845454454</span><span class="p">,</span>
           <span class="s">'Sam'</span><span class="p">:</span> <span class="mi">7665415445</span><span class="p">,</span> <span class="s">'Jane'</span><span class="p">:</span> <span class="mi">7984546721</span><span class="p">,</span> <span class="s">'Emily'</span><span class="p">:</span> <span class="bp">None</span><span class="p">}</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'List : {list(phnDir.values())}'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Tuple : {tuple(phnDir.values())}'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Set : {set(phnDir.values())}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'List : </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">phnDir</span><span class="p">.</span><span class="n">values</span><span class="p">())</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'Tuple : </span><span class="si">{</span><span class="nb">tuple</span><span class="p">(</span><span class="n">phnDir</span><span class="p">.</span><span class="n">values</span><span class="p">())</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'Set : </span><span class="si">{</span><span class="nb">set</span><span class="p">(</span><span class="n">phnDir</span><span class="p">.</span><span class="n">values</span><span class="p">())</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1252,12 +1252,12 @@ Oops, did not find any matching name.
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">phnDir</span> <span class="o">=</span> <span class="p">{</span><span class="s">'John'</span><span class="p">:</span> <span class="mi">9978412287</span><span class="p">,</span> <span class="s">'Victor'</span><span class="p">:</span> <span class="mi">7852122123</span><span class="p">,</span> <span class="s">'Kelly'</span><span class="p">:</span> <span class="mi">8845454454</span><span class="p">,</span>
           <span class="s">'Sam'</span><span class="p">:</span> <span class="mi">7665415445</span><span class="p">,</span> <span class="s">'Jane'</span><span class="p">:</span> <span class="mi">7984546721</span><span class="p">,</span> <span class="s">'Emily'</span><span class="p">:</span> <span class="bp">None</span><span class="p">}</span>
 
-<span class="k">if</span> <span class="mi">7665415445</span> <span class="ow">in</span> <span class="n">phnDir</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+<span class="k">if</span> <span class="mi">7665415445</span> <span class="ow">in</span> <span class="n">phnDir</span><span class="p">.</span><span class="n">values</span><span class="p">():</span>
     <span class="k">print</span><span class="p">(</span><span class="s">'7665415445 is already registered!'</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="s">'7665415445 is not registered.'</span><span class="p">)</span>
 
-<span class="k">if</span> <span class="mi">6678787844</span> <span class="ow">in</span> <span class="n">phnDir</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+<span class="k">if</span> <span class="mi">6678787844</span> <span class="ow">in</span> <span class="n">phnDir</span><span class="p">.</span><span class="n">values</span><span class="p">():</span>
     <span class="k">print</span><span class="p">(</span><span class="s">'6678787844 is already registered!'</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="s">'6678787844 is not registered.'</span><span class="p">)</span></code></pre></figure>
@@ -1284,12 +1284,12 @@ Oops, did not find any matching name.
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">phnDir</span> <span class="o">=</span> <span class="p">{</span><span class="s">'John'</span><span class="p">:</span> <span class="mi">9978412287</span><span class="p">,</span> <span class="s">'Victor'</span><span class="p">:</span> <span class="mi">7852122123</span><span class="p">,</span> <span class="s">'Kelly'</span><span class="p">:</span> <span class="mi">8845454454</span><span class="p">,</span>
           <span class="s">'Sam'</span><span class="p">:</span> <span class="mi">7665415445</span><span class="p">,</span> <span class="s">'Jane'</span><span class="p">:</span> <span class="mi">7984546721</span><span class="p">,</span> <span class="s">'Emily'</span><span class="p">:</span> <span class="bp">None</span><span class="p">}</span>
 
-<span class="k">if</span> <span class="p">(</span><span class="s">'John'</span><span class="p">,</span> <span class="mi">9978412287</span><span class="p">)</span> <span class="ow">in</span> <span class="n">phnDir</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<span class="k">if</span> <span class="p">(</span><span class="s">'John'</span><span class="p">,</span> <span class="mi">9978412287</span><span class="p">)</span> <span class="ow">in</span> <span class="n">phnDir</span><span class="p">.</span><span class="n">items</span><span class="p">():</span>
     <span class="k">print</span><span class="p">(</span><span class="s">"('John', 9978412287) is already registered!"</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="s">"('John', 9978412287) is not registered!"</span><span class="p">)</span>
 
-<span class="k">if</span> <span class="p">(</span><span class="s">'Vicky'</span><span class="p">,</span> <span class="mi">987887871</span><span class="p">)</span> <span class="ow">in</span> <span class="n">phnDir</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<span class="k">if</span> <span class="p">(</span><span class="s">'Vicky'</span><span class="p">,</span> <span class="mi">987887871</span><span class="p">)</span> <span class="ow">in</span> <span class="n">phnDir</span><span class="p">.</span><span class="n">items</span><span class="p">():</span>
     <span class="k">print</span><span class="p">(</span><span class="s">"('Vicky', 987887871) is already registered!"</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="s">"('Vicky', 987887871) is not registered!"</span><span class="p">)</span></code></pre></figure>
@@ -1318,7 +1318,7 @@ Oops, did not find any matching name.
 <span class="k">print</span><span class="p">(</span><span class="s">'Iterator :'</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">phnDir</span><span class="p">)),</span> <span class="n">end</span><span class="o">=</span><span class="s">'</span><span class="se">\n\n</span><span class="s">'</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">phnDir</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'{key} : {phnDir[key]}'</span><span class="p">)</span></code></pre></figure>
+    <span class="k">print</span><span class="p">(</span><span class="s">f'</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s"> : </span><span class="si">{</span><span class="n">phnDir</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1344,7 +1344,7 @@ Emily : None
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">phnDir</span> <span class="o">=</span> <span class="p">{</span><span class="s">'John'</span><span class="p">:</span> <span class="mi">9978412287</span><span class="p">,</span> <span class="s">'Victor'</span><span class="p">:</span> <span class="mi">7852122123</span><span class="p">,</span> <span class="s">'Kelly'</span><span class="p">:</span> <span class="mi">8845454454</span><span class="p">,</span>
           <span class="s">'Sam'</span><span class="p">:</span> <span class="mi">7665415445</span><span class="p">,</span> <span class="s">'Jane'</span><span class="p">:</span> <span class="mi">7984546721</span><span class="p">,</span> <span class="s">'Emily'</span><span class="p">:</span> <span class="bp">None</span><span class="p">}</span>
 
-<span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">phnDir</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+<span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">phnDir</span><span class="p">.</span><span class="n">values</span><span class="p">():</span>
     <span class="k">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -1371,14 +1371,14 @@ None
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">phnDir</span> <span class="o">=</span> <span class="p">{</span><span class="s">'John'</span><span class="p">:</span> <span class="mi">9978412287</span><span class="p">,</span> <span class="s">'Victor'</span><span class="p">:</span> <span class="mi">7852122123</span><span class="p">,</span> <span class="s">'Kelly'</span><span class="p">:</span> <span class="mi">8845454454</span><span class="p">,</span>
           <span class="s">'Sam'</span><span class="p">:</span> <span class="mi">7665415445</span><span class="p">,</span> <span class="s">'Jane'</span><span class="p">:</span> <span class="mi">7984546721</span><span class="p">,</span> <span class="s">'Emily'</span><span class="p">:</span> <span class="bp">None</span><span class="p">}</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">'Iterator :'</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">phnDir</span><span class="o">.</span><span class="n">items</span><span class="p">()),</span> <span class="n">end</span><span class="o">=</span><span class="s">'</span><span class="se">\n\n</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Iterator :'</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">phnDir</span><span class="p">.</span><span class="n">items</span><span class="p">()),</span> <span class="n">end</span><span class="o">=</span><span class="s">'</span><span class="se">\n\n</span><span class="s">'</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">phnDir</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">phnDir</span><span class="p">.</span><span class="n">items</span><span class="p">():</span>
     <span class="k">print</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">Unpacking Tuple</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">phnDir</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'{k} : {v}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">phnDir</span><span class="p">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">f'</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s"> : </span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1420,11 +1420,11 @@ Emily : None
 
 <span class="k">print</span><span class="p">(</span><span class="s">'Default order'</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">studentDB</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'{key} : {studentDB[key]}'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">f'</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s"> : </span><span class="si">{</span><span class="n">studentDB</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">Sorted order by key'</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">studentDB</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'{key} : {studentDB[key]}'</span><span class="p">)</span></code></pre></figure>
+    <span class="k">print</span><span class="p">(</span><span class="s">f'</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s"> : </span><span class="si">{</span><span class="n">studentDB</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1457,9 +1457,9 @@ Sorted order by key
 
 <span class="n">val</span> <span class="o">=</span> <span class="mi">7665415445</span>
 
-<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">phnDir</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">phnDir</span><span class="p">.</span><span class="n">items</span><span class="p">():</span>
     <span class="k">if</span> <span class="n">v</span> <span class="o">==</span> <span class="n">val</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Found Key : {k}'</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">f'Found Key : </span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
         <span class="k">break</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="s">'Value does not exists!'</span><span class="p">)</span></code></pre></figure>
@@ -1548,7 +1548,7 @@ RuntimeError: dictionary changed size during iteration</pre></div>
 <p id="code-header-30" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-30", "code-header-30")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">dict1</span> <span class="o">=</span> <span class="p">{</span><span class="s">'a'</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s">'b'</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s">'c'</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">}</span>
-<span class="n">dict1Copy</span> <span class="o">=</span> <span class="n">dict1</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">dict1Copy</span> <span class="o">=</span> <span class="n">dict1</span><span class="p">.</span><span class="n">copy</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'Before dict1 :'</span><span class="p">,</span> <span class="n">dict1</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'Before dict1Copy :'</span><span class="p">,</span> <span class="n">dict1Copy</span><span class="p">)</span>
@@ -1581,9 +1581,9 @@ After dict1Copy : {'a': 5, 'b': 6}
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">get_cicecream</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="s">""" usage: first enter all flavours you want followed by customization options with keyword arguments"""</span>
     <span class="k">for</span> <span class="n">order</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Processing {order} .....'</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">f'Processing </span><span class="si">{</span><span class="n">order</span><span class="si">}</span><span class="s"> .....'</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
-            <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'processing  {k} : {kwargs[k]}'</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">f'processing  </span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s"> : </span><span class="si">{</span><span class="n">kwargs</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
         <span class="k">print</span><span class="p">(</span><span class="s">'Finished order -&gt;'</span><span class="p">,</span> <span class="n">order</span><span class="p">,</span> <span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
 
 
@@ -1683,9 +1683,9 @@ Length : 6
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">phnDir</span> <span class="o">=</span> <span class="p">{</span><span class="s">'John'</span><span class="p">:</span> <span class="mi">9978412287</span><span class="p">,</span> <span class="s">'Victor'</span><span class="p">:</span> <span class="mi">7852122123</span><span class="p">,</span> <span class="s">'Kelly'</span><span class="p">:</span> <span class="mi">8845454454</span><span class="p">,</span>
           <span class="s">'Sam'</span><span class="p">:</span> <span class="mi">7665415445</span><span class="p">,</span> <span class="s">'Jane'</span><span class="p">:</span> <span class="mi">7984546721</span><span class="p">,</span> <span class="s">'Emily'</span><span class="p">:</span> <span class="bp">None</span><span class="p">}</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Before : {phnDir}'</span> <span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s">'</span><span class="se">\n\n</span><span class="s">'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'pop("Kelly") returned : '</span><span class="p">,</span> <span class="n">phnDir</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">'Kelly'</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s">'</span><span class="se">\n\n</span><span class="s">'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'After  : {phnDir}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'Before : </span><span class="si">{</span><span class="n">phnDir</span><span class="si">}</span><span class="s">'</span> <span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s">'</span><span class="se">\n\n</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'pop("Kelly") returned : '</span><span class="p">,</span> <span class="n">phnDir</span><span class="p">.</span><span class="n">pop</span><span class="p">(</span><span class="s">'Kelly'</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s">'</span><span class="se">\n\n</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'After  : </span><span class="si">{</span><span class="n">phnDir</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1711,7 +1711,7 @@ After  : {'John': 9978412287, 'Victor': 7852122123, 'Sam': 7665415445, 'Jane': 7
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">phnDir</span> <span class="o">=</span> <span class="p">{</span><span class="s">'John'</span><span class="p">:</span> <span class="mi">9978412287</span><span class="p">,</span> <span class="s">'Victor'</span><span class="p">:</span> <span class="mi">7852122123</span><span class="p">,</span> <span class="s">'Kelly'</span><span class="p">:</span> <span class="mi">8845454454</span><span class="p">,</span>
           <span class="s">'Sam'</span><span class="p">:</span> <span class="mi">7665415445</span><span class="p">,</span> <span class="s">'Jane'</span><span class="p">:</span> <span class="mi">7984546721</span><span class="p">,</span> <span class="s">'Emily'</span><span class="p">:</span> <span class="bp">None</span><span class="p">}</span>
-<span class="k">print</span><span class="p">(</span><span class="n">phnDir</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">'Zoya'</span><span class="p">))</span>  <span class="c1"># KeyError</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="n">phnDir</span><span class="p">.</span><span class="n">pop</span><span class="p">(</span><span class="s">'Zoya'</span><span class="p">))</span>  <span class="c1"># KeyError</span></code></pre></figure>
 
 </div>
 
@@ -1732,9 +1732,9 @@ KeyError: 'Zoya'</pre></div>
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">phnDir</span> <span class="o">=</span> <span class="p">{</span><span class="s">'John'</span><span class="p">:</span> <span class="mi">9978412287</span><span class="p">,</span> <span class="s">'Victor'</span><span class="p">:</span> <span class="mi">7852122123</span><span class="p">,</span> <span class="s">'Kelly'</span><span class="p">:</span> <span class="mi">8845454454</span><span class="p">,</span>
           <span class="s">'Sam'</span><span class="p">:</span> <span class="mi">7665415445</span><span class="p">,</span> <span class="s">'Jane'</span><span class="p">:</span> <span class="mi">7984546721</span><span class="p">,</span> <span class="s">'Emily'</span><span class="p">:</span> <span class="bp">None</span><span class="p">}</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Before : {phnDir}'</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">'</span><span class="se">\n\n</span><span class="s">'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'Popping an item -&gt; '</span><span class="p">,</span> <span class="n">phnDir</span><span class="o">.</span><span class="n">popitem</span><span class="p">(),</span> <span class="n">end</span><span class="o">=</span><span class="s">'</span><span class="se">\n\n</span><span class="s">'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'After  : {phnDir}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'Before : </span><span class="si">{</span><span class="n">phnDir</span><span class="si">}</span><span class="s">'</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">'</span><span class="se">\n\n</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Popping an item -&gt; '</span><span class="p">,</span> <span class="n">phnDir</span><span class="p">.</span><span class="n">popitem</span><span class="p">(),</span> <span class="n">end</span><span class="o">=</span><span class="s">'</span><span class="se">\n\n</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'After  : </span><span class="si">{</span><span class="n">phnDir</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1768,9 +1768,9 @@ After  : {'John': 9978412287, 'Victor': 7852122123, 'Kelly': 8845454454, 'Sam': 
            <span class="s">'vehicle'</span><span class="p">:</span> <span class="s">'2012 Holden HRT'</span><span class="p">}</span>
 <span class="n">updtInfo</span> <span class="o">=</span> <span class="p">{</span><span class="s">'phno'</span><span class="p">:</span> <span class="s">'789-454-1554'</span><span class="p">,</span> <span class="s">'vehicle'</span><span class="p">:</span> <span class="s">'2020 Hummer H2'</span><span class="p">,</span> <span class="s">'bloodGroup'</span><span class="p">:</span> <span class="s">'O+'</span><span class="p">}</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Before : {perInfo}'</span><span class="p">)</span>
-<span class="n">perInfo</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">updtInfo</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'After  : {perInfo}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'Before : </span><span class="si">{</span><span class="n">perInfo</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="n">perInfo</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="n">updtInfo</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'After  : </span><span class="si">{</span><span class="n">perInfo</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1798,7 +1798,7 @@ After  : {'Name': 'Ronald Eastwood', 'Address': '2499 Howard Street Ionia, MI 48
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">phnDir</span> <span class="o">=</span> <span class="p">{</span><span class="s">'John'</span><span class="p">:</span> <span class="mi">9978412287</span><span class="p">,</span> <span class="s">'Victor'</span><span class="p">:</span> <span class="mi">7852122123</span><span class="p">,</span> <span class="s">'Kelly'</span><span class="p">:</span> <span class="mi">8845454454</span><span class="p">,</span>
           <span class="s">'Sam'</span><span class="p">:</span> <span class="mi">7665415445</span><span class="p">,</span> <span class="s">'Jane'</span><span class="p">:</span> <span class="mi">7984546721</span><span class="p">,</span> <span class="s">'Emily'</span><span class="p">:</span> <span class="bp">None</span><span class="p">}</span>
 
-<span class="n">phnCopy</span> <span class="o">=</span> <span class="n">phnDir</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">phnCopy</span> <span class="o">=</span> <span class="n">phnDir</span><span class="p">.</span><span class="n">copy</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'phnDir  :'</span><span class="p">,</span> <span class="n">phnDir</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'phnCopy :'</span><span class="p">,</span> <span class="n">phnCopy</span><span class="p">)</span>
@@ -1837,13 +1837,13 @@ phnCopy : {'John': 9978412287, 'Victor': <div id="tut-highlight">9978451210</div
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">phnDir</span> <span class="o">=</span> <span class="p">{</span><span class="s">'John'</span><span class="p">:</span> <span class="p">[</span><span class="mi">9978412287</span><span class="p">,</span> <span class="p">],</span> <span class="s">'Victor'</span><span class="p">:</span> <span class="p">[</span><span class="mi">7852122123</span><span class="p">,</span> <span class="p">],</span> <span class="s">'Kelly'</span><span class="p">:</span> <span class="p">[</span><span class="mi">8845454454</span><span class="p">,</span> <span class="p">],</span>
           <span class="s">'Sam'</span><span class="p">:</span> <span class="p">[</span><span class="mi">7665415445</span><span class="p">,</span> <span class="p">],</span> <span class="s">'Jane'</span><span class="p">:</span> <span class="p">[</span><span class="mi">7984546721</span><span class="p">,</span> <span class="p">],</span> <span class="s">'Emily'</span><span class="p">:</span> <span class="bp">None</span><span class="p">}</span>
 
-<span class="n">phnCopy</span> <span class="o">=</span> <span class="n">phnDir</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">phnCopy</span> <span class="o">=</span> <span class="n">phnDir</span><span class="p">.</span><span class="n">copy</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'phnDir  :'</span><span class="p">,</span> <span class="n">phnDir</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'phnCopy :'</span><span class="p">,</span> <span class="n">phnCopy</span><span class="p">)</span>
 
 
-<span class="n">phnCopy</span><span class="p">[</span><span class="s">'Victor'</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">7612121555</span><span class="p">)</span>
+<span class="n">phnCopy</span><span class="p">[</span><span class="s">'Victor'</span><span class="p">].</span><span class="n">append</span><span class="p">(</span><span class="mi">7612121555</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">After : phnCopy[</span><span class="se">\'</span><span class="s">Victor</span><span class="se">\'</span><span class="s">].append(7612121555)</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'phnDir  :'</span><span class="p">,</span> <span class="n">phnDir</span><span class="p">)</span>
@@ -1882,7 +1882,7 @@ phnCopy : {'John': [9978412287], <div id="tut-highlight">'Victor': [7852122123, 
 <span class="k">print</span><span class="p">(</span><span class="s">'phnCopy :'</span><span class="p">,</span> <span class="n">phnCopy</span><span class="p">)</span>
 
 
-<span class="n">phnCopy</span><span class="p">[</span><span class="s">'Victor'</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">7612121555</span><span class="p">)</span>
+<span class="n">phnCopy</span><span class="p">[</span><span class="s">'Victor'</span><span class="p">].</span><span class="n">append</span><span class="p">(</span><span class="mi">7612121555</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">After : phnCopy[</span><span class="se">\'</span><span class="s">Victor</span><span class="se">\'</span><span class="s">].add(7612121555)</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'phnDir  :'</span><span class="p">,</span> <span class="n">phnDir</span><span class="p">)</span>
@@ -1913,9 +1913,9 @@ phnCopy : {'John': [9978412287], 'Victor': <div id="tut-highlight">[7852122123, 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">phnDir</span> <span class="o">=</span> <span class="p">{</span><span class="s">'John'</span><span class="p">:</span> <span class="mi">9978412287</span><span class="p">,</span> <span class="s">'Victor'</span><span class="p">:</span> <span class="mi">7852122123</span><span class="p">,</span> <span class="s">'Kelly'</span><span class="p">:</span> <span class="mi">8845454454</span><span class="p">,</span>
           <span class="s">'Sam'</span><span class="p">:</span> <span class="mi">7665415445</span><span class="p">,</span> <span class="s">'Jane'</span><span class="p">:</span> <span class="mi">7984546721</span><span class="p">,</span> <span class="s">'Emily'</span><span class="p">:</span> <span class="bp">None</span><span class="p">}</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Before : {phnDir}'</span><span class="p">)</span>
-<span class="n">phnDir</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'After  : {phnDir}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'Before : </span><span class="si">{</span><span class="n">phnDir</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="n">phnDir</span><span class="p">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'After  : </span><span class="si">{</span><span class="n">phnDir</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1941,9 +1941,9 @@ After  : {}
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">phnDir</span> <span class="o">=</span> <span class="p">{</span><span class="s">'John'</span><span class="p">:</span> <span class="mi">9978412287</span><span class="p">,</span> <span class="s">'Victor'</span><span class="p">:</span> <span class="mi">7852122123</span><span class="p">,</span> <span class="s">'Kelly'</span><span class="p">:</span> <span class="mi">8845454454</span><span class="p">,</span>
           <span class="s">'Sam'</span><span class="p">:</span> <span class="mi">7665415445</span><span class="p">,</span> <span class="s">'Jane'</span><span class="p">:</span> <span class="mi">7984546721</span><span class="p">,</span> <span class="s">'Emily'</span><span class="p">:</span> <span class="bp">None</span><span class="p">}</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Before : {phnDir}'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'setdefault(</span><span class="se">\'</span><span class="s">Binny</span><span class="se">\'</span><span class="s">, 9878777456) :'</span><span class="p">,</span> <span class="n">phnDir</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s">'Binny'</span><span class="p">,</span> <span class="mi">9878777456</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'After  : {phnDir}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'Before : </span><span class="si">{</span><span class="n">phnDir</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'setdefault(</span><span class="se">\'</span><span class="s">Binny</span><span class="se">\'</span><span class="s">, 9878777456) :'</span><span class="p">,</span> <span class="n">phnDir</span><span class="p">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s">'Binny'</span><span class="p">,</span> <span class="mi">9878777456</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'After  : </span><span class="si">{</span><span class="n">phnDir</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1968,9 +1968,9 @@ After  : {'John': 9978412287, 'Victor': 7852122123, 'Kelly': 8845454454, 'Sam': 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">phnDir</span> <span class="o">=</span> <span class="p">{</span><span class="s">'John'</span><span class="p">:</span> <span class="mi">9978412287</span><span class="p">,</span> <span class="s">'Victor'</span><span class="p">:</span> <span class="mi">7852122123</span><span class="p">,</span> <span class="s">'Kelly'</span><span class="p">:</span> <span class="mi">8845454454</span><span class="p">,</span>
           <span class="s">'Sam'</span><span class="p">:</span> <span class="mi">7665415445</span><span class="p">,</span> <span class="s">'Jane'</span><span class="p">:</span> <span class="mi">7984546721</span><span class="p">,</span> <span class="s">'Emily'</span><span class="p">:</span> <span class="bp">None</span><span class="p">}</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Before : {phnDir}'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"setdefault('Kelly', 9878777456) :"</span><span class="p">,</span> <span class="n">phnDir</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s">'Kelly'</span><span class="p">,</span> <span class="mi">9878777456</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'After  : {phnDir}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'Before : </span><span class="si">{</span><span class="n">phnDir</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"setdefault('Kelly', 9878777456) :"</span><span class="p">,</span> <span class="n">phnDir</span><span class="p">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s">'Kelly'</span><span class="p">,</span> <span class="mi">9878777456</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'After  : </span><span class="si">{</span><span class="n">phnDir</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1996,11 +1996,11 @@ After  : {'John': 9978412287, 'Victor': 7852122123, <div id="tut-highlight">'Kel
 <div id="code-block-43" class="code-block">
 <p id="code-header-43" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-43", "code-header-43")</script>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">keyMap</span> <span class="o">=</span> <span class="nb">dict</span><span class="o">.</span><span class="n">fromkeys</span><span class="p">([</span><span class="s">'John'</span><span class="p">,</span> <span class="s">'Victor'</span><span class="p">,</span> <span class="s">'Kelly'</span><span class="p">,</span> <span class="s">'Sam'</span><span class="p">,</span> <span class="s">'Jane'</span><span class="p">])</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">keyMap</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">.</span><span class="n">fromkeys</span><span class="p">([</span><span class="s">'John'</span><span class="p">,</span> <span class="s">'Victor'</span><span class="p">,</span> <span class="s">'Kelly'</span><span class="p">,</span> <span class="s">'Sam'</span><span class="p">,</span> <span class="s">'Jane'</span><span class="p">])</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'Without default :'</span><span class="p">,</span> <span class="n">keyMap</span><span class="p">)</span>
 
 <span class="c1"># giving default value
-</span><span class="n">keyMap</span> <span class="o">=</span> <span class="nb">dict</span><span class="o">.</span><span class="n">fromkeys</span><span class="p">([</span><span class="s">'John'</span><span class="p">,</span> <span class="s">'Victor'</span><span class="p">,</span> <span class="s">'Kelly'</span><span class="p">,</span> <span class="s">'Sam'</span><span class="p">,</span> <span class="s">'Jane'</span><span class="p">],</span> <span class="mi">8000800088</span><span class="p">)</span>
+</span><span class="n">keyMap</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">.</span><span class="n">fromkeys</span><span class="p">([</span><span class="s">'John'</span><span class="p">,</span> <span class="s">'Victor'</span><span class="p">,</span> <span class="s">'Kelly'</span><span class="p">,</span> <span class="s">'Sam'</span><span class="p">,</span> <span class="s">'Jane'</span><span class="p">],</span> <span class="mi">8000800088</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'default=8000800088 :'</span><span class="p">,</span> <span class="n">keyMap</span><span class="p">)</span></code></pre></figure>
 
 </div>
@@ -2122,12 +2122,12 @@ dict1 != dict3 : True
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">dict1</span> <span class="o">=</span> <span class="p">{</span><span class="s">'a'</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s">'b'</span><span class="p">:</span> <span class="mi">6</span><span class="p">}</span>
 <span class="n">dict2</span> <span class="o">=</span> <span class="p">{</span><span class="s">'b'</span><span class="p">:</span> <span class="mi">6</span><span class="p">}</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">'Return  type of sorted() :'</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">dict1</span><span class="o">.</span><span class="n">items</span><span class="p">())),</span> <span class="n">end</span><span class="o">=</span><span class="s">'</span><span class="se">\n\n</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Return  type of sorted() :'</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">dict1</span><span class="p">.</span><span class="n">items</span><span class="p">())),</span> <span class="n">end</span><span class="o">=</span><span class="s">'</span><span class="se">\n\n</span><span class="s">'</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">'dict1 &lt;  dict2 :'</span><span class="p">,</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">dict1</span><span class="o">.</span><span class="n">items</span><span class="p">())</span> <span class="o">&lt;</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">dict2</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'dict1 &lt;= dict2 :'</span><span class="p">,</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">dict1</span><span class="o">.</span><span class="n">items</span><span class="p">())</span> <span class="o">&lt;=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">dict2</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'dict1 &gt; dict2  :'</span><span class="p">,</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">dict1</span><span class="o">.</span><span class="n">items</span><span class="p">())</span> <span class="o">&gt;</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">dict2</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'dict1 &gt;= dict2 :'</span><span class="p">,</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">dict1</span><span class="o">.</span><span class="n">items</span><span class="p">())</span> <span class="o">&gt;=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">dict2</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">'dict1 &lt;  dict2 :'</span><span class="p">,</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">dict1</span><span class="p">.</span><span class="n">items</span><span class="p">())</span> <span class="o">&lt;</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">dict2</span><span class="p">.</span><span class="n">items</span><span class="p">()))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'dict1 &lt;= dict2 :'</span><span class="p">,</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">dict1</span><span class="p">.</span><span class="n">items</span><span class="p">())</span> <span class="o">&lt;=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">dict2</span><span class="p">.</span><span class="n">items</span><span class="p">()))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'dict1 &gt; dict2  :'</span><span class="p">,</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">dict1</span><span class="p">.</span><span class="n">items</span><span class="p">())</span> <span class="o">&gt;</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">dict2</span><span class="p">.</span><span class="n">items</span><span class="p">()))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'dict1 &gt;= dict2 :'</span><span class="p">,</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">dict1</span><span class="p">.</span><span class="n">items</span><span class="p">())</span> <span class="o">&gt;=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">dict2</span><span class="p">.</span><span class="n">items</span><span class="p">()))</span></code></pre></figure>
 
 </div>
 
@@ -2304,10 +2304,10 @@ OrderedDict([(101, {'Name': 'Victor', 'bGroup': 'O+', 'contactNo': 6468774878}),
 <span class="c1"># one way of doing it
 </span><span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">fOwner</span><span class="p">:</span>
     <span class="k">if</span> <span class="nb">file</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">in</span> <span class="n">perFileDict</span><span class="p">:</span>
-        <span class="n">perFileDict</span><span class="p">[</span><span class="nb">file</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">file</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">perFileDict</span><span class="p">[</span><span class="nb">file</span><span class="p">[</span><span class="mi">0</span><span class="p">]].</span><span class="n">append</span><span class="p">(</span><span class="nb">file</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">perFileDict</span><span class="p">[</span><span class="nb">file</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="n">perFileDict</span><span class="p">[</span><span class="nb">file</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">file</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">perFileDict</span><span class="p">[</span><span class="nb">file</span><span class="p">[</span><span class="mi">0</span><span class="p">]].</span><span class="n">append</span><span class="p">(</span><span class="nb">file</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">perFileDict</span><span class="p">)</span></code></pre></figure>
 
@@ -2333,8 +2333,8 @@ OrderedDict([(101, {'Name': 'Victor', 'bGroup': 'O+', 'contactNo': 6468774878}),
 
 <span class="n">perFileDict</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">fOwner</span><span class="p">:</span>
-    <span class="n">fileList</span> <span class="o">=</span> <span class="n">perFileDict</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="nb">file</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">[])</span>
-    <span class="n">fileList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">file</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">fileList</span> <span class="o">=</span> <span class="n">perFileDict</span><span class="p">.</span><span class="n">setdefault</span><span class="p">(</span><span class="nb">file</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">[])</span>
+    <span class="n">fileList</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="nb">file</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">perFileDict</span><span class="p">)</span></code></pre></figure>
 
@@ -2363,7 +2363,7 @@ OrderedDict([(101, {'Name': 'Victor', 'bGroup': 'O+', 'contactNo': 6468774878}),
 <span class="n">perFileDict</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">fOwner</span><span class="p">:</span>
-    <span class="p">(</span><span class="n">perFileDict</span><span class="p">[</span><span class="nb">file</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">file</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="p">(</span><span class="n">perFileDict</span><span class="p">[</span><span class="nb">file</span><span class="p">[</span><span class="mi">0</span><span class="p">]]).</span><span class="n">append</span><span class="p">(</span><span class="nb">file</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">perFileDict</span><span class="p">)</span></code></pre></figure>
 
@@ -2694,7 +2694,7 @@ hdd : 256
     <span class="n">dictP</span> <span class="o">=</span> <span class="n">personDB</span><span class="p">[</span><span class="n">ssn</span><span class="p">]</span>
     <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">dictP</span><span class="p">:</span>
         <span class="k">print</span><span class="p">()</span>
-        <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">dictP</span><span class="p">[</span><span class="n">key</span><span class="p">]))</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">'list'</span><span class="p">)</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">dictP</span><span class="p">[</span><span class="n">key</span><span class="p">])).</span><span class="n">find</span><span class="p">(</span><span class="s">'list'</span><span class="p">)</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
             <span class="k">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="s">': '</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">dictP</span><span class="p">[</span><span class="n">key</span><span class="p">]:</span>
                 <span class="k">print</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
@@ -2833,7 +2833,7 @@ bGroup : A+
         <span class="n">dictP</span> <span class="o">=</span> <span class="n">personDB</span><span class="p">[</span><span class="n">ssn</span><span class="p">]</span>
         <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">dictP</span><span class="p">:</span>
             <span class="k">print</span><span class="p">()</span>
-            <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">dictP</span><span class="p">[</span><span class="n">key</span><span class="p">]))</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">'list'</span><span class="p">)</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">dictP</span><span class="p">[</span><span class="n">key</span><span class="p">])).</span><span class="n">find</span><span class="p">(</span><span class="s">'list'</span><span class="p">)</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
                 <span class="k">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="s">': '</span><span class="p">)</span>
                 <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">dictP</span><span class="p">[</span><span class="n">key</span><span class="p">]:</span>
                     <span class="k">print</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>

@@ -46,7 +46,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="site" href="http://localhost:4000/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="vbhojawala.github.io" href="http://localhost:4000/feed.xml">
 
     <script>
         $(document).ready(function() {
@@ -727,12 +727,12 @@ $('#toc').on('click', 'a', function() {
 <p id="code-header-1" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-1", "code-header-1")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">t1</span> <span class="o">=</span> <span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'t1 : {t1}  Type : {type(t1)}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f't1 : </span><span class="si">{</span><span class="n">t1</span><span class="si">}</span><span class="s">  Type : </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
 
 <span class="c1"># or
 </span>
 <span class="n">t1</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'t1 : {t1}  Type : {type(t1)}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f't1 : </span><span class="si">{</span><span class="n">t1</span><span class="si">}</span><span class="s">  Type : </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -894,7 +894,7 @@ flowers[-1:-4:-1] : ('Tulips', 'Lavender', 'Rose')
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="mf">12.00</span><span class="p">,</span> <span class="s">'Hello Tuple'</span><span class="p">,</span> <span class="mi">1245</span><span class="p">)</span>
 <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="n">v3</span> <span class="o">=</span> <span class="n">t1</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'v1 : {v1} |  v2 : {v2} |  v3 : {v3}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'v1 : </span><span class="si">{</span><span class="n">v1</span><span class="si">}</span><span class="s"> |  v2 : </span><span class="si">{</span><span class="n">v2</span><span class="si">}</span><span class="s"> |  v3 : </span><span class="si">{</span><span class="n">v3</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -918,7 +918,7 @@ v1 : 12.0 |  v2 : Hello Tuple |  v3 : 1245
 
 <span class="n">top1</span><span class="p">,</span> <span class="n">top2</span><span class="p">,</span> <span class="n">top3</span><span class="p">,</span> <span class="o">*</span><span class="n">rest</span> <span class="o">=</span> <span class="n">marks</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Top1 : {top1}   Top2 : {top2}   Top3 : {top3}   rest : {rest}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'Top1 : </span><span class="si">{</span><span class="n">top1</span><span class="si">}</span><span class="s">   Top2 : </span><span class="si">{</span><span class="n">top2</span><span class="si">}</span><span class="s">   Top3 : </span><span class="si">{</span><span class="n">top3</span><span class="si">}</span><span class="s">   rest : </span><span class="si">{</span><span class="n">rest</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -941,7 +941,7 @@ Top1 : 97   Top2 : 91   Top3 : 84   rest : [78, 71, 66, 65, 59, 55, 54, 45, 35]
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">marks</span> <span class="o">=</span> <span class="p">(</span><span class="mi">97</span><span class="p">,</span> <span class="mi">91</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">71</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">35</span><span class="p">)</span>
 
 <span class="o">*</span><span class="n">rest</span><span class="p">,</span> <span class="n">low2</span><span class="p">,</span> <span class="n">low1</span> <span class="o">=</span> <span class="n">marks</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'low1 : {low1}   low2 : {low2}  rest : {rest}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'low1 : </span><span class="si">{</span><span class="n">low1</span><span class="si">}</span><span class="s">   low2 : </span><span class="si">{</span><span class="n">low2</span><span class="si">}</span><span class="s">  rest : </span><span class="si">{</span><span class="n">rest</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -964,7 +964,7 @@ low1 : 35   low2 : 45  rest : [97, 91, 84, 78, 71, 66, 65, 59, 55, 54]
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">marks</span> <span class="o">=</span> <span class="p">(</span><span class="mi">97</span><span class="p">,</span> <span class="mi">91</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">71</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">35</span><span class="p">)</span>
 
 <span class="n">high</span><span class="p">,</span> <span class="o">*</span><span class="n">rest</span><span class="p">,</span> <span class="n">low</span> <span class="o">=</span> <span class="n">marks</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'highest : {high}  lowest : {low}  rest : {rest}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'highest : </span><span class="si">{</span><span class="n">high</span><span class="si">}</span><span class="s">  lowest : </span><span class="si">{</span><span class="n">low</span><span class="si">}</span><span class="s">  rest : </span><span class="si">{</span><span class="n">rest</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -985,7 +985,7 @@ highest : 97  lowest : 35  rest : [91, 84, 78, 71, 66, 65, 59, 55, 54, 45]
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="mf">12.00</span><span class="p">,</span> <span class="s">'Hello Tuple'</span><span class="p">,</span> <span class="mi">1245</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">t1</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Element : {element}  Type : {type(element)}'</span><span class="p">)</span></code></pre></figure>
+    <span class="k">print</span><span class="p">(</span><span class="s">f'Element : </span><span class="si">{</span><span class="n">element</span><span class="si">}</span><span class="s">  Type : </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">element</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1009,7 +1009,7 @@ Element : 1245  Type : &lt;class 'int'&gt;
 
 <span class="k">print</span><span class="p">(</span><span class="s">'Name       PhoneNumber   BloodGroup'</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">phone</span><span class="p">,</span> <span class="n">bGroup</span> <span class="ow">in</span> <span class="n">personT</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'{name:10s} {phone:&lt;12d} {bGroup:^10s}'</span><span class="p">)</span></code></pre></figure>
+    <span class="k">print</span><span class="p">(</span><span class="s">f'</span><span class="si">{</span><span class="n">name</span><span class="p">:</span><span class="mi">10</span><span class="n">s</span><span class="si">}</span><span class="s"> </span><span class="si">{</span><span class="n">phone</span><span class="p">:</span><span class="o">&lt;</span><span class="mi">12</span><span class="n">d</span><span class="si">}</span><span class="s"> </span><span class="si">{</span><span class="n">bGroup</span><span class="p">:</span><span class="o">^</span><span class="mi">10</span><span class="n">s</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1059,12 +1059,12 @@ Lotus
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">(</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">flowers</span><span class="p">)):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'{i}. {flowers[i]}'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">f'</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s">. </span><span class="si">{</span><span class="n">flowers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">Printing number starting with 1</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">flowers</span><span class="p">)):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'{i+1}. {flowers[i]}'</span><span class="p">)</span></code></pre></figure>
+    <span class="k">print</span><span class="p">(</span><span class="s">f'</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s">. </span><span class="si">{</span><span class="n">flowers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1105,13 +1105,13 @@ Printing number starting with 1
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flowers</span> <span class="o">=</span> <span class="p">(</span><span class="s">'Lotus'</span><span class="p">,</span> <span class="s">'Lily'</span><span class="p">,</span> <span class="s">'Jasmine'</span><span class="p">,</span> <span class="s">'Rose'</span><span class="p">,</span> <span class="s">'Lavender'</span><span class="p">,</span> <span class="s">'Tulips'</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">count</span><span class="p">,</span> <span class="n">element</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">flowers</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'{count}. {element}'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">f'</span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s">. </span><span class="si">{</span><span class="n">element</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
 
 
 <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">Printing number starting with 1</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">count</span><span class="p">,</span> <span class="n">element</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">flowers</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'{count}. {element}'</span><span class="p">)</span></code></pre></figure>
+    <span class="k">print</span><span class="p">(</span><span class="s">f'</span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s">. </span><span class="si">{</span><span class="n">element</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1185,7 +1185,7 @@ Dahlia
 <span class="n">prices</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">flower</span><span class="p">,</span> <span class="n">price</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">flowers</span><span class="p">,</span> <span class="n">prices</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Price of {flower} is $ {price}'</span><span class="p">)</span></code></pre></figure>
+    <span class="k">print</span><span class="p">(</span><span class="s">f'Price of </span><span class="si">{</span><span class="n">flower</span><span class="si">}</span><span class="s"> is $ </span><span class="si">{</span><span class="n">price</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1237,8 +1237,8 @@ Price of Tulips is $ 3
 <p id="code-header-20" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-20", "code-header-20")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">19</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'t1 : {t1}'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'t1.index(11) : {t1.index(11)}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f't1 : </span><span class="si">{</span><span class="n">t1</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f't1.index(11) : </span><span class="si">{</span><span class="n">t1</span><span class="p">.</span><span class="n">index</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1260,8 +1260,8 @@ t1.index(11) : 3
 <p id="code-header-21" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-21", "code-header-21")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">19</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'t1 : {t1}'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'t1.index(11) : {t1.index(4)}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f't1 : </span><span class="si">{</span><span class="n">t1</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f't1.index(11) : </span><span class="si">{</span><span class="n">t1</span><span class="p">.</span><span class="n">index</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1283,8 +1283,8 @@ t1.index(11) : 1
 <p id="code-header-22" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-22", "code-header-22")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">19</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'t1 : {t1}'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'t1.index(11) : {t1.index(16)}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f't1 : </span><span class="si">{</span><span class="n">t1</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f't1.index(11) : </span><span class="si">{</span><span class="n">t1</span><span class="p">.</span><span class="n">index</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1305,7 +1305,7 @@ ValueError: tuple.index(x): x not in tuple</pre></div>
 <p id="code-header-23" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-23", "code-header-23")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">19</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'t1.count(4) : {t1.count(4)}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f't1.count(4) : </span><span class="si">{</span><span class="n">t1</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1326,7 +1326,7 @@ t1.count(4) : 3
 <p id="code-header-24" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-24", "code-header-24")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">19</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'t1.count(16) : {t1.count(16)}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f't1.count(16) : </span><span class="si">{</span><span class="n">t1</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1345,7 +1345,7 @@ t1.count(16) : 0
 <p id="code-header-25" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("code-block-25", "code-header-25")</script>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">19</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'len(t1) : {len(t1)}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'len(t1) : </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1418,9 +1418,9 @@ len(t1) : 8
 
 <span class="n">t3</span> <span class="o">=</span> <span class="n">t1</span> <span class="o">+</span> <span class="n">t2</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'t1 : {t1}  id(t1) : {id(t1)}'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'t2 : {t2}  id(t2) : {id(t2)}'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'t3 : {t3}  id(t3) : {id(t3)}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f't1 : </span><span class="si">{</span><span class="n">t1</span><span class="si">}</span><span class="s">  id(t1) : </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f't2 : </span><span class="si">{</span><span class="n">t2</span><span class="si">}</span><span class="s">  id(t2) : </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f't3 : </span><span class="si">{</span><span class="n">t3</span><span class="si">}</span><span class="s">  id(t3) : </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">t3</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1442,13 +1442,13 @@ t3 : (1, 2, 3, 4, 5, 6)  id(t3) : 140531093851680
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">)</span>
 <span class="n">t2</span> <span class="o">=</span> <span class="n">t1</span> <span class="o">*</span> <span class="mi">10</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'t1 : {t1}  id(t1) : {id(t1)}'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'t2 : {t2}  id(t2) : {id(t2)}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f't1 : </span><span class="si">{</span><span class="n">t1</span><span class="si">}</span><span class="s">  id(t1) : </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f't2 : </span><span class="si">{</span><span class="n">t2</span><span class="si">}</span><span class="s">  id(t2) : </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
 
 <span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="n">t2</span> <span class="o">=</span> <span class="n">t1</span> <span class="o">*</span> <span class="mi">3</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'t1 : {t1}  id(t1) : {id(t1)}'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'t2 : {t2}  id(t2) : {id(t2)}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f't1 : </span><span class="si">{</span><span class="n">t1</span><span class="si">}</span><span class="s">  id(t1) : </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f't2 : </span><span class="si">{</span><span class="n">t2</span><span class="si">}</span><span class="s">  id(t2) : </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1606,7 +1606,7 @@ all(t2) : False
 
 <span class="k">print</span><span class="p">(</span><span class="s">'t1 == t2 :'</span><span class="p">,</span> <span class="n">t1</span> <span class="o">==</span> <span class="n">t2</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'t1 is t2 :'</span><span class="p">,</span> <span class="n">t1</span> <span class="ow">is</span> <span class="n">t2</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'id(t1) : {id(t1)}  </span><span class="se">\n</span><span class="s">id(t2) : {id(t2)}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'id(t1) : </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span><span class="si">}</span><span class="s">  </span><span class="se">\n</span><span class="s">id(t2) : </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1635,7 +1635,7 @@ id(t2) : 139941349736896
 
 <span class="k">print</span><span class="p">(</span><span class="s">'t1 == t2 :'</span><span class="p">,</span> <span class="n">t1</span> <span class="o">==</span> <span class="n">t2</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'t1 is t2 :'</span><span class="p">,</span> <span class="n">t1</span> <span class="ow">is</span> <span class="n">t2</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'id(t1) : {id(t1)}  </span><span class="se">\n</span><span class="s">id(t2) : {id(t2)}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'id(t1) : </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span><span class="si">}</span><span class="s">  </span><span class="se">\n</span><span class="s">id(t2) : </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1659,14 +1659,14 @@ id(t2) : 139941387023232
 
 <span class="k">print</span><span class="p">(</span><span class="s">'t1 == t2 :'</span><span class="p">,</span> <span class="n">t1</span> <span class="o">==</span> <span class="n">t2</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">'t1 is t2 :'</span><span class="p">,</span> <span class="n">t1</span> <span class="ow">is</span> <span class="n">t2</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'id(t1) : {id(t1)}  </span><span class="se">\n</span><span class="s">id(t2) : {id(t2)}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'id(t1) : </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span><span class="si">}</span><span class="s">  </span><span class="se">\n</span><span class="s">id(t2) : </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
 
 <span class="c1"># Modifying mutable element of tuple
-</span><span class="n">t1</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</span><span class="n">t1</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">append</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'After t1[2].append(5)'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'t1 : {t1}'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'t2 : {t2}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f't1 : </span><span class="si">{</span><span class="n">t1</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f't2 : </span><span class="si">{</span><span class="n">t2</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1835,7 +1835,7 @@ t1 &gt;= t2 : False
 </span><span class="n">Person</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s">'Person'</span><span class="p">,</span> <span class="p">(</span><span class="s">'name'</span><span class="p">,</span> <span class="s">'phone'</span><span class="p">,</span> <span class="s">'bGroup'</span><span class="p">))</span>
 
 <span class="c1">#
-</span><span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Is Person subclass of tuple ? : {issubclass(Person, tuple)}'</span><span class="p">)</span></code></pre></figure>
+</span><span class="k">print</span><span class="p">(</span><span class="s">f'Is Person subclass of tuple ? : </span><span class="si">{</span><span class="nb">issubclass</span><span class="p">(</span><span class="n">Person</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1888,8 +1888,8 @@ Alpha1(a1=1, _1=2, _2=3)
 <span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="s">'Red'</span><span class="p">)</span>
 <span class="n">p2</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">29</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'P1 : {p1}'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'P2 : {p2}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'P1 : </span><span class="si">{</span><span class="n">p1</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'P2 : </span><span class="si">{</span><span class="n">p2</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1914,15 +1914,15 @@ P2 : Point(x=16, y=29, color='Black')
 <span class="n">p1</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s">'Jhon'</span><span class="p">,</span> <span class="mi">9978412287</span><span class="p">,</span> <span class="s">'A+'</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Name         : {p1.name}'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Phone Number : {p1.phone}'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Blood Group  : {p1.bGroup}'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'Name         : </span><span class="si">{</span><span class="n">p1</span><span class="p">.</span><span class="n">name</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'Phone Number : </span><span class="si">{</span><span class="n">p1</span><span class="p">.</span><span class="n">phone</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'Blood Group  : </span><span class="si">{</span><span class="n">p1</span><span class="p">.</span><span class="n">bGroup</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">Accessing same elements using indexes :'</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Name         : {p1[0]}'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Phone Number : {p1[1]}'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Blood Group  : {p1[2]}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'Name         : </span><span class="si">{</span><span class="n">p1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'Phone Number : </span><span class="si">{</span><span class="n">p1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'Blood Group  : </span><span class="si">{</span><span class="n">p1</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1961,7 +1961,7 @@ Blood Group  : A+
 <span class="k">print</span><span class="p">(</span><span class="s">'Name     Phone Number   Blood Group'</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">personT</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'{person.name:8s}  {person.phone:10}    {person.bGroup:^10}'</span><span class="p">)</span></code></pre></figure>
+    <span class="k">print</span><span class="p">(</span><span class="s">f'</span><span class="si">{</span><span class="n">person</span><span class="p">.</span><span class="n">name</span><span class="p">:</span><span class="mi">8</span><span class="n">s</span><span class="si">}</span><span class="s">  </span><span class="si">{</span><span class="n">person</span><span class="p">.</span><span class="n">phone</span><span class="p">:</span><span class="mi">10</span><span class="si">}</span><span class="s">    </span><span class="si">{</span><span class="n">person</span><span class="p">.</span><span class="n">bGroup</span><span class="p">:</span><span class="o">^</span><span class="mi">10</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -1989,7 +1989,7 @@ Jane      9978412287        A+
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
 
 <span class="n">Person</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s">'Person'</span><span class="p">,</span> <span class="p">(</span><span class="s">'name'</span><span class="p">,</span> <span class="s">'phone'</span><span class="p">,</span> <span class="s">'bGroup'</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Fields : {Person._fields}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'Fields : </span><span class="si">{</span><span class="n">Person</span><span class="p">.</span><span class="n">_fields</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -2010,7 +2010,7 @@ Fields : ('name', 'phone', 'bGroup')
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
 
 <span class="n">Point</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s">'Point'</span><span class="p">,</span> <span class="p">(</span><span class="s">'x'</span><span class="p">,</span> <span class="s">'y'</span><span class="p">,</span> <span class="s">'color'</span><span class="p">),</span> <span class="n">defaults</span><span class="o">=</span><span class="p">(</span><span class="s">'Black'</span><span class="p">,))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'field defaults : {Point._field_defaults}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'field defaults : </span><span class="si">{</span><span class="n">Point</span><span class="p">.</span><span class="n">_field_defaults</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -2034,8 +2034,8 @@ field defaults : {'color': 'Black'}
 
 <span class="n">Person</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s">'Person'</span><span class="p">,</span> <span class="p">(</span><span class="s">'name'</span><span class="p">,</span> <span class="s">'phone'</span><span class="p">,</span> <span class="s">'bGroup'</span><span class="p">))</span>
 <span class="n">person1</span> <span class="o">=</span> <span class="p">(</span><span class="s">'Victor'</span><span class="p">,</span> <span class="mi">7852122123</span><span class="p">,</span> <span class="s">'O+'</span><span class="p">)</span>
-<span class="n">p1</span> <span class="o">=</span> <span class="n">Person</span><span class="o">.</span><span class="n">_make</span><span class="p">(</span><span class="n">person1</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Name : {p1.name}'</span><span class="p">)</span></code></pre></figure>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">Person</span><span class="p">.</span><span class="n">_make</span><span class="p">(</span><span class="n">person1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'Name : </span><span class="si">{</span><span class="n">p1</span><span class="p">.</span><span class="n">name</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -2057,8 +2057,8 @@ Name : Victor
 
 <span class="n">Person</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s">'Person'</span><span class="p">,</span> <span class="p">(</span><span class="s">'name'</span><span class="p">,</span> <span class="s">'phone'</span><span class="p">,</span> <span class="s">'bGroup'</span><span class="p">))</span>
 <span class="n">p2</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s">'Victor'</span><span class="p">,</span> <span class="mi">7852122123</span><span class="p">,</span> <span class="s">'O+'</span><span class="p">)</span>
-<span class="n">dict1</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="n">_asdict</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Dictionary : {dict1} '</span><span class="p">)</span></code></pre></figure>
+<span class="n">dict1</span> <span class="o">=</span> <span class="n">p1</span><span class="p">.</span><span class="n">_asdict</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f'Dictionary : </span><span class="si">{</span><span class="n">dict1</span><span class="si">}</span><span class="s"> '</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -2081,9 +2081,9 @@ Dictionary : {'name': 'Victor', 'phone': 7852122123, 'bGroup': 'O+'}
 <span class="n">Point</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s">'Point'</span><span class="p">,</span> <span class="p">(</span><span class="s">'x'</span><span class="p">,</span> <span class="s">'y'</span><span class="p">,</span> <span class="s">'color'</span><span class="p">))</span>
 <span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="s">'Red'</span><span class="p">)</span>
 
-<span class="n">p2</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="n">_replace</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">p1</span><span class="p">.</span><span class="n">_replace</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'P1 : {p1}  </span><span class="se">\n</span><span class="s">P2 : {p2}'</span><span class="p">)</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="s">f'P1 : </span><span class="si">{</span><span class="n">p1</span><span class="si">}</span><span class="s">  </span><span class="se">\n</span><span class="s">P2 : </span><span class="si">{</span><span class="n">p2</span><span class="si">}</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 </div>
 
@@ -2120,17 +2120,17 @@ Instead of defining  user defined function for sorting (lambda params : returnVa
     <span class="k">print</span><span class="p">(</span><span class="s">'----------------------------------'</span><span class="p">)</span>
 
     <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">persons</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'{p.name:8} {p.age:^5} {p.income:^10} {p.gender:^8}'</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">f'</span><span class="si">{</span><span class="n">p</span><span class="p">.</span><span class="n">name</span><span class="p">:</span><span class="mi">8</span><span class="si">}</span><span class="s"> </span><span class="si">{</span><span class="n">p</span><span class="p">.</span><span class="n">age</span><span class="p">:</span><span class="o">^</span><span class="mi">5</span><span class="si">}</span><span class="s"> </span><span class="si">{</span><span class="n">p</span><span class="p">.</span><span class="n">income</span><span class="p">:</span><span class="o">^</span><span class="mi">10</span><span class="si">}</span><span class="s"> </span><span class="si">{</span><span class="n">p</span><span class="p">.</span><span class="n">gender</span><span class="p">:</span><span class="o">^</span><span class="mi">8</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
 
 
 <span class="k">print</span><span class="p">(</span><span class="s">'Default Sort [Sort by Name] :</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
 <span class="n">print_persons</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">personDB</span><span class="p">))</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">Sorted by Age :</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
-<span class="n">print_persons</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">personDB</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="n">p</span><span class="o">.</span><span class="n">age</span><span class="p">))</span>
+<span class="n">print_persons</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">personDB</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="n">p</span><span class="p">.</span><span class="n">age</span><span class="p">))</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">Sorted by income in descending order :</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
-<span class="n">print_persons</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">personDB</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="n">p</span><span class="o">.</span><span class="n">income</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">))</span></code></pre></figure>
+<span class="n">print_persons</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">personDB</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="n">p</span><span class="p">.</span><span class="n">income</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">))</span></code></pre></figure>
 
 </div>
 
