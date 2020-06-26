@@ -15,6 +15,10 @@ next_section_title:
 datatable: true
 ---
 
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/a35zYMchHPE" allowfullscreen></iframe>
+</div>
+
 ## Install Python
 
 <ul id="profileTabs" class="nav-tab-profile ">
@@ -159,6 +163,7 @@ sudo rm Python-3.8.3.tgz
 </div>
 </div>
 
+<hr/>
 
 
 ## Install PyCharm
