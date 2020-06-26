@@ -49,7 +49,7 @@ summary:
                     </span>
                 </div>
                 <div class="panel-body">
-                    <h4>Structured Learning Material</h4>
+                    <h4>Learning Material</h4>
                 </div>
             </div>
         </div>
