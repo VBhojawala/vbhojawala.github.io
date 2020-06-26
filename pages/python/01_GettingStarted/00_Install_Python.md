@@ -1,5 +1,5 @@
 ---
-title: Install Python and Pycharm
+title: Install and Configure Python and Pycharm
 layout: tutorial
 sidebar: python_sidebar
 permalink: python_install_python_pycharm.html
