@@ -12,6 +12,10 @@ next_title: Python Variables
 summary: print() function and use cases, types of comments, python console as calculator. 
 ---
 
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/6mS0l71PUIQ" allowfullscreen></iframe>
+</div>
+
 ## print() function : Prints given string to standard output.
 
 
