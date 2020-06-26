@@ -16,6 +16,8 @@ summary: print() function and use cases, types of comments, python console as ca
   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/6mS0l71PUIQ" allowfullscreen></iframe>
 </div>
 
+<hr/>
+
 ## print() function : Prints given string to standard output.
 
 

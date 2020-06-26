@@ -14,6 +14,22 @@ next_section_title: Data Types
 summary: variables int, float, string, boolean. Variable declaration, assignment, comparision, caching, memory management. Int and Float class methods. Conversion between variable types. Binary, Octal and Hexadecimal assignment and conversion.
 ---
 
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Lzs1gg9YYTg" allowfullscreen></iframe>
+</div> <br/>
+
+
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/-JYcvcqMAAc" allowfullscreen></iframe>
+</div> <br/>
+
+
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/8rVAL0y4tpE" allowfullscreen></iframe>
+</div>
+
+<hr/>
+
 ## Variables
 
 <div id="tut-content"> 

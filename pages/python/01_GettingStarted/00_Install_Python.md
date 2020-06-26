@@ -19,6 +19,8 @@ datatable: true
   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/a35zYMchHPE" allowfullscreen></iframe>
 </div>
 
+<hr/>
+
 ## Install Python
 
 <ul id="profileTabs" class="nav-tab-profile ">
