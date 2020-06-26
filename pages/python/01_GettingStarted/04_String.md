@@ -12,6 +12,20 @@ next_title: Bytes and ByteArray
 summary: String object, indexing, slicing, concat, string operators.
 ---
 
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pQ-N2YiEZ_4" allowfullscreen></iframe>
+</div> <br/>
+
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/XSDgUWp-Vdg" allowfullscreen></iframe>
+</div> <br/>
+
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4t2AOCMyvJ8" allowfullscreen></iframe>
+</div>
+
+
+<hr/>
 
 
 ## String 
