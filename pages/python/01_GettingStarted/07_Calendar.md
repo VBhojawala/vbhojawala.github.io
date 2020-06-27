@@ -14,6 +14,10 @@ next_section_title: Control Flow
 summary: Calendar module attributes and functions. Calendar, TextCalendar class and LocaleTextCalendar attributes and methods.
 ---
 
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/vApohkd0-S8" allowfullscreen></iframe>
+</div> <hr/>
+
 ## Calendar Module
 
 <p> Calendar module provides useful calendar functions and classes. </p>
@@ -21,7 +25,7 @@ summary: Calendar module attributes and functions. Calendar, TextCalendar class 
 <div id="tut-content"> 
     <ul>
         <li> It outputs calendar as, cal program in UNIX. </li>
-        <li> Calendar function and classes uses Gregorian calendar which can be extended in both directions indefinitely. </li>
+        <li> Calendar function and classes uses Gregorian calendar which can be extended in both directions infinitely. </li>
         <li> It provides iterators to iterate through calendar days. </li>
         <li> By default Monday is first day of the week and sunday is last day of week. </li>
     </ul> 
