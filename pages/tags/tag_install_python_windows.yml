@@ -1,0 +1,8 @@
+---
+title: "install python windows"
+tagName: install_python_windows
+search: exclude
+permalink: tag_install_python_windows.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

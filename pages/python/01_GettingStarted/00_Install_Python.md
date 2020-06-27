@@ -1,6 +1,7 @@
 ---
 title: Install and Configure Python and Pycharm
 layout: tutorial
+tags: [install_python_linux, install_python_windows, install_python_macos, install_pycharm, configure_pycharm, virtual_environment, create_new_project, python_console]
 sidebar: python_sidebar
 permalink: python_install_python_pycharm.html
 folder: python
@@ -12,7 +13,7 @@ next: python_hello_world.html
 next_title: Hello World!
 next_section:
 next_section_title:
-datatable: true
+summary: Installing and configuring Python and Pycharm
 ---
 
 <div class="embed-responsive embed-responsive-16by9">

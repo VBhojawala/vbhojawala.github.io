@@ -1,0 +1,8 @@
+---
+title: "python console"
+tagName: python_console
+search: exclude
+permalink: tag_python_console.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

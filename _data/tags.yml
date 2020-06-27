@@ -2,6 +2,14 @@
 # If you are using the createtag script, don't leave an blank line at the end of this file.
 # In other words, the last line must be the last tag in the allowed-tags list.
 allowed-tags:
+  - install_python_linux
+  - install_python_windows
+  - install_python_macos
+  - install_pycharm
+  - configure_pycharm
+  - virtual_environment
+  - create_new_project
+  - python_console
   - Hello_World
   - comments
   - python_console_calculator

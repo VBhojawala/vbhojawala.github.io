@@ -1,0 +1,8 @@
+---
+title: "configure pycharm"
+tagName: configure_pycharm
+search: exclude
+permalink: tag_configure_pycharm.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

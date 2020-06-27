@@ -1,0 +1,8 @@
+---
+title: "create new project"
+tagName: create_new_project
+search: exclude
+permalink: tag_create_new_project.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

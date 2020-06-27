@@ -1,0 +1,8 @@
+---
+title: "install python linux"
+tagName: install_python_linux
+search: exclude
+permalink: tag_install_python_linux.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

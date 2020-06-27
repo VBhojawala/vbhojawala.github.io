@@ -1,0 +1,8 @@
+---
+title: "virtual environment"
+tagName: virtual_environment
+search: exclude
+permalink: tag_virtual_environment.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}
