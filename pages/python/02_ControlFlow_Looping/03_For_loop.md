@@ -16,6 +16,11 @@ next_section_title: Functions
 summary: for loop, range() function, continue,  for-each loop, for-else, Command Line Arguments.
 ---
 
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/hOOKEU7XB74" allowfullscreen></iframe>
+</div>
+
+<hr/>
 
 ## range(stop) 
 <p> Is a generator function which evaluates values on the fly at runtime. </p>

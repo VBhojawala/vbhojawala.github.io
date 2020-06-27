@@ -16,6 +16,12 @@ next_section_title:
 summary: While loop, break, continue, while-else.
 ---
 
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/R1pk9idKKUI" allowfullscreen></iframe>
+</div>
+
+<hr/>
+
 ## while loop
 
 

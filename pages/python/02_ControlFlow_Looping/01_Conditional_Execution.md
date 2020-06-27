@@ -16,6 +16,12 @@ next_section_title:
 summary: if-else, identity operators, comparision operator, if-elif-else, Logical operators, lazy evaluation, short circuit logic, Bitwise operators, operator precedence, divmod(), pow(), nested if-else. 
 ---
 
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/rhMzfkeldsk" allowfullscreen></iframe>
+</div>
+
+<hr/>
+
 ## if-else
 
 <p> Use indentation 4 spaces (or tab space) to create block of code in next line of if or else statement. </p>
