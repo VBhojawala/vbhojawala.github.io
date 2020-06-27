@@ -14,6 +14,14 @@ next_section_title:
 summary: Date, Time and DateTime
 ---
 
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/IbLa9GcDS1c" allowfullscreen></iframe>
+</div> <br/>
+
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zGvQ4ElapNo" allowfullscreen></iframe>
+</div> <hr/>
+
 
 ## Date
 

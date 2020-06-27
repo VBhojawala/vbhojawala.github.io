@@ -12,6 +12,13 @@ next_title: DateTime
 summary: encoding and decoding.  bytes and bytearray object and their methods.
 ---
 
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/3J1hjduLdsk" allowfullscreen></iframe>
+</div>
+
+
+<hr/>
+
 
 ## Encoding and Decoding string
 
