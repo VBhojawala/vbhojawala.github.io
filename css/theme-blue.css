@@ -347,6 +347,9 @@ h1, h2, h3, h4, .bs-callout{
     p, ul, li, a, td, th, tr, .bs-callout{
         font-size: 1.5rem;
     }
+    .result-header{
+        font-size: 1.1rem;
+    }
     ul li::before {
         font-size: 16px;
     }
@@ -391,6 +394,9 @@ h1, h2, h3, h4, .bs-callout{
     }
     p, ul, li, a, td, th, tr, .bs-callout{
         font-size: 1.6rem;
+    }
+    .result-header{
+        font-size: 1.2rem;
     }
     ul li::before {
         font-size: 18px;
@@ -437,6 +443,9 @@ h1, h2, h3, h4, .bs-callout{
     p, ul, li, a, td, th, tr, .bs-callout{
         font-size: 1.75rem;
     }
+    .result-header{
+        font-size: 1.35rem;
+    }
     ul li::before {
         font-size: 20px;
     }
@@ -481,6 +490,9 @@ h1, h2, h3, h4, .bs-callout{
     }
     p, ul, li, a, td, th, tr, .bs-callout{
         font-size: 1.95rem;
+    }
+    .result-header{
+        font-size: 1.4rem;
     }
     ul li::before {
         font-size: 22px;
