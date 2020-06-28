@@ -16,6 +16,14 @@ next_section_title:
 summary: Benefits of functions, User defined functions, return statement, functional annotation, variable scopes, local vs global variable, positional and keyword arguments, variable arguments, nested functions, closure etc.
 ---
 
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4l6vItofIzE" allowfullscreen></iframe>
+</div> <br/>
+
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/9jVHZQoGhFY" allowfullscreen></iframe>
+</div> <hr/>
+
 
 ## Benefits of functions
 

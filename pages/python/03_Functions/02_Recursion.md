@@ -16,6 +16,12 @@ next_section_title: Builtin Data Structures
 summary: Recursion, recursive function , power_xn(), factorial, fibonacci, binary search.
 ---
 
+
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/CfD9RHRzib0" allowfullscreen></iframe>
+</div> <hr/>
+
+
 ## Recursion
 
 
