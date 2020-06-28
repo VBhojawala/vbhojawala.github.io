@@ -16,6 +16,10 @@ next_section_title:
 summary: tuple constructor, indexing, slicing, iterating, functions of tuple object, operators, named tuple, attributes and functions of namedtuple.
 ---
 
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/1hChn_jOlqI" allowfullscreen></iframe>
+</div> <hr/>
+
 ## Tuple
 
 <div id="tut-content"> 
@@ -1292,7 +1296,7 @@ t2 : (1, 2, [3, 4])
 <hr/>
 
 
-### Comparision Operators
+### Operators
 
 #### == and !=
 
