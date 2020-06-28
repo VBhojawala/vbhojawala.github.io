@@ -16,6 +16,13 @@ next_section_title:
 summary: List constructor, indexing, slicing, iterating, unpacking, functions of list object, list operators, builtin functions, list as stack and queue.
 ---
 
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/J7pj1-xcO1o" allowfullscreen></iframe>
+</div> <br/>
+
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/KrPOCt5_akM" allowfullscreen></iframe>
+</div> <hr/>
 
 ## List
 
