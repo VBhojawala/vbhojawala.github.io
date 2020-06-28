@@ -1,7 +1,7 @@
 ---
-title: Date, Time and DateTime
+title: Python Date, Time and DateTime
 layout: tutorial
-tags: [date, time, datetime, today(), now(), combine(), isoformat(), fromisoformat(), utcnow(), fromtimestamp(), utcfromtimestamp(), strptime(), timetz(), replace(), astimezone(), utcoffset(), dst(), tzname(), timetuple(), utctimetuple(), toordinal(), fromordinal(), timestamp(), weekday(), isoweekday(), isocalendar(), fromisocalendar(), ctime(), strftime(), comparision, timedelta, total_seconds(), divmod(), abs(), timezone, tzinfo, epoch, UTC, DST, utcoffset(), tzname(), dst(), fromutc(), time_ns(), perf_counter(), perf_counter_ns(), monotonic(), ctime(), localtime(), asctime(), gmtime(), mktime()]
+tags: [python, date, time, datetime, today(), now(), combine(), isoformat(), fromisoformat(), utcnow(), fromtimestamp(), utcfromtimestamp(), strptime(), timetz(), replace(), astimezone(), utcoffset(), dst(), tzname(), timetuple(), utctimetuple(), toordinal(), fromordinal(), timestamp(), weekday(), isoweekday(), isocalendar(), fromisocalendar(), ctime(), strftime(), comparision, timedelta, total_seconds(), divmod(), abs(), timezone, tzinfo, epoch, UTC, DST, utcoffset(), tzname(), dst(), fromutc(), time_ns(), perf_counter(), perf_counter_ns(), monotonic(), ctime(), localtime(), asctime(), gmtime(), mktime()]
 sidebar: python_sidebar
 permalink: python_date_time_datetime.html
 folder: python
@@ -11,7 +11,7 @@ next: python_calendar.html
 next_title: Calendar
 next_section: 
 next_section_title: 
-summary: Date, Time and DateTime
+summary: Python Date, Time and DateTime
 ---
 
 <div class="embed-responsive embed-responsive-16by9">

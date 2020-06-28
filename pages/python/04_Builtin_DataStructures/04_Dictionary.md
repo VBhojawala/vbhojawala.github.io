@@ -1,7 +1,7 @@
 ---
-title: Dictionary
+title: Python Dictionary
 layout: tutorial
-tags: [hashable, hashmap, associative_array,  key, get(), keys(), dict(), for-each  , items(), len(), pop(), popitem(), update(), copy(), deepcopy(), clear() setdefault(), fromkeys(), dictionary_comprehension, ordered_dictionary, default_dictionary]
+tags: [python, dictionary, hashable, hashmap, associative_array,  key, get(), keys(), dict(), for-each  , items(), len(), pop(), popitem(), update(), copy(), deepcopy(), clear() setdefault(), fromkeys(), dictionary_comprehension, ordered_dictionary, default_dictionary]
 sidebar: python_sidebar
 permalink: python_dictionary.html
 folder: python
@@ -13,7 +13,7 @@ next: python_counter.html
 next_title: Counter
 next_section: 
 next_section_title: 
-summary: Dictionary constructor methods, operators, dictionary comprehension, dictionary examples, ordered dictionary, default dictionary.
+summary: Python Dictionary constructor methods, operators, dictionary comprehension, dictionary examples, ordered dictionary, default dictionary.
 ---
 
 ## Dictionary

@@ -1,7 +1,7 @@
 ---
-title: Counter
+title: Python Counter
 layout: tutorial
-tags: [counter, elements(), most_common(), update(), subtract(), operators]
+tags: [python, counter, elements(), most_common(), update(), subtract(), operators]
 sidebar: python_sidebar
 permalink: python_counter.html
 folder: python
@@ -13,7 +13,7 @@ next: python_chainmap.html
 next_title: ChainMap
 next_section: 
 next_section_title: 
-summary: Counter constructor, methods, operators.
+summary: Python Counter constructor, methods, operators.
 ---
 
 ## Counter

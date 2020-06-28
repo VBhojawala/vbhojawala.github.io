@@ -1,7 +1,7 @@
 ---
-title: Deque
+title: Python Deque
 layout: tutorial
-tags: [deque, len(), append(), appendleft(), pop(), popleft(), extend(), extendleft(), insert(), remove(), count(), index(), reverse(), rotate(), clear(), copy(), deepcopy()]
+tags: [python, deque, len(), append(), appendleft(), pop(), popleft(), extend(), extendleft(), insert(), remove(), count(), index(), reverse(), rotate(), clear(), copy(), deepcopy()]
 sidebar: python_sidebar
 permalink: python_deque.html
 folder: python
@@ -13,7 +13,7 @@ next: python_heapq.html
 next_title: heapq
 next_section: 
 next_section_title: 
-summary: Deque constructor, comparision with list and functions.
+summary: Python Deque constructor, comparision with list and functions.
 ---
 
 ## Deque

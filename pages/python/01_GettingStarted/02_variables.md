@@ -1,7 +1,7 @@
 ---
-title: Variables
+title: Python Variables
 layout: tutorial
-tags: [Variables, Constant, type(), id(), del, ==, is, identity_operator, id_vs_==, string_interning, caching, immutable_object, immutable_vs_mutable, int, str, float, bool, bin, oct, hex, memory_management, 'Integer', 'String', 'Boolean']
+tags: [python, Variables, Constant, type(), id(), del, ==, is, identity_operator, id_vs_==, string_interning, caching, immutable_object, immutable_vs_mutable, int, str, float, bool, bin, oct, hex, memory_management, 'Integer', 'String', 'Boolean']
 sidebar: python_sidebar
 permalink: python_variables.html
 folder: python
@@ -11,7 +11,7 @@ next:
 next_title: 
 next_section: python_decimal_fraction.html
 next_section_title: Data Types
-summary: variables int, float, string, boolean. Variable declaration, assignment, comparision, caching, memory management. Int and Float class methods. Conversion between variable types. Binary, Octal and Hexadecimal assignment and conversion.
+summary: Python variables int, float, string, boolean. Variable declaration, assignment, comparision, caching, memory management. Int and Float class methods. Conversion between variable types. Binary, Octal and Hexadecimal assignment and conversion.
 ---
 
 <div class="embed-responsive embed-responsive-16by9">

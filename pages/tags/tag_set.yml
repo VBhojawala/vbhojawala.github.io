@@ -1,0 +1,8 @@
+---
+title: "set"
+tagName: set
+search: exclude
+permalink: tag_set.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

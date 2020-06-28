@@ -1,7 +1,7 @@
 ---
-title: String
+title: Python String
 layout: tutorial
-tags: [str, String, slicing, slice(), substring, indexing, len(), capitalize(), find(), in, index (), upper(), lower(), count(), rfind(),startswith(), endswith(), replace(), strip(), lstrip(), rstrip(), expandtabs(),split(), join(), splitlines(), casefold(), title(), partition(), rpartition(), swapcase(), maketrans(), translate(), isalnum(), isalpha(), isdecimal(), isdigit(), isnumeric(),isidentifier(), islower(), isupper(), istitle(), isspace(), isprintable(), isascii(), center(), ljust(), rjust(), zfill(), string_formatting, printf(), format(), f-string, String_Templating, Template]
+tags: [python, str, String, slicing, slice(), substring, indexing, len(), capitalize(), find(), in, index (), upper(), lower(), count(), rfind(),startswith(), endswith(), replace(), strip(), lstrip(), rstrip(), expandtabs(),split(), join(), splitlines(), casefold(), title(), partition(), rpartition(), swapcase(), maketrans(), translate(), isalnum(), isalpha(), isdecimal(), isdigit(), isnumeric(),isidentifier(), islower(), isupper(), istitle(), isspace(), isprintable(), isascii(), center(), ljust(), rjust(), zfill(), string_formatting, printf(), format(), f-string, String_Templating, Template]
 sidebar: python_sidebar
 permalink: python_string.html
 folder: python
@@ -9,7 +9,7 @@ prev: python_decimal_fraction.html
 prev_title: Decimal and Fraction
 next: python_bytes_bytearray.html
 next_title: Bytes and ByteArray
-summary: String object, indexing, slicing, concat, string operators.
+summary: Python String object, indexing, slicing, concat, string operators.
 ---
 
 <div class="embed-responsive embed-responsive-16by9">

@@ -1,7 +1,7 @@
 ---
-title: ChainMap
+title: Python ChainMap
 layout: tutorial
-tags: [ChainMap, maps, parents, pop(), values(), setdefault(), update(), keys(), items(), popitem(), copy(), fromkeys(), clear(), get(), new_child()]
+tags: [python, ChainMap, maps, parents, pop(), values(), setdefault(), update(), keys(), items(), popitem(), copy(), fromkeys(), clear(), get(), new_child()]
 sidebar: python_sidebar
 permalink: python_chainmap.html
 folder: python
@@ -13,7 +13,7 @@ next: python_deque.html
 next_title: Deque
 next_section: 
 next_section_title: 
-summary: ChainMap constructor, iteration, attributes,  functions.
+summary: Python ChainMap constructor, iteration, attributes,  functions.
 ---
 
 ## ChainMap

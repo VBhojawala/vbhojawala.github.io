@@ -1,7 +1,7 @@
 ---
-title: heapq
+title: Python heapq
 layout: tutorial
-tags: [heapq, heap, priority_queue, min-heap, binary_tree, heapify(), heappush(), heappop(), heappushpop(), heapreplace(), merge(), nlargest(), nsmallest()]
+tags: [python, heapq, heap, priority_queue, min-heap, binary_tree, heapify(), heappush(), heappop(), heappushpop(), heapreplace(), merge(), nlargest(), nsmallest()]
 sidebar: python_sidebar
 permalink: python_heapq.html
 folder: python
@@ -13,7 +13,7 @@ next: python_enum.html
 next_title: Enum
 next_section: 
 next_section_title: 
-summary: heapq algorithm (min-heap), binary tree, functions of heapq module.
+summary: Python heapq algorithm (min-heap), binary tree, functions of heapq module.
 ---
 
 ## heapq

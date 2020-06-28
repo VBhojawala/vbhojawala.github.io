@@ -1,7 +1,7 @@
 ---
-title: Exception Handling
+title: Python Exception Handling
 layout: tutorial
-tags: [Exception, Exception_class_hierarchy,  try-except, try-except-else, try-finally, try-except-finally,try-except-else-finally, nested_try, raise, raise-from, chained_exception, context, cause, suppress_context]
+tags: [python, Exception, Exception_class_hierarchy,  try-except, try-except-else, try-finally, try-except-finally,try-except-else-finally, nested_try, raise, raise-from, chained_exception, context, cause, suppress_context]
 sidebar: python_sidebar
 permalink: python_exception_handling.html
 folder: python
@@ -13,7 +13,7 @@ next: python_traceback.html
 next_title: Traceback
 next_section: 
 next_section_title: 
-summary:  Exceptions in python, Exception class hierarchy, try-catch, try-catch finally, nested try, raise, raise from, Chained Exceptions and attribute.
+summary: Python Exceptions, Exception class hierarchy, try-catch, try-catch finally, nested try, raise, raise from, Chained Exceptions and attribute.
 ---
 
 ## Exceptions

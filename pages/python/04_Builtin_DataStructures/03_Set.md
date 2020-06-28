@@ -1,7 +1,7 @@
 ---
-title: Set and FrozenSet
+title: Python Set and FrozenSet
 layout: tutorial
-tags: [hashable, nonhashable, for-each, enumerate(), len(), add(), remove(), discard(), pop(), clear(), copy(), update(), intersection_update(), difference_update(), symmetric_difference_update(), issuperset(), issubset(),identity_operator, membership_operator, operators, set_comprehension, frozenset]
+tags: [python, set, hashable, nonhashable, for-each, enumerate(), len(), add(), remove(), discard(), pop(), clear(), copy(), update(), intersection_update(), difference_update(), symmetric_difference_update(), issuperset(), issubset(),identity_operator, membership_operator, operators, set_comprehension, frozenset]
 sidebar: python_sidebar
 permalink: python_set_frozenset.html
 folder: python
@@ -13,7 +13,7 @@ next: python_dictionary.html
 next_title: Dictionary
 next_section: 
 next_section_title: 
-summary: Set  constructor methods, operators, iterator, set comprehension, frozenset.
+summary: Python Set  constructor methods, operators, iterator, set comprehension, frozenset.
 ---
 
 <div class="embed-responsive embed-responsive-16by9">

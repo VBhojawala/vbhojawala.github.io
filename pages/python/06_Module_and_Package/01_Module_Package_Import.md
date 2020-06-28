@@ -1,7 +1,7 @@
 ---
-title: Module, Package and Import
+title: Python Module, Package and Import
 layout: tutorial
-tags: [Module, Package,  import, Regular_Package, Namespace_Package, sys.path, PYTHONPATH, pycache, import_from, wildcard_import, Aliasing, user_defined_module, user_defined_package, init.py, restricting_wildcard_import, __all__, relative_import, Mixing_regular_namespace_package, circular_import,  __future__]
+tags: [python, Module, Package,  import, Regular_Package, Namespace_Package, sys.path, PYTHONPATH, pycache, import_from, wildcard_import, Aliasing, user_defined_module, user_defined_package, init.py, restricting_wildcard_import, __all__, relative_import, Mixing_regular_namespace_package, circular_import,  __future__]
 sidebar: python_sidebar
 permalink: python_module_package_import.html
 folder: python
@@ -13,7 +13,7 @@ next: python_logging.html
 next_title: Logging
 next_section: 
 next_section_title: 
-summary: Module, Package, importing module package and functions, regular and namespace package, sys.path, PYTHONPATH, pycache, wildcard import, aliasing, user defined package and modules, __init__.py, restricting wildcard imports, relative import, mixing regular and namespace package, circular import and __future__.
+summary: Python Module, Package, importing module package and functions, regular and namespace package, sys.path, PYTHONPATH, pycache, wildcard import, aliasing, user defined package and modules, __init__.py, restricting wildcard imports, relative import, mixing regular and namespace package, circular import and __future__.
 ---
 
 

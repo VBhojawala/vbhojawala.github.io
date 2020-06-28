@@ -1,7 +1,7 @@
 ---
-title: Functions
+title: Python Functions
 layout: tutorial
-tags: [def, pass, doc-string, return, default_value_parameter, functional_annotation,help(), doc, annotations, locale(), global(), locale_variable, global_variable,locale_vs_global_variable, pass_by_value, pass_by_reference, pass_by_value_VS_reference,positional_arguments, keywords_arguments, varargs, variable_positional_argument,variable_keyword_arguments, order_of_arguments, positional_only_argument,keyword_only_arguments, function_attribute, unpacking_sequence, first_class_object,callable(), nested_function, closure, free_variable, nonlocal, function_as_parameter]
+tags: [python,function, def, pass, doc-string, return, default_value_parameter, functional_annotation,help(), doc, annotations, locale(), global(), locale_variable, global_variable,locale_vs_global_variable, pass_by_value, pass_by_reference, pass_by_value_VS_reference,positional_arguments, keywords_arguments, varargs, variable_positional_argument,variable_keyword_arguments, order_of_arguments, positional_only_argument,keyword_only_arguments, function_attribute, unpacking_sequence, first_class_object,callable(), nested_function, closure, free_variable, nonlocal, function_as_parameter]
 sidebar: python_sidebar
 permalink: python_functions.html
 folder: python
@@ -13,7 +13,7 @@ next: python_recursion.html
 next_title: Recursion
 next_section: 
 next_section_title: 
-summary: Benefits of functions, User defined functions, return statement, functional annotation, variable scopes, local vs global variable, positional and keyword arguments, variable arguments, nested functions, closure etc.
+summary: Python Benefits of functions, User defined functions, return statement, functional annotation, variable scopes, local vs global variable, positional and keyword arguments, variable arguments, nested functions, closure etc.
 ---
 
 <div class="embed-responsive embed-responsive-16by9">

@@ -1,7 +1,7 @@
 ---
-title: Traceback
+title: Python Traceback
 layout: tutorial
-tags: [traceback, sys,  tb_frame, exc_info(), exc_type, exc_value, exc_traceback, print_tb(), print_exception(), format_exception(), format_exception_only(), print_exc(), format_exc(), print_last(), print_stack(), extract_tb(), format_list(), format_tb(), extract_stack(), format_stack(), clear_frames()]
+tags: [python, traceback, sys,  tb_frame, exc_info(), exc_type, exc_value, exc_traceback, print_tb(), print_exception(), format_exception(), format_exception_only(), print_exc(), format_exc(), print_last(), print_stack(), extract_tb(), format_list(), format_tb(), extract_stack(), format_stack(), clear_frames()]
 sidebar: python_sidebar
 permalink: python_traceback.html
 folder: python
@@ -13,7 +13,7 @@ next: python_warnings.html
 next_title: Warnings
 next_section: 
 next_section_title: 
-summary: Exception object's structure and traceback module functions.
+summary: Python Exception object's structure and traceback module functions.
 ---
 
 ## Traceback

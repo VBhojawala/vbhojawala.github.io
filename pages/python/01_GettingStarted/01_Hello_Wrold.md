@@ -1,7 +1,7 @@
 ---
-title: Hello World!
+title: Python Hello World!
 layout: tutorial
-tags: [Hello_World, comments, python_console_calculator]
+tags: [python, Hello_World, comments, python_console_calculator]
 sidebar: python_sidebar
 permalink: python_hello_world.html
 folder: python
@@ -9,7 +9,7 @@ prev: python_install_python_pycharm.html
 prev_title: Install Python and Pycharm
 next: python_variables.html
 next_title: Python Variables
-summary: print() function and use cases, types of comments, python console as calculator. 
+summary: Python print() function and use cases, types of comments, python console as calculator. 
 ---
 
 <div class="embed-responsive embed-responsive-16by9">

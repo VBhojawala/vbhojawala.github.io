@@ -1,7 +1,7 @@
 ---
-title: Builtin Modules
+title: Python Builtin Modules
 layout: tutorial
-tags: [nan, inf, pi, e, floor(), ceil(), factorial(), sqrt(), fabs(), copysign(), fmod(), fsum(), gcd(), isinf(), isfinite(), isnan(), frexp(), ldexp(), pow(), trunc(), random, randint(), randrange(), choice(), shuffle(), sample(), choices(), random(), uniform(), seed(), getstate(), setstate(), getrandbits(), Random(), SystemRandom(), statistics, mean(), median_low(), median_high(), mode(), stdev()]
+tags: [python,builtin_module, nan, inf, pi, e, floor(), ceil(), factorial(), sqrt(), fabs(), copysign(), fmod(), fsum(), gcd(), isinf(), isfinite(), isnan(), frexp(), ldexp(), pow(), trunc(), random, randint(), randrange(), choice(), shuffle(), sample(), choices(), random(), uniform(), seed(), getstate(), setstate(), getrandbits(), Random(), SystemRandom(), statistics, mean(), median_low(), median_high(), mode(), stdev()]
 sidebar: python_sidebar
 permalink: python_builtin_modules.html
 folder: python
@@ -13,7 +13,7 @@ next:
 next_title: 
 next_section: 
 next_section_title: 
-summary: Builtin modules math, random and statistics.
+summary: Python Builtin modules math, random and statistics.
 ---
 
 

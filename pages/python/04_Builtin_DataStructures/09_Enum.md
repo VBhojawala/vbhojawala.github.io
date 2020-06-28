@@ -1,7 +1,7 @@
 ---
-title: Enum
+title: Python Enum
 layout: tutorial
-tags: [Enumeration, value, name, constant, for-each, unique, auto(), IntEnum, InFlag, Flag, _generate_next_value_()]
+tags: [python, Enumeration, value, name, constant, for-each, unique, auto(), IntEnum, InFlag, Flag, _generate_next_value_()]
 sidebar: python_sidebar
 permalink: python_enum.html
 folder: python
@@ -13,7 +13,7 @@ next: python_array.html
 next_title: Array
 next_section: 
 next_section_title: 
-summary: Enum class , constructor attributes, iterating enum, unique, IntEnum, InFlag, Flag.
+summary: Python Enum class , constructor attributes, iterating enum, unique, IntEnum, InFlag, Flag.
 ---
 
 ## Enum

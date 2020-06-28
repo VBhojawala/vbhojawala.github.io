@@ -1,7 +1,7 @@
 ---
-title: Warnings
+title: Python Warnings
 layout: tutorial
-tags: [Warnings, Warning_class_hierarchy,  warn(), Warning_filters, filterwarnings(), Extending_Warning_class, formatwarning(), warn_explicit(), showwarning(), simple_filter(), resetwarnings(),  catch_warnings(), context_manager]
+tags: [python, Warnings, Warning_class_hierarchy,  warn(), Warning_filters, filterwarnings(), Extending_Warning_class, formatwarning(), warn_explicit(), showwarning(), simple_filter(), resetwarnings(),  catch_warnings(), context_manager]
 sidebar: python_sidebar
 permalink: python_warnings.html
 folder: python
@@ -13,7 +13,7 @@ next:
 next_title: 
 next_section: python_module_package_import.html
 next_section_title: Module, Package and Import
-summary: Warning class hierarchy, warning filters, functions, extending warning class, command-line syntax, context management.
+summary: Python Warning class hierarchy, warning filters, functions, extending warning class, command-line syntax, context management.
 ---
 
 ## Warnings

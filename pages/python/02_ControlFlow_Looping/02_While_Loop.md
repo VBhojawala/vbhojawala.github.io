@@ -1,7 +1,7 @@
 ---
-title: While Loop
+title: Python While Loop
 layout: tutorial
-tags: [while_loop, break, continue, while-else]
+tags: [python, while_loop, break, continue, while-else]
 sidebar: python_sidebar
 permalink: python_while_loop.html
 folder: python
@@ -13,7 +13,7 @@ next: python_for_loop.html
 next_title: For Loop
 next_section: 
 next_section_title: 
-summary: While loop, break, continue, while-else.
+summary: Python While loop, break, continue, while-else.
 ---
 
 <div class="embed-responsive embed-responsive-16by9">

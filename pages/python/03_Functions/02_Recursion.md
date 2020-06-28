@@ -1,7 +1,7 @@
 ---
-title: Recursion
+title: Python Recursion
 layout: tutorial
-tags: [recursion, recursive_function, power_xn, factorial, fibonacci, binary_search]
+tags: [python, recursion, recursive_function, power_xn, factorial, fibonacci, binary_search]
 sidebar: python_sidebar
 permalink: python_recursion.html
 folder: python
@@ -13,7 +13,7 @@ next:
 next_title: 
 next_section: python_list.html
 next_section_title: Builtin Data Structures
-summary: Recursion, recursive function , power_xn(), factorial, fibonacci, binary search.
+summary: Python Recursion, recursive function , power_xn(), factorial, fibonacci, binary search.
 ---
 
 

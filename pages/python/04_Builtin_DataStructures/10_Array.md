@@ -1,7 +1,7 @@
 ---
-title: Array
+title: Python  Array
 layout: tutorial
-tags: [Array, indexing, slicing, iterating, typecodes, len(), append(), insert(), extend(), pop(), remove(), count(), reverse(), tofile(), tobytes(), tolist(), fromfile(), fromlist(), frombytes(), itemsize]
+tags: [python, Array, indexing, slicing, iterating, typecodes, len(), append(), insert(), extend(), pop(), remove(), count(), reverse(), tofile(), tobytes(), tolist(), fromfile(), fromlist(), frombytes(), itemsize]
 sidebar: python_sidebar
 permalink: python_array.html
 folder: python
@@ -13,7 +13,7 @@ next: python_struct.html
 next_title: Struct
 next_section: 
 next_section_title: 
-summary: Array element data types, indexing, slicing, iterating, functions and attributes.
+summary: Python Array element data types, indexing, slicing, iterating, functions and attributes.
 ---
 
 ## Array

@@ -1,7 +1,7 @@
 ---
-title: Bytes and ByteArray
+title: Python Bytes and ByteArray
 layout: tutorial
-tags: [unicode, ASCII, ord(), chr(), hex(), fromhex(), encode(), decode(), BOM, bytes, bytearray, immutable_vs_mutable, mutable, immutable, append(), clear(), copy(), extend(), insert(), pop(), remove(), reverse()]
+tags: [python, unicode, ASCII, ord(), chr(), hex(), fromhex(), encode(), decode(), BOM, bytes, bytearray, immutable_vs_mutable, mutable, immutable, append(), clear(), copy(), extend(), insert(), pop(), remove(), reverse()]
 sidebar: python_sidebar
 permalink: python_bytes_bytearray.html
 folder: python
@@ -9,7 +9,7 @@ prev: python_string.html
 prev_title: String
 next: python_date_time_datetime.html
 next_title: DateTime
-summary: encoding and decoding.  bytes and bytearray object and their methods.
+summary: Python encoding and decoding string, bytes and bytearray object and their methods.
 ---
 
 <div class="embed-responsive embed-responsive-16by9">

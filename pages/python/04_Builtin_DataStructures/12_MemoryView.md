@@ -1,7 +1,7 @@
 ---
-title: MemoryView
+title: Python MemoryView
 layout: tutorial
-tags: [MemoryView, readonly, tolist(), toreadonly(), tobytes(), hex(), release(), cast(), obj, nbytes, format, itemsize, ndim, shape, strides, contiguous, c_contiguous, f_contiguous]
+tags: [python, MemoryView, readonly, tolist(), toreadonly(), tobytes(), hex(), release(), cast(), obj, nbytes, format, itemsize, ndim, shape, strides, contiguous, c_contiguous, f_contiguous]
 sidebar: python_sidebar
 permalink: python_memoryview.html
 folder: python
@@ -13,7 +13,7 @@ next:
 next_title: 
 next_section: python_exception_handling.html
 next_section_title: Exception Handling
-summary:  Memoryview attributes and functions.
+summary: Python Memoryview attributes and functions.
 ---
 
 

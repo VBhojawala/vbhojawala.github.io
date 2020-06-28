@@ -1,0 +1,8 @@
+---
+title: "tuple"
+tagName: tuple
+search: exclude
+permalink: tag_tuple.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

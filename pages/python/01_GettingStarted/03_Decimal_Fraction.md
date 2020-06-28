@@ -1,7 +1,7 @@
 ---
-title: Decimal and Fraction
+title: Python Decimal and Fraction
 layout: tutorial
-tags: [Decimal, round(), Fraction, float, infinity, signals, context, context_manager]
+tags: [python, Decimal, round(), Fraction, float, infinity, signals, context, context_manager]
 sidebar: python_sidebar
 permalink: python_decimal_fraction.html
 folder: python
@@ -11,8 +11,7 @@ prev_section: python_getting_started.html
 prev_section_title: Getting Started
 next: python_string.html
 next_title: String
-
-summary: Decimal and Fraction data type class and its methods.
+summary: Python Decimal and Fraction data type class and its methods.
 ---
 
 <div class="embed-responsive embed-responsive-16by9">

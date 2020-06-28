@@ -1,7 +1,7 @@
 ---
-title: List
+title: Python List
 layout: tutorial
-tags: [slice, indexing, slicing, len(), in, not_in, for-each, reversed(), enumerate(), chain(), zip(), unpacking, 2d_list, 3d_list, list_comprehension, filtering, append(), insert(), remove(), count(), extend(), pop(), index(), sort(), copy(), deepcopy(), reverse(), clear(), join(), split(), List_Operators, builtin_functions, min(), max(), sum(), sorted(), any(), all(), bisect, bisect_left(), bisect_right(), insort_left(), insort_right(), bytes, stack, queue]
+tags: [python, list, slice, indexing, slicing, len(), in, not_in, for-each, reversed(), enumerate(), chain(), zip(), unpacking, 2d_list, 3d_list, list_comprehension, filtering, append(), insert(), remove(), count(), extend(), pop(), index(), sort(), copy(), deepcopy(), reverse(), clear(), join(), split(), List_Operators, builtin_functions, min(), max(), sum(), sorted(), any(), all(), bisect, bisect_left(), bisect_right(), insort_left(), insort_right(), bytes, stack, queue]
 sidebar: python_sidebar
 permalink: python_list.html
 folder: python
@@ -13,7 +13,7 @@ next: python_tuple_namedtuple.html
 next_title: Tuple and NamedTuple
 next_section: 
 next_section_title: 
-summary: List constructor, indexing, slicing, iterating, unpacking, functions of list object, list operators, builtin functions, list as stack and queue.
+summary: Python List constructor, indexing, slicing, iterating, unpacking, functions of list object, list operators, builtin functions, list as stack and queue.
 ---
 
 <div class="embed-responsive embed-responsive-16by9">

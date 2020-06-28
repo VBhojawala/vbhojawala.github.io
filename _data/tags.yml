@@ -2,6 +2,7 @@
 # If you are using the createtag script, don't leave an blank line at the end of this file.
 # In other words, the last line must be the last tag in the allowed-tags list.
 allowed-tags:
+  - python
   - install_python_linux
   - install_python_windows
   - install_python_macos
@@ -590,3 +591,9 @@ allowed-tags:
   - median_high()
   - mode()
   - stdev()
+  - function
+  - list
+  - tuple
+  - set
+  - dictionary
+  - builtin_modules

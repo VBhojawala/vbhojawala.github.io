@@ -1,0 +1,8 @@
+---
+title: "python"
+tagName: python
+search: exclude
+permalink: tag_python.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

@@ -1,7 +1,7 @@
 ---
-title: For Loop
+title: Python For Loop
 layout: tutorial
-tags: [for, range(), continue, for-each, for-else, command_line_argument, sys.argv]
+tags: [python, for, range(), continue, for-each, for-else, command_line_argument, sys.argv]
 sidebar: python_sidebar
 permalink: python_for_loop.html
 folder: python
@@ -13,7 +13,7 @@ next:
 next_title:
 next_section: python_functions.html
 next_section_title: Functions
-summary: for loop, range() function, continue,  for-each loop, for-else, Command Line Arguments.
+summary: Python for loop, range() function, continue,  for-each loop, for-else, Command Line Arguments.
 ---
 
 <div class="embed-responsive embed-responsive-16by9">

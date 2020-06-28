@@ -1,7 +1,7 @@
 ---
-title: Logging
+title: Python Logging
 layout: tutorial
-tags: [Logging, Logging_levels, debug(), info(), warning(), error(), critical(), basicConfig(), Logging_Components, Logger, Handler, Filter,Formatter, getLogger(), LogRecord, getMessage(), getLogRecordFactory(), setLogRecordFactory(), disable(), getLevelName(), shutdown(), getLoggerClass(), setLoggerClass(), makeLogRecord(), Logging_Hierarchy, getEffectiveLevel(), NOTSET, setlevel(), addHandler(), removeHandler(), addFilter(), removeFilter(), isEnabledFor(), getChild(), handle(), hasHandlers(), findCaller(), createLock(), acquire(), release(), setFormatter(), filter(), flush(), close(), handle(), format(), emit(), handleError(), StreamHandler, FileHandler, RotatingFileHandler, TimedRotatingFileHandler, SMTPHandler, MemoryHandler, NullHandler, WatchedFileHandler, QueueHandler, HTTPHandler, DatagramHandler, SocketHandler, SysLogHandler, NTEventLogHandler, setStream(), doRollover(), getSubject(), shouldFlush(), flush(), setTarget(), reopenIfNeeded(), prepare(), enqueue(), dequeue(), start(), stop(), enqueue_sentinel(), makeSocket(), makePickle(), send(), createSocket(), mapLogRecord(), LoggerAdapter, formatTime(), formatException(), formatStack(), Configuring_Logging, fileConfig(), dictConfig(), YAML, JSON, logging.config]
+tags: [python, Logging, Logging_levels, debug(), info(), warning(), error(), critical(), basicConfig(), Logging_Components, Logger, Handler, Filter,Formatter, getLogger(), LogRecord, getMessage(), getLogRecordFactory(), setLogRecordFactory(), disable(), getLevelName(), shutdown(), getLoggerClass(), setLoggerClass(), makeLogRecord(), Logging_Hierarchy, getEffectiveLevel(), NOTSET, setlevel(), addHandler(), removeHandler(), addFilter(), removeFilter(), isEnabledFor(), getChild(), handle(), hasHandlers(), findCaller(), createLock(), acquire(), release(), setFormatter(), filter(), flush(), close(), handle(), format(), emit(), handleError(), StreamHandler, FileHandler, RotatingFileHandler, TimedRotatingFileHandler, SMTPHandler, MemoryHandler, NullHandler, WatchedFileHandler, QueueHandler, HTTPHandler, DatagramHandler, SocketHandler, SysLogHandler, NTEventLogHandler, setStream(), doRollover(), getSubject(), shouldFlush(), flush(), setTarget(), reopenIfNeeded(), prepare(), enqueue(), dequeue(), start(), stop(), enqueue_sentinel(), makeSocket(), makePickle(), send(), createSocket(), mapLogRecord(), LoggerAdapter, formatTime(), formatException(), formatStack(), Configuring_Logging, fileConfig(), dictConfig(), YAML, JSON, logging.config]
 sidebar: python_sidebar
 permalink: python_logging.html
 folder: python
@@ -13,7 +13,7 @@ next: python_builtin_modules.html
 next_title: Builtin Modules
 next_section: 
 next_section_title: 
-summary: Logging module functions, logging components, Logger, Handler, Filter, Formatter,LoggerAdapter, logging configuration.
+summary: Python Logging module functions, logging components, Logger, Handler, Filter, Formatter,LoggerAdapter, logging configuration.
 ---
 
 
