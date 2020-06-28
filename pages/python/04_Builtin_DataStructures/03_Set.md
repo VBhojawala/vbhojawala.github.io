@@ -16,6 +16,10 @@ next_section_title:
 summary: Set  constructor methods, operators, iterator, set comprehension, frozenset.
 ---
 
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Iq2l49JqcB0" allowfullscreen></iframe>
+</div> <hr/>
+
 ## Set
 
 <div id="tut-content"> 

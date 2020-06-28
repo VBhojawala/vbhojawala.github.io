@@ -706,7 +706,13 @@ print(id(b))
     <ol>    
         <li> <strong>strings </strong> </li>
         <li> <strong>Integer </strong></li>
-        <li> <strong>Tuple with immutable items only </strong> (yet to be cover)</li>
+        <li> <strong>Float </strong></li>
+        <li> <strong>Bytes </strong></li>
+        <li> <strong>datetime </strong></li>
+        <li> <strong>Enum </strong></li>
+        <li> <strong>Decimal </strong></li>
+        <li> <strong>Fraction </strong></li>
+        <li> <strong>Tuple with immutable items only </strong></li>
     </ol>
 </div>
 
