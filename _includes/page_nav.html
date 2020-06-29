@@ -1,39 +1,27 @@
 <div class="seriesContext" align="right">
-
     {% if page.prev_section %}
         <a href="{{page.prev_section}}" >
             <button type="button" class="btn btn-success "> 
                  <span class="fa fa-chevron-left fa-lg"></span> Previous Section <br/>
                  {{page.prev_section_title}}  
             </button>
-        </a>
-    {% endif %}
-
-    {% if page.prev %}
+        </a>{% endif %}{% if page.prev %}
         <a href="{{page.prev}}" >
             <button type="button" class="btn btn-primary  "> 
                  <span class="fa fa-arrow-circle-left fa-lg"></span>  Previous  <br/>
                  {{page.prev_title}} 
             </button>
-        </a>
-    {% endif %}
-
-    {% if page.next %}
+        </a>{% endif %}{% if page.next %}
         <a href="{{page.next}}" >
             <button type="button" class="btn btn-primary "> 
                  Next <span class="fa fa-arrow-circle-right fa-lg"></span> <br/> 
                  {{page.next_title}}
             </button>
-        </a>
-    {% endif %}
-
-    {% if page.next_section %}
+        </a>{% endif %}{% if page.next_section %}
         <a href="{{page.next_section}}" >
             <button type="button" class="btn btn-success "> 
                 Next Section <span class="fa fa-chevron-right fa-lg"></span> <br/>  
                 {{page.next_section_title}} 
             </button>
-        </a>
-    {% endif %}
-
+        </a>{% endif %}
 </div>

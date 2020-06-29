@@ -1,7 +1,7 @@
 ---
 title: Python Control Flow
 layout: tutorial
-tags: [python, python, if-else, comparision_operators, identity_operator,  if-elif-else, logical_operators, ternary, chained_expression, lazy_evaluation, short-circuit_logic, bitwise_operators, operator_precedence, divmod(), pow(), nested_if-else]
+tags: [python, if-else, comparision_operators, identity_operator,  if-elif-else, logical_operators, ternary, chained_expression, lazy_evaluation, short-circuit_logic, bitwise_operators, operator_precedence, divmod(), pow(), nested_if-else]
 sidebar: python_sidebar
 permalink: python_control_flow.html
 folder: python
