@@ -1164,7 +1164,7 @@ print(dt.utcnow())
 
 
 #### fromtimestamp(timestamp[, tz])
-<p>  Returns local date and time from timestamp (POSIX). If optional argument tz is give (instance of tzinfo) timestamp is converted in to tz's timestamp.</p>
+<p>  Returns local date and time from timestamp (POSIX). If optional argument tz is given (instance of tzinfo) timestamp is converted in to tz's timestamp.</p>
 
 
 {% assign code_block = code_block | plus: 1 %}
