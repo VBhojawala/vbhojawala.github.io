@@ -13,7 +13,7 @@ next: python_dictionary.html
 next_title: Dictionary
 next_section: 
 next_section_title: 
-summary: Python Set  constructor methods, operators, iterator, set comprehension, frozenset.
+summary: Python Set  constructor methods, operators, iterator, set comprehension, frozenset constructor, methods and operators.
 ---
 
 <div class="embed-responsive embed-responsive-16by9">

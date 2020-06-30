@@ -9,6 +9,7 @@
         "filterwarnings",
         "fname",
         "formatwarning",
+        "frozenset",
         "getstate",
         "hashable",
         "heapify",
@@ -19,11 +20,14 @@
         "lname",
         "localcontext",
         "lstrip",
+        "namedtuple",
         "ndigit",
+        "python",
         "randint",
         "showwarning",
         "smtp",
         "templating",
+        "tuple",
         "varargs"
     ]
 }

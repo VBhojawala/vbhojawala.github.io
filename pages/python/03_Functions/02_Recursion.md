@@ -13,7 +13,7 @@ next:
 next_title: 
 next_section: python_list.html
 next_section_title: Builtin Data Structures
-summary: Python Recursion, recursive function , power_xn(), factorial, fibonacci, binary search.
+summary: Python Recursion, recursive function , power_xn() recursive, power_xn() iterative, factorial recursive, factorial iterative, fibonacci recursive, fibonacci iterative, binary search recursive, binary search iterative.
 ---
 
 

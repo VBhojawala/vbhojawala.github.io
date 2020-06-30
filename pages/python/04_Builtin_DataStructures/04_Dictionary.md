@@ -16,6 +16,10 @@ next_section_title:
 summary: Python Dictionary constructor methods, operators, dictionary comprehension, dictionary examples, ordered dictionary, default dictionary.
 ---
 
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/87iDckAo7UI" allowfullscreen></iframe>
+</div> <hr/>
+
 ## Dictionary
 
 <div id="tut-content"> 
@@ -988,7 +992,7 @@ Found Key : Sam
 <hr/>
 
 
-#### Adding or removing elements while iterating
+### Adding or removing elements while iterating
 
 {% include callout.html content="**Note** : Adding or removing elements from list or dictionary while iterating will raise RuntimeError.Instead create copy of dictionary or list and apply modification on copy object. " type="primary" %} 
 

@@ -13,7 +13,7 @@ next: python_set_frozenset.html
 next_title: Set and FrozenSet
 next_section: 
 next_section_title: 
-summary: Python tuple constructor, indexing, slicing, iterating, functions of tuple object, operators, named tuple, attributes and functions of namedtuple.
+summary: Python tuple constructor, indexing, slicing, iterating, functions, operators, named tuple, attributes and functions of namedtuple, sorting named tuple.
 ---
 
 <div class="embed-responsive embed-responsive-16by9">

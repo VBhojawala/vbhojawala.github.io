@@ -13,7 +13,7 @@ next: python_tuple_namedtuple.html
 next_title: Tuple and NamedTuple
 next_section: 
 next_section_title: 
-summary: Python List constructor, indexing, slicing, iterating, unpacking, functions of list object, list operators, builtin functions, list as stack and queue.
+summary: Python List constructor, indexing, slicing, iterating, operators, unpacking, list comprehension, functions, operators, builtin functions, list as stack and queue, bisect module.
 ---
 
 <div class="embed-responsive embed-responsive-16by9">
