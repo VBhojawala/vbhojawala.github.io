@@ -13,8 +13,12 @@ next: python_chainmap.html
 next_title: ChainMap
 next_section: 
 next_section_title: 
-summary: Python Counter constructor, methods, operators.
+summary: Python Counter constructor, methods, operators and example.
 ---
+
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/EbD153Ww8UE" allowfullscreen></iframe>
+</div> <hr/>
 
 ## Counter
 

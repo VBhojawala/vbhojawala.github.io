@@ -13,7 +13,7 @@ next: python_counter.html
 next_title: Counter
 next_section: 
 next_section_title: 
-summary: Python Dictionary constructor methods, operators, dictionary comprehension, dictionary examples, ordered dictionary, default dictionary.
+summary: Python Dictionary constructor, methods, operators, iterating, dictionary comprehension, dictionary examples, ordered dictionary, default dictionary.
 ---
 
 <div class="embed-responsive embed-responsive-16by9">

@@ -16,6 +16,10 @@ next_section_title:
 summary: Python ChainMap constructor, iteration, attributes,  functions.
 ---
 
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/yZK1Y4oSwPA" allowfullscreen></iframe>
+</div> <hr/>
+
 ## ChainMap
 
 <div id="tut-content"> 
