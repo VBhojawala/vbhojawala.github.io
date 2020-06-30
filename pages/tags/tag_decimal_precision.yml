@@ -1,0 +1,8 @@
+---
+title: "decimal precision"
+tagName: decimal_precision
+search: exclude
+permalink: tag_decimal_precision.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

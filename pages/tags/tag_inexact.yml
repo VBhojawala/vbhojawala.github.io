@@ -1,0 +1,8 @@
+---
+title: "inexact"
+tagName: inexact
+search: exclude
+permalink: tag_inexact.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

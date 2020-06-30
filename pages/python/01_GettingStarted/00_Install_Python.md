@@ -13,7 +13,7 @@ next: python_hello_world.html
 next_title: Hello World!
 next_section:
 next_section_title:
-summary: Installing and configuring Python and Pycharm
+summary: Installing and configuring Python and Pycharm, creating new project and virtual environment and running hello world! in Python console.
 ---
 
 <div class="embed-responsive embed-responsive-16by9">

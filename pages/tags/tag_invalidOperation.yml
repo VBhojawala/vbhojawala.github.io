@@ -1,0 +1,8 @@
+---
+title: "invalidOperation"
+tagName: invalidOperation
+search: exclude
+permalink: tag_invalidOperation.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

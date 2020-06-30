@@ -1,0 +1,8 @@
+---
+title: "Rounded"
+tagName: Rounded
+search: exclude
+permalink: tag_Rounded.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

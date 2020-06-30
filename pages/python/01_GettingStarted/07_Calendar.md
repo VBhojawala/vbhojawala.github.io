@@ -11,7 +11,7 @@ next:
 next_title:
 next_section: python_control_flow.html
 next_section_title: Control Flow
-summary: Python Calendar module attributes and functions. Calendar, TextCalendar class and LocaleTextCalendar attributes and methods.
+summary: Python Calendar module attributes and functions. Calendar, TextCalendar  and LocaleTextCalendar class constructor, attributes and methods.
 ---
 
 <div class="embed-responsive embed-responsive-16by9">

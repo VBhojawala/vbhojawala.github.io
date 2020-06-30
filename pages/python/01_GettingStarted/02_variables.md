@@ -11,7 +11,7 @@ next:
 next_title: 
 next_section: python_decimal_fraction.html
 next_section_title: Data Types
-summary: Python variables int, float, string, boolean. Variable declaration, assignment, comparision, caching, memory management. Int and Float class methods. Conversion between variable types. Binary, Octal and Hexadecimal assignment and conversion.
+summary: Python variables int, float, string, boolean. Variable declaration, assignment, comparison,type(), del, caching, memory management. Immutable vs Mutable data types. Int and Float class methods. Conversion between variable types. Binary, Octal and Hexadecimal assignment and conversion.
 ---
 
 <div class="embed-responsive embed-responsive-16by9">

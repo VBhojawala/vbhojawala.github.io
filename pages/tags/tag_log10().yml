@@ -1,0 +1,8 @@
+---
+title: "log10()"
+tagName: log10()
+search: exclude
+permalink: tag_log10().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

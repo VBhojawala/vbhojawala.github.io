@@ -1,0 +1,8 @@
+---
+title: "Clamped"
+tagName: Clamped
+search: exclude
+permalink: tag_Clamped.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

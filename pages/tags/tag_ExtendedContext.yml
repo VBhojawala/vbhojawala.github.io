@@ -1,0 +1,8 @@
+---
+title: "ExtendedContext"
+tagName: ExtendedContext
+search: exclude
+permalink: tag_ExtendedContext.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

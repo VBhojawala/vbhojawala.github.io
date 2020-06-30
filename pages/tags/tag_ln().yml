@@ -1,0 +1,8 @@
+---
+title: "ln()"
+tagName: ln()
+search: exclude
+permalink: tag_ln().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

@@ -9,7 +9,7 @@ prev: python_decimal_fraction.html
 prev_title: Decimal and Fraction
 next: python_bytes_bytearray.html
 next_title: Bytes and ByteArray
-summary: Python String object, indexing, slicing, concat, string operators.
+summary: Python String object, indexing, slicing, concat,string functions, operators, validation functions, alignment functions, string formatting, printf style, format(), f-string, string templating.
 ---
 
 <div class="embed-responsive embed-responsive-16by9">

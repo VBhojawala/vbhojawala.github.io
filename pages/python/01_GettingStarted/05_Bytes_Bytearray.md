@@ -9,7 +9,7 @@ prev: python_string.html
 prev_title: String
 next: python_date_time_datetime.html
 next_title: DateTime
-summary: Python encoding and decoding string, bytes and bytearray object and their methods.
+summary: Python encoding and decoding string, bytes and bytearray object and their methods, char to ASCII.
 ---
 
 <div class="embed-responsive embed-responsive-16by9">

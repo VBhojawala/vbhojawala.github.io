@@ -1,0 +1,8 @@
+---
+title: "numerator"
+tagName: numerator
+search: exclude
+permalink: tag_numerator.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

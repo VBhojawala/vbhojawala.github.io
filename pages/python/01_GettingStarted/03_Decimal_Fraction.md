@@ -1,7 +1,7 @@
 ---
 title: Python Decimal and Fraction
 layout: tutorial
-tags: [python, Decimal, round(), Fraction, float, infinity, signals, context, context_manager]
+tags: [python, Decimal, round(), Fraction, float, infinity, signals, context, context_manager, inf, nan, decimal_precision, decimal_context_constructor, decimal_signals, Clamped, DivisionByZero, inexact, invalidOperation, Overflow, Rounded, Subnormal, Underflow, FloatOperation, BasicContext, ExtendedContext, DefaultContext, getcontext(), setcontext(), 'ctx.traps', localcontext(), sqrt(), exp(), ln(), log10(), fraction_operations, numerator, denominator, limit_denominator()]
 sidebar: python_sidebar
 permalink: python_decimal_fraction.html
 folder: python
@@ -11,7 +11,7 @@ prev_section: python_getting_started.html
 prev_section_title: Getting Started
 next: python_string.html
 next_title: String
-summary: Python Decimal and Fraction data type class and its methods.
+summary: Python Decimal and Fraction data type class and its methods. Limitations of float data type, round(), special values for float and Decimal, decimal context, decimal context manager Basic context, Extended context, Default context,decimal signals, trapping exception signals.
 ---
 
 <div class="embed-responsive embed-responsive-16by9">

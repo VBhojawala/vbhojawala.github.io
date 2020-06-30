@@ -11,7 +11,7 @@ next: python_calendar.html
 next_title: Calendar
 next_section: 
 next_section_title: 
-summary: Python Date, Time and DateTime
+summary: Python Date, Time and DateTime class, constructor and methods, formatting datetime using strftime(), comparison, timedelta, timezone, time module methods and attributes, UTC, DST.
 ---
 
 <div class="embed-responsive embed-responsive-16by9">

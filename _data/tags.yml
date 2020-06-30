@@ -597,3 +597,30 @@ allowed-tags:
   - set
   - dictionary
   - builtin_modules
+  - decimal_precision
+  - decimal_context_constructor
+  - decimal_signals
+  - Clamped
+  - DivisionByZero
+  - inexact
+  - invalidOperation
+  - Overflow
+  - Rounded
+  - Subnormal
+  - Underflow
+  - FloatOperation
+  - BasicContext
+  - ExtendedContext
+  - DefaultContext
+  - getcontext()
+  - setcontext()
+  - ctx.traps
+  - localcontext()
+  - exp()
+  - ln()
+  - log10()
+  - fraction_operations
+  - numerator
+  - denominator
+  - limit_denominator()
+

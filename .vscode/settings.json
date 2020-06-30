@@ -23,6 +23,7 @@
         "randint",
         "showwarning",
         "smtp",
+        "templating",
         "varargs"
     ]
 }
