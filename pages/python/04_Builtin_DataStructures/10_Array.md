@@ -16,6 +16,11 @@ next_section_title:
 summary: Python Array element data types, indexing, slicing, iterating, functions and attributes.
 ---
 
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/wO9SAmp0YdM" allowfullscreen></iframe>
+</div> <hr/>
+
+
 ## Array
 
 <div id="tut-content"> 
