@@ -16,6 +16,10 @@ next_section_title:
 summary: Python heapq algorithm (min-heap), binary tree, functions of heapq module.
 ---
 
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/baBvzUyaHXk" allowfullscreen></iframe>
+</div> <hr/>
+
 ## heapq
 
 <p> An implementation of heap queue algorithm also known as priority queue. </p>

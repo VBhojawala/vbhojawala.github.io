@@ -16,6 +16,11 @@ next_section_title:
 summary: Python Deque constructor, comparision with list and functions.
 ---
 
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/LD6_9s-Vuoo" allowfullscreen></iframe>
+</div> <hr/>
+
+
 ## Deque
 
 <div id="tut-content"> 
