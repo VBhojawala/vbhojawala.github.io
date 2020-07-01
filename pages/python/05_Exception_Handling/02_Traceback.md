@@ -16,6 +16,12 @@ next_section_title:
 summary: Python Exception object's structure and traceback module functions.
 ---
 
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/7cBw0x8Tq44" allowfullscreen></iframe>
+</div>
+
+<hr/>
+
 ## Traceback
 
 <p> Module provides functions to extract, format and print stack traces of Exception. Using traceback module traceback from exception can be printed same as printed by Python interpreter. </p>

@@ -40,6 +40,15 @@ $(document).ready(function() {
         $('#greetings').modal('show');
     }
 
+    $('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+    $('#toc').on('click', 'a', function() {
+        var target = $(this.getAttribute('href'))
+            , scroll_target = target.offset().top
+
+        $(window).scrollTop(scroll_target - 10);
+        return false
+    })
+
 });
 function copyHover(codeId, copyId){
     $('#'+codeId).mouseenter(function() {
