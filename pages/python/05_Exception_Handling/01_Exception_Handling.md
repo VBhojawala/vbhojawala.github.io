@@ -16,6 +16,12 @@ next_section_title:
 summary: Python Exceptions, Exception class hierarchy, try-catch, try-catch finally, nested try, raise, raise from, Chained Exceptions and attribute.
 ---
 
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/kEIoXoC7l2M" allowfullscreen></iframe>
+</div>
+
+<hr/>
+
 ## Exceptions
 
 <p> Exception is raised when invalid operation is executed such as accessing index out of range, division by zero etc.If exception is not handled, program will terminate unexpectedly with Error message.</p>

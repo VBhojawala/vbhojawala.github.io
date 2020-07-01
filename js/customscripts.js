@@ -36,6 +36,10 @@ $(document).ready(function() {
         $("#mysidebar").navgoco('toggle', true);
     });
 
+    if(typeof greet !== 'undefined' && greet == true){
+        $('#greetings').modal('show');
+    }
+
 });
 function copyHover(codeId, copyId){
     $('#'+codeId).mouseenter(function() {

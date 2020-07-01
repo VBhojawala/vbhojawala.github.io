@@ -1592,3 +1592,13 @@ p i.fa{
 #tut-ol-padding{
     padding-left: 15px;
 }
+#greeting{
+    font-size: 16px;
+    color:white;
+}
+#greeting-body{
+    color: black;
+}
+.site-block{
+    color: #CE1700;
+}
