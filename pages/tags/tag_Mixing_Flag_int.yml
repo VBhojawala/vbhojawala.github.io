@@ -1,0 +1,8 @@
+---
+title: "Mixing Flag int"
+tagName: Mixing_Flag_int
+search: exclude
+permalink: tag_Mixing_Flag_int.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

@@ -1,0 +1,8 @@
+---
+title: "format characters"
+tagName: format_characters
+search: exclude
+permalink: tag_format_characters.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

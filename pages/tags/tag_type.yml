@@ -1,0 +1,8 @@
+---
+title: "type"
+tagName: type
+search: exclude
+permalink: tag_type.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

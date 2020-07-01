@@ -623,4 +623,13 @@ allowed-tags:
   - numerator
   - denominator
   - limit_denominator()
-
+  - struct_format
+  - format_characters
+  - byte_order
+  - type
+  - module
+  - qualname
+  - extending_enum_class
+  - enum_comparison
+  - Mixing_IntEnum_int
+  - Mixing_Flag_int

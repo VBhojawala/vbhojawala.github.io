@@ -13,7 +13,7 @@ next: python_enum.html
 next_title: Enum
 next_section: 
 next_section_title: 
-summary: Python heapq algorithm (min-heap), binary tree, functions of heapq module.
+summary: Python heapq algorithm (min-heap), binary tree, constructing binary tree from list, functions of heapq module, Example - sorted list using heapq.
 ---
 
 <div class="embed-responsive embed-responsive-16by9">

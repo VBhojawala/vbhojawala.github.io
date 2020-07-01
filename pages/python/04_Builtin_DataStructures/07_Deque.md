@@ -13,7 +13,7 @@ next: python_heapq.html
 next_title: heapq
 next_section: 
 next_section_title: 
-summary: Python Deque constructor, comparision with list and functions.
+summary: Python Deque constructor, accessing / adding / deleting elements, functions of deque and comparison with list and functions.
 ---
 
 <div class="embed-responsive embed-responsive-16by9">

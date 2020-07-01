@@ -1,0 +1,8 @@
+---
+title: "extending enum class"
+tagName: extending_enum_class
+search: exclude
+permalink: tag_extending_enum_class.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

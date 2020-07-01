@@ -13,9 +13,12 @@ next:
 next_title: 
 next_section: python_exception_handling.html
 next_section_title: Exception Handling
-summary: Python Memoryview attributes and functions.
+summary: Python MemoryView constructor, indexing, slicing, attributes and functions, n-dimensional memoryview.
 ---
 
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/2iOI8pfi5Bc" allowfullscreen></iframe>
+</div> <hr/>
 
 ## MemoryView
 

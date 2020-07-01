@@ -1,7 +1,7 @@
 ---
 title: Python Struct
 layout: tutorial
-tags: [python, Struct,  bytes,  bytearray, calcsize(), format, size, pack(), pack_into(), unpack(), unpack_from(), iter_unpack()]
+tags: [python, Struct, struct_format, byte_order, format_characters, bytes,  bytearray, calcsize(), format, size, pack(), pack_into(), unpack(), unpack_from(), iter_unpack()]
 sidebar: python_sidebar
 permalink: python_struct.html
 folder: python
@@ -13,7 +13,7 @@ next: python_memoryview.html
 next_title: MemoryView
 next_section: 
 next_section_title: 
-summary: Python Struct object functions and attributes.
+summary: Python Struct format, Byte Order, format characters, struct class functions and attributes, struct module functions.
 ---
 
 <div class="embed-responsive embed-responsive-16by9">

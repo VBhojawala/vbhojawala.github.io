@@ -1,0 +1,8 @@
+---
+title: "Mixing IntEnum int"
+tagName: Mixing_IntEnum_int
+search: exclude
+permalink: tag_Mixing_IntEnum_int.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

@@ -13,7 +13,7 @@ next: python_deque.html
 next_title: Deque
 next_section: 
 next_section_title: 
-summary: Python ChainMap constructor, iteration, attributes,  functions.
+summary: Python ChainMap constructor, iteration, attributes,  functions, Adding/ updating/ removing elements from ChainMap, Accessing / replacing / modifying mapping of ChainMap.
 ---
 
 <div class="embed-responsive embed-responsive-16by9">
