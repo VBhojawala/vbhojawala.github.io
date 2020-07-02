@@ -1740,6 +1740,9 @@ generated  16 Bytes Token  [6d874a5e998d615564831ec67f442ac6]
     </ul> 
 </div>
 
+<div style="overflow-x:auto;" markdown="block">
+
+{:.table-responsive}
 value      |  Type of Interval           |  how atTime is used
 :--- | :--- | :---
 'S'        |  Seconds                    | ignored
@@ -1748,6 +1751,8 @@ value      |  Type of Interval           |  how atTime is used
 'D'        |  Days                       | ignored
 'W0'-'W6'  |  Weekday(0=Monday)          | used for setting initial rollover time
 'midnight' |  Rollover at midnight if atTime not specified else atTime is used   | used for setting initial rollover time
+
+</div>
 
 <div id="tut-content"> 
     <ul>
