@@ -191,7 +191,7 @@ logging.warning('CPU usage is %d', usage)
     </ul> 
 </div>
 
-
+{:.table-responsive}
 Attrib name    |     format          |    Description
 :--- | :--- | :---
 asctime         | %(asctime)s         | current local time
