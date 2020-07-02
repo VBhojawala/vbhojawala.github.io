@@ -16,6 +16,11 @@ next_section_title:
 summary: Python Module, Package, importing module package and functions, regular and namespace package, sys.path, PYTHONPATH, pycache, wildcard import, aliasing, user defined package and modules, __init__.py, restricting wildcard imports, relative import, mixing regular and namespace package, circular import and __future__.
 ---
 
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Utu-5EhLkNg" allowfullscreen></iframe>
+</div>
+
+<hr/>
 
 ## Module
 
