@@ -191,6 +191,8 @@ logging.warning('CPU usage is %d', usage)
     </ul> 
 </div>
 
+<div style="overflow-x:auto;" markdown="block">
+
 {:.table-responsive}
 Attrib name    |     format          |    Description
 :--- | :--- | :---
@@ -211,7 +213,7 @@ processName     | %(processName)s     | Process name (if available).
 thread          | %(thread)d          | Thread ID (if available).
 threadName      | %(threadName)s      | Thread name (if available).
 
-
+</div>
 <hr/>
 
 
