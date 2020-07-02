@@ -16,6 +16,11 @@ next_section_title:
 summary: Python Builtin modules math, random and statistics.
 ---
 
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/12i6FHFEXTo" allowfullscreen></iframe>
+</div>
+
+<hr/>
 
 ## math module
 
