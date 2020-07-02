@@ -2964,7 +2964,9 @@ loggerAdapter.debug('Login Attempted')
 
 #### Methods
 
+<div style="overflow-x:auto;" markdown="block">
 
+{:.table-responsive}
 Method  | Exmplanation
 :--- | :---
 format(record) | Returns log message in string by replacing LogRecord information with specified format.
@@ -2972,6 +2974,7 @@ formatTime(record, datefmt=None) | It is called from format() method which retur
 formatException(exc_info) | It's called from format() when logging method with exception information is called. By default uses traceback.print_exception() to format exception.
 formatStack(stack_info) | It's called from format() when logging method with stack trace is called. By default formats the specified stack information returned by traceback.print_stack().
 
+</div>
 
 #### Attributes
 
