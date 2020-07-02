@@ -705,7 +705,7 @@ flowerSet After difference_update() :  {'Lotus', 'Rose', 'Jasmine', 'Lavender'}
 
 
 
-#### symmetric_difference_update(iterable)
+#### symmetric_difference_update(itr)
 
 <p> Retains uncommon elements between set and given iterable. </p>
 
