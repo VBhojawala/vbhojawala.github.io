@@ -16,6 +16,12 @@ next_section_title: Module, Package and Import
 summary: Python Warning class hierarchy, warning filters, functions, extending warning class, command-line syntax, context management.
 ---
 
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/9geAlinyEGw" allowfullscreen></iframe>
+</div>
+
+<hr/>
+
 ## Warnings
 
 <p> Warning message is issued when program is behaving abnormally but not at the level of raising exception such as use of deprecated module.</p>
