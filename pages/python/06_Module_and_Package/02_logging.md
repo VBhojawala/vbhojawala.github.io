@@ -13,9 +13,14 @@ next: python_builtin_modules.html
 next_title: Builtin Modules
 next_section: 
 next_section_title: 
-summary: Python Logging module functions, logging components, Logger, Handler, Filter, Formatter,LoggerAdapter, logging configuration.
+summary: Python Logging module functions, logging components, Logger, Handler, Filter, Formatter,LoggerAdapter, logging configuration, logging.config, dictConfig() using YAML and JSON file.
 ---
 
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/WM9XO960SK0" allowfullscreen></iframe>
+</div>
+
+<hr/>
 
 ## Logging
 
