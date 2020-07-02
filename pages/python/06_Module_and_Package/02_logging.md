@@ -193,23 +193,23 @@ logging.warning('CPU usage is %d', usage)
 
 
 Attrib name    |     format          |    Description
-:--- | :--- |
+:--- | :--- | :---
 asctime         | %(asctime)s         | current local time
- msecs           | %(msecs)d           | Milliseconds of the time when log was created.
- relativeCreated | %(relativeCreated)d | Milliseconds of time when LogRecord is created relative to the time when logging module is loaded.
- levelname       | %(levelname)s       | logging level for the message ('DEBUG', 'INFO', 'WARNING','ERROR', 'CRITICAL').
- levelno         | %(levelno)s         | Numeric logging level for the message (DEBUG, INFO, WARNING ,ERROR, CRITICAL).
- name            | %(name)s            | name of the logger used to call.
- message         | %(message)s         | string passed to logging function.
- pathname        | %(pathname)s        | full path of the source file where logging was run.
- module          | %(module)s          | module name of the source file where logging was run.
- filename        | %(filename)s        | source file name where logging was run.
- funcName        | %(funcName)s        | name of the function where logging was run.
- lineno          | %(lineno)d          | line no in source code where logging call was run.
- process         | %(process)d         | Process ID (if available).
- processName     | %(processName)s     | Process name (if available).
- thread          | %(thread)d          | Thread ID (if available).
- threadName      | %(threadName)s      | Thread name (if available).
+msecs           | %(msecs)d           | Milliseconds of the time when log was created.
+relativeCreated | %(relativeCreated)d | Milliseconds of time when LogRecord is created relative to the time when logging module is loaded.
+levelname       | %(levelname)s       | logging level for the message ('DEBUG', 'INFO', 'WARNING','ERROR', 'CRITICAL').
+levelno         | %(levelno)s         | Numeric logging level for the message (DEBUG, INFO, WARNING ,ERROR, CRITICAL).
+name            | %(name)s            | name of the logger used to call.
+message         | %(message)s         | string passed to logging function.
+pathname        | %(pathname)s        | full path of the source file where logging was run.
+module          | %(module)s          | module name of the source file where logging was run.
+filename        | %(filename)s        | source file name where logging was run.
+funcName        | %(funcName)s        | name of the function where logging was run.
+lineno          | %(lineno)d          | line no in source code where logging call was run.
+process         | %(process)d         | Process ID (if available).
+processName     | %(processName)s     | Process name (if available).
+thread          | %(thread)d          | Thread ID (if available).
+threadName      | %(threadName)s      | Thread name (if available).
 
 
 <hr/>
