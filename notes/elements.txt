@@ -158,6 +158,10 @@ NameError: name 'a' is not defined</pre>
 *******************************************************************************
 *******************************************************************************
 
+<div style="overflow-x:auto;" markdown="block">
+
+{:.table-responsive}
+
 Table Header-1 | Table Header-2 | Table Header-3
 :--- | :--- | :--- 
 Table Data-1 | Table Data-2 | Table Data-3 
