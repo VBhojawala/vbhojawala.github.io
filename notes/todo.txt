@@ -1,7 +1,5 @@
 Daily Tasks
 
-
-Chrome favicon
 h4 Responsive
 Ghostry detect
 

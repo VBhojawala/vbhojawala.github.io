@@ -40,6 +40,17 @@ $(document).ready(function() {
         $('#greetings').modal('show');
     }
 
+    var testAd = document.createElement('div');
+    testAd.innerHTML = '&nbsp;';
+    testAd.className = 'adsbox';
+    document.body.appendChild(testAd);
+    window.setTimeout(function() {
+    if (testAd.offsetHeight === 0) {
+        $('#greetings').modal('show');
+    }
+    testAd.remove();
+    }, 100);
+
     $('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
     $('#toc').on('click', 'a', function() {
         var target = $(this.getAttribute('href'))
