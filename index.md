@@ -8,7 +8,7 @@ search: exclude
 hide_sidebar: true
 permalink: index.html
 folder: site page
-summary: 
+summary: Asha Tutorials - Hands-on coding , quality learning video tutorials, study material with examples, responsive website. Tutorials - Python.
 ---
 <div class="row">
         <div class="col-lg-12">
