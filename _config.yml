@@ -110,7 +110,7 @@ description: "Asha Tutorials Hands-On coding"
 # the description is used in the feed.xml file
 
 # needed for sitemap.xml file only
-# url: http://idratherbewriting.com
+url: https://www.ashatutorials.com
 # baseurl: /documentation-theme-jekyll
 
 
