@@ -4,13 +4,6 @@
 <meta name="description" content="{% if page.summary %}{{ page.summary | strip_html | strip_newlines}}{% endif %}">
 <meta name="keywords" content="{% for tag in page.tags %}{{tag | replace: "_", " " }}, {% endfor %}">
 <meta name="theme-color" content="#36362C">
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-171248599-1" onerror="greet=true;"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-171248599-1');
-</script>
 <title>{{ page.title }} | {{ site.site_title }}</title>
 <link rel="stylesheet" href="{{ "css/syntax.css" }}">
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
