@@ -1,6 +1,7 @@
 ---
 title: Python heapq
 layout: tutorial
+last_modified_at: 2020-07-05
 tags: [python, heapq, heap, priority_queue, min-heap, binary_tree, heapify(), heappush(), heappop(), heappushpop(), heapreplace(), merge(), nlargest(), nsmallest()]
 sidebar: python_sidebar
 permalink: python_heapq.html

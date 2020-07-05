@@ -1,6 +1,7 @@
 ---
 title: Python ChainMap
 layout: tutorial
+last_modified_at: 2020-07-05
 tags: [python, ChainMap, maps, parents, pop(), values(), setdefault(), update(), keys(), items(), popitem(), copy(), fromkeys(), clear(), get(), new_child()]
 sidebar: python_sidebar
 permalink: python_chainmap.html

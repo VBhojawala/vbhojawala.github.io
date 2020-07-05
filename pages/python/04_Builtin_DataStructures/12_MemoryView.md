@@ -1,6 +1,7 @@
 ---
 title: Python MemoryView
 layout: tutorial
+last_modified_at: 2020-07-05
 tags: [python, MemoryView, readonly, tolist(), toreadonly(), tobytes(), hex(), release(), cast(), obj, nbytes, format, itemsize, ndim, shape, strides, contiguous, c_contiguous, f_contiguous]
 sidebar: python_sidebar
 permalink: python_memoryview.html

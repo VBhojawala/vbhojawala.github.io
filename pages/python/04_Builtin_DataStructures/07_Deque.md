@@ -1,6 +1,7 @@
 ---
 title: Python Deque
 layout: tutorial
+last_modified_at: 2020-07-05
 tags: [python, deque, len(), append(), appendleft(), pop(), popleft(), extend(), extendleft(), insert(), remove(), count(), index(), reverse(), rotate(), clear(), copy(), deepcopy()]
 sidebar: python_sidebar
 permalink: python_deque.html

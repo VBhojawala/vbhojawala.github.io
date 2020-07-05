@@ -1,6 +1,7 @@
 ---
 title: Python Traceback
 layout: tutorial
+last_modified_at: 2020-07-05
 tags: [python, traceback, sys,  tb_frame, exc_info(), exc_type, exc_value, exc_traceback, print_tb(), print_exception(), format_exception(), format_exception_only(), print_exc(), format_exc(), print_last(), print_stack(), extract_tb(), format_list(), format_tb(), extract_stack(), format_stack(), clear_frames()]
 sidebar: python_sidebar
 permalink: python_traceback.html

@@ -1,6 +1,7 @@
 ---
 title: Python Tuple and NamedTuple
 layout: tutorial
+last_modified_at: 2020-07-05
 tags: [python, tuple, indexing, slicing, for-each, reversed(), enumerate(), chain(), zip(), index(), count(), len(), in, not_in, min(), max(), sum(), sorted(), any(), all(), comparision_operators, namedtuple, _fields, _field_defaults, _make(), _asdict(), _replace()]
 sidebar: python_sidebar
 permalink: python_tuple_namedtuple.html

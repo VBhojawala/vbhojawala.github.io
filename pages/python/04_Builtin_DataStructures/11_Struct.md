@@ -1,6 +1,7 @@
 ---
 title: Python Struct
 layout: tutorial
+last_modified_at: 2020-07-05
 tags: [python, Struct, struct_format, byte_order, format_characters, bytes,  bytearray, calcsize(), format, size, pack(), pack_into(), unpack(), unpack_from(), iter_unpack()]
 sidebar: python_sidebar
 permalink: python_struct.html

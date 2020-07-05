@@ -1,6 +1,7 @@
 ---
 title: Python Calendar
 layout: tutorial
+last_modified_at: 2020-07-05
 tags: [python, calendar, firstweekday(), setfirstweekday(), isleap(), leapdays(), weekday(), weekheader(), monthrange(), monthcalendar(), calendar(), month(), weekday(), prcal(), prmonth(), timegm(), getfirstweekday(), iterweekdays(), itermonthdates(), itermonthdays(), itermonthdays2(), itermonthdays3(), itermonthdays4(), monthdatescalendar(), monthdays2calendar(),  monthdayscalendar(), yeardatescalendar(),  yeardayscalendar(), yeardays2calendar(), TextCalendar, formatmonth(), formatyear(), pryear(), prmonth(), prweek(), formatweekheader(), formatweek(), formatday(), formatweekday(), formatmonthname(), LocaleTextCalendar, locale]
 sidebar: python_sidebar
 permalink:  python_calendar.html

@@ -1,6 +1,7 @@
 ---
 title: Python  Array
 layout: tutorial
+last_modified_at: 2020-07-05
 tags: [python, Array, indexing, slicing, iterating, typecodes, len(), append(), insert(), extend(), pop(), remove(), count(), reverse(), tofile(), tobytes(), tolist(), fromfile(), fromlist(), frombytes(), itemsize]
 sidebar: python_sidebar
 permalink: python_array.html

@@ -1,6 +1,7 @@
 ---
 title: Python Variables
 layout: tutorial
+last_modified_at: 2020-07-05
 tags: [python, Variables, Constant, type(), id(), del, ==, is, identity_operator, id_vs_==, string_interning, caching, immutable_object, immutable_vs_mutable, int, str, float, bool, bin, oct, hex, memory_management, 'Integer', 'String', 'Boolean']
 sidebar: python_sidebar
 permalink: python_variables.html

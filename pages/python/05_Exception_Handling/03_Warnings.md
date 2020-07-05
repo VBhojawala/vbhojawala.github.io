@@ -1,6 +1,7 @@
 ---
 title: Python Warnings
 layout: tutorial
+last_modified_at: 2020-07-05
 tags: [python, Warnings, Warning_class_hierarchy,  warn(), Warning_filters, filterwarnings(), Extending_Warning_class, formatwarning(), warn_explicit(), showwarning(), simple_filter(), resetwarnings(),  catch_warnings(), context_manager]
 sidebar: python_sidebar
 permalink: python_warnings.html

@@ -1,6 +1,7 @@
 ---
 title: Python For Loop
 layout: tutorial
+last_modified_at: 2020-07-05
 tags: [python, for, range(), continue, for-each, for-else, command_line_argument, sys.argv]
 sidebar: python_sidebar
 permalink: python_for_loop.html

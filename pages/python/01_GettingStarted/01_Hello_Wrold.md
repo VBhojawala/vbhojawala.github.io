@@ -9,7 +9,8 @@ prev: python_install_python_pycharm.html
 prev_title: Install Python and Pycharm
 next: python_variables.html
 next_title: Python Variables
-summary: Python print hello world! in python console, print() function and use cases, types of comments, python console as calculator. 
+summary: Python print hello world! in python console, print() function and use cases, types of comments, python console as calculator.
+last_modified_at: 2020-07-05 
 ---
 
 <div class="embed-responsive embed-responsive-16by9">

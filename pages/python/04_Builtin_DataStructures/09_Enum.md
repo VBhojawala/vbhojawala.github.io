@@ -1,6 +1,7 @@
 ---
 title: Python Enum
 layout: tutorial
+last_modified_at: 2020-07-05
 tags: [python, Enumeration, value, name, constant, for-each, unique, auto(), IntEnum, InFlag, Flag, _generate_next_value_(), type, module, qualname, extending_enum_class, enum_comparison, bitwise_operators, membership_operator, Mixing_IntEnum_int, Mixing_Flag_int]
 sidebar: python_sidebar
 permalink: python_enum.html

@@ -1,6 +1,7 @@
 ---
 title: Python Module, Package and Import
 layout: tutorial
+last_modified_at: 2020-07-05
 tags: [python, Module, Package,  import, Regular_Package, Namespace_Package, sys.path, PYTHONPATH, pycache, import_from, wildcard_import, Aliasing, user_defined_module, user_defined_package, init.py, restricting_wildcard_import, __all__, relative_import, Mixing_regular_namespace_package, circular_import,  __future__]
 sidebar: python_sidebar
 permalink: python_module_package_import.html

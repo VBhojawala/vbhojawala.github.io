@@ -1,6 +1,7 @@
 ---
 title: Python Set and FrozenSet
 layout: tutorial
+last_modified_at: 2020-07-05
 tags: [python, set, hashable, nonhashable, for-each, enumerate(), len(), add(), remove(), discard(), pop(), clear(), copy(), update(), intersection_update(), difference_update(), symmetric_difference_update(), issuperset(), issubset(),identity_operator, membership_operator, operators, set_comprehension, frozenset]
 sidebar: python_sidebar
 permalink: python_set_frozenset.html

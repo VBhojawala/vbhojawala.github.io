@@ -1,6 +1,7 @@
 ---
 title: Python Bytes and ByteArray
 layout: tutorial
+last_modified_at: 2020-07-05
 tags: [python, unicode, ASCII, ord(), chr(), hex(), fromhex(), encode(), decode(), BOM, bytes, bytearray, immutable_vs_mutable, mutable, immutable, append(), clear(), copy(), extend(), insert(), pop(), remove(), reverse()]
 sidebar: python_sidebar
 permalink: python_bytes_bytearray.html

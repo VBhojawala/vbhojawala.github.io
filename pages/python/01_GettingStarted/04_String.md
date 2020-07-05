@@ -1,6 +1,7 @@
 ---
 title: Python String
 layout: tutorial
+last_modified_at: 2020-07-05
 tags: [python, str, String, slicing, slice(), substring, indexing, len(), capitalize(), find(), in, index (), upper(), lower(), count(), rfind(),startswith(), endswith(), replace(), strip(), lstrip(), rstrip(), expandtabs(),split(), join(), splitlines(), casefold(), title(), partition(), rpartition(), swapcase(), maketrans(), translate(), isalnum(), isalpha(), isdecimal(), isdigit(), isnumeric(),isidentifier(), islower(), isupper(), istitle(), isspace(), isprintable(), isascii(), center(), ljust(), rjust(), zfill(), string_formatting, printf(), format(), f-string, String_Templating, Template]
 sidebar: python_sidebar
 permalink: python_string.html

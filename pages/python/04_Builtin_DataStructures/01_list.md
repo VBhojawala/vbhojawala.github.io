@@ -1,6 +1,7 @@
 ---
 title: Python List
 layout: tutorial
+last_modified_at: 2020-07-05
 tags: [python, list, slice, indexing, slicing, len(), in, not_in, for-each, reversed(), enumerate(), chain(), zip(), unpacking, 2d_list, 3d_list, list_comprehension, filtering, append(), insert(), remove(), count(), extend(), pop(), index(), sort(), copy(), deepcopy(), reverse(), clear(), join(), split(), List_Operators, builtin_functions, min(), max(), sum(), sorted(), any(), all(), bisect, bisect_left(), bisect_right(), insort_left(), insort_right(), bytes, stack, queue]
 sidebar: python_sidebar
 permalink: python_list.html

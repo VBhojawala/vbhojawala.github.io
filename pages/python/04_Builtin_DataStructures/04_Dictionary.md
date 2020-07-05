@@ -1,6 +1,7 @@
 ---
 title: Python Dictionary
 layout: tutorial
+last_modified_at: 2020-07-05
 tags: [python, dictionary, hashable, hashmap, associative_array,  key, get(), keys(), dict(), for-each  , items(), len(), pop(), popitem(), update(), copy(), deepcopy(), clear() setdefault(), fromkeys(), dictionary_comprehension, ordered_dictionary, default_dictionary]
 sidebar: python_sidebar
 permalink: python_dictionary.html
