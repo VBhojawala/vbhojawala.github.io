@@ -20,6 +20,7 @@ summary: Python tuple constructor, indexing, slicing, iterating, functions, oper
   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/1hChn_jOlqI" allowfullscreen></iframe>
 </div> <hr/>
 
+
 ## Tuple
 
 <div id="tut-content"> 

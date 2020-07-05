@@ -20,6 +20,7 @@ summary: Python Struct format, Byte Order, format characters, struct class funct
   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Y6If7sNm7-Y" allowfullscreen></iframe>
 </div> <hr/>
 
+
 ## Struct
 
 <p> Module enables conversions between Python objects and C struct represented as bytes object. </p>

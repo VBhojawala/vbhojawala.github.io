@@ -18,9 +18,8 @@ summary: Python Warning class hierarchy, warning filters, functions, extending w
 
 <div class="embed-responsive embed-responsive-16by9">
   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/9geAlinyEGw" allowfullscreen></iframe>
-</div>
+</div> <hr/>
 
-<hr/>
 
 ## Warnings
 

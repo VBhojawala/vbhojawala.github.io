@@ -20,6 +20,7 @@ summary: Python MemoryView constructor, indexing, slicing, attributes and functi
   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/2iOI8pfi5Bc" allowfullscreen></iframe>
 </div> <hr/>
 
+
 ## MemoryView
 
 <p> Creating view on internal data of object without copying, object must supports buffer protocol. </p>

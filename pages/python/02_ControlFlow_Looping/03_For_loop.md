@@ -22,6 +22,7 @@ summary: Python for loop, range() function, continue,  for-each loop, for-else, 
 
 <hr/>
 
+
 ## range(stop) 
 <p> Is a generator function which evaluates values on the fly at runtime. </p>
 <p> Generates numbers from 0 to up to stop (not including stop). </p>

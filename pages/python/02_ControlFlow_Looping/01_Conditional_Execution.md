@@ -22,6 +22,7 @@ summary: Python if-else, identity operators, comparision operator, if-elif-else,
 
 <hr/>
 
+
 ## if-else
 
 <p> Use indentation 4 spaces (or tab space) to create block of code in next line of if or else statement. </p>

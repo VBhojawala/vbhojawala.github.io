@@ -17,8 +17,8 @@ summary: Python Decimal and Fraction data type class and its methods. Limitation
 <div class="embed-responsive embed-responsive-16by9">
   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/KU14V6oUWvU" allowfullscreen></iframe>
 </div>
-
 <hr/>
+
 
 ## Decimal
 <p> A floating point that provides precision in arithmetic operation as we (humans) calculate. It's useful in financial application where calculation requires precision.</p>

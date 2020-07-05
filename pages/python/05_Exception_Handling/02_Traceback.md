@@ -18,9 +18,8 @@ summary: Python Exception object's structure and traceback module functions.
 
 <div class="embed-responsive embed-responsive-16by9">
   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/7cBw0x8Tq44" allowfullscreen></iframe>
-</div>
+</div> <hr/>
 
-<hr/>
 
 ## Traceback
 

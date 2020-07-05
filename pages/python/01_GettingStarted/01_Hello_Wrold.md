@@ -18,6 +18,7 @@ summary: Python print hello world! in python console, print() function and use c
 
 <hr/>
 
+
 ## print() function : Prints given string to standard output.
 
 

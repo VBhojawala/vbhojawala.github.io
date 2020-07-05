@@ -53,6 +53,7 @@ Symbol  |   Data Type               |   Minimum Size<br/> (Bytes)|  Python Type
 {% include callout.html content="**Note** : The actual representation of values is determined by the machine architecture (C implementation).  " type="primary" %} 
 
 
+
 #### typecodes
 
 <p> Returns string containing each character as supported symbol. </p>

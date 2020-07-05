@@ -20,6 +20,7 @@ summary: Python Counter constructor, methods, operators, adding / updating / del
   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/EbD153Ww8UE" allowfullscreen></iframe>
 </div> <hr/>
 
+
 ## Counter
 
 <p> Subclass of dictionary class and it counts hashable objects. </p>

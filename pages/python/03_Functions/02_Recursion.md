@@ -126,6 +126,7 @@ Ended recurring -> 5
 
 ## Examples 
 
+
 ### Power function which calculates x^n
 
 #### Recursive

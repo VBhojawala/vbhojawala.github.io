@@ -24,6 +24,7 @@ summary: Python List constructor, indexing, slicing, iterating, operators, unpac
   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/KrPOCt5_akM" allowfullscreen></iframe>
 </div> <hr/>
 
+
 ## List
 
 <div id="tut-content"> 

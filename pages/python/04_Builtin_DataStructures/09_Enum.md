@@ -20,6 +20,7 @@ summary: Python Enum class , constructor attributes, iterating enum, unique, Int
   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/eZTIUiyBFHA" allowfullscreen></iframe>
 </div> <hr/>
 
+
 ## Enum
 
 <p> <strong> Enumeration : </strong> is a set of symbols with constant value where symbols can be compared and iterated. </p>

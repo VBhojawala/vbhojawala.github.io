@@ -22,6 +22,7 @@ summary: Installing and configuring Python and Pycharm, creating new project and
 
 <hr/>
 
+
 ## Install Python
 
 <ul id="profileTabs" class="nav-tab-profile ">

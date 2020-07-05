@@ -20,6 +20,7 @@ summary: Python Dictionary constructor, methods, operators, iterating, dictionar
   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/87iDckAo7UI" allowfullscreen></iframe>
 </div> <hr/>
 
+
 ## Dictionary
 
 <div id="tut-content"> 

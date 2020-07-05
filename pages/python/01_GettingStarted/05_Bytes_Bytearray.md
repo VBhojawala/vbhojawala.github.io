@@ -15,9 +15,8 @@ summary: Python encoding and decoding string, bytes and bytearray object and the
 <div class="embed-responsive embed-responsive-16by9">
   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/3J1hjduLdsk" allowfullscreen></iframe>
 </div>
-
-
 <hr/>
+
 
 
 ## Encoding and Decoding string

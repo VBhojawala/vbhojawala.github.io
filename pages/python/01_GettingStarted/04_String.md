@@ -23,9 +23,8 @@ summary: Python String object, indexing, slicing, concat,string functions, opera
 <div class="embed-responsive embed-responsive-16by9">
   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4t2AOCMyvJ8" allowfullscreen></iframe>
 </div>
-
-
 <hr/>
+
 
 
 ## String 

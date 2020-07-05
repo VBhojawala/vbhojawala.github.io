@@ -18,9 +18,8 @@ summary: Python Module, Package, importing module package and functions, regular
 
 <div class="embed-responsive embed-responsive-16by9">
   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Utu-5EhLkNg" allowfullscreen></iframe>
-</div>
+</div> <hr/>
 
-<hr/>
 
 ## Module
 
