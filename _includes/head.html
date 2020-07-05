@@ -2,7 +2,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="{% if page.summary %}{{ page.summary | strip_html | strip_newlines}}{% endif %}">
-<meta name="keywords" content="{% for tag in page.tags %}{{tag | replace: "_", " " }}, {% endfor %}">
+<meta name="keywords" content="{% for tag in page.tags %}{{tag | replace: "__", "~~" | replace: "_", " " | replace: "~~", "__" }}, {% endfor %}">
 <meta name="theme-color" content="#36362C">
 <title>{{ page.title }} | {{ site.site_title }}</title>
 <link rel="stylesheet" href="{{ "css/syntax.css" }}">

@@ -35,7 +35,7 @@ layout: default
     <div class="tags">
         {% if page.tags != null %}
         <p style="display: inline;"><b>Tags: </b></p>{% assign projectTags = site.data.tags.allowed-tags %}{% for tag in page.tags %}{% if projectTags contains tag %}
-        <a href="{{ "tag_" | append: tag | append: ".html" }}" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">{{page.tagName}}{{tag}}</a>{% endif %}{% endfor %}{% endif %}
+        <a href="{{ "tag_" | append: tag | append: ".html" }}" id="tut-tags" class="btn btn-default navbar-btn cursorNorm" role="button">{{page.tagName}}{{tag| replace: "__", "~~" | replace: "_", " " | replace: "~~", "__"}}</a>{% endif %}{% endfor %}{% endif %}
     </div>
 
 <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button">
