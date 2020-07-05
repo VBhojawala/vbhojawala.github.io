@@ -23,7 +23,7 @@ summary: Hands-on coding | Quality video tutorials | In depth learning experienc
                     </span>
                 </div>
                 <div class="panel-body">
-                    <h4>In Depth Learning Experience</h4>
+                    <h4>In Depth Learning </h4>
                 </div>
             </div>
         </div>
