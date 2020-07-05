@@ -18,7 +18,7 @@ summary: Python Exceptions, Exception class hierarchy, try-catch, try-catch fina
 ---
 
 <div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/kEIoXoC7l2M" allowfullscreen></iframe>
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/kEIoXoC7l2M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div> <hr/>
 
 

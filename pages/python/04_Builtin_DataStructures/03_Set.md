@@ -18,7 +18,7 @@ summary: Python Set  constructor methods, operators, iterator, set comprehension
 ---
 
 <div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Iq2l49JqcB0" allowfullscreen></iframe>
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Iq2l49JqcB0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div> <hr/>
 
 ## Set

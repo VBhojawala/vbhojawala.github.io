@@ -1,6 +1,7 @@
 ---
 title: Python Hello World!
 layout: tutorial
+last_modified_at: 2020-07-05 
 tags: [python, Hello_World, comments, python_console_calculator]
 sidebar: python_sidebar
 permalink: python_hello_world.html
@@ -10,11 +11,10 @@ prev_title: Install Python and Pycharm
 next: python_variables.html
 next_title: Python Variables
 summary: Python print hello world! in python console, print() function and use cases, types of comments, python console as calculator.
-last_modified_at: 2020-07-05 
 ---
 
 <div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/6mS0l71PUIQ" allowfullscreen></iframe>
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/6mS0l71PUIQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 <hr/>
