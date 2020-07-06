@@ -1,0 +1,8 @@
+---
+title: "python base interpreter path for pycharm"
+tagName: python_base_interpreter_path_for_pycharm
+search: exclude
+permalink: tag_python_base_interpreter_path_for_pycharm.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

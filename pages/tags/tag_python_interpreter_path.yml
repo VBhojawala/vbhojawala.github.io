@@ -1,0 +1,8 @@
+---
+title: "python interpreter path"
+tagName: python_interpreter_path
+search: exclude
+permalink: tag_python_interpreter_path.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

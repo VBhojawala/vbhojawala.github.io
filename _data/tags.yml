@@ -9,6 +9,16 @@ allowed-tags:
   - install_pycharm
   - configure_pycharm
   - virtual_environment
+  - python_interpreter_path
+  - python_base_interpreter_path_for_pycharm
+  - install_latest_python_linux
+  - install_latest_python_windows
+  - install_latest_python_macos
+  - download_latest_python_linux
+  - download_latest_python_windows
+  - download_latest_python_macos
+  - download_latest_pycharm
+  - create_virtual_environment_pycharm
   - create_new_project
   - python_console
   - Hello_World

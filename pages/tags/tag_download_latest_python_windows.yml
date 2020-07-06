@@ -1,0 +1,8 @@
+---
+title: "download latest python windows"
+tagName: download_latest_python_windows
+search: exclude
+permalink: tag_download_latest_python_windows.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

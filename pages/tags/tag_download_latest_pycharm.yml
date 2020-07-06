@@ -1,0 +1,8 @@
+---
+title: "download latest pycharm"
+tagName: download_latest_pycharm
+search: exclude
+permalink: tag_download_latest_pycharm.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

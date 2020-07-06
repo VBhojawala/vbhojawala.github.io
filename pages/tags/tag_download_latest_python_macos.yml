@@ -1,0 +1,8 @@
+---
+title: "download latest python macos"
+tagName: download_latest_python_macos
+search: exclude
+permalink: tag_download_latest_python_macos.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}
