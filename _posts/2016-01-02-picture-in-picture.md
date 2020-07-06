@@ -7,6 +7,7 @@ permalink: picture_in_picture.html
 tags: [news]
 folder: news
 search: exclude
+summary: Added Support for Picture in Picture for Firefox and Chrome.
 ---
 Added Support for Picture in Picture for Firefox and Chrome
 <div id="tut-content"> 
