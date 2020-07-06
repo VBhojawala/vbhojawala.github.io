@@ -1,7 +1,7 @@
 ---
 title: Install and Configure Python and Pycharm
 layout: tutorial
-last_modified_at: 2020-07-05
+last_modified_at: 2020-07-06
 tags: [python, install_python_linux, install_python_windows, install_python_macos, install_pycharm, configure_pycharm, virtual_environment, create_new_project, python_console, python_interpreter_path, python_base_interpreter_path_for_pycharm, install_latest_python_linux, install_latest_python_windows, install_latest_python_macos, create_virtual_environment_pycharm, download_latest_python_linux, download_latest_python_windows, download_latest_python_macos, download_latest_pycharm]
 sidebar: python_sidebar
 permalink: python_install_python_pycharm.html
