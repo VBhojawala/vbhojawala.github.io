@@ -1,7 +1,29 @@
 Daily Tasks
 
 h4 Responsive
-Ghostry detect
+
+
+
+
+# OOP Indexing
+
+1. Class_Object
+2. Intercepting Attribute access
+3. __slots__
+4. Dunders
+5. DataClass
+6. Iterator
+7. Generator
+8. Inheritance
+9. Multiple Inheritance
+10. Decorators
+11. MetaClass
+12. ABC
+13. Extending Builtin Data Structures
+14. Exception Handling  
+15. Context Management
+16. Weakref
+
 
 
 
