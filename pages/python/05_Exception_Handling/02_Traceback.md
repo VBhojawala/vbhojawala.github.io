@@ -1,7 +1,7 @@
 ---
 title: Python Traceback
 layout: tutorial
-last_modified_at: 2020-07-05
+last_modified_at: 2020-07-11
 tags: [python, traceback, sys,  tb_frame, exc_info(), exc_type, exc_value, exc_traceback, print_tb(), print_exception(), format_exception(), format_exception_only(), print_exc(), format_exc(), print_last(), print_stack(), extract_tb(), format_list(), format_tb(), extract_stack(), format_stack(), clear_frames()]
 sidebar: python_sidebar
 permalink: python_traceback.html
@@ -112,6 +112,7 @@ try:
     1/0
 except ZeroDivisionError:
     exc_type, exc_value, exc_traceback = sys.exc_info()
+    print(f'exc_type : {exc_type}  |  exc_value : {exc_value}  | exc_traceback : {exc_traceback}')
     traceback.print_tb(exc_traceback)
 
 print('Statements after Try ........')
@@ -144,13 +145,16 @@ Statements after Try ........
 <div id="{{ code_block_id }}" class="code-block">
 <p id= "{{ code_header_id }}" class="code-header" data-toggle="tooltip" data-original-title="Copy to ClipBoard"><b>Copy</b></p><script type="text/javascript">copyHover("{{ code_block_id }}", "{{ code_header_id }}")</script>
 {% highlight python %}
+
 import traceback
 import sys
+
 
 try:
     1/0
 except ZeroDivisionError:
     exc_type, exc_value, exc_traceback = sys.exc_info()
+    print(f'exc_type : {exc_type}  |  exc_value : {exc_value}  | exc_traceback : {exc_traceback}')
     traceback.print_tb(exc_traceback, file=sys.stdout)
 
 
@@ -805,5 +809,6 @@ func1() Started...
 
 <p> Clears the local variables of all the stack frames in a traceback tb by calling the clear() method of each frame object. </p>
 
+<hr/>
 
 {% include links.html %}
