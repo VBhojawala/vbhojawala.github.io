@@ -1350,7 +1350,7 @@ b1.amount
 
 ### Class name aliasing
 
-<p> Class can be assigned to a variable for aliasing and used for creating objects. </p>
+<p> Class can be assigned to a variable for aliasing and can be used for creating objects. </p>
 
 {% assign code_block = code_block | plus: 1 %}
 {% assign code_block_id = "code-block-" | append: code_block %}
