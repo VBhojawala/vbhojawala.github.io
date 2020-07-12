@@ -1,0 +1,8 @@
+---
+title: "classmethod decorator"
+tagName: classmethod_decorator
+search: exclude
+permalink: tag_classmethod_decorator.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

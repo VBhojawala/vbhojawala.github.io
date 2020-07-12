@@ -1,0 +1,8 @@
+---
+title: "Object Attribute in list comprehension"
+tagName: Object_Attribute_in_list_comprehension
+search: exclude
+permalink: tag_Object_Attribute_in_list_comprehension.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

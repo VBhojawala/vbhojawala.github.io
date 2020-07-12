@@ -1,8 +1,8 @@
 ---
-title: "comments"
-tagName: comments
+title: "import"
+tagName: import
 search: exclude
-permalink: tag_comments.html
+permalink: tag_import.html
 sidebar: home_sidebar
 ---
 {% include taglogic.html %}

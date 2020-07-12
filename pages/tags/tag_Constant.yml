@@ -2,7 +2,7 @@
 title: "Constant"
 tagName: Constant
 search: exclude
-permalink: tag_Constants.html
+permalink: tag_Constant.html
 sidebar: home_sidebar
 ---
 {% include taglogic.html %}

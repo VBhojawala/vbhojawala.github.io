@@ -1,8 +1,8 @@
 ---
-title: "comments"
-tagName: comments
+title: "cls"
+tagName: cls
 search: exclude
-permalink: tag_comments.html
+permalink: tag_cls.html
 sidebar: home_sidebar
 ---
 {% include taglogic.html %}

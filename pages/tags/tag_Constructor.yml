@@ -1,8 +1,8 @@
 ---
-title: "comments"
-tagName: comments
+title: "Constructor"
+tagName: Constructor
 search: exclude
-permalink: tag_comments.html
+permalink: tag_Constructor.html
 sidebar: home_sidebar
 ---
 {% include taglogic.html %}

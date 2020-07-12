@@ -1,0 +1,8 @@
+---
+title: " staticmethod decorator"
+tagName:  staticmethod_decorator
+search: exclude
+permalink: tag_ staticmethod_decorator.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

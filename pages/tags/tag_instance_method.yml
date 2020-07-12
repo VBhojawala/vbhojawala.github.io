@@ -1,0 +1,8 @@
+---
+title: "instance method"
+tagName: instance_method
+search: exclude
+permalink: tag_instance_method.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

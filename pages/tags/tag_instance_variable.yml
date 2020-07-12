@@ -1,0 +1,8 @@
+---
+title: "instance variable"
+tagName: instance_variable
+search: exclude
+permalink: tag_instance_variable.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

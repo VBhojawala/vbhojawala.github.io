@@ -147,3 +147,10 @@ entries:
       - title: Builtin Modules
         url: /python_builtin_modules.html
         output: web
+
+  - title: Object Oriented Programming
+    output: web
+    folderitems:
+      - title: Class and Object
+        url: /python_class_object.html
+        output: web

@@ -12,8 +12,8 @@ prev: python_logging.html
 prev_title: Logging
 next: 
 next_title: 
-next_section: 
-next_section_title: 
+next_section: python_class_object.html
+next_section_title:  Object Oriented Programming
 summary: Python Builtin modules math, random and statistics.
 ---
 

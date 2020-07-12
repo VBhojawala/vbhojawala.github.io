@@ -1,0 +1,8 @@
+---
+title: "Name Mangling Multiple inheritance"
+tagName: Name_Mangling_Multiple_inheritance
+search: exclude
+permalink: tag_Name_Mangling_Multiple_inheritance.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

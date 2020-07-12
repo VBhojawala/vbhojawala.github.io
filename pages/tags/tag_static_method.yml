@@ -1,0 +1,8 @@
+---
+title: "static method"
+tagName: static_method
+search: exclude
+permalink: tag_static_method.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

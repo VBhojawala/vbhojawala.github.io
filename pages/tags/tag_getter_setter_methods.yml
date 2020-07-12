@@ -1,0 +1,8 @@
+---
+title: "getter setter methods"
+tagName: getter_setter_methods
+search: exclude
+permalink: tag_getter_setter_methods.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

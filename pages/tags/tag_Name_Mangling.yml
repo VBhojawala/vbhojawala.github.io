@@ -1,0 +1,8 @@
+---
+title: "Name Mangling"
+tagName: Name_Mangling
+search: exclude
+permalink: tag_Name_Mangling.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

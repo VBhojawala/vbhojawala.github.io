@@ -1,0 +1,8 @@
+---
+title: "class variable"
+tagName: class_variable
+search: exclude
+permalink: tag_class_variable.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}
