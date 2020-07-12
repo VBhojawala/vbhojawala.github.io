@@ -535,7 +535,6 @@ Name : Rachel Schneider
         <li> Class variable can be accessed inside instance method using ClassName.VARIABLE_NAME. </li>
         <li> Class variable can also be accessed using self.CLASS_VARIABLE as a fallback of accessing instance variable. Means self.CLASS_VARIABLE will first check for instance variable if not found it will look for class variable. </li>
         <li> But modifying value using self.CLASS_VARIABLE it will create an instance variable , instead of assigning value to class variable.</li>
-        <li> Title </li>
     </ul> 
 </div>
 
