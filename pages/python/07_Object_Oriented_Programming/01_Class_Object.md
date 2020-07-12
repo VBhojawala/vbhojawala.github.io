@@ -956,7 +956,7 @@ b2.INTEREST_RATE : 4.6
 
 
 
-#### Adding methods after creating class definition
+#### Adding class method after creating class definition
 
 {% assign code_block = code_block | plus: 1 %}
 {% assign code_block_id = "code-block-" | append: code_block %}
@@ -1279,12 +1279,6 @@ b1 : dict_keys(['accNo', <div id='tut-highlight'>'_BankAccount__amount'</div>])
 <p> Pre-pending __ to variable name also avoids name collision in subclass with multiple parents having attribute with same name. </p>
 
 
-<div id="tut-content"> 
-    <ul>
-        <li> <strong></strong> </li>
-    </ul> 
-</div>
-
 {% assign code_block = code_block | plus: 1 %}
 {% assign code_block_id = "code-block-" | append: code_block %}
 {% assign code_header_id = "code-header-" | append: code_block %}
@@ -1329,7 +1323,7 @@ dict_keys(['_WaterVehicles__maxspeed', '_LandVehicles__maxspeed'])
 
 ### Getter and Setter method for data attributes 
 
-<p> Python does not use convention of getter setter like other language such as Java because of readability. </p>
+<p> Python does not use convention of getter setter like other language such as Java because of readability. Python has special methods and decorators for intercepting attribute access without needing to invoke getter and setter methods on object and they are explained in next section.</p>
 
 
 {% assign code_block = code_block | plus: 1 %}
@@ -1390,7 +1384,7 @@ type(p1) : <&zwj;class '__main__.Person'>
 <hr/>
 
 
-### Using Instance Attribute in list comprehension
+### Using Object's Attribute in list comprehension
 
 {% assign code_block = code_block | plus: 1 %}
 {% assign code_block_id = "code-block-" | append: code_block %}
