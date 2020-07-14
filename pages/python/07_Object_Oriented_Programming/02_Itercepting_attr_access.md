@@ -17,6 +17,11 @@ next_section_title:
 summary: Python intercepting attribute access using __getattribute__, __setattr__, __delattr__, __getattr__,  property() method and @property decorator, Descriptor protocol methods, Data descriptors, Non-data descriptors, readonly descriptors, mixing property and descriptors. 
 ---
 
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/o4DLmb8LkXI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div> <hr/>
+
+
 ## Intercepting attribute access using magic / dunder / special methods
 
 {% include callout.html content="It is called 'dunder method' which is a short form 'double underscore - method - double underscore'." type="primary" %} 
