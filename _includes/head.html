@@ -5,6 +5,13 @@
 <meta name="keywords" content="{% for tag in page.tags %}{{tag | replace: "__", "~~" | replace: "_", " " | replace: "~~", "__" }}, {% endfor %}">
 <meta name="theme-color" content="#36362C">
 <title>{{ page.title }} | {{ site.site_title }}</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-172683471-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-172683471-1');
+</script>
 <link rel="stylesheet" href="{{ "css/syntax.css" }}">
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/css?family=Raleway:600&display=swap" rel="stylesheet"> 
