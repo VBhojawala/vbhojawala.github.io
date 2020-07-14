@@ -1,0 +1,8 @@
+---
+title: "Property Constructor"
+tagName: Property_Constructor
+search: exclude
+permalink: tag_Property_Constructor.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

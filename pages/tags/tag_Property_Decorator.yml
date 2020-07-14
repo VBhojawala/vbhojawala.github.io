@@ -1,0 +1,8 @@
+---
+title: "Property Decorator"
+tagName: Property_Decorator
+search: exclude
+permalink: tag_Property_Decorator.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

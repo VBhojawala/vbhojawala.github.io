@@ -1,0 +1,8 @@
+---
+title: "Object Composition"
+tagName: Object_Composition
+search: exclude
+permalink: tag_Object_Composition.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

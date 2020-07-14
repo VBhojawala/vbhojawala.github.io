@@ -1,0 +1,8 @@
+---
+title: "Descriptor Protocol"
+tagName: Descriptor_Protocol
+search: exclude
+permalink: tag_Descriptor_Protocol.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

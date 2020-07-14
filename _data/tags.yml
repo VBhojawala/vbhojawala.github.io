@@ -666,3 +666,31 @@ allowed-tags:
   - getter_setter_methods
   - Class_name_Aliasing
   - Object_Attribute_in_list_comprehension
+  - __getattribute__()
+  - __setattr__()
+  - __delattr__()
+  - __getattr__()
+  - getattr()
+  - setattr()
+  - delattr()
+  - Derived_attribute
+  - Property
+  - Property_Constructor
+  - Only_Property
+  - Derived_attribute_property
+  - Property_Decorator
+  - Descriptors
+  - Descriptor_Protocol
+  - __get__()
+  - __set__()
+  - __delete__()
+  - Data_descriptor
+  - Non-Data_descriptor
+  - Read-Only_descriptor
+  - Instance_Method_Descriptor
+  - Class_Method_Descriptor
+  - Static_Method_descriptor
+  - Mixing_Descriptor_Attrib_Dunders
+  - Descriptor_vs_Property
+  - Object_Composition
+  - Attribute_Access_delegation

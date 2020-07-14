@@ -1,0 +1,8 @@
+---
+title: "Attribute Access delegation"
+tagName: Attribute_Access_delegation
+search: exclude
+permalink: tag_Attribute_Access_delegation.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

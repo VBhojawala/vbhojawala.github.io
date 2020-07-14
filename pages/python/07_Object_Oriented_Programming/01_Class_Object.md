@@ -10,8 +10,8 @@ prev_section: python_module_package_import.html
 prev_section_title: Module, Package and Import 
 prev: 
 prev_title: 
-next: 
-next_title: 
+next: python_intercepting_attribute_access.html
+next_title: Intercepting Attribute Access
 next_section: 
 next_section_title: 
 summary: Python Object Oriented Programming, Class and Object, Constructor, class and instance variable, class static and instance methods, Name Mangling, introspecting class and Object, Mutability of attributes of class. 

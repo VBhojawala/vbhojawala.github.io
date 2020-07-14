@@ -1,0 +1,8 @@
+---
+title: "Non-Data descriptor"
+tagName: Non-Data_descriptor
+search: exclude
+permalink: tag_Non-Data_descriptor.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

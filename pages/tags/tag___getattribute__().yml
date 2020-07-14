@@ -1,0 +1,8 @@
+---
+title: "__getattribute__()"
+tagName: __getattribute__()
+search: exclude
+permalink: tag___getattribute__().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

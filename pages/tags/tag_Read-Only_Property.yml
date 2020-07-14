@@ -1,0 +1,8 @@
+---
+title: "Read-Only Property"
+tagName: Read-Only_Property
+search: exclude
+permalink: tag_Read-Only_Property.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

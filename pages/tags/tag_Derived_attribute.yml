@@ -1,0 +1,8 @@
+---
+title: "Derived attribute"
+tagName: Derived_attribute
+search: exclude
+permalink: tag_Derived_attribute.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

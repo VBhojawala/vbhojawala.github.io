@@ -1,0 +1,8 @@
+---
+title: "Mixing Descriptor Attrib Dunders"
+tagName: Mixing_Descriptor_Attrib_Dunders
+search: exclude
+permalink: tag_Mixing_Descriptor_Attrib_Dunders.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

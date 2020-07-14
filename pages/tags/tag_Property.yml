@@ -1,0 +1,8 @@
+---
+title: "Property"
+tagName: Property
+search: exclude
+permalink: tag_Property.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

@@ -1,0 +1,8 @@
+---
+title: "__getattr__()"
+tagName: __getattr__()
+search: exclude
+permalink: tag___getattr__().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}
