@@ -1,5 +1,5 @@
 ---
-title: Intercepting Attribute Access
+title: Python Intercepting Attribute Access
 layout: tutorial
 last_modified_at: 2020-07-14
 tags: [python, Object_Oriented_Programming, __getattribute__(), __setattr__(), __delattr__(), __getattr__(), getattr(), setattr(), delattr(), Derived_attribute, Property, Property_Constructor, Read-Only_Property, Derived_attribute_property, Property_Decorator, Descriptors, Descriptor_Protocol, __get__(), __set__(), __delete__(), Data_descriptor, Non-Data_descriptor, Read-Only_descriptor, Instance_Method_Descriptor, Class_Method_Descriptor, Static_Method_descriptor, Mixing_Descriptor_Attrib_Dunders, Descriptor_vs_Property,Object_Composition,Attribute_Access_delegation]
@@ -10,8 +10,8 @@ prev_section:
 prev_section_title:  
 prev:  python_class_object.html
 prev_title: Class and Object
-next: 
-next_title: 
+next: python_slots.html
+next_title: Slots
 next_section: 
 next_section_title: 
 summary: Python intercepting attribute access using __getattribute__, __setattr__, __delattr__, __getattr__,  property() method and @property decorator, Descriptor protocol methods, Data descriptors, Non-data descriptors, readonly descriptors, mixing property and descriptors. 

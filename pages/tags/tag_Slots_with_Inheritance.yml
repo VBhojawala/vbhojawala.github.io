@@ -1,0 +1,8 @@
+---
+title: "Slots with Inheritance"
+tagName: Slots_with_Inheritance
+search: exclude
+permalink: tag_Slots_with_Inheritance.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

@@ -157,3 +157,6 @@ entries:
       - title: Intercepting Attribute Access
         url: /python_intercepting_attribute_access.html
         output: web
+      - title: Slots
+        url: /python_slots.html
+        output: web

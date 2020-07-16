@@ -694,3 +694,6 @@ allowed-tags:
   - Descriptor_vs_Property
   - Object_Composition
   - Attribute_Access_delegation
+  - __slots__
+  - Slots_memory_usage
+  - Slots_with_Inheritance

@@ -1,5 +1,5 @@
 ---
-title: Class and Object
+title: Python Class and Object
 layout: tutorial
 last_modified_at: 2020-07-12
 tags: [python, Object_Oriented_Programming, Class, Object, Instance, Constructor, __init__(), self, cls, class_variable, instance_variable, class_method, instance_method, static_method, classmethod_decorator,  staticmethod_decorator, __dict__, type(), Mutability_of_Attributes, Access_Modifiers, Name_Mangling, Name_Mangling_Multiple_inheritance, getter_setter_methods, Class_name_Aliasing, Object_Attribute_in_list_comprehension]

@@ -1,0 +1,8 @@
+---
+title: "__slots__"
+tagName: __slots__
+search: exclude
+permalink: tag___slots__.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

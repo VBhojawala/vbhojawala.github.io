@@ -1,0 +1,8 @@
+---
+title: "Slots memory usage"
+tagName: Slots_memory_usage
+search: exclude
+permalink: tag_Slots_memory_usage.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}
