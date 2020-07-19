@@ -1,0 +1,8 @@
+---
+title: "__neg__()"
+tagName: __neg__()
+search: exclude
+permalink: tag___neg__().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

@@ -1,0 +1,8 @@
+---
+title: "__del__()"
+tagName: __del__()
+search: exclude
+permalink: tag___del__().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

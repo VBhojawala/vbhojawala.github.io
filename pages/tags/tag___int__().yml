@@ -1,0 +1,8 @@
+---
+title: "__int__()"
+tagName: __int__()
+search: exclude
+permalink: tag___int__().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

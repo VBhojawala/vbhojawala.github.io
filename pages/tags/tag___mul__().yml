@@ -1,0 +1,8 @@
+---
+title: "__mul__()"
+tagName: __mul__()
+search: exclude
+permalink: tag___mul__().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

@@ -1,0 +1,8 @@
+---
+title: "Special method"
+tagName: Special_method
+search: exclude
+permalink: tag_Special_method.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

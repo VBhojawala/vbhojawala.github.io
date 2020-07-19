@@ -1,0 +1,8 @@
+---
+title: "__float__()"
+tagName: __float__()
+search: exclude
+permalink: tag___float__().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

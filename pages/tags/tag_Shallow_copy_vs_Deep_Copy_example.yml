@@ -1,0 +1,8 @@
+---
+title: "Shallow copy vs Deep Copy example"
+tagName: Shallow_copy_vs_Deep_Copy_example
+search: exclude
+permalink: tag_Shallow_copy_vs_Deep_Copy_example.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

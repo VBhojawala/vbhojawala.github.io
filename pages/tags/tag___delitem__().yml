@@ -1,0 +1,8 @@
+---
+title: "__delitem__()"
+tagName: __delitem__()
+search: exclude
+permalink: tag___delitem__().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

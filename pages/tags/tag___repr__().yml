@@ -1,0 +1,8 @@
+---
+title: "__repr__()"
+tagName: __repr__()
+search: exclude
+permalink: tag___repr__().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

@@ -1,0 +1,8 @@
+---
+title: "Dunder method"
+tagName: Dunder_method
+search: exclude
+permalink: tag_Dunder_method.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

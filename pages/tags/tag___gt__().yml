@@ -1,0 +1,8 @@
+---
+title: "__gt__()"
+tagName: __gt__()
+search: exclude
+permalink: tag___gt__().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

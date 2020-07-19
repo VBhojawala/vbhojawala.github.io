@@ -160,3 +160,6 @@ entries:
       - title: Slots
         url: /python_slots.html
         output: web
+      - title: Dunder/ Magic/ Special Methods
+        url: /python_dunder_magic_special_methods.html
+        output: web

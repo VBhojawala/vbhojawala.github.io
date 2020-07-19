@@ -1,0 +1,8 @@
+---
+title: "__rshift__()"
+tagName: __rshift__()
+search: exclude
+permalink: tag___rshift__().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

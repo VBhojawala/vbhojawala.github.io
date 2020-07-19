@@ -10,8 +10,8 @@ prev_section:
 prev_section_title: 
 prev:  python_intercepting_attribute_access.html
 prev_title: Intercepting Attribute Access
-next: 
-next_title: 
+next: python_dunder_magic_special_methods.html
+next_title: Dunder Methods
 next_section: 
 next_section_title: 
 summary: Python Slots, defining __slots__, slots memory usage,  __slots__ vs __dict__, slots with inheritance and multiple inheritance. 

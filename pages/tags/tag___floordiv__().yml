@@ -1,0 +1,8 @@
+---
+title: "__floordiv__()"
+tagName: __floordiv__()
+search: exclude
+permalink: tag___floordiv__().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

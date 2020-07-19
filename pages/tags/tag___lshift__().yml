@@ -1,0 +1,8 @@
+---
+title: "__lshift__()"
+tagName: __lshift__()
+search: exclude
+permalink: tag___lshift__().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

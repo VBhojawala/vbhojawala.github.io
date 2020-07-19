@@ -1,0 +1,8 @@
+---
+title: "__bytes__()"
+tagName: __bytes__()
+search: exclude
+permalink: tag___bytes__().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

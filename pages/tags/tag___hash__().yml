@@ -1,0 +1,8 @@
+---
+title: "__hash__()"
+tagName: __hash__()
+search: exclude
+permalink: tag___hash__().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

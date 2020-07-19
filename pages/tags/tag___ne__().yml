@@ -1,0 +1,8 @@
+---
+title: "__ne__()"
+tagName: __ne__()
+search: exclude
+permalink: tag___ne__().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

@@ -1,0 +1,8 @@
+---
+title: "__trunc__()"
+tagName: __trunc__()
+search: exclude
+permalink: tag___trunc__().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

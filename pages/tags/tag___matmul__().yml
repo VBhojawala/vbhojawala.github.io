@@ -1,0 +1,8 @@
+---
+title: "__matmul__()"
+tagName: __matmul__()
+search: exclude
+permalink: tag___matmul__().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

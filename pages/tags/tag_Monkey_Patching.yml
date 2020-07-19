@@ -1,0 +1,8 @@
+---
+title: "Monkey Patching"
+tagName: Monkey_Patching
+search: exclude
+permalink: tag_Monkey_Patching.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

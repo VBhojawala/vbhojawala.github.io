@@ -1,0 +1,8 @@
+---
+title: "__add__()"
+tagName: __add__()
+search: exclude
+permalink: tag___add__().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

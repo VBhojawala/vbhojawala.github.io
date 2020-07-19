@@ -1,0 +1,8 @@
+---
+title: "__or__()"
+tagName: __or__()
+search: exclude
+permalink: tag___or__().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

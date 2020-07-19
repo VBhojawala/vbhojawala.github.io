@@ -1,0 +1,8 @@
+---
+title: "__le__()"
+tagName: __le__()
+search: exclude
+permalink: tag___le__().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

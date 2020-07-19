@@ -1,0 +1,8 @@
+---
+title: "total ordering"
+tagName: total_ordering
+search: exclude
+permalink: tag_total_ordering.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

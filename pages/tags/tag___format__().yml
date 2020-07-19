@@ -1,0 +1,8 @@
+---
+title: "__format__()"
+tagName: __format__()
+search: exclude
+permalink: tag___format__().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

@@ -1,0 +1,8 @@
+---
+title: "id vs hash"
+tagName: id_vs_hash
+search: exclude
+permalink: tag_id_vs_hash.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

@@ -1,0 +1,8 @@
+---
+title: "__copy__()"
+tagName: __copy__()
+search: exclude
+permalink: tag___copy__().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

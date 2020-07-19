@@ -1,0 +1,8 @@
+---
+title: "__invert__()"
+tagName: __invert__()
+search: exclude
+permalink: tag___invert__().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

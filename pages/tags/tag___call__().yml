@@ -1,0 +1,8 @@
+---
+title: "__call__()"
+tagName: __call__()
+search: exclude
+permalink: tag___call__().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

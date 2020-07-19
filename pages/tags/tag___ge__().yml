@@ -1,0 +1,8 @@
+---
+title: "__ge__()"
+tagName: __ge__()
+search: exclude
+permalink: tag___ge__().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}
