@@ -810,8 +810,9 @@ print('Reverse Sorting :', sorted(list1, reverse=True))
 
 <div class="result"><p class="result-header"><b>Output</b></p>
 <pre class="result-content">
-It's sunny outside.
-Quoting inside "Double quotes".
+Before Sorting  : [Point(15, 12), Point(25, 15), Point(21, 12), Point(18, 21), Point(19, 27)]
+After Sorting   : [Point(15, 12), Point(18, 21), Point(19, 27), Point(21, 12), Point(25, 15)]
+Reverse Sorting : [Point(25, 15), Point(21, 12), Point(19, 27), Point(18, 21), Point(15, 12)]
 </pre></div>
 
 <hr/>
