@@ -163,3 +163,6 @@ entries:
       - title: Dunder/ Magic/ Special Methods
         url: /python_dunder_magic_special_methods.html
         output: web
+      - title: Dataclasses
+        url: /python_dataclasses.html
+        output: web

@@ -1,0 +1,8 @@
+---
+title: "order"
+tagName: order
+search: exclude
+permalink: tag_order.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

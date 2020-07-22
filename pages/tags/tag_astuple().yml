@@ -1,0 +1,8 @@
+---
+title: "astuple()"
+tagName: astuple()
+search: exclude
+permalink: tag_astuple().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

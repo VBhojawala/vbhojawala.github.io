@@ -10,8 +10,8 @@ prev_section:
 prev_section_title: 
 prev:  python_slots.html
 prev_title: Slots
-next: 
-next_title: 
+next: python_dataclasses.html
+next_title: Dataclasses
 next_section: 
 next_section_title: 
 summary: Python Dunders / Magic / Special Methods for String representation, Arithmetic operators dunder, Bitwise operators, Comparison operators, value conversion, unary operator, hashing, callable object, collection of object, copy. Monkey patching dunder methods.
@@ -197,6 +197,11 @@ class PointS:
     def __str__(self):
         return f'Point(x: {self.x}, y: {self.y})'
 
+
+p1 = PointS(25, 4)
+
+print(f'str  : {p1!s}')
+print(f'Repr : {p1!r}')
 
 {% endhighlight %}
 </div>

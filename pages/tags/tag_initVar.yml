@@ -1,0 +1,8 @@
+---
+title: "initVar"
+tagName: initVar
+search: exclude
+permalink: tag_initVar.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

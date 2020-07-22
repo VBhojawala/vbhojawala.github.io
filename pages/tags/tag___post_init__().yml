@@ -1,0 +1,8 @@
+---
+title: "__post init__()"
+tagName: __post_init__()
+search: exclude
+permalink: tag___post_init__().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

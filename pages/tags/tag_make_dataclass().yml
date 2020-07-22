@@ -1,0 +1,8 @@
+---
+title: "make dataclass()"
+tagName: make_dataclass()
+search: exclude
+permalink: tag_make_dataclass().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

@@ -1,0 +1,8 @@
+---
+title: "default factory"
+tagName: default_factory
+search: exclude
+permalink: tag_default_factory.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

@@ -1,0 +1,8 @@
+---
+title: "is dataclass()"
+tagName: is_dataclass()
+search: exclude
+permalink: tag_is_dataclass().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

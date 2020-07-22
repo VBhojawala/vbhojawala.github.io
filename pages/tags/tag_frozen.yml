@@ -1,0 +1,8 @@
+---
+title: "frozen"
+tagName: frozen
+search: exclude
+permalink: tag_frozen.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

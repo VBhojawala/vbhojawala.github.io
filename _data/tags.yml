@@ -760,3 +760,19 @@ allowed-tags:
   - __copy__()
   - __deepcopy__()
   - Monkey_Patching
+  - DataClasses
+  - dataclass
+  - order
+  - unsafe_hash
+  - frozen
+  - Field
+  - field()
+  - default_factory
+  - metadata
+  - fields()
+  - asdict()
+  - astuple()
+  - make_dataclass()
+  - is_dataclass()
+  - __post_init__()
+  - initVar

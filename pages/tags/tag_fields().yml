@@ -1,0 +1,8 @@
+---
+title: "fields()"
+tagName: fields()
+search: exclude
+permalink: tag_fields().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}
