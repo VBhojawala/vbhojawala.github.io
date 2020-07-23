@@ -10,8 +10,8 @@ prev_section:
 prev_section_title: 
 prev:  python_dunder_magic_special_methods.html
 prev_title: Dunder Methods
-next: 
-next_title: 
+next: python_iterator.html
+next_title: Iterator
 next_section: 
 next_section_title: 
 summary: Python Dataclasses module, @dataclass decorator, Field, field(), __post_init__(), initVar and functions of dataclasses module fields(), asdict(), astuple(), make_dataclass(), is_dataclass().

@@ -166,3 +166,6 @@ entries:
       - title: Dataclasses
         url: /python_dataclasses.html
         output: web
+      - title: Iterator
+        url: /python_iterator.html
+        output: web

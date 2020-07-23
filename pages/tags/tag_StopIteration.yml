@@ -1,0 +1,8 @@
+---
+title: "StopIteration"
+tagName: StopIteration
+search: exclude
+permalink: tag_StopIteration.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

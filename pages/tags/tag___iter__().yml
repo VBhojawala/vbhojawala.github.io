@@ -1,0 +1,8 @@
+---
+title: "__iter__()"
+tagName: __iter__()
+search: exclude
+permalink: tag___iter__().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

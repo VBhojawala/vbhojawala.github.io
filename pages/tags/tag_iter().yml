@@ -1,0 +1,8 @@
+---
+title: "iter()"
+tagName: iter()
+search: exclude
+permalink: tag_iter().html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

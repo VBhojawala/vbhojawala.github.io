@@ -1,0 +1,8 @@
+---
+title: "Iterator"
+tagName: Iterator
+search: exclude
+permalink: tag_Iterator.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}
