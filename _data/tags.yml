@@ -785,3 +785,18 @@ allowed-tags:
   - StopIteration
   - Multiple_simultaneous_iterators
   - __reversed__()
+  - Generator
+  - Generator_function
+  - yield
+  - Generator_iterator_object
+  - generator_expression
+  - generator_in_class
+  - generator_expression_in_class
+  - unpacking_generator_elements
+  - collecting_generator_elements
+  - infinite_generator
+  - close()
+  - throw()
+  - yield_from
+  - chaining_generators
+  - GeneratorExit

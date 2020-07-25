@@ -1,0 +1,8 @@
+---
+title: "chaining generators"
+tagName: chaining_generators
+search: exclude
+permalink: tag_chaining_generators.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

@@ -1,0 +1,8 @@
+---
+title: "generator expression"
+tagName: generator_expression
+search: exclude
+permalink: tag_generator_expression.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

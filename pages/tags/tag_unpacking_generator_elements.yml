@@ -1,0 +1,8 @@
+---
+title: "unpacking generator elements"
+tagName: unpacking_generator_elements
+search: exclude
+permalink: tag_unpacking_generator_elements.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

@@ -1,0 +1,8 @@
+---
+title: "generator expression in class"
+tagName: generator_expression_in_class
+search: exclude
+permalink: tag_generator_expression_in_class.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

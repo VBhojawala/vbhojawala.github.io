@@ -1,0 +1,8 @@
+---
+title: "Generator iterator object"
+tagName: Generator_iterator_object
+search: exclude
+permalink: tag_Generator_iterator_object.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

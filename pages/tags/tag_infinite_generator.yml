@@ -1,0 +1,8 @@
+---
+title: "infinite generator"
+tagName: infinite_generator
+search: exclude
+permalink: tag_infinite_generator.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

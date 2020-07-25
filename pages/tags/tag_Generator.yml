@@ -1,0 +1,8 @@
+---
+title: "Generator"
+tagName: Generator
+search: exclude
+permalink: tag_Generator.html
+sidebar: home_sidebar
+---
+{% include taglogic.html %}

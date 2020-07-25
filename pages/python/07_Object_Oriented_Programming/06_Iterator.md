@@ -10,8 +10,8 @@ prev_section:
 prev_section_title: 
 prev:  python_dataclasses.html
 prev_title: Dataclasses
-next: 
-next_title: 
+next: python_generator.html
+next_title: Generator
 next_section: 
 next_section_title: 
 summary: Python Iterator, Iterator interface, Iterable and Iterator abstract classes, iter() and next() methods, multiple simultaneous iterator, legacy way of creating iterator for indexed collection, iterating collection in reverse using reverse() and __reversed__().
