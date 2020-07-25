@@ -169,3 +169,6 @@ entries:
       - title: Iterator
         url: /python_iterator.html
         output: web
+      - title: Generator
+        url: /python_generator.html
+        output: web
