@@ -45,7 +45,24 @@ $(document).ready(function() {
         return false
     })
 
+    var testAd = document.createElement('div');
+    testAd.innerHTML = '&nbsp;';
+    testAd.className = 'adsbox';
+    document.body.appendChild(testAd);
+    window.setTimeout(function() {
+    if (testAd.offsetHeight === 0) {
+        doGreet = true;
+    }
+    testAd.remove();
+    if (typeof doGreet != 'undefined'){
+        $('#greetings').modal('show'); 
+    }
+    }, 100);
+
+
+
 });
+
 function copyHover(codeId, copyId){
     $('#'+codeId).mouseenter(function() {
         $('#'+copyId).show();
